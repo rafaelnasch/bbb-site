@@ -29,6 +29,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/acessorios.html"
     },
+    "d_meta_exibida": {
+      "title": "Acessórios para Banheiras - Banheiras Bom Banho",
+      "description": "Todos os acessórios que você precisa para personalizar sua banheira, spa ou ofurô só na BBB! Bombas, tampas térmicas, pisos e mais! Conheça nossos produtos\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -266,8 +271,23 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheira-spa.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheira Spa | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": "As\nbanheiras spas\nsão amplas e comportam até 8 pessoas. São fabricadas em diferentes tamanhos para que sejam instaladas em pontos estratégicos e podem inclusive serem usadas como\nbanheira spa para área externa\n. As banheiras spas mais conhecidas são chamadas de jacuzzi.\nEm comparação as\nbanheiras de hidromassagem\n, a\nbanheira de spa\né claramente maior e possui quantidade superior de jatos massageadores. Um de nossos produtos mais procurados, o Spa Natale Luxo, por exemplo, contém 8 jatos cromados e 19 mini jatos.",
-    "d_descricao_exibida": "As\nbanheiras spas\nsão amplas e comportam até 8 pessoas. São fabricadas em diferentes tamanhos para que sejam instaladas em pontos estratégicos e podem inclusive serem usadas como\nbanheira spa para área externa\n. As banheiras spas mais conhecidas são chamadas de jacuzzi.\nEm comparação as\nbanheiras de hidromassagem\n, a\nbanheira de spa\né claramente maior e possui quantidade superior de jatos massageadores. Um de nossos produtos mais procurados, o Spa Natale Luxo, por exemplo, contém 8 jatos cromados e 19 mini jatos.",
+    "d_descricao_exibida": "As\nbanheiras spas\nsão amplas e comportam até 8 pessoas. São fabricadas em diferentes tamanhos para que sejam instaladas em pontos estratégicos e podem inclusive serem usadas como\nbanheira spa para área externa\n. As banheiras spas mais conhecidas são chamadas de jacuzzi.\nEm comparação as\nbanheiras de hidromassagem\n, a\nbanheira de spa\né claramente maior e possui quantidade superior de jatos massageadores.",
     "breadcrumbs": [
       "Início",
       "Banheira Spa"
@@ -509,6 +529,29 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras.html"
     },
+    "d_meta_exibida": {
+      "title": null,
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "title",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": "A Banheiras Bom Banho é uma fabricante especializada em\nbanheiras\n. Com jatos de água massageadores que estimulam a circulação promovendo bem-estar, o modelo ideal de banheira ou de acordo com a metragem do seu espaço está aqui na BBB. Aproveite as condições imperdíveis e adquira sua banheira com qualidade e design diferenciados. Confira os\nmodelos de banheiras\ndisponíveis:",
     "d_descricao_exibida": "A Banheiras Bom Banho é uma fabricante especializada em\nbanheiras\n. Aproveite as condições imperdíveis e adquira sua banheira com qualidade e design diferenciados. Confira os\nmodelos de banheiras\ndisponíveis:",
     "breadcrumbs": [
@@ -570,6 +613,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheira-de-canto.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheira de Canto | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": "Quem procura por aproveitamento inteligente de espaço, as\nbanheiras de canto\nsão excelente opção. Elas podem ser instaladas em diferentes metragens, pois são compactas. Aproveite o design único e confira todas as variáveis desse modelo personalizável.",
     "d_descricao_exibida": "Quem procura por aproveitamento inteligente de espaço, as\nbanheiras de canto\nsão excelente opção. Elas podem ser instaladas em diferentes metragens, pois são compactas. Aproveite o design único e confira todas as variáveis desse modelo personalizável.",
     "breadcrumbs": [
@@ -689,6 +747,20 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheira-dupla.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheira Dupla | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "As\nbanheiras duplas\nsão ideais para proporcionar um banho relaxante a dois. Não deixe de conferir os opcionais como cromoterapia para ter uma experiência ainda melhor em seu banho por imersão.",
     "d_descricao_exibida": "As\nbanheiras duplas\nsão ideais para proporcionar um banho relaxante a dois. Não deixe de conferir os opcionais como cromoterapia para ter uma experiência ainda melhor em seu banho por imersão.",
     "breadcrumbs": [
@@ -927,6 +999,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheira-para-banheiro.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheira para Banheiro | Banheiras Bom Banho",
+      "description": "Banheira para Banheiro é na BBB! Diversos modelos em acrílico ou fibra de vidro! Acesse já e aproveite nossas condições para ter o banheiro dos seus sonhos!"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "Deixe sua casa mais bonita com\nbanheiras para banheiro\n. Com os produtos das\nBanheiras Bom Banho\n, você aproveita um banho relaxante e revigorante após um longo dia de trabalho. Confira os modelos disponíveis e escolha o seu preferido.",
     "d_descricao_exibida": "Deixe sua casa mais bonita com\nbanheiras para banheiro\n. Com os produtos das\nBanheiras Bom Banho\n, você aproveita um banho relaxante e revigorante após um longo dia de trabalho. Confira os modelos disponíveis e escolha o seu preferido.",
     "breadcrumbs": [
@@ -967,6 +1044,20 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheira-quadrada.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheira Quadrada | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "Se você procura uma\nbanheira quadrada\n, com capacidade para comportar uma ou mais pessoas, acesse nosso departamento de\nbanheiras\nquadradas. Aproveite para escolher entre 184 cores diferentes e deixar sua\nbanheira para banheiro\ncom ainda mais personalidade.\nNão estamos fabricando Produtos em cor.",
     "d_descricao_exibida": "Se você procura uma\nbanheira quadrada\n, com capacidade para comportar uma ou mais pessoas, acesse nosso departamento de\nbanheiras\nquadradas. Aproveite para escolher entre 184 cores diferentes e deixar sua\nbanheira para banheiro\ncom ainda mais personalidade.\nNão estamos fabricando Produtos em cor.",
     "breadcrumbs": [
@@ -1152,6 +1243,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheira-retangular.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheira Retangular | Banheiras Bom Banho",
+      "description": "Encontre a banheira retangular do jeito que você sempre quis! Na BBB temos diversas opções personalizáveis! Em acrílico ou fibra de vidro! Confira! "
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "As banheiras retangulares fazem parte das\nbanheiras\ncom designs tradicionais, portanto, se seu banheiro possui um estilo arquitetônico clássico, sem dúvidas você vai adorar os lindos modelos de\nbanheiras\nspas retangulares que fabricamos - de\nbanheiras simples\na banheiras de luxo, confira nossas opções de acessórios e incremente sua peça do jeito que você sempre sonhou.\nNão estamos fabricando Produtos em cor.",
     "d_descricao_exibida": "As banheiras retangulares fazem parte das\nbanheiras\ncom designs tradicionais, portanto, se seu banheiro possui um estilo arquitetônico clássico, sem dúvidas você vai adorar os lindos modelos de\nbanheiras\nspas retangulares que fabricamos - de\nbanheiras simples\na banheiras de luxo, confira nossas opções de acessórios e incremente sua peça do jeito que você sempre sonhou.\nNão estamos fabricando Produtos em cor.",
     "breadcrumbs": [
@@ -1265,6 +1361,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheira-simples.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheira Simples | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": "Renove suas energias e seu banheiro com a instalação de uma\nbanheira de hidromassagem\n. Em nossa loja você vai encontrar\nbanheiras simples\nque cumprem com perfeição a tarefa de proporcionar um longo e relaxante banho de hidromassagem em sua própria casa.\nConfira as opções disponíveis aqui, na Banheiras Bom Banho.",
     "d_descricao_exibida": "Renove suas energias e seu banheiro com a instalação de uma\nbanheira de hidromassagem\n. Em nossa loja você vai encontrar\nbanheiras simples\nque cumprem com perfeição a tarefa de proporcionar um longo e relaxante banho de hidromassagem em sua própria casa.\nConfira as opções disponíveis aqui, na Banheiras Bom Banho.",
     "breadcrumbs": [
@@ -1362,6 +1473,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheiras-individuais.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras Individuais | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": "As\nbanheiras individuais\nsão ideais para renovar as energias após um longo dia de trabalho. Confira as opções de quantidade de jatos de massagem adicionais e encosto para cabeça e alças laterais.",
     "d_descricao_exibida": "As\nbanheiras individuais\nsão ideais para renovar as energias após um longo dia de trabalho. Confira as opções de quantidade de jatos de massagem adicionais e encosto para cabeça e alças laterais.",
     "breadcrumbs": [
@@ -1421,6 +1547,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/banheiras-redondas.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras Redondas | Banheiras Bom Banho",
+      "description": "Banheiras rendondas personalizadas para até quatro pessoas, com opção em acrílico, gel coat e fibra de vidro é na Banheiras Bom Banho! Acesse e confira nossos produtos!"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "As\nbanheiras redondas\nsão preparadas para comportar até 3 pessoas ao mesmo tempo. Produzidas em gel coat ou acrílico, também é possível escolher sua\nbanheira\nde hidro redonda com motor em 110v ou 220v.\nNão estamos fabricando Produtos em cor.",
     "d_descricao_exibida": "As\nbanheiras redondas\nsão preparadas para comportar até 3 pessoas ao mesmo tempo. Produzidas em gel coat ou acrílico, também é possível escolher sua\nbanheira\nde hidro redonda com motor em 110v ou 220v.\nNão estamos fabricando Produtos em cor.",
     "breadcrumbs": [
@@ -1461,6 +1592,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/kids.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras Kids: Veja Banheiras para tamanho infantil",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      }
+    ],
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -1500,6 +1646,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/pets.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras Pets: Banheiras de qualidade para o seu animal",
+      "description": "Os pets são parte importante da família. Por isso, merecem uma banheira especial. Pensando nisso, a BBB Banheiras fez uma linha de banheiras para pets. Veja!\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -1732,6 +1883,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/por-tamanho.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras de Hidromassagem por Tamanho - Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "a única",
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "A Banheiras Bom Banho é fabricante especializada em banheiras de hidromassagem de (colocar tamanho). Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.\nNão estamos fabricando Produtos em cor.",
     "d_descricao_exibida": "A Banheiras Bom Banho é fabricante especializada em banheiras de hidromassagem de (colocar tamanho). Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.\nNão estamos fabricando Produtos em cor.",
     "breadcrumbs": [
@@ -1953,6 +2119,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/por-tamanho/banheiras-de-1.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras de 1 - Por Tamanho - Banheiras",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -2030,6 +2201,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/por-tamanho/de-100-a-140.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras de Hidromassagem por tamanho de 100 a 140 cm - BBB",
+      "description": "Procurando banheiras de hidromassagem de 100 a 140 cm? Temos diversas opções de banheira com excelente durabilidade. Acesse e conheça nossas produtos\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,00 A 1,40\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "d_descricao_exibida": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,00 A 1,40\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "breadcrumbs": [
@@ -2166,6 +2342,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/por-tamanho/de-141-a-160.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras de Hidromassagem por tamanho de 141 a 160 cm - BBB",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "a única",
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,41 a 1,60\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "d_descricao_exibida": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,41 a 1,60\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "breadcrumbs": [
@@ -2343,6 +2534,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/por-tamanho/de-161-a-180.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras de 1,61 a 1,80 - Por Tamanho - Banheiras",
+      "description": "Banheiras de Hidromassagem por tamanho de 161 a 180 cm e outras opções, só na BBB! Diversas cores e opções personalizáveis para sua banheira. Acesse e confira\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,61 a 1,80\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "d_descricao_exibida": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,61 a 1,80\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "breadcrumbs": [
@@ -2437,6 +2633,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras/por-tamanho/de-181-a-200.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras de Hidromassagem por tamanho de 181 a 200 cm - BBB",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,81 a 2,00\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "d_descricao_exibida": "A Banheiras Bom Banho é fabricante especializada em\nbanheiras de hidromassagem de 1,81 a 2,00\n. Aproveite as condições imperdíveis e adquira agora mesmo sua banheira com qualidade e design diferenciados.",
     "breadcrumbs": [
@@ -2693,6 +2904,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/banheiras2.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras de Hidromassagem | Banheiras Bom Banho",
+      "description": "Banheiras de Hidromassagem para todos os ambientes, produzidas em gel coat e fibra de vibro. Vários tamanhos para até 4 pessoas. Veja nossos modelos! "
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "A\nBanheiras Bom Banho\né fabricante especializada em\nspas\ne\nbanheiras de hidromassagem\n. Aproveite as condições imperdíveis e adquira agora mesmo um produto com qualidade e design diferenciados.",
     "d_descricao_exibida": "A\nBanheiras Bom Banho\né fabricante especializada em\nspas\ne\nbanheiras de hidromassagem\n. Aproveite as condições imperdíveis e adquira agora mesmo um produto com qualidade e design diferenciados.",
     "breadcrumbs": [
@@ -2929,6 +3145,28 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/catalog/category/view/s/banheira-de-hidro/id/131/"
     },
+    "d_meta_exibida": {
+      "title": "Banheira de Hidro | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "As\nbanheiras de hidro\ncontam com jatos cromados e arejadores que provocam a pressão adequada da água para efeito relaxante da mente e do corpo. Aproveite as condições imperdíveis de banheiras de hidromassagem na\nBanheiras Bom Banho\n, sua\nloja fábrica de banheiras\n.",
     "d_descricao_exibida": "Aproveite as condições imperdíveis de banheiras de hidromassagem na\nBanheiras Bom Banho\n, sua\nloja fábrica de banheiras\n.",
     "breadcrumbs": [
@@ -3014,6 +3252,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/frete-promocional.html"
     },
+    "d_meta_exibida": {
+      "title": "FRETE PROMOCIONAL",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "Frete:\n*Frete Promocional Gel Coat SP, MG, RJ até 31/08\nFrete:\n*Frete Promocional Acrílico Sul e Sudeste até 31/08",
     "d_descricao_exibida": "Frete:\n*Frete Promocional Gel Coat SP, MG, RJ até 31/08\nFrete:\n*Frete Promocional Acrílico Sul e Sudeste até 31/08",
     "breadcrumbs": [
@@ -3050,6 +3293,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/kids.html"
     },
+    "d_meta_exibida": {
+      "title": "Kids",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3089,6 +3337,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/lancamentos-2026"
     },
+    "d_meta_exibida": {
+      "title": "Lançamentos | BBB",
+      "description": "Lançamentos | BBB"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3133,6 +3386,28 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuro-com-hidro.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurô com hidro",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "afirmacao_inmetro_em_meta",
+        "termos": [
+          "INMETRO"
+        ]
+      }
+    ],
     "descricao_texto": "Os\nOfurôs com hidro\nrepresentam a mistura ideal entre tecnologia e tradição.\nIsso porque, apesar de ser uma prática milenar o banho com f foi otimizado com\na invenção dos jatos de\nhidromassagem\na partir dos anos 50.\nAtualmente, as\nbanheiras de ofurôs\nttêm acabamentos sofisticados e podem ser\ninstaladas em banheiros de todos os tamanhos e em áreas externas. Navegue por nosso site e confira todas as opções de\nbanheiras ofurôs\nque você\nencontrará em nosso site.",
     "d_descricao_exibida": "Os\nOfurôs com hidro\nrepresentam a mistura ideal entre tecnologia e tradição.\nIsso porque, apesar de ser uma prática milenar o banho com f foi otimizado com\na invenção dos jatos de\nhidromassagem\na partir dos anos 50.\nAtualmente, as\nbanheiras de ofurôs\nttêm acabamentos sofisticados e podem ser\ninstaladas em banheiros de todos os tamanhos e em áreas externas. Navegue por nosso site e confira todas as opções de\nbanheiras ofurôs\nque você\nencontrará em nosso site.",
     "breadcrumbs": [
@@ -3177,6 +3452,29 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuro-de-madeira.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurô de Madeira",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "a única",
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "Os\nofurôs de madeira\nsão peças versáteis e podem ser instaladas em diferentes\nlocais de uma casa, seja em banheiros ou em espaços externos destinados ao lazer, essa versão de\nbanheira\né pura sofisticação. Navegue em nosso site e faça seu pedido com a Banheiras Bom Banho. Entregamos em todo o Brasil.",
     "d_descricao_exibida": "Os\nofurôs de madeira\nsão peças versáteis e podem ser instaladas em diferentes\nlocais de uma casa, seja em banheiros ou em espaços externos destinados ao lazer, essa versão de\nbanheira\né pura sofisticação. Navegue em nosso site e faça seu pedido com a Banheiras Bom Banho. Entregamos em todo o Brasil.",
     "breadcrumbs": [
@@ -3221,6 +3519,28 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuro-externo.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurô Externo",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "afirmacao_inmetro_em_meta",
+        "termos": [
+          "INMETRO"
+        ]
+      }
+    ],
     "descricao_texto": "Instalados com maior frequência em banheiros e áreas internas, os\nofurôs\ntambém\npodem compor ambientes externos de casa, criando espaços de lazer sofisticados e revigorantes. A Banheiras Bom Banho tem diversas opções de banheiras de\nofurô\nConfira.",
     "d_descricao_exibida": "Instalados com maior frequência em banheiros e áreas internas, os\nofurôs\ntambém\npodem compor ambientes externos de casa, criando espaços de lazer sofisticados e revigorantes. A Banheiras Bom Banho tem diversas opções de banheiras de\nofurô\nConfira.",
     "breadcrumbs": [
@@ -3265,6 +3585,28 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuro-externo/ofuro-com-hidro.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurô com hidro - Ofurô Externo",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "afirmacao_inmetro_em_meta",
+        "termos": [
+          "INMETRO"
+        ]
+      }
+    ],
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3310,8 +3652,30 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuro-preco.html"
     },
+    "d_meta_exibida": {
+      "title": "Preço Ofurô | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior"
+        ]
+      }
+    ],
     "descricao_texto": "O melhor\npreço de ofurô\n,\nspas\ne\nbanheiras\n, você encontra na Banheiras Bom Banho. Compre direto da fábrica e obtenha equipamentos de durabilidade com condições que cabem no seu bolso.",
-    "d_descricao_exibida": "O melhor\npreço de ofurô\n,\nspas\ne\nbanheiras\n, você encontra na Banheiras Bom Banho. Compre direto da fábrica e obtenha equipamentos de durabilidade com condições que cabem no seu bolso.",
+    "d_descricao_exibida": "Compre direto da fábrica e obtenha equipamentos de durabilidade com condições que cabem no seu bolso.",
     "breadcrumbs": [
       "Início",
       "Ofuro Preço"
@@ -3355,6 +3719,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs - Banheiras Bom Banho",
+      "description": "Procurando Ofurô? Produzidos em Gel Coat e fibra de vibro para maior durabilidade. Todos os produtos em até 10 x/sem juros. Conheça as promoções de ofuros.\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "De origem japonesa e milenar, o banho de\nofurô\nvirou hábito em diversos lugares de mundo e não seria diferente no Brasil. O ofurô com hidro combate o desgaste físico e mental, e o ofurô externo permite um banho revigorante próximo à natureza.\nConfira os modelos de\nofurôs\ndisponíveis na Banheiras Bom Banho:\nNão estamos fabricando Produtos em cor.",
     "d_descricao_exibida": "De origem japonesa e milenar, o banho de\nofurô\nvirou hábito em diversos lugares de mundo e não seria diferente no Brasil. O ofurô com hidro combate o desgaste físico e mental, e o ofurô externo permite um banho revigorante próximo à natureza.\nConfira os modelos de\nofurôs\ndisponíveis na Banheiras Bom Banho:\nNão estamos fabricando Produtos em cor.",
     "breadcrumbs": [
@@ -3394,6 +3763,29 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros/duplos.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs Duplos - Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "a única",
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3439,6 +3831,21 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros/individuais.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs Individuais - Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3486,6 +3893,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros/ofuros-por-tamanhos.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs por Tamanho - Banheiras Bom Banho",
+      "description": "Buscando Ofurô por Tamanho? Temos variedades de tamanhos, cores e acessórios para ofuro. Aproveite ofuros em até 10x. Acesse o site!\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3527,6 +3939,20 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros/ofuros-por-tamanhos/de-1-00-a-1-40.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs por Tamanho de 100 a 140 cm - Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3579,6 +4005,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros/ofuros-por-tamanhos/de-1-41-a-1-60.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs por Tamanho de 141 a 160 cm - Banheiras Bom Banho",
+      "description": "Ofurô por tamanho de 141 a 160 cm, você encontra na BBB! Diversas opções personalizadas! Qualidade aliada a bom preço de ofuros. Conheça nossos ofuros! \n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3631,6 +4062,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros/ofuros-por-tamanhos/ofuros-de-1.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs de 1 - Por Tamanho - Ofurôs",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3672,6 +4108,20 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/ofuros/quadrados.html"
     },
+    "d_meta_exibida": {
+      "title": "Ofurôs Quadrados - Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "melhores"
+        ]
+      }
+    ],
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3717,6 +4167,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/pets.html"
     },
+    "d_meta_exibida": {
+      "title": "Pets",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -3953,8 +4408,31 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/preco-de-banheira.html"
     },
+    "d_meta_exibida": {
+      "title": "Preço de Banheira | Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "a única",
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "O melhor\npreço de banheira\nestá na\nBanheiras Bom Banho\n. Aproveite a excelente qualidade em produtos, condições de pagamento e de entrega e deixe seu banho relaxante.",
-    "d_descricao_exibida": "O melhor\npreço de banheira\nestá na\nBanheiras Bom Banho\n. Aproveite a excelente qualidade em produtos, condições de pagamento e de entrega e deixe seu banho relaxante.",
+    "d_descricao_exibida": "Aproveite a excelente qualidade em produtos, condições de pagamento e de entrega e deixe seu banho relaxante.",
     "breadcrumbs": [
       "Início",
       "Preço de Banheira"
@@ -3989,6 +4467,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/sauna.html"
     },
+    "d_meta_exibida": {
+      "title": "Sauna",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4027,6 +4510,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/sauna/por-tamanho.html"
     },
+    "d_meta_exibida": {
+      "title": "Por Tamanho - Sauna",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4064,6 +4552,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/sauna/por-tamanho/1-20-x-1m-x-2-10.html"
     },
+    "d_meta_exibida": {
+      "title": "Sauna de 1.20 x 1m x 2,10 - Por Tamanho - Sauna",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4102,6 +4595,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/sauna/por-tamanho/sauna-de-1-50-x-1-20-x-2-10.html"
     },
+    "d_meta_exibida": {
+      "title": "Sauna de 1,50 x 1,20 x 2,10 - Por Tamanho - Sauna",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4140,6 +4638,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/sauna/por-tamanho/sauna-de-2-m-x-2-m-x-2-10.html"
     },
+    "d_meta_exibida": {
+      "title": "Sauna de 2 m x 2 m x 2,10 - Por Tamanho - Sauna",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4232,8 +4735,31 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas.html"
     },
+    "d_meta_exibida": {
+      "title": "Banheiras Spas - Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhor + atributo"
+        ]
+      }
+    ],
     "descricao_texto": "Cada tipo de banheiras\nspas\nproporciona uma experiência única de relaxamento e a Banheiras Bom Banho possui diferentes peças para levar até você o que há de melhor no segmento.\nConfira nossos modelos de\nbanheira de spa\n:\nNão estamos fabricando Produtos em cor.",
-    "d_descricao_exibida": "Cada tipo de banheiras\nspas\nproporciona uma experiência única de relaxamento e a Banheiras Bom Banho possui diferentes peças para levar até você o que há de melhor no segmento.\nConfira nossos modelos de\nbanheira de spa\n:\nNão estamos fabricando Produtos em cor.",
+    "d_descricao_exibida": "Confira nossos modelos de\nbanheira de spa\n:\nNão estamos fabricando Produtos em cor.",
     "breadcrumbs": [
       "Início",
       "Spas"
@@ -4283,6 +4809,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/3-a-4-lugares.html"
     },
+    "d_meta_exibida": {
+      "title": "3 a 4 Lugares - Spas",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4347,6 +4878,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/5-a-6-lugares.html"
     },
+    "d_meta_exibida": {
+      "title": "5 a 6 Lugares - Spas",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4390,6 +4926,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/6-a-7-lugares.html"
     },
+    "d_meta_exibida": {
+      "title": "6 a 7 Lugares - Spas",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4444,6 +4985,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/7-a-8-lugares.html"
     },
+    "d_meta_exibida": {
+      "title": "7 a 8 Lugares - Spas",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4491,6 +5037,28 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/de-canto.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas de Canto - Banheiras Bom Banho",
+      "description": null
+    },
+    "d_meta_exibivel": false,
+    "d_meta_cortes": [
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "o melhor / a maior",
+          "melhores"
+        ]
+      },
+      {
+        "campo": "description",
+        "regra": "superlativo_nao_comprovado",
+        "termos": [
+          "única com"
+        ]
+      }
+    ],
     "descricao_texto": "Os\nspas de canto\nsão ideais para ambientes que não possuem grande metragem disponível. São compactos e podem ser utilizados por até 4 pessoas. Confira nossos produtos disponíveis e personalize sua\nbanheira spa\nconforme a suas preferências.",
     "d_descricao_exibida": "Os\nspas de canto\nsão ideais para ambientes que não possuem grande metragem disponível. São compactos e podem ser utilizados por até 4 pessoas. Confira nossos produtos disponíveis e personalize sua\nbanheira spa\nconforme a suas preferências.",
     "breadcrumbs": [
@@ -4549,6 +5117,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/quadrados.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas Quadrados - Banheiras Bom Banho",
+      "description": "Procurando spas quadrados? Temos diversas opções de acessórios e tamanhos, todos feitos em fibra de vidro para maior durabilidade. Acesse e conheça o Spa BBB\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "Compre\nspas quadrados\ncom excelente ergonomia e capacidade para comportar até 7 pessoas confortavelmente. Na\nBanheiras Bom Banho\nvocê compra direto da fábrica no atacado ou varejo e recebe com agilidade em qualquer lugar do país.\nConfira nossas opções disponíveis para compra e aproveite um banho relaxante e revigorante sempre que quiser.",
     "d_descricao_exibida": "Compre\nspas quadrados\ncom excelente ergonomia e capacidade para comportar até 7 pessoas confortavelmente. Na\nBanheiras Bom Banho\nvocê compra direto da fábrica no atacado ou varejo e recebe com agilidade em qualquer lugar do país.\nConfira nossas opções disponíveis para compra e aproveite um banho relaxante e revigorante sempre que quiser.",
     "breadcrumbs": [
@@ -4599,6 +5172,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/redondos.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas Redondos - Banheiras Bom Banho",
+      "description": "Spas Redondos com decks de madeira nobre e vários modelos diferenciados, atendendo todo gosto e ambiente. Spa em fibra de vidro. Confira nossos preços!\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "Os banhos de\nspas\nsão considerados terapêuticos uma vez que promovem o relaxamento e renovação das energias. A Banheiras Bom Banho trabalha com\nbanheiras spas\nde diferentes formatos e funcionalidades. Confira mais sobre nossos\nspas redondos\n.",
     "d_descricao_exibida": "A Banheiras Bom Banho trabalha com\nbanheiras spas\nde diferentes formatos e funcionalidades. Confira mais sobre nossos\nspas redondos\n.",
     "breadcrumbs": [
@@ -4648,6 +5226,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/retangulares.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas Retangulares - Banheiras Bom Banho",
+      "description": "Spas Retangulares com mini jatos, feito em acrílico ou gel coat e produzidos em fibra de vidro e apoio de cabeça. Design sofisticado e spa em 10x. Acesse já\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": "Confira as opções de\nspas retangulares\nda\nBanheiras Bom Banho\ne realize o sonho de ter à disposição um banho por imersão sempre que precisar. Confira mais sobre os benefícios de spas retangulares.",
     "d_descricao_exibida": "Confira as opções de\nspas retangulares\nda\nBanheiras Bom Banho\ne realize o sonho de ter à disposição um banho por imersão sempre que precisar.",
     "breadcrumbs": [
@@ -4739,6 +5322,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/spas-por-tamanhos.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas por Tamanhos - Banheiras Bom Banho",
+      "description": "Spas diversos com várias opções, inclusive de sair instalado com deck de madeira! Todos produzidos em fibra de vidro. Acesse e confira nossos produtos e preços!"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4777,6 +5365,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/spas-por-tamanhos/de-1-50-a-1-60.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas por tamanho de 150 a 160 cm - Banheiras Bom Banho",
+      "description": "Buscando por spas por tamanho 150 a 160 cm? Esse e outros tamanhos de spa na BBB!  Temos a opção com deck de madeira! Todos os produtos em até 10x sem juros!\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4836,6 +5429,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/spas-por-tamanhos/de-161-a-181.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas por tamanho de 161 a 181 cm - Banheiras Bom Banho",
+      "description": "Spas por tamanho de 161 a 181 cm  outras opções, só na BBB! Diversas opções personalizáveis para spa.Todos os produtos em até 10x s/juros! Conheça nosso site\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4907,6 +5505,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/spas-por-tamanhos/de-181-a-200.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas por tamanho de 181 a 200 cm - Banheiras Bom Banho",
+      "description": "Precisando de Spas por tamanho de 181 a 200 cm? Na BBB temos diversos tamanhos e acessórios personalizáveis! Acesse nosso site e adquira seu spa agora mesmo. \n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -4991,6 +5594,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/spas-por-tamanhos/de-201-a-265.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas por tamanho de 201 a 265 cm - Banheiras Bom Banho",
+      "description": "Spas por tamanho de 201 a 265 cm de acrílico ou gel coat compostos por fibra de vidro e com acessórios personalizáveis. Entre no site e escolha seu spa.\n"
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -5073,6 +5681,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/spas-por-tamanhos/spas-de-1.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas de 1 - Por Tamanho - Spas",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [
@@ -5140,6 +5753,11 @@
       "og:url": null,
       "canonical": "https://www.banheirasbombanho.com.br/spas/spas-por-tamanhos/spas-de-2.html"
     },
+    "d_meta_exibida": {
+      "title": "Spas de 2 - Por Tamanho - Spas",
+      "description": null
+    },
+    "d_meta_exibivel": true,
     "descricao_texto": null,
     "d_descricao_exibida": null,
     "breadcrumbs": [

@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { paths } from '../site.config.mjs';
-import { filtrarFrasesSaude, filtrarFrasesSaudeMultilinha, termosSaude, termosSaudeBrutos, termosSaudeSpec, EXCECOES_NAO_SAUDE, TERMOS_SAUDE_IMPLICITA, TERMOS_PROIBIDOS_LITERAIS, slugify, semAcento } from './lib/texto.mjs';
+import { filtrarFrasesEditorial, filtrarFrasesEditorialMultilinha, detectoresEditoriais, violacaoEditorial, termosSaude, termosSaudeBrutos, termosSaudeSpec, EXCECOES_NAO_SAUDE, TERMOS_SAUDE_IMPLICITA, slugify, semAcento } from './lib/texto.mjs';
 
 // Qual lista pegou o trecho: a fechada da SPEC 0.5 ou a ampliada por decisão do dono (texto.mjs).
 const listaSaude = (termos) => (termosSaudeSpec(termos.join(' ')).length ? 'spec_0.5' : 'ampliada_dono');
@@ -38,6 +38,28 @@ const DATA_COLETA = new Intl.DateTimeFormat('pt-BR', {
 
 const editorialLog = [];
 const avisos = [];
+
+// Detectores editoriais únicos para todo texto exibível (SPEC 0.5 e 15): saúde (lista da SPEC e
+// lista ampliada), superlativo não comprovado, ISO 9001 sem número, autodeclarações da empresa
+// (institucional.json:empresa.claims_autodeclarados) e termos proibidos literais.
+const CLAIMS = inst.empresa.claims_autodeclarados.map((c) => c.literal);
+const DETECTORES = detectoresEditoriais({ claims: CLAIMS });
+// Números da empresa só aparecem pelo campo numeros_declarados, com "segundo a empresa".
+const reNumeroEmpresa = /(?<![\p{L}\p{N}])(?:mais de|\+ ?de|\+)\s*[\d.]+\s*(?:\+\s*)?(?:anos|modelos|cores|colaboradores|representantes|mil|m2|banheiras)/u;
+const DETECTOR_NUMERO_EMPRESA = {
+  regra: 'numero_da_empresa_sem_segundo_a_empresa',
+  fn: (f) => {
+    const m = semAcento(f).toLowerCase().replace(/\s+/g, ' ').match(reNumeroEmpresa);
+    return m ? [m[0]] : [];
+  },
+};
+const DETECTOR_GARANTIA = {
+  regra: 'garantia',
+  fn: (f) => (/garantia/i.test(f) ? ['garantia'] : []),
+};
+const DETECTORES_INSTITUCIONAL = [...DETECTORES, DETECTOR_GARANTIA, DETECTOR_NUMERO_EMPRESA];
+// Entrada de log com a regra que pegou a frase (e a lista, quando é saúde).
+const comRegra = (base, v) => ({ ...base, regra: v.regra, termos: v.termos, ...(v.regra === 'termo_de_saude' ? { lista: listaSaude(v.termos) } : {}) });
 
 function gravar(nome, obj) {
   writeFileSync(join(D, nome), `${JSON.stringify(obj, null, 2)}\n`);
@@ -145,13 +167,19 @@ function tamanhosDoProduto(p, tipo, medidaConfirmada) {
         rotulo: v.rotulo_exibido,
         a: parsed.a,
         b: parsed.b,
-        c: parsed.c,
+        // Rótulo fora do formato "a x b x c": a profundidade não é lida (seria escolher uma leitura
+        // do separador ou do espaço); a da ficha fica ao lado quando existir.
+        c: parsed.formato_irregular ? null : parsed.c,
         value_id: v.value_id,
         preco_adicional: v.preco_adicional,
         origem: 'opcao',
       };
-      if (parsed.formato_irregular) t.formato_irregular = true;
-      if (parsed.leituras.length) {
+      if (parsed.formato_irregular) {
+        t.formato_irregular = true;
+        if (p.especificacoes.Profundidade != null) t.profundidade_ficha = p.especificacoes.Profundidade;
+        editorialLog.push({ slug: p.slug, campo: 'd_tamanhos[].c', regra: 'profundidade_nao_lida_formato_irregular', rotulo: v.rotulo_exibido, ...(parsed.c != null ? { leitura_descartada: parsed.c } : {}), profundidade_ficha: p.especificacoes.Profundidade ?? null });
+      }
+      if (parsed.leituras.length && !parsed.formato_irregular) {
         t.leituras = parsed.leituras;
         for (const l of parsed.leituras) {
           editorialLog.push({ slug: p.slug, campo: 'd_tamanhos[].c', regra: l.regra, rotulo: v.rotulo_exibido, token: l.token, lido: l.lido });
@@ -334,6 +362,29 @@ function resumo(p, tipo, tamanhos, itensExibidos, conflitos, medidaConfirmada) {
   return partes.join(' ');
 }
 
+// Meta title e description atuais (SPEC 11.1) passam pelos mesmos detectores do texto exibido, mais
+// a afirmação de INMETRO (o selo é de um certificado, não de toda a linha; "a única com selo" etc.).
+// Campo com qualquer corte fica null em d_meta_exibida: o render gera o texto a partir dos campos
+// reais, pelo mesmo caminho das coleções sem description. O literal continua em `meta`.
+const DETECTORES_META = [...DETECTORES, { regra: 'afirmacao_inmetro_em_meta', fn: (f) => (/inmetro/i.test(f) ? ['INMETRO'] : []) }];
+function metaExibida(meta, base) {
+  const saida = { title: meta?.title ?? null, description: meta?.description ?? null };
+  const cortes = [];
+  for (const campo of ['title', 'description']) {
+    const valor = saida[campo];
+    if (valor == null || !String(valor).trim()) { saida[campo] = null; continue; }
+    const r = filtrarFrasesEditorialMultilinha(valor, DETECTORES_META);
+    if (r.removidos.length) {
+      for (const x of r.removidos) {
+        cortes.push({ campo, regra: x.regra, termos: x.termos });
+        editorialLog.push(comRegra({ ...base, campo: `meta.${campo}`, removido: x.frase, decisao: 'campo inteiro fora; texto gerado de campos reais no lugar' }, x));
+      }
+      saida[campo] = null;
+    }
+  }
+  return { d_meta_exibida: saida, d_meta_exibivel: cortes.length === 0, ...(cortes.length ? { d_meta_cortes: cortes } : {}) };
+}
+
 function filtroEditorialProduto(p) {
   const itens = [];
   for (const item of p.itens_de_serie) {
@@ -341,9 +392,9 @@ function filtroEditorialProduto(p) {
       editorialLog.push({ slug: p.slug, campo: 'itens_de_serie', regra: 'anotacao_interna_VERIFICAR', removido: item });
       continue;
     }
-    const t = termosSaude(item);
-    if (t.length) {
-      editorialLog.push({ slug: p.slug, campo: 'itens_de_serie', regra: 'termo_de_saude', termos: t, lista: listaSaude(t), removido: item });
+    const v = violacaoEditorial(item, DETECTORES);
+    if (v) {
+      editorialLog.push(comRegra({ slug: p.slug, campo: 'itens_de_serie', removido: item }, v));
       continue;
     }
     itens.push(item);
@@ -364,9 +415,9 @@ function filtroEditorialProduto(p) {
     }
     longaOk.push(linha);
   }
-  const desc = filtrarFrasesSaude(p.descricao_texto == null ? null : longaOk.join('\n'));
+  const desc = filtrarFrasesEditorial(p.descricao_texto == null ? null : longaOk.join('\n'), DETECTORES);
   for (const r of desc.removidos) {
-    editorialLog.push({ slug: p.slug, campo: 'descricao_texto', regra: 'termo_de_saude', termos: r.termos, lista: listaSaude(r.termos), removido: r.frase });
+    editorialLog.push(comRegra({ slug: p.slug, campo: 'descricao_texto', removido: r.frase }, r));
   }
   // Título de uma palavra (ex.: "Função") cujo conteúdo saiu inteiro pelo filtro de saúde: sai
   // junto, para não ficar um título solto antes do separador ">" ou do próximo título.
@@ -382,7 +433,7 @@ function filtroEditorialProduto(p) {
       const iOrig = orig.findIndex((x) => x.trim() === l);
       const tinhaConteudo = iOrig >= 0 && orig[iOrig + 1] != null && orig[iOrig + 1].trim() !== prox;
       if (ehTitulo && proxFecha && tinhaConteudo) {
-        editorialLog.push({ slug: p.slug, campo: 'descricao_texto', regra: 'titulo_sem_conteudo_apos_saude', removido: linhas[i] });
+        editorialLog.push({ slug: p.slug, campo: 'descricao_texto', regra: 'titulo_sem_conteudo_apos_corte', removido: linhas[i] });
         continue;
       }
       ficam.push(linhas[i]);
@@ -400,9 +451,9 @@ function filtroEditorialProduto(p) {
     }
     return true;
   });
-  const curta = filtrarFrasesSaude(curtaLinhas.join('\n'));
+  const curta = filtrarFrasesEditorial(curtaLinhas.join('\n'), DETECTORES);
   for (const r of curta.removidos) {
-    editorialLog.push({ slug: p.slug, campo: 'descricao_curta_texto', regra: 'termo_de_saude', termos: r.termos, lista: listaSaude(r.termos), removido: r.frase });
+    editorialLog.push(comRegra({ slug: p.slug, campo: 'descricao_curta_texto', removido: r.frase }, r));
   }
   return { itens, descricao: desc.texto, curta: curta.texto };
 }
@@ -443,7 +494,9 @@ for (const p of catalog.products) {
   if (conflito) {
     out.d_tipo_conflito = conflito;
     out.d_tipo_pendente = `Listado nas coleções raiz ${conflito.join(' e ')}; d_tipo = ${tipo} pelo início do nome literal. Confirmar com a empresa. As coleções continuam listando o produto na ordem literal.`;
+    out.d_tipo_contagem = 'Contagem das portas de tipo usa categorias.json[raiz].total_exibido, não a contagem por d_tipo (este produto conta nas duas coleções raiz).';
     avisos.push(`${p.slug}: listado em duas coleções raiz (${conflito.join(', ')}); d_tipo = ${tipo} pelo nome literal`);
+    editorialLog.push({ slug: p.slug, campo: 'd_tipo', regra: 'conflito_da_fonte', versoes: conflito.map((t) => ({ texto: t, fonte: `${t === 'ofuro' ? 'ofuros' : t === 'spa' ? 'spas' : t}.html (coleção raiz que lista o produto)` })), decisao: `d_tipo = ${tipo} só para rotular o produto, pelo início do nome literal; a contagem por tipo usa total_exibido das coleções raiz; confirmar com a empresa` });
   }
   out.d_tamanhos = tamanhos;
   out.d_medida_confirmada = !alertaMedida;
@@ -471,6 +524,7 @@ for (const p of catalog.products) {
   out.d_descricao_exibida = ed.descricao;
   out.d_descricao_curta_exibida = ed.curta;
   out.d_resumo = resumo(p, tipo, tamanhos, ed.itens, out.d_conflito_nome_ficha, !alertaMedida);
+  Object.assign(out, metaExibida(p.meta, { slug: p.slug }));
   out.d_sem_foto = out.galeria.length === 0;
   out.d_versao_sufixo_1 = /-1$/.test(p.slug);
   out.d_categorias_paths = p.categorias.map((c) => pathDoSite(c.url));
@@ -681,9 +735,9 @@ function atendeFiltro(f, s) {
 }
 
 function descricaoCategoriaExibida(c, path) {
-  const r = filtrarFrasesSaudeMultilinha(c.descricao_texto ?? null);
+  const r = filtrarFrasesEditorialMultilinha(c.descricao_texto ?? null, DETECTORES);
   for (const x of r.removidos) {
-    editorialLog.push({ categoria: path, campo: 'descricao_texto', regra: 'termo_de_saude', termos: x.termos, lista: listaSaude(x.termos), removido: x.frase });
+    editorialLog.push(comRegra({ categoria: path, campo: 'descricao_texto', removido: x.frase }, x));
   }
   return r.texto;
 }
@@ -706,6 +760,7 @@ const categorias = catalog.categories.map((c) => {
     total_exibido: c.total_exibido,
     produtos: slugs,
     meta: c.meta,
+    ...metaExibida(c.meta, { categoria: path }),
     descricao_texto: c.descricao_texto,
     // O que vai ao HTML: descricao_texto sem as frases com termo de saúde (SPEC 0.5; log editorial).
     d_descricao_exibida: descricaoCategoriaExibida(c, path),
@@ -909,26 +964,32 @@ if (!empresa.inmetro.certificado) throw new Error('empresa: número do certifica
 }
 
 // Textos integrais das páginas institucionais: o literal fica no dado; o que pode ir ao HTML fica em
-// texto_exibido, sem as frases com afirmação de saúde (lista da SPEC e lista ampliada) e sem as
-// frases com termo proibido literal ("a maior loja"), com registro no editorial-log.
-for (const [chave, t] of Object.entries(empresa.textos_integrais)) {
-  if (!t || typeof t.texto !== 'string') continue;
-  const r = filtrarFrasesSaudeMultilinha(t.texto);
-  for (const x of r.removidos) {
-    editorialLog.push({ empresa: `textos_integrais.${chave}`, campo: 'texto', regra: 'termo_de_saude', termos: x.termos, lista: listaSaude(x.termos), removido: x.frase });
-  }
-  const partes = String(r.texto).split(/(?<=[.!?])(\s+)(?=\S)/u);
-  let out = '';
-  for (let i = 0; i < partes.length; i += 2) {
-    const frase = partes[i];
-    const lit = TERMOS_PROIBIDOS_LITERAIS.filter((p) => frase.toLowerCase().includes(p.toLowerCase()));
-    if (lit.length) {
-      editorialLog.push({ empresa: `textos_integrais.${chave}`, campo: 'texto', regra: 'termo_proibido_literal', termos: lit, removido: frase });
+// texto_exibido. Saem, frase inteira e com registro no editorial-log: afirmação de saúde, superlativo
+// não comprovado, ISO 9001, autodeclaração da lista claims_nao_publicar, termo proibido literal,
+// garantia (SPEC 15) e número da empresa fora do campo numeros_declarados ("segundo a empresa").
+// Antes, os pares de linha de número do "Sobre nós" ("+ DE 80" / "COLABORADORES DIRETOS") saem juntos.
+const reLinhaNumero = /^\s*(?:\+\s*(?:de\s+)?[\d.]+|[\d.]+\s*\+)\s*$/i;
+function semLinhasDeNumero(texto, chave) {
+  const linhas = String(texto).split('\n');
+  const ficam = [];
+  for (let i = 0; i < linhas.length; i++) {
+    if (reLinhaNumero.test(linhas[i]) && linhas[i + 1] != null) {
+      const removido = `${linhas[i]}\n${linhas[i + 1]}`;
+      editorialLog.push({ empresa: `textos_integrais.${chave}`, campo: 'texto', regra: 'numero_da_empresa_sem_segundo_a_empresa', termos: [linhas[i].trim()], removido, decisao: 'o número aparece só por empresa.numeros_declarados, com "segundo a empresa"' });
+      i++;
       continue;
     }
-    out += frase + (partes[i + 1] ?? '');
+    ficam.push(linhas[i]);
   }
-  empresa.textos_integrais[chave] = { ...t, texto_exibido: out.replace(/\s+$/u, '') };
+  return ficam.join('\n');
+}
+for (const [chave, t] of Object.entries(empresa.textos_integrais)) {
+  if (!t || typeof t.texto !== 'string') continue;
+  const r = filtrarFrasesEditorialMultilinha(semLinhasDeNumero(t.texto, chave), DETECTORES_INSTITUCIONAL);
+  for (const x of r.removidos) {
+    editorialLog.push(comRegra({ empresa: `textos_integrais.${chave}`, campo: 'texto', removido: x.frase }, x));
+  }
+  empresa.textos_integrais[chave] = { ...t, texto_exibido: r.texto.replace(/^\s+/u, '') };
 }
 
 // ---------------------------------------------------------------------------
@@ -963,20 +1024,24 @@ const faq = faqSrc.faq.map((x, i) => {
   };
   if (x.obs) item.obs_fonte = x.obs;
   if (x.link_manual) item.link_manual = x.link_manual;
-  if (termos.length) {
-    item.termos_sensiveis = termos;
-    // Resposta exibível: sem as frases com afirmação de saúde (frase inteira, com registro). Se a
-    // pergunta tiver o termo ou nada sobrar da resposta, o item não é exibido.
-    const r = filtrarFrasesSaude(x.resposta_literal);
-    for (const f of r.removidos) {
-      editorialLog.push({ faq: item.id, campo: 'resposta', regra: 'termo_de_saude', termos: f.termos, lista: listaSaude(f.termos), removido: f.frase });
-    }
-    item.resposta_exibida = r.texto;
-    const naPergunta = termosSaude(x.pergunta);
-    if (naPergunta.length || !String(r.texto ?? '').trim()) {
-      item.exibir = false;
-      editorialLog.push({ faq: item.id, campo: 'item', regra: 'termo_de_saude', termos, lista: listaSaude(termos), removido: x.pergunta, decisao: naPergunta.length ? 'pergunta com afirmação de saúde: item fora da exibição' : 'nada sobra da resposta sem as frases de saúde: item fora da exibição' });
-    }
+  if (termos.length) item.termos_sensiveis = termos;
+  // Resposta exibível em todos os itens (igual ao literal quando nada sai): sem as frases que violam
+  // as regras editoriais (frase inteira, com registro). Pergunta com violação, resposta vazia ou item
+  // de garantia oculto até a decisão: exibir=false.
+  const r = filtrarFrasesEditorial(x.resposta_literal, DETECTORES);
+  for (const f of r.removidos) {
+    editorialLog.push(comRegra({ faq: item.id, campo: 'resposta', removido: f.frase }, f));
+  }
+  item.resposta_exibida = r.texto;
+  const naPergunta = violacaoEditorial(x.pergunta, DETECTORES);
+  const vazia = !String(r.texto ?? '').trim();
+  item.exibir = !(naPergunta || vazia || garantia);
+  if (naPergunta || vazia) {
+    const v = naPergunta ?? r.removidos[0];
+    item.motivo_nao_exibir = naPergunta ? 'pergunta com trecho fora das regras editoriais' : 'nada sobra da resposta depois do filtro editorial';
+    editorialLog.push(comRegra({ faq: item.id, campo: 'item', removido: x.pergunta, decisao: `${item.motivo_nao_exibir}: item fora da exibição` }, v));
+  } else if (garantia) {
+    item.motivo_nao_exibir = 'garantia: oculto até a decisão da empresa (SPEC 15)';
   }
   // Palavra da lista usada fora de sentido de saúde (ICMS, tratamento da água): publica literal,
   // com a decisão registrada no próprio item (exceções fixas em build/lib/texto.mjs).
@@ -1036,10 +1101,21 @@ function filtrarManual(paginas) {
       }
       ficam.push(linha);
     });
-    pg.texto_exibido = ficam.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    // Segunda passada por frase (a frase do manual atravessa linhas): superlativo, autodeclaração,
+    // ISO 9001 e número da empresa saem inteiros, com o mesmo registro. O número da página fica.
+    let texto = ficam.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    const mPag = texto.match(/^(\d+)(\n+)/);
+    const cabeca = mPag ? mPag[0] : '';
+    const corpo = filtrarFrasesEditorialMultilinha(texto.slice(cabeca.length), [...DETECTORES, DETECTOR_NUMERO_EMPRESA]);
+    for (const x of corpo.removidos) {
+      ocultos.push({ motivo: x.regra, texto: x.frase });
+      editorialLog.push(comRegra({ manual_pagina: pg.pagina, campo: 'politicas.manual.paginas[].texto', removido: x.frase }, x));
+    }
+    texto = (cabeca + corpo.texto).replace(/\n{3,}/g, '\n\n').trim();
+    pg.texto_exibido = texto;
     pg.trechos_ocultos = ocultos;
     // Página que fica só com o número (só imagem no PDF, ou tudo oculto): nenhum texto no HTML.
-    const conteudo = ficam.filter((l) => l.trim() && !/^\d+$/.test(l.trim()));
+    const conteudo = texto.split('\n').filter((l) => l.trim() && !/^\d+$/.test(l.trim()));
     pg.sem_texto_exibido = conteudo.length === 0;
     if (ocultos.some((o) => o.motivo === 'garantia')) {
       if (pg.sem_texto_exibido) pg.oculto_ate_decisao = true;
@@ -1136,13 +1212,29 @@ const resumoPost = (p) => ({
   // Título ou resumo do post com afirmação de saúde (lista da SPEC 0.5 e lista ampliada por decisão
   // do dono): o post não é exibido (exibir=false). Os demais só são exibidos depois da revisão
   // manual do índice (revisao_manual_pendente no topo do arquivo).
-  ...(termosSaude(`${p.title}\n${p.seo_description || ''}`).length
-    ? { termos_sensiveis: termosSaude(`${p.title}\n${p.seo_description || ''}`), exibir: false }
-    : { exibir: true }),
+  // As mesmas regras editoriais do resto do site valem para título e resumo (superlativo, autodeclaração).
+  ...((v) => (v
+    ? { ...(v.regra === 'termo_de_saude' ? { termos_sensiveis: v.termos } : {}), regra_nao_exibir: v.regra, exibir: false }
+    : { exibir: true }))(violacaoPost(p)),
 });
+// No blog, título e resumo são perguntas e conselhos de escolha ("qual a melhor opção?", "escolha
+// a melhor banheira"): o superlativo só conta quando a frase fala da própria empresa ("na BBB você
+// garante os melhores modelos"). As demais regras valem iguais.
+const reFalaDaEmpresa = /(?<![\p{L}\p{N}])(?:bbb|banheiras bom banho|nosso|nossa|nossos|nossas|somos|conosco|garante)(?![\p{L}\p{N}])/u;
+const DETECTORES_BLOG = DETECTORES.map((d) => (d.regra !== 'superlativo_nao_comprovado' ? d : {
+  ...d,
+  fn: (f) => (reFalaDaEmpresa.test(semAcento(f).toLowerCase()) ? d.fn(f) : []),
+}));
+function violacaoPost(p) {
+  for (const t of [p.title, p.seo_description || '']) {
+    const v = filtrarFrasesEditorialMultilinha(t, DETECTORES_BLOG).removidos[0] ?? null;
+    if (v) return { regra: v.regra, termos: v.termos };
+  }
+  return null;
+}
 for (const p of posts) {
-  const t = termosSaude(`${p.title}\n${p.seo_description || ''}`);
-  if (t.length) editorialLog.push({ blog_post: p.id, campo: 'titulo/resumo', regra: 'termo_de_saude', termos: t, lista: listaSaude(t), removido: p.title });
+  const v = violacaoPost(p);
+  if (v) editorialLog.push(comRegra({ blog_post: p.id, campo: 'titulo/resumo', removido: p.title }, v));
 }
 const porCategoria = {};
 for (const p of posts) for (const c of p.categories || []) (porCategoria[c] ||= []).push(resumoPost(p));
@@ -1200,7 +1292,11 @@ const exibidos = {
     pagamento: { data: 'politicas.json:pagamento.literal', origem: 'institucional.json:comercial.formas_pagamento.literal' },
     'categoria-descricao': { data: 'categorias.json[].d_descricao_exibida', origem: 'catalog.json:categories[].descricao_texto', obs: 'menos o filtro editorial de data/editorial-log.json' },
     'manual-texto': { data: 'politicas.json:manual.paginas[].texto_exibido', origem: '_recon/html/pdf/manual-do-usuario.txt', obs: 'menos garantia e afirmações de saúde (editorial-log)' },
-    'faq-resposta': { data: 'faq.json[].resposta', origem: 'faq-source.json:faq[].resposta_literal' },
+    'faq-resposta': { data: 'faq.json[].resposta_exibida', origem: 'faq-source.json:faq[].resposta_literal', obs: 'presente nos 46 itens; exibir só quando exibir=true; resposta (literal) nunca vai ao HTML direto' },
+    'empresa-texto': { data: 'empresa.json:textos_integrais.<chave>.texto_exibido', origem: 'institucional.json:empresa.textos_integrais.<chave>.texto', obs: 'menos o filtro editorial (saúde, superlativo, autodeclaração, garantia, número da empresa)' },
+    'meta-title': { data: 'produtos.json[]|categorias.json[].d_meta_exibida.title', origem: 'catalog.json:products[]|categories[].meta.title', obs: 'null = gerar de campos reais (SPEC 11.1); nunca usar meta.title cru' },
+    'meta-description': { data: 'produtos.json[]|categorias.json[].d_meta_exibida.description', origem: 'catalog.json:products[]|categories[].meta.description', obs: 'null = gerar de campos reais (SPEC 11.1); nunca usar meta.description nem og:description cru' },
+    'contagem-por-tipo': { data: 'categorias.json[d_path=banheiras.html|spas.html|ofuros.html|sauna.html|acessorios.html].total_exibido', origem: 'catalog.json:categories[].total_exibido', obs: 'não contar produtos por d_tipo: o Spa Serena é listado em ofuros.html e em spas.html (conflito da fonte, d_tipo_conflito)' },
     'data-coleta': { data: 'meta.json:data_coleta', origem: 'catalog.json:generated_at_source.coletado_em' },
   },
 };
@@ -1245,15 +1341,22 @@ gravar('editorial-log.json', {
   regras: {
     termo_de_saude: 'frase inteira com palavra da lista da SPEC 0.5 (lista "spec_0.5") ou da lista ampliada de afirmação de saúde implícita (lista "ampliada_dono") sai do texto exibido; o literal fica no dado',
     lista_ampliada_dono: { decisao: 'decisão do dono do projeto (18/10/2026): sem claims de saúde, inclusive implícitos (insônia, dor, muscular, estresse, alívio, terapia, alergia, pele, bactérias, benefícios etc.)', termos: TERMOS_SAUDE_IMPLICITA },
-    blog: 'post com termo de saúde no título ou resumo: exibir=false; o índice por categoria fica fora da exibição até revisão manual (revisao_manual_pendente em blog-recentes.json)',
-    faq: 'resposta_exibida sem as frases de saúde; pergunta com termo ou resposta vazia: exibir=false',
-    termo_proibido_literal: 'frase com termo proibido literal ("a maior loja" etc.) sai do texto_exibido dos textos institucionais',
+    blog: 'post com frase fora das regras editoriais no título ou resumo (saúde, autodeclaração, ISO, termo literal; superlativo só quando a frase fala da própria empresa): exibir=false; o índice por categoria fica fora da exibição até revisão manual (revisao_manual_pendente em blog-recentes.json)',
+    faq: 'resposta_exibida e exibir em todos os itens; resposta_exibida sem as frases que violam as regras editoriais; pergunta com violação, resposta vazia ou garantia: exibir=false',
+    termo_proibido_literal: 'frase com termo proibido literal ("a maior loja" etc.) sai de todo texto exibido',
+    superlativo_nao_comprovado: 'frase com superlativo ou ranking sem prova ("o melhor", "os melhores", "a maior", "a única com", "líder", "referência", "mais vendidos/desejados", "sem dúvida") sai inteira de todo texto exibido (SPEC 0.5); o comparativo sem artigo ("maior durabilidade") fica',
+    certificacao_nao_confirmada: 'frase com ISO 9001 sai de todo texto exibido até a empresa enviar número e certificadora (SPEC 15)',
+    autodeclaracao_nao_publicar: 'frase que reproduz uma frase de empresa.claims_nao_publicar sai de todo texto exibido',
+    numero_da_empresa_sem_segundo_a_empresa: 'número da empresa (anos, modelos, cores, colaboradores, m2, vendidos) sai dos textos; aparece só por empresa.numeros_declarados com "segundo a empresa"',
+    afirmacao_inmetro_em_meta: 'meta title/description com afirmação de INMETRO ou qualquer outra regra editorial: campo inteiro fora de d_meta_exibida (null = gerar de campos reais)',
+    titulo_sem_conteudo_apos_corte: 'título de uma palavra cujo conteúdo saiu inteiro pelo filtro editorial sai junto',
+    profundidade_nao_lida_formato_irregular: 'rótulo de tamanho fora do formato "a x b x c": d_tamanhos[].c = null (nenhuma leitura escolhida); a profundidade da ficha fica ao lado em profundidade_ficha',
     conflito_da_fonte: 'duas versões do mesmo dado na fonte: ambas registradas, nenhuma escolhida (SPEC 0.3)',
     excecoes_nao_saude: EXCECOES_NAO_SAUDE.map((e) => ({ expressao: e.re.source, motivo: e.motivo })),
     anotacao_interna_VERIFICAR: 'item ou linha com "(VERIFICAR)" sai até a empresa confirmar',
     garantia: 'capítulos de garantia do manual e linhas do índice que apontam para eles ficam ocultos até a decisão (SPEC 15)',
     afirmacao_de_saude: 'capítulo "Benefícios da cromoterapia" do manual sai inteiro',
-    espaco_apos_virgula_decimal_ignorado: 'medida "0, 84" é lida como 0,84 porque a vírgula decimal está escrita; token sem vírgula ("051", "89") fica null (não se adivinha)',
+    espaco_apos_virgula_decimal_ignorado: 'só em rótulo de formato regular: medida "0, 84" seria lida como 0,84; rótulo irregular não tem profundidade lida (profundidade_nao_lida_formato_irregular)',
   },
   total: editorialLog.length,
   itens: editorialLog,

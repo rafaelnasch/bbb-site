@@ -142,8 +142,29 @@
       "obs": "menos garantia e afirmações de saúde (editorial-log)"
     },
     "faq-resposta": {
-      "data": "faq.json[].resposta",
-      "origem": "faq-source.json:faq[].resposta_literal"
+      "data": "faq.json[].resposta_exibida",
+      "origem": "faq-source.json:faq[].resposta_literal",
+      "obs": "presente nos 46 itens; exibir só quando exibir=true; resposta (literal) nunca vai ao HTML direto"
+    },
+    "empresa-texto": {
+      "data": "empresa.json:textos_integrais.<chave>.texto_exibido",
+      "origem": "institucional.json:empresa.textos_integrais.<chave>.texto",
+      "obs": "menos o filtro editorial (saúde, superlativo, autodeclaração, garantia, número da empresa)"
+    },
+    "meta-title": {
+      "data": "produtos.json[]|categorias.json[].d_meta_exibida.title",
+      "origem": "catalog.json:products[]|categories[].meta.title",
+      "obs": "null = gerar de campos reais (SPEC 11.1); nunca usar meta.title cru"
+    },
+    "meta-description": {
+      "data": "produtos.json[]|categorias.json[].d_meta_exibida.description",
+      "origem": "catalog.json:products[]|categories[].meta.description",
+      "obs": "null = gerar de campos reais (SPEC 11.1); nunca usar meta.description nem og:description cru"
+    },
+    "contagem-por-tipo": {
+      "data": "categorias.json[d_path=banheiras.html|spas.html|ofuros.html|sauna.html|acessorios.html].total_exibido",
+      "origem": "catalog.json:categories[].total_exibido",
+      "obs": "não contar produtos por d_tipo: o Spa Serena é listado em ofuros.html e em spas.html (conflito da fonte, d_tipo_conflito)"
     },
     "data-coleta": {
       "data": "meta.json:data_coleta",

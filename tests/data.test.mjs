@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { termosSaude, TERMOS_PROIBIDOS_LITERAIS } from '../build/lib/texto.mjs';
+import { termosSaude, superlativos, certificacoesNaoConfirmadas, chaveFrase, frases, TERMOS_PROIBIDOS_LITERAIS } from '../build/lib/texto.mjs';
 import { parseRotuloTamanho } from '../build/lib/medidas.mjs';
 import { somaReais } from '../build/lib/money.mjs';
 
@@ -103,7 +103,9 @@ describe('derivados d_', () => {
         const r = parseRotuloTamanho(t.rotulo);
         assert.equal(t.a, r.a);
         assert.equal(t.b, r.b);
-        assert.equal(t.c, r.c);
+        // Rótulo irregular: a profundidade não é lida (nenhuma leitura escolhida).
+        assert.equal(t.c, r.formato_irregular ? null : r.c, `${p.slug}: ${t.rotulo}`);
+        assert.equal(Boolean(t.formato_irregular), r.formato_irregular, `${p.slug}: ${t.rotulo}`);
         const v = op.valores.find((x) => x.value_id === t.value_id);
         assert.equal(t.preco_adicional, v.preco_adicional);
       }
@@ -364,6 +366,112 @@ describe('filtro editorial e texto oculto (SPEC 0.3, 0.4, 0.5)', () => {
       'Quais são os benefícios do banho de ofurô para a saúde?']) {
       const p = todos.find((x) => x.titulo.trim() === t);
       assert.ok(p && p.exibir === false, t);
+    }
+  });
+
+  test('rótulo de tamanho irregular: c=null, profundidade da ficha ao lado e registro no log', () => {
+    const casos = {
+      'banheira-dupla-bruxelas-completa-com-hidro': '1,20 x 1,80 , 0,40',
+      'banheira-redonda-sensuale-com-abas-completa-com-hidro-em-acrilico': '1,60 x 1,60  0,43',
+      'spa-retangular-malbec-completo-com-hidro-em-acrilico': '1,59 x 1,90 x 0, 84',
+    };
+    for (const [slug, rotulo] of Object.entries(casos)) {
+      const t = porSlug.get(slug).d_tamanhos.find((x) => x.rotulo === rotulo);
+      assert.ok(t, `${slug}: ${rotulo}`);
+      assert.equal(t.formato_irregular, true);
+      assert.equal(t.c, null, `${slug}: ${rotulo}`);
+      assert.equal(t.profundidade_ficha, porSlug.get(slug).especificacoes.Profundidade);
+      assert.ok(log.itens.some((l) => l.slug === slug && l.regra === 'profundidade_nao_lida_formato_irregular' && l.rotulo === rotulo));
+    }
+    for (const p of produtos) for (const t of p.d_tamanhos) if (t.formato_irregular) assert.equal(t.c, null, `${p.slug}: ${t.rotulo}`);
+  });
+
+  test('Spa Serena: conflito de d_tipo no log e contagem das portas por total_exibido', () => {
+    const s = 'spa-quadrado-serena-completo-com-hidro-em-acrilico';
+    assert.ok(log.itens.some((l) => l.slug === s && l.campo === 'd_tipo' && l.regra === 'conflito_da_fonte'));
+    assert.match(porSlug.get(s).d_tipo_contagem, /total_exibido/);
+    assert.match(exibidos.campos['contagem-por-tipo'].data, /total_exibido/);
+  });
+
+  test('superlativo, ISO 9001 e autodeclaração fora de todo texto exibido', () => {
+    const claims = [...new Set(empresa.claims_nao_publicar.flatMap((c) => frases(c.replace(/\s+/g, ' '))).map(chaveFrase).filter((k) => k.length >= 24))];
+    const exibidos = [];
+    for (const p of produtos) {
+      exibidos.push([`${p.slug}.descricao`, p.d_descricao_exibida], [`${p.slug}.curta`, p.d_descricao_curta_exibida],
+        [`${p.slug}.itens`, p.d_itens_de_serie_exibidos.join('\n')], [`${p.slug}.resumo`, p.d_resumo],
+        [`${p.slug}.meta.title`, p.d_meta_exibida.title], [`${p.slug}.meta.description`, p.d_meta_exibida.description]);
+    }
+    for (const c of categorias) {
+      exibidos.push([`${c.d_path}.descricao`, c.d_descricao_exibida], [`${c.d_path}.meta.title`, c.d_meta_exibida.title],
+        [`${c.d_path}.meta.description`, c.d_meta_exibida.description]);
+    }
+    for (const [k, t] of Object.entries(empresa.textos_integrais)) exibidos.push([`empresa.${k}`, t.texto_exibido]);
+    for (const pg of politicas.manual.paginas) exibidos.push([`manual.p${pg.pagina}`, pg.texto_exibido]);
+    for (const f of faq) if (f.exibir) exibidos.push([f.id, `${f.pergunta}\n${f.resposta_exibida}`]);
+    for (const [onde, texto] of exibidos) {
+      if (texto == null) continue;
+      assert.deepEqual(superlativos(texto), [], `${onde}: superlativo`);
+      assert.deepEqual(certificacoesNaoConfirmadas(texto), [], `${onde}: ISO 9001`);
+      assert.deepEqual(termosSaude(texto), [], `${onde}: saúde`);
+      const k = chaveFrase(texto);
+      for (const c of claims) assert.ok(!k.includes(c), `${onde}: autodeclaração "${c}"`);
+    }
+    // Os casos apontados pelo verificador.
+    const mn = empresa.textos_integrais.manual_nossa_empresa.texto_exibido;
+    assert.ok(!/líderes|referência|melhor custo|180 cores/.test(mn), mn);
+    assert.ok(!/180 cores|Sem dúvida|melhor oportunidade/.test(empresa.textos_integrais.preco_de_banheira_seo.texto_exibido));
+    assert.ok(!/referência/.test(empresa.textos_integrais.home_seo.texto_exibido));
+    assert.ok(!/líderes|referência/.test(politicas.manual.paginas.find((x) => x.pagina === 2).texto_exibido));
+    for (const s of ['aquecedor-digital-bbb', 'aquecedor-digital-com-sensor-de-nive-bbb']) {
+      const p = porSlug.get(s);
+      assert.ok(/melhor desempenho/.test(p.descricao_texto), 'o literal continua no dado');
+      assert.ok(!/melhor desempenho/.test(p.d_descricao_exibida), s);
+      assert.ok(log.itens.some((l) => l.slug === s && l.regra === 'superlativo_nao_comprovado'), s);
+    }
+    // Comparativo sem artigo e "o que melhor atende" não são superlativo de mercado.
+    for (const t of ['para maior durabilidade', 'os itens adicionais que melhor atende sua necessidade', 'experiência ainda melhor']) assert.deepEqual(superlativos(t), [], t);
+    for (const t of ['A única com selo do INMETRO.', 'o melhor custo-benefício', 'Os melhores spas', 'tornou-se referência', 'uma das líderes']) assert.ok(superlativos(t).length, t);
+  });
+
+  test('meta das coleções e produtos: d_meta_exibida sem superlativo nem INMETRO; null = gerar', () => {
+    const casos = ['banheiras/por-tamanho/de-141-a-160.html', 'ofuro-de-madeira.html', 'preco-de-banheira.html', 'banheiras/banheira-dupla.html', 'catalog/category/view/id/131', 'spas/de-canto.html', 'ofuros/duplos.html'];
+    for (const path of casos) {
+      const c = categorias.find((x) => x.d_path === path);
+      assert.ok(c, path);
+      assert.ok(/[UÚú]nica|melhor/i.test(c.meta.description), `${path}: o literal continua no dado`);
+      assert.equal(c.d_meta_exibida.description, null, path);
+      assert.equal(c.d_meta_exibivel, false, path);
+      assert.ok(log.itens.some((l) => l.categoria === path && l.campo === 'meta.description'), path);
+    }
+    for (const x of [...produtos, ...categorias]) {
+      const m = x.d_meta_exibida;
+      assert.ok(m && 'title' in m && 'description' in m, x.slug ?? x.d_path);
+      for (const v of [m.title, m.description]) if (v != null) assert.ok(!/inmetro|iso\s*9001/i.test(v), `${x.slug ?? x.d_path}: ${v}`);
+    }
+    assert.match(exibidos.campos['meta-description'].obs, /null = gerar/);
+  });
+
+  test('saúde: composto com "terapi" e bem-estar caem; cromoterapia como nome de acessório fica', () => {
+    for (const t of ['Saiba como relaxar com a aromaterapia?', 'hidroterapia em casa', 'terapia', 'relaxamento e bem-estar', 'conforto, qualidade de vida e momentos agradáveis']) {
+      assert.ok(termosSaude(t).length, t);
+    }
+    for (const t of ['Cromoterapia', 'luzes de cromoterapia, aquecedor digital']) assert.deepEqual(termosSaude(t), [], t);
+    const blog = JSON.parse(readFileSync(join(DATA, 'blog-recentes.json'), 'utf8'));
+    const todos = [...blog.recentes, ...Object.values(blog.por_categoria).flat()];
+    const aroma = todos.find((p) => p.id === 578);
+    assert.ok(aroma && aroma.exibir === false, 'post 578 (aromaterapia) fora');
+    assert.ok(!/qualidade de vida/.test(empresa.textos_integrais.empresa.texto_exibido));
+    assert.ok(!/bem-estar/.test(empresa.textos_integrais.home_seo.texto_exibido));
+  });
+
+  test('faq: resposta_exibida e exibir em todos os 46 itens; garantia não exibe', () => {
+    assert.equal(faq.length, 46);
+    for (const f of faq) {
+      assert.equal(typeof f.resposta_exibida, 'string', f.id);
+      assert.equal(typeof f.exibir, 'boolean', f.id);
+      if (f.oculto_ate_decisao) assert.equal(f.exibir, false, f.id);
+      if (!f.exibir) assert.ok(f.motivo_nao_exibir, f.id);
+      if (f.resposta_exibida !== f.resposta) assert.ok(log.itens.some((l) => l.faq === f.id && l.campo === 'resposta'), f.id);
     }
   });
 

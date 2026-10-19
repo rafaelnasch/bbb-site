@@ -10,6 +10,8 @@
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
+    "resposta_exibida": "Para calcular o frete, escolha o produto clicando sobre ele, selecione as opções de tamanho, de voltagem e os opcionais e clique no botão “ADD CARRINHO”. Já na página do “CARRINHO DE COMPRAS”, informe o estado, o CEP de entrega e clique em “CALCULAR”. Abaixo aparecerá a opção “Transportadora” e o valor do frete.",
+    "exibir": true,
     "alerta": "a resposta descreve o carrinho do site atual, que não existe no site novo"
   },
   {
@@ -22,7 +24,9 @@
     "resposta": "- ACRILICO : possui maior brilho, porém não permite reparos em danos sérios, como trincas, furos, quebrados etc - GEL COAT : possui menor brilho, porém permite reparos em danos sérios, como trincas, furos, quebrados etc. Também permite alteração de cor, caso seja necessário. Obs.: Ambas possuem Fibra de Vidro em sua composição.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "- ACRILICO : possui maior brilho, porém não permite reparos em danos sérios, como trincas, furos, quebrados etc - GEL COAT : possui menor brilho, porém permite reparos em danos sérios, como trincas, furos, quebrados etc. Também permite alteração de cor, caso seja necessário. Obs.: Ambas possuem Fibra de Vidro em sua composição.",
+    "exibir": true
   },
   {
     "id": "faq-03",
@@ -34,7 +38,9 @@
     "resposta": "As Banheiras, Spas e Ofurôs possuem as plantas anexadas aos respectivos modelos, caso não encontre a planta baixa do modelo de seu interesse, nos chame para que possamos envia-lo!",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "As Banheiras, Spas e Ofurôs possuem as plantas anexadas aos respectivos modelos, caso não encontre a planta baixa do modelo de seu interesse, nos chame para que possamos envia-lo!",
+    "exibir": true
   },
   {
     "id": "faq-04",
@@ -47,7 +53,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "na página, um parágrafo sobre edição do carrinho aparece colado a esta resposta (erro de template); removido aqui."
+    "obs_fonte": "na página, um parágrafo sobre edição do carrinho aparece colado a esta resposta (erro de template); removido aqui.",
+    "resposta_exibida": "As Banheiras, SPAs e Ofurôs fabricados em Acrílico não possuem opções de cores disponíveis, sendo fabricadas somente na cor branca.",
+    "exibir": true
   },
   {
     "id": "faq-05",
@@ -59,7 +67,9 @@
     "resposta": "Para maior comodidade do cliente, a Banheiras Bom Banho, disponibiliza vários meios de pagamento: 1. A VISTA: boleto bancário, transferência bancária, pix ou depósito. 2. A PRAZO PELO TELEVENDAS: Em até 10x SEM juros por Cartão de Crédito nas bandeiras VISA, MASTERCARD, AMERICAN EXPRESS e DINNERS.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "Para maior comodidade do cliente, a Banheiras Bom Banho, disponibiliza vários meios de pagamento: 1. A VISTA: boleto bancário, transferência bancária, pix ou depósito. 2. A PRAZO PELO TELEVENDAS: Em até 10x SEM juros por Cartão de Crédito nas bandeiras VISA, MASTERCARD, AMERICAN EXPRESS e DINNERS.",
+    "exibir": true
   },
   {
     "id": "faq-06",
@@ -72,7 +82,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "resposta publicada está incompleta no próprio site."
+    "obs_fonte": "resposta publicada está incompleta no próprio site.",
+    "resposta_exibida": "Em relação a parte técnica de qualquer produto, disponibilizamos, manual de instalação",
+    "exibir": true
   },
   {
     "id": "faq-07",
@@ -84,7 +96,10 @@
     "resposta": "A Banheiras Bom Banho possui um rígido controle de qualidade e é certificada pelo INMETRO. Nós nos preocupamos com nossos clientes e para proporcionar maior tranquilidade, oferecemos 2 anos de garantia de fábrica no casco e tubulações das Banheiras, SPAs, Ofurôs e 1 ANO pelos respectivos fabricantes dos Acessórios eletrônicos e componentes em geral.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": true
+    "oculto_ate_decisao": true,
+    "resposta_exibida": "A Banheiras Bom Banho possui um rígido controle de qualidade e é certificada pelo INMETRO. Nós nos preocupamos com nossos clientes e para proporcionar maior tranquilidade, oferecemos 2 anos de garantia de fábrica no casco e tubulações das Banheiras, SPAs, Ofurôs e 1 ANO pelos respectivos fabricantes dos Acessórios eletrônicos e componentes em geral.",
+    "exibir": false,
+    "motivo_nao_exibir": "garantia: oculto até a decisão da empresa (SPEC 15)"
   },
   {
     "id": "faq-08",
@@ -96,7 +111,9 @@
     "resposta": "A Banheiras Bom Banho utiliza MANGUEIRAS para as tubulações das Banheiras, SPAs e Ofurôs, o que possibilita uma maior flexibilidade e comodidade para a instalação.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "A Banheiras Bom Banho utiliza MANGUEIRAS para as tubulações das Banheiras, SPAs e Ofurôs, o que possibilita uma maior flexibilidade e comodidade para a instalação.",
+    "exibir": true
   },
   {
     "id": "faq-09",
@@ -108,7 +125,9 @@
     "resposta": "Os Jatos e Mini jatos são fabricados em ABS CROMADO, que é um material de ótima qualidade, leve, resistente e o mais utilizado.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "Os Jatos e Mini jatos são fabricados em ABS CROMADO, que é um material de ótima qualidade, leve, resistente e o mais utilizado.",
+    "exibir": true
   },
   {
     "id": "faq-10",
@@ -120,7 +139,9 @@
     "resposta": "Os ralos que são utilizados nas banheiras, SPAs e Ofurôs são fabricados em ABS CROMADO, que é um material leve e resistente.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "Os ralos que são utilizados nas banheiras, SPAs e Ofurôs são fabricados em ABS CROMADO, que é um material leve e resistente.",
+    "exibir": true
   },
   {
     "id": "faq-11",
@@ -133,7 +154,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "link_manual": "https://www.banheirasbombanho.com.br/pub/media/manual_BBB.pdf"
+    "link_manual": "https://www.banheirasbombanho.com.br/pub/media/manual_BBB.pdf",
+    "resposta_exibida": "A Banheiras Bom Banho não faz instalações, será necessário contratar um profissional para fazer a instalação. Segue o link para acesso ao Manual de Instalação: Manual BBB",
+    "exibir": true
   },
   {
     "id": "faq-12",
@@ -145,7 +168,9 @@
     "resposta": "O acionador eletrônico serve para ligar e desligar a banheira, SPAs e Ofurôs. Ele contém sensor de nível. Caso seja adquirido o aquecedor, não será necessário comprar o acionador separadamente.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "O acionador eletrônico serve para ligar e desligar a banheira, SPAs e Ofurôs. Ele contém sensor de nível. Caso seja adquirido o aquecedor, não será necessário comprar o acionador separadamente.",
+    "exibir": true
   },
   {
     "id": "faq-13",
@@ -157,7 +182,9 @@
     "resposta": "O Air Blower produz um borbulhamento na água do SPA, causando um efeito “champagne”.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "O Air Blower produz um borbulhamento na água do SPA, causando um efeito “champagne”.",
+    "exibir": true
   },
   {
     "id": "faq-14",
@@ -169,7 +196,9 @@
     "resposta": "O aquecedor é utilizado nas Banheiras, SPAs e Ofurôs para aquecer a água, mantendo ela aquecida durante o uso. O aquecedor vem acompanhado do acionador eletrônico, que liga e desliga a banheira, e sensor de nível.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "O aquecedor é utilizado nas Banheiras, SPAs e Ofurôs para aquecer a água, mantendo ela aquecida durante o uso. O aquecedor vem acompanhado do acionador eletrônico, que liga e desliga a banheira, e sensor de nível.",
+    "exibir": true
   },
   {
     "id": "faq-15",
@@ -181,7 +210,9 @@
     "resposta": "O Sensor de Nível não deixa a motobomba ligar sem a água, prevenindo assim, a queima da motobomba.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "O Sensor de Nível não deixa a motobomba ligar sem a água, prevenindo assim, a queima da motobomba.",
+    "exibir": true
   },
   {
     "id": "faq-16",
@@ -193,7 +224,9 @@
     "resposta": "A tampa de inspeção é uma peça usada para tampar o local de acesso aos equipamentos, evitando que você danifique a alvenaria ou parede de sua residência quando for necessário fazer manutenção nos equipamentos. Ela é produzida em Gel Coat (alto brilho) + Fibra de Vidro.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "A tampa de inspeção é uma peça usada para tampar o local de acesso aos equipamentos, evitando que você danifique a alvenaria ou parede de sua residência quando for necessário fazer manutenção nos equipamentos. Ela é produzida em Gel Coat (alto brilho) + Fibra de Vidro.",
+    "exibir": true
   },
   {
     "id": "faq-17",
@@ -207,10 +240,12 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "termos_sensiveis": [
-      "terapia"
+      "terapia",
+      "bem estar"
     ],
     "resposta_exibida": "",
-    "exibir": false
+    "exibir": false,
+    "motivo_nao_exibir": "nada sobra da resposta depois do filtro editorial"
   },
   {
     "id": "faq-18",
@@ -222,7 +257,9 @@
     "resposta": "Os jatos  são orifícios  maiores que ficam na banheira, SPA ou Ofurô e são responsáveis pela hidromassagem.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "Os jatos  são orifícios  maiores que ficam na banheira, SPA ou Ofurô e são responsáveis pela hidromassagem.",
+    "exibir": true
   },
   {
     "id": "faq-19",
@@ -234,7 +271,9 @@
     "resposta": "Os Mini Jatos são orifícios menores do que os Jatos e são responsáveis pela hidromassagem.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "Os Mini Jatos são orifícios menores do que os Jatos e são responsáveis pela hidromassagem.",
+    "exibir": true
   },
   {
     "id": "faq-20",
@@ -246,7 +285,9 @@
     "resposta": "A Base Auto-portante (ou simplesmente, BASE) para Banheiras, Spas e Ofurôs fornece apoio e suporte à estrutura do modelo, Facilitando a acomodação e instalação dos componentes dispensando a necessidade de fazer a cama de areia.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "resposta_exibida": "A Base Auto-portante (ou simplesmente, BASE) para Banheiras, Spas e Ofurôs fornece apoio e suporte à estrutura do modelo, Facilitando a acomodação e instalação dos componentes dispensando a necessidade de fazer a cama de areia.",
+    "exibir": true
   },
   {
     "id": "faq-21",
@@ -259,7 +300,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "BANHEIRAS E OFURÔS Estados: MG, SP, ES, PR, RS, SC, GO de 7 a 15 dias úteis. Estados Capitais: RJ, DF, BA, PE, RN, CE, MT, MS de 10 a 20 dias úteis. Estados Interior: BA, PE, RN, CE, MT, MS de 12 a 30 dias úteis. Estados: RJ,AM, RR, AP, PA, TO, RO, AC, MA, PI, PB, SE, AL de 12 a 30 dias úteis. *Informamos que nossos prazos podem ser extendidos em até 30 dias úteis para banheiras e ofurôs e até 35 dias úteis para Spas; para aferir o prazo real de seu pedido - consulte os nossos representantes online!",
+    "exibir": true
   },
   {
     "id": "faq-22",
@@ -272,7 +315,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "SPAS E PRODUTOS EM ACRÍLICO OU COM DECK: Estados: MG, SP, ES, PR, RS, SC, GO de 10 a 25 dias úteis. Estados Capitais: RJ, DF, BA, PE, RN, CE, MT, MS de 15 a 25 dias úteis. Estados Interior: BA, PE, RN, CE, MT, MS de 15 a 30 dias úteis. Estados: RJ,AM, RR, AP, PA, TO, RO, AC, MA, PI, PB, SE, AL de 15 a 35 dias úteis.",
+    "exibir": true
   },
   {
     "id": "faq-23",
@@ -285,7 +330,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Entregamos para todo Brasil, exceto zona rural e estradas não asfaltadas assim como sítios e chácaras.",
+    "exibir": true
   },
   {
     "id": "faq-24",
@@ -298,7 +345,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Entregas em edifícios e residências são realizadas somente no térreo, não fazemos içamento dos produtos adquiridos.",
+    "exibir": true
   },
   {
     "id": "faq-25",
@@ -311,7 +360,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Após serem produzidos os produtos serão enviados por transportadora, respeitando o prazo de entrega para cada estado, que  é estimado a depender da localização e dificuldade de entrega da mercadoria",
+    "exibir": true
   },
   {
     "id": "faq-26",
@@ -324,7 +375,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Favor conferir a mercadoria no ato do recebimento, caso haja avaria, fazer ressalva na Nota Fiscal ou devolver imediatamente. Dúvidas entre em contato pelos telefones: (35) 99269-9530",
+    "exibir": true
   },
   {
     "id": "faq-27",
@@ -337,7 +390,18 @@
     "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "*Temporariamente não estaremos comercializando os seguintes itens avulsos: aquecedores, acionadores e cromoterapia; os mesmos estão disponíveis apenas como opcionais que acompanharão spas, banheiras e ofurôs.",
+    "exibir": true,
+    "revisao_termos": {
+      "termos_da_lista": [
+        "cromoterapia"
+      ],
+      "decisao": "publicar literal: a palavra aparece numa expressão fixa sem sentido de saúde",
+      "expressoes": [
+        "nome do acessório (cromoterapia)"
+      ]
+    }
   },
   {
     "id": "faq-28",
@@ -350,7 +414,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/politica-devolucao-reembolso",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "O prazo para desistir ou se arrepender do produto adquirido é de até 7 (sete) dias corridos, contando da data do recebimento do produto, após esse prazo, as solicitações não mais serão acatadas;",
+    "exibir": true
   },
   {
     "id": "faq-29",
@@ -363,7 +429,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/politica-devolucao-reembolso",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Cancelamentos de pedidos serão aceitos com reembolso total dos valores pagos somente se ainda não tiverem sidos despachados.",
+    "exibir": true
   },
   {
     "id": "faq-30",
@@ -376,7 +444,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/politica-devolucao-reembolso",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "A Banheiras Bom Banho restitui os valores pagos utilizando a mesma forma de pagamento escolhida no processo de compras. O ressarcimento só ocorre quando é confirmado o retorno da mercadoria e análise da mesma no Centro de Distribuição.",
+    "exibir": true
   },
   {
     "id": "faq-31",
@@ -390,6 +460,8 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Certifique-se do endereço de entrega: após a confirmação do pedido não será possível a mudança do endereço de entrega em virtude da variação de frete e alíquotas de impostos que já foram recolhidas, como por exemplo, o ICMS (Imposto sobre Circulação de Mercadorias e Serviços).",
+    "exibir": true,
     "revisao_termos": {
       "termos_da_lista": [
         "circulacao"
@@ -411,7 +483,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/seguranca",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Informações necessárias para se cadastrar no site e realizar um pedido: _ nome completo _ CPF (e CNPJ para pessoa jurídica) _ RG _ endereço completo _ telefone para contato _ email",
+    "exibir": true
   },
   {
     "id": "faq-33",
@@ -424,7 +498,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/contacts",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Segunda à Quinta-feira: 07:00 às 17:00 Sexta-feira: 07:00 às 16:00",
+    "exibir": true
   },
   {
     "id": "faq-34",
@@ -437,7 +513,10 @@
     "fonte": "https://www.banheirasbombanho.com.br/",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "",
+    "exibir": false,
+    "motivo_nao_exibir": "nada sobra da resposta depois do filtro editorial"
   },
   {
     "id": "faq-35",
@@ -450,7 +529,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/vendas-corporativas.html",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Atendimento exclusivo para Construtoras, Incorporadoras e Hotéis. Encontre Banheiras para seu negócio! Valorize seus empreendimentos com Banheiras, Spas e Ofurôs com preços e condições especiais para Construtoras, Incorporadoras e Hotéis!",
+    "exibir": true
   },
   {
     "id": "faq-36",
@@ -463,7 +544,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Se você mora em apartamento ou pretende instalar uma banheira na sua sacada, verifique com um arquiteto ou engenheiro a viabilidade do projeto. A banheira não pode causar sobrepeso no local, por isso, é necessária a emissão de uma ART ou RRT para instalação.",
+    "exibir": true
   },
   {
     "id": "faq-37",
@@ -476,7 +559,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Vale lembrar que ao comprar sua banheira a estrutura já vem com a parte elétrica pronta para instalação, no entanto, é preciso de conhecimento técnico não só em elétrica, mas em hidráulica. A nossa loja de banheiras possui uma lista de profissionais credenciados que estão preparados para instalar sua banheira.",
+    "exibir": true
   },
   {
     "id": "faq-38",
@@ -489,7 +574,10 @@
     "fonte": "https://www.banheirasbombanho.com.br/",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "",
+    "exibir": false,
+    "motivo_nao_exibir": "nada sobra da resposta depois do filtro editorial"
   },
   {
     "id": "faq-39",
@@ -502,7 +590,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Não tem nenhum problema se seu espaço for pequeno, opte por banheiras de canto ou ofurô com hidro que são compactos com os ambientes menores. Além dessas opções, também existe a banheira retangular que costuma ser menor e se adapta perfeitamente dentro do próprio box do banheiro.",
+    "exibir": true
   },
   {
     "id": "faq-40",
@@ -515,7 +605,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Antes de comprar banheira , é interessante medir o local em que será instalada e comparar com a dimensão do produto. Com as medidas em mãos, você conseguirá saber se no local, a estrutura terá fácil acesso a motobomba e se o conjunto do espaço e banheira atenderá suas expectativas.",
+    "exibir": true
   },
   {
     "id": "faq-41",
@@ -528,7 +620,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/manual/manual-do-usuario.pdf (p.11)",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Utilizar somente água e sabão neutro ou coco. Utilizar panos macios (não abrasivos). Utilizar água corrente.",
+    "exibir": true
   },
   {
     "id": "faq-42",
@@ -541,7 +635,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/manual/manual-do-usuario.pdf (p.11)",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "É recomendado a limpeza da tubulação a cada 4 meses. Para isso, utilizar água quente (não superior a 40°) e detergente neutro. Deixar encher até os jatos e acionar a banheira entre 10 a 15 minutos, repita esta operação se a água ficar muito turva após o desligamento da banheira.",
+    "exibir": true
   },
   {
     "id": "faq-43",
@@ -554,7 +650,9 @@
     "fonte": "https://www.banheirasbombanho.com.br/manual/manual-do-usuario.pdf (p.12)",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Não abasteça a banheira com água acima de 40°C para evitar hipertermia, queimaduras nos usuários e danos ao equipamento.",
+    "exibir": true
   },
   {
     "id": "faq-44",
@@ -568,6 +666,8 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Manter o pH em torno de 7,2. ... Manter o teor de cloro livre na água entre 1 e 3 ppm.",
+    "exibir": true,
     "revisao_termos": {
       "termos_da_lista": [
         "trata"
@@ -589,7 +689,19 @@
     "fonte": "https://www.banheirasbombanho.com.br/manual/manual-do-usuario.pdf (p.9)",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": true,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "As banheiras e spas têm garantia concedida de 2 (dois) anos para casco e tubulação e 1 (ano) para motor, aquecedor, acionador, cromoterapia e filtro de areia, a contar da emissão da Nota Fiscal (Exceto encosto de cabeça que possui garantia de 3 meses).",
+    "exibir": false,
+    "motivo_nao_exibir": "garantia: oculto até a decisão da empresa (SPEC 15)",
+    "revisao_termos": {
+      "termos_da_lista": [
+        "cromoterapia"
+      ],
+      "decisao": "publicar literal: a palavra aparece numa expressão fixa sem sentido de saúde",
+      "expressoes": [
+        "nome do acessório (cromoterapia)"
+      ]
+    }
   },
   {
     "id": "faq-46",
@@ -602,6 +714,8 @@
     "fonte": "https://www.banheirasbombanho.com.br/banheira-dupla-lyon-completa-com-hidro.html",
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
-    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte"
+    "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
+    "resposta_exibida": "Para outras cores, será acrescido no prazo de entrega 20 dias úteis.",
+    "exibir": true
   }
 ]

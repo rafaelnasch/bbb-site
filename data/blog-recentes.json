@@ -85,10 +85,9 @@
         ],
         "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa.",
         "termos_sensiveis": [
-          "circulacao",
-          "muscular",
-          "alivie"
+          "muscular"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -130,7 +129,11 @@
           "Spas"
         ],
         "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1146,
@@ -234,7 +237,12 @@
           "Dicas"
         ],
         "resumo": "Descubra as vantagens de ter banheira e como ela pode melhorar seu bem-estar, conforto e valorizar sua casa.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar",
+          "qualidade de vida"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 960,
@@ -246,7 +254,11 @@
           "Dicas"
         ],
         "resumo": "Descubra os principais modelos de banheiras, suas características e indicações para transformar seu banheiro em um espaço de bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 952,
@@ -294,7 +306,11 @@
           "Dicas"
         ],
         "resumo": "Veja como as banheiras serão tendência nos banheiros em 2026 e transforme seu espaço com estilo, conforto e bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 826,
@@ -332,10 +348,9 @@
         ],
         "resumo": "Conheça o ritual japonês do Yu, uma técnica ancestral de banho que promove relaxamento profundo, alívio do estresse e reconexão com o corpo e a mente.",
         "termos_sensiveis": [
-          "terapia",
-          "alivio",
-          "estresse"
+          "terapia"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -351,6 +366,7 @@
         "termos_sensiveis": [
           "estresse"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -364,9 +380,9 @@
         ],
         "resumo": "Imagine chegar em casa após um dia estressante e encontrar um espaço que oferece conforto, tranquilidade e bem-estar.",
         "termos_sensiveis": [
-          "beneficios",
-          "estressante"
+          "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -419,6 +435,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -472,6 +489,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -499,6 +517,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -571,7 +590,11 @@
           "Dicas"
         ],
         "resumo": "A aromaterapia pode ser uma ótima forma de relaxar após dias cansativos. Confira dicas de como relaxar com a aromaterapia em uma banheira.",
-        "exibir": true
+        "termos_sensiveis": [
+          "aromaterapia"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 574,
@@ -613,6 +636,7 @@
         "termos_sensiveis": [
           "saude"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -860,7 +884,8 @@
           "Dicas"
         ],
         "resumo": "Descubra vários modelos de banheira de hidromassagem da Banheiras Bom Banho e escolha o melhor para o seu banheiro. Conte com a gente!",
-        "exibir": true
+        "regra_nao_exibir": "superlativo_nao_comprovado",
+        "exibir": false
       },
       {
         "id": 447,
@@ -876,6 +901,7 @@
         "termos_sensiveis": [
           "estressante"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -930,6 +956,7 @@
         "termos_sensiveis": [
           "pele"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -972,6 +999,7 @@
           "alivio",
           "estresse"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1037,8 +1065,10 @@
         ],
         "resumo": "Entenda para que serve sais de banho, seus principais benefícios e como usar o produto corretamente para potencializar o relaxamento e o bem-estar.",
         "termos_sensiveis": [
-          "beneficios"
+          "beneficios",
+          "bem-estar"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1108,6 +1138,7 @@
           "aliviar",
           "estresse"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1161,9 +1192,9 @@
         ],
         "resumo": "Os dias estressantes necessitam de uma dose de autocuidado. Saiba como aproveitar a sua banheira em casa para relaxar e cuidar da saúde.",
         "termos_sensiveis": [
-          "estressantes",
-          "saude"
+          "estressantes"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1240,6 +1271,7 @@
         "termos_sensiveis": [
           "dor"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1419,7 +1451,11 @@
           "Spas"
         ],
         "resumo": "Monte um SPA em casa com banheiras, spas e ofurôs. Relaxe, cuide do corpo e valorize seu lar com bem-estar e sofisticação.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 750,
@@ -1473,6 +1509,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1720,7 +1757,11 @@
           "Tendências"
         ],
         "resumo": "Conheça os principais modelos de ofurô e entenda por que essa tendência tem ganhado destaque em projetos de arquitetura modernos e espaços de bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 463,
@@ -1803,10 +1844,9 @@
         ],
         "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa.",
         "termos_sensiveis": [
-          "circulacao",
-          "muscular",
-          "alivie"
+          "muscular"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1833,7 +1873,11 @@
           "Banhos por imersão"
         ],
         "resumo": "Veja como uma banheira para momentos em família pode transformar sua casa em um centro de lazer, convivência e bem-estar para todas as idades.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1138,
@@ -1846,8 +1890,9 @@
         ],
         "resumo": "Saiba como uma banheira para rotina de autocuidado pode transformar seu banheiro em um refúgio de desaceleração, trazendo conforto e saúde mental.",
         "termos_sensiveis": [
-          "saude"
+          "bem-estar"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1861,10 +1906,9 @@
         ],
         "resumo": "Com a chegada dos dias mais frios do ano, nossa rotina em casa pede mais aconchego e momentos de aquecimento. A queda na temperatura muitas vezes provoca contrações musculares involuntárias e aumento do estresse físico. É nesse período que surge a dúvida sobre quais as melhores alternativas para manter o bem-estar diário. Muitas pessoas se [&hellip;]",
         "termos_sensiveis": [
-          "beneficios",
-          "musculares",
-          "estresse"
+          "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -1932,7 +1976,11 @@
           "Banheiras de hidromassagem"
         ],
         "resumo": "Banheira dupla Capri é o lançamento premium da Banheiras Bom Banho 2026, com design moderno e hidromassagem para casais que buscam bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1078,
@@ -2004,7 +2052,11 @@
           "Banheiras de hidromassagem"
         ],
         "resumo": "Banheira de hidromassagem ou imersão: saiba as diferenças e escolha a ideal para conforto e bem-estar em casa.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 806,
@@ -2016,7 +2068,11 @@
           "Banheiras de hidromassagem"
         ],
         "resumo": "Aprenda como escolher a banheira ideal para seu banheiro e transforme sua reforma em conforto, estilo e bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 796,
@@ -2041,11 +2097,9 @@
         ],
         "resumo": "Descubra os benefícios da hidromassagem para corpo e mente: alívio do estresse, relaxamento muscular e bem-estar no conforto da sua casa.",
         "termos_sensiveis": [
-          "beneficios",
-          "alivio",
-          "estresse",
-          "muscular"
+          "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2060,7 +2114,11 @@
           "Spas"
         ],
         "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 738,
@@ -2073,11 +2131,9 @@
         ],
         "resumo": "Desvende os segredos do banho de banheira como terapia para o corpo e mente. Descubra os benefícios terapêuticos e como incorporá-lo à sua rotina de auto cuidado.",
         "termos_sensiveis": [
-          "terapeutic",
-          "terapia",
-          "beneficios",
-          "terapeuticos"
+          "terapia"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2094,6 +2150,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2134,6 +2191,7 @@
           "beneficios",
           "saude"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2173,6 +2231,7 @@
         "termos_sensiveis": [
           "saude"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2215,6 +2274,7 @@
           "beneficios",
           "saude"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2231,6 +2291,7 @@
         "termos_sensiveis": [
           "saude"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2269,7 +2330,11 @@
           "Banheiras de hidromassagem"
         ],
         "resumo": "Com o objetivo de trazer maior conforto, bem-estar e relaxamento para dentro de casa, a instalação de uma piscina ou hidromassagem na área externa de sua residência é quase sempre uma opção. No entanto, diante de tantas possibilidades, é natural não saber escolher a melhor alternativa para melhorar o visual da casa e para trazer [&hellip;]",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 538,
@@ -2452,7 +2517,8 @@
           "Dicas"
         ],
         "resumo": "Descubra vários modelos de banheira de hidromassagem da Banheiras Bom Banho e escolha o melhor para o seu banheiro. Conte com a gente!",
-        "exibir": true
+        "regra_nao_exibir": "superlativo_nao_comprovado",
+        "exibir": false
       },
       {
         "id": 447,
@@ -2468,6 +2534,7 @@
         "termos_sensiveis": [
           "estressante"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2510,6 +2577,7 @@
         "termos_sensiveis": [
           "pele"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2527,6 +2595,7 @@
           "alivio",
           "estresse"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2596,6 +2665,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2639,6 +2709,7 @@
           "aliviar",
           "estresse"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2692,9 +2763,9 @@
         ],
         "resumo": "Os dias estressantes necessitam de uma dose de autocuidado. Saiba como aproveitar a sua banheira em casa para relaxar e cuidar da saúde.",
         "termos_sensiveis": [
-          "estressantes",
-          "saude"
+          "estressantes"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2735,6 +2806,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2789,6 +2861,7 @@
         "termos_sensiveis": [
           "dor"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2857,6 +2930,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2936,9 +3010,9 @@
         ],
         "resumo": "Descubra como a banheira cromoterapia transforma seu banho com estímulos de cores que equilibram mente e corpo. Veja benefícios e como a técnica funciona.",
         "termos_sensiveis": [
-          "beneficios",
-          "mente e corpo"
+          "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2956,6 +3030,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -2974,6 +3049,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       }
     ],
@@ -3013,7 +3089,11 @@
           "Curiosidades"
         ],
         "resumo": "Descubra o conceito de home resort. Veja ideias práticas para transformar sua casa em um refúgio de luxo com spas, banheiras e bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1171,
@@ -3040,7 +3120,11 @@
           "Spas"
         ],
         "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1110,
@@ -3073,6 +3157,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3112,9 +3197,9 @@
         "termos_sensiveis": [
           "terapeutic",
           "beneficios",
-          "terapeuticos",
-          "saude"
+          "terapeuticos"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3154,6 +3239,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3217,6 +3303,7 @@
         "termos_sensiveis": [
           "saude"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3233,6 +3320,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3306,10 +3394,9 @@
         ],
         "resumo": "Desfrute de momentos relaxantes e revigorantes com as banheiras que promovem o bem-estar da BBB. Veja os benefícios terapêuticos, dicas para aproveitar ao máximo e como investir em qualidade de vida.",
         "termos_sensiveis": [
-          "terapeutic",
-          "beneficios",
-          "terapeuticos"
+          "bem-estar"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3322,7 +3409,11 @@
           "Curiosidades"
         ],
         "resumo": "Ter uma banheira em casa oferece inúmeras vantagens. Imagine chegar em casa após um longo dia de trabalho e poder mergulhar em água quente, relaxando com tranquilidade. Investir em uma banheira é investir em qualidade de vida, proporcionando momentos para recarregar suas energias e descansar a mente. Continue lendo e descubra os tipos de banheiras [&hellip;]",
-        "exibir": true
+        "termos_sensiveis": [
+          "qualidade de vida"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 742,
@@ -3338,6 +3429,7 @@
           "dores",
           "musculares"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3449,6 +3541,7 @@
         "termos_sensiveis": [
           "pele"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3513,7 +3606,11 @@
           "Curiosidades"
         ],
         "resumo": "Saiba quais são as dicas para utilizar uma banheira de hidromassagem corretamente, causando uma sensação de relaxamento ainda maior.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 521,
@@ -3591,6 +3688,7 @@
           "terapeutic",
           "terapeuticos"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3632,6 +3730,7 @@
         "termos_sensiveis": [
           "calorias"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3673,6 +3772,7 @@
           "aliviar",
           "menstruais"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3859,9 +3959,9 @@
         ],
         "resumo": "Todos os atletas sabem das dores do pós treino. Você sabia que a banheira de hidromassagem também traz benefícios para essas pessoas? Acesse para sabe ler!",
         "termos_sensiveis": [
-          "beneficios",
-          "dores"
+          "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3877,6 +3977,7 @@
         "termos_sensiveis": [
           "insonia"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3940,6 +4041,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -3953,12 +4055,10 @@
         ],
         "resumo": "A hidromassagem tem muitos benefícios, como ajudar no tratamento de artrite reumatoide, doença é autoimune. Saiba mais sobre o assunto no site!",
         "termos_sensiveis": [
-          "trata",
           "artrite",
-          "reumatoide",
-          "beneficios",
-          "doenca"
+          "reumatoide"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4023,10 +4123,9 @@
         "resumo": "Descubra qual é o melhor banho para tirar dores no corpo: água quente ou fria. Entenda como cada temperatura age nos músculos e quando utilizar cada uma.",
         "termos_sensiveis": [
           "dor",
-          "muscular",
-          "dores",
-          "musculos"
+          "muscular"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4070,6 +4169,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4087,6 +4187,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4105,6 +4206,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4121,6 +4223,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       }
     ],
@@ -4149,7 +4252,11 @@
           "Banhos por imersão"
         ],
         "resumo": "Veja como uma banheira para momentos em família pode transformar sua casa em um centro de lazer, convivência e bem-estar para todas as idades.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1110,
@@ -4179,7 +4286,11 @@
           "Banhos por imersão"
         ],
         "resumo": "Banheira ou piscina: descubra qual faz mais sentido para sua casa, considerando espaço, conforto e bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 933,
@@ -4205,8 +4316,10 @@
         "resumo": "Banho de imersão: descubra benefícios para corpo e mente, com relaxamento, bem-estar e qualidade de vida.",
         "termos_sensiveis": [
           "beneficios",
-          "saude"
+          "saude",
+          "bem-estar"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4237,6 +4350,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4252,6 +4366,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4269,6 +4384,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       }
     ],
@@ -4298,7 +4414,11 @@
           "Spas"
         ],
         "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1146,
@@ -4335,7 +4455,11 @@
           "Spas"
         ],
         "resumo": "Spa Oásis é o lançamento premium da Banheiras Bom Banho 2026, com hidro, design moderno e 7 lugares para criar um oásis de relaxamento em casa.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 1044,
@@ -4350,6 +4474,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4363,7 +4488,11 @@
           "Spas"
         ],
         "resumo": "Monte um SPA em casa com banheiras, spas e ofurôs. Relaxe, cuide do corpo e valorize seu lar com bem-estar e sofisticação.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 782,
@@ -4377,7 +4506,11 @@
           "Spas"
         ],
         "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 708,
@@ -4393,6 +4526,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4471,6 +4605,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4487,6 +4622,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4519,6 +4655,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4535,6 +4672,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       }
     ],
@@ -4567,7 +4705,11 @@
           "Cromoterapia"
         ],
         "resumo": "Descubra como a banheira com cromoterapia une luz, relaxamento e bem-estar para transformar seu banho em um momento de paz.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 791,
@@ -4583,6 +4725,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4597,10 +4740,9 @@
         ],
         "resumo": "Conheça o ritual japonês do Yu, uma técnica ancestral de banho que promove relaxamento profundo, alívio do estresse e reconexão com o corpo e a mente.",
         "termos_sensiveis": [
-          "terapia",
-          "alivio",
-          "estresse"
+          "terapia"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4629,6 +4771,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4643,9 +4786,9 @@
         ],
         "resumo": "Descubra como a banheira cromoterapia transforma seu banho com estímulos de cores que equilibram mente e corpo. Veja benefícios e como a técnica funciona.",
         "termos_sensiveis": [
-          "beneficios",
-          "mente e corpo"
+          "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       }
     ],
@@ -4663,6 +4806,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4676,9 +4820,9 @@
         ],
         "resumo": "Descubra o que é ofurô, tradição japonesa que une relaxamento e saúde, ideal para transformar sua casa em um espaço de bem-estar.",
         "termos_sensiveis": [
-          "beneficios",
-          "saude"
+          "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4693,7 +4837,11 @@
           "Spas"
         ],
         "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 722,
@@ -4719,9 +4867,9 @@
         "resumo": "Após um longo e estressante dia, o banho de ofurô é uma ótima opção de relaxamento. No entanto, essa prática traz vários outros benefícios. Veja!",
         "termos_sensiveis": [
           "beneficios",
-          "saude",
-          "estressante"
+          "saude"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       },
       {
@@ -4735,7 +4883,11 @@
           "Tendências"
         ],
         "resumo": "Conheça os principais modelos de ofurô e entenda por que essa tendência tem ganhado destaque em projetos de arquitetura modernos e espaços de bem-estar.",
-        "exibir": true
+        "termos_sensiveis": [
+          "bem-estar"
+        ],
+        "regra_nao_exibir": "termo_de_saude",
+        "exibir": false
       },
       {
         "id": 406,
@@ -4792,6 +4944,7 @@
         "termos_sensiveis": [
           "beneficios"
         ],
+        "regra_nao_exibir": "termo_de_saude",
         "exibir": false
       }
     ]
