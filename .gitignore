@@ -1,0 +1,14 @@
+# Reconhecimento local (cerca de 700 MB): nunca versionar nem publicar (SPEC 0.9)
+_recon/
+/_recon
+
+# Dependências e saídas
+node_modules/
+dist/
+.cache/
+
+# Sistema e editores
+.DS_Store
+*.log
+.env
+.env.*

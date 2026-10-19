@@ -1,0 +1,526 @@
+{
+  "nome": "Banheiras Bom Banho",
+  "nome_fantasia_literal": "Banheiras Bom Banho (BBB)",
+  "alternate_name": "BBB",
+  "site_atual": "https://www.banheirasbombanho.com.br",
+  "endereco_fabrica": "Rodovia JK , S/N, Km 90, Coutinhos, Congonhal-MG",
+  "endereco_fabrica_fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)",
+  "endereco_fabrica_versoes_sem_cep": [
+    {
+      "texto": "Rodovia JK , S/N, Km 90, Coutinhos, Congonhal-MG",
+      "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+    },
+    {
+      "texto": "Km 90, Rod. Juscelino Kubitschek de Oliveira, S/N Coutinhos, Congonhal - MG",
+      "fonte": "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+    }
+  ],
+  "cep_omitido": true,
+  "localizacao_texto": [
+    {
+      "literal": "Situada em Minas Gerais, no município de Congonhal, cerca de 200 km de São Paulo",
+      "source_url": "https://www.banheirasbombanho.com.br/manual/manual-do-usuario.pdf (p.3)"
+    },
+    {
+      "literal": "Situada no Sul de Minas com suporte e estrutura para atender todo território Brasileiro e América do Sul.",
+      "source_url": "https://www.banheirasbombanho.com.br/loja-fabrica-de-banheiras"
+    }
+  ],
+  "mapa_fabrica": {
+    "link": "https://goo.gl/maps/tpZMmhtuDsuiQtz2A",
+    "coordenadas_do_embed": [
+      -22.17414648538928,
+      -46.00364518535514
+    ],
+    "fonte": "https://www.banheirasbombanho.com.br/localizacao"
+  },
+  "telefone_fixo": {
+    "display": "(35) 3483-0030",
+    "tel": "tel:+553534830030",
+    "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+  },
+  "telefone_comercial": {
+    "display": "(35) 99219-2256",
+    "whatsapp": "5535992192256",
+    "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+  },
+  "emails": [
+    {
+      "email": "sac@banheirasbombanho.com.br",
+      "uso": "SAC / trocas e devoluções",
+      "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+    },
+    {
+      "email": "comercial@banheirasbombanho.com.br",
+      "uso": "Email Comercial",
+      "fonte": "https://www.banheirasbombanho.com.br/contacts"
+    },
+    {
+      "email": "contatolgpd@banheirasbombanho.com.br",
+      "uso": "canal LGPD",
+      "fonte": "https://www.banheirasbombanho.com.br/politica-de-privacidade"
+    }
+  ],
+  "horario": {
+    "literal": "Segunda à Quinta-feira: 07:00 às 17:00 | Sexta-feira: 07:00 às 16:00",
+    "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+  },
+  "cnpjs_rodape": [
+    {
+      "literal": "Autorizada: BBB BANHEIRAS E SPA INDUSTRIA E COMERCIO EIRELI  - CNPJ 31.331.656/0001-10",
+      "cnpj": "31.331.656/0001-10",
+      "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+    },
+    {
+      "literal": "Autorizada: BANHEIRA BOM BANHO & HIDROMASSAGEM  EIRELI - CNPJ: 34.098.618/0001-58",
+      "cnpj": "34.098.618/0001-58",
+      "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+    },
+    {
+      "literal": "BBB HIDRO 36.956.018/0001-09",
+      "cnpj": "36.956.018/0001-09",
+      "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+    },
+    {
+      "literal": "BBB COMERCIAL 47.133.227/0001-79",
+      "cnpj": "47.133.227/0001-79",
+      "fonte": "https://www.banheirasbombanho.com.br/ (rodapé global, presente em todas as páginas; conferido em https://www.banheirasbombanho.com.br/representantes-credenciados)"
+    }
+  ],
+  "numeros_declarados": [
+    {
+      "literal": "+ 11 ANOS DE HISTÓRIA | + DE 80 COLABORADORES DIRETOS | + DE 20.000 M2 FÁBRICA EM MG | + DE 120.000 BANHEIRAS, SPAS E OFURÔS VENDIDOS",
+      "fonte": "https://www.banheirasbombanho.com.br/lojas/sobre-nos.html",
+      "exibir_como": "segundo a empresa"
+    },
+    {
+      "literal": "200 + MODELOS | 20 MIL M2 FÁBRICA | 11 + ANOS HISTÓRIA | 25 + REPRESENTANTES",
+      "fonte": "https://www.banheirasbombanho.com.br/vendas-corporativas.html",
+      "exibir_como": "segundo a empresa"
+    }
+  ],
+  "inmetro": {
+    "certificado": "CE-EL-041/20-F01",
+    "pagina_literal": "Certificação Inmetro\nOrganismo Acreditado: ACERT ORGANISMO DE CERTIFICACAO DE PRODUTOS EM SISTEMAS LTDA.\nNº do Certificado: CE-EL-041/20-F01.\nClasse do Produto: Aparelhos eletrodomésticos e similares - PT Inmetro nº 371/2009.\nTipo do Certificado: Produto.\nLaboratório de Ensaio: TECHMULTLAB ENSAIOS LTDA (CRL 0632).\nDocumento Normativo, Portaria Inmetro nº 371 de 29/12/2009.\nSite de busca Inmetro",
+    "rodape_literal": "A Banheiras Bom Banho possui o Selo Compulsório de Segurança do INMETRO em conformidade com as normas NBR NM 60335-1:2010, IEC 60335-2-60:2002 (Terceira Edição) + A1:2004+A2:2008, portarias INMETRO/MDIC nº 371/2009, nº 328/2011, 121/2015, Guia Orientativo INMETRO (Certificação de Eletrodomésticos) e Procedimento IBC nº IBC-005, através do Certificado de Conformidade (Licença nº  CE-EL-041/20-F01) emitido pelo Instituto Brasileiro de Certificação - OCP 0019/ODV-0004.",
+    "link_consulta": "http://www.inmetro.gov.br/prodcert/certificados/lista.asp",
+    "fonte": "https://www.banheirasbombanho.com.br/inmetro"
+  },
+  "iso_9001": {
+    "publicar": false,
+    "motivo": "A página não mostra número de certificado nem organismo certificador; o link aponta para a busca do INMETRO. Política da Qualidade FR-001 REV. 00 de 03/08/2021 existe."
+  },
+  "reclame_aqui": {
+    "url": "https://www.reclameaqui.com.br/empresa/bbb-banheiras-bom-banho/",
+    "reputacao": "Ótima",
+    "nota": "8.8 / 10",
+    "resolve": "87.0% das reclamações",
+    "periodo": "Dados de 01/04/2026 até 30/09/2026",
+    "consultado_em": "2026-10-18",
+    "alerta_fonte": "Números mudam a cada atualização (página e metadados já divergem: 8,8 x 8,6). No site novo, preferir selo/link oficial do RA ou exibir com data. Selo RA estava comentado (inativo) no HTML do site atual."
+  },
+  "depoimentos": [
+    {
+      "autor": "Gustavo Cabral",
+      "texto": "Gostei do produto, do preço e da qualidade, tenho a quase 1 ano e quando precisei da assistência fui atendido.",
+      "fonte": "https://www.banheirasbombanho.com.br/lojas/sobre-nos.html"
+    },
+    {
+      "autor": "Valéria Melo",
+      "texto": "Ótima empresa, preço acessível, entrega super rápida, recomendo muito, adorei!",
+      "fonte": "https://www.banheirasbombanho.com.br/lojas/sobre-nos.html"
+    }
+  ],
+  "redes": [
+    {
+      "rede": "Instagram",
+      "url": "https://www.instagram.com/banheirasbombanho/",
+      "principal": true
+    },
+    {
+      "rede": "Facebook",
+      "url": "https://www.facebook.com/banheirasbombanho",
+      "principal": true
+    },
+    {
+      "rede": "Facebook (página antiga, rodapé)",
+      "url": "https://www.facebook.com/Banheiras-Bom-Banho-1238350859675291/",
+      "principal": false
+    },
+    {
+      "rede": "Facebook (alt., alguns templates)",
+      "url": "https://www.facebook.com/bbbbanheiras",
+      "principal": false
+    },
+    {
+      "rede": "Twitter/X",
+      "url": "https://twitter.com/Hidros_BBB/",
+      "principal": true
+    },
+    {
+      "rede": "Pinterest",
+      "url": "https://br.pinterest.com/banheirasbombanho/",
+      "principal": true
+    },
+    {
+      "rede": "YouTube",
+      "url": "https://www.youtube.com/@bbbbanheiras",
+      "principal": true
+    }
+  ],
+  "youtube": "https://www.youtube.com/@bbbbanheiras",
+  "tutoriais_video": [
+    {
+      "titulo": "Banheiras Bom Banho: Cuidados e Manutenção com Spa",
+      "url": "https://youtu.be/8Mr1cJ3yeo4"
+    },
+    {
+      "titulo": "Banheiras Bom Banho: Montagem e instalação elétrica de banheiras, spas e ofurôs",
+      "url": "https://youtu.be/MRBmxdMQuzg"
+    },
+    {
+      "titulo": "Banheiras Bom Banho: Montagem e instalação hidráulica de banheiras, spas e ofurôs",
+      "url": "https://youtu.be/6xCrQy5KtOU"
+    }
+  ],
+  "textos_integrais": {
+    "sobre_nos": {
+      "texto": "Início\nInstitucional\nSobre Nós\nSobre Nós\nSOBRE NÓS\nBANHEIRAS BOM\n BANHO,\nA MAIOR LOJA DE FÁBRICA DE BANHEIRAS, SPAS E OFURÔS DO BRASIL\nFabricamos as banheiras em acrílico e gel coat, temos mais de\n 200 modelos de banheiras com hidromassagem com um processo de melhoria contínua em nossa fábrica.\n+ 11\nANOS DE HISTÓRIA\n+ DE 80\nCOLABORADORES DIRETOS\n+ DE 20.000\nM2 FÁBRICA EM MG\n+ DE 120.000\nBANHEIRAS, SPAS E OFURÔS VENDIDOS\nMais testemunhos de clientes satisfeitos\nAlto nível de satisfação!\nGustavo Cabral\nGostei do produto, do preço e da qualidade, tenho a quase 1 ano e quando precisei da assistência fui atendido.\nValéria Melo\nÓtima empresa, preço acessível, entrega super rápida, recomendo muito, adorei!",
+      "source_url": "https://www.banheirasbombanho.com.br/lojas/sobre-nos.html"
+    },
+    "empresa": {
+      "texto": "CONHEÇA A BBB BANHEIRAS BOM BANHO\nA EMPRESA\nSituada no Sul de Minas com suporte e estrutura para atender todo território Brasileiro e América do Sul. A BBB | Banheiras Bom Banho oferece aos clientes, conforto, qualidade de vida e momentos agradáveis, realizamos sonhos.\nEQUIPE\nA empresa conta com uma equipe experiente e especializada no desenvolvimento de cada peça. Somente quem entende muito do produto, consegue desenvolver o design e formas perfeitas para cada modelo.\nPRODUTOS\nBanheiras Bom Banho obtêm vários modelos diferenciados, atendendo todo gosto e ambiente. Os produtos são ricos em detalhes, possuem design sofisticados seguindo as tendências de vários países. Conheça melhor nossa empresa, faça-nos uma visita.\nBanheiras Bom Banho, aprecie.",
+      "source_url": "https://www.banheirasbombanho.com.br/loja-fabrica-de-banheiras"
+    },
+    "manual_nossa_empresa": {
+      "texto": "Situada em Minas Gerais, no município de Congonhal, cerca de 200 km de São Paulo, tem como principal objetivo a sua satisfação e conquista de um vasto mercado consumidor. Há mais de 11 anos no mercado a Banheiras Bom Banho tornou-se referência na fabricação de banheiras, spas e ofurôs. Graças à qualidade de nossos produtos e às excelentes condições de pagamento nossas banheiras são utilizadas em todo o Brasil. As Banheiras Bom Banho tornou-se uma das líderes de vendas no segmento, com designs sofisticados e o melhor custo/benefício do mercado. Seguimos as tendências de vários países e atendemos as necessidades e expectativas de cada cliente, inovando sempre, garantindo conforto, saúde e bem-estar. Nossos produtos são fáceis de limpar, resistente a raios solares e a intempéries, sendo assim são altamente recomendados. O nosso processo de fabricação nos permite obter banheiras de hidromassagem que reúnem as crescentes exigências da tecnologia moderna. A empresa tem apresentado um crescimento acentuado nos últimos anos. Este crescimento é fruto de constantes investimentos nos processos de fabricação, aliados a aquisição de equipamentos de alta tecnologia. O diferencial competitivo da Banheiras Bom Banho pode ser resumido na qualidade dos meios de produção, controle de processo, agilidade comercial e aprimoramento constante.",
+      "source_url": "https://www.banheirasbombanho.com.br/manual/manual-do-usuario.pdf (p.3)",
+      "obs": "espaços quebrados do PDF normalizados; palavras iguais"
+    },
+    "home_seo": {
+      "texto": "Banheiras, Spas e Ofurôs\nHá mais de 11 anos no mercado a Banheiras Bom Banho tornou-se referência na fabricação de\nbanheiras, spas e ofurôs\n. Graças à qualidade de nossos produtos e às excelentes condições de pagamento nossas\nbanheiras\nsão utilizadas em todo o Brasil.\nEscolha entre modelos fabricados em gel coat ou acrílico e confira as opções de\nbanheiras por tamanho\nem diversos formatos e itens personalizáveis com diversas opções.\nMais Desejadas\n20%\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nSpa Quadrado Vitória COMPLETO com hidro\nPreço Especial\nR$16.245,00\nPreço\nR$20.306,25\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Redonda Malibu COMPLETA com hidro\nPreço Especial\nR$6.178,15\nPreço\nR$7.722,69\nComprar\n20%\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nSpa Redondo Sensação Gold COMPLETO com hidro\nPreço Especial\nR$9.930,60\nPreço\nR$12.413,25\nComprar\n20%\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nSpa Retangular Imola COMPLETO com hidro\nPreço Especial\nR$10.714,30\nPreço\nR$13.392,87\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Retangular Búzios COMPLETA com hidro\nPreço Especial\nR$4.965,89\nPreço\nR$6.207,36\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Retangular Manaus COMPLETA com hidro\nPreço Especial\nR$4.480,82\nPreço\nR$5.601,02\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira de Canto Mercury COMPLETA com hidro\nPreço Especial\nR$5.327,37\nPreço\nR$6.659,21\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Dupla Lyon COMPLETA com hidro\nPreço Especial\nR$8.335,78\nPreço\nR$10.419,72\nComprar\nBanheiras Mais Desejadas\nCompre sua\nbanheira de hidro\ndireto da fábrica e adicione acessórios conforme suas preferências. Nossas\nbanheiras\npodem ser acompanhadas de itens como cascatas, cromoterapia, aquecedores digitais e muito mais.\nUsufrua de todo o espaço disponível em seu banheiro com\nbanheiras redondas\n,\nbanheiras de canto\n, quadradas ou retangulares. Confira nossos modelos mais vendidos e encomende o seu agora mesmo!\nVeja Mais\nSPAs Mais Desejadas\nSe você procura por\nspa\nou\nofurô\n, também vai encontrar na Banheiras Bom Banho produtos com design sofisticado para um banho revigorante. Nossos modelos de\nofurôs externos\nsão desenvolvidos para serem resistentes e podem ser instalados em áreas de lazer, de piscinas, terraços e até em varandas.\nAs\nbanheiras spas\nunem sofisticação e profundo relaxamento com amplo espaço, maior quantidade de jatos e excelente ergonomia\nAproveite os modelos de\nspas e ofurôs com hidro\npara banhos individuais ou até para 8 pessoas.\nVeja Mais\nEntregamos\nbanheiras de alto padrão\npara todo o país e parcelamos em 10x sem juros. Confira as condições especiais de\npreço de banheiras\npara pedidos com mais de 5 unidades em nosso chat ou televendas.\nBanheiras, spas e ofurôs\nHá mais de 11 anos no mercado a Banheiras Bom Banho tornou-se referência na fabricação de\nbanheiras\n,\nspas\ne\nofurôs\n. Graças à qualidade de nossos produtos e às excelentes condições de pagamento nossas banheiras são utilizadas em todo o Brasil.\nEscolha entre modelos fabricados em gel coat ou acrílico e confira as opções de\nbanheiras por tamanho\nem diversos formatos e itens personalizáveis com diversas opções.\nBanheiras mais desejadas\nCompre sua\nbanheira de hidro\ndireto da fábrica e adicione acessórios conforme suas preferências. Nossas\nbanheiras podem ser acompanhadas de itens como cascatas, cromoterapia, aquecedores digitais e muito mais.\nUsufrua de todo o espaço disponível em seu banheiro com\nbanheiras redondas,\nbanheiras de canto\n, quadradas ou retangulares. Confira nossos modelos mais vendidos e encomende o seu agora mesmo!\n...\nSpas e Ofurôs mais desejados\nSe você procura por\nspa\nou\nofurô\n,\ntambém vai encontrar na Banheiras Bom Banho produtos com design sofisticado para um banho revigorante. Nossos modelos de\nofurôs externos\nsão desenvolvidos para serem resistentes e podem ser instalados em áreas de lazer, de piscinas, terraços e até em varandas.\nAs\nbanheiras spas\nunem sofisticação e profundo relaxamento com amplo espaço, maior quantidade de jatos e excelente ergonomia\nAproveite os modelos de spas e\nofurôs com hidro\npara banhos individuais ou até para 8 pessoas.\nComo escolher uma banheira?\nSe você está construindo e ainda está na dúvida se planeja seu espaço com uma\nbanheira simples\nou uma\nbanheira de hidro\n, saiba que existem diferentes quesitos que podem te ajudar a tomar a decisão. Pensando em contribuir com esse processo, nós da Banheiras Bom Banho separamos algumas informações relevantes!\nQuem sofre com dores musculares, menstruais ou possui problemas com insônia, a\nbanheira de hidro\npode ser uma grande aliada para resolver esses questionamentos.\nAlém de promover relaxamento e bem-estar por meio do banho de\nbanheira com hidro\n, essa\nbanheira\ndeixa o espaço muito mais bonito e despojado, além de ajudar a economizar água e incentiva a interação familiar entre os moradores da casa.\nTendo um bom planejamento sobre a disposição da banheira na sua casa, você pode optar por escolher qualquer tamanho e estilo de banheira. A\nbanheira dupla\ncostuma ser maior, por isso, se adapta melhor em lugares que foram planejados para sua instalação e é uma excelente forma de investir para ter mais momentos a dois!\nMas, se você não está construindo e deseja realizar a instalação de uma\nhidromassagem\nna sua casa, existem muitos modelos que podem lhe atender. Não tem nenhum problema se seu espaço for pequeno, opte por\nbanheiras de canto\nou\nofurô com hidro\nque são compactos com os ambientes menores.\nAlém dessas opções, também existe a\nbanheira retangular\nque costuma ser menor e se adapta perfeitamente dentro do próprio box do banheiro. Com isso, você terá o conforto de ter uma\nbanheira\nem casa e quase não gastará com sua instalação.\nAcessórios para Banheiras\nA Banheiras Bom Banho, oferece a possibilidade de personalização de banheiras com diferentes acessórios para incrementar ainda mais o banho.\nAo fazer o pedido de sua\nbanheira\n, você pode adicionar apoios de cabeça, luzes de cromoterapia, aquecedor digital com sensor, motobomba, cascata em cromo e muito mais.\nDicas para que sua banheira esteja sempre funcionando\nAntes de\ncomprar banheira\n, é interessante medir o local em que será instalada e comparar com a dimensão do produto. Com as medidas em mãos, você conseguirá saber se no local, a estrutura terá fácil acesso a motobomba e se o conjunto do espaço e banheira atenderá suas expectativas.\nPor isso, recomendamos muito o planejamento adequado e especialistas que possam te ajudar a realizar a melhor instalação e também cuidar da manutenção de sua banheira.\nSe você mora em apartamento ou pretende instalar uma banheira na sua sacada, verifique com um arquiteto ou engenheiro a viabilidade do projeto. A banheira não pode causar sobrepeso no local, por isso, é necessária a emissão de uma ART ou RRT para instalação.\nVale lembrar que ao comprar sua banheira a estrutura já vem com a parte elétrica pronta para instalação, no entanto, é preciso de conhecimento técnico não só em elétrica, mas em hidráulica.\nA nossa\nloja de banheiras\npossui uma lista de profissionais credenciados que estão preparados para instalar sua banheira.\nPor que escolher a Banheiras Bom Banho?\nEntregamos\nbanheiras de alto padrão\npara todo o país e parcelamos em 10x sem juros. Confira as condições especiais de\npreço de banheiras\npara pedidos com mais de 5 unidades em nosso chat ou televendas.\nLeia Mais",
+      "source_url": "https://www.banheirasbombanho.com.br/"
+    },
+    "preco_de_banheira_seo": {
+      "texto": "Início\nPreço de Banheira\nPreço de Banheira\nO melhor\npreço de banheira\nestá na\nBanheiras Bom Banho\n. Aproveite a excelente qualidade em produtos, condições de pagamento e de entrega e deixe seu banho relaxante.\nItens\n1\n-\n12\nde\n203\nOrdenar por\nPosição\nNome do produto\nPreço\nMaterial\nDefinir Direção Decrescente\nMostrar\n12\n24\n36\npor página\nPágina\nVocê esta lendo a pagina\n1\nPágina\n2\nPágina\n3\nPágina\n4\nPágina\nPróximo\nVer como\nGrade\nLista\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira dupla Capri COMPLETA com hidro em acrílico\nPreço Especial\nR$12.972,07\nPreço\nR$16.215,09\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira dupla Harmonia COMPLETA com hidro em acrílico\nPreço Especial\nR$16.646,88\nPreço\nR$20.808,60\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Retangular Maresias COMPLETA com hidro em acrílico\nPreço Especial\nR$4.807,59\nPreço\nR$6.009,48\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Retangular Monte Verde Completa com Hidro em Acrílico\nPreço Especial\nR$5.771,27\nPreço\nR$7.214,08\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Contemporânea Paraty SEM HIDRO\nPreço Especial\nR$8.415,31\nPreço\nR$10.519,14\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nSpa quadrado Chicago Completo com hidro em acrílico\nPreço Especial\nR$15.069,70\nPreço\nR$18.837,12\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Redonda Sensuale COMPLETA com hidro em acrílico\nPreço Especial\nR$6.170,86\nPreço\nR$7.713,57\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Dupla Fortaleza Excellence COMPLETA C/ Hidro Em Acrílico\nPreço Especial\nR$10.408,14\nPreço\nR$13.010,17\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira individual Indonésia COMPLETA com hidro em acrílico\nPreço Especial\nR$5.450,84\nPreço\nR$6.813,54\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira Dupla Cancún com hidro em acrílico\nClassificação:\n100%\n1\nAvaliação\nPreço Especial\nR$6.064,85\nPreço\nR$7.581,06\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira individual Indonésia com hidro em acrílico\nPreço Especial\nR$4.882,00\nPreço\nR$6.102,50\nComprar\nVisualizar\nAdicionar à Lista de Desejos\nComparar\nBanheira individual Filipinas COMPLETA com hidro\nPreço Especial\nR$5.193,38\nPreço\nR$6.491,72\nComprar\nItens\n1\n-\n12\nde\n203\nOrdenar por\nPosição\nNome do produto\nPreço\nMaterial\nDefinir Direção Decrescente\nMostrar\n12\n24\n36\npor página\nPágina\nVocê esta lendo a pagina\n1\nPágina\n2\nPágina\n3\nPágina\n4\nPágina\nPróximo\nVer como\nGrade\nLista\nPreço de Banheira\nSem dúvida alguma, o melhor\npreço de banheira\nestá na Banheiras Bom Banho!\nNão só porque somos especialistas na área, mas também pelo fato de nossa prioridade ser oferecer aos nossos clientes uma experiência diferenciada quando o assunto é banho por imersão de água quente.\nAproveite a excelente qualidade em produtos, condições de pagamento e de entrega e deixe seu banho relaxante!\nBanheiras mais desejadas\nEscolhendo a BBB, sua\nbanheira\nvem\ndireto da fábrica e por isso você pode adicionar acessórios conforme suas preferências.\nTemos diferentes categorias de\nbanheiras\ndisponíveis em nosso site, entre elas as tão cobiçadas\nbanheiras jacuzzi\n- que podem ser acompanhadas de itens como cascatas, cromoterapia, aquecedores digitais e muito mais.\nMesmo que essas estejam na lista das mais procuradas, você pode usufruir do espaço disponível em seu banheiro com\nbanheiras redondas\n,\nbanheiras de canto\n, quadradas ou retangulares.\nSpas e Ofurôs mais desejados\nSe você procura por\nspa\nou\nofurô\n,\ntambém vai encontrar na Banheiras Bom Banho produtos com design sofisticado para um banho revigorante!\nNossos modelos de\nofurôs externos\nsão desenvolvidos com alta resistência e podem ser instalados em áreas de lazer, de piscinas, terraços e até em varandas.\nAs\nbanheiras spas\nunem sofisticação e profundo relaxamento com amplo espaço, maior quantidade de jatos e excelente ergonomia\nAproveite os modelos de spas e\nofurôs com hidro\npara banhos individuais ou até para 8 pessoas conferindo essa categoria.\nÉ a melhor oportunidade para você finalmente ter a área de lazer dos sonhos!\nTipos de Banheiras\nPara atender a todas as demandas de nossos clientes, oferecemos diversas opções de banheiras. Aqui você vai encontrar ofurôs,\nspas\ne\nbanheiras\nde vários tamanhos com opções personalizáveis.\nFabricamos\nbanheiras em acrílico\ne\nbanheiras em gel coat\ncom mais de 180 cores disponíveis.\nAs\nbanheiras de acrílico\ntem bastante brilho, no entanto, não podem ser reparadas em caso de trincas ou furos. Já as\nbanheiras de gel coat\ntem menos brilho, porém, estão aptas a receber reparos em caso de danos.\nComo escolher uma banheira?\nEstá reformando seu banheiro, construindo um novo e ainda está na dúvida de como planeja seu espaço? Precisa definir se vai escolher uma\nbanheira simples\nou uma\nbanheira de hidro\n?\nSaiba que existem diferentes quesitos que podem te ajudar a tomar a decisão. Pensando em contribuir com esse processo, nós da Banheiras Bom Banho já separamos algumas informações relevantes para esclarecer certas questões!\nSe você frequentemente sofre com dores musculares, menstruais ou tem problemas com insônia, a\nbanheira de hidro\né a melhor opção e pode ser uma grande aliada para resolver esses questionamentos;\nPara aqueles que conseguem fazer um bom planejamento sobre a disposição da banheira na sua casa e tem espaço suficiente para não perder área de circulação, é possível optar por escolher qualquer tamanho e estilo de banheira, como por exemplo a\nbanheira dupla\n.\nEsse modelo costuma ser maior, por isso, se adapta melhor em lugares que foram planejados para sua instalação e é uma excelente forma de investir para ter mais momentos a dois!;\nCaso não esteja construindo um novo banheiro e nem ampliando esse ambiente, mas deseja realizar a instalação de uma\nhidromassagem\nna sua casa, existem muitos modelos que podem lhe atender.\nNão tem nenhum problema se seu espaço for pequeno! Opte por\nbanheiras de canto\nou\nofurô com hidro\nque são compactos e adequados para os ambientes menores.\nAlém dessas opções, também é possível optar pela\nbanheira retangular\nque, por não ser muito grande, se adapta perfeitamente dentro do próprio box do banheiro. Com isso, você terá o conforto de ter uma\nbanheira\nem casa e quase não gastará com sua instalação!\nQuais são os diferenciais de banheiras de hidromassagem?\nAs\nbanheiras de hidromassagem\npromovem o bem estar e relaxamento da mente e do corpo.\nA água quente da\nbanheira de hidro\ndiminui o stress e a ansiedade, pois promove a produção de endorfina. Além disso, o vapor do banho desobstrui as vias aéreas melhorando a respiração.\nAs dores nas articulações e musculares também são amenizadas com as\nbanheiras hidro\n. Isso acontece em razão, da água quente que ameniza as tensões e dilata os vasos sanguíneos.\nCom a dilatação dos vasos sanguíneos e a melhoria na circulação, os banhos em\nbanheira para banheiro\ntambém agem na diminuição das varizes e celulite.\nDicas para que sua banheira esteja sempre funcionando\nComo já foi mencionado, antes de\ncomprar banheira\né importante e interessante medir o local em que deseja realizar a instalação para poder comparar com a dimensão do produto que está entre as suas opções.\nTendo as medidas precisas em mãos, será possível saber o tamanho da estrutura para que ao realizar a instalação da\nbanheira hidro\nconsiga ter fácil acesso a motobomba e também se o conjunto do espaço + banheira atenderá suas expectativas.\nEsse planejamento e o processo de tirar medidas devem ser conduzidos por especialistas que tenham condições e expertise necessária para te ajudar a realizar a melhor instalação, além de ajudar a cuidar da manutenção de sua banheira.\nPor exemplo, quem mora em apartamento e quer uma banheira na suíte ou pretende instalar uma banheira na sua sacada, precisa de um arquiteto ou engenheiro que tornem esse projeto viável.\nEsses profissionais saberão que uma banheira não pode causar sobrepeso no local e que, por isso, será necessário emitir uma ART ou RRT para instalação.\nVale destacar também que ao comprar sua banheira a estrutura já vem com a parte elétrica pronta para instalação, no entanto, é preciso de conhecimento técnico não só em elétrica, mas em hidráulica.\nA nossa\nloja de banheiras\ntem uma lista de profissionais credenciados que estão preparados para instalar sua banheira de maneira adequada.\nGarantia da Banheiras Bom Banho e por que escolher nossa empresa?\nA fabricação própria de nossas motobombas possibilita que possamos assegurar aos nossos clientes 1 anos de garantia. Todos nossos produtos são certificados pelo INMETRO e caso a instalação seja realizada com algum de nossos profissionais recomendados, oferecemos 6 meses adicionais de garantia.\nNavegue pelo site e aproveite as condições e qualidade que só uma loja fabricante de banheiras pode te oferecer. Conte com a expertise da Banheiras Bom Banho!\nEntregamos as melhores\nbanheiras Brasil\ne parcelamos em 10x sem juros. Confira as condições especiais de\npreço de banheiras\npara pedidos com mais de 5 unidades em nosso chat ou televendas.\nLeia Mais\nOcultar texto\nFiltrar por\nOpções de Compra\nPreço\nR$2.800,00\n-\nR$2.899,99\n1\nartigo\nR$3.400,00\n-\nR$3.499,99\n1\nartigo\nR$3.600,00\n-\nR$3.699,99\n1\nartigo\nR$3.700,00\n-\nR$3.799,99\n1\nartigo\nR$3.900,00\n-\nR$3.999,99\n4\nartigo\nR$4.000,00\n-\nR$4.099,99\n3\nartigo\nR$4.100,00\n-\nR$4.199,99\n5\nartigo\nR$4.200,00\n-\nR$4.299,99\n6\nartigo\nR$4.300,00\n-\nR$4.399,99\n2\nartigo\nR$4.400,00\ne acima\n179\nartigo\nConfiguracao\nBásica\n70\nartigo\nCompleta\n133\nartigo\nForma\nRedonda\n29\nartigo\nQuadrada\n2\nartigo\nRetangular\n146\nartigo\nDe Canto\n26\nartigo\nLugares\nIndividual\n68\nartigo\n2 Lugares\n106\nartigo\n3 Lugares\n24\nartigo\n4 Lugares\n4\nartigo\n5 Lugares\n1\nartigo\nMaterial\nGel Coat\n108\nartigo\nAcrílico\n95\nartigo\nComprimento\n0,70m\n3\nartigo\n0,74m\n6\nartigo\n0,79m\n8\nartigo\n0,80m\n13\nartigo\n0,81m\n5\nartigo\n0,82m\n1\nartigo\n0,83m\n5\nartigo\n0,85m\n4\nartigo\n0,84m\n5\nartigo\n0,86m\n1\nartigo\n0,88m\n5\nartigo\n0,90m\n10\nartigo\n0,91m\n3\nartigo\n0,99m\n3\nartigo\n1,00m\n8\nartigo\n1,03m\n5\nartigo\n1,06m\n7\nartigo\n1,08m\n4\nartigo\n1,09m\n5\nartigo\n1,10m\n5\nartigo\n1,13m\n2\nartigo\n1,15m\n4\nartigo\n1,19m\n21\nartigo\n1,20m\n19\nartigo\n1,28m\n1\nartigo\n1,29m\n3\nartigo\n1,30m\n4\nartigo\n1,34m\n4\nartigo\n1,35m\n2\nartigo\n1,36m\n3\nartigo\n1,38m\n4\nartigo\n1,40m\n7\nartigo\n1,43m\n6\nartigo\n1,48m\n4\nartigo\n1,49m\n4\nartigo\n1,50m\n10\nartigo\n1,51m\n1\nartigo\n1,57m\n4\nartigo\n1,59m\n6\nartigo\n1,60m\n5\nartigo\n1,61m\n1\nartigo\n1,65m\n2\nartigo\n1,66m\n4\nartigo\n1,68m\n1\nartigo\n1,69m\n3\nartigo\n1,70m\n4\nartigo\n1,78m\n4\nartigo\n1,79m\n5\nartigo\n1,84m\n1\nartigo\n1,90m\n1\nartigo\n1,95m\n1\nartigo\n2,02m\n1\nartigo\nLargura\n0,69m\n2\nartigo\n0,80m\n2\nartigo\n0,82m\n1\nartigo\n0,84m\n1\nartigo\n0,85m\n1\nartigo\n0,91m\n3\nartigo\n0,99m\n2\nartigo\n1,05m\n1\nartigo\n1,09m\n5\nartigo\n1,16m\n1\nartigo\n1,19m\n4\nartigo\n1,20m\n10\nartigo\n1,29m\n5\nartigo\n1,30m\n7\nartigo\n1,34m\n4\nartigo\n1,35m\n2\nartigo\n1,36m\n5\nartigo\n1,38m\n4\nartigo\n1,39m\n10\nartigo\n1,40m\n10\nartigo\n1,41m\n4\nartigo\n1,42m\n1\nartigo\n1,43m\n3\nartigo\n1,44m\n4\nartigo\n1,48m\n6\nartigo\n1,49m\n15\nartigo\n1,50m\n21\nartigo\n1,51m\n7\nartigo\n1,56m\n1\nartigo\n1,57m\n4\nartigo\n1,59m\n14\nartigo\n1,60m\n21\nartigo\n1,61m\n1\nartigo\n1,64m\n2\nartigo\n1,65m\n1\nartigo\n1,66m\n5\nartigo\n1,68m\n1\nartigo\n1,69m\n26\nartigo\n1,70m\n34\nartigo\n1,78m\n15\nartigo\n1,79m\n15\nartigo\n1,80m\n34\nartigo\n1,81m\n10\nartigo\n1,84m\n4\nartigo\n1,89m\n6\nartigo\n1,90m\n7\nartigo\n1,95m\n1\nartigo\n1,96m\n6\nartigo\n2,00m\n2\nartigo\n2,02m\n1\nartigo\nComparar Produtos\nRemover este Item\nComparar\nLimpar Tudo\nVocê não tem itens para comparar.",
+      "source_url": "https://www.banheirasbombanho.com.br/preco-de-banheira.html"
+    },
+    "politica_da_qualidade": {
+      "texto": "Emissão:\n03/08/2021\nAnálise Crítica:\n05/08/2021\nAprovação:\n05/08/2021\nREV.\n00\nPOLÍTICA DA QUALIDADE\nFR-001\nA BBB tem como foco principal a fabricação de Banheiras e Spa's de hidromassagem e Ofurôs,\ngarantindo a satisfação de seus clientes no atendimento aos requisitos das partes interessadas\npertinentes e melhorando continuamente o sistema de gestão e processos de trabalho\nconstatando a excelência de nossos produtos, valorizando a parceria com colaboradores, clientes\ne fornecedores.\nCongonhal, 03 de Agosto de 2021.",
+      "source_url": "https://www.banheirasbombanho.com.br/politica-da-qualidade"
+    },
+    "fabrica_galeria_texto": {
+      "texto": "CONHEÇA NOSSA FÁBRICA. ALGUNS DE NOSSOS PROJETOS FINALIZADOS. Com produtos de alta qualidade e visual sofisticados, a nossa equipe de vendas é muito bem preparada paraa atender a sua necessidade, atingindo sua expectativa deixando seu ambiente ainda mais elegante e confortável.",
+      "source_url": "https://www.banheirasbombanho.com.br/lojas/loja-fisica.html"
+    }
+  },
+  "galeria_fabrica_e_projetos": {
+    "titulo": "CONHEÇA NOSSA FÁBRICA / ALGUNS DE NOSSOS PROJETOS FINALIZADOS",
+    "source_url": [
+      "https://www.banheirasbombanho.com.br/lojas/loja-fisica.html",
+      "https://www.banheirasbombanho.com.br/loja-fisica"
+    ],
+    "imagens": [
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/aaaaaa.jpg",
+        "alt": "Conheça a fábrica de banheiras da Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini1.jpg",
+        "alt": "Fábrica de Banheiras: Venha conhecer | Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini2.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini3.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini4.jpg",
+        "alt": "Conheça a Fábrica da Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini5.jpg",
+        "alt": "Compre Banheiras, Spas e Ofurôs direto da fábrica | BBB"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini6.jpg",
+        "alt": "Fábrica de Banheiras, Spas e Ofurôs | BBB"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini7.jpg",
+        "alt": "Fábrica de Banheiras da Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini8.jpg",
+        "alt": "Fábrica Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/minifachada2.jpg",
+        "alt": "Conheça nossos showroons de banheiras | Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/minifachada.jpg",
+        "alt": "Conheça os showroons da Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/Spa_Vit_ria_2.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/vitoria.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/Sensual_1.jpg",
+        "alt": "Banheira de hidro redonda sensuale | Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/Sensuale.jpg",
+        "alt": "Banheira redonda dupla sensuale | Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/Interno_1.jpg",
+        "alt": "Conheça as banheiras nos showroons da Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/Spa_Atacama.jpg",
+        "alt": "Spa quadrado com hidro modelo atacama | Banheiras Bom Banho"
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_10.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_9.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_8.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_7.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_6.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_5.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_4_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_3_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_vitoria_2_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_taiti.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_sensa_o_gold.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_sensacao_gold.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_sensa_o_gold_6.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_sensa_o_gold_5_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_sensa_o_gold_4_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_sensa_o_gold_3_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_sensa_o_gold_2_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_napole.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_napole_3_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_napole_2_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_ipanema_1.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_ipanema_com_deck.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_imola_com_deck.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_fenix.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_copacabana_1.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/spa_atacama.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4790.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4788.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4787.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4786.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4785.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4784.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4782.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4780.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4779.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4776.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4775.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4774.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4773.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4772.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/IMG_4771.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/foto_deck.jpeg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/foto_de_deck_casa.jpeg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/eeea26ac-698f-492a-9da2-779b3a52b14c.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/decks_personalizados.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_vitoria_com_abas.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_maresias_dupla.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_maresias_dupla_2_.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_malibu.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_lyon.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_cancun.jpg",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_bruxelas.JPG",
+        "alt": null
+      },
+      {
+        "src": "https://www.banheirasbombanho.com.br/media/loja-fisica/banheira_bruxelas_2_.JPG",
+        "alt": null
+      },
+      {
+        "src": "{media url=\"wysiwyg/mini7.jpg\"}}",
+        "alt": "Fábrica de Banheiras da Banheiras Bom Banho\n"
+      }
+    ]
+  },
+  "claims_nao_publicar": [
+    "BANHEIRAS BOM BANHO, A MAIOR LOJA DE FÁBRICA DE BANHEIRAS, SPAS E OFURÔS DO BRASIL",
+    "Somos a maior fábrica de banheiras, spas e ofurôs!",
+    "TEMOS A LINHA MAIS COMPLETA DE BANHEIRAS, SPAS E OFURÔS",
+    "Fabricamos as banheiras em acrílico e gel coat, temos mais de 200 modelos de banheiras com hidromassagem com um processo de melhoria contínua em nossa fábrica.",
+    "Há mais de 11 anos no mercado a Banheiras Bom Banho tornou-se referência na fabricação de banheiras, spas e ofurôs .",
+    "Fabricamos banheiras em acrílico e banheiras em gel coat com mais de 180 cores disponíveis.",
+    "A única com selo do INMETRO.",
+    "As Banheiras Bom Banho tornou-se uma das líderes de vendas no segmento, com designs sofisticados e o melhor custo/benefício do mercado.",
+    "Aproveite os modelos de spas e ofurôs com hidro para banhos individuais ou até para 8 pessoas.",
+    "Entregamos banheiras de alto padrão para todo o país e parcelamos em 10x sem juros. Confira as condições especiais de preço de banheiras para pedidos com mais de 5 unidades em nosso chat ou televendas.",
+    "DIRETO DA FÁBRICA | ATACADO E VAREJO | 10X SEM JUROS PELO CHAT OU TELEVENDAS | ENTREGA EM TODO BRASIL"
+  ],
+  "conflitos_da_fonte_ref": "_recon/institucional.json#conflitos_e_alertas",
+  "fonte": "https://www.banheirasbombanho.com.br",
+  "coletado_em": "2026-10-18"
+}

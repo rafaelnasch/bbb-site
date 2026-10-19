@@ -1,0 +1,293 @@
+{
+  "coletado_em": "2026-10-18",
+  "fonte": "_recon/whatsapp.json + _recon/institucional.json",
+  "contatos": [
+    {
+      "papel": "venda_principal",
+      "numero": "5535992194882",
+      "display": "35 99219-4882",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/spas.html",
+        "https://www.banheirasbombanho.com.br/spa-quadrado-napole-completo-com-hidro.html"
+      ],
+      "coletado_em": "2026-10-18"
+    },
+    {
+      "papel": "ajuda",
+      "numero": "5535992192256",
+      "display": "(35) 9 9219-2256",
+      "prefilled_text": "Olá, estava navegando no site Banheiras Bom Banho e preciso de ajuda!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html",
+        "https://www.banheirasbombanho.com.br/como-comprar"
+      ],
+      "coletado_em": "2026-10-18"
+    },
+    {
+      "papel": "consultor_1",
+      "numero": "5535991097528",
+      "display": "(35) 99109-7528",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/contacts"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 1
+    },
+    {
+      "papel": "consultor_2",
+      "numero": "5535999834686",
+      "display": "(35) 99983-4686",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/representantes-credenciados"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 2
+    },
+    {
+      "papel": "consultor_3",
+      "numero": "5535992218069",
+      "display": "(35) 99221-8069",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/representantes-credenciados"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 3
+    },
+    {
+      "papel": "consultor_4",
+      "numero": "5535991480073",
+      "display": "(35) 99148-0073",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/representantes-credenciados"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 4
+    },
+    {
+      "papel": "consultor_5",
+      "numero": "5535992575221",
+      "display": "(35) 99257-5221",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/contacts"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 5
+    },
+    {
+      "papel": "consultor_6",
+      "numero": "5535991480136",
+      "display": "(35) 99148-0136",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/representantes-credenciados"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 6
+    },
+    {
+      "papel": "consultor_7",
+      "numero": "5535991480210",
+      "display": "(35) 99148-0210",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/contacts"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 7
+    },
+    {
+      "papel": "consultor_8",
+      "numero": "5535991240893",
+      "display": "(35) 99124-0893",
+      "prefilled_text": "Olá! Tenho interesse em adquirir uma banheira de hidromassagem!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/representantes-credenciados"
+      ],
+      "coletado_em": "2026-10-18",
+      "ordem_rodape": 8
+    },
+    {
+      "papel": "rastreio",
+      "numero": "5535992699530",
+      "display": "(35) 9 9269-9530",
+      "prefilled_text": "Olá, gostaria de maiores informações sobre o rastreio do meu pedido!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/contacts"
+      ],
+      "coletado_em": "2026-10-18"
+    },
+    {
+      "papel": "sac",
+      "numero": "5535991820062",
+      "display": "(35) 99182-0062",
+      "prefilled_text": "",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/contacts"
+      ],
+      "coletado_em": "2026-10-18"
+    },
+    {
+      "papel": "loja_congonhal",
+      "numero": "5535992192256",
+      "display": "(35) 9 9219-2256",
+      "prefilled_text": "Olá, estava navegando no site Banheiras Bom Banho e preciso de ajuda!",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/",
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html",
+        "https://www.banheirasbombanho.com.br/como-comprar"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 1
+    },
+    {
+      "papel": "loja_taubate",
+      "numero": "553592220037",
+      "display": "(35) 9222-0037",
+      "prefilled_text": "",
+      "status": "ativo_formato_suspeito",
+      "link_ativo": false,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 2,
+      "link_destino_papel": "ajuda"
+    },
+    {
+      "papel": "loja_caraguatatuba",
+      "numero": "5535992220044",
+      "display": "(35) 99222-0044",
+      "prefilled_text": "",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 3
+    },
+    {
+      "papel": "loja_belo-horizonte",
+      "numero": "5535992090026",
+      "display": "(35) 99209-0026",
+      "prefilled_text": "",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 4
+    },
+    {
+      "papel": "loja_ribeirao-preto",
+      "numero": "5535992220040",
+      "display": "(35) 99222-0040",
+      "prefilled_text": "",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 5
+    },
+    {
+      "papel": "loja_campinas",
+      "numero": "5519982887366",
+      "display": "(19) 98288-7366",
+      "prefilled_text": "",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 6
+    },
+    {
+      "papel": "loja_rio-de-janeiro",
+      "numero": "5521992554949",
+      "display": "(21) 99255-4949",
+      "prefilled_text": "",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 7
+    },
+    {
+      "papel": "loja_goiania",
+      "numero": "556299404921",
+      "display": "(62) 9940-4921",
+      "prefilled_text": "",
+      "status": "ativo_formato_suspeito",
+      "link_ativo": false,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 8,
+      "link_destino_papel": "ajuda"
+    },
+    {
+      "papel": "loja_contagem",
+      "numero": "5531993740262",
+      "display": "(31) 99374-0262",
+      "prefilled_text": "",
+      "status": "ativo",
+      "link_ativo": true,
+      "fonte": [
+        "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html"
+      ],
+      "coletado_em": "2026-10-18",
+      "loja_n": 9
+    }
+  ]
+}

@@ -1,0 +1,2567 @@
+{
+  "banheira-acqua-linea": {
+    "familia": "banheira-acqua-linea",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-acqua-linea-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Acqua Línea COMPLETA com hidro em Acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.401,18",
+        "finalPrice": 5401.18
+      },
+      {
+        "slug": "banheira-acqua-linea-completa-com-hidro",
+        "nome": "Banheira Acqua Línea COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.237,23",
+        "finalPrice": 4237.23
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-acqua-stylo": {
+    "familia": "banheira-acqua-stylo",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-acqua-stylo-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Acqua Stylo COMPLETA com hidro em Acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.816,39",
+        "finalPrice": 4816.39
+      },
+      {
+        "slug": "banheira-acqua-stylo-completa-com-hidro",
+        "nome": "Banheira Acqua Stylo COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$3.904,13",
+        "finalPrice": 3904.13
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-acqua-top": {
+    "familia": "banheira-acqua-top",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-acqua-top-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Acqua Top COMPLETA com hidro em Acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.684,15",
+        "finalPrice": 6684.15
+      },
+      {
+        "slug": "banheira-acqua-top-completa-com-hidro",
+        "nome": "Banheira Acqua Top COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.363,66",
+        "finalPrice": 4363.66
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-acqua-vip": {
+    "familia": "banheira-acqua-vip",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-acqua-vip-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Acqua Vip COMPLETA com hidro em Acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.446,81",
+        "finalPrice": 5446.81
+      },
+      {
+        "slug": "banheira-acqua-vip-completa-com-hidro",
+        "nome": "Banheira Acqua Vip COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.215,62",
+        "finalPrice": 4215.62
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-mercury": {
+    "familia": "banheira-mercury",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-de-canto-mercury-completa-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Mercury COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.306,13",
+        "finalPrice": 6306.13
+      },
+      {
+        "slug": "banheira-de-canto-mercury-completa-com-hidro",
+        "nome": "Banheira de Canto Mercury COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.327,37",
+        "finalPrice": 5327.37
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-monaco": {
+    "familia": "banheira-monaco",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-de-canto-monaco-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Mônaco com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.684,94",
+        "finalPrice": 5684.94
+      },
+      {
+        "slug": "banheira-de-canto-monaco-com-hidro",
+        "nome": "Banheira de Canto Mônaco com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.567,88",
+        "finalPrice": 5567.88
+      },
+      {
+        "slug": "banheira-de-canto-monaco-completa-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Mônaco COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.199,40",
+        "finalPrice": 6199.4
+      },
+      {
+        "slug": "banheira-de-canto-monaco-completa-com-hidro",
+        "nome": "Banheira de Canto Mônaco COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.180,11",
+        "finalPrice": 6180.11
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-santa-monica": {
+    "familia": "banheira-santa-monica",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-de-canto-santa-monica-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Santa Mônica com Hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.633,80",
+        "finalPrice": 5633.8
+      },
+      {
+        "slug": "banheira-de-canto-santa-monica-com-hidro",
+        "nome": "Banheira de Canto Santa Mônica com Hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.440,94",
+        "finalPrice": 5440.94
+      },
+      {
+        "slug": "banheira-de-canto-santa-monica-completa-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Santa Mônica COMPLETA com Hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.083,91",
+        "finalPrice": 6083.91
+      },
+      {
+        "slug": "banheira-de-canto-santa-monica-completa-com-hidro",
+        "nome": "Banheira de Canto Santa Mônica COMPLETA com Hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.955,49",
+        "finalPrice": 5955.49
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-sensuale-de-canto": {
+    "familia": "banheira-sensuale-de-canto",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-de-canto-sensuale-completa-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Sensuale COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.363,69",
+        "finalPrice": 6363.69
+      },
+      {
+        "slug": "banheira-de-canto-sensuale-completa-com-hidro",
+        "nome": "Banheira de Canto Sensuale COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.084,66",
+        "finalPrice": 6084.66
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-sevilha": {
+    "familia": "banheira-sevilha",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-de-canto-sevilha-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Sevilha com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.071,53",
+        "finalPrice": 6071.53
+      },
+      {
+        "slug": "banheira-de-canto-sevilha-com-hidro",
+        "nome": "Banheira de Canto Sevilha com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.785,65",
+        "finalPrice": 5785.65
+      },
+      {
+        "slug": "banheira-de-canto-sevilha-completa-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Sevilha COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.588,28",
+        "finalPrice": 6588.28
+      },
+      {
+        "slug": "banheira-de-canto-sevilha-completa-com-hidro",
+        "nome": "Banheira de Canto Sevilha COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.280,69",
+        "finalPrice": 6280.69
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-veneza": {
+    "familia": "banheira-veneza",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-de-canto-veneza-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Veneza com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.769,04",
+        "finalPrice": 4769.04
+      },
+      {
+        "slug": "banheira-de-canto-veneza-com-hidro",
+        "nome": "Banheira de Canto Veneza com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.105,80",
+        "finalPrice": 4105.8
+      },
+      {
+        "slug": "banheira-de-canto-veneza-completa-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Veneza COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.867,11",
+        "finalPrice": 5867.11
+      },
+      {
+        "slug": "banheira-de-canto-veneza-completa-com-hidro",
+        "nome": "Banheira de Canto Veneza COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.091,17",
+        "finalPrice": 5091.17
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-viena": {
+    "familia": "banheira-viena",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-de-canto-viena-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Viena com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.071,07",
+        "finalPrice": 6071.07
+      },
+      {
+        "slug": "banheira-de-canto-viena-com-hidro",
+        "nome": "Banheira de Canto Viena com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.777,85",
+        "finalPrice": 5777.85
+      },
+      {
+        "slug": "banheira-de-canto-viena-completa-com-hidro-em-acrilico",
+        "nome": "Banheira de Canto Viena COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.540,00",
+        "finalPrice": 7540
+      },
+      {
+        "slug": "banheira-de-canto-viena-completa-com-hidro",
+        "nome": "Banheira de Canto Viena COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.387,94",
+        "finalPrice": 6387.94
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-amazonia": {
+    "familia": "banheira-dupla-amazonia",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-amazonia-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Amazônia com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.984,00",
+        "finalPrice": 4984
+      },
+      {
+        "slug": "banheira-dupla-amazonia-com-hidro",
+        "nome": "Banheira Dupla Amazônia com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.169,42",
+        "finalPrice": 5169.42
+      },
+      {
+        "slug": "banheira-dupla-amazonia-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Amazônia COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.758,01",
+        "finalPrice": 5758.01
+      },
+      {
+        "slug": "banheira-dupla-amazonia-completa-com-hidro",
+        "nome": "Banheira Dupla Amazônia COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.628,04",
+        "finalPrice": 5628.04
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-austria": {
+    "familia": "banheira-dupla-austria",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-austria-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Austria com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.430,89",
+        "finalPrice": 4430.89
+      },
+      {
+        "slug": "banheira-dupla-austria-com-hidro",
+        "nome": "Banheira Dupla Austria com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.044,60",
+        "finalPrice": 4044.6
+      },
+      {
+        "slug": "banheira-dupla-austria-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Austria COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.256,63",
+        "finalPrice": 5256.63
+      },
+      {
+        "slug": "banheira-dupla-austria-completa-com-hidro",
+        "nome": "Banheira Dupla Austria COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.957,52",
+        "finalPrice": 4957.52
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-bruxelas": {
+    "familia": "banheira-dupla-bruxelas",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-bruxelas-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Bruxelas com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.809,20",
+        "finalPrice": 5809.2
+      },
+      {
+        "slug": "banheira-dupla-bruxelas-com-hidro",
+        "nome": "Banheira Dupla Bruxelas com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.568,02",
+        "finalPrice": 5568.02
+      },
+      {
+        "slug": "banheira-dupla-bruxelas-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Bruxelas COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.452,26",
+        "finalPrice": 6452.26
+      },
+      {
+        "slug": "banheira-dupla-bruxelas-completa-com-hidro",
+        "nome": "Banheira Dupla Bruxelas COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.071,13",
+        "finalPrice": 6071.13
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-california": {
+    "familia": "banheira-dupla-california",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-california-com-hidro",
+        "nome": "Banheira Dupla Califórnia com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.946,62",
+        "finalPrice": 4946.62
+      },
+      {
+        "slug": "banheira-dupla-california-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Califórnia COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.120,99",
+        "finalPrice": 6120.99
+      },
+      {
+        "slug": "banheira-dupla-california-completa-com-hidro",
+        "nome": "Banheira Dupla Califórnia COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.358,55",
+        "finalPrice": 5358.55
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-cancun": {
+    "familia": "banheira-dupla-cancun",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-cancun-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Cancún com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.064,85",
+        "finalPrice": 6064.85
+      },
+      {
+        "slug": "banheira-dupla-cancun-com-hidro",
+        "nome": "Banheira Dupla Cancún com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.672,43",
+        "finalPrice": 5672.43
+      },
+      {
+        "slug": "banheira-dupla-cancun-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Cancún COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.469,01",
+        "finalPrice": 6469.01
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-essenciale": {
+    "familia": "banheira-dupla-essenciale",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-essenciale-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Essenciale COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.274,70",
+        "finalPrice": 6274.7
+      },
+      {
+        "slug": "banheira-dupla-essenciale-completa-com-hidro",
+        "nome": "Banheira Dupla Essenciale COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.293,91",
+        "finalPrice": 5293.91
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-firenze": {
+    "familia": "banheira-dupla-firenze",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-firenze-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Firenze com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.999,71",
+        "finalPrice": 4999.71
+      },
+      {
+        "slug": "banheira-dupla-firenze-com-hidro",
+        "nome": "Banheira Dupla Firenze com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.268,17",
+        "finalPrice": 5268.17
+      },
+      {
+        "slug": "banheira-dupla-firenze-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Firenze COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.882,36",
+        "finalPrice": 5882.36
+      },
+      {
+        "slug": "banheira-dupla-firenze-completa-com-hidro",
+        "nome": "Banheira Dupla Firenze COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.705,51",
+        "finalPrice": 4705.51
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-fortaleza": {
+    "familia": "banheira-dupla-fortaleza",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-fortaleza-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Fortaleza COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.460,24",
+        "finalPrice": 6460.24
+      },
+      {
+        "slug": "banheira-dupla-fortaleza-completa-com-hidro",
+        "nome": "Banheira Dupla Fortaleza COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.386,34",
+        "finalPrice": 6386.34
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-havana": {
+    "familia": "banheira-dupla-havana",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-havana-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Havana COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.462,86",
+        "finalPrice": 6462.86
+      },
+      {
+        "slug": "banheira-dupla-havana-completa-com-hidro",
+        "nome": "Banheira Dupla Havana COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.985,37",
+        "finalPrice": 5985.37
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-hippolyte": {
+    "familia": "banheira-dupla-hippolyte",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-hippolyte-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Hippolyte com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.942,82",
+        "finalPrice": 5942.82
+      },
+      {
+        "slug": "banheira-dupla-hippolyte-com-hidro",
+        "nome": "Banheira Dupla Hippolyte com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.466,92",
+        "finalPrice": 5466.92
+      },
+      {
+        "slug": "banheira-dupla-hippolyte-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Hippolyte COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.456,64",
+        "finalPrice": 6456.64
+      },
+      {
+        "slug": "banheira-dupla-hippolyte-completa-com-hidro",
+        "nome": "Banheira Dupla Hippolyte COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.981,33",
+        "finalPrice": 5981.33
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-lyon-com-abas": {
+    "familia": "banheira-dupla-lyon-com-abas",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-lyon-com-abas-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Lyon com abas COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$13.728,11",
+        "finalPrice": 13728.11
+      },
+      {
+        "slug": "banheira-dupla-lyon-com-abas-completa-com-hidro",
+        "nome": "Banheira Dupla Lyon com abas COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.621,55",
+        "finalPrice": 11621.55
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-lyon": {
+    "familia": "banheira-dupla-lyon",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-lyon-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Lyon com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$7.487,59",
+        "finalPrice": 7487.59
+      },
+      {
+        "slug": "banheira-dupla-lyon-com-hidro",
+        "nome": "Banheira Dupla Lyon com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.883,01",
+        "finalPrice": 6883.01
+      },
+      {
+        "slug": "banheira-dupla-lyon-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Lyon COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$9.160,08",
+        "finalPrice": 9160.08
+      },
+      {
+        "slug": "banheira-dupla-lyon-completa-com-hidro",
+        "nome": "Banheira Dupla Lyon COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$8.335,78",
+        "finalPrice": 8335.78
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-madrid": {
+    "familia": "banheira-dupla-madrid",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-madrid-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Madrid com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.787,42",
+        "finalPrice": 4787.42
+      },
+      {
+        "slug": "banheira-dupla-madrid-com-hidro",
+        "nome": "Banheira Dupla Madrid com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.671,81",
+        "finalPrice": 4671.81
+      },
+      {
+        "slug": "banheira-dupla-madrid-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Madrid COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.122,11",
+        "finalPrice": 5122.11
+      },
+      {
+        "slug": "banheira-dupla-madrid-completa-com-hidro",
+        "nome": "Banheira Dupla Madrid COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.967,91",
+        "finalPrice": 4967.91
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-maresias": {
+    "familia": "banheira-dupla-maresias",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-maresias-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Maresias COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.443,88",
+        "finalPrice": 6443.88
+      },
+      {
+        "slug": "banheira-dupla-maresias-completa-com-hidro",
+        "nome": "Banheira Dupla Maresias COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.981,84",
+        "finalPrice": 5981.84
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-paris": {
+    "familia": "banheira-dupla-paris",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-paris-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Paris com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.188,46",
+        "finalPrice": 4188.46
+      },
+      {
+        "slug": "banheira-dupla-paris-com-hidro",
+        "nome": "Banheira Dupla Paris com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.009,42",
+        "finalPrice": 5009.42
+      },
+      {
+        "slug": "banheira-dupla-paris-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Paris COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.172,33",
+        "finalPrice": 6172.33
+      },
+      {
+        "slug": "banheira-dupla-paris-completa-com-hidro",
+        "nome": "Banheira Dupla Paris COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.025,08",
+        "finalPrice": 6025.08
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-requinte": {
+    "familia": "banheira-dupla-requinte",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-requinte-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Requinte COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.720,95",
+        "finalPrice": 6720.95
+      },
+      {
+        "slug": "banheira-dupla-requinte-completa-com-hidro",
+        "nome": "Banheira Dupla Requinte COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.476,51",
+        "finalPrice": 6476.51
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-rivail": {
+    "familia": "banheira-dupla-rivail",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-rivail-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Rivail com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.147,96",
+        "finalPrice": 6147.96
+      },
+      {
+        "slug": "banheira-dupla-rivail-com-hidro",
+        "nome": "Banheira Dupla Rivail com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$3.403,80",
+        "finalPrice": 3403.8
+      },
+      {
+        "slug": "banheira-dupla-rivail-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Rivail COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.558,12",
+        "finalPrice": 6558.12
+      },
+      {
+        "slug": "banheira-dupla-rivail-completa-com-hidro",
+        "nome": "Banheira Dupla Rivail COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.033,23",
+        "finalPrice": 6033.23
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-solene": {
+    "familia": "banheira-dupla-solene",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-solene-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Solene COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.394,27",
+        "finalPrice": 6394.27
+      },
+      {
+        "slug": "banheira-dupla-solene-completa-com-hidro",
+        "nome": "Banheira Dupla Solene COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.217,43",
+        "finalPrice": 5217.43
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-suica": {
+    "familia": "banheira-dupla-suica",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-suica-com-hidro",
+        "nome": "Banheira Dupla Suiça com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$2.823,16",
+        "finalPrice": 2823.16
+      },
+      {
+        "slug": "banheira-dupla-suica-completa-com-hidro",
+        "nome": "Banheira Dupla Suiça COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.274,70",
+        "finalPrice": 6274.7
+      }
+    ],
+    "variam_por": [
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-supreme": {
+    "familia": "banheira-dupla-supreme",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-supreme-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Supreme COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.476,96",
+        "finalPrice": 6476.96
+      },
+      {
+        "slug": "banheira-dupla-supreme-completa-com-hidro",
+        "nome": "Banheira Dupla Supreme COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.084,47",
+        "finalPrice": 6084.47
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-valencia": {
+    "familia": "banheira-dupla-valencia",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-valencia-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Valência com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.705,51",
+        "finalPrice": 4705.51
+      },
+      {
+        "slug": "banheira-dupla-valencia-com-hidro",
+        "nome": "Banheira Dupla Valência com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$3.666,66",
+        "finalPrice": 3666.66
+      },
+      {
+        "slug": "banheira-dupla-valencia-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Valência COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.274,70",
+        "finalPrice": 6274.7
+      },
+      {
+        "slug": "banheira-dupla-valencia-completa-com-hidro",
+        "nome": "Banheira Dupla Valência COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.097,84",
+        "finalPrice": 5097.84
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-verona": {
+    "familia": "banheira-dupla-verona",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-verona-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Verona com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.246,91",
+        "finalPrice": 5246.91
+      },
+      {
+        "slug": "banheira-dupla-verona-com-hidro",
+        "nome": "Banheira Dupla Verona com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.229,10",
+        "finalPrice": 4229.1
+      },
+      {
+        "slug": "banheira-dupla-verona-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Verona COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.729,70",
+        "finalPrice": 6729.7
+      },
+      {
+        "slug": "banheira-dupla-verona-completa-com-hidro",
+        "nome": "Banheira Dupla Verona COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.901,62",
+        "finalPrice": 4901.62
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dupla-vitoria-com-abas": {
+    "familia": "banheira-dupla-vitoria-com-abas",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-vitoria-com-abas-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Dupla Vitória com abas COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.137,15",
+        "finalPrice": 11137.15
+      },
+      {
+        "slug": "banheira-dupla-vitoria-com-abas-completa-com-hidro",
+        "nome": "Banheira Dupla Vitória com abas COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.090,68",
+        "finalPrice": 10090.68
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-dupla-vitoria": {
+    "familia": "banheira-dupla-vitoria",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-dupla-vitoria-com-hidro-em-acrilico",
+        "nome": "Banheira dupla Vitória com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.901,62",
+        "finalPrice": 4901.62
+      },
+      {
+        "slug": "banheira-dupla-vitoria-com-hidro",
+        "nome": "Banheira dupla Vitória com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.114,16",
+        "finalPrice": 6114.16
+      },
+      {
+        "slug": "banheira-dupla-vitoria-completa-com-hidro-em-acrilico",
+        "nome": "Banheira dupla Vitória COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.923,20",
+        "finalPrice": 6923.2
+      },
+      {
+        "slug": "banheira-dupla-vitoria-completa-com-hidro",
+        "nome": "Banheira dupla Vitória COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.675,39",
+        "finalPrice": 4675.39
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-individual-filipinas": {
+    "familia": "banheira-individual-filipinas",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-individual-filipinas-com-hidro",
+        "nome": "Banheira individual Filipinas com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.025,12",
+        "finalPrice": 4025.12
+      },
+      {
+        "slug": "banheira-individual-filipinas-completa-com-hidro",
+        "nome": "Banheira individual Filipinas COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.193,38",
+        "finalPrice": 5193.38
+      }
+    ],
+    "variam_por": [
+      "Configuracao"
+    ]
+  },
+  "banheira-individual-indonesia": {
+    "familia": "banheira-individual-indonesia",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-individual-indonesia-com-hidro-em-acrilico",
+        "nome": "Banheira individual Indonésia com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.882,00",
+        "finalPrice": 4882
+      },
+      {
+        "slug": "banheira-individual-indonesia-completa-com-hidro-em-acrilico",
+        "nome": "Banheira individual Indonésia COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.450,84",
+        "finalPrice": 5450.84
+      },
+      {
+        "slug": "banheira-individual-indonesia-completa-com-hidro",
+        "nome": "Banheira individual Indonésia COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.509,44",
+        "finalPrice": 4509.44
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-individual-jordania": {
+    "familia": "banheira-individual-jordania",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-individual-jordania-com-hidro-em-acrilico",
+        "nome": "Banheira individual Jordânia com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.335,76",
+        "finalPrice": 5335.76
+      },
+      {
+        "slug": "banheira-individual-jordania-com-hidro",
+        "nome": "Banheira individual Jordânia com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.371,93",
+        "finalPrice": 4371.93
+      },
+      {
+        "slug": "banheira-individual-jordania-completa-com-hidro-em-acrilico",
+        "nome": "Banheira individual Jordânia COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.787,69",
+        "finalPrice": 6787.69
+      },
+      {
+        "slug": "banheira-individual-jordania-completa-com-hidro",
+        "nome": "Banheira individual Jordânia COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.860,53",
+        "finalPrice": 5860.53
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-individual-maldivas": {
+    "familia": "banheira-individual-maldivas",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-individual-maldivas-com-hidro",
+        "nome": "Banheira individual Maldivas com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.182,22",
+        "finalPrice": 6182.22
+      },
+      {
+        "slug": "banheira-individual-maldivas-completa-com-hidro",
+        "nome": "Banheira individual Maldivas COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.419,09",
+        "finalPrice": 7419.09
+      }
+    ],
+    "variam_por": [
+      "Configuracao"
+    ]
+  },
+  "banheira-individual-riviera": {
+    "familia": "banheira-individual-riviera",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-individual-riviera-completa-com-hidro-em-acrilico",
+        "nome": "Banheira individual Riviera COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.534,15",
+        "finalPrice": 5534.15
+      },
+      {
+        "slug": "banheira-individual-riviera-completa-com-hidro",
+        "nome": "Banheira individual Riviera COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.152,37",
+        "finalPrice": 4152.37
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-individual-tailandia": {
+    "familia": "banheira-individual-tailandia",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-individual-tailandia-com-hidro",
+        "nome": "Banheira individual Tailândia com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$3.902,70",
+        "finalPrice": 3902.7
+      },
+      {
+        "slug": "banheira-individual-tailandia-completa-com-hidro-em-acrilico",
+        "nome": "Banheira individual Tailândia COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.237,03",
+        "finalPrice": 5237.03
+      },
+      {
+        "slug": "banheira-individual-tailandia-completa-com-hidro",
+        "nome": "Banheira individual Tailândia COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.216,37",
+        "finalPrice": 4216.37
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-caribe": {
+    "familia": "banheira-caribe",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-redonda-caribe-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Caribe com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.670,60",
+        "finalPrice": 5670.6
+      },
+      {
+        "slug": "banheira-redonda-caribe-com-hidro",
+        "nome": "Banheira Redonda Caribe com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.666,41",
+        "finalPrice": 4666.41
+      },
+      {
+        "slug": "banheira-redonda-caribe-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Caribe COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.271,21",
+        "finalPrice": 6271.21
+      },
+      {
+        "slug": "banheira-redonda-caribe-completa-com-hidro",
+        "nome": "Banheira Redonda Caribe COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.860,53",
+        "finalPrice": 5860.53
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-havai": {
+    "familia": "banheira-havai",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-redonda-havai-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Havaí com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.349,74",
+        "finalPrice": 6349.74
+      },
+      {
+        "slug": "banheira-redonda-havai-com-hidro",
+        "nome": "Banheira Redonda Havaí com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.078,11",
+        "finalPrice": 5078.11
+      },
+      {
+        "slug": "banheira-redonda-havai-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Havaí COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.471,63",
+        "finalPrice": 7471.63
+      },
+      {
+        "slug": "banheira-redonda-havai-completa-com-hidro",
+        "nome": "Banheira Redonda Havaí COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.105,68",
+        "finalPrice": 5105.68
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-majory": {
+    "familia": "banheira-majory",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-redonda-majory-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Majory COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.271,54",
+        "finalPrice": 7271.54
+      },
+      {
+        "slug": "banheira-redonda-majory-completa-com-hidro",
+        "nome": "Banheira Redonda Majory COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.786,72",
+        "finalPrice": 5786.72
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-malibu": {
+    "familia": "banheira-malibu",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-redonda-malibu-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Malibu com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.589,56",
+        "finalPrice": 6589.56
+      },
+      {
+        "slug": "banheira-redonda-malibu-com-hidro",
+        "nome": "Banheira Redonda Malibu com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.780,04",
+        "finalPrice": 5780.04
+      },
+      {
+        "slug": "banheira-redonda-malibu-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Malibu COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.103,67",
+        "finalPrice": 7103.67
+      },
+      {
+        "slug": "banheira-redonda-malibu-completa-com-hidro",
+        "nome": "Banheira Redonda Malibu COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.178,15",
+        "finalPrice": 6178.15
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-monte-carlo": {
+    "familia": "banheira-monte-carlo",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-redonda-monte-carlo-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Monte Carlo com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.071,75",
+        "finalPrice": 6071.75
+      },
+      {
+        "slug": "banheira-redonda-monte-carlo-com-hidro",
+        "nome": "Banheira Redonda Monte Carlo com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.363,59",
+        "finalPrice": 5363.59
+      },
+      {
+        "slug": "banheira-redonda-monte-carlo-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Monte Carlo COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.586,27",
+        "finalPrice": 6586.27
+      },
+      {
+        "slug": "banheira-redonda-monte-carlo-completa-com-hidro",
+        "nome": "Banheira Redonda Monte Carlo COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.981,72",
+        "finalPrice": 5981.72
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-sensuale-com-abas": {
+    "familia": "banheira-sensuale-com-abas",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-redonda-sensuale-com-abas-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Sensuale com abas COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.630,48",
+        "finalPrice": 10630.48
+      },
+      {
+        "slug": "banheira-redonda-sensuale-com-abas-completa-com-hidro",
+        "nome": "Banheira Redonda Sensuale com abas COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$9.408,39",
+        "finalPrice": 9408.39
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-sensuale-redonda": {
+    "familia": "banheira-sensuale-redonda",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-redonda-sensuale-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Redonda Sensuale COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.170,86",
+        "finalPrice": 6170.86
+      },
+      {
+        "slug": "banheira-redonda-sensuale-completa-com-hidro",
+        "nome": "Banheira Redonda Sensuale COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.374,96",
+        "finalPrice": 5374.96
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-agata": {
+    "familia": "banheira-agata",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-agata-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Ágata com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.042,48",
+        "finalPrice": 5042.48
+      },
+      {
+        "slug": "banheira-retangular-agata-com-hidro",
+        "nome": "Banheira Retangular Ágata com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.670,16",
+        "finalPrice": 4670.16
+      },
+      {
+        "slug": "banheira-retangular-agata-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Ágata COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.558,42",
+        "finalPrice": 5558.42
+      },
+      {
+        "slug": "banheira-retangular-agata-completa-com-hidro",
+        "nome": "Banheira Retangular Ágata COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.081,65",
+        "finalPrice": 5081.65
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-barcelona": {
+    "familia": "banheira-barcelona",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-barcelona-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Barcelona com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.177,04",
+        "finalPrice": 4177.04
+      },
+      {
+        "slug": "banheira-retangular-barcelona-com-hidro",
+        "nome": "Banheira Retangular Barcelona com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.866,75",
+        "finalPrice": 4866.75
+      },
+      {
+        "slug": "banheira-retangular-barcelona-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Barcelona COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.581,29",
+        "finalPrice": 5581.29
+      },
+      {
+        "slug": "banheira-retangular-barcelona-completa-com-hidro",
+        "nome": "Banheira Retangular Barcelona COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.170,51",
+        "finalPrice": 5170.51
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-buzios": {
+    "familia": "banheira-buzios",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-buzios-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Búzios com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.518,54",
+        "finalPrice": 5518.54
+      },
+      {
+        "slug": "banheira-retangular-buzios-com-hidro",
+        "nome": "Banheira Retangular Búzios com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.669,56",
+        "finalPrice": 4669.56
+      },
+      {
+        "slug": "banheira-retangular-buzios-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Búzios COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.170,81",
+        "finalPrice": 5170.81
+      },
+      {
+        "slug": "banheira-retangular-buzios-completa-com-hidro",
+        "nome": "Banheira Retangular Búzios COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.965,89",
+        "finalPrice": 4965.89
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-conforto": {
+    "familia": "banheira-conforto",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-conforto-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Conforto COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.179,54",
+        "finalPrice": 5179.54
+      },
+      {
+        "slug": "banheira-retangular-conforto-completa-com-hidro",
+        "nome": "Banheira Retangular Conforto COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.297,38",
+        "finalPrice": 4297.38
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-denizard": {
+    "familia": "banheira-denizard",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-denizard-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Denizard com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$6.000,09",
+        "finalPrice": 6000.09
+      },
+      {
+        "slug": "banheira-retangular-denizard-com-hidro",
+        "nome": "Banheira Retangular Denizard com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.716,34",
+        "finalPrice": 5716.34
+      },
+      {
+        "slug": "banheira-retangular-denizard-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Denizard COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.429,92",
+        "finalPrice": 7429.92
+      },
+      {
+        "slug": "banheira-retangular-denizard-completa-com-hidro",
+        "nome": "Banheira Retangular Denizard COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.253,09",
+        "finalPrice": 6253.09
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-dubai": {
+    "familia": "banheira-dubai",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-dubai-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Dubai com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.171,32",
+        "finalPrice": 5171.32
+      },
+      {
+        "slug": "banheira-retangular-dubai-com-hidro",
+        "nome": "Banheira Retangular Dubai com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.772,62",
+        "finalPrice": 4772.62
+      },
+      {
+        "slug": "banheira-retangular-dubai-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Dubai COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.557,28",
+        "finalPrice": 5557.28
+      },
+      {
+        "slug": "banheira-retangular-dubai-completa-com-hidro",
+        "nome": "Banheira Retangular Dubai COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.171,48",
+        "finalPrice": 5171.48
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-genova": {
+    "familia": "banheira-genova",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-genova-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Gênova com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.020,10",
+        "finalPrice": 4020.1
+      },
+      {
+        "slug": "banheira-retangular-genova-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Gênova COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.951,22",
+        "finalPrice": 5951.22
+      },
+      {
+        "slug": "banheira-retangular-genova-completa-com-hidro",
+        "nome": "Banheira Retangular Gênova COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.492,92",
+        "finalPrice": 5492.92
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-lisboa": {
+    "familia": "banheira-lisboa",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-lisboa-com-hidro",
+        "nome": "Banheira Retangular Lisboa com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.964,67",
+        "finalPrice": 4964.67
+      },
+      {
+        "slug": "banheira-retangular-lisboa-completa-com-hidro",
+        "nome": "Banheira Retangular Lisboa COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.754,89",
+        "finalPrice": 5754.89
+      }
+    ],
+    "variam_por": [
+      "Configuracao"
+    ]
+  },
+  "banheira-manaus": {
+    "familia": "banheira-manaus",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-manaus-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Manaus com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.207,19",
+        "finalPrice": 4207.19
+      },
+      {
+        "slug": "banheira-retangular-manaus-com-hidro",
+        "nome": "Banheira Retangular Manaus com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$3.788,27",
+        "finalPrice": 3788.27
+      },
+      {
+        "slug": "banheira-retangular-manaus-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Manaus COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.127,58",
+        "finalPrice": 5127.58
+      },
+      {
+        "slug": "banheira-retangular-manaus-completa-com-hidro",
+        "nome": "Banheira Retangular Manaus COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.480,82",
+        "finalPrice": 4480.82
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-marcelle": {
+    "familia": "banheira-marcelle",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-marcelle-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Marcelle com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.784,92",
+        "finalPrice": 4784.92
+      },
+      {
+        "slug": "banheira-retangular-marcelle-com-hidro",
+        "nome": "Banheira Retangular Marcelle com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.669,21",
+        "finalPrice": 4669.21
+      },
+      {
+        "slug": "banheira-retangular-marcelle-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Marcelle COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.042,56",
+        "finalPrice": 5042.56
+      },
+      {
+        "slug": "banheira-retangular-marcelle-completa-com-hidro",
+        "nome": "Banheira Retangular Marcelle COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.927,29",
+        "finalPrice": 4927.29
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "banheira-maresias": {
+    "familia": "banheira-maresias",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-maresias-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Maresias COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.807,59",
+        "finalPrice": 4807.59
+      },
+      {
+        "slug": "banheira-retangular-maresias-completa-com-hidro",
+        "nome": "Banheira Retangular Maresias COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$3.959,53",
+        "finalPrice": 3959.53
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "banheira-sensuale-retangular": {
+    "familia": "banheira-sensuale-retangular",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-sensuale-completa-com-hidro-em-acrilico",
+        "nome": "Banheira Retangular Sensuale COMPLETA com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.451,52",
+        "finalPrice": 7451.52
+      },
+      {
+        "slug": "banheira-retangular-sensuale-completa-com-hidro",
+        "nome": "Banheira Retangular Sensuale COMPLETA com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.964,04",
+        "finalPrice": 6964.04
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "ofuro-duplo-solene": {
+    "familia": "ofuro-duplo-solene",
+    "tipo": "ofuro",
+    "membros": [
+      {
+        "slug": "ofuro-duplo-solene-completo-com-hidro-em-acrilico",
+        "nome": "Ofurô Duplo Solene COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$9.367,66",
+        "finalPrice": 9367.66
+      },
+      {
+        "slug": "ofuro-duplo-solene-completo-com-hidro",
+        "nome": "Ofurô Duplo Solene COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$8.145,55",
+        "finalPrice": 8145.55
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "ofuro-duplo-toquio": {
+    "familia": "ofuro-duplo-toquio",
+    "tipo": "ofuro",
+    "membros": [
+      {
+        "slug": "ofuro-duplo-toquio-com-hidro-em-acrilico",
+        "nome": "Ofurô Duplo Tóquio com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$7.495,73",
+        "finalPrice": 7495.73
+      },
+      {
+        "slug": "ofuro-duplo-toquio-com-hidro",
+        "nome": "Ofurô Duplo Tóquio com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.729,34",
+        "finalPrice": 5729.34
+      },
+      {
+        "slug": "ofuro-duplo-toquio-completo-com-hidro-em-acrilico",
+        "nome": "Ofurô Duplo Tóquio COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$7.902,66",
+        "finalPrice": 7902.66
+      },
+      {
+        "slug": "ofuro-duplo-toquio-completo-com-hidro",
+        "nome": "Ofurô Duplo Tóquio COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$6.984,48",
+        "finalPrice": 6984.48
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "ofuro-osaka-individual": {
+    "familia": "ofuro-osaka-individual",
+    "tipo": "ofuro",
+    "membros": [
+      {
+        "slug": "ofuro-quadrado-osaka-completo-individual-com-hidro-em-acrilico",
+        "nome": "Ofurô Quadrado Osaka COMPLETO individual com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$5.630,16",
+        "finalPrice": 5630.16
+      },
+      {
+        "slug": "ofuro-quadrado-osaka-completo-individual-com-hidro",
+        "nome": "Ofurô Quadrado Osaka COMPLETO individual com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$4.456,32",
+        "finalPrice": 4456.32
+      },
+      {
+        "slug": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
+        "nome": "Ofurô Quadrado Osaka individual com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$5.082,15",
+        "finalPrice": 5082.15
+      },
+      {
+        "slug": "ofuro-quadrado-osaka-individual-com-hidro",
+        "nome": "Ofurô Quadrado Osaka individual com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$3.908,94",
+        "finalPrice": 3908.94
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "spa-acquaview": {
+    "familia": "spa-acquaview",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-retangular-acquaview-completa-com-hidro-em-acrilico",
+        "nome": "Spa Retangular Acquaview COMPLETA com Hidro em Acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$13.228,08",
+        "finalPrice": 13228.08
+      },
+      {
+        "slug": "spa-retangular-acquaview-completa-com-hidro-em-gel-coat",
+        "nome": "Spa Retangular Acquaview COMPLETA com Hidro em Gel Coat",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.771,63",
+        "finalPrice": 11771.63
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-cancun": {
+    "familia": "spa-cancun",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-quadrado-cancun-completo-com-hidro-em-acrilico",
+        "nome": "Spa Quadrado Cancun COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$14.267,96",
+        "finalPrice": 14267.96
+      },
+      {
+        "slug": "spa-quadrado-cancun-completo-com-hidro",
+        "nome": "Spa Quadrado Cancun COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.315,19",
+        "finalPrice": 10315.19
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-copacabana": {
+    "familia": "spa-copacabana",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-quadrado-copacabana-completo-com-hidro-em-acrilico",
+        "nome": "Spa Quadrado Copacabana COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$18.371,13",
+        "finalPrice": 18371.13
+      },
+      {
+        "slug": "spa-quadrado-copacabana-completo-com-hidro",
+        "nome": "Spa Quadrado Copacabana COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$13.607,82",
+        "finalPrice": 13607.82
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-itacare": {
+    "familia": "spa-itacare",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-quadrado-itacare-completo-com-hidro-em-acrilico",
+        "nome": "Spa Quadrado Itacaré COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$12.257,97",
+        "finalPrice": 12257.97
+      },
+      {
+        "slug": "spa-quadrado-itacare-completo-com-hidro",
+        "nome": "Spa Quadrado Itacaré COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.327,52",
+        "finalPrice": 10327.52
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-napole": {
+    "familia": "spa-napole",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-quadrado-napole-completo-com-hidro-em-acrilico",
+        "nome": "Spa Quadrado Napole COMPLETO com hidro em Acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$12.631,17",
+        "finalPrice": 12631.17
+      },
+      {
+        "slug": "spa-quadrado-napole-completo-com-hidro",
+        "nome": "Spa Quadrado Napole COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$12.129,56",
+        "finalPrice": 12129.56
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-perola": {
+    "familia": "spa-perola",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-quadrado-perola-completo-com-hidro-em-acrilico",
+        "nome": "Spa Quadrado Pérola COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.958,92",
+        "finalPrice": 10958.92
+      },
+      {
+        "slug": "spa-quadrado-perola-completo-com-hidro",
+        "nome": "Spa Quadrado Pérola COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.071,46",
+        "finalPrice": 10071.46
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-san-marino": {
+    "familia": "spa-san-marino",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-quadrado-san-marino-com-hidro-em-acrilico",
+        "nome": "Spa Quadrado San Marino com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$9.415,51",
+        "finalPrice": 9415.51
+      },
+      {
+        "slug": "spa-quadrado-san-marino-com-hidro",
+        "nome": "Spa Quadrado San Marino com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$9.013,68",
+        "finalPrice": 9013.68
+      },
+      {
+        "slug": "spa-quadrado-san-marino-completo-com-hidro-em-acrilico",
+        "nome": "Spa Quadrado San Marino COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.344,28",
+        "finalPrice": 11344.28
+      },
+      {
+        "slug": "spa-quadrado-san-marino-completo-com-hidro",
+        "nome": "Spa Quadrado San Marino COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.199,58",
+        "finalPrice": 10199.58
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "spa-coliseu": {
+    "familia": "spa-coliseu",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-redondo-coliseu-com-hidro",
+        "nome": "Spa Redondo Coliseu com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$12.425,18",
+        "finalPrice": 12425.18
+      },
+      {
+        "slug": "spa-redondo-coliseu-completo-com-hidro",
+        "nome": "Spa Redondo Coliseu COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$16.181,36",
+        "finalPrice": 16181.36
+      }
+    ],
+    "variam_por": [
+      "Configuracao"
+    ]
+  },
+  "spa-florida": {
+    "familia": "spa-florida",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-redondo-florida-completo-com-hidro-em-acrilico",
+        "nome": "Spa Redondo Flórida COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$15.452,95",
+        "finalPrice": 15452.95
+      },
+      {
+        "slug": "spa-redondo-florida-completo-com-hidro",
+        "nome": "Spa Redondo Flórida COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$13.494,31",
+        "finalPrice": 13494.31
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-ipanema": {
+    "familia": "spa-ipanema",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-redondo-ipanema-com-hidro-em-acrilico",
+        "nome": "Spa Redondo Ipanema com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$11.086,90",
+        "finalPrice": 11086.9
+      },
+      {
+        "slug": "spa-redondo-ipanema-com-hidro",
+        "nome": "Spa Redondo Ipanema com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$9.428,36",
+        "finalPrice": 9428.36
+      },
+      {
+        "slug": "spa-redondo-ipanema-completo-com-hidro-em-acrilico",
+        "nome": "Spa Redondo Ipanema COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.859,46",
+        "finalPrice": 11859.46
+      },
+      {
+        "slug": "spa-redondo-ipanema-completo-com-hidro",
+        "nome": "Spa Redondo Ipanema COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.200,24",
+        "finalPrice": 10200.24
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "spa-sensacao-gold": {
+    "familia": "spa-sensacao-gold",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-redondo-sensac-o-gold-completo-com-hidro-em-acrilico",
+        "nome": "Spa Redondo Sensação Gold COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.701,48",
+        "finalPrice": 10701.48
+      },
+      {
+        "slug": "spa-redondo-sensac-o-gold-completo-com-hidro",
+        "nome": "Spa Redondo Sensação Gold COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$9.930,60",
+        "finalPrice": 9930.6
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-taiti": {
+    "familia": "spa-taiti",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-redondo-taiti-completo-em-acrilico",
+        "nome": "Spa Redondo Taití COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$14.548,88",
+        "finalPrice": 14548.88
+      },
+      {
+        "slug": "spa-redondo-taiti-completo",
+        "nome": "Spa Redondo Taití COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.717,53",
+        "finalPrice": 11717.53
+      }
+    ],
+    "variam_por": [
+      "Material"
+    ]
+  },
+  "spa-florenza": {
+    "familia": "spa-florenza",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-retangular-florenza-com-hidro-em-acrilico",
+        "nome": "Spa Retangular Florenza com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$9.373,73",
+        "finalPrice": 9373.73
+      },
+      {
+        "slug": "spa-retangular-florenza-com-hidro",
+        "nome": "Spa Retangular Florenza com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$8.247,93",
+        "finalPrice": 8247.93
+      },
+      {
+        "slug": "spa-retangular-florenza-completo-com-hidro-em-acrilico",
+        "nome": "Spa Retangular Florenza COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.339,15",
+        "finalPrice": 11339.15
+      },
+      {
+        "slug": "spa-retangular-florenza-completo-com-hidro",
+        "nome": "Spa Retangular Florenza COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$9.377,65",
+        "finalPrice": 9377.65
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  },
+  "spa-imola": {
+    "familia": "spa-imola",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-retangular-imola-com-hidro-em-acrilico",
+        "nome": "Spa Retangular Imola com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Básica",
+        "preco_por": "R$9.440,97",
+        "finalPrice": 9440.97
+      },
+      {
+        "slug": "spa-retangular-imola-com-hidro",
+        "nome": "Spa Retangular Imola com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$8.502,41",
+        "finalPrice": 8502.41
+      },
+      {
+        "slug": "spa-retangular-imola-completo-com-hidro-em-acrilico",
+        "nome": "Spa Retangular Imola COMPLETO com hidro em acrílico",
+        "Material": "Acrílico",
+        "Configuracao": "Completa",
+        "preco_por": "R$11.859,56",
+        "finalPrice": 11859.56
+      },
+      {
+        "slug": "spa-retangular-imola-completo-com-hidro",
+        "nome": "Spa Retangular Imola COMPLETO com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Completa",
+        "preco_por": "R$10.714,30",
+        "finalPrice": 10714.3
+      }
+    ],
+    "variam_por": [
+      "Material",
+      "Configuracao"
+    ]
+  }
+}

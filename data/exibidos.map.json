@@ -1,0 +1,143 @@
+{
+  "_sobre": "Cada elemento do HTML que mostra dado da empresa carrega data-campo com uma destas chaves. O validador confere o valor exibido contra o caminho em data/ e, por ele, contra a origem em _recon/.",
+  "campos": {
+    "nome": {
+      "data": "produtos.json[].nome",
+      "origem": "catalog.json:products[].nome"
+    },
+    "sku": {
+      "data": "produtos.json[].sku",
+      "origem": "catalog.json:products[].sku"
+    },
+    "disponibilidade": {
+      "data": "produtos.json[].disponibilidade",
+      "origem": "catalog.json:products[].disponibilidade"
+    },
+    "preco-por": {
+      "data": "produtos.json[].preco.por",
+      "origem": "catalog.json:products[].preco.por"
+    },
+    "preco-de": {
+      "data": "produtos.json[].preco.de",
+      "origem": "catalog.json:products[].preco.de"
+    },
+    "preco-final-num": {
+      "data": "produtos.json[].preco.valores_numericos.finalPrice",
+      "origem": "catalog.json:products[].preco.valores_numericos.finalPrice"
+    },
+    "tamanho-rotulo": {
+      "data": "produtos.json[].d_tamanhos[].rotulo",
+      "origem": "catalog.json:products[].opcoes_personalizaveis[titulo~/^tamanho:?$/i].valores[].rotulo_exibido"
+    },
+    "tamanho-ficha": {
+      "data": "produtos.json[].d_tamanhos[].rotulo_ficha",
+      "origem": "catalog.json:products[].especificacoes.{Comprimento,Largura,Profundidade,Altura}"
+    },
+    "opcao-rotulo": {
+      "data": "produtos.json[].opcoes_personalizaveis[].valores[].rotulo_exibido",
+      "origem": "catalog.json:products[].opcoes_personalizaveis[].valores[].rotulo_exibido"
+    },
+    "opcao-preco": {
+      "data": "produtos.json[].opcoes_personalizaveis[].valores[].preco_adicional",
+      "origem": "catalog.json:products[].opcoes_personalizaveis[].valores[].preco_adicional"
+    },
+    "ficha-valor": {
+      "data": "produtos.json[].especificacoes[<rótulo>]",
+      "origem": "catalog.json:products[].especificacoes[<rótulo>]",
+      "obs": "o atributo data-ficha leva o rótulo literal"
+    },
+    "item-serie": {
+      "data": "produtos.json[].d_itens_de_serie_exibidos[]",
+      "origem": "catalog.json:products[].itens_de_serie[]",
+      "obs": "menos o filtro editorial de data/editorial-log.json"
+    },
+    "resumo": {
+      "data": "produtos.json[].d_resumo",
+      "origem": "derivado (SPEC 11.4)"
+    },
+    "planta-cota": {
+      "data": "plantas/<sha1>.json:cotas[].valor_m",
+      "origem": "PDF oficial da planta"
+    },
+    "categoria-total": {
+      "data": "categorias.json[].total_exibido",
+      "origem": "catalog.json:categories[].total_exibido"
+    },
+    "empresa-telefone": {
+      "data": "empresa.json:telefone_fixo.display",
+      "origem": "institucional.json:contatos.telefone_fabrica.literal"
+    },
+    "empresa-endereco": {
+      "data": "empresa.json:endereco_fabrica",
+      "origem": "institucional.json:empresa.endereco_fabrica[0].literal (sem CEP)"
+    },
+    "empresa-email": {
+      "data": "empresa.json:emails[].email",
+      "origem": "institucional.json:contatos.emails[].valor"
+    },
+    "empresa-horario": {
+      "data": "empresa.json:horario.literal",
+      "origem": "institucional.json:contatos.horario_atendimento.literal"
+    },
+    "empresa-cnpj": {
+      "data": "empresa.json:cnpjs_rodape[].literal",
+      "origem": "institucional.json:empresa.razoes_sociais_e_cnpjs_visiveis[]"
+    },
+    "empresa-numeros": {
+      "data": "empresa.json:numeros_declarados[].literal",
+      "origem": "institucional.json:empresa.numeros_institucionais|numeros_corporativo"
+    },
+    "empresa-inmetro": {
+      "data": "empresa.json:inmetro.certificado",
+      "origem": "institucional.json:certificacoes.inmetro_pagina.literal"
+    },
+    "ra-nota": {
+      "data": "empresa.json:reclame_aqui.nota",
+      "origem": "institucional.json:prova_social.reclame_aqui.pagina_visivel.nota"
+    },
+    "ra-resolve": {
+      "data": "empresa.json:reclame_aqui.resolve",
+      "origem": "institucional.json:prova_social.reclame_aqui.pagina_visivel.resolve"
+    },
+    "ra-periodo": {
+      "data": "empresa.json:reclame_aqui.periodo",
+      "origem": "institucional.json:prova_social.reclame_aqui.pagina_visivel.periodo"
+    },
+    "depoimento": {
+      "data": "empresa.json:depoimentos[].texto",
+      "origem": "institucional.json:prova_social.depoimentos_no_site[].literal"
+    },
+    "contato-numero": {
+      "data": "contatos.json:contatos[].numero",
+      "origem": "whatsapp.json:numbers[].phone"
+    },
+    "contato-display": {
+      "data": "contatos.json:contatos[].display",
+      "origem": "whatsapp.json:numbers[].display"
+    },
+    "loja-endereco": {
+      "data": "lojas.json[].endereco_exibido",
+      "origem": "institucional.json:lojas_showrooms.lojas[].endereco_literal"
+    },
+    "loja-telefone": {
+      "data": "lojas.json[].atendimento_literal",
+      "origem": "institucional.json:lojas_showrooms.lojas[].atendimento"
+    },
+    "prazo-entrega": {
+      "data": "politicas.json:prazo_de_entrega.tabela[].linhas[].prazo",
+      "origem": "institucional.json:comercial.prazo_de_entrega.tabela"
+    },
+    "pagamento": {
+      "data": "politicas.json:pagamento.literal",
+      "origem": "institucional.json:comercial.formas_pagamento.literal"
+    },
+    "faq-resposta": {
+      "data": "faq.json[].resposta",
+      "origem": "faq-source.json:faq[].resposta_literal"
+    },
+    "data-coleta": {
+      "data": "meta.json:data_coleta",
+      "origem": "catalog.json:generated_at_source.coletado_em"
+    }
+  }
+}

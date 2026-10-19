@@ -1,0 +1,33 @@
+{
+  "name": "bbb-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Novo site da Banheiras Bom Banho: gerador estático próprio em Node, publicado no GitHub Pages.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "normalize": "node build/normalize.mjs",
+    "media": "node build/media-photos.mjs && node build/media-plantas.mjs && node build/cotas.mjs",
+    "films": "node build/films.mjs",
+    "og": "node build/og.mjs",
+    "build": "node build/render.mjs && node build/seo.mjs && node build/validate.mjs",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "test:dados": "node --test tests/data.test.mjs",
+    "e2e": "playwright test tests/e2e",
+    "lhci": "lhci autorun",
+    "all": "npm run normalize && npm run media && npm run films && npm run og && npm run build && npm test"
+  },
+  "devDependencies": {
+    "@lhci/cli": "0.15.1",
+    "@playwright/test": "1.64.1",
+    "fast-glob": "3.3.3",
+    "gsap": "3.15.0",
+    "html-validate": "11.16.4",
+    "lightningcss": "1.33.0",
+    "pdfjs-dist": "6.4.299",
+    "schema-dts": "2.1.0",
+    "sharp": "0.35.5"
+  }
+}

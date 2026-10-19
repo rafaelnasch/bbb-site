@@ -1,0 +1,75 @@
+{
+  "coletado_em": "2026-10-19T02:07:38.043334Z",
+  "total": 11,
+  "itens": [
+    {
+      "slug": "apoio-de-cabeca-oval",
+      "campo": "itens_de_serie",
+      "regra": "anotacao_interna_VERIFICAR",
+      "removido": "Couro Sintético (VERIFICAR)"
+    },
+    {
+      "slug": "apoio-de-cabeca-oval",
+      "campo": "descricao_texto",
+      "regra": "anotacao_interna_VERIFICAR",
+      "removido": "Couro Sintético (VERIFICAR)."
+    },
+    {
+      "slug": "apoio-de-cabeca-oval",
+      "campo": "descricao_texto",
+      "regra": "titulo_sem_conteudo_apos_VERIFICAR",
+      "removido": "Material"
+    },
+    {
+      "slug": "apoio-de-cabeca-oval",
+      "campo": "descricao_curta_texto",
+      "regra": "anotacao_interna_VERIFICAR",
+      "removido": "- Couro Sintético (VERIFICAR)"
+    },
+    {
+      "slug": "apoio-de-cabeca-prime",
+      "campo": "descricao_texto",
+      "regra": "anotacao_interna_VERIFICAR",
+      "removido": "Couro Sintético (VERIFICAR)."
+    },
+    {
+      "slug": "apoio-de-cabeca-prime",
+      "campo": "descricao_texto",
+      "regra": "titulo_sem_conteudo_apos_VERIFICAR",
+      "removido": "Material"
+    },
+    {
+      "slug": "apoio-de-cabeca-retangular",
+      "campo": "itens_de_serie",
+      "regra": "anotacao_interna_VERIFICAR",
+      "removido": "Couro Sintético (VERIFICAR)"
+    },
+    {
+      "slug": "apoio-de-cabeca-retangular",
+      "campo": "descricao_texto",
+      "regra": "anotacao_interna_VERIFICAR",
+      "removido": "Couro Sintético (VERIFICAR)."
+    },
+    {
+      "slug": "apoio-de-cabeca-retangular",
+      "campo": "descricao_texto",
+      "regra": "titulo_sem_conteudo_apos_VERIFICAR",
+      "removido": "Material"
+    },
+    {
+      "slug": "apoio-de-cabeca-retangular",
+      "campo": "descricao_curta_texto",
+      "regra": "anotacao_interna_VERIFICAR",
+      "removido": "- Couro Sintético (VERIFICAR)"
+    },
+    {
+      "slug": "ozonio-para-spa",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "trata"
+      ],
+      "removido": "De fácil instalação, garante maior durabilidade do equipamento, o tratamento mais usado na Europa e EUA."
+    }
+  ]
+}
