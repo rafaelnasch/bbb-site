@@ -20,6 +20,8 @@ const CSS_CRITICO = ['tokens.css', 'base.css', 'critical.css'];
 const CSS_SITE = ['utilitarios.css', 'components.css'];
 const JS_NUCLEO = ['core.js', 'wa.js', 'reveal.js'];
 const JS_INLINE = ['boot.js', 'vt.js'];
+// Pacotes de módulos (nome -> arquivos de src/js, na ordem de execução).
+const PACOTES = { produto: ['galeria.js', 'monte.js', 'seletor.js', 'planta.js', 'escala.js'] };
 
 const hash = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 10);
 const gz = (s) => gzipSync(Buffer.from(s), { level: 9 }).length;
@@ -110,6 +112,15 @@ export function construirAssets({ dist = paths.dist } = {}) {
     const nome = `${basename(f, '.js')}.${hash(src)}.js`;
     writeFileSync(join(out, 'js', nome), src);
     modulos[basename(f, '.js')] = url(`assets/js/${nome}`);
+  }
+
+  // Pacotes: várias ferramentas num arquivo só, para a página que usa todas (menos requisições na
+  // primeira carga). Cada ferramenta fica isolada num try/catch: a falha de uma não derruba as outras.
+  for (const [nome, partes] of Object.entries(PACOTES)) {
+    const src = partes.map((f) => `try{${enxugarJs(readFileSync(join(paths.src, 'js', f), 'utf8'))}}catch(e){console.error(e)}`).join('\n');
+    const arq = `${nome}.${hash(src)}.js`;
+    writeFileSync(join(out, 'js', arq), src);
+    modulos[nome] = url(`assets/js/${arq}`);
   }
 
   const relatorio = {

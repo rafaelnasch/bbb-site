@@ -89,6 +89,35 @@
     if (v) BBB.anunciar(`${v}: ${n} ${n === 1 ? 'linha' : 'linhas'} de prazo em destaque.`);
   });
 
+  // ---------- Coluna de decisão no desktop: fixa sem esconder conteúdo ----------
+  // Mais alta que a tela, a coluna recebe um topo negativo: rola com a página até o fim aparecer e só
+  // então fixa (nada de rolagem interna escondendo voltagem, cor e adicionais).
+  const col = d.querySelector('.prod__decisao');
+  if (col) {
+    const mqD = w.matchMedia('(min-width: 1024px)');
+    const preco = col.querySelector('[data-preco-bloco]');
+    const cabH = () => parseFloat(getComputedStyle(H).getPropertyValue('--cab-h')) || 64;
+    const ajustar = () => {
+      if (!mqD.matches) { col.style.removeProperty('--dec-top'); col.classList.remove('is-fixo'); return; }
+      col.style.setProperty('--dec-top', `${Math.round(Math.min(cabH() + 16, w.innerHeight - col.offsetHeight - 16))}px`);
+      fixarPe();
+    };
+    // O rodapé com total e compra só fica preso à base da tela depois que o preço passou para cima
+    // (como a doca do celular): na primeira tela ele nunca cobre o preço nem o seletor.
+    const fixarPe = () => {
+      if (!mqD.matches || !preco) return;
+      col.classList.toggle('is-fixo', preco.getBoundingClientRect().bottom < cabH());
+    };
+    let pendPe = false;
+    w.addEventListener('scroll', () => { if (!pendPe) { pendPe = true; requestAnimationFrame(() => { pendPe = false; fixarPe(); }); } }, { passive: true });
+    let pendCol = false;
+    const agendar = () => { if (!pendCol) { pendCol = true; requestAnimationFrame(() => { pendCol = false; ajustar(); }); } };
+    if ('ResizeObserver' in w) new ResizeObserver(agendar).observe(col);
+    w.addEventListener('resize', agendar, { passive: true });
+    mqD.addEventListener?.('change', agendar);
+    ajustar();
+  }
+
   // ---------- Doca de compra (celular): aparece quando a coluna de decisão já passou ----------
   if (!doca) return;
   const alvo = d.querySelector('#comprar') || form;

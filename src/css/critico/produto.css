@@ -3,18 +3,24 @@
    fica preso ao topo e, no celular, a etiqueta ocupa a tela toda: se o texto mudar de altura com a
    troca de fonte, nada abaixo se move. */
 .prod-topo{position:relative;isolation:isolate;overflow:clip;padding:calc(var(--cab-h) + 12px) 0 48px}
-.prod-topo__fundo{position:absolute;inset:0;z-index:-1}
-.prod-topo__fundo>*{position:absolute;right:-12%;top:var(--cab-h);width:min(1180px,150%);max-width:none;opacity:.3;filter:invert(1);mix-blend-mode:screen;mask:radial-gradient(closest-side,#000 30%,#0000)}
+/* Arte da etiqueta: uma camada só (poster estático do filme, a planta ou o contorno em escala), num
+   quadro com a proporção da própria imagem; o vídeo, quando há, ocupa o mesmo quadro e só aparece
+   depois de tocar. Celular: faixa no alto, inteira e legível, com o texto logo abaixo (nada atrás do
+   breadcrumb nem do título). Desktop: atrás da etiqueta, à direita. Sem arte nenhuma (acessórios), a
+   etiqueta ocupa a tela do celular sobre o papel técnico, para a troca de fonte não deslocar a coluna
+   de compra (CLS). Opacidade, filtro, a largura do desenho (--arte-w) e o ponto de disponibilidade vão
+   inline (templates/produto.mjs) e a máscara no site.css, para caber no teto do CSS crítico. */
+.prod-topo__arte{position:relative}
+.prod-topo__arte>*,.prod-topo__img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .prod-topo__in{display:grid;gap:14px}
 .prod-topo__h1{max-width:18ch}
 .prod-eti{flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0}
 .prod-disp{display:inline-flex;align-items:center;gap:8px;font-size:.9375rem}
-.prod-disp__ponto{width:8px;height:8px;border-radius:50%;background:#5fd38a}
 .prod-resumo{max-width:64ch;color:var(--fg-2);font-size:1rem}
 .prod-resumo .etiqueta{display:flex}
 .prod{padding-top:8px}
 .prod__grade{display:grid;gap:40px;align-items:start}
 .moldura--peca .moldura__img{aspect-ratio:auto;object-fit:contain}
 .galeria__base{display:flex;align-items:center;justify-content:space-between;min-height:44px}
-@media (max-width:1023px){.prod-topo{display:grid;align-items:end;min-height:calc(100svh - var(--topo-h))}}
-@media (min-width:1024px){.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 4}}
+@media (max-width:1023px){.prod-topo--sem-arte{display:grid;align-content:end;min-height:calc(100svh - var(--topo-h))}}
+@media (min-width:1024px){.prod-topo__fundo{position:absolute;inset:0;z-index:-1}.prod-topo__arte{position:absolute;right:var(--arte-d,-6%);top:calc(var(--cab-h) + 8px);width:var(--arte-w,min(1080px,62%))}.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 4}}

@@ -73,6 +73,8 @@ function tabelaCotas(pl, id) {
 </div>`;
 }
 
+// No celular a imagem estática é a WebP de 1200 px (38 KB contra 51 KB da AVIF de 2400): o zoom fino vem
+// dos blocos de 512 px do planta.js.
 function explorador(p, t, pl, id, { prioridade = false } = {}) {
   const m = pl.media;
   const base = `media/plantas/${pl.sha1}`;
@@ -94,7 +96,7 @@ function explorador(p, t, pl, id, { prioridade = false } = {}) {
   })}>
   <div class="explorador__vista" data-vista tabindex="0" role="group" aria-roledescription="explorador de planta" aria-label="${alt}. Arraste para mover, use mais e menos para ampliar e zero para recentralizar." style="aspect-ratio:${pl.w}/${pl.h}">
     <div class="explorador__plano" data-plano>
-      <picture>${temAvif ? html`<source type="image/avif" srcset="${url(`${base}/planta-2400.avif`)} 2400w" sizes="(min-width:1024px) 760px, 100vw">` : ''}<img${attrs({
+      <picture>${temAvif ? html`<source type="image/avif" media="(min-width:600px)" srcset="${url(`${base}/planta-2400.avif`)} 2400w" sizes="(min-width:1024px) 760px, 100vw">` : ''}<img${attrs({
         class: 'explorador__img',
         src: url(`${base}/planta-1200.webp`),
         srcset: tem2400 ? `${url(`${base}/planta-1200.webp`)} 1200w, ${url(`${base}/planta-2400.webp`)} 2400w` : null,
@@ -149,17 +151,40 @@ export function desenhoEscala(t, { titulo }) {
 </figure>`;
 }
 
+/** PDFs publicados na página do modelo cuja medida não corresponde a nenhum tamanho da lista de opções. */
+export function plantasSemTamanho(p) {
+  return (p.d_plantas_sem_tamanho || []).filter((x) => x.pdf_path && existsSync(join(paths.public, x.pdf_path)));
+}
+
+/**
+ * Frases da seção 6 conforme o que a página atual publica (nunca afirmar que a fábrica não publicou
+ * uma planta quando há PDF na página, mesmo com medida diferente: o conflito é mostrado, não resolvido).
+ *  - oficial: algum tamanho tem planta publicada com a mesma medida;
+ *  - divergente: a página publica PDF(s), mas nenhum com a medida de um tamanho vendido;
+ *  - nenhuma: a página não publica PDF de planta.
+ */
+export function situacaoPlanta(p, tamanhos) {
+  if (tamanhos.some((t) => plantaDoTamanho(p, t))) return 'oficial';
+  if (plantasSemTamanho(p).length) return 'divergente';
+  return 'nenhuma';
+}
+
 /**
  * Seção 6: um painel por tamanho. `waPlanta(t)` devolve o link wa.me para pedir a planta.
- * @returns {{ corpo, temOficial }}
+ * @returns {{ corpo, temOficial, situacao }}
  */
 export function paineisPlanta(p, tamanhos, { waPlanta, ativo = 0 }) {
-  let temOficial = false;
+  const situacao = situacaoPlanta(p, tamanhos);
+  const temAvulsas = plantasSemTamanho(p).length > 0;
+  // Aviso do painel sem planta: uma frase só, adequada ao caso. Quando nenhum tamanho tem planta, o texto
+  // da seção já diz isso (sem repetir no painel nem falar em "tamanho" onde não há escolha).
+  const avisoSem = situacao !== 'oficial' ? null
+    : temAvulsas ? 'Nenhuma planta publicada na página traz a medida deste tamanho.'
+      : 'Planta deste tamanho não publicada pela fábrica.';
   const paineis = tamanhos.map((t, i) => {
     const pl = plantaDoTamanho(p, t);
     const id = `planta-${i}`;
     const rot = rotuloTam(t);
-    if (pl) temOficial = true;
     let miolo;
     if (pl?.media) {
       miolo = html`${explorador(p, t, pl, id)}
@@ -170,22 +195,22 @@ export function paineisPlanta(p, tamanhos, { waPlanta, ativo = 0 }) {
       ${desenhoEscala(t, { titulo: `Desenho em escala do tamanho ${rot}` })}
       <p class="planta__acoes"><a class="btn btn--claro" href="${urlPdf(pl.pdf)}" download data-planta-pdf>${icone('seta-diag', { tamanho: 18 })}Baixar a planta oficial (PDF)</a></p>`;
     } else {
-      miolo = html`<p class="planta__aviso">Planta deste tamanho não publicada pela fábrica.</p>
+      miolo = html`${avisoSem ? html`<p class="planta__aviso">${avisoSem}</p>` : ''}
       ${desenhoEscala(t, { titulo: `Desenho em escala do tamanho ${rot}, a partir das medidas do site` })}
       <p class="planta__acoes"><a${attrs({ class: 'btn btn--fantasma', href: waPlanta(t), target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'pedir_planta', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}Pedir a planta pelo WhatsApp</a></p>`;
     }
     return html`<div class="planta-painel" data-tam-painel="${i}"${attrs({ hidden: i !== ativo, 'data-vt-fixo': i === ativo && p.d_familia ? `planta-${p.d_familia}` : null })}>${miolo}</div>`;
   });
-  return { corpo: paineis, temOficial };
+  return { corpo: paineis, temOficial: situacao === 'oficial', situacao };
 }
 
 /** PDFs publicados na página do modelo sem tamanho correspondente na lista de opções. */
 export function plantasAvulsas(p) {
-  const lista = (p.d_plantas_sem_tamanho || []).filter((x) => x.pdf_path && existsSync(join(paths.public, x.pdf_path)));
+  const lista = plantasSemTamanho(p);
   if (!lista.length) return html``;
   return html`<div class="planta__avulsas">
   <p class="etiqueta">Outras plantas publicadas na página deste modelo</p>
   <ul role="list">${lista.map((x) => html`<li><a class="link" href="${urlPdf(x.pdf_path)}" download>${x.nome_arquivo || x.pdf_path.split('/').pop()}</a></li>`)}</ul>
-  <p class="pequeno">Estes arquivos não correspondem a nenhum tamanho da lista de opções. Confirme com o consultor.</p>
+  <p class="pequeno">A medida no nome ${lista.length > 1 ? 'destes arquivos' : 'deste arquivo'} não corresponde a nenhum tamanho da lista de opções. Confirme com o consultor qual vale para o tamanho escolhido.</p>
 </div>`;
 }

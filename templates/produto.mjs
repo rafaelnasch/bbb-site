@@ -21,9 +21,10 @@ import { breadcrumb } from './parts/breadcrumb.mjs';
 import { picture, SIZES_CARTAO } from './parts/foto.mjs';
 import { galeria, ordenarFotos } from './parts/galeria.mjs';
 import { paineisPlanta, plantasAvulsas, rotuloTam, plantaDoTamanho } from './parts/planta.mjs';
-import { escala } from './parts/escala.mjs';
+import { escala, medidasEncaixe } from './parts/escala.mjs';
+import { fmtMetros } from '../build/lib/medidas.mjs';
 import { decisao, doca } from './parts/monte.mjs';
-import { ficha } from './parts/ficha.mjs';
+import { ficha, rotuloFicha } from './parts/ficha.mjs';
 import { entrega } from './parts/entrega.mjs';
 import { faqsDoTipo, faqBloco, faqJsonLd } from './parts/faq-bloco.mjs';
 
@@ -31,7 +32,18 @@ import { faqsDoTipo, faqBloco, faqJsonLd } from './parts/faq-bloco.mjs';
 export const RAIZ_DO_TIPO = Object.freeze({ banheira: 'banheiras.html', spa: 'spas.html', ofuro: 'ofuros.html', sauna: 'sauna.html', acessorio: 'acessorios.html' });
 const PLURAL = { banheira: 'banheiras', spa: 'spas', ofuro: 'ofurôs', sauna: 'saunas', acessorio: 'acessórios' };
 const ETIQUETA = ['Forma', 'Lugares', 'Material', 'Configuracao'];
-const POSTER_SIZES = '(min-width:1024px) 1180px, 40vw';
+// Planta de fundo (sem filme): no celular, a versão pequena (nível 0, cerca de 6 KB) basta para a faixa
+// esmaecida; a planta legível e ampliável está no explorador.
+const POSTER_SIZES = '(min-width:1024px) 62vw, 50vw';
+// Blocos abaixo da dobra só são montados perto da tela, e as imagens lazy deles só baixam então. Vai
+// inline (e não no site.css, que chega depois) para valer já na primeira montagem da página.
+const CV = 'content-visibility:auto;contain-intrinsic-size:auto 900px';
+// Texto da seção 6 por situação da planta (templates/parts/planta.mjs#situacaoPlanta).
+const LEAD_PLANTA = Object.freeze({
+  oficial: 'A planta que a fábrica publica, com as cotas. Amplie, toque numa letra para achá-la no desenho e baixe o PDF.',
+  divergente: 'A página deste modelo publica planta em PDF, mas com medida diferente das opções de tamanho. O desenho abaixo usa só as medidas do site, e os PDFs estão logo depois para conferir.',
+  nenhuma: 'O site da fábrica não publica a planta deste modelo. O desenho abaixo usa só as medidas do site.',
+});
 
 // Ícones de item de série por palavra-chave do texto literal (SPEC 5.6), desenho Lucide (ISC).
 const IC_ITEM = [
@@ -148,6 +160,28 @@ function cartaoMini(q) {
 </li>`;
 }
 
+/**
+ * Arte da etiqueta para peças sem planta nem filme: o contorno em escala a partir das medidas do site
+ * (derivado, SPEC 0.2), com a legenda literal da SPEC 9.3. Com medida a confirmar (ficha x opção), o
+ * contorno usa a maior das duas, como o encaixe, e não leva rótulo de medida.
+ */
+function desenhoTopo(t) {
+  const e = medidasEncaixe(t);
+  if (!e) return null;
+  const W = 300, H = 170, topoLivre = 30, rodape = 34, lado = 34;
+  const k = Math.min((W - 2 * lado) / e.maior, (H - topoLivre - rodape) / e.menor);
+  const w = e.maior * k, h = e.menor * k, x = (W - w) / 2, y = topoLivre + (H - topoLivre - rodape - h) / 2;
+  const rotulos = !t.ficha;
+  return raw(`<svg viewBox="0 0 ${W} ${H}" fill="none" stroke="currentColor" stroke-width=".8" font-size="9.5">
+<defs><pattern id="topo-grade" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" stroke-opacity=".18" stroke-width=".4"/></pattern></defs>
+<rect width="${W}" height="${H - rodape + 6}" fill="url(#topo-grade)" stroke="none"/>
+<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="3" fill="var(--room)" stroke="var(--porcelain)" stroke-opacity=".8"/>
+${rotulos ? `<path d="M${x.toFixed(1)} ${(y - 9).toFixed(1)}h${w.toFixed(1)}M${(x - 9).toFixed(1)} ${y.toFixed(1)}v${h.toFixed(1)}" stroke-opacity=".6"/>
+<g fill="currentColor" stroke="none"><text x="${(x + w / 2).toFixed(1)}" y="${(y - 13).toFixed(1)}" text-anchor="middle">${fmtMetros(e.maior)} m</text><text x="${(x - 13).toFixed(1)}" y="${(y + h / 2).toFixed(1)}" text-anchor="middle" transform="rotate(-90 ${(x - 13).toFixed(1)} ${(y + h / 2).toFixed(1)})">${fmtMetros(e.menor)} m</text></g>` : ''}
+<g fill="currentColor" stroke="none" fill-opacity=".8" text-anchor="middle"><text x="150" y="${H - 18}">Desenho em escala a partir das medidas do site.</text><text x="150" y="${H - 5}">Não é a planta oficial.</text></g>
+</svg>`);
+}
+
 /** Filme da planta (bloco 8), quando já gerado para esta planta; senão, só o poster estático. */
 function filmeDaPlanta(sha1) {
   const man = filmes();
@@ -156,7 +190,9 @@ function filmeDaPlanta(sha1) {
   const ok = [f.webm.src, f.mp4.src].every((s) => existsSync(join(paths.public, s)));
   const poster = f.poster.avif?.src && existsSync(join(paths.public, f.poster.avif.src)) ? f.poster.avif.src : f.poster.webp?.src;
   if (!ok || !poster || !existsSync(join(paths.public, poster))) return null;
-  return { webm: url(f.webm.src), mp4: url(f.mp4.src), poster: url(poster), aria: f.aria_label || null };
+  const webp = f.poster.webp?.src && existsSync(join(paths.public, f.poster.webp.src)) ? url(f.poster.webp.src) : null;
+  const avif = f.poster.avif?.src && existsSync(join(paths.public, f.poster.avif.src)) ? url(f.poster.avif.src) : null;
+  return { webm: url(f.webm.src), mp4: url(f.mp4.src), poster: url(poster), posterWebp: webp, posterAvif: avif, w: f.largura || 1280, h: f.altura || 720, aria: f.aria_label || null };
 }
 let _filmes;
 function filmes() {
@@ -198,14 +234,16 @@ function jsonLd(p, c) {
     url: abs(`${p.slug}.html`),
     ...(imgs.length ? { image: imgs } : {}),
     description: p.d_resumo,
-    brand: { '@type': 'Brand', name: D.empresa.nome },
+    brand: org,
     manufacturer: org,
     ...(e.Material && !conf.has('Material') ? { material: e.Material } : {}),
     category: D.catPorPath.get(RAIZ_DO_TIPO[p.d_tipo])?.nome || undefined,
-    additionalProperty: Object.entries(e).filter(([k]) => !conf.has(k)).map(([k, v]) => ({ '@type': 'PropertyValue', name: k, value: v })),
+    additionalProperty: Object.entries(e).filter(([k]) => !conf.has(k)).map(([k, v]) => ({ '@type': 'PropertyValue', name: rotuloFicha(k), value: v })),
     offers,
   };
-  const grafo = [produto];
+  // A marca e o fabricante apontam para a Organization (SPEC 11.2); o nó mínimo vai no próprio grafo para a
+  // referência resolver nesta página (o bloco de SEO completa os demais campos pelo mesmo @id).
+  const grafo = [produto, { '@type': 'Organization', '@id': org['@id'], name: D.empresa.nome, url: abs('') }];
   if (c.familia) {
     const gid = abs(`#grupo-${p.d_familia}`);
     produto.isVariantOf = { '@id': gid };
@@ -214,8 +252,8 @@ function jsonLd(p, c) {
       '@id': gid,
       name: c.familia.nomeGrupo,
       productGroupID: p.d_familia,
-      brand: { '@type': 'Brand', name: D.empresa.nome },
-      variesBy: (c.familia.variam_por || []).map((v) => (v === 'Material' ? 'https://schema.org/material' : v)),
+      brand: org,
+      variesBy: (c.familia.variam_por || []).map((v) => (v === 'Material' ? 'https://schema.org/material' : rotuloFicha(v))),
       hasVariant: c.familia.membros.map((m) => ({ '@id': `${abs(`${m.slug}.html`)}#produto` })),
     });
   }
@@ -302,6 +340,20 @@ function notaPrecosComoOpcao(p, produtos) {
   return html`<p class="monte__nota monte__nota--bloco">Como opcional dos spas, este item aparece por ${lista.join(' e ')}. Cada preço vale onde está publicado. Confirme o valor com o consultor.</p>`;
 }
 
+/**
+ * Links de venda e dos 8 consultores (data-wa-sync="venda": cabeçalho, gaveta, rodapé, doca) já saem do
+ * build com a mensagem da peça no estado inicial (SPEC 10.1: mesma abertura + contexto do produto), e
+ * não só pelo JS. Na página esgotada, os consultores levam a mensagem de estoque (SPEC 10.2) e os
+ * botões gerais de compra ficam com a abertura literal. O número de cada link nunca muda.
+ */
+export function comContextoDeVenda(pagina, texto, { soConsultores = false } = {}) {
+  const q = `?text=${encodeURIComponent(texto).replace(/'/g, '&#39;')}`;
+  return String(pagina).replace(/<a\b[^>]*\bdata-wa-sync="venda"[^>]*>/g, (tag) => {
+    if (soConsultores && !/\bdata-wa-papel="consultor_/.test(tag)) return tag;
+    return tag.replace(/href="https:\/\/wa\.me\/(\d+)(?:\?text=[^"]*)?"/, (_, n) => `href="https://wa.me/${n}${q}"`);
+  });
+}
+
 export function paginas(ctx) {
   const { dados: D, layout } = ctx;
   const produtos = D.ler('produtos.json');
@@ -331,25 +383,50 @@ export function paginas(ctx) {
       : null;
 
     const soma0 = formatBRL((p.preco.valores_numericos.finalPrice || 0) + (t0?.preco_adicional || 0));
-    const waCompra = D.wa('venda_principal', mensagemCompra({ abertura, nome: p.nome, sku: p.sku, tamanho: t0?.rotulo || null, dataColeta: D.dataColeta, somaFormatada: soma0, url: urlAbs }));
-    const waEsgotado = D.wa('venda_principal', [`Olá! Quero saber se a ${p.nome} volta a ter estoque.`, urlAbs].join('\n'));
+    const msgCompra = mensagemCompra({ abertura, nome: p.nome, sku: p.sku, tamanho: t0?.rotulo || null, dataColeta: D.dataColeta, somaFormatada: soma0, url: urlAbs });
+    const msgEsgotado = [`Olá! Quero saber se a ${p.nome} volta a ter estoque.`, urlAbs].join('\n');
+    const waCompra = D.wa('venda_principal', msgCompra);
+    const waEsgotado = D.wa('venda_principal', msgEsgotado);
     const waPlanta = (t) => D.wa('venda_principal', [abertura, '', [`Quero receber a planta técnica deste modelo.`, `Modelo: ${p.nome} (SKU ${p.sku})`, rotuloTam(t) ? `Tamanho: ${rotuloTam(t)}` : null, urlAbs].filter(Boolean).join('\n')].join('\n'));
     const cx = { D, produtos, tamanhos, esgotado, waCompra, waEsgotado, abertura, urlAbs };
 
     // Planta do tamanho inicial: fundo da etiqueta (poster) e, se o bloco 8 já gerou, o filme.
     const plIni = t0 || tamanhos[0] ? plantaDoTamanho(p, t0 || tamanhos[0]) : null;
     const filme = plIni?.validada && plIni.sha1 ? filmeDaPlanta(plIni.sha1) : null;
-    // Fundo da etiqueta: a planta inteira em versão pequena (nível 0 dos blocos) no celular, onde ela
-    // fica esmaecida atrás do texto, e a de 1200 px no desktop.
-    const poster = plIni?.media ? (() => {
+    // Arte da etiqueta: UMA camada só. Com filme (bloco 8), o poster do filme como imagem estática (é o
+    // último quadro, a planta legível) e o vídeo no mesmo quadro, por cima, só depois de tocar. Sem
+    // filme, a planta inteira (nível 0 dos blocos no celular, 1200 px no desktop). A imagem estática não
+    // tem animação de entrada, para ser pintada na primeira passada (LCP).
+    const arte = filme ? {
+      tipo: 'filme',
+      src: filme.posterWebp || filme.poster,
+      avif: filme.posterAvif,
+      w: filme.w,
+      h: filme.h,
+      preload: filme.posterAvif ? { href: filme.posterAvif, type: 'image/avif' } : { href: filme.posterWebp || filme.poster, type: 'image/webp' },
+    } : plIni?.media ? (() => {
       const base = `media/plantas/${plIni.sha1}`;
       const z0 = plIni.media.niveis?.find((n) => n.z === 0 && n.colunas === 1 && n.linhas === 1);
       const temZ0 = z0 && existsSync(join(paths.public, base, 'z0', '0_0.webp'));
+      const src = url(`${base}/planta-1200.webp`);
+      const srcset = temZ0 ? `${url(`${base}/z0/0_0.webp`)} ${z0.largura}w, ${src} 1200w` : null;
       return {
-        src: url(`${base}/planta-1200.webp`),
-        srcset: temZ0 ? `${url(`${base}/z0/0_0.webp`)} ${z0.largura}w, ${url(`${base}/planta-1200.webp`)} 1200w` : null,
+        tipo: 'planta',
+        src,
+        srcset,
+        w: 1200,
+        h: Math.round((plIni.h / plIni.w) * 1200),
+        preload: { href: src, type: 'image/webp', imagesrcset: srcset, imagesizes: srcset ? POSTER_SIZES : null },
       };
-    })() : null;
+    })() : (() => {
+      const t = !acessorio && (t0 || tamanhos[0]);
+      const svg = t ? desenhoTopo(t) : null;
+      return svg ? { tipo: 'desenho', svg, w: 300, h: 170 } : null;
+    })();
+
+    // Sem planta, filme nem medidas (acessórios): o nº de catálogo literal, grande e vazado, ocupa o alto
+    // da etiqueta como numa plaqueta de museu (só quando é um código curto).
+    const numeroGrande = !arte && p.sku && String(p.sku).length <= 6;
 
     const eti = camposEtiqueta(p);
     const itens = p.d_itens_de_serie_exibidos || [];
@@ -362,17 +439,20 @@ export function paginas(ctx) {
     const comEscala = !acessorio && tamanhos.length && (t0 || tamanhos[0]).a;
     const tituloEscala = p.d_tipo === 'banheira' ? 'Cabe no meu banheiro?' : 'Cabe no meu espaço?';
 
-    const topo = html`<section class="sala prod-topo letterbox" aria-labelledby="prod-h1">
-  <div class="prod-topo__fundo" aria-hidden="true">
-    ${poster ? html`<img class="prod-topo__planta"${attrs({ src: poster.src, srcset: poster.srcset, sizes: poster.srcset ? POSTER_SIZES : null, width: 1200, height: Math.round((plIni.h / plIni.w) * 1200), alt: '', fetchpriority: 'high' })}>` : ''}
-    ${filme ? html`<video class="prod-topo__filme" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, poster: filme.poster, 'aria-label': filme.aria })} muted playsinline loop preload="none"></video>` : ''}
-  </div>
+    const topo = html`<section class="sala prod-topo letterbox${arte ? ` prod-topo--${arte.tipo}` : ' prod-topo--sem-arte'}" aria-labelledby="prod-h1">
+  ${!arte && numeroGrande ? html`<div class="prod-topo__fundo" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;overflow:hidden"><p class="prod-topo__num" style="position:absolute;right:0;top:calc(var(--cab-h) + 8px);margin:0;font:300 clamp(9rem,58vw,24rem)/.8 var(--f-display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 40%,transparent);white-space:nowrap">${p.sku}</p></div>` : ''}
+  ${arte ? html`<div class="prod-topo__fundo" aria-hidden="true">
+    <div class="prod-topo__arte" style="aspect-ratio:${arte.w}/${arte.h}${arte.tipo === 'filme' ? ';opacity:.7' : arte.tipo === 'desenho' ? ';color:var(--line);opacity:.75;--arte-w:36%;--arte-d:5%' : ''}">
+      ${arte.svg || ''}${arte.svg ? '' : html`${arte.avif ? html`<picture><source type="image/avif" srcset="${arte.avif}">` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', fetchpriority: 'high', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1);mix-blend-mode:screen' : null })}>${arte.avif ? html`</picture>` : ''}
+      ${filme ? html`<video class="prod-topo__filme" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, 'aria-label': filme.aria, width: arte.w, height: arte.h })} muted playsinline loop preload="none"></video>` : ''}`}
+    </div>
+  </div>` : ''}
   <div class="wrap prod-topo__in">
     ${breadcrumb(trilha.map(({ nome, href }) => ({ nome, href })))}
     <p class="etiqueta prod-topo__cat" data-intro style="--i:0">Nº de catálogo <span class="num" data-campo="sku">${p.sku}</span></p>
     <h1 id="prod-h1" class="prod-topo__h1" data-intro="mascara" style="--i:1"><span data-campo="nome">${p.nome}</span></h1>
     ${eti.length ? html`<ul class="etiqueta prod-eti" role="list" data-intro style="--i:2">${eti.map((x) => html`<li><span data-campo="ficha-valor" data-ficha="${x.k}">${x.v}</span></li>`)}</ul>` : ''}
-    <p class="prod-disp${esgotado ? ' prod-disp--esgotado' : ''}" data-intro style="--i:3"><span class="prod-disp__ponto" aria-hidden="true"></span><span data-campo="disponibilidade">${p.disponibilidade}</span></p>
+    <p class="prod-disp${esgotado ? ' prod-disp--esgotado' : ''}" data-intro style="--i:3"><span class="prod-disp__ponto" aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:${esgotado ? 'var(--glow)' : '#5fd38a'}"></span><span data-campo="disponibilidade">${p.disponibilidade}</span></p>
     <p class="prod-resumo" data-intro style="--i:4"><span class="etiqueta">Ficha em uma frase</span><span data-campo="resumo">${p.d_resumo}</span></p>
   </div>
 </section>`;
@@ -384,19 +464,19 @@ export function paginas(ctx) {
       <h2 class="vh" id="dec-h">Preço e opções</h2>
       ${decisao(p, { ...cx, aposPreco: html`${notaPrecosComoOpcao(p, produtos)}${versoes(p, fam)}` })}
     </section>
-    ${planta ? html`<section class="prod__bloco prod__planta" id="planta" aria-labelledby="planta-h">
+    ${planta ? html`<section class="prod__bloco prod__planta" id="planta" style="${CV}" aria-labelledby="planta-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">${planta.temOficial ? 'Planta técnica oficial' : 'Desenho em escala'}</p>
       <h2 id="planta-h">${planta.temOficial ? 'O desenho é a obra' : 'As medidas, em escala'}</h2>
-      <p class="prod__lead">${planta.temOficial ? 'A planta que a fábrica publica, com as cotas. Amplie, toque numa letra para achá-la no desenho e baixe o PDF.' : 'A fábrica não publicou a planta deste modelo. O desenho abaixo usa só as medidas do site.'}</p></div>
+      <p class="prod__lead">${LEAD_PLANTA[planta.situacao]}</p></div>
       ${planta.corpo}
       ${plantasAvulsas(p)}
     </section>` : ''}
-    ${comEscala ? html`<section class="prod__bloco prod__escala" id="cabe" aria-labelledby="cabe-h">
+    ${comEscala ? html`<section class="prod__bloco prod__escala" id="cabe" style="${CV}" aria-labelledby="cabe-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">Escala real</p><h2 id="cabe-h">${tituloEscala}</h2>
       <p class="prod__lead">Digite as medidas do seu espaço. O desenho mostra a peça por cima, na mesma escala, e calcula a folga.</p></div>
       ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true })}
     </section>` : ''}
-    ${itens.length ? html`<section class="prod__bloco prod__itens" id="itens" aria-labelledby="itens-h">
+    ${itens.length ? html`<section class="prod__bloco prod__itens" id="itens" style="${CV}" aria-labelledby="itens-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">Itens de série</p><h2 id="itens-h">O que vem na peça</h2></div>
       ${itensDeSerie(p)}
     </section>` : ''}
@@ -434,11 +514,11 @@ ${avaliacao(p)}`;
 
     const corpo = html`${topo}${peca}${leitura}${doca(p, cx)}`;
     const og = existsSync(join(paths.public, 'media', 'og', `${p.slug}.jpg`)) ? { imagem: `media/og/${p.slug}.jpg`, tipo: 'product' } : { tipo: 'product' };
-    const modulos = acessorio ? ['galeria', 'monte'] : ['galeria', 'monte', 'seletor', 'planta', 'escala'];
-    const preload = poster ? [{ href: poster.src, as: 'image', type: 'image/webp', fetchpriority: 'high', imagesrcset: poster.srcset, imagesizes: poster.srcset ? POSTER_SIZES : null }] : [];
+    const modulos = acessorio ? ['galeria', 'monte'] : ['produto'];
+    const preload = arte?.preload ? [{ as: 'image', fetchpriority: 'high', ...arte.preload }] : [];
     out.push({
       saida,
-      html: layout({
+      html: comContextoDeVenda(layout({
         saida,
         titulo: tituloProduto(p.nome),
         descricao: descricaoProduto(p, tamanhos, itens),
@@ -452,7 +532,7 @@ ${avaliacao(p)}`;
         preload,
         classe: 'pg-produto',
         critico: ['peca', 'produto'],
-      }),
+      }), esgotado ? msgEsgotado : msgCompra, { soConsultores: esgotado }),
     });
   }
   return out;

@@ -170,8 +170,86 @@ test('orçamentos da SPEC 12: HTML de produto até 40 KB gzip e JS do produto at
   let maior = 0;
   for (const p of produtos) maior = Math.max(maior, gzipSync(readFileSync(join(DIST, `${p.slug}.html`)), { level: 9 }).length);
   assert.ok(maior <= 40 * 1024, `maior HTML de produto: ${maior} B gzip`);
-  const js = readdirSync(join(DIST, 'assets', 'js')).filter((f) => /^(nucleo|planta|seletor|escala|galeria|monte)\./.test(f));
-  assert.equal(js.length, 6);
+  // O que a página de produto carrega de fato: o núcleo e o pacote do produto (galeria, monte, seletor,
+  // planta e escala num arquivo só).
+  const h = pagina(ACQUA);
+  const js = [...h.matchAll(/<script type="module" src="[^"]*\/assets\/js\/([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(js.map((f) => f.split('.')[0]).sort(), ['nucleo', 'produto']);
   const soma = js.reduce((s, f) => s + gzipSync(readFileSync(join(DIST, 'assets', 'js', f)), { level: 9 }).length, 0);
   assert.ok(soma <= 30 * 1024, `JS do produto: ${soma} B gzip`);
+});
+
+test('planta: nunca dizer que a fábrica não publicou quando a página tem PDF de planta (com medida divergente)', () => {
+  const comPdf = produtos.filter((p) => (p.d_plantas_sem_tamanho || []).some((x) => x.pdf_path && existsSync(join(paths.public, x.pdf_path))));
+  assert.ok(comPdf.length >= 13, `${comPdf.length} produtos com PDF sem tamanho`);
+  for (const p of comPdf) {
+    const t = texto(pagina(p.slug));
+    assert.doesNotMatch(t, /não publicou|não publicada pela fábrica|Sem planta publicada|não publica a planta/, p.slug);
+    assert.match(t, /Outras plantas publicadas na página deste modelo/, p.slug);
+    assert.match(t, /não corresponde a nenhum tamanho da lista de opções/, p.slug);
+  }
+  // Napole: a planta publicada (1,97 x 1,97 x 0,85) aparece para conferir, com a nota.
+  const nap = pagina(NAPOLE);
+  assert.match(texto(nap), /publica planta em PDF, mas com medida diferente das opções de tamanho/);
+  assert.match(nap, /href="[^"]*plantas\/spas\/[^"]*\.pdf" download/);
+});
+
+test('planta: uma frase só por caso, sem falar em tamanho onde não há escolha', () => {
+  for (const p of produtos.filter((q) => q.d_tipo !== 'acessorio' && q.d_tamanhos?.length)) {
+    const t = texto(pagina(p.slug));
+    const n = (t.match(/não publica a planta deste modelo|Planta deste tamanho não publicada pela fábrica|Nenhuma planta publicada na página traz a medida deste tamanho/g) || []).length;
+    if (/não publica a planta deste modelo/.test(t)) assert.equal(n, 1, `${p.slug}: frases repetidas`);
+  }
+  const serena = texto(pagina(SERENA));
+  assert.match(serena, /O site da fábrica não publica a planta deste modelo/);
+  assert.doesNotMatch(serena, /Planta deste tamanho/);
+});
+
+test('topo do produto: uma camada de arte só (poster estático ou planta ou contorno), vídeo sem poster por cima', () => {
+  for (const p of produtos) {
+    const h = pagina(p.slug);
+    const topo = /<section class="sala prod-topo[\s\S]*?<\/section>/.exec(h)[0];
+    const imgs = (topo.match(/<img /g) || []).length;
+    const svgs = (topo.match(/<svg /g) || []).length - (topo.match(/class="ic/g) || []).length;
+    const tipo = /prod-topo--(filme|planta|desenho|sem-arte)/.exec(topo)[1];
+    if (tipo === 'filme') {
+      assert.equal(imgs, 1, p.slug);
+      assert.match(topo, /<video class="prod-topo__filme"/);
+      assert.doesNotMatch(/<video[^>]*>/.exec(topo)[0], /poster=/, `${p.slug}: o vídeo não pode ter poster próprio`);
+    } else if (tipo === 'planta') assert.equal(imgs, 1, p.slug);
+    else if (tipo === 'desenho') assert.match(topo, /Não é a planta oficial\./, p.slug);
+    else assert.equal(imgs, 0, p.slug);
+    assert.ok(imgs + Math.max(svgs, 0) <= 2, p.slug);
+  }
+});
+
+test('WhatsApp sem JS: os 8 consultores já levam a mensagem da peça; na esgotada, a de estoque', () => {
+  const consult = contatos.filter((c) => /^consultor_/.test(c.papel));
+  const venda = contatos.find((c) => c.papel === 'venda_principal');
+  const hA = pagina(ACQUA);
+  const msgA = waTexto(ctaCompra(hA));
+  for (const c of consult) {
+    const links = [...hA.matchAll(new RegExp(`<a[^>]*data-wa-papel="${c.papel}"[^>]*>`, 'g'))].map((m) => m[0]);
+    assert.ok(links.length >= 2, `${c.papel} no cabeçalho e no rodapé`);
+    for (const a of links) assert.equal(waTexto(a.match(/href="([^"]+)"/)[1].replace(/&#39;/g, "'")), msgA, c.papel);
+  }
+  assert.match(msgA, new RegExp(`^${venda.prefilled_text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\n\\nModelo: `));
+  const p = P(AIR);
+  const hB = pagina(AIR);
+  for (const c of consult) {
+    for (const [a] of hB.matchAll(new RegExp(`<a[^>]*data-wa-papel="${c.papel}"[^>]*>`, 'g'))) {
+      assert.equal(waTexto(a.match(/href="([^"]+)"/)[1].replace(/&#39;/g, "'")), `Olá! Quero saber se a ${p.nome} volta a ter estoque.\n${SITE_URL}/${AIR}.html`);
+    }
+  }
+});
+
+test('JSON-LD do produto: propriedades com o rótulo exibido e marca apontando para a Organization', () => {
+  const h = pagina(ACQUA);
+  const prod = nos(h).find((n) => n['@type'] === 'Product');
+  const nomes = prod.additionalProperty.map((x) => x.name);
+  assert.ok(nomes.includes('Configuração'));
+  assert.ok(!nomes.includes('Configuracao'));
+  assert.equal(prod.brand['@id'], `${SITE_URL}/#org`);
+  const grupo = nos(h).find((n) => n['@type'] === 'ProductGroup');
+  if (grupo) assert.equal(grupo.brand['@id'], `${SITE_URL}/#org`);
 });

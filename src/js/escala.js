@@ -26,6 +26,7 @@
     const frontal = raiz.dataset.vista === 'frontal';
     let med = ler(raiz.dataset);
     let ultimoCabe = null;
+    let ultimaLarg = 0;
 
     function ler(o) {
       const n = (v) => (v == null || v === '' ? null : Number(v));
@@ -47,13 +48,22 @@
       const lateralW = frontal ? cm(med.a ?? med.menor) : pMaior;
       const lateralH = frontal ? (med.altura ? cm(med.altura) : 0) : (med.c ? cm(med.c) : 0);
       const pessoaW = alt ? alt * 0.3 : 0;
-      const m = 22;
       const planoW = Math.max(pMaior, sMaior), planoH = Math.max(pMenor, sMenor);
-      const W = Math.max(planoW, lateralW + (alt ? pessoaW + 24 : 0)) + 2 * m;
-      const yLat = m + planoH + m * 1.6;
       const altLat = Math.max(lateralH, alt || 0);
-      const Hs = yLat + (lateralH || alt ? altLat + m * 0.9 : 0);
-      const fs = Math.max(W / 34, 6);
+      const dims = (m) => {
+        const W = Math.max(planoW, lateralW + (alt ? pessoaW + 24 : 0)) + 2 * m;
+        const yLat = m + planoH + m * 1.6;
+        return { W, yLat, Hs: yLat + (lateralH || alt ? altLat + m * 0.9 : 0) };
+      };
+      // Rótulos com pelo menos 12 px na tela: o tamanho da letra compensa a escala do viewBox (no celular
+      // a peça de 2 m cabe em 330 px e uma letra fixa em cm ficaria com 7 px). A margem cresce junto.
+      let { W, yLat, Hs } = dims(22);
+      const larg = svg.getBoundingClientRect().width || svg.parentElement?.clientWidth || 0;
+      const escalaPx = larg ? Math.min(larg / W, 520 / Hs) : 1;
+      const fs = Math.max(W / 34, 6, 12 / escalaPx);
+      const m = Math.max(22, fs * 1.4);
+      ({ W, yLat, Hs } = dims(m));
+      ultimaLarg = larg;
       svg.replaceChildren();
       svg.setAttribute('viewBox', `0 0 ${fmt2(W)} ${fmt2(Hs)}`);
       const defs = el('defs', {}, svg);
@@ -83,7 +93,7 @@
           ? `Cabe. Sobram ${fmt(fL)} cm na largura e ${fmt(fCo)} cm no comprimento (cerca de ${fmt(fL / 2)} cm e ${fmt(fCo / 2)} cm de cada lado).`
           : `Não cabe: ${[parte(fL, 'largura'), parte(fCo, 'comprimento')].join(' e ')}.`;
         peca.classList.toggle('is-nao', !cabe);
-        const gs = el('g', { class: 'escala__rot escala__rot--espaco', 'font-size': fmt2(fs * 0.9) }, svg);
+        const gs = el('g', { class: 'escala__rot escala__rot--espaco', 'font-size': fmt2(fs) }, svg);
         texto(gs, fmt2(cx), fmt2(cy + sMenor / 2 + fs * 1.15), `Seu espaço: ${fmt(L)} x ${fmt(C)} cm`, { 'text-anchor': 'middle' });
       } else {
         frase = `Medidas externas publicadas: ${m2(med.maior)} m x ${m2(med.menor)} m${med.c ? ` x ${m2(med.c)} m` : ''}${med.altura ? `, altura ${m2(med.altura)} m` : ''}. Digite o seu espaço para ver a folga.`;
@@ -100,7 +110,7 @@
         if (alt) {
           const px = m + lateralW + 24 + pessoaW / 2;
           pessoa(svg, px, chao, alt);
-          const gp = el('g', { class: 'escala__rot', 'font-size': fmt2(fs * 0.9) }, svg);
+          const gp = el('g', { class: 'escala__rot', 'font-size': fmt2(fs) }, svg);
           texto(gp, fmt2(px), fmt2(chao - alt - fs * 0.5), `Você · ${fmt(alt)} cm`, { 'text-anchor': 'middle' });
         }
       }
@@ -127,6 +137,19 @@
       d.addEventListener('bbb:tamanho', (e) => { med = ler(e.detail); desenhar(false); });
     }
     desenhar(false);
+    // Largura mudou (giro da tela, painel aberto): redesenha para manter os rótulos legíveis.
+    if ('ResizeObserver' in window) {
+      let pend = false;
+      new ResizeObserver(() => {
+        if (pend) return;
+        pend = true;
+        requestAnimationFrame(() => {
+          pend = false;
+          const w = svg.getBoundingClientRect().width;
+          if (w && Math.abs(w - ultimaLarg) > 24) desenhar(false);
+        });
+      }).observe(svg);
+    }
   }
   const fmt2 = (n) => String(Math.round(n * 100) / 100);
 

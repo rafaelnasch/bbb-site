@@ -125,6 +125,54 @@ test('sem rolagem horizontal de 320 a 1920 px nas páginas-tipo de produto', asy
   }
 });
 
+test('prazo por estado: nenhuma célula de prazo cortada de 320 a 430 px', async ({ page }) => {
+  await page.goto(pg(ACQUA));
+  for (const w of [320, 360, 375, 390, 414, 430]) {
+    await page.setViewportSize({ width: w, height: 800 });
+    const cortes = await page.evaluate(() => [...document.querySelectorAll('[data-prazo] td')].filter((td) => {
+      const r = td.getBoundingClientRect(), box = td.closest('.rolagem').getBoundingClientRect();
+      return td.scrollWidth > td.clientWidth + 1 || r.right > box.right + 1;
+    }).map((td) => td.textContent));
+    expect(cortes, `em ${w}`).toEqual([]);
+  }
+});
+
+test('doca em 360 px: nome em até 2 linhas e o tamanho escolhido inteiro', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  await page.goto(pg('spa-quadrado-copacabana-completo-com-hidro'));
+  const y = await page.evaluate(() => document.querySelector('#comprar').getBoundingClientRect().bottom + window.scrollY + 200);
+  await page.evaluate((v) => window.scrollTo(0, v), y);
+  const doca = page.locator('[data-doca]');
+  await expect(doca).toBeVisible();
+  const r = await page.evaluate(() => {
+    const t = document.querySelector('[data-doca-tam]'), c = document.querySelector('.doca__cons'), d = document.querySelector('[data-doca]');
+    const rt = t.getBoundingClientRect(), rc = c.getBoundingClientRect(), rd = d.getBoundingClientRect();
+    return { cheio: t.scrollWidth <= t.clientWidth + 1 && rt.right <= innerWidth, folga: rd.bottom - rc.bottom };
+  });
+  expect(r.cheio).toBe(true);
+  expect(r.folga).toBeGreaterThanOrEqual(6);
+  await expect(page.locator('.doca__btn')).toHaveAccessibleName(/Comprar pelo WhatsApp/);
+});
+
+test('desktop: coluna de decisão sem rolagem interna e voltagem clicável', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(pg(ACQUA));
+  const col = page.locator('.prod__decisao');
+  expect(await col.evaluate((e) => e.scrollHeight - e.clientHeight)).toBeLessThanOrEqual(1);
+  await page.locator('.chip-op', { hasText: '220V' }).click();
+  expect(await msgCompra(page)).toContain('Voltagem: 220V');
+});
+
+test('topo: uma planta só no fundo e rótulos da escala legíveis no celular', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  await page.goto(pg(ACQUA));
+  await expect(page.locator('.prod-topo__fundo img')).toHaveCount(1);
+  await page.locator('[data-escala]').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(300);
+  const menor = await page.evaluate(() => Math.min(...[...document.querySelectorAll('[data-escala-svg] text')].map((t) => t.getBoundingClientRect().height)));
+  expect(menor).toBeGreaterThanOrEqual(11);
+});
+
 test.describe('movimento reduzido (lite)', () => {
   test.use({ reducedMotion: 'reduce' });
   test('ferramentas funcionam sem animação', async ({ page }) => {

@@ -1,6 +1,7 @@
 // Servidor estático mínimo para os testes de navegador: serve dist/ sob BASE_PATH, como o GitHub Pages
 // (inclusive /x servindo x.html e 404.html quando existir). Uso direto: node tests/e2e/servidor.mjs [porta]
 import { createServer } from 'node:http';
+import { gzipSync } from 'node:zlib';
 import { readFile, stat } from 'node:fs/promises';
 import { join, extname, normalize } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -44,8 +45,17 @@ export function iniciar({ porta = 0, base = process.env.BASE_PATH ?? '/bbb-site'
       res.end(p404 ? await readFile(p404) : 'não encontrado');
       return;
     }
-    res.writeHead(200, { 'content-type': TIPOS[extname(achado)] || 'application/octet-stream' });
-    res.end(await readFile(achado));
+    // Como o GitHub Pages: texto (HTML, CSS, JS, JSON, SVG, XML) vai comprimido quando o navegador aceita,
+    // para que as medições de desempenho (Lighthouse) reflitam o peso real da publicação.
+    const tipo = TIPOS[extname(achado)] || 'application/octet-stream';
+    const corpo = await readFile(achado);
+    if (/^(text\/|application\/(json|xml|manifest)|image\/svg)/.test(tipo) && /\bgzip\b/.test(req.headers['accept-encoding'] || '')) {
+      res.writeHead(200, { 'content-type': tipo, 'content-encoding': 'gzip', vary: 'Accept-Encoding' });
+      res.end(gzipSync(corpo));
+      return;
+    }
+    res.writeHead(200, { 'content-type': tipo });
+    res.end(corpo);
   });
   return new Promise((ok) => srv.listen(porta, '127.0.0.1', () => ok({ srv, url: `http://127.0.0.1:${srv.address().port}${base}` })));
 }

@@ -6,7 +6,7 @@ import { html, attrs } from '../../build/lib/html.mjs';
 import { icone } from '../../build/lib/icons.mjs';
 import { url } from '../../build/lib/url.mjs';
 import { formatBRL } from '../../build/lib/money.mjs';
-import { rotuloTam, plantaDoTamanho } from './planta.mjs';
+import { rotuloTam, plantaDoTamanho, plantasSemTamanho } from './planta.mjs';
 import { dadosTamanho } from './escala.mjs';
 
 export const RE_TAMANHO = /^tamanho:?$/i;
@@ -56,6 +56,7 @@ function seletorTamanho(p, tamanhos) {
   <p class="seletor__fixo num" data-campo="tamanho-ficha">${t.rotulo_ficha}</p>
 </div>`;
   }
+  const semMedida = plantasSemTamanho(p).length ? 'Sem planta desta medida' : 'Sem planta publicada';
   return html`<fieldset class="seletor" data-seletor>
   <legend class="monte__rot">Tamanho <span class="monte__n num">${comOpcao.length === 1 ? '1 opção' : `${comOpcao.length} opções`}</span></legend>
   <div class="seletor__lista">${comOpcao.map((t, i) => {
@@ -64,7 +65,7 @@ function seletorTamanho(p, tamanhos) {
       <input class="seletor__in" type="radio" name="tamanho"${attrs({ value: t.value_id || String(i), checked: i === 0, 'data-i': i, 'data-preco': t.preco_adicional || 0, 'data-rotulo': t.rotulo, ...dadosTamanho(t) })}>
       <span class="seletor__cartao">
         <span class="seletor__rot num" data-campo="tamanho-rotulo">${t.rotulo}</span>
-        <span class="seletor__meta">${pl ? html`<span class="selo selo--planta">Planta oficial</span>` : html`<span class="selo selo--sem">Sem planta publicada</span>`}${t.ficha ? html`<span class="selo selo--confirmar">Medida a confirmar</span>` : ''}</span>
+        <span class="seletor__meta">${pl ? html`<span class="selo selo--planta">Planta oficial</span>` : html`<span class="selo selo--sem">${semMedida}</span>`}${t.ficha ? html`<span class="selo selo--confirmar">Medida a confirmar</span>` : ''}</span>
       </span>
     </label>`;
   })}</div>
@@ -157,11 +158,11 @@ export function doca(p, c) {
   const total0 = formatBRL((p.preco.valores_numericos.finalPrice || 0) + (t0?.preco_adicional || 0));
   return html`<div class="doca" data-doca hidden>
   <div class="doca__in">
-    <p class="doca__info"><span class="doca__nome">${p.nome}</span><span class="doca__det num">${c.esgotado ? html`<span>${p.disponibilidade}</span>` : html`<b data-doca-total>${total0}</b>`}${t0 ? html` · <span data-doca-tam>${t0.rotulo}</span>` : ''}</span></p>
+    <p class="doca__info"><span class="doca__nome">${p.nome}</span><span class="doca__det num">${c.esgotado ? html`<span>${p.disponibilidade}</span>` : html`<b data-doca-total>${total0}</b>`}${t0 ? html`<span class="doca__tam" data-doca-tam>${t0.rotulo}</span>` : ''}</span></p>
     <div class="doca__acoes">
       ${c.esgotado
         ? html`<a${attrs({ class: 'btn btn--whats doca__btn', href: c.waEsgotado, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'doca_esgotado', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}Perguntar</a>`
-        : html`<a${attrs({ class: 'btn btn--whats doca__btn', href: c.waCompra, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'doca', 'data-wa-sync': 'venda', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}Comprar pelo WhatsApp</a>`}
+        : html`<a${attrs({ class: 'btn btn--whats doca__btn', href: c.waCompra, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'doca', 'data-wa-sync': 'venda', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}<span>Comprar<span class="doca__longo"> pelo WhatsApp</span></span></a>`}
       <a class="doca__cons" href="${url('consultores.html')}" data-gaveta-abrir="gaveta-whats" data-gaveta-foco="consultores">Escolher meu consultor</a>
     </div>
   </div>

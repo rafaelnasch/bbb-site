@@ -7,10 +7,13 @@
 .prod-topo__cat{color:var(--muted-on-dark)}
 .prod-resumo .etiqueta{color:var(--glow)}
 .prod{padding-bottom:clamp(48px,6vw,104px)}
-.prod-topo__fundo>*{-webkit-mask:radial-gradient(closest-side,#000 30%,#0000)}
 .prod-disp--esgotado{color:var(--glow)}
-.prod-disp--esgotado .prod-disp__ponto{background:var(--glow)}
 html[data-lite] .prod-topo__filme{display:none}
+@media (min-width:1024px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte{-webkit-mask:radial-gradient(closest-side,#000 55%,#0000);mask:radial-gradient(closest-side,#000 55%,#0000)}}
+.prod-topo__filme{opacity:0;transition:opacity .6s linear}
+.prod-topo__arte.is-tocando .prod-topo__filme{opacity:1}
+/* Sem planta nem filme: papel técnico (grade de 24 px) e luz de estúdio, sem altura vazia. */
+.prod-topo--sem-arte{background-image:linear-gradient(#0000 35%,var(--bg)),radial-gradient(60% 70% at 85% 0%,color-mix(in srgb,var(--glow) 12%,transparent),transparent 70%),linear-gradient(color-mix(in srgb,var(--line) 9%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--line) 9%,transparent) 1px,transparent 1px);background-size:auto,auto,24px 24px,24px 24px}
 
 /* ---------- Grade da peça ---------- */
 .prod__bloco{min-width:0}
@@ -24,8 +27,12 @@ html[data-lite] .prod-topo__filme{display:none}
 .prod__decisao::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 60% at 100% 0%,color-mix(in srgb,var(--glow) 16%,transparent),transparent 60%);pointer-events:none}
 .decisao__in{position:relative;display:grid;gap:22px}
 .decisao__eti{color:var(--fg-2)}
+/* Desktop: a coluna cresce com o conteúdo (sem rolagem interna escondendo o "Monte a sua") e fica fixa
+   ao rolar. Se for mais alta que a tela, monte.js define --dec-top negativo: ela sobe com a página até o
+   fim aparecer e só então fixa. O rodapé com total e compra fica preso à base da tela enquanto isso. */
 @media (min-width:1024px){
-  .prod__grade>.prod__decisao{position:sticky;top:calc(var(--cab-h) + 16px);max-height:calc(100dvh - var(--cab-h) - 32px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+  .prod__grade>.prod__decisao{position:sticky;top:var(--dec-top,calc(var(--cab-h) + 16px))}
+  html:not(.js) .prod__grade>.prod__decisao{position:relative}
 }
 
 /* Preço */
@@ -82,11 +89,12 @@ html[data-lite] .prod-topo__filme{display:none}
 .total__valor{font-family:var(--f-display);font-weight:350;font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem);line-height:1.1}
 .total__valor.is-novo{animation:total-entra var(--t-in) var(--ease-out)}
 @keyframes total-entra{from{opacity:0;transform:translateY(6px)}}
+@keyframes pe-entra{from{opacity:0;transform:translateY(12px)}}
 .total__nota{font-size:.8125rem;line-height:1.45;color:var(--fg-2)}
 
 .decisao__pe{display:grid;gap:16px}
 .decisao__acoes{display:grid;gap:12px}
-@media (min-width:1024px){.decisao__pe{position:sticky;bottom:calc(-1 * clamp(20px,2.4vw,32px));z-index:2;margin:0 calc(-1 * clamp(20px,2.4vw,32px)) calc(-1 * clamp(20px,2.4vw,32px));padding:16px clamp(20px,2.4vw,32px) clamp(20px,2.4vw,32px);background:var(--bg);border-radius:0 0 22px 22px;box-shadow:0 -18px 24px -18px rgb(7 28 43/.25)}.decisao__pe .total{border-top:0;padding-top:0}}
+@media (min-width:1024px){.prod__decisao.is-fixo .decisao__pe{position:sticky;bottom:0;box-shadow:0 -18px 24px -18px rgb(7 28 43/.25);animation:pe-entra var(--t-in) var(--ease-out)}html[data-lite] .prod__decisao .decisao__pe{animation:none}.decisao__pe{z-index:2;margin:0 calc(-1 * clamp(20px,2.4vw,32px)) calc(-1 * clamp(20px,2.4vw,32px));padding:16px clamp(20px,2.4vw,32px) clamp(20px,2.4vw,32px);background:var(--bg);border-radius:0 0 22px 22px}.decisao__pe .total{border-top:0;padding-top:0}}
 .decisao__sec{display:flex;flex-wrap:wrap;gap:4px 18px}
 .decisao__link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:.9375rem;font-weight:600;color:var(--fg);text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 30%,transparent);text-underline-offset:.25em}
 .decisao__link[aria-pressed="true"]{color:var(--brand);text-decoration-color:currentColor}
@@ -254,12 +262,14 @@ details[open]>.descricao__s::after,details[open]>.faq-item__q::after{transform:r
 .entrega__prazo{display:grid;gap:14px}
 .entrega__uf{display:flex}
 .entrega__uf select{appearance:auto}
-.prazo{width:100%;min-width:420px;font-size:.9375rem}
+.prazo{width:100%;font-size:.9375rem}
 .prazo__cap{caption-side:top;text-align:left;padding:4px 0 8px;font-weight:600}
 .prazo th,.prazo td{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
 .prazo thead th{font:600 .6875rem/1.3 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
 .prazo tbody th{font-weight:400}
-.prazo td{white-space:nowrap}
+.prazo tbody th{overflow-wrap:anywhere}
+/* O prazo é dado real: nunca quebra no meio nem fica cortado (a coluna dos estados é a que se ajusta). */
+.prazo td,.prazo thead th:last-child{width:1%;white-space:nowrap;padding-right:0;padding-left:12px;text-align:right}
 .prazo tr.is-uf{background:color-mix(in srgb,var(--brand) 12%,transparent)}
 .prazo tr.is-fora{opacity:.45}
 .entrega__nota{font-size:.875rem;line-height:1.5;color:var(--fg-2)}
@@ -297,14 +307,19 @@ details[open]>.descricao__s::after,details[open]>.faq-item__q::after{transform:r
 .doca{position:fixed;left:0;right:0;bottom:0;z-index:45;padding:8px 0 calc(8px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--day) 94%,transparent);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);color:var(--ink);box-shadow:0 -1px 0 rgb(14 26 34/.1),0 -20px 40px -24px rgb(7 28 43/.45);transition:transform var(--t-in) var(--ease-sheet),display var(--t-in) allow-discrete;view-transition-name:doca;--focus-ring:var(--focus)}
 @starting-style{.doca{transform:translateY(110%)}}
 .doca__in{display:flex;align-items:center;gap:12px;width:min(100% - 2*var(--pad-x),var(--maxw));margin-inline:auto;min-height:48px}
-.doca__info{display:grid;min-width:0;flex:1 1 auto;line-height:1.25}
-.doca__nome{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;font-size:.875rem}
-.doca__det{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.8125rem;color:var(--muted)}
+.doca__info{display:grid;gap:2px;min-width:0;flex:1 1 auto;line-height:1.25}
+/* Nome em até 2 linhas e o tamanho escolhido sempre inteiro (quebra antes dele, nunca no meio). */
+.doca__nome{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-weight:600;font-size:.8125rem}
+.doca__det{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:4px;font-size:.8125rem;color:var(--muted)}
+.doca__tam{white-space:nowrap}
+.doca__tam::before{content:"· ";color:var(--muted)}
 .doca__det b{font-weight:700;font-size:.9375rem;color:var(--ink)}
 @media (prefers-color-scheme:dark){.doca__det b{color:var(--porcelain)}}
-.doca__acoes{display:flex;flex-direction:column;align-items:stretch;flex:none}
+.doca__acoes{display:flex;flex-direction:column;align-items:stretch;gap:2px;flex:none}
 .doca__btn{min-height:44px;padding:.5em 1em;font-size:.875rem}
-.doca__cons{align-self:center;font-size:.75rem;color:var(--muted);text-decoration:underline;text-underline-offset:.2em;padding:2px 4px;min-height:24px;display:inline-flex;align-items:center}
-@media (max-width:374px){.doca__btn{font-size:.8125rem;padding:.5em .8em}}
+.doca__cons{align-self:center;font-size:.75rem;color:var(--muted);text-decoration:underline;text-underline-offset:.2em;padding:2px 4px;min-height:28px;display:inline-flex;align-items:center}
+.doca{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+/* Telas estreitas: o botão vira "Comprar" (o nome acessível continua "Comprar pelo WhatsApp"). */
+@media (max-width:380px){.doca__btn{padding:.5em .9em}.doca__longo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 @media (min-width:1024px){.doca{display:none!important}}
 @media (prefers-color-scheme:dark){.doca{background:color-mix(in srgb,var(--room-2) 94%,transparent);color:var(--porcelain);--focus-ring:var(--focus-on-dark)}.doca__det,.doca__cons{color:var(--muted-on-dark)}}

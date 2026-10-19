@@ -239,13 +239,18 @@
         s.type = t;
         filme.append(s);
       }
+      // O vídeo só cobre o poster estático depois de tocar de fato (nunca duas plantas ao mesmo tempo).
+      filme.addEventListener('playing', () => filme.parentElement?.classList.add('is-tocando'), { once: true });
       filme.load();
       filme.play?.().catch(() => {});
     };
+    // O vídeo (até 350 KB) só começa a baixar depois de um quadro já pintado e com o navegador ocioso:
+    // nunca disputa banda com a primeira tela nem entra no caminho do LCP.
+    const depoisDaPintura = (fn) => requestAnimationFrame(() => requestAnimationFrame(() => (w.requestIdleCallback ? w.requestIdleCallback(fn, { timeout: 4000 }) : setTimeout(fn, 300))));
     const quandoVisivel = () => {
-      if (!('IntersectionObserver' in w)) return ligar();
+      if (!('IntersectionObserver' in w)) return depoisDaPintura(ligar);
       const o = new IntersectionObserver((es) => {
-        if (es.some((e) => e.isIntersecting)) { o.disconnect(); (w.requestIdleCallback || setTimeout)(ligar); }
+        if (es.some((e) => e.isIntersecting)) { o.disconnect(); depoisDaPintura(ligar); }
       });
       o.observe(filme);
     };
