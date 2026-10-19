@@ -1,0 +1,42 @@
+/* Comparador (SPEC 6.2): contornos na mesma escala (sala) e tabela com rolagem local (dia). */
+.cmp-planta{display:grid;gap:20px;margin-top:clamp(20px,3vw,36px)}
+@media (min-width:1024px){.cmp-planta{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);align-items:start}}
+.cmp-fig{display:grid;gap:12px}
+.cmp-svg{max-height:440px}
+.cmp-svg__esp{fill:color-mix(in srgb,var(--line) 8%,transparent);stroke:var(--line);stroke-width:1.2;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}
+.cmp-leg{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.8125rem;color:var(--fg-2)}
+.cmp-leg__i{display:inline-flex;align-items:center;gap:8px}
+.cmp-leg__i .num{color:var(--fg)}
+.cmp-espaco{display:grid;gap:12px}
+.cmp{display:grid;gap:20px}
+.cmp-vazio{display:grid;gap:8px;max-width:60ch}
+.cmp-vazio__t{font-family:var(--f-display);font-size:var(--fs-h3)}
+.cmp-add{position:relative;max-width:520px}
+.cmp-sug{position:absolute;z-index:6;left:0;right:0;top:100%;margin-top:6px;max-height:320px;overflow:auto;padding:6px;list-style:none;border:1px solid var(--rule);border-radius:var(--radius);background:var(--bg);box-shadow:var(--sombra-2)}
+.cmp-sug button{display:flex;justify-content:space-between;gap:12px;width:100%;min-height:44px;padding:8px 12px;border-radius:10px;text-align:left;font-size:.9375rem}
+.cmp-sug button .num{color:var(--fg-2);white-space:nowrap}
+@media (hover:hover){.cmp-sug button:hover{background:color-mix(in srgb,var(--fg) 6%,transparent)}}
+.cmp-sug__nada{padding:10px 12px;color:var(--fg-2);font-size:.875rem}
+.cmp-acoes{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.cmp-rol{border:1px solid var(--rule);border-radius:var(--radius)}
+.cmp-tab{width:100%;min-width:640px;font-size:.9375rem;line-height:1.45}
+.cmp-tab th,.cmp-tab td{padding:14px 16px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.cmp-tab tbody tr:last-child>*{border-bottom:0}
+.cmp-tab th[scope="row"]{position:sticky;left:0;z-index:1;width:150px;min-width:130px;background:var(--bg);font:600 .75rem/1.4 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-2);box-shadow:1px 0 0 var(--rule)}
+.cmp-canto{position:sticky;left:0;z-index:1;background:var(--bg);box-shadow:1px 0 0 var(--rule)}
+.cmp-col{display:table-cell;min-width:170px;font-weight:400}
+.cmp-col__fio{display:block;height:3px;margin-bottom:10px;border-radius:2px;background:var(--cor)}
+.cmp-col__img,.cmp-col__vazia{display:block;width:100%;max-width:200px;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--room-2)}
+.cmp-col__vazia{display:grid;place-items:center;color:var(--muted-on-dark);font-size:.8125rem}
+.cmp-col__nome{display:block;margin-top:10px;font-family:var(--f-display);font-size:1.0625rem;line-height:1.25;color:inherit}
+.cmp-tam select{width:100%;min-height:44px;margin-top:8px;padding:0 12px;border:1px solid var(--rule);border-radius:10px;background:transparent;font-size:.875rem}
+.cmp-col__tirar{display:inline-flex;align-items:center;min-height:44px;font-size:.8125rem;color:var(--fg-2);text-decoration:underline;text-underline-offset:.2em}
+.cmp-preco{font-weight:600}
+.cmp-sub{display:block;margin-top:4px;font-size:.8125rem;color:var(--fg-2)}
+.cmp-itens{margin:0;padding-left:1.1em;font-size:.875rem}
+.cmp-planta-img{width:100%;max-width:240px;margin-bottom:8px;border-radius:8px;background:#fff}
+.cmp-tab .link{display:inline-flex;align-items:center;min-height:44px}
+.cmp-nota{font-size:.8125rem;color:var(--fg-2)}
+.cmp>*,.cmp-corpo{min-width:0}
+.cmp-corpo{display:grid;gap:16px}
+.cmp-rol{position:relative}

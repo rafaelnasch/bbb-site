@@ -22,7 +22,8 @@ const paginas = {};
 
 before(async () => {
   R = await renderizar({ sistema: true, dist: DIST });
-  for (const s of R.geradas) paginas[s] = readFileSync(join(DIST, s), 'utf8');
+  // Só páginas HTML: os templates também geram arquivos de dados (ex.: dados/indice.json do escolhedor).
+  for (const s of R.geradas.filter((x) => x.endsWith('.html'))) paginas[s] = readFileSync(join(DIST, s), 'utf8');
 });
 
 const texto = (h) => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ');

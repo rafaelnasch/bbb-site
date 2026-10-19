@@ -1,0 +1,9 @@
+/* CSS crítico extra das ferramentas e guias (escolhedor, comparador, busca, guias): o topo em sala
+   escura e o contêiner da ferramenta, para o site.css tardio não deslocar a primeira tela (CLS). */
+.ferr-topo{position:relative;isolation:isolate;overflow:clip;padding:calc(var(--cab-h) + 20px) 0 clamp(28px,4vw,56px)}
+.ferr-topo__fundo{position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 60% at 85% 10%,color-mix(in srgb,var(--line) 16%,transparent),transparent 70%),radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--glow) 10%,transparent),transparent 70%)}
+.ferr-topo__in{display:grid;gap:14px}
+.ferr-topo__h1{max-width:17ch}
+.ferr-topo__lead{max-width:58ch;color:var(--fg-2);font-size:clamp(1.0625rem,1rem + .4vw,1.25rem);line-height:1.5}
+.esc-app,.ferr-app{min-height:60svh;padding:24px 0 clamp(48px,6vw,96px)}
+.esc__carregando{padding:32px 0;color:var(--fg-2)}

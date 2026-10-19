@@ -1,0 +1,13 @@
+/* Busca (SPEC 6.2). */
+.bus-campo{position:relative;max-width:720px}
+.bus-campo__ic{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--muted-on-dark);pointer-events:none}
+.bus-campo__in{width:100%;min-height:60px;padding:12px 18px 12px 54px;border:1px solid color-mix(in srgb,var(--line) 40%,transparent);border-radius:var(--radius-chip);background:color-mix(in srgb,var(--line) 8%,transparent);color:var(--porcelain);font-size:1.1875rem;-webkit-appearance:none;appearance:none}
+.bus-campo__in::placeholder{color:color-mix(in srgb,var(--muted-on-dark) 80%,transparent)}
+.bus-campo__in:focus-visible{outline:2px solid var(--focus-on-dark);outline-offset:2px}
+.bus{display:grid;gap:18px}
+.bus-facetas{display:grid;gap:10px}
+.bus-n{font-family:var(--f-display);font-size:var(--fs-h3)}
+.bus-vazio{display:grid;gap:10px;justify-items:start}
+.bus-vazio__t{font-family:var(--f-display);font-size:var(--fs-h3)}
+.bus-vazio__acoes{display:flex;flex-wrap:wrap;gap:10px}
+.bus-inicio{display:grid;gap:12px}

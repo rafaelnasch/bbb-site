@@ -16,6 +16,7 @@ import { verificarContraste } from './lib/contraste.mjs';
 import { numerosProibidosEm } from './lib/wa.mjs';
 import { REGISTRO } from './render.mjs';
 import { verificarDiferencaZero, rastreio } from './lib/diferenca-zero.mjs';
+import { CATEGORIAS_PONTE } from './lib/catalogo.mjs';
 
 const SAUDE = ['cura', 'trata', 'tratamento', 'diabetes', 'celulite', 'varizes', 'circulação', 'emagrec', 'terapêutic', 'medicinal'];
 const PROIBIDOS = [/\(VERIFICAR\)/, /BANHEIRA COLORIDA/i, /a maior loja/i, /a única com selo/i, /\blorem\b/i];
@@ -154,7 +155,13 @@ export async function validar(dist = paths.dist) {
   // 13.10 cobertura (quando os templates existem)
   const cat = JSON.parse(readFileSync(join(paths.data, 'categorias.json'), 'utf8'));
   if (existsSync(join(paths.templates, 'colecao.mjs'))) {
-    for (const c of cat) if (!existsSync(join(dist, c.d_path))) erro(dist, `coleção ausente: ${c.d_path}`);
+    // As duas categorias do Magento sem .html viram páginas-ponte (SPEC 4.1): cobertas pelo template ponte.
+    const ponte = existsSync(join(paths.templates, 'ponte.mjs'));
+    for (const c of cat) {
+      if (existsSync(join(dist, c.d_path))) continue;
+      if (CATEGORIAS_PONTE.includes(c.d_path) && !ponte) { pendentes.push(`13.10 ${c.d_path} (página-ponte, template ainda não existe)`); continue; }
+      erro(dist, `coleção ausente: ${c.d_path}`);
+    }
   } else pendentes.push('13.10 coleções (template ainda não existe)');
   if (existsSync(join(paths.templates, 'produto.mjs'))) {
     const prods = JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8'));

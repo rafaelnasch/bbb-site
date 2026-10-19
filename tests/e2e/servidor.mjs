@@ -3,10 +3,11 @@
 import { createServer } from 'node:http';
 import { gzipSync } from 'node:zlib';
 import { readFile, stat } from 'node:fs/promises';
-import { join, extname, normalize } from 'node:path';
+import { join, extname, normalize, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const RAIZ = join(fileURLToPath(new URL('../..', import.meta.url)), 'dist');
+// E2E_DIST troca a pasta servida (ex.: .cache/dist-colecao), para testes que renderizam numa pasta própria.
+const RAIZ = process.env.E2E_DIST ? resolve(process.env.E2E_DIST) : join(fileURLToPath(new URL('../..', import.meta.url)), 'dist');
 const TIPOS = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json',
   '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
