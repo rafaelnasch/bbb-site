@@ -69,6 +69,9 @@ function ogPadrao() {
  * @param {boolean}[p.modulosTardios] módulos da página só pedidos depois do load (core.js), fora do caminho do LCP
  * @param {boolean}[p.cssAposPintura] o CSS do site só é pedido depois da primeira pintura (core.js); a primeira
  *                                tela tem de estar inteira no CSS crítico. Sem JS, o <noscript> carrega o CSS
+ * @param {boolean}[p.cssBloqueante] o site.css entra como folha normal (bloqueia a primeira pintura): páginas de
+ *                                leitura (institucionais, 404), cuja primeira tela tem muitos componentes; sem isso
+ *                                a chegada tardia do site.css desloca o conteúdo (CLS) e o LCP delas é texto
  * @param {boolean}[p.fontesAposPintura] tira do CSS crítico as @font-face da Fraunces e da Open Sans (vêm no
  *                                site.css, pedido depois da primeira pintura): na primeira pintura só a fonte do H1
  *                                é baixada; o resto usa o fallback com métricas ajustadas. Exige cssAposPintura
@@ -120,9 +123,9 @@ export function layout(p) {
 <script>${raw(A.inlineJs)}</script>
 ${p.esperar ? html`<link rel="expect" href="#${p.esperar}" blocking="render">` : ''}
 ${preloadFontes.map((h) => html`<link rel="preload" href="${h}" as="font" type="font/woff2" crossorigin${attrs({ fetchpriority: p.fontes ? 'high' : null })}>`)}
-${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, as: l.as, type: l.type, fetchpriority: l.fetchpriority, imagesrcset: l.imagesrcset, imagesizes: l.imagesizes, media: l.media })}>`)}
+${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, as: l.as, type: l.type, crossorigin: l.crossorigin, fetchpriority: l.fetchpriority, imagesrcset: l.imagesrcset, imagesizes: l.imagesizes, media: l.media })}>`)}
 <style>${raw(critico)}</style>
-${p.cssAposPintura ? '' : html`<link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>`}
+${p.cssAposPintura ? '' : p.cssBloqueante ? html`<link rel="stylesheet" href="${A.cssSite}">` : html`<link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>`}
 <noscript><link rel="stylesheet" href="${A.cssSite}"></noscript>
 <meta name="theme-color" content="#071C2B">
 <link rel="icon" href="${url('brand/favicon-32.png')}" type="image/png" sizes="32x32">

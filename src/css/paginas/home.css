@@ -15,7 +15,7 @@
 .vitrine__cena{position:relative;border-radius:6px}
 .home-abre::after{content:"";position:absolute;inset:auto 0 0;height:1px;z-index:-1;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--line) 40%,transparent),transparent)}
 /* Cena da vitrine sem filme (build de publicação sem os filmes): a foto já recortada, quadrada. */
-.vitrine__cena:not(.recorte) img{display:block;width:100%;height:auto;aspect-ratio:1}
+.vitrine__cena:not(.quadro) img{display:block;width:100%;height:auto;aspect-ratio:1}
 @media (min-width:600px){.portas{gap:14px}.porta__a{padding:8px 8px 12px}.porta__n{font-size:.875rem}}
 .agua__cv{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s var(--ease-out)}
 .agua__cv.is-viva{opacity:1}
@@ -103,13 +103,14 @@
 .pg-home .col-grade{display:grid;gap:44px 24px;padding:32px 0 8px;list-style:none}
 @media (min-width:600px){.pg-home .col-grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1024px){.pg-home .col-grade{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px}}
-.pg-home .cart{position:relative;min-width:0}
-.pg-home .cart__a{display:grid;gap:8px;color:inherit;text-decoration:none}
+.pg-home .cart{position:relative;min-width:0;display:flex;flex-direction:column}
+.pg-home .cart__a{flex:1;display:flex;flex-direction:column;gap:8px;color:inherit;text-decoration:none}
+.pg-home .cart__selos{min-height:28px}.pg-home .cart__base{margin-top:auto;display:grid;gap:4px}.pg-home .cart__med{display:flex;align-items:center;gap:8px}
 .pg-home .cart__mol{--wall:var(--room-2);position:relative;display:block;padding:clamp(10px,4%,20px);border-radius:var(--radius);background:var(--wall)}
 .pg-home .cart__img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px}
 .pg-home .cart__vazia{display:grid;place-items:center;aspect-ratio:1;color:var(--muted-on-dark)}
 .pg-home .cart__nome{font-size:var(--fs-h3)}
-.pg-home .cart__ctn{position:absolute;right:8px;bottom:8px;width:52px;height:68px}
+.pg-home .cart__ctn{flex:none;width:30px;height:24px}
 .home-salas .cart__nome,.home-lanc .cart__nome{font-size:1.1875rem}
 
 /* ---------- O desenho é a obra ---------- */
@@ -143,7 +144,7 @@ html:not([data-lite]) .home-obra:not(.is-tour) .cota-marca span{animation:home-c
 .home-lanc__cab{display:grid;gap:28px;align-items:center}
 .home-lanc__cab>div:first-child{display:grid;gap:12px}
 .home-lanc__filme{position:relative;padding:12px;border-radius:var(--radius);background:var(--room-2);border:1px solid color-mix(in srgb,var(--line) 20%,transparent);box-shadow:var(--sombra-2)}
-.home-lanc__filme .recorte{border-radius:6px}
+.home-lanc__filme .quadro{border-radius:6px}
 .home-lanc__video{opacity:0;transition:opacity 1s var(--ease-out)}
 .home-lanc__filme.is-tocando .home-lanc__video{opacity:1}
 @media (min-width:600px) and (max-width:1023px){.home-lanc__filme{max-width:520px}}
@@ -236,6 +237,7 @@ html:not([data-lite]) .mapa__onda{animation:mapa-onda 3.2s var(--ease-out) infin
 .mapa__rotulos .mapa__item--s{transform:translate(-50%,var(--r))}
 .mapa__rotulos .mapa__item--ne{transform:translate(-12%,calc(-100% - var(--r)))}
 .mapa__item.is-fabrica a{color:var(--glow);font-weight:600}
+.mapa__sep{color:var(--muted-on-dark);padding-inline:2px}
 @media (hover:hover){.mapa__item a:hover{text-decoration:underline;text-underline-offset:.2em}}
 .mapa__pais{position:absolute;right:0;top:0;width:clamp(64px,18%,120px);height:auto;aspect-ratio:1;overflow:visible}
 .mapa__pais path{fill:color-mix(in srgb,var(--line) 14%,transparent);stroke:color-mix(in srgb,var(--line) 50%,transparent);stroke-width:1.5}

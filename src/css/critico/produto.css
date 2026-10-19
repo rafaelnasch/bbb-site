@@ -25,7 +25,7 @@
 .prod__grade{display:grid;gap:40px;align-items:start}.prod__grade>*{min-width:0}
 .moldura--peca .moldura__img{aspect-ratio:auto;object-fit:contain}
 .galeria__base{display:flex;align-items:center;justify-content:space-between;min-height:44px}
-@media (min-width:1024px){.prod-topo__h1{max-width:28ch}.prod-topo__arte{right:var(--arte-d,-6%);top:calc(var(--cab-h) + 8px);width:var(--arte-w,min(1080px,62%))}.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 5}}
+@media (min-width:1024px){.prod-topo__h1{max-width:min(28ch,56vw - var(--pad-x))}.prod-topo--desenho .prod-topo__h1{max-width:min(28ch,52vw - var(--pad-x) - 24px)}.prod-topo--sem-arte .prod-topo__h1{max-width:28ch}.prod-topo__arte{right:var(--arte-d,-6%);top:calc(var(--cab-h) + 8px);width:var(--arte-w,min(1080px,62%))}.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 5}}
 /* Coluna de decisão e miniaturas da galeria: com a foto na primeira tela, o topo da coluna também está nela. */
 .prod__decisao{padding:clamp(20px,2.4vw,32px);border-radius:22px}
 .decisao__in{display:grid;gap:22px}

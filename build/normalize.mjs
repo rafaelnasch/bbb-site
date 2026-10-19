@@ -1430,6 +1430,7 @@ const exibidos = {
     'loja-telefone': { data: 'lojas.json[].atendimento_literal', origem: 'institucional.json:lojas_showrooms.lojas[].atendimento' },
     'prazo-entrega': { data: 'politicas.json:prazo_de_entrega.tabela[].linhas[].prazo', origem: 'institucional.json:comercial.prazo_de_entrega.tabela' },
     pagamento: { data: 'politicas.json:pagamento.literal', origem: 'institucional.json:comercial.formas_pagamento.literal' },
+    'itens-avulsos-suspensos': { data: 'politicas.json:itens_avulsos_suspensos.literal', origem: 'institucional.json:comercial.itens_avulsos_suspensos.literal', obs: 'sem o asterisco inicial; mostrado ao lado da disponibilidade do catálogo (conflito da fonte, SPEC 15)' },
     'categoria-descricao': { data: 'categorias.json[].d_descricao_exibida', origem: 'catalog.json:categories[].descricao_texto', obs: 'menos o filtro editorial de data/editorial-log.json' },
     'manual-tabela': { data: 'politicas.json:manual.paginas[].tabelas[]', origem: '_recon/html/pdf/manual-do-usuario.pdf (texto lido com pdfjs, na grade de build/manual-tabelas.mjs)', obs: 'caracteres conferidos com o trecho do texto do manual que a tabela substitui' },
     'manual-texto': { data: 'politicas.json:manual.paginas[].texto_exibido', origem: '_recon/html/pdf/manual-do-usuario.txt', obs: 'menos garantia e afirmações de saúde (editorial-log); palavras que a extração partiu, unidas como no PDF (texto_grafia, regra palavra_partida_na_extracao); tabelas em manual-tabela' },

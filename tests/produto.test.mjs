@@ -262,3 +262,17 @@ test('JSON-LD do produto: propriedades com o rótulo exibido e marca apontando p
   const grupo = nos(h).find((n) => n['@type'] === 'ProductGroup');
   if (grupo) assert.equal(grupo.brand['@id'], `${SITE_URL}/#org`);
 });
+
+test('itens avulsos suspensos: catálogo "Disponível" e a página de prazos lado a lado na coluna de decisão (SPEC 15)', () => {
+  const pol = JSON.parse(readFileSync(join(paths.data, 'politicas.json'), 'utf8'));
+  const lit = pol.itens_avulsos_suspensos.literal.replace(/^\*\s*/, '');
+  for (const slug of ['aquecedor-digital-bbb', 'aquecedor-digital-com-sensor-de-nive-bbb', 'cromoterapia']) {
+    const h = pagina(slug);
+    const dec = /<section class="prod__decisao[\s\S]*?<\/section>/.exec(h)?.[0] || '';
+    const nota = /<div[^>]*data-conflito="avulso-suspenso"[\s\S]*?<\/div>/.exec(dec)?.[0];
+    assert.ok(nota, `${slug}: nota do conflito na coluna de decisão`);
+    assert.ok(texto(nota).includes(lit), `${slug}: texto literal da página de prazos`);
+    assert.match(nota, new RegExp(`data-campo="disponibilidade">${P(slug).disponibilidade}<`));
+  }
+  for (const slug of ['jato', 'ozonio-para-spa', ACQUA]) assert.doesNotMatch(pagina(slug), /data-conflito="avulso-suspenso"/, slug);
+});

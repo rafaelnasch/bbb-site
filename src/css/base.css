@@ -4,9 +4,13 @@
    "asset:" é trocado pelo caminho com hash no build. */
 @font-face{font-family:"Fraunces";src:url("asset:fonts/fraunces-var-latin.woff2") format("woff2");font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:"Open Sans";src:url("asset:fonts/opensans-var-latin.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
-/* Reservas com métrica ajustada: a troca de fonte não empurra o layout (CLS). */
-@font-face{font-family:"Fraunces Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:104%;ascent-override:94%;descent-override:24%;line-gap-override:0%}
-@font-face{font-family:"Open Sans Fallback";src:local("Arial"),local("Helvetica");size-adjust:102.4%;ascent-override:104.4%;descent-override:28.6%;line-gap-override:0%}
+/* Reservas com métrica ajustada: a troca de fonte não empurra o layout (CLS). Fraunces × Georgia medidos no
+   Chromium em títulos de 24 a 44 px (pesos 300 e 350): largura de 99% a 103%; ascent 1956 e descent 510 em 2000. */
+@font-face{font-family:"Fraunces Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:100%;ascent-override:98%;descent-override:26%;line-gap-override:0%}
+/* Open Sans × Arial medidos no Chromium com texto pt-BR (largura): 400 = 104,24% da Arial; 600 = 100,65% da
+   Arial Bold. Ascent e descent = métrica da Open Sans (2189 e 600 em 2048) divididos pelo size-adjust. */
+@font-face{font-family:"Open Sans Fallback";src:local("Arial"),local("Helvetica");font-weight:100 549;size-adjust:104.24%;ascent-override:102.54%;descent-override:28.11%;line-gap-override:0%}
+@font-face{font-family:"Open Sans Fallback";src:local("Arial Bold"),local("Arial-BoldMT");font-weight:550 900;size-adjust:100.65%;ascent-override:106.19%;descent-override:29.11%}
 
 /* Reset */
 *,*::before,*::after{box-sizing:border-box}
@@ -50,7 +54,7 @@ h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
 /* Layout (SPEC 5.4). A grade de 12/6/4 colunas está em utilitarios.css. */
 .wrap{width:min(100% - 2*var(--pad-x), var(--maxw));margin-inline:auto}
 .secao{padding-block:clamp(56px,6vw + 24px,128px)}
-.vh{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important}
+.vh{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 
 /* Botões (SPEC 10.3): alvo mínimo 48 px, texto quebra linha, nunca sai da tela. */
 .btn{--b-bg:var(--brand);--b-fg:#fff;--b-bd:transparent;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;max-width:100%;padding:.72em 1.4em;border:1px solid var(--b-bd);border-radius:var(--radius-chip);background:var(--b-bg);color:var(--b-fg);font:600 1rem/1.25 var(--f-body);letter-spacing:.005em;text-align:center;text-decoration:none;white-space:normal;-webkit-tap-highlight-color:transparent}
@@ -86,11 +90,7 @@ h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
 
 /* View Transitions entre páginas (SPEC 6.1). Sem suporte: navegação normal. */
 @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
-::view-transition-group(*){animation-duration:var(--t-in);animation-timing-function:var(--ease-out)}
-::view-transition-old(root){animation:vt-sai var(--t-out) var(--ease-out) both}
-::view-transition-new(root){animation:vt-entra var(--t-in) var(--ease-out) both}
-@keyframes vt-sai{to{opacity:0}}
-@keyframes vt-entra{from{opacity:0}}
+/* Tempos e curvas das transições: components.css (o padrão do navegador já é um esmaecimento cruzado). */
 
 /* Modo lite (SPEC 6): movimento reduzido, Save-Data ou rede 2G. Estado final imediato. */
 html[data-lite] [data-reveal],html[data-lite] [data-intro],html[data-lite] .letterbox{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important;transition:none!important}

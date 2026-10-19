@@ -18,9 +18,30 @@
       const l = d.createElement('link');
       l.rel = 'stylesheet';
       l.href = cssDepois;
+      // Quem monta conteúdo com o CSS completo (escolher.js) espera por este aviso.
+      l.onload = l.onerror = () => { BBB.cssPronto = true; d.dispatchEvent(new Event('bbb:css')); };
       d.head.append(l);
     });
   }
+
+  // Quem monta conteúdo que depende do CSS completo (escolhedor, busca) espera o site.css aplicado:
+  // senão os cartões pintam só com o CSS crítico e se deslocam quando ele chega (CLS).
+  // Depois do CSS, espera também as fontes que ele trouxe (no máximo 1,5 s): o texto dos cartões não troca
+  // de fonte já na tela.
+  const fontesOk = () => new Promise((ok) => { requestAnimationFrame(() => { (d.fonts?.ready || Promise.resolve()).then(ok, ok); setTimeout(ok, 1500); }); });
+  BBB.cssOk = () => new Promise((ok) => {
+    if (BBB.cssPronto) { ok(); return; }
+    const l = $('link[data-css-tardio]');
+    if (l && !l.sheet) {
+      const f = () => { BBB.cssPronto = true; ok(); };
+      l.addEventListener('load', f, { once: true });
+      l.addEventListener('error', f, { once: true });
+      setTimeout(f, 4000);
+    } else if (!l && cssDepois) {
+      d.addEventListener('bbb:css', () => ok(), { once: true });
+      setTimeout(ok, 4000);
+    } else ok();
+  }).then(fontesOk);
 
   // Modo lite: movimento reduzido, Save-Data ou rede 2G. Flag global em <html data-lite="1">.
   const conn = navigator.connection || {};

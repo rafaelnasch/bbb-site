@@ -194,3 +194,10 @@ html[data-lite] *,html[data-lite] *::before,html[data-lite] *::after{scroll-beha
 
 /* Título de exibição (só na página do sistema visual): fora do crítico. */
 .t-display{font-size:var(--fs-display);font-weight:300;line-height:.98;letter-spacing:-.03em}
+
+/* View Transitions (SPEC 6.1): tempos e curvas. Fora do CSS crítico; sem ele vale o esmaecimento padrão. */
+::view-transition-group(*){animation-duration:var(--t-in);animation-timing-function:var(--ease-out)}
+::view-transition-old(root){animation:vt-sai var(--t-out) var(--ease-out) both}
+::view-transition-new(root){animation:vt-entra var(--t-in) var(--ease-out) both}
+@keyframes vt-sai{to{opacity:0}}
+@keyframes vt-entra{from{opacity:0}}

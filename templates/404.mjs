@@ -17,7 +17,7 @@ export function paginas(ctx) {
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Página não encontrada</p>
     <h1 id="p404-h1" class="ferr-topo__h1" data-intro="mascara" style="--i:1">Este endereço não leva a nenhuma peça</h1>
     <p class="ferr-topo__lead" data-intro style="--i:2">O link pode ter mudado. Procure o modelo pelo nome, escolha pelo seu espaço ou fale com a equipe.</p>
-    <div class="faq-busca p404__busca" data-busca-404="${url('busca.html')}" data-so-js hidden>
+    <div class="faq-busca p404__busca" data-busca-404="${url('busca.html')}" data-so-js>
       <label class="vh" for="p404-q">Buscar no catálogo</label>
       <span class="faq-busca__ic" aria-hidden="true">${icone('busca', { tamanho: 20 })}</span>
       <input id="p404-q" class="faq-busca__in" type="search" placeholder="Nome do modelo, nº de catálogo ou medida" autocomplete="off" enterkeyhint="search">
@@ -49,6 +49,7 @@ export function paginas(ctx) {
       sobre: true,
       classe: 'pg-inst pg-404',
       critico: ['ferramenta', 'inst'],
+      cssBloqueante: true,
     }),
   }];
 }

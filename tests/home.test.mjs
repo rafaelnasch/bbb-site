@@ -91,7 +91,10 @@ test('cartões: nome e preços literais de produtos.json', () => {
 test('o desenho é a obra: planta validada da Acqua Línea 0,79 x 1,41 x 0,37 com cotas literais e PDF', () => {
   const sec = /<section class="sala sala--planta secao home-obra"[\s\S]*?<\/section>/.exec(h)?.[0];
   assert.ok(sec, 'seção da planta');
-  assert.match(sec, /Cada peça tem planta técnica oficial com as cotas, e você baixa o PDF/);
+  const naoAcess = produtos.filter((x) => x.d_tipo !== 'acessorio');
+  const nPdf = naoAcess.filter((x) => (x.plantas_pdf || []).length).length;
+  assert.ok(sec.includes(`<span class="num">${nPdf}</span> dos <span class="num">${naoAcess.length}</span> modelos têm planta técnica oficial`), 'contagem real de modelos com planta, sem generalizar');
+  assert.doesNotMatch(sec, /Cada peça tem planta/);
   const p = produtos.find((x) => x.slug === 'banheira-acqua-linea-completa-com-hidro-em-acrilico');
   const dp = p.d_planta.find((x) => x.rotulo === '0,79 x 1,41 x 0,37');
   assert.equal(dp.cotas_validadas, true);
@@ -100,8 +103,9 @@ test('o desenho é a obra: planta validada da Acqua Línea 0,79 x 1,41 x 0,37 co
   assert.deepEqual(exib, pl.cotas.map((c) => [c.letra, c.valor_texto]));
   assert.match(sec, /data-explorador/);
   assert.match(sec, /href="[^"]+\.pdf" download/);
-  assert.match(sec, /data-gsap="[^"]+vendor\/gsap\.min\.js"/);
-  assert.ok(existsSync(join(DIST, 'vendor', 'gsap.min.js')) && existsSync(join(DIST, 'vendor', 'ScrollTrigger.min.js')));
+  // Tour da planta sem GSAP (SPEC 12: a home tem 25 KB de JS também no desktop).
+  assert.doesNotMatch(sec, /data-gsap|data-scrolltrigger/);
+  assert.doesNotMatch(h, /vendor\/(gsap|ScrollTrigger)/);
 });
 
 test('fábrica: endereço sem CEP, números "segundo a empresa", INMETRO com o número, sem ISO', () => {
@@ -144,10 +148,14 @@ test('como comprar: pagamento literal e botão de compra com o número de venda'
 });
 
 test('lojas: 9 cidades no mapa SVG, sem iframe, cada uma com link para a âncora da página de lojas', () => {
-  const itens = [...h.matchAll(/<li class="mapa__item[^"]*"[^>]*><a href="([^"]+)">/g)].map((m) => m[1]);
+  const lista = /<ol class="mapa__lista"[\s\S]*?<\/ol>/.exec(h)[0];
+  const itens = [...lista.matchAll(/<a href="([^"]+)">/g)].map((m) => m[1]);
   assert.equal(itens.length, lojas.length);
   assert.equal(lojas.length, 9);
-  lojas.forEach((l, i) => assert.equal(itens[i], `${BASE_PATH}/lojas/loja-showrooms.html#${l.ancora}`));
+  assert.deepEqual([...itens].sort(), lojas.map((l) => `${BASE_PATH}/lojas/loja-showrooms.html#${l.ancora}`).sort());
+  // Pontos que se fundem na tela (Belo Horizonte e Contagem) dividem um rótulo, com um link para cada loja.
+  const M0 = mapaLojas(lojas);
+  assert.ok(M0.rotulos.some((r) => r.lojas.length === 2 && r.lojas.map((l) => l.cidade).sort().join() === 'Belo Horizonte,Contagem'));
   assert.doesNotMatch(h, /<iframe/);
   const M = mapaLojas(lojas);
   for (const p of M.pontos) assert.ok(p.x > 0 && p.x < 100 && p.y > 0 && p.y < 100, p.loja.cidade);
@@ -194,7 +202,7 @@ test('primeira carga sem recurso de terceiros; LCP não é canvas (água e vapor
   assert.match(h, /class="home-abre__agua" aria-hidden="true" data-agua/);
 });
 
-test('orçamento: JS da home <= 25 KB gzip (sem o GSAP do desktop), CSS crítico <= 14 KB, HTML válido', async () => {
+test('orçamento: JS da home <= 25 KB gzip (celular e desktop, sem GSAP), CSS crítico <= 14 KB, HTML válido', async () => {
   const mods = JSON.parse(/<script type="application\/json" id="bbb-assets"[^>]*>([\s\S]*?)<\/script>/.exec(h)[1]);
   const nucleo = /<script type="module" src="([^"]+nucleo[^"]+)"/.exec(h)[1];
   const arq = (u) => readFileSync(join(DIST, u.slice(BASE_PATH.length)));
@@ -317,13 +325,13 @@ test('abertura: fontes inteiras fora do CSS crítico da home, pedidas com o site
   assert.doesNotMatch(/<style>([\s\S]*?)<\/style>/.exec(col)[1], /@font-face\{font-family:Fraunces;/);
 });
 
-test('vitrine do desktop: cena com o filme ou, sem ele, a foto recortada parada', () => {
+test('vitrine: cena com o filme quadrado (sem moldura e sem legenda gravadas) ou, sem ele, a foto recortada parada', () => {
   const v = /<div class="vitrine"[\s\S]*?<div class="vitrine__leg">/.exec(h)?.[0] || '';
   assert.ok(v, 'vitrine presente (os recortes de media/home são versionados)');
   for (const [, id] of PORTAS) {
     const cena = new RegExp(`<div class="vitrine__cena([^"]*)"[^>]*data-cena="${id}">([\\s\\S]*?)</div>`).exec(v);
     assert.ok(cena, id);
-    if (/recorte/.test(cena[1])) assert.match(cena[2], /<video/);
+    if (/quadro/.test(cena[1])) { assert.match(cena[2], /<video/); assert.match(cena[2], new RegExp(`${id}-quadro\\.(webm|mp4)`)); }
     else assert.match(cena[2], new RegExp(`abertura-${id}-484\\.webp`));
   }
 });

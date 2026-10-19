@@ -13,6 +13,7 @@ const HOME = () => `${BASE}/`;
 
 async function contagemEscolher(page, q) {
   await page.goto(`${BASE}/escolher.html?${q}`);
+  await expect(page.locator('.is-carregando')).toHaveCount(0);
   await expect(page.locator('[data-esc-carregando]')).toBeHidden();
   return Number(await page.locator('[data-esc-n]').textContent());
 }
@@ -78,18 +79,23 @@ test('movimento reduzido: sem água, vapor, vídeo nem GSAP; contagem e planta c
   await ctx.close();
 });
 
-test('desktop: GSAP vendorizado entra só no desktop e o tour acende as cotas ao rolar', async ({ page }) => {
+test('desktop: o tour acende as cotas ao rolar, sem GSAP e com JS <= 25 KB gzip', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   const pedidos = [];
   page.on('request', (r) => pedidos.push(r.url()));
   await page.goto(HOME(), { waitUntil: 'load' });
   await page.locator('[data-obra]').scrollIntoViewIfNeeded();
   await expect(page.locator('[data-obra]')).toHaveClass(/is-tour/, { timeout: 15000 });
-  expect(pedidos.some((u) => u.includes('/vendor/gsap.min.js'))).toBe(true);
+  expect(pedidos.some((u) => /vendor\/(gsap|ScrollTrigger)/.test(u))).toBe(false);
   const passo = page.locator('[data-obra-passo="B"]');
   await passo.evaluate((el) => el.scrollIntoView({ block: 'center' }));
   await expect(passo).toHaveClass(/is-ativo/, { timeout: 5000 });
   await expect(page.locator('.home-obra .cota-marca[data-cota="B"]')).toHaveClass(/is-ativa/);
+  // Página inteira rolada: todo o JS baixado (núcleo, módulos e o que entra por rolagem) <= 25 KB gzip.
+  await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 60)); } });
+  await page.waitForTimeout(1500);
+  const js = await page.evaluate(() => performance.getEntriesByType('resource').filter((e) => e.initiatorType === 'script' || /\.js(\?|$)/.test(e.name)).reduce((s, e) => s + (e.encodedBodySize || e.transferSize || 0), 0));
+  expect(js, 'JS da home no desktop').toBeLessThanOrEqual(25 * 1024);
 });
 
 test('celular: sem GSAP, com água depois do load, e nenhuma rolagem horizontal de 320 a 430 px', async ({ page }) => {
@@ -196,7 +202,7 @@ async function contrasteMinimo(page, seletor) {
   return razao(lum(cor), max);
 }
 
-test('celular: título sem foto por trás (contraste medido depois de tudo aceso), portas com foto real e LCP no H1', async ({ page }) => {
+test('celular: título sem foto por trás (contraste medido depois de tudo aceso), peça real logo abaixo do título, portas com foto real e LCP no H1 ou no poster', async ({ page }) => {
   test.setTimeout(90_000); // 4 larguras com 7 s de espera cada
   for (const [w, h] of [[360, 780], [390, 844], [430, 932], [768, 1024]]) {
     await page.setViewportSize({ width: w, height: h });
@@ -220,17 +226,18 @@ test('celular: título sem foto por trás (contraste medido depois de tudo aceso
     expect(sob, `${w}px`).toEqual([]);
     expect(await contrasteMinimo(page, '.home-abre__h1'), `${w}px: H1 (texto grande, mínimo 3:1)`).toBeGreaterThanOrEqual(3);
     expect(await contrasteMinimo(page, '.home-abre__lead'), `${w}px: parágrafo (mínimo 4,5:1)`).toBeGreaterThanOrEqual(4.5);
-    // As três portas com a foto real carregada e inteira na primeira tela (do 390 px para cima).
+    // A peça real da primeira coleção (poster da vitrine) logo abaixo do título, carregada e inteira na
+    // primeira tela (imersão no celular); as três portas com a foto real logo depois dela.
+    const peca = page.locator('.vitrine__cena.is-ativa .vitrine__img');
+    expect(await peca.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
+    const bp = await peca.boundingBox();
+    expect(bp.y + bp.height, `${w}px: peça inteira na primeira tela`).toBeLessThanOrEqual(h);
+    expect(bp.width, `${w}px: peça grande`).toBeGreaterThanOrEqual(Math.min(w - 64, 280));
     const fotos = page.locator('.porta__img--foto');
     await expect(fotos).toHaveCount(3);
-    for (const f of await fotos.all()) {
-      expect(await f.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
-      const bx = await f.boundingBox();
-      if (w >= 390) expect(bx.y + bx.height, `${w}px: foto da porta inteira na primeira tela`).toBeLessThanOrEqual(h);
-      else expect(bx.y + bx.height / 2, `${w}px: foto da porta visível`).toBeLessThan(h);
-    }
+    for (const f of await fotos.all()) expect(await f.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
     const lcp = await page.evaluate(() => window.__lcp);
-    expect(lcp.at(-1)?.tag, `${w}px: ${JSON.stringify(lcp)}`).toBe('H1');
+    expect(['H1', 'IMG'], `${w}px: ${JSON.stringify(lcp)}`).toContain(lcp.at(-1)?.tag);
     expect(await page.evaluate(() => document.documentElement.scrollWidth), `${w}px`).toBeLessThanOrEqual(w);
   }
 });

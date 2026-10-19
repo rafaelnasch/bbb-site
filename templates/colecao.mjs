@@ -228,13 +228,16 @@ export function paginas(ctx) {
     const viz = vizinhas(cat, D);
     const chip = chipImplicito(cat, D);
     const idFilme = FILME_RAIZ[cat.d_path];
-    const fm = idFilme && filmes?.colecao?.[idFilme];
+    // Variante quadrada do filme (sem moldura e sem legenda gravadas): a legenda é o próprio H1 e a
+    // frase da página. Sem ela, o topo fica com a água (o filme 16:9 com moldura não serve neste encaixe).
+    const fm = idFilme && filmes?.colecao?.[idFilme]?.quadro;
     const filme = fm?.webm?.src && fm?.mp4?.src && fm?.poster && [fm.webm.src, fm.mp4.src].every((s) => existsSync(join(paths.public, s)))
-      ? { webm: url(fm.webm.src), mp4: url(fm.mp4.src), avif: fm.poster.avif?.src ? url(fm.poster.avif.src) : null, webp: fm.poster.webp?.src ? url(fm.poster.webp.src) : null, w: fm.largura || 1280, h: fm.altura || 720 }
+      ? { webm: url(fm.webm.src), mp4: url(fm.mp4.src), avif: fm.poster.avif?.src ? url(fm.poster.avif.src) : null, webp: fm.poster.webp?.src ? url(fm.poster.webp.src) : null, w: fm.largura || 720, h: fm.altura || 720 }
       : null;
 
-    const fundo = filme ? html`<div class="col-topo__fundo" aria-hidden="true"><div class="col-topo__filme">${filme.avif ? html`<picture><source type="image/avif" srcset="${filme.avif}">` : ''}<img class="col-topo__poster"${attrs({ src: filme.webp || filme.avif, width: filme.w, height: filme.h, alt: '' })}>${filme.avif ? html`</picture>` : ''}<video class="col-topo__video" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, width: filme.w, height: filme.h })} muted playsinline loop preload="none"></video></div></div>`
+    const fundo = filme ? html`<div class="col-topo__fundo" aria-hidden="true"></div>`
       : html`<div class="col-topo__fundo col-topo__fundo--agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>`;
+    const quadro = filme ? html`<div class="col-topo__filme" aria-hidden="true">${filme.avif ? html`<picture><source type="image/avif" srcset="${filme.avif}">` : ''}<img class="col-topo__poster"${attrs({ src: filme.webp || filme.avif, width: filme.w, height: filme.h, alt: '', fetchpriority: 'high' })}>${filme.avif ? html`</picture>` : ''}<video class="col-topo__video" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, width: filme.w, height: filme.h })} muted playsinline loop preload="none"></video></div>` : '';
 
     // Atalhos das subcoleções da mesma raiz, com a contagem real (total_exibido), logo abaixo do título.
     const raizPath = `${cat.d_path.split('/')[0].replace(/\.html$/, '')}.html`;
@@ -250,8 +253,9 @@ export function paginas(ctx) {
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Coleção</p>
     <h1 id="col-h1" class="col-topo__h1" data-intro="mascara" style="--i:1">${cat.nome}</h1>
     <p class="col-topo__frase" data-intro style="--i:2"><span class="num" data-campo="categoria-total">${frase.split(' ')[0]}</span>${frase.slice(frase.indexOf(' '))}.</p>
+    ${quadro}
     ${chip ? html`<p class="col-topo__chips" data-intro style="--i:3"><span class="vh">Filtro desta página:</span>${chip}</p>` : ''}
-    ${subs.length ? html`<nav class="col-subs" aria-label="${subsRot}" data-intro style="--i:3"><div class="rolagem col-subs__rol" tabindex="-1"><ul class="col-subs__lista" role="list">${subs.map((c) => html`<li><a class="col-chip col-chip--sub" href="${url(c.d_path)}"${attrs({ 'aria-current': c.d_path === cat.d_path ? 'page' : null })}><span>${c.nome}</span><span class="num" data-campo="categoria-total">${c.total_exibido}</span></a></li>`)}</ul></div></nav>` : ''}
+    ${subs.length ? html`<nav class="col-subs" aria-label="${subsRot}" data-intro style="--i:3"><p class="etiqueta col-subs__rot">Categorias do site</p><div class="rolagem col-subs__rol" tabindex="-1"><ul class="col-subs__lista" role="list">${subs.map((c) => html`<li><a class="col-chip col-chip--sub" href="${url(c.d_path)}"${attrs({ 'aria-current': c.d_path === cat.d_path ? 'page' : null })}><span>${c.nome}</span><span class="num" data-campo="categoria-total">${c.total_exibido}</span></a></li>`)}</ul></div></nav>` : ''}
     ${texto ? html`<details class="col-sobre" data-intro style="--i:4"><summary>Sobre esta coleção</summary><p class="prosa" data-campo="categoria-descricao">${texto}</p></details>` : ''}
   </div>
 </section>`;
@@ -276,8 +280,8 @@ export function paginas(ctx) {
       <div class="rolagem col-escala__rol" tabindex="0" role="region" aria-label="Peças em escala, role para os lados"><ol class="col-escala__lista" role="list" data-col-escala-lista></ol></div>
       <p class="escala__aviso"><span data-col-escala-aviso>O desenho usa só as medidas externas publicadas, com o maior tamanho de cada peça.</span> Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.</p>
     </div>` : ''}
-    ${rapidos.length ? html`<div class="col-rapidos"><div class="rolagem col-rapidos__rol"><ul class="col-rapidos__lista" role="list">${rapidos.flatMap((g) => g.vs.map(([v, n]) => html`<li><button class="col-chip col-chip--rap" type="button" data-col-rapido="${{ Forma: 'fo', Lugares: 'lu' }[g.k]}" data-valor="${v}" aria-pressed="false">${v}<span class="num">${n}</span></button></li>`))}</ul></div></div>` : ''}
-    ${S ? html`<p class="col-legenda"><span class="col-legenda__selo" aria-hidden="true">escala</span>O selo mostra a peça vista de cima, todas na mesma escala.</p>` : ''}
+    ${rapidos.length ? html`<div class="col-rapidos"><p class="etiqueta col-rapidos__rot">Pela ficha técnica</p>${subs.length ? html`<p class="pequeno col-rapidos__nota">Forma e lugares como informados na ficha de cada modelo; por isso a contagem pode diferir das categorias do site.</p>` : ''}<div class="rolagem col-rapidos__rol"><ul class="col-rapidos__lista" role="list">${rapidos.flatMap((g) => g.vs.map(([v, n]) => html`<li><button class="col-chip col-chip--rap" type="button" data-col-rapido="${{ Forma: 'fo', Lugares: 'lu' }[g.k]}" data-valor="${v}" aria-pressed="false">${v}<span class="num">${n}</span></button></li>`))}</ul></div></div>` : ''}
+    ${S ? html`<p class="col-legenda"><svg class="cart__ctn" viewBox="0 0 100 80" aria-hidden="true" focusable="false"><rect x=".5" y="22" width="70" height="52" rx="3"/><path class="cart__ctn-regua" d="M0 77H100M0 72V80M100 72V80"/></svg>O pequeno desenho ao lado da medida é a peça vista de cima sobre a régua da maior peça, todas na mesma escala.</p>` : ''}
     <ol class="col-grade" role="list" data-col-grade>${(() => {
       // Cartões vizinhos não repetem a mesma foto (versões irmãs têm a mesma galeria): cada cartão evita
       // as fotos dos dois anteriores, quando a própria galeria tiver outra.
@@ -332,12 +336,12 @@ export function paginas(ctx) {
     };
     // Sem filme, a primeira foto da grade costuma ser o LCP: pré-carregada com o mesmo srcset e sizes do
     // cartão (SPEC 12: LCP da coleção é o H1 ou a primeira foto).
-    // Com filme, o poster é o LCP só no desktop (no celular ele é fundo esmaecido e a foto do cartão é o LCP).
+    // Com filme, o poster quadrado (cerca de 13 KB) fica na primeira tela em todas as larguras.
     const f0 = lista[0] ? fotoCartao(lista[0].slug) : null;
     const av0 = f0?.fontes?.find((x) => x.type === 'image/avif');
     const preCartao = av0 ? { as: 'image', type: 'image/avif', fetchpriority: 'high', imagesrcset: av0.srcset, imagesizes: SIZES_GRADE } : null;
     const preload = filme?.avif
-      ? [{ href: filme.avif, as: 'image', type: 'image/avif', fetchpriority: 'high', media: '(min-width:1024px)' }, ...(preCartao ? [{ ...preCartao, media: '(max-width:1023px)' }] : [])]
+      ? [{ href: filme.avif, as: 'image', type: 'image/avif', fetchpriority: 'high' }, ...(preCartao ? [{ ...preCartao, media: '(max-width:1023px)' }] : [])]
       : preCartao ? [preCartao] : [];
     out.push({
       saida: cat.d_path,

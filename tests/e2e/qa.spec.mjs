@@ -17,6 +17,7 @@ const texto = async (loc) => decodeURIComponent((await loc.getAttribute('href'))
 
 test('escolhedor: sem respostas, a mensagem não lista modelos; sem encaixe, os "quase" vão marcados', async ({ page }) => {
   await page.goto(`${BASE}/escolher.html`);
+  await expect(page.locator('.is-carregando')).toHaveCount(0);
   await expect(page.locator('[data-esc-lista] > li').first()).toBeAttached();
   const vazio = await texto(page.locator('[data-esc-wa]'));
   expect(vazio).not.toMatch(/\.html\n.*\.html/);
@@ -24,6 +25,8 @@ test('escolhedor: sem respostas, a mensagem não lista modelos; sem encaixe, os 
   // Ordem do catálogo sem espaço: a lista não começa pelas peças de criança e de pet.
   expect(await page.locator('[data-esc-lista] .esc-c__nome').first().textContent()).not.toMatch(/crian|pet/i);
   await page.goto(`${BASE}/escolher.html?tipo=spa&l=160&c=160&passo=8`);
+  // O resultado só é montado com o site.css aplicado (escolher.js): espera o fim do carregamento.
+  await expect(page.locator('.is-carregando')).toHaveCount(0);
   await expect(page.locator('[data-esc-res-n]')).toHaveText('0');
   const quase = await texto(page.locator('[data-esc-wa]'));
   expect(quase).toContain('Nenhum modelo cabe; estes quase cabem:');
@@ -42,6 +45,8 @@ test('comparador: o tamanho escolhido entra na mensagem; com um modelo, frase pr
   expect(depois).toContain('comparar.html?p=');
   await page.goto(`${BASE}/comparar.html?p=${ACQUA}`);
   await expect(page.locator('[data-cmp-corpo]')).toBeVisible();
+  // A tabela é montada com o site.css aplicado (comparar.js): espera a coluna do modelo.
+  await expect(page.locator('[data-cmp-tam]').first()).toBeAttached();
   expect(await texto(wa)).toMatch(/^Quero ajuda com o modelo /);
 });
 

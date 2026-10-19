@@ -8,6 +8,7 @@ import { url } from '../../build/lib/url.mjs';
 import { formatBRL } from '../../build/lib/money.mjs';
 import { rotuloTam, plantaDoTamanho, plantasSemTamanho } from './planta.mjs';
 import { dadosTamanho } from './escala.mjs';
+import { avulsoSuspenso } from '../../build/lib/catalogo.mjs';
 
 export const RE_TAMANHO = /^tamanho:?$/i;
 export const NOTA_SOMA = (data) => `Soma pelos preços publicados no site em ${data}. O valor final é confirmado pelo consultor.`;
@@ -43,6 +44,16 @@ function precoBloco(p, { esgotado }) {
   <p class="preco__por num"><span class="vh">${p.preco.por_label || 'Preço'}: </span><span data-campo="preco-por">${p.preco.por}</span></p>
   ${p.preco.de ? html`<p class="preco__de num"><span class="vh">${p.preco.de_label || 'Preço anterior'}: </span><span class="preco-de" data-campo="preco-de">${p.preco.de}</span></p>` : ''}
   ${esgotado ? html`<p class="selo selo--esgotado" data-campo="disponibilidade">${p.disponibilidade}</p>` : ''}
+</div>`;
+}
+
+// Conflito da fonte ao lado do preço e da disponibilidade (SPEC 15): as duas versões, sem escolher.
+function notaAvulsoSuspenso(p, D) {
+  const n = avulsoSuspenso(p, D.ler('politicas.json'));
+  if (!n) return html``;
+  return html`<div class="monte__nota monte__nota--bloco monte__nota--conflito" data-conflito="avulso-suspenso">
+  <p><span class="selo-disp">${icone('info', { tamanho: 18 })}No catálogo: <b data-campo="disponibilidade">${n.disponibilidade}</b></span></p>
+  <p>A página de prazos de entrega informa: “<span data-campo="itens-avulsos-suspensos">${n.literal}</span>” Confirme com o consultor antes de comprar.</p>
 </div>`;
 }
 
@@ -117,6 +128,7 @@ export function decisao(p, c) {
   return html`<div class="decisao__in" data-sku="${p.sku}">
   <p class="etiqueta decisao__eti">${esgotado ? 'Disponibilidade' : 'Preço publicado'} · <span class="num" data-campo="data-coleta">${D.dataColeta}</span></p>
   ${precoBloco(p, { esgotado })}
+  ${notaAvulsoSuspenso(p, D)}
   ${c.aposPreco || ''}
   <form class="monte" data-monte novalidate${attrs({
     'aria-label': 'Monte a sua',

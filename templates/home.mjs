@@ -5,7 +5,7 @@
 //  2. Comece pelo seu espaço (dia): escolhedor rápido com contagem ao vivo, mesma regra do escolher.html.
 //  3. Salas da galeria (sala): uma faixa por coleção, 4 peças na ordem do site atual, contorno em escala.
 //  4. O desenho é a obra (planta): planta oficial da Acqua Línea 0,79 x 1,41 x 0,37 com o explorador.
-//     No desktop, a planta fica fixa e as cotas acendem ao rolar (GSAP, P2), só sem modo lite.
+//     No desktop, a planta fica fixa e as cotas acendem ao rolar (JS próprio, sem GSAP), só sem modo lite.
 //  5. Lançamentos 2026 (sala): os 6 spas reais da categoria, com o filme da coleção.
 //  6. A fábrica (dia), 7. Prova (dia), 8. Como comprar (dia), 9. Lojas (sala, mapa SVG sem iframe),
 //  10. Perguntas frequentes e Do blog (dia).
@@ -99,17 +99,18 @@ export function reclameAqui(ra) {
 function filmeColecao(D, id) {
   let man = null;
   try { man = existsSync(join(paths.public, 'media', 'filmes', 'manifest.json')) ? D.ler('../public/media/filmes/manifest.json') : null; } catch { man = null; }
-  const fm = man?.colecao?.[id];
+  // Variante quadrada (sem moldura e sem legenda gravadas): a moldura e a legenda são as do site.
+  const fm = man?.colecao?.[id]?.quadro;
   if (!fm?.poster || !fm.webm?.src || !fm.mp4?.src) return null;
   if (![fm.webm.src, fm.mp4.src].every((s) => existsSync(join(paths.public, s)))) return null;
   const avif = fm.poster.avif?.src && existsSync(join(paths.public, fm.poster.avif.src)) ? url(fm.poster.avif.src) : null;
   const webp = fm.poster.webp?.src && existsSync(join(paths.public, fm.poster.webp.src)) ? url(fm.poster.webp.src) : null;
   if (!avif && !webp) return null;
-  return { webm: url(fm.webm.src), mp4: url(fm.mp4.src), avif, webp, w: fm.largura || 1280, h: fm.altura || 720 };
+  return { webm: url(fm.webm.src), mp4: url(fm.mp4.src), avif, webp, w: fm.largura || 720, h: fm.altura || 720 };
 }
 
-function posterFilme(f, { classe, prioridade = false }) {
-  return html`<picture>${f.avif ? html`<source type="image/avif" srcset="${f.avif}">` : ''}<img${attrs({ class: classe, src: f.webp || f.avif, width: f.w, height: f.h, alt: '', loading: prioridade ? null : 'lazy', decoding: 'async' })}></picture>`;
+function posterFilme(f, { classe, prioridade = false, alta = false }) {
+  return html`<picture>${f.avif ? html`<source type="image/avif" srcset="${f.avif}">` : ''}<img${attrs({ class: classe, src: f.webp || f.avif, width: f.w, height: f.h, alt: '', loading: prioridade ? null : 'lazy', fetchpriority: alta ? 'high' : null, decoding: 'async' })}></picture>`;
 }
 
 function videoFilme(f, classe, rotulo = null) {
@@ -141,8 +142,8 @@ function fotoPorta(R, id) {
 const SIZES_PORTA = '(min-width:1024px) 112px, 31vw';
 
 /** Cena da vitrine (desktop) sem filme: a mesma área da foto, já recortada em 484 px. */
-function cenaSemFilme(g) {
-  return html`<picture><source type="image/avif" srcset="${url(g.avif)}"><img class="vitrine__img" src="${url(g.webp)}" width="${g.lado}" height="${g.lado}" alt="" loading="lazy" decoding="async"></picture>`;
+function cenaSemFilme(g, prioridade = false) {
+  return html`<picture><source type="image/avif" srcset="${url(g.avif)}"><img${attrs({ class: 'vitrine__img', src: url(g.webp), width: g.lado, height: g.lado, alt: '', loading: prioridade ? null : 'lazy', decoding: 'async' })}></picture>`;
 }
 
 /** Fotos da fábrica (build/media-fabrica.mjs). */
@@ -267,9 +268,6 @@ export function paginas(ctx) {
   const indice = indiceCatalogo(D);
   const temAgua = Boolean(ctx.assets?.modulos?.agua);
   const temVapor = Boolean(ctx.assets?.modulos?.vapor);
-  // GSAP + ScrollTrigger vendorizados (SPEC 1), carregados só no desktop pelo tour da planta.
-  const gsap = ['gsap.min.js', 'ScrollTrigger.min.js'].every((f) => existsSync(join(paths.public, 'vendor', f)))
-    ? { core: url('vendor/gsap.min.js'), st: url('vendor/ScrollTrigger.min.js') } : null;
   // Duas contagens: modelos com PDF de planta publicado na própria página (plantas_pdf) e, entre eles,
   // os que têm a medida do arquivo igual a um tamanho vendido (d_planta). Os demais oferecem o PDF com nota.
   const pecas = produtos.filter((p) => p.d_tipo !== 'acessorio');
@@ -293,15 +291,16 @@ export function paginas(ctx) {
     const foto = mini || filme ? null : lista.map((p) => fotoCartao(p.slug)).find(Boolean);
     return html`<li class="porta" data-intro style="--i:${4 + i}">
   <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filmes.has(id) ? id : null, 'data-porta-id': id })}>
-    <span class="porta__mol${filme && !mini ? ' recorte' : ''}">${mini || (filme ? posterFilme(filme, { classe: 'porta__img', prioridade: true }) : foto ? picture(foto, { classe: 'porta__img porta__img--foto', sizes: SIZES_PORTA, alt: '' }) : '')}</span>
+    <span class="porta__mol${filme && !mini ? ' quadro' : ''}">${mini || (filme ? posterFilme(filme, { classe: 'porta__img', prioridade: true }) : foto ? picture(foto, { classe: 'porta__img porta__img--foto', sizes: SIZES_PORTA, alt: '' }) : '')}</span>
     <span class="porta__txt"><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></span>
     ${icone('seta-dir', { tamanho: 20, classe: 'porta__seta' })}
   </a>
 </li>`;
   }).filter(Boolean);
-  // Vitrine (só desktop, decorativa: as portas já dizem o mesmo): poster grande e filme da coleção.
+  // Vitrine (decorativa: as portas já dizem o mesmo): poster grande e filme da coleção. No celular fica logo
+  // abaixo do título com a peça da primeira coleção parada; no desktop, à direita, troca com as portas.
   const vitrine = filmes.size ? html`<div class="vitrine" aria-hidden="true" data-vitrine data-intro style="--i:2">
-    <div class="vitrine__mol">${[...filmes].map(([id, { filme, foto }], i) => html`<div class="vitrine__cena${filme ? ' recorte' : ''}${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${filme ? html`${posterFilme(filme, { classe: 'vitrine__img' })}${videoFilme(filme, 'vitrine__video')}` : cenaSemFilme(foto)}</div>`)}<span class="vitrine__luz"></span></div>
+    <div class="vitrine__mol">${[...filmes].map(([id, { filme, foto }], i) => html`<div class="vitrine__cena${filme ? ' quadro' : ''}${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${filme ? html`${posterFilme(filme, { classe: 'vitrine__img', prioridade: i === 0, alta: i === 0 })}${videoFilme(filme, 'vitrine__video')}` : cenaSemFilme(foto, i === 0)}</div>`)}<span class="vitrine__luz"></span></div>
     <div class="vitrine__leg">${[...filmes].map(([id, { nome, cat }], i) => html`<p class="vitrine__item${i === 0 ? ' is-ativa' : ''}" data-cena-leg="${id}"><span class="vitrine__nome">${nome}</span><span class="vitrine__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></p>`)}</div>
   </div>` : '';
 
@@ -311,7 +310,7 @@ export function paginas(ctx) {
   <div class="wrap home-abre__in">
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Fábrica em ${local.cidade}, ${local.uf}</p>
     <h1 id="home-h1" class="home-abre__h1">Banheiras, spas e ofurôs de hidromassagem, direto da fábrica em ${local.cidade}, ${local.uf}</h1>
-    <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos com medidas e preços publicados, e planta técnica oficial publicada em <span class="num">${comPdf}</span> deles (em <span class="num">${comPlanta}</span>, a medida do arquivo bate com o tamanho vendido). Você escolhe pelo seu espaço e fecha com um consultor pelo WhatsApp.</p>
+    <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos, <span class="num">${comPdf}</span> deles com a planta oficial da fábrica para baixar. Escolha pelo tamanho do seu espaço e feche com um consultor pelo WhatsApp.</p>
     <p class="home-abre__acoes" data-intro style="--i:3"><a class="btn btn--claro home-abre__cta" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Escolher pelo meu espaço</a><a class="home-abre__rolar" href="#salas">Conhecer as salas${icone('chevron-baixo', { tamanho: 18 })}</a></p>
     ${vitrine}
     <ul class="portas" role="list" aria-label="Coleções">${portas}</ul>
@@ -379,7 +378,7 @@ export function paginas(ctx) {
     <div class="home-salas__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">A galeria</p>
       <h2 id="home-salas-h">Salas da galeria</h2>
-      <p class="lead">Uma sala por formato, com peças diferentes de cada coleção na ordem do catálogo. O contorno no canto de cada foto é a peça vista de cima, todas da mesma sala na mesma escala.</p>
+      <p class="lead">Uma sala por formato, com peças diferentes de cada coleção na ordem do catálogo. O pequeno desenho ao lado da medida é a peça vista de cima, todas da mesma sala na mesma escala.</p>
     </div>
     ${salas}
   </div>
@@ -393,13 +392,13 @@ export function paginas(ctx) {
   if (plObra?.media && plObra.validada && plObra.cotas.length) {
     const rot = rotuloTam(tObra);
     const passos = OBRA_PASSOS.map((l) => plObra.cotas.find((c) => c.letra === l)).filter(Boolean);
-    obra = html`<section class="sala sala--planta secao home-obra" aria-labelledby="home-obra-h" data-obra${attrs(gsap ? { 'data-gsap': gsap.core, 'data-scrolltrigger': gsap.st } : {})}>
+    obra = html`<section class="sala sala--planta secao home-obra" aria-labelledby="home-obra-h" data-obra>
   <div class="wrap home-obra__in" data-tam-painel="0">
     <div class="home-obra__texto">
       <div data-reveal>
         <p class="etiqueta etiqueta--linha">A planta oficial</p>
         <h2 id="home-obra-h">O desenho é a obra</h2>
-        <p class="lead">Cada peça tem planta técnica oficial com as cotas, e você baixa o PDF.</p>
+        <p class="lead"><span class="num">${comPdf}</span> dos <span class="num">${totalPecas}</span> modelos têm planta técnica oficial com as cotas, e você baixa o PDF. Em <span class="num">${comPlanta}</span> deles, as cotas do arquivo batem com o tamanho vendido.</p>
         <p class="home-obra__peca">Na tela: <a class="link" href="${url(`${pObra.slug}.html`)}">${pObra.nome}</a>, tamanho <span class="num">${rot}</span>.</p>
       </div>
       ${passos.length ? html`<ol class="home-obra__passos" role="list" aria-hidden="true" data-obra-passos>
@@ -430,7 +429,7 @@ export function paginas(ctx) {
         <p class="lead"><span class="num" data-campo="categoria-total">${catL.total_exibido}</span> modelos na coleção ${catL.nome}, com fotos publicadas pela empresa.</p>
         <p><a class="link" href="${url(LANCAMENTOS)}">Ver a coleção ${catL.nome}</a></p>
       </div>
-      ${filme ? html`<div class="home-lanc__filme" data-reveal aria-hidden="true"><div class="recorte">${posterFilme(filme, { classe: 'home-lanc__poster' })}${videoFilme(filme, 'home-lanc__video')}</div></div>` : ''}
+      ${filme ? html`<div class="home-lanc__filme" data-reveal aria-hidden="true"><div class="quadro">${posterFilme(filme, { classe: 'home-lanc__poster' })}${videoFilme(filme, 'home-lanc__video')}</div></div>` : ''}
     </div>
     <ol class="col-grade home-lanc__grade" role="list">${lista.map((p, i) => cartao(p, { pos: i, S, lqip: false }))}</ol>
   </div>
@@ -510,8 +509,8 @@ export function paginas(ctx) {
     <figure class="mapa" data-reveal>
       <div class="mapa__quadro" style="aspect-ratio:${M.regiao.w}/${M.regiao.h}">
         <svg class="mapa__svg" viewBox="0 0 ${M.regiao.w} ${M.regiao.h}" aria-hidden="true" focusable="false"><defs><pattern id="mapa-grade" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="currentColor" stroke-opacity=".08" stroke-width=".3"/></pattern></defs><rect width="${M.regiao.w}" height="${M.regiao.h}" fill="url(#mapa-grade)"/><path class="mapa__terra" d="${M.regiao.d}"/>${M.pontos.map((pt) => raw(`<circle class="mapa__onda" cx="${(pt.x * M.regiao.w / 100).toFixed(1)}" cy="${(pt.y * M.regiao.h / 100).toFixed(1)}" r="2.6"/><circle class="mapa__ponto" cx="${(pt.x * M.regiao.w / 100).toFixed(1)}" cy="${(pt.y * M.regiao.h / 100).toFixed(1)}" r="1.1"/>`))}</svg>
-        <ol class="mapa__lista" role="list">${M.pontos.map((pt) => html`<li class="mapa__item mapa__item--${pt.lado}${pt.loja.n === 1 ? ' is-fabrica' : ''}" style="left:${pt.x}%;top:${pt.y}%"><a href="${url(`lojas/loja-showrooms.html#${pt.loja.ancora}`)}"><span class="vh">${pt.loja.nome}: </span><span aria-hidden="true">${pt.loja.cidade}</span></a></li>`)}</ol>
-        <ul class="mapa__rotulos" aria-hidden="true">${M.pontos.map((pt) => html`<li class="mapa__item mapa__item--${pt.lado}${pt.loja.n === 1 ? ' is-fabrica' : ''}" style="left:${pt.x}%;top:${pt.y}%"><span>${pt.loja.cidade}</span></li>`)}</ul>
+        <ol class="mapa__lista" role="list">${M.rotulos.map((r) => html`<li class="mapa__item mapa__item--${r.lado}${r.fabrica ? ' is-fabrica' : ''}" style="left:${r.x}%;top:${r.y}%">${r.lojas.map((l, i) => html`${i ? html`<span class="mapa__sep" aria-hidden="true">·</span>` : ''}<a href="${url(`lojas/loja-showrooms.html#${l.ancora}`)}"><span class="vh">${l.nome}: </span><span aria-hidden="true">${l.cidade}</span></a>`)}</li>`)}</ol>
+        <ul class="mapa__rotulos" aria-hidden="true">${M.rotulos.map((r) => html`<li class="mapa__item mapa__item--${r.lado}${r.fabrica ? ' is-fabrica' : ''}" style="left:${r.x}%;top:${r.y}%"><span>${r.lojas.map((l) => l.cidade).join(' e ')}</span></li>`)}</ul>
         <svg class="mapa__pais" viewBox="0 0 ${M.pais.w} ${M.pais.h}" aria-hidden="true" focusable="false"><path d="${M.pais.d}"/><rect x="${M.pais.caixa.x}" y="${M.pais.caixa.y}" width="${M.pais.caixa.w}" height="${M.pais.caixa.h}"/></svg>
       </div>
       <figcaption class="mapa__leg">Cidades com loja da Banheiras Bom Banho. O ponto marca a cidade; o endereço está na página de lojas.</figcaption>

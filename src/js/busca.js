@@ -144,10 +144,12 @@ ${t0 ? `<span class="esc-c__tam num">${esc(t0[0])}${it.ts.length > 1 ? ` <span c
 
   const q0 = new URLSearchParams(location.search).get('q') || '';
   if (campo) campo.value = q0;
-  fetch(cfg.indice).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status)))).then((ind) => {
+  // Resultados só com o site.css aplicado (core.js): os cartões não pintam com o CSS crítico e se movem depois.
+  Promise.all([fetch(cfg.indice).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status)))), BBB.cssOk ? BBB.cssOk() : null]).then(([ind]) => {
     preparar(ind);
     raiz.dataset.pronto = '1';
-    buscar(campo?.value || '', { gravar: false });
+    // Texto digitado antes de o índice chegar também vai para a URL (só o q da própria URL não é regravado).
+    buscar(campo?.value || '', { gravar: (campo?.value || '') !== q0 });
   }).catch(() => {
     const n = $('[data-bus-n]');
     n.hidden = false;

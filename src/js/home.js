@@ -1,5 +1,5 @@
 // Home (SPEC 9.1): escolhedor rápido com contagem ao vivo, filmes das portas e dos lançamentos, e o
-// tour da planta no desktop (P2: GSAP + ScrollTrigger vendorizados, só >= 1024 px e sem modo lite).
+// tour da planta no desktop (só >= 1024 px, sem modo lite e sem movimento reduzido; JS próprio, sem GSAP).
 //
 // Escolhedor rápido: mesma regra de src/js/escolher.js (tipo, pessoas e encaixe com rotação, folga 0),
 // sobre o mesmo índice (dados/indice.json, baixado só quando a seção chega perto da tela). A contagem
@@ -237,47 +237,54 @@
       caixaMemo = { x0: x0 * W, x1: x1 * W, y0: y0 * H, y1: y1 * H };
       return caixaMemo;
     };
-    const script = (src) => new Promise((ok, falha) => {
-      if (!src) { falha(new Error('sem src')); return; }
-      const s = d.createElement('script');
-      s.src = src;
-      s.onload = ok;
-      s.onerror = falha;
-      d.head.append(s);
-    });
-    const iniciar = () => {
-      if (iniciado || BBB.lite || !mqDesk.matches) return;
-      iniciado = true;
-      script(obra.dataset.gsap).then(() => script(obra.dataset.scrolltrigger)).then(() => {
-        const { gsap, ScrollTrigger } = w;
-        if (!gsap || !ScrollTrigger) throw new Error('gsap');
-        gsap.registerPlugin(ScrollTrigger);
-        obra.classList.add('is-tour');
-        const mm = gsap.matchMedia();
-        mm.add('(min-width:1024px) and (prefers-reduced-motion:no-preference)', () => {
-          lista.forEach((li) => ScrollTrigger.create({
-            trigger: li,
-            start: 'top 58%',
-            end: 'bottom 58%',
-            onToggle: (st) => { if (st.isActive) ativar(li.dataset.obraPasso); },
-          }));
-          gsap.to(passos, {
-            '--prog': 1,
-            ease: 'none',
-            scrollTrigger: { trigger: passos, start: 'top 58%', end: 'bottom 58%', scrub: 0.4 },
-          });
-          gsap.from(fig, { scale: 0.94, opacity: 0.4, ease: 'none', scrollTrigger: { trigger: obra, start: 'top 85%', end: 'top 25%', scrub: 0.6 } });
-          return () => { obra.classList.remove('is-tour'); ativar(null); };
-        });
-        // Seções com content-visibility mudam de altura quando são pintadas: recalcula as posições.
-        let rt = 0;
-        const refazer = () => { clearTimeout(rt); rt = setTimeout(() => ScrollTrigger.refresh(), 120); };
-        d.querySelectorAll('[data-cv]').forEach((s) => s.addEventListener('contentvisibilityautostatechange', refazer));
-        // Mexer na planta com o ponteiro devolve o controle a quem está usando.
-        fig?.addEventListener('pointerdown', () => obra.classList.add('is-manual'));
-      }).catch(() => { iniciado = false; });
+    // Tour sem biblioteca (SPEC 12: a home não tem orçamento de JS para GSAP no desktop): cada passo
+    // acende quando cruza a linha de 58% da tela (IntersectionObserver) e o fio de progresso e a entrada
+    // da planta acompanham a rolagem num único requestAnimationFrame.
+    const mqMov = w.matchMedia('(prefers-reduced-motion:no-preference)');
+    let io = null, ioObra = null, raf = 0, perto = false;
+    const limitar = (x) => Math.min(1, Math.max(0, x));
+    const quadro = () => {
+      raf = 0;
+      const vh = w.innerHeight;
+      const rp = passos.getBoundingClientRect();
+      passos.style.setProperty('--prog', limitar((vh * 0.58 - rp.top) / Math.max(1, rp.height)).toFixed(4));
+      if (fig && !obra.classList.contains('is-manual')) {
+        const k = limitar((vh * 0.85 - obra.getBoundingClientRect().top) / (vh * 0.6));
+        fig.style.transform = `scale(${(0.94 + 0.06 * k).toFixed(4)})`;
+        fig.style.opacity = (0.4 + 0.6 * k).toFixed(3);
+      }
     };
+    const pedir = () => { if (perto && !raf) raf = requestAnimationFrame(quadro); };
+    const parar = () => {
+      io?.disconnect(); ioObra?.disconnect(); io = ioObra = null;
+      w.removeEventListener('scroll', pedir);
+      w.removeEventListener('resize', pedir);
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      obra.classList.remove('is-tour');
+      passos.style.removeProperty('--prog');
+      if (fig) { fig.style.transform = ''; fig.style.opacity = ''; }
+      ativar(null);
+      iniciado = false;
+    };
+    const iniciar = () => {
+      if (iniciado || BBB.lite || !mqDesk.matches || !mqMov.matches || !('IntersectionObserver' in w)) return;
+      iniciado = true;
+      obra.classList.add('is-tour');
+      io = new IntersectionObserver((es) => {
+        for (const e of es) if (e.isIntersecting) ativar(e.target.dataset.obraPasso);
+      }, { rootMargin: '-57% 0px -42% 0px' });
+      lista.forEach((li) => io.observe(li));
+      ioObra = new IntersectionObserver((es) => { perto = es.some((e) => e.isIntersecting); pedir(); }, { rootMargin: '200px 0px' });
+      ioObra.observe(obra);
+      w.addEventListener('scroll', pedir, { passive: true });
+      w.addEventListener('resize', pedir, { passive: true });
+      // Mexer na planta com o ponteiro devolve o controle a quem está usando.
+      fig?.addEventListener('pointerdown', () => { obra.classList.add('is-manual'); fig.style.transform = ''; fig.style.opacity = ''; });
+    };
+    const religar = () => { if (mqDesk.matches && mqMov.matches) visivel(obra, () => aposLoad(iniciar), '600px 0px'); else if (iniciado) parar(); };
+    mqDesk.addEventListener?.('change', religar);
+    mqMov.addEventListener?.('change', religar);
     visivel(obra, () => aposLoad(iniciar), '600px 0px');
-    mqDesk.addEventListener?.('change', (e) => { if (e.matches) visivel(obra, () => aposLoad(iniciar), '600px 0px'); });
   }
 })();

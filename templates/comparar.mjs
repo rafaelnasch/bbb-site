@@ -29,7 +29,7 @@ export function paginas(ctx) {
     ${breadcrumb([{ nome: 'Início', href: url('') }, { nome: 'Comparar modelos' }])}
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Comparador</p>
     <h1 id="cmp-h1" class="ferr-topo__h1" data-intro="mascara" style="--i:1">Comparar modelos</h1>
-    <p class="ferr-topo__lead" data-intro style="--i:2">Até três peças lado a lado, com as medidas na mesma escala e os dados publicados pela fábrica.</p>
+    <p class="ferr-topo__lead">Até três peças lado a lado, com as medidas na mesma escala e os dados publicados pela fábrica.</p>
   </div>
   <div class="wrap cmp-planta is-vazio" data-cmp-planta>
     <figure class="escala__fig cmp-fig">

@@ -202,6 +202,7 @@ export function pagina(ctx, { saida, titulo, descricao, corpo, trilha, tipo = 'W
       sobre: true,
       classe: 'pg-inst',
       critico: ['ferramenta', 'inst'],
+      cssBloqueante: true,
     }),
   };
 }

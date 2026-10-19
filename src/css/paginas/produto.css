@@ -55,6 +55,7 @@ html[data-lite] .prod-topo__filme{display:none}
 .monte__titulo{font-family:var(--f-display);font-weight:350;font-size:1.375rem;line-height:1.2;padding-top:18px;border-top:1px solid var(--rule)}
 .monte__nota{display:block;margin-top:4px;font-size:.8125rem;line-height:1.45;color:var(--fg-2)}
 .monte__nota--bloco{position:relative;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--glow) 14%,transparent);color:var(--fg)}
+.monte__nota--conflito{display:grid;gap:6px;font-size:.875rem}.monte__nota--conflito .selo-disp{display:inline-flex;align-items:center;gap:6px;font-weight:600}.monte__nota--conflito svg{flex:none}
 
 /* Seletor de tamanho: rádios reais, cartões grandes */
 .seletor__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,168px),1fr));gap:8px}
@@ -167,6 +168,10 @@ html.tem-tela{overflow:hidden}
 @keyframes cota-pulso{from{opacity:.9;transform:scale(.6)}to{opacity:0;transform:scale(1.6)}}
 html[data-lite] .cota-marca.is-ativa::after{animation:none;opacity:0}
 @media (hover:hover){.cota-marca:hover::before{border-color:var(--glow)}}
+/* Em 1x só aparece a marca da cota ativa (ou a que tem foco de teclado): as 13 juntas cobririam o desenho e
+   virariam alvos colados. As letras impressas na planta continuam à vista; ao ampliar, voltam todas as marcas. */
+.explorador:not(.is-ampliado) .cota-marca:not(.is-ativa):not(:focus-visible){pointer-events:none}
+.explorador:not(.is-ampliado) .cota-marca:not(.is-ativa):not(:focus-visible)::before{opacity:0}
 .explorador__ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .explorador__b{display:inline-grid;place-items:center;min-width:44px;height:44px;padding:0 10px;border-radius:var(--radius-chip);border:1px solid var(--rule);color:var(--fg);font-size:.875rem;transition:border-color var(--t-ui),background-color var(--t-ui)}
 .explorador__b--texto{margin-left:auto;padding:0 16px}

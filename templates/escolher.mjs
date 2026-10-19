@@ -161,7 +161,7 @@ export function paginas(ctx) {
     ${breadcrumb([{ nome: 'Início', href: url('') }, { nome: 'Escolher pelo meu espaço' }])}
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Escolhedor</p>
     <h1 id="esc-h1" class="ferr-topo__h1" data-intro="mascara" style="--i:1">Escolha pelo seu espaço</h1>
-    <p class="ferr-topo__lead" data-intro style="--i:2">Sete perguntas, todas com a opção "Tanto faz". A cada resposta, a contagem mostra quantos dos <span class="num">${totalEsc}</span> modelos publicados atendem.</p>
+    <p class="ferr-topo__lead">Sete perguntas, todas com a opção "Tanto faz". A cada resposta, a contagem mostra quantos dos <span class="num">${totalEsc}</span> modelos publicados atendem.</p>
   </div>
 </section>`;
 
@@ -196,6 +196,12 @@ export function paginas(ctx) {
         sobre: true,
         classe: 'pg-escolher',
         critico: ['ferramenta', 'escolha'],
+        // Primeira tela inteira no CSS crítico (LCP é o texto do topo): fontes e site.css depois da
+        // primeira pintura, como no comparador. Os resultados esperam o site.css (escolher.js).
+        fontes: [],
+        cssAposPintura: true,
+        fontesAposPintura: true,
+        jsBaixa: true,
       }),
     },
     { saida: 'dados/indice.json', html: JSON.stringify(indice) },

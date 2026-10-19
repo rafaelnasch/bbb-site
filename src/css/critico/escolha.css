@@ -4,7 +4,7 @@ html:not(.js) .esc__grade,html:not(.js) .cmp-planta{display:none}
 .esc{position:relative}
 .esc__carregando{position:absolute;top:0}
 .is-carregando .esc__grade{visibility:hidden}
-.cmp-planta{display:grid;gap:20px;margin-top:clamp(20px,3vw,36px)}
+.cmp-planta{display:grid;gap:20px;margin-top:clamp(20px,3vw,36px)}.cmp-rol{overflow-x:auto}
 .cmp-fig,.cmp-espaco{display:grid;gap:12px}.campo{display:grid;gap:6px}
 .cmp-fig{padding:clamp(12px,2vw,20px)}
 .cmp-svg{display:block;width:100%;height:clamp(200px,34vw,400px)}

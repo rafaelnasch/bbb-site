@@ -1,0 +1,5 @@
+/* CSS crítico extra da busca: campo, contagem e atalhos iniciais com a altura final (CLS). */
+.bus-campo{position:relative;max-width:720px}.bus-campo__ic{position:absolute;left:18px;top:50%;transform:translateY(-50%)}
+.bus-campo__in{width:100%;min-height:60px;padding:12px 18px 12px 54px;font-size:1.1875rem}
+.bus-n{font-family:var(--f-display);font-size:var(--fs-h3)}
+.bus{display:grid;gap:18px}.bus-inicio{display:grid;gap:12px}.bus-inicio ul{display:flex;flex-wrap:wrap;gap:8px}.bus-inicio .chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border:1px solid;font-size:.9375rem}

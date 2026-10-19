@@ -230,3 +230,26 @@ export function notaPrecosComoOpcaoTexto(p, produtos) {
   const partes = lista.map(({ preco, modelos }) => `${preco} (em ${modelos} ${modelos === 1 ? 'modelo' : 'modelos'})`);
   return `Como opcional dos spas, este item aparece por ${partes.join(' e ')}. Cada preço vale onde está publicado. Confirme o valor com o consultor.`;
 }
+
+/**
+ * Conflito da fonte (SPEC 0.3 e 15): o catálogo traz alguns acessórios como "Disponível", e a página de
+ * prazos (politicas.itens_avulsos_suspensos) diz que os itens avulsos citados estão temporariamente fora
+ * de venda. A lista de itens sai do próprio texto literal ("...itens avulsos: aquecedores, acionadores e
+ * cromoterapia; ..."); o acessório casa pelo início do nome. Devolve a nota com as duas versões, sem
+ * escolher nenhuma, ou null.
+ */
+export function avulsoSuspenso(p, politicas) {
+  const lit = politicas?.itens_avulsos_suspensos?.literal;
+  if (!lit || p.d_tipo !== 'acessorio') return null;
+  const m = /avulsos:\s*([^;]+);/i.exec(lit);
+  if (!m) return null;
+  const sem = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+  const itens = m[1].split(/,|\se\s/).map(sem).filter(Boolean).map((t) => t.replace(/ores$/, 'or'));
+  const nome = sem(p.nome);
+  if (!itens.some((t) => nome.startsWith(t))) return null;
+  return {
+    disponibilidade: p.disponibilidade,
+    literal: lit.replace(/^\*\s*/, ''),
+    fonte: politicas.itens_avulsos_suspensos.fonte,
+  };
+}

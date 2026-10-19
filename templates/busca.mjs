@@ -18,7 +18,7 @@ export function paginas(ctx) {
   <div class="wrap ferr-topo__in">
     ${breadcrumb([{ nome: 'Início', href: url('') }, { nome: 'Buscar' }])}
     <h1 id="bus-h1" class="ferr-topo__h1" data-intro="mascara" style="--i:0">Buscar no catálogo</h1>
-    <div class="bus-campo" data-so-js hidden>
+    <div class="bus-campo" data-so-js>
       <label class="vh" for="bus-q">Nome, nº de catálogo, forma, lugares ou medida</label>
       <span class="bus-campo__ic" aria-hidden="true">${icone('busca', { tamanho: 22 })}</span>
       <input class="bus-campo__in" id="bus-q" type="search" data-bus-q placeholder="Ex.: acqua línea, spa 6 lugares, 1,70" autocomplete="off" spellcheck="false" enterkeyhint="search" aria-describedby="bus-ajuda">
@@ -32,7 +32,7 @@ export function paginas(ctx) {
     <script type="application/json" data-config>${raw(JSON.stringify(config).replace(/</g, '\\u003c'))}</script>
     <noscript><p>A busca precisa de JavaScript. Veja as coleções: ${raizes.map((c, i) => html`${i ? ', ' : ''}<a class="link" href="${url(c.d_path)}">${c.nome}</a>`)}.</p></noscript>
     <div class="bus-facetas" data-bus-facetas hidden aria-live="polite"></div>
-    <p class="bus-n" data-bus-n aria-live="polite" data-so-js hidden></p>
+    <p class="bus-n" data-bus-n aria-live="polite" hidden></p>
     <ol class="esc__lista bus-lista" role="list" data-bus-lista></ol>
     <p data-bus-mais-box hidden><button class="btn btn--fantasma" type="button" data-bus-mais>Mostrar mais</button></p>
     <div class="bus-vazio" data-bus-vazio hidden>
@@ -60,7 +60,13 @@ export function paginas(ctx) {
       modulos: ['busca'],
       sobre: true,
       classe: 'pg-busca',
-      critico: ['ferramenta'],
+      critico: ['ferramenta', 'busca'],
+      // Primeira tela inteira no CSS crítico (LCP é o texto do topo): fontes e site.css depois da primeira
+      // pintura, como no escolhedor e no comparador. Os resultados esperam o site.css (busca.js).
+      fontes: [],
+      cssAposPintura: true,
+      fontesAposPintura: true,
+      jsBaixa: true,
     }),
   }];
 }

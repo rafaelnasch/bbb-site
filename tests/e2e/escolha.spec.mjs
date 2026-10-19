@@ -251,6 +251,8 @@ test.describe('correções do verificador', () => {
 
   test('a mensagem leva todas as respostas ativas', async ({ page }) => {
     await page.goto(pg('escolher.html?tipo=banheira&l=90&c=170&folga=5&pessoas=1&onde=banheiro&conf=Completa&aq=1&passo=8'));
+    // O resultado só é montado com o site.css aplicado (escolher.js): espera o fim do carregamento.
+    await expect(page.locator('.is-carregando')).toHaveCount(0);
     await expect(page.locator('[data-esc-res-n]')).not.toHaveText('');
     const l1 = (await msgDe(page, '[data-esc-wa]')).split('\n')[0];
     for (const t of ['uma banheira', 'Meu espaço: 90 x 170 cm, com folga de 5 cm.', 'Pessoas: Individual.', 'Onde vou instalar: no banheiro.', 'Configuração: Completa.', 'Com aquecedor.']) expect(l1).toContain(t);
@@ -267,6 +269,7 @@ test.describe('correções do verificador', () => {
 
   test('a nota do aquecedor conta sobre o mesmo resultado', async ({ page }) => {
     await page.goto(pg('escolher.html?tipo=banheira&l=80&c=150&passo=8'));
+    await expect(page.locator('.is-carregando')).toHaveCount(0);
     const n = await page.locator('[data-esc-res-n]').textContent();
     await expect(page.locator('[data-esc-aq-nota]')).toContainText(new RegExp(`em \\d+ de ${n} modelos? deste resultado`));
   });

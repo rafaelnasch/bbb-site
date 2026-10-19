@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR" data-composition-variables='[
+  {"id":"name","type":"string","label":"Arquivo de saída","default":""},
+  {"id":"fonte","type":"string","label":"URL da coleção","default":""},
+  {"id":"total_fotos","type":"number","label":"Quantidade de fotos","default":0},
+  {"id":"f1","type":"string","label":"Foto 1","default":""},
+  {"id":"f2","type":"string","label":"Foto 2","default":""},
+  {"id":"f3","type":"string","label":"Foto 3","default":""},
+  {"id":"f4","type":"string","label":"Foto 4","default":""},
+  {"id":"f5","type":"string","label":"Foto 5","default":""},
+  {"id":"f6","type":"string","label":"Foto 6","default":""}
+]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=720, height=720" />
+    <script src="assets/gsap.min.js"></script>
+    <!-- Variante "quadro" do filme de coleção (para os encaixes do site): só as fotos reais, quadradas,
+         sem moldura, sem legenda e sem escurecer entre uma peça e outra. A legenda fica no HTML da página.
+         A última troca volta para a foto 1: o laço não salta e o poster (último quadro) é a foto 1. -->
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 720px; height: 720px; overflow: hidden; background: #0C2A3D; }
+      #root { position: relative; width: 720px; height: 720px; overflow: hidden; background: #0C2A3D; }
+      .foto { position: absolute; inset: 0; width: 720px; height: 720px; object-fit: cover; opacity: 0; }
+      #luz { position: absolute; top: 0; left: 0; width: 260px; height: 720px;
+        background: linear-gradient(100deg, rgba(233,184,124,0) 0%, rgba(233,184,124,.12) 50%, rgba(233,184,124,0) 100%);
+        mix-blend-mode: screen; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="720" data-height="720">
+      <div id="cena" data-start="0" data-duration="6" data-track-index="0" data-layout-allow-overflow style="position:absolute;inset:0">
+        <div id="luz"></div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const v = window.__hyperframes.getVariables();
+        const n = v.total_fotos;
+        const cena = document.getElementById("cena");
+        const luz = document.getElementById("luz");
+        const fotos = [];
+        for (let i = 1; i <= n + 1; i++) {
+          const img = document.createElement("img");
+          img.className = "foto"; img.id = "f" + i; img.alt = "";
+          img.src = v["f" + (i <= n ? i : 1)];
+          cena.insertBefore(img, luz);
+          fotos.push(img);
+        }
+        const D = 6, X = 0.5, passo = D / n;
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
+        tl.set("#f1", { opacity: 1 }, 0);
+        // Cada peça fica parada no seu tempo; a próxima entra por cima em 0,5 s (a de baixo continua
+        // inteira: nenhum quadro escuro entre as peças).
+        for (let i = 2; i <= n + 1; i++) {
+          const t = (i - 1) * passo - X;
+          tl.fromTo("#f" + i, { opacity: 0 }, { opacity: 1, duration: X, ease: "power1.inOut" }, t);
+          tl.fromTo("#luz", { x: -300 }, { x: 760, duration: 1.1, ease: "power2.inOut" }, Math.max(0, t - 0.2));
+        }
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      })();
+    </script>
+  </body>
+</html>

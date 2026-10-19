@@ -162,6 +162,8 @@
     if (r.cabe) return `Sobram ${fcm(r.sL)} cm na largura e ${fcm(r.sC)} cm no comprimento.`;
     return `Quase cabe: passa ${fcm(r.excesso)} cm ${r.dim === 'largura' ? 'da largura' : 'do comprimento'}.`;
   }
+  // Estado na URL (link de resultado compartilhado): os cartões aparecem na primeira tela.
+  const COM_ESTADO = new URLSearchParams(location.search).has('passo');
   function cartao(x, i) {
     const { it, m, preco } = x;
     const li = d.createElement('li');
@@ -174,7 +176,11 @@
     const eti = [it.fo, it.lu, it.ma, it.co].filter(Boolean).join(' · ');
     const href = `${cfg.base}${it.s}.html`;
     const precoTxt = t && t[3] ? `${brl(preco)} com este tamanho` : it.po || (preco != null ? brl(preco) : '');
-    li.innerHTML = `${it.f ? `<img class="esc-c__img" src="${esc(it.f[0])}" width="${it.f[1]}" height="${it.f[2]}" alt="" loading="lazy" decoding="async">` : '<span class="esc-c__vazia">Foto sob consulta</span>'}
+    // Os primeiros cartões já estão na tela quando o estado vem na URL: foto sem lazy e sem a animação de
+    // entrada. O LCP da página é o texto do topo (estático, sem animação), que pinta antes do índice.
+    const cedo = i < 4 && COM_ESTADO;
+    if (cedo) li.style.animation = 'none';
+    li.innerHTML = `${it.f ? `<img class="esc-c__img" src="${esc(it.f[0])}" width="${it.f[1]}" height="${it.f[2]}" alt=""${cedo ? '' : ' loading="lazy"'} decoding="async">` : '<span class="esc-c__vazia">Foto sob consulta</span>'}
 <span class="esc-c__eti">${esc(eti)}</span>
 <h3 class="esc-c__nome"><a href="${esc(href)}">${esc(it.n)}</a></h3>
 ${t ? `<span class="esc-c__tam num">${m ? (m.cabe ? 'Tamanho que cabe' : 'Tamanho mais próximo') : 'Tamanho'}: ${esc(t[0])}${m && it.ts.length > 1 ? ` (${it.ts.length} tamanhos)` : ''}</span>` : `<span class="esc-c__tam num">${it.ts.length} tamanhos</span>`}
@@ -398,7 +404,10 @@ ${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicada
 
   // ---------- Início ----------
   const carregando = $('[data-esc-carregando]');
-  fetch(cfg.indice).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status)))).then((j) => {
+  // O índice vem pré-carregado e pode chegar antes do site.css (tardio): a grade só aparece com o CSS
+  // completo aplicado, senão os cartões e as opções pintam com o CSS crítico e se deslocam depois (CLS).
+  const cssPronto = () => (BBB.cssOk ? BBB.cssOk() : Promise.resolve());
+  Promise.all([fetch(cfg.indice).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status)))), cssPronto()]).then(([j]) => {
     itens = j.itens || [];
     pendente = lerUrl();
     const p = pendente.passo;

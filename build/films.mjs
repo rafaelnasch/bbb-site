@@ -256,6 +256,22 @@ async function prepararColecoes() {
   return { dir, rows, extras };
 }
 
+// Variante "quadro" (720x720) para os encaixes do site: as mesmas fotos, sem moldura, sem legenda e sem
+// escurecer entre as peças (build/filmes/colecao-quadro.html). A legenda fica no HTML da página.
+function prepararQuadros(C) {
+  const dir = projeto('hf-colecao-quadro', 'colecao-quadro.html');
+  mkdirSync(join(dir, 'assets', 'fotos'), { recursive: true });
+  const rows = C.rows.map((r) => {
+    const row = { name: `${r.name}-quadro`, fonte: r.fonte, total_fotos: r.total_fotos };
+    for (let i = 1; i <= 6; i++) {
+      row[`f${i}`] = r[`f${i}`];
+      if (r[`f${i}`]) copyFileSync(join(C.dir, r[`f${i}`]), join(dir, r[`f${i}`]));
+    }
+    return row;
+  });
+  return { dir, rows };
+}
+
 // ---------------------------------------------------------------- render e pós-processo
 function renderizar(dir, rows, rotulo) {
   const pend = rows.filter((r) => FORCAR || !existsSync(join(dir, 'renders', `${r.name}.mp4`)));
@@ -304,7 +320,7 @@ async function codificar(entrada, saida, formato) {
   return { crf, dentro_do_teto: tam(saida) <= TETO, faixa };
 }
 
-async function posProcessar(dir, id, sub) {
+async function posProcessar(dir, id, sub, dims = { largura: LARG, altura: ALT }) {
   const bruto = join(dir, 'renders', `${id}.mp4`);
   if (!existsSync(bruto)) return null;
   const pasta = join(OUT, sub);
@@ -326,7 +342,7 @@ async function posProcessar(dir, id, sub) {
   }
   const rel = (f) => `media/filmes/${sub}/${f.split('/').pop()}`;
   return {
-    largura: LARG, altura: ALT, fps: 30, duracao_s: Number(duracao(mp4).toFixed(2)), audio: false,
+    largura: dims.largura, altura: dims.altura, fps: 30, duracao_s: Number(duracao(mp4).toFixed(2)), audio: false,
     webm: { src: rel(webm), bytes: tam(webm), crf: enc.webm_crf, codec: 'vp9' },
     mp4: { src: rel(mp4), bytes: tam(mp4), crf: enc.mp4_crf, codec: 'h264' },
     poster: { avif: { src: rel(avif), bytes: tam(avif) }, webp: { src: rel(webp), bytes: tam(webp) }, quadro: 'último' },
@@ -341,7 +357,7 @@ const manifesto = {
   gerado_em: new Date().toISOString(),
   coletado_em: meta.data_coleta || null,
   ferramenta: HF,
-  regra: 'WebM VP9 + MP4 H.264 1280x720, 30 fps, sem áudio, até 350 KB por arquivo; poster = último quadro (AVIF e WebP). Só imagens e números reais de data/.',
+  regra: 'WebM VP9 + MP4 H.264 1280x720 (variante quadro de coleção: 720x720, sem moldura e sem legenda), 30 fps, sem áudio, até 350 KB por arquivo; poster = último quadro (AVIF e WebP). Só imagens e números reais de data/.',
   uso: '<video muted playsinline loop preload="none" poster> com <source> WebM e MP4 atribuídos depois do load e quando visível; lite e movimento reduzido: só o poster. Planta sem filme: planta estática (media/plantas/<sha1>/planta-1200.webp).',
   planta: anterior?.planta || {},
   colecao: anterior?.colecao || {},
@@ -382,6 +398,15 @@ if (TIPO === 'colecao' || TIPO === 'todos') {
     const f = SEM_RENDER ? null : await posProcessar(C.dir, r.name, 'colecao');
     if (f) manifesto.colecao[r.name] = { ...C.extras[r.name], ...f };
     else console.warn(`[colecao] ${r.name} sem filme`);
+    if (f && !f.dentro_do_teto) console.warn(`[colecao] ${r.name} acima de 350 KB`);
+  }
+  const Q = prepararQuadros(C);
+  if (!SEM_RENDER) renderizar(Q.dir, Q.rows, 'colecao-quadro');
+  for (const r of Q.rows) {
+    const id = r.name.replace(/-quadro$/, '');
+    const f = SEM_RENDER ? null : await posProcessar(Q.dir, r.name, 'colecao', { largura: 720, altura: 720 });
+    if (f && manifesto.colecao[id]) manifesto.colecao[id].quadro = f;
+    else console.warn(`[colecao] ${r.name} sem filme quadrado`);
     if (f && !f.dentro_do_teto) console.warn(`[colecao] ${r.name} acima de 350 KB`);
   }
 }

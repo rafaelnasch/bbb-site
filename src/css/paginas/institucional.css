@@ -129,6 +129,7 @@
 .inst-mtab{font-size:.9375rem}
 .inst-mtab th,.inst-mtab td{padding:10px 12px;border:1px solid var(--rule);vertical-align:middle}
 .inst-mtab thead th{background:color-mix(in srgb,var(--porcelain) 70%,var(--bg));letter-spacing:.04em;text-transform:none;font-size:.8125rem;color:var(--fg)}
+@media (prefers-color-scheme:dark){.inst-mtab thead th{background:#10324A}}
 .inst-mtab tbody th{font-weight:600}
 .inst-mtab td{font-variant-numeric:tabular-nums}
 .inst-mtab--larga{min-width:560px}

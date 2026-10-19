@@ -10,6 +10,7 @@
 /* Pausar movimento: o texto só aparece a partir de 768 px (site.css); o nome acessível vem do aria-label. */
 .topo__mov-t,html:not(.js) .topo__mov{display:none}
 .topo__mov{min-width:44px;min-height:44px}
+@media (min-width:768px){.topo__mov-t{display:inline}}
 @media (max-width:360px){.topo__fixo{display:none!important}}
 
 .cab{--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--focus-ring:var(--focus-on-dark);position:sticky;top:0;z-index:50;color:var(--porcelain);background:var(--room);-webkit-backdrop-filter:saturate(150%) blur(14px);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 16%,transparent);view-transition-name:cabecalho}

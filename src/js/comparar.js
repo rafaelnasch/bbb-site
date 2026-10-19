@@ -221,7 +221,8 @@
 
   const carregando = $('[data-cmp-carregando]');
   carregando.hidden = false;
-  Promise.all([cfg.indice, cfg.fichas].map((u) => fetch(u).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status)))))).then(([ind, fic]) => {
+  // A tabela só é montada com o site.css aplicado (core.js): sem ele, as colunas pintam fora da rolagem local.
+  Promise.all([...[cfg.indice, cfg.fichas].map((u) => fetch(u).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))), w.BBB?.cssOk ? w.BBB.cssOk() : null]).then(([ind, fic]) => {
     porSlug = new Map((ind.itens || []).map((it) => [it.s, it]));
     fichas = fic || {};
     carregando.hidden = true;

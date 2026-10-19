@@ -10,9 +10,9 @@
 .home-abre__lead{max-width:52ch;font-size:clamp(1.0625rem,1rem + .45vw,1.3125rem);line-height:1.5}
 .home-abre__rolar{display:inline-flex;align-items:center;min-height:44px;font-size:.9375rem}
 .home-abre__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-/* Recorte do filme da coleção: mostra só a foto (484 px a partir de 399,79 no quadro de 1280x720). */
-.recorte{position:relative;overflow:hidden;aspect-ratio:1}
-.recorte img,.recorte video{position:absolute;left:-82.438%;top:-16.322%;width:264.463%;max-width:none;height:auto}
+/* Filme quadrado da coleção (sem moldura e sem legenda gravadas). */
+.quadro{position:relative;overflow:hidden;aspect-ratio:1}
+.quadro img,.quadro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 /* Celular e tablet: as três portas lado a lado, cada uma com a foto real da coleção em cima do nome. */
 .portas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;padding:0}
 .porta__a{display:grid;align-content:start;gap:8px;height:100%;padding:5px 5px 10px;border:1px solid var(--rule);border-radius:var(--radius);color:var(--fg);text-decoration:none}
@@ -21,14 +21,19 @@
 .porta__n{font-size:.8125rem}
 .porta__nome{font:350 clamp(.9375rem,.4rem + 2.6vw,1.375rem)/1.15 var(--f-display)}
 .porta__seta{display:none}
-.vitrine{display:none}
-.vitrine__cena:not(.is-ativa){opacity:0}
+/* Celular e tablet: a vitrine (a peça real da primeira coleção) logo abaixo do título, antes do texto. */
+.vitrine{display:grid;gap:10px;width:min(100%,44svh,520px)}
+.vitrine__mol{display:grid;padding:10px}
+.vitrine__cena,.vitrine__luz,.vitrine__item{grid-area:1/1}
+.vitrine__leg{display:grid}.vitrine__item{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid}.vitrine__nome{font:600 var(--fs-label)/1.3 var(--f-body);letter-spacing:.12em;text-transform:uppercase}.vitrine__n{font-size:.875rem}
+.vitrine__cena:not(.is-ativa),.vitrine__item:not(.is-ativa){opacity:0}
+@media (max-width:1023px){.home-abre__in>*{order:2}.home-abre__in>.etiqueta,.home-abre__h1{order:0}.home-abre__in>.vitrine{order:1}}
 @media (min-width:1024px){
-  .home-abre__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:22px 5vw}
+  .home-abre__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto auto auto 1fr;gap:22px 5vw}
+  .home-abre__acoes{align-self:start}
   .home-abre__in>*{grid-column:1}
-  .home-abre__in>.vitrine{display:grid;grid-column:2;grid-row:1/span 4;width:min(100%,calc(100svh - var(--cab-h) - 300px))}
-  .vitrine__mol{display:grid;padding:14px}
-  .vitrine__cena,.vitrine__luz{grid-area:1/1}
+  .home-abre__in>.vitrine{grid-column:2;grid-row:1/span 4;width:min(100%,calc(100svh - var(--cab-h) - 300px))}
+  .vitrine{gap:16px}.vitrine__mol{padding:14px}
   .portas{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:22px}
   .porta__a{grid-template-columns:112px 1fr auto;align-items:center;gap:18px;padding:10px 20px 10px 10px}
   .porta__txt{padding:0}
@@ -36,4 +41,3 @@
   .porta__nome{font-size:1.75rem}
   .porta__seta{display:block}
 }
-.cart__ctn{position:absolute;right:8px;bottom:8px;width:52px;height:68px}

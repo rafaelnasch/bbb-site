@@ -1,8 +1,8 @@
 {
- "gerado_em": "2026-10-19T19:38:27.458Z",
+ "gerado_em": "2026-10-19T21:01:58.728Z",
  "coletado_em": "18/10/2026",
  "ferramenta": "hyperframes@0.8.173",
- "regra": "WebM VP9 + MP4 H.264 1280x720, 30 fps, sem áudio, até 350 KB por arquivo; poster = último quadro (AVIF e WebP). Só imagens e números reais de data/.",
+ "regra": "WebM VP9 + MP4 H.264 1280x720 (variante quadro de coleção: 720x720, sem moldura e sem legenda), 30 fps, sem áudio, até 350 KB por arquivo; poster = último quadro (AVIF e WebP). Só imagens e números reais de data/.",
  "uso": "<video muted playsinline loop preload=\"none\" poster> com <source> WebM e MP4 atribuídos depois do load e quando visível; lite e movimento reduzido: só o poster. Planta sem filme: planta estática (media/plantas/<sha1>/planta-1200.webp).",
  "planta": {
   "b0e12533a00c6459ef3c65d945fa631de888b8fd": {
@@ -7117,7 +7117,38 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "quadro": {
+    "largura": 720,
+    "altura": 720,
+    "fps": 30,
+    "duracao_s": 6,
+    "audio": false,
+    "webm": {
+     "src": "media/filmes/colecao/banheiras-quadro.webm",
+     "bytes": 219919,
+     "crf": 36,
+     "codec": "vp9"
+    },
+    "mp4": {
+     "src": "media/filmes/colecao/banheiras-quadro.mp4",
+     "bytes": 227881,
+     "crf": 28,
+     "codec": "h264"
+    },
+    "poster": {
+     "avif": {
+      "src": "media/filmes/colecao/banheiras-quadro-poster.avif",
+      "bytes": 14810
+     },
+     "webp": {
+      "src": "media/filmes/colecao/banheiras-quadro-poster.webp",
+      "bytes": 18218
+     },
+     "quadro": "último"
+    },
+    "dentro_do_teto": true
+   }
   },
   "spas": {
    "id": "spas",
@@ -7185,7 +7216,38 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "quadro": {
+    "largura": 720,
+    "altura": 720,
+    "fps": 30,
+    "duracao_s": 6,
+    "audio": false,
+    "webm": {
+     "src": "media/filmes/colecao/spas-quadro.webm",
+     "bytes": 309582,
+     "crf": 36,
+     "codec": "vp9"
+    },
+    "mp4": {
+     "src": "media/filmes/colecao/spas-quadro.mp4",
+     "bytes": 257063,
+     "crf": 28,
+     "codec": "h264"
+    },
+    "poster": {
+     "avif": {
+      "src": "media/filmes/colecao/spas-quadro-poster.avif",
+      "bytes": 13003
+     },
+     "webp": {
+      "src": "media/filmes/colecao/spas-quadro-poster.webp",
+      "bytes": 14600
+     },
+     "quadro": "último"
+    },
+    "dentro_do_teto": true
+   }
   },
   "ofuros": {
    "id": "ofuros",
@@ -7253,7 +7315,38 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "quadro": {
+    "largura": 720,
+    "altura": 720,
+    "fps": 30,
+    "duracao_s": 6,
+    "audio": false,
+    "webm": {
+     "src": "media/filmes/colecao/ofuros-quadro.webm",
+     "bytes": 240823,
+     "crf": 36,
+     "codec": "vp9"
+    },
+    "mp4": {
+     "src": "media/filmes/colecao/ofuros-quadro.mp4",
+     "bytes": 237833,
+     "crf": 28,
+     "codec": "h264"
+    },
+    "poster": {
+     "avif": {
+      "src": "media/filmes/colecao/ofuros-quadro-poster.avif",
+      "bytes": 10179
+     },
+     "webp": {
+      "src": "media/filmes/colecao/ofuros-quadro-poster.webp",
+      "bytes": 10818
+     },
+     "quadro": "último"
+    },
+    "dentro_do_teto": true
+   }
   },
   "sauna": {
    "id": "sauna",
@@ -7309,7 +7402,38 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "quadro": {
+    "largura": 720,
+    "altura": 720,
+    "fps": 30,
+    "duracao_s": 6,
+    "audio": false,
+    "webm": {
+     "src": "media/filmes/colecao/sauna-quadro.webm",
+     "bytes": 277539,
+     "crf": 36,
+     "codec": "vp9"
+    },
+    "mp4": {
+     "src": "media/filmes/colecao/sauna-quadro.mp4",
+     "bytes": 190381,
+     "crf": 28,
+     "codec": "h264"
+    },
+    "poster": {
+     "avif": {
+      "src": "media/filmes/colecao/sauna-quadro-poster.avif",
+      "bytes": 19304
+     },
+     "webp": {
+      "src": "media/filmes/colecao/sauna-quadro-poster.webp",
+      "bytes": 27130
+     },
+     "quadro": "último"
+    },
+    "dentro_do_teto": true
+   }
   },
   "lancamentos": {
    "id": "lancamentos",
@@ -7383,7 +7507,38 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "quadro": {
+    "largura": 720,
+    "altura": 720,
+    "fps": 30,
+    "duracao_s": 6,
+    "audio": false,
+    "webm": {
+     "src": "media/filmes/colecao/lancamentos-quadro.webm",
+     "bytes": 308078,
+     "crf": 36,
+     "codec": "vp9"
+    },
+    "mp4": {
+     "src": "media/filmes/colecao/lancamentos-quadro.mp4",
+     "bytes": 250018,
+     "crf": 28,
+     "codec": "h264"
+    },
+    "poster": {
+     "avif": {
+      "src": "media/filmes/colecao/lancamentos-quadro-poster.avif",
+      "bytes": 13133
+     },
+     "webp": {
+      "src": "media/filmes/colecao/lancamentos-quadro-poster.webp",
+      "bytes": 14630
+     },
+     "quadro": "último"
+    },
+    "dentro_do_teto": true
+   }
   }
  },
  "sem_filme": {

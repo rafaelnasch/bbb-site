@@ -11,11 +11,12 @@ import { dirname, join } from 'node:path';
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const CONTORNO = JSON.parse(readFileSync(join(AQUI, 'geo', 'brasil-contorno.json'), 'utf8')).poligonos;
 
-// [longitude, latitude, lado do rótulo: e (direita), w (esquerda), n (acima), s (abaixo), ne (acima, à direita)]. Contagem e Belo
-// Horizonte ficam a 12 km uma da outra: um rótulo abaixo e o outro acima, para não encostarem.
+// [longitude, latitude, lado do rótulo: e (direita), w (esquerda), n (acima), s (abaixo), ne (acima, à direita)].
+// Taubaté fica 0,9° ao sul de Congonhal: o rótulo vai à direita do próprio ponto (acima, ele encostava no
+// ponto de Congonhal). Contagem e Belo Horizonte ficam a 12 km uma da outra: viram um rótulo só (grupos).
 const CIDADES = Object.freeze({
   'Congonhal/MG': [-46.0425, -22.1488, 'n'],
-  'Taubaté/SP': [-45.5553, -23.0264, 'n'],
+  'Taubaté/SP': [-45.5553, -23.0264, 'e'],
   'Caraguatatuba/SP': [-45.4131, -23.6203, 's'],
   'Belo Horizonte/MG': [-43.9345, -19.9167, 'n'],
   'Ribeirão Preto/SP': [-47.8103, -21.1775, 'n'],
@@ -89,7 +90,7 @@ const tamanho = (c) => [r1((c.lonMax - c.lonMin) * COS * K), r1((c.latMax - c.la
 
 /**
  * @param lojas  data/lojas.json
- * @returns {{ regiao:{w,h,d}, pais:{w,h,d,caixa:{x,y,w,h}}, pontos:[{loja,x,y,lado}] }}
+ * @returns {{ regiao:{w,h,d}, pais:{w,h,d,caixa:{x,y,w,h}}, pontos:[{loja,x,y,lado}], rotulos:[{x,y,lado,lojas,fabrica}] }}
  *          x e y dos pontos em porcentagem da região (para rótulos em HTML, que não escalam com o SVG).
  */
 export function mapaLojas(lojas) {
@@ -104,6 +105,15 @@ export function mapaLojas(lojas) {
     if (x < 0 || y < 0 || x > rw || y > rh) throw new Error(`mapa-lojas: ${l.cidade} fora da região do mapa`);
     return { loja: l, x: r1((x / rw) * 1000) / 10, y: r1((y / rh) * 1000) / 10, lado: c[2] };
   });
+  // Rótulos: cidades a menos de 0,3° uma da outra (os pontos se fundem na tela) dividem um rótulo, no
+  // lugar e no lado da primeira, com o nome de cada loja (e o link de cada uma) lado a lado.
+  const rotulos = [];
+  for (const pt of pontos) {
+    const c = CIDADES[`${pt.loja.cidade}/${pt.loja.uf}`];
+    const g = rotulos.find((r) => Math.hypot(r.lon - c[0], r.lat - c[1]) < 0.3);
+    if (g) g.lojas.push(pt.loja);
+    else rotulos.push({ lon: c[0], lat: c[1], x: pt.x, y: pt.y, lado: pt.lado, lojas: [pt.loja] });
+  }
   const [cx, cy] = projetar([REGIAO.lonMin, REGIAO.latMax], PAIS);
   const [cw, chh] = tamanho(REGIAO);
   return {
@@ -115,5 +125,6 @@ export function mapaLojas(lojas) {
       caixa: { x: r1(cx), y: r1(cy), w: cw, h: chh },
     },
     pontos,
+    rotulos: rotulos.map(({ x, y, lado, lojas: ls }) => ({ x, y, lado, lojas: ls, fabrica: ls.some((l) => l.n === 1) })),
   };
 }
