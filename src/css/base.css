@@ -6,7 +6,7 @@
 @font-face{font-family:"Open Sans";src:url("asset:fonts/opensans-var-latin.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
 /* Reservas com métrica ajustada: a troca de fonte não empurra o layout (CLS). */
 @font-face{font-family:"Fraunces Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:104%;ascent-override:94%;descent-override:24%;line-gap-override:0%}
-@font-face{font-family:"Open Sans Fallback";src:local("Arial"),local("Helvetica");size-adjust:105.5%;ascent-override:101%;descent-override:27.7%;line-gap-override:0%}
+@font-face{font-family:"Open Sans Fallback";src:local("Arial"),local("Helvetica");size-adjust:102.4%;ascent-override:104.4%;descent-override:28.6%;line-gap-override:0%}
 
 /* Reset */
 *,*::before,*::after{box-sizing:border-box}

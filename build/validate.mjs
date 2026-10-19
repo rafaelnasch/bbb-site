@@ -2,9 +2,9 @@
 //
 // Cobertas aqui, em todas as páginas geradas: WhatsApp e lista negra (13.3), termos proibidos (13.4),
 // travessão (13.5), emoji (13.6), JSON-LD (13.7), links internos (13.8), cabeça (13.9),
-// cobertura (13.10, quando o template de produto/coleção existir), imagens (13.11), contraste (13.12)
-// e html-validate (13.13). Diferença zero e rastreio (13.1 e 13.2) entram com o bloco do produto,
-// que grava exibidos.map.json; enquanto ele não existe, a checagem é registrada como pendente.
+// cobertura (13.10, quando o template de produto/coleção existir), imagens (13.11), contraste (13.12),
+// html-validate (13.13), diferença zero dos produtos (13.1) e rastreio dos data-campo (13.2), estes
+// dois em build/lib/diferenca-zero.mjs.
 //
 // Uso: node build/validate.mjs [pasta]   (padrão: dist/)
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
@@ -15,6 +15,7 @@ import { paths, BASE_PATH, SITE_URL, INDEXAR } from '../site.config.mjs';
 import { verificarContraste } from './lib/contraste.mjs';
 import { numerosProibidosEm } from './lib/wa.mjs';
 import { REGISTRO } from './render.mjs';
+import { verificarDiferencaZero, rastreio } from './lib/diferenca-zero.mjs';
 
 const SAUDE = ['cura', 'trata', 'tratamento', 'diabetes', 'celulite', 'varizes', 'circulação', 'emagrec', 'terapêutic', 'medicinal'];
 const PROIBIDOS = [/\(VERIFICAR\)/, /BANHEIRA COLORIDA/i, /a maior loja/i, /a única com selo/i, /\blorem\b/i];
@@ -59,6 +60,13 @@ export async function validar(dist = paths.dist) {
   const htmls = todos.filter((f) => f.endsWith('.html'));
   const contatos = JSON.parse(readFileSync(join(paths.data, 'contatos.json'), 'utf8')).contatos;
   const ativos = new Set(contatos.filter((c) => c.status === 'ativo' && c.link_ativo).map((c) => c.numero));
+  // 13.1 diferença zero (produtos) e o mapa de campos para 13.2
+  const dz = verificarDiferencaZero(dist);
+  erros.push(...dz.erros);
+  if (dz.pendente) pendentes.push(dz.pendente);
+  // Produtos sem foto publicada (d_sem_foto, hoje só o Spa Serena): o Product sai sem image, porque a
+  // regra 0.1 (nenhum dado inventado) prevalece sobre o campo recomendado da 13.7.
+  const semFoto = new Set(JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8')).filter((p) => p.d_sem_foto).map((p) => `${p.slug}.html`));
 
   // 13.3 lista negra em qualquer arquivo de texto de dist/
   for (const f of todos.filter((x) => TEXTO_EXT.has(extname(x)))) {
@@ -70,6 +78,9 @@ export async function validar(dist = paths.dist) {
     const h = readFileSync(f, 'utf8');
     const ponte = /<meta http-equiv="refresh"/i.test(h);
     const txt = textoVisivel(h);
+
+    // 13.2 rastreio
+    if (dz.mapa) for (const e of rastreio(h, dz.mapa)) erro(f, `13.2 ${e}`);
 
     // 13.3 WhatsApp
     for (const [, n] of h.matchAll(/https:\/\/wa\.me\/(\d+)/g)) if (!ativos.has(n)) erro(f, `wa.me com número não ativo ${n}`);
@@ -94,7 +105,7 @@ export async function validar(dist = paths.dist) {
       for (const n of nos) {
         if (n['@type'] !== 'Product') continue;
         const of = Array.isArray(n.offers) ? n.offers[0] : n.offers;
-        for (const k of ['name', 'image']) if (!n[k]) erro(f, `Product sem ${k}`);
+        for (const k of ['name', 'image']) if (!n[k] && !(k === 'image' && semFoto.has(relative(dist, f)))) erro(f, `Product sem ${k}`);
         for (const k of ['price', 'priceCurrency', 'availability']) if (!of?.[k] && !(k === 'price' && of?.lowPrice)) erro(f, `Product sem offers.${k}`);
       }
     }
@@ -150,7 +161,6 @@ export async function validar(dist = paths.dist) {
     for (const p of prods) if (!existsSync(join(dist, `${p.slug}.html`))) erro(dist, `produto ausente: ${p.slug}.html`);
     if (existsSync(join(dist, 'produto-outlet.html'))) erro(dist, 'produto-outlet.html não deve existir');
   } else pendentes.push('13.10 produtos (template ainda não existe)');
-  if (!existsSync(join(paths.data, 'exibidos.map.json'))) pendentes.push('13.1 diferença zero e 13.2 rastreio (exibidos.map.json vem com o produto)');
 
   // 13.12 contraste
   for (const r of verificarContraste().filter((x) => !x.ok)) erros.push(`contraste ${r.fg} sobre ${r.bg} = ${r.razao}:1 (mínimo ${r.minimo}) [${r.uso}]`);

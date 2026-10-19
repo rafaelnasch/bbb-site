@@ -1,0 +1,20 @@
+/* CSS crítico extra da página de produto (com critico/peca.css): etiqueta de entrada, grade da peça e
+   base da galeria, para o site.css tardio não deslocar a primeira tela (CLS). O fundo da etiqueta
+   fica preso ao topo e, no celular, a etiqueta ocupa a tela toda: se o texto mudar de altura com a
+   troca de fonte, nada abaixo se move. */
+.prod-topo{position:relative;isolation:isolate;overflow:clip;padding:calc(var(--cab-h) + 12px) 0 48px}
+.prod-topo__fundo{position:absolute;inset:0;z-index:-1}
+.prod-topo__fundo>*{position:absolute;right:-12%;top:var(--cab-h);width:min(1180px,150%);max-width:none;opacity:.3;filter:invert(1);mix-blend-mode:screen;mask:radial-gradient(closest-side,#000 30%,#0000)}
+.prod-topo__in{display:grid;gap:14px}
+.prod-topo__h1{max-width:18ch}
+.prod-eti{flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0}
+.prod-disp{display:inline-flex;align-items:center;gap:8px;font-size:.9375rem}
+.prod-disp__ponto{width:8px;height:8px;border-radius:50%;background:#5fd38a}
+.prod-resumo{max-width:64ch;color:var(--fg-2);font-size:1rem}
+.prod-resumo .etiqueta{display:flex}
+.prod{padding-top:8px}
+.prod__grade{display:grid;gap:40px;align-items:start}
+.moldura--peca .moldura__img{aspect-ratio:auto;object-fit:contain}
+.galeria__base{display:flex;align-items:center;justify-content:space-between;min-height:44px}
+@media (max-width:1023px){.prod-topo{display:grid;align-items:end;min-height:calc(100svh - var(--topo-h))}}
+@media (min-width:1024px){.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 4}}

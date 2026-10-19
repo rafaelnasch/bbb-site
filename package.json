@@ -23,7 +23,9 @@
     "fontes": "node build/fontes.mjs",
     "build:sistema": "node build/render.mjs --sistema",
     "test:nucleo": "node --test tests/nucleo.test.mjs",
-    "e2e:nucleo": "node build/render.mjs --sistema && playwright test tests/e2e/nucleo.spec.mjs"
+    "e2e:nucleo": "node build/render.mjs --sistema && playwright test tests/e2e/nucleo.spec.mjs",
+    "test:produto": "node --test tests/produto.test.mjs",
+    "e2e:produto": "node build/render.mjs && playwright test tests/e2e/produto.spec.mjs"
   },
   "devDependencies": {
     "@lhci/cli": "0.15.1",
