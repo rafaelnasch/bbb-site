@@ -21,7 +21,7 @@
   /* espaço e forma */
   --gutter:16px; --radius:14px; --radius-chip:999px; --maxw:1320px;
   --pad-x:clamp(16px, 3.2vw + 4px, 64px);
-  --cab-h:64px; --topo-h:36px; --doca-h:0px;
+  --cab-h:64px; --topo-h:44px; --doca-h:0px;
 
   /* tipografia (SPEC 5.3) */
   --f-display:"Fraunces","Fraunces Fallback",ui-serif,Georgia,serif;
@@ -34,6 +34,7 @@
 
   /* superfícies semânticas (o tema da seção troca estas) */
   --bg:var(--day); --fg:var(--ink); --fg-2:var(--muted); --rule:color-mix(in srgb, var(--ink) 14%, transparent);
+  --rule-sala:color-mix(in srgb, var(--line) 22%, transparent);
   --focus-ring:var(--focus);
   --sombra-1:0 1px 2px rgb(7 28 43 / .06), 0 8px 24px -12px rgb(7 28 43 / .18);
   --sombra-2:0 2px 6px rgb(7 28 43 / .08), 0 28px 60px -24px rgb(7 28 43 / .35);

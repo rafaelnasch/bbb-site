@@ -1,19 +1,20 @@
 /* Cabeçalho e barra superior: entram no CSS crítico de todas as páginas (SPEC 6.1 e 12). */
 
-.topo{background:var(--brand-deep);color:var(--porcelain);font-size:.8125rem;line-height:1.3;position:relative;z-index:51}
+.topo{--focus-ring:var(--focus-on-dark);background:var(--brand-deep);color:var(--porcelain);font-size:.8125rem;line-height:1.3;position:relative;z-index:51}
 .topo__in{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;min-height:var(--topo-h)}
-.topo a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}
+.topo a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px}
 .topo .ic{opacity:.8}
 .topo__local{display:none;align-items:center;gap:6px;color:var(--muted-on-dark)}
 .topo__acoes{display:flex;align-items:center;gap:4px 18px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
 .topo__ajuda{font-weight:600}
-@media (hover:hover){.topo a:hover{text-decoration:underline;text-underline-offset:.25em}}
 @media (min-width:768px){.topo__local{display:inline-flex}}
 @media (max-width:360px){.topo__fixo{display:none!important}}
 
-.cab{--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--focus-ring:var(--focus-on-dark);position:sticky;top:0;z-index:50;color:var(--porcelain);background:color-mix(in srgb,var(--room) 86%,transparent);-webkit-backdrop-filter:saturate(150%) blur(14px);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 16%,transparent);view-transition-name:cabecalho;transition:background-color var(--t-in) var(--ease-out),border-color var(--t-in) var(--ease-out)}
+.cab{--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--focus-ring:var(--focus-on-dark);position:sticky;top:0;z-index:50;color:var(--porcelain);background:var(--room);-webkit-backdrop-filter:saturate(150%) blur(14px);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 16%,transparent);view-transition-name:cabecalho}
+.cab.is-rolado{background:color-mix(in srgb,var(--room) 86%,transparent)}
 .js .cab--sobre:not(.is-rolado){background:transparent;border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
-.cab--sobre{margin-bottom:calc(-1 * var(--cab-h))}
+/* A borda de 1 px entra na conta: sem ela sobra uma fresta do fundo da página sob a barra. */
+.cab--sobre{margin-bottom:calc(-1 * var(--cab-h) - 1px)}
 .cab__in{display:flex;align-items:center;gap:clamp(10px,2vw,32px);height:var(--cab-h)}
 .cab__logo{display:inline-flex;align-items:center;flex:none;min-height:44px;border-radius:8px}
 .cab__logo img{height:40px;width:auto}
@@ -21,27 +22,22 @@
 
 .cab__nav{display:none}
 .cab__nav ul{display:flex;align-items:center;gap:clamp(14px,1.5vw,30px);list-style:none;padding:0}
-.cab__nav a{position:relative;display:inline-flex;align-items:baseline;gap:3px;padding:10px 0;color:var(--porcelain);font-size:.9375rem;font-weight:500;text-decoration:none;white-space:nowrap}
-.cab__nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--glow);transform:scaleX(0);transform-origin:right;transition:transform var(--t-out) var(--ease-out)}
+.cab__nav a{position:relative;display:inline-flex;min-width:44px;align-items:baseline;gap:3px;padding:10px 0;color:var(--porcelain);font-size:.9375rem;font-weight:500;text-decoration:none;white-space:nowrap}
+.cab__nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--glow);transform:scaleX(0);transform-origin:right}
 .cab__nav a[aria-current="page"]::after{transform:scaleX(1)}
-@media (hover:hover) and (pointer:fine){.cab__nav a:hover::after{transform:scaleX(1);transform-origin:left}}
 .cab__nav sup{font-size:.6875rem;font-weight:600;line-height:1;color:var(--muted-on-dark);top:-.55em;position:relative;vertical-align:baseline}
 .cab__nav .cab__escolher{gap:8px;padding:9px 16px;border-radius:var(--radius-chip);border:1px solid color-mix(in srgb,var(--line) 42%,transparent);background:color-mix(in srgb,var(--line) 8%,transparent)}
 .cab__nav .cab__escolher::after{display:none}
 .cab__nav .cab__escolher .ic{color:var(--glow)}
-@media (hover:hover) and (pointer:fine){.cab__nav .cab__escolher:hover{border-color:var(--line)}}
 
 .cab__acoes{display:flex;align-items:center;gap:4px;margin-left:auto}
-.cab__icone{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--porcelain);text-decoration:none;transition:background-color var(--t-ui)}
-@media (hover:hover){.cab__icone:hover{background:rgb(243 246 248 / .08)}}
-.cab__badge{position:absolute;top:5px;right:3px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--porcelain);color:var(--ink);font:700 .6875rem/18px var(--f-body);text-align:center;box-shadow:0 0 0 2px var(--room)}
+.cab__icone{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--porcelain);text-decoration:none}
 .cab__badge[data-n="0"]{display:none}
 .cab__whats{display:flex;align-items:center;margin-left:6px;border-radius:var(--radius-chip)}
 .cab__whats .btn{min-height:44px;padding:.55em 1.05em;font-size:.9375rem}
 .cab__whats .btn .ic{color:#fff}
 .js .cab__whats .btn{border-top-right-radius:0;border-bottom-right-radius:0;padding-right:.85em}
-.cab__whats-mais{display:inline-grid;place-items:center;width:38px;min-height:44px;border-radius:0 var(--radius-chip) var(--radius-chip) 0;background:var(--whats-btn);color:#fff;border-left:1px solid rgb(255 255 255 / .22);transition:background-color var(--t-ui)}
-@media (hover:hover) and (pointer:fine){.cab__whats-mais:hover{background:var(--whats-btn-hover)}}
+.cab__whats-mais{display:inline-grid;place-items:center;width:44px;min-height:44px;border-radius:0 var(--radius-chip) var(--radius-chip) 0;background:var(--whats-btn);color:#fff;border-left:1px solid rgb(255 255 255 / .22)}
 .cab__menu{display:inline-grid;place-items:center;width:44px;height:44px;margin-left:2px;border-radius:50%;color:var(--porcelain)}
 
 @media (max-width:599px){
@@ -55,8 +51,11 @@
   .cab__nav{display:block}
   .cab__menu{display:none}
 }
-/* Sem JavaScript, o menu aparece em linha, com quebra, abaixo da marca. */
-html:not(.js) .cab__in{flex-wrap:wrap;height:auto;padding-block:8px}
-html:not(.js) .cab__nav{display:block;order:3;width:100%}
-html:not(.js) .cab__nav ul{flex-wrap:wrap;gap:4px 18px}
-html:not(.js) .cab{position:relative}
+/* A trilha fica na primeira tela das páginas internas: entra aqui para o site.css tardio não
+   deslocar o layout (CLS). Hover, modo sem JS e o resto ficam em components.css. A moldura da
+   foto, que só existe em produto e coleção, está em critico/peca.css. */
+.trilha ol{display:flex;flex-wrap:wrap;align-items:center;column-gap:8px;list-style:none;padding:0;font-size:.8125rem;line-height:1.4;color:var(--fg-2)}
+.trilha li{display:inline-flex;align-items:center;gap:8px;min-width:0}
+.trilha li:not(:last-child)::after{content:"";flex:none;width:5px;height:5px;margin-right:2px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);opacity:.6}
+.trilha a,.trilha [aria-current]{display:inline-flex;align-items:center;min-height:44px;min-width:44px;color:inherit;text-decoration:none}
+.trilha [aria-current]{color:var(--fg)}

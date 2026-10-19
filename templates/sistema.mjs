@@ -121,7 +121,7 @@ export function paginas(ctx) {
 </section>`;
 
   return [
-    { saida: '_sistema.html', html: layout({ saida: '_sistema.html', titulo: 'Sistema visual | Banheiras Bom Banho', descricao: 'Conferência interna do sistema visual do novo site da Banheiras Bom Banho.', robots: 'noindex,nofollow', corpo, sobre: true }) },
-    { saida: '_sistema-peca.html', html: layout({ saida: '_sistema-peca.html', titulo: `${peca.nome} | Sistema visual`, descricao: 'Conferência interna da transição entre cartão e moldura.', robots: 'noindex,nofollow', corpo: corpoPeca, esperar: 'sis-peca' }) },
+    { saida: '_sistema.html', html: layout({ saida: '_sistema.html', titulo: 'Sistema visual | Banheiras Bom Banho', descricao: 'Conferência interna do sistema visual do novo site da Banheiras Bom Banho.', robots: 'noindex,nofollow', corpo, sobre: true, critico: ['peca'] }) },
+    { saida: '_sistema-peca.html', html: layout({ saida: '_sistema-peca.html', titulo: `${peca.nome} | Sistema visual`, descricao: 'Conferência interna da transição entre cartão e moldura.', robots: 'noindex,nofollow', corpo: corpoPeca, esperar: 'sis-peca', critico: ['peca'] }) },
   ];
 }

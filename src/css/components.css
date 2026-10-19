@@ -2,7 +2,7 @@
    bandeja do comparador, trilha e moldura de foto. */
 
 /* ---------- Gavetas (dialog modal: foco preso, Esc fecha) ---------- */
-.gaveta{position:fixed;inset:0 0 0 auto;width:min(100%,460px);height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:auto;overscroll-behavior:contain;background:var(--bg);color:var(--fg);box-shadow:-30px 0 80px -30px rgb(0 0 0/.5);transform:translateX(100%);transition:transform var(--t-in) var(--ease-sheet),overlay var(--t-in) allow-discrete,display var(--t-in) allow-discrete}
+.gaveta{scroll-padding-top:calc(var(--cab-h) + 12px);scroll-padding-bottom:16px;position:fixed;inset:0 0 0 auto;width:min(100%,460px);height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:auto;overscroll-behavior:contain;background:var(--bg);color:var(--fg);box-shadow:-30px 0 80px -30px rgb(0 0 0/.5);transform:translateX(100%);transition:transform var(--t-in) var(--ease-sheet),overlay var(--t-in) allow-discrete,display var(--t-in) allow-discrete}
 .gaveta[open]{transform:none}
 @starting-style{.gaveta[open]{transform:translateX(100%)}}
 .gaveta::backdrop{background:rgb(4 16 26/0);transition:background-color var(--t-in) var(--ease-out),overlay var(--t-in) allow-discrete,display var(--t-in) allow-discrete}
@@ -62,22 +62,10 @@ html:has(.gaveta[open]){overflow:hidden}
 .consultor span{font-size:.8125rem;color:var(--fg-2)}
 @media (hover:hover){.consultor:hover{border-color:var(--whats-btn);background:color-mix(in srgb,var(--whats-btn) 6%,transparent)}}
 
-/* ---------- Trilha (breadcrumb) ---------- */
-.trilha ol{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;list-style:none;padding:0;font-size:.8125rem;line-height:1.4;color:var(--fg-2)}
-.trilha li{display:inline-flex;align-items:center;gap:8px;min-width:0}
-.trilha li+li::before{content:"";width:5px;height:5px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);opacity:.6}
-.trilha a{display:inline-flex;align-items:center;min-height:32px;color:inherit;text-decoration:none}
-.trilha a:hover{color:var(--fg);text-decoration:underline}
-.trilha [aria-current]{color:var(--fg)}
-
-/* ---------- Moldura de foto (passe-partout e luz de estúdio) ---------- */
-.moldura{--wall:var(--room-2);position:relative;isolation:isolate;padding:clamp(10px,4%,24px);border-radius:var(--radius);background:radial-gradient(120% 85% at 50% -10%,color-mix(in srgb,var(--wall) 80%,#fff 12%) 0%,var(--wall) 60%,color-mix(in srgb,var(--wall) 82%,#000) 100%);box-shadow:inset 0 0 0 1px rgb(255 255 255/.07),var(--sombra-2)}
+/* ---------- Trilha e moldura: a base está no CSS crítico; aqui só o que pode chegar depois ---------- */
+@media (hover:hover){.trilha a:hover{color:var(--fg);text-decoration:underline}}
 .moldura::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(60% 40% at 50% 0%,color-mix(in srgb,var(--glow) 34%,transparent),transparent 70%);opacity:.55;pointer-events:none}
-.moldura__img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background-size:cover;box-shadow:0 0 0 1px rgb(0 0 0/.28),0 22px 44px -22px rgb(0 0 0/.65)}
-.moldura__img[data-lqip]{filter:blur(0)}
-.moldura__leg{margin-top:10px;font-size:.75rem;letter-spacing:.06em;color:var(--muted-on-dark);text-align:center}
-.moldura--vazia{display:grid;place-items:center;aspect-ratio:1;color:var(--muted-on-dark);text-align:center;font-size:.9375rem}
-.moldura--vazia p{max-width:24ch;padding:16px}
+.moldura__img{box-shadow:0 0 0 1px rgb(0 0 0/.28),0 22px 44px -22px rgb(0 0 0/.65)}
 
 /* ---------- Bandeja do comparador (SPEC 6.1) ---------- */
 .bandeja{position:fixed;left:0;right:0;bottom:var(--doca-h);z-index:40;padding:10px 0 calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--room) 94%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--porcelain);border-top:1px solid color-mix(in srgb,var(--line) 22%,transparent);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--focus-ring:var(--focus-on-dark);view-transition-name:bandeja;transition:transform var(--t-in) var(--ease-sheet),display var(--t-in) allow-discrete}
@@ -87,8 +75,7 @@ html:has(.gaveta[open]){overflow:hidden}
 .bandeja__lista{display:flex;flex-wrap:wrap;gap:6px;flex:1 1 260px;min-width:0;list-style:none;padding:0}
 .bandeja__item{display:inline-flex;align-items:center;gap:2px;max-width:100%;min-height:36px;padding:0 0 0 12px;border-radius:var(--radius-chip);background:rgb(243 246 248/.09);font-size:.8125rem}
 .bandeja__item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:26ch}
-.bandeja__rem{position:relative;display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--porcelain)}
-.bandeja__rem::after{content:"";position:absolute;inset:-4px}
+.bandeja__rem{display:inline-grid;place-items:center;width:44px;height:44px;margin:-4px 0;border-radius:50%;color:var(--porcelain)}
 .bandeja__acoes{display:flex;align-items:center;gap:6px;margin-left:auto}
 .bandeja__acoes .btn{min-height:44px;padding:.5em 1.2em;font-size:.9375rem}
 .bandeja__limpar{min-height:44px;padding:0 12px;color:var(--muted-on-dark);font-size:.875rem;text-decoration:underline;text-underline-offset:.2em}
@@ -107,8 +94,8 @@ html:has(.gaveta[open]){overflow:hidden}
 @media (min-width:768px){.rodape__grade{grid-template-columns:repeat(4,minmax(0,1fr))}.rodape__col--larga{grid-column:1/-1}}
 @media (min-width:1200px){.rodape__grade{grid-template-columns:1.7fr repeat(4,minmax(0,1fr))}.rodape__col--larga{grid-column:auto}}
 .rodape__h{margin-bottom:16px;font:600 var(--fs-label)/1.3 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--fg-2)}
-.rodape__lista{list-style:none;padding:0;display:grid;gap:2px}
-.rodape__lista a{display:inline-flex;align-items:baseline;gap:6px;min-height:36px;padding:6px 0;font-size:.9375rem;line-height:1.35;text-decoration:none;color:color-mix(in srgb,var(--fg) 88%,transparent)}
+.rodape__lista{list-style:none;padding:0;display:grid;gap:0}
+.rodape__lista a{display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;padding:6px 0;font-size:.9375rem;line-height:1.35;text-decoration:none;color:color-mix(in srgb,var(--fg) 88%,transparent)}
 .rodape__lista .num{font-size:.75rem;color:var(--fg-2)}
 @media (hover:hover){.rodape__lista a:hover{color:var(--fg);text-decoration:underline;text-underline-offset:.25em}}
 .rodape .canal{border-color:var(--rule);min-height:60px;padding-block:10px}
@@ -117,9 +104,11 @@ html:has(.gaveta[open]){overflow:hidden}
 @media (min-width:768px){.rodape__fabrica{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1200px){.rodape__fabrica{grid-template-columns:1.3fr 1fr 1.2fr 1.3fr}}
 .rodape__dado{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;font-style:normal}
-.rodape__dado .ic{margin-top:3px;color:var(--fg-2)}
-.rodape__dado a{text-decoration:none;overflow-wrap:anywhere}
-.rodape__dado a:hover{text-decoration:underline}
+.rodape__dado .ic{margin-top:13px;color:var(--fg-2)}
+.rodape__dado a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;overflow-wrap:anywhere}
+.rodape__dado>span:not([data-campo]){display:block}
+.rodape__dado [data-campo="empresa-horario"]{padding-block:10px}
+@media (hover:hover){.rodape__dado a:hover{text-decoration:underline}}
 .rodape__dado ul{list-style:none;padding:0}
 .rodape__base{display:grid;gap:20px;padding-top:28px;font-size:.8125rem;line-height:1.5;color:var(--fg-2)}
 @media (min-width:1024px){.rodape__base{grid-template-columns:auto 1fr;align-items:start}}
@@ -130,3 +119,38 @@ html:has(.gaveta[open]){overflow:hidden}
 .rodape__coleta{color:var(--fg)}
 .rodape__marca{margin-top:clamp(40px,6vw,88px);font-family:var(--f-display);font-weight:300;font-size:clamp(2.5rem,10.4vw,10.5rem);line-height:.9;letter-spacing:-.045em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 38%,transparent);overflow-wrap:anywhere;user-select:none;text-wrap:balance}
 @supports not (-webkit-text-stroke:1px black){.rodape__marca{color:color-mix(in srgb,var(--line) 20%,transparent)}}
+
+/* ---------- Hover e modo sem JavaScript do cabeçalho e dos botões (fora do CSS crítico) ---------- */
+@media (hover:hover){
+  .topo a:hover{text-decoration:underline;text-underline-offset:.25em}
+  .cab__icone:hover{background:rgb(243 246 248 / .08)}
+}
+@media (hover:hover) and (pointer:fine){
+  .cab__nav a:hover::after{transform:scaleX(1);transform-origin:left}
+  .cab__nav .cab__escolher:hover{border-color:var(--line)}
+  .cab__whats-mais:hover{background:var(--whats-btn-hover)}
+  .btn--whats:hover{--b-bg:var(--whats-btn-hover)}
+  .btn:not(.btn--whats,.btn--claro,.btn--fantasma):hover{--b-bg:var(--brand-deep)}
+  .btn--claro:hover{--b-bg:#fff}
+  .btn--fantasma:hover{--b-bd:var(--fg)}
+}
+/* Sem JavaScript (o site.css vem pelo <noscript>, que bloqueia a pintura): menu em linha, com quebra, abaixo da marca. */
+html:not(.js) .cab__in{flex-wrap:wrap;height:auto;padding-block:8px}
+html:not(.js) .cab__nav{display:block;order:3;width:100%}
+html:not(.js) .cab__nav ul{flex-wrap:wrap;gap:4px 18px}
+html:not(.js) .cab{position:relative}
+
+/* Transições do cabeçalho e dos botões: só importam na interação, então ficam fora do CSS crítico. */
+.cab{transition:background-color var(--t-in) var(--ease-out),border-color var(--t-in) var(--ease-out)}
+.cab__nav a::after{transition:transform var(--t-out) var(--ease-out)}
+.cab__icone{transition:background-color var(--t-ui)}
+.cab__whats-mais{transition:background-color var(--t-ui)}
+.btn{transition:background-color var(--t-ui),color var(--t-ui),border-color var(--t-ui),box-shadow var(--t-ui),transform var(--t-press) var(--ease-out)}
+/* Fora do crítico: pressionar botão, rolagem no lite e o selo do comparador (escondido em 0 pelo crítico). */
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline-offset:4px;border-radius:var(--radius-chip)}
+/* Os dois botões verdes colados do cabeçalho: o anel externo cairia sobre o vizinho verde (2,5:1);
+   por dentro, em branco sobre o verde, passa de 4,5:1. */
+.cab__whats .btn:focus-visible,.cab__whats-mais:focus-visible{outline-color:#fff;outline-offset:-5px}
+html[data-lite] *,html[data-lite] *::before,html[data-lite] *::after{scroll-behavior:auto!important}
+.cab__badge{position:absolute;top:5px;right:3px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--porcelain);color:var(--ink);font:700 .6875rem/18px var(--f-body);text-align:center;box-shadow:0 0 0 2px var(--room)}

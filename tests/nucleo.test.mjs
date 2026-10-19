@@ -40,8 +40,15 @@ test('url() aplica BASE_PATH e recusa endereço externo', () => {
   assert.throws(() => url('https://exemplo.com'));
 });
 
-test('orçamentos: CSS crítico ≤ 14 KB e núcleo JS ≤ 6 KB gzip', () => {
-  assert.ok(R.assets.relatorio.css_critico_bytes <= LIMITES.cssCritico, `crítico ${R.assets.relatorio.css_critico_bytes}`);
+test('orçamentos: CSS crítico ≤ 14 KB por página (base ≤ 12 KB) e núcleo JS ≤ 6 KB gzip', () => {
+  assert.ok(R.assets.relatorio.css_critico_bytes <= LIMITES.cssCriticoBase, `crítico base ${R.assets.relatorio.css_critico_bytes}`);
+  for (const [nome, p] of Object.entries(paginas)) {
+    const inline = /<style>([\s\S]*?)<\/style>/.exec(p)[1];
+    assert.ok(Buffer.byteLength(inline) <= LIMITES.cssCritico, `${nome}: crítico inline ${Buffer.byteLength(inline)}`);
+  }
+  // A primeira tela de produto e coleção (trilha e moldura) não pode depender do site.css tardio.
+  const peca = /<style>([\s\S]*?)<\/style>/.exec(paginas['_sistema-peca.html'])[1];
+  for (const sel of ['.trilha ol', '.trilha a', '.moldura{', '.moldura__img', '.moldura__leg', '.letterbox']) assert.ok(peca.includes(sel), `crítico sem ${sel}`);
   assert.ok(R.assets.relatorio.nucleo_gzip <= LIMITES.nucleoGzip, `núcleo ${R.assets.relatorio.nucleo_gzip}`);
 });
 
@@ -144,6 +151,18 @@ test('texto público: sem emoji, sem travessão em títulos, sem termos proibido
     assert.ok((texto(p).match(/—/g) || []).length <= 2);
     assert.doesNotMatch(texto(p), /\(VERIFICAR\)|BANHEIRA COLORIDA|a maior loja|lorem/i);
   }
+});
+
+test('foco na barra superior usa o anel claro; modo escuro troca as variáveis no :root', () => {
+  const css = R.assets.cssCritico;
+  assert.match(css, /\.topo\{--focus-ring:var\(--focus-on-dark\)/);
+  assert.match(css, /@media \(prefers-color-scheme:dark\)\{:root,\.dia\{[^}]*--fg:var\(--porcelain\)[^}]*--focus-ring:var\(--focus-on-dark\)/);
+});
+
+test('validate.mjs (SPEC 13) passa nas páginas geradas', async () => {
+  const { validar } = await import('../build/validate.mjs');
+  const r = await validar(DIST);
+  assert.deepEqual(r.erros, []);
 });
 
 test('reveal, View Transitions e lite declarados no CSS crítico', () => {

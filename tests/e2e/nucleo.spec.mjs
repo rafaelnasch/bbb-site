@@ -90,3 +90,166 @@ test('View Transition: cartão e moldura recebem o mesmo nome na troca de págin
   await page.waitForURL(/_sistema-peca\.html/);
   await expect(page.locator(`[data-vt-chegada="${slug}"]`)).toHaveCount(1);
 });
+
+// ---------- Acessibilidade e acabamento medidos no navegador (correções do verificador) ----------
+
+// Contraste do anel de foco contra o fundo real onde ele é desenhado: compõe as cores de fundo de
+// tudo que está sob o ponto do contorno (elementsFromPoint), do topo para baixo, até ficar opaco.
+const MEDIR_FOCO = () => {
+  const rgba = (s) => { const m = s.match(/[\d.]+/g)?.map(Number) || [0, 0, 0, 0]; return [m[0], m[1], m[2], m[3] ?? 1]; };
+  const lum = ([r, g, b]) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+  const razao = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+  const fundoEm = (x, y, ignorar, dentro) => {
+    let cor = [0, 0, 0], a = 0;
+    const camadas = [];
+    for (const el of document.elementsFromPoint(x, y)) {
+      if (el === ignorar) { if (dentro) camadas.push(el); continue; }
+      if (ignorar.contains(el)) continue;
+      camadas.push(el);
+    }
+    const vistas = new Set();
+    for (const el of [...camadas, document.body, document.documentElement]) {
+      if (vistas.has(el)) continue;
+      vistas.add(el);
+      const [r, g, b, al] = rgba(getComputedStyle(el).backgroundColor);
+      if (!al) continue;
+      const resto = 1 - a;
+      cor = cor.map((c, i) => c + [r, g, b][i] * al * resto);
+      a += al * resto;
+      if (a >= 0.999) break;
+    }
+    return cor.map((c) => c / (a || 1));
+  };
+  const el = document.activeElement;
+  const cs = getComputedStyle(el);
+  const r = el.getBoundingClientRect();
+  const off = parseFloat(cs.outlineOffset) + parseFloat(cs.outlineWidth) / 2;
+  const x = off < 0 || r.left - off >= 1 ? r.left - off : r.right + off;
+  const y = r.top + r.height / 2;
+  const fundo = fundoEm(x, y, el, off < 0);
+  return { el: `${el.tagName.toLowerCase()}.${el.className}`.slice(0, 60), estilo: cs.outlineStyle, largura: parseFloat(cs.outlineWidth), razao: razao(rgba(cs.outlineColor), fundo) };
+};
+
+async function conferirFoco(page, seletor) {
+  const n = await page.locator(seletor).count();
+  const falhas = [];
+  for (let i = 0; i < n; i++) {
+    const alvo = page.locator(seletor).nth(i);
+    if (!(await alvo.isVisible())) continue;
+    await alvo.scrollIntoViewIfNeeded();
+    await alvo.evaluate((e) => e.focus());
+    const m = await page.evaluate(MEDIR_FOCO);
+    if (m.estilo === 'none' || m.largura < 2 || m.razao < 3) falhas.push(m);
+  }
+  return falhas;
+}
+
+test('foco visível com contraste de 3:1 no fundo real: barra superior, cabeçalho, sala, dia, rodapé e gaveta', async ({ page }) => {
+  for (const largura of [390, 1440]) {
+    await page.setViewportSize({ width: largura, height: 900 });
+    await page.goto(PAG());
+    await page.keyboard.press('Tab'); // modalidade de teclado: foco programático também fica visível
+    const falhas = await conferirFoco(page, '.topo a, .cab a, .cab button, main a, main button, main [tabindex="0"], footer a, footer button');
+    expect(falhas, `largura ${largura}`).toEqual([]);
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(PAG());
+  await page.keyboard.press('Tab');
+  await page.locator('.cab__whats [data-gaveta-abrir], .cab [data-gaveta-abrir="gaveta-whats"]').first().evaluate((b) => b.click());
+  await expect(page.locator('#gaveta-whats')).toHaveJSProperty('open', true);
+  expect(await conferirFoco(page, '#gaveta-whats a, #gaveta-whats summary, #gaveta-whats button')).toEqual([]);
+});
+
+test('foco visível também no cabeçalho opaco da página da peça e no modo escuro', async ({ browser }) => {
+  for (const colorScheme of ['light', 'dark']) {
+    const ctx = await browser.newContext({ colorScheme, viewport: { width: 1440, height: 900 } });
+    const page = await ctx.newPage();
+    await page.goto(`${BASE}/_sistema-peca.html`);
+    await page.keyboard.press('Tab');
+    expect(await conferirFoco(page, '.topo a, .cab a, .cab button, main a, main button'), colorScheme).toEqual([]);
+    await ctx.close();
+  }
+});
+
+test('alvos de toque com pelo menos 44 x 44 px (SPEC 16) a 390 e 1440 px', async ({ page }) => {
+  const medir = () => {
+    const sel = 'a[href], button, summary, input, select, [role="button"]';
+    return [...document.querySelectorAll(sel)]
+      .filter((e) => !e.closest('.vh, [hidden], dialog:not([open])') && !e.matches('.pular') && e.checkVisibility?.({ visibilityProperty: true }) !== false)
+      .map((e) => ({ e, r: e.getBoundingClientRect() }))
+      .filter(({ r }) => r.width && r.height)
+      .filter(({ r }) => r.width < 43.5 || r.height < 43.5)
+      .map(({ e, r }) => `${e.tagName.toLowerCase()}.${e.className} "${e.textContent.trim().slice(0, 30)}" ${Math.round(r.width)}x${Math.round(r.height)}`);
+  };
+  for (const largura of [390, 1440]) {
+    await page.setViewportSize({ width: largura, height: 900 });
+    await page.goto(PAG());
+    // bandeja visível para entrar na medição
+    await page.locator('.sis-cartao [data-comparar]').first().click();
+    expect(await page.evaluate(medir), `largura ${largura}`).toEqual([]);
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator('.cab [data-gaveta-abrir="gaveta-whats"]').first().evaluate((b) => b.click());
+  await page.locator('#gaveta-whats [data-foco="consultores"] summary').click();
+  expect(await page.evaluate(medir)).toEqual([]);
+});
+
+test('CSS do site atrasado 1,5 s não desloca a primeira tela (CLS < 0,05)', async ({ browser }) => {
+  for (const pag of ['_sistema-peca.html', '_sistema.html']) {
+    for (const largura of [390, 1440]) {
+      const ctx = await browser.newContext({ viewport: { width: largura, height: 844 } });
+      const page = await ctx.newPage();
+      await page.route(/\/assets\/site\.[0-9a-f]+\.css$/, async (r) => { await new Promise((ok) => setTimeout(ok, 1500)); await r.continue(); });
+      await page.addInitScript(() => {
+        window.__cls = 0;
+        new PerformanceObserver((l) => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__cls += e.value; }).observe({ type: 'layout-shift', buffered: true });
+      });
+      await page.goto(`${BASE}/${pag}`);
+      await page.waitForTimeout(2600);
+      const cls = await page.evaluate(() => window.__cls);
+      expect(cls, `${pag} a ${largura}`).toBeLessThan(0.05);
+      await ctx.close();
+    }
+  }
+});
+
+test('cabeçalho: azul-noite opaco no topo da peça e sem fresta sob o cabeçalho transparente', async ({ page }) => {
+  for (const largura of [320, 390, 1440]) {
+    await page.setViewportSize({ width: largura, height: 800 });
+    await page.goto(`${BASE}/_sistema-peca.html`);
+    expect(await page.locator('.cab').evaluate((e) => getComputedStyle(e).backgroundColor)).toBe('rgb(7, 28, 43)');
+    await page.goto(PAG());
+    const g = await page.evaluate(() => ({
+      topo: document.querySelector('.topo').getBoundingClientRect().bottom,
+      sala: document.querySelector('main').firstElementChild.getBoundingClientRect().top,
+    }));
+    expect(g.sala, `largura ${largura}`).toBeLessThanOrEqual(g.topo);
+  }
+});
+
+test('gaveta aberta em "Escolher meu consultor": o item em foco não fica sob o topo fixo', async ({ page }) => {
+  for (const altura of [844, 640]) {
+    await page.setViewportSize({ width: 390, height: altura });
+    await page.goto(PAG());
+    await page.locator('.sis-hero [data-gaveta-foco="consultores"]').click();
+    await expect(page.locator('#gaveta-whats [data-foco="consultores"] summary')).toBeFocused();
+    await page.waitForTimeout(500);
+    const r = await page.evaluate(() => ({
+      topo: document.querySelector('#gaveta-whats .gaveta__topo').getBoundingClientRect().bottom,
+      foco: document.activeElement.getBoundingClientRect().top,
+    }));
+    expect(r.foco, `altura ${altura}`).toBeGreaterThanOrEqual(r.topo - 1);
+  }
+});
+
+test('trilha: o separador nunca abre a linha seguinte', async ({ page }) => {
+  for (const largura of [320, 390]) {
+    await page.setViewportSize({ width: largura, height: 800 });
+    await page.goto(`${BASE}/_sistema-peca.html`);
+    const ok = await page.evaluate(() => [...document.querySelectorAll('.trilha li')].every((li) => {
+      const sep = getComputedStyle(li, '::after').content;
+      return li.matches(':last-child') ? sep === 'none' || sep === 'normal' : sep !== 'none';
+    }));
+    expect(ok).toBe(true);
+  }
+});

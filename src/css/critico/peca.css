@@ -1,0 +1,10 @@
+/* CSS crítico extra das páginas que abrem com a peça (produto e coleção): moldura da foto e
+   letterbox de abertura. Entra inline só nessas páginas (layout({ critico: ['peca'] })). */
+.moldura{--wall:var(--room-2);position:relative;isolation:isolate;padding:clamp(10px,4%,24px);border-radius:var(--radius);background:radial-gradient(120% 85% at 50% -10%,color-mix(in srgb,var(--wall) 80%,#fff 12%) 0%,var(--wall) 60%,color-mix(in srgb,var(--wall) 82%,#000) 100%);box-shadow:inset 0 0 0 1px rgb(255 255 255/.07),var(--sombra-2)}
+.moldura__img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background-size:cover}
+.moldura__leg{margin-top:10px;font-size:.75rem;letter-spacing:.06em;color:var(--muted-on-dark);text-align:center}
+.moldura--vazia{display:grid;place-items:center;aspect-ratio:1;color:var(--muted-on-dark);text-align:center;font-size:.9375rem}
+.moldura--vazia p{max-width:24ch;padding:16px}
+/* Letterbox de abertura (SPEC 6.2, P1): inset(10% 0) até 0 em 1,6 s. */
+.letterbox{animation:letterbox 1.6s var(--ease-out) both}
+@keyframes letterbox{from{clip-path:inset(10% 0)}to{clip-path:inset(0)}}

@@ -25,13 +25,14 @@ p,li,dd,figcaption{text-wrap:pretty}
 /* Temas: sala escura (imersão) e luz do dia (decisão e leitura longa). SPEC 5.1 */
 .dia{--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:color-mix(in srgb,var(--ink) 14%,transparent);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
 .dia--areia{--bg:var(--sand)}
-.sala{--bg:var(--room);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:color-mix(in srgb,var(--line) 22%,transparent);--focus-ring:var(--focus-on-dark);background:var(--bg);color:var(--fg);color-scheme:dark}
+.sala{--bg:var(--room);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:var(--rule-sala);--focus-ring:var(--focus-on-dark);background:var(--bg);color:var(--fg);color-scheme:dark}
 .sala--2{--bg:var(--room-2)}
 .sala--planta{--bg:var(--blueprint)}
 @media (prefers-color-scheme:dark){
+  /* O :root também troca: conteúdo posto direto no <main>, sem .dia ou .sala, segue legível. */
+  :root,.dia{--bg:var(--room-2);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:var(--rule-sala);--focus-ring:var(--focus-on-dark)}
   html,body{background:var(--room-2);color:var(--porcelain)}
   html{color-scheme:dark}
-  .dia{--bg:var(--room-2);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:color-mix(in srgb,var(--line) 22%,transparent);--focus-ring:var(--focus-on-dark)}
   .dia--areia{--bg:#10324A}
 }
 
@@ -54,23 +55,15 @@ h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
 .vh{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important}
 
 /* Botões (SPEC 10.3): alvo mínimo 48 px, texto quebra linha, nunca sai da tela. */
-.btn{--b-bg:var(--brand);--b-fg:#fff;--b-bd:transparent;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;max-width:100%;padding:.72em 1.4em;border:1px solid var(--b-bd);border-radius:var(--radius-chip);background:var(--b-bg);color:var(--b-fg);font:600 1rem/1.25 var(--f-body);letter-spacing:.005em;text-align:center;text-decoration:none;white-space:normal;transition:background-color var(--t-ui),color var(--t-ui),border-color var(--t-ui),box-shadow var(--t-ui),transform var(--t-press) var(--ease-out);-webkit-tap-highlight-color:transparent}
-.btn:active{transform:scale(.97)}
+.btn{--b-bg:var(--brand);--b-fg:#fff;--b-bd:transparent;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;max-width:100%;padding:.72em 1.4em;border:1px solid var(--b-bd);border-radius:var(--radius-chip);background:var(--b-bg);color:var(--b-fg);font:600 1rem/1.25 var(--f-body);letter-spacing:.005em;text-align:center;text-decoration:none;white-space:normal;-webkit-tap-highlight-color:transparent}
 .btn .ic{flex:none}
 .btn--whats{--b-bg:var(--whats-btn);box-shadow:0 10px 30px -14px rgb(30 127 58 / .8)}
 .btn--claro{--b-bg:var(--porcelain);--b-fg:var(--ink)}
 .btn--fantasma{--b-bg:transparent;--b-fg:var(--fg);--b-bd:color-mix(in srgb,var(--fg) 38%,transparent)}
 .btn--bloco{width:100%}
-@media (hover:hover) and (pointer:fine){
-  .btn--whats:hover{--b-bg:var(--whats-btn-hover)}
-  .btn:not(.btn--whats,.btn--claro,.btn--fantasma):hover{--b-bg:var(--brand-deep)}
-  .btn--claro:hover{--b-bg:#fff}
-  .btn--fantasma:hover{--b-bd:var(--fg)}
-}
 
 /* Foco visível: 2 px, AA nos dois fundos (SPEC 16). */
 :focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px;border-radius:6px}
-.btn:focus-visible{outline-offset:4px;border-radius:var(--radius-chip)}
 .pular{position:absolute;left:12px;top:-100px;z-index:100;padding:12px 18px;border-radius:10px;background:var(--porcelain);color:var(--ink);font-weight:600;text-decoration:none}
 .pular:focus{top:12px}
 
@@ -92,9 +85,6 @@ h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
 [data-intro="mascara"]{animation-name:intro-mascara}
 @keyframes intro-sobe{from{opacity:0;transform:translate3d(0,14px,0)}}
 @keyframes intro-mascara{from{clip-path:inset(0 0 100% 0);transform:translate3d(0,.35em,0)}to{clip-path:inset(-10% -5% -20% -5%)}}
-/* Letterbox de abertura (SPEC 6.2, P1): inset(10% 0) até 0 em 1,6 s. */
-.letterbox{animation:letterbox 1.6s var(--ease-out) both}
-@keyframes letterbox{from{clip-path:inset(10% 0)}to{clip-path:inset(0)}}
 
 /* View Transitions entre páginas (SPEC 6.1). Sem suporte: navegação normal. */
 @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
@@ -103,11 +93,9 @@ h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
 ::view-transition-new(root){animation:vt-entra var(--t-in) var(--ease-out) both}
 @keyframes vt-sai{to{opacity:0}}
 @keyframes vt-entra{from{opacity:0}}
-::view-transition-image-pair(*){isolation:isolate}
 
 /* Modo lite (SPEC 6): movimento reduzido, Save-Data ou rede 2G. Estado final imediato. */
 html[data-lite] [data-reveal],html[data-lite] [data-intro],html[data-lite] .letterbox{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important;transition:none!important}
-html[data-lite] *,html[data-lite] *::before,html[data-lite] *::after{scroll-behavior:auto!important}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0ms!important;scroll-behavior:auto!important}
   .js [data-reveal]{opacity:1;transform:none}

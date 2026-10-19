@@ -1,6 +1,8 @@
 // Montagem de CSS, JS e fontes com hash no nome (SPEC 12).
 //
-// - CSS crítico (inline no <head>): tokens.css + base.css + critical.css. Teto de 14 KB minificado.
+// - CSS crítico (inline no <head>): tokens.css + base.css + critical.css, mais o extra do tipo de
+//   página em src/css/critico/<tipo>.css (ex.: peca = moldura e letterbox de produto e coleção).
+//   Teto de 14 KB minificado para a soma inline de cada página; a base guarda folga para o extra.
 // - CSS do site (assets/site.<hash>.css): components.css + src/css/paginas/*.css (blocos seguintes).
 // - Núcleo (assets/js/nucleo.<hash>.js): core.js + wa.js + reveal.js. Teto de 6 KB gzip (SPEC 6.1).
 // - Script inline do <head>: boot.js + vt.js, autorizado na CSP por hash SHA-256 (sem 'unsafe-inline').
@@ -13,7 +15,7 @@ import { transform } from 'lightningcss';
 import { paths } from '../../site.config.mjs';
 import { url } from './url.mjs';
 
-export const LIMITES = Object.freeze({ cssCritico: 14 * 1024, nucleoGzip: 6 * 1024 });
+export const LIMITES = Object.freeze({ cssCritico: 14 * 1024, cssCriticoBase: 12 * 1024, nucleoGzip: 6 * 1024 });
 const CSS_CRITICO = ['tokens.css', 'base.css', 'critical.css'];
 const CSS_SITE = ['utilitarios.css', 'components.css'];
 const JS_NUCLEO = ['core.js', 'wa.js', 'reveal.js'];
@@ -69,8 +71,19 @@ export function construirAssets({ dist = paths.dist } = {}) {
 
   // CSS
   const cssCritico = minCss(trocarAssets(lerCss(CSS_CRITICO)), 'critico.css');
-  if (Buffer.byteLength(cssCritico) > LIMITES.cssCritico) {
-    throw new Error(`CSS crítico com ${Buffer.byteLength(cssCritico)} bytes (teto ${LIMITES.cssCritico})`);
+  if (Buffer.byteLength(cssCritico) > LIMITES.cssCriticoBase) {
+    throw new Error(`CSS crítico base com ${Buffer.byteLength(cssCritico)} bytes (teto ${LIMITES.cssCriticoBase}, para sobrar espaço ao extra de cada tipo de página)`);
+  }
+  // Extras por tipo de página: src/css/critico/<tipo>.css.
+  const criticos = {};
+  const dirCritico = join(paths.src, 'css', 'critico');
+  if (existsSync(dirCritico)) {
+    for (const f of readdirSync(dirCritico).filter((n) => n.endsWith('.css')).sort()) {
+      const min = minCss(trocarAssets(readFileSync(join(dirCritico, f), 'utf8')), `critico/${f}`);
+      const total = Buffer.byteLength(cssCritico) + Buffer.byteLength(min);
+      if (total > LIMITES.cssCritico) throw new Error(`CSS crítico base + critico/${f} com ${total} bytes (teto ${LIMITES.cssCritico})`);
+      criticos[basename(f, '.css')] = min;
+    }
   }
   const dirPaginas = join(paths.src, 'css', 'paginas');
   const extras = existsSync(dirPaginas) ? readdirSync(dirPaginas).filter((n) => n.endsWith('.css')).sort().map((n) => `paginas/${n}`) : [];
@@ -114,6 +127,7 @@ export function construirAssets({ dist = paths.dist } = {}) {
 
   return {
     cssCritico,
+    criticos,
     cssSite: url(`assets/${siteNome}`),
     nucleo: url(`assets/js/${nucleoNome}`),
     inlineJs,

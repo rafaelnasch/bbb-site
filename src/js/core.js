@@ -69,7 +69,7 @@
     if (alvo) {
       if (alvo.tagName === 'DETAILS') alvo.open = true;
       (alvo.querySelector('summary') || alvo).focus();
-      alvo.scrollIntoView({ block: 'nearest' });
+      alvo.scrollIntoView({ block: 'start' });
     }
     return true;
   };
@@ -177,8 +177,8 @@
     if (t.closest('[data-comparar-limpar]')) BBB.comparar.limpar();
   });
 
-  // ---------- Cabeçalho sobre a sala escura: ganha fundo ao rolar ----------
-  const cab = $('.cab--sobre');
+  // ---------- Cabeçalho: opaco no topo, vidro ao rolar; sobre a sala escura, transparente no topo ----------
+  const cab = $('.cab');
   if (cab) {
     let pend = false;
     const marca = () => { pend = false; cab.classList.toggle('is-rolado', w.scrollY > 8); };

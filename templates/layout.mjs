@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { html, raw, attrs, render } from '../build/lib/html.mjs';
 import { url, abs, caminhoDaSaida } from '../build/lib/url.mjs';
 import { INDEXAR, paths } from '../site.config.mjs';
+import { LIMITES } from '../build/lib/assets.mjs';
 import { barraTopo, cabecalho, gavetaMenu } from './parts/header.mjs';
 import { rodape } from './parts/footer.mjs';
 import { gavetaWhats } from './parts/gaveta-whats.mjs';
@@ -53,6 +54,7 @@ function ogPadrao() {
  * @param {string} [p.esperar]    id de elemento que segura a primeira pintura (View Transition)
  * @param {Array}  [p.preload]    [{ href, as, type, fetchpriority, imagesrcset, imagesizes }]
  * @param {string} [p.classe]     classe do <body>
+ * @param {Array}  [p.critico]    extras de src/css/critico/ inline nesta página (ex.: ['peca'])
  * @param {string} [p.cssCritico] CSS crítico extra do tipo de página (já minificado)
  */
 export function layout(p) {
@@ -66,6 +68,13 @@ export function layout(p) {
     if (!A.modulos[m]) throw new Error(`Módulo JS inexistente: ${m}`);
     return [m, A.modulos[m]];
   }));
+  const critico = A.cssCritico + (p.critico || []).map((n) => {
+    if (A.criticos[n] == null) throw new Error(`CSS crítico inexistente: critico/${n}.css`);
+    return A.criticos[n];
+  }).join('') + (p.cssCritico || '');
+  if (Buffer.byteLength(critico) > LIMITES.cssCritico) {
+    throw new Error(`${p.saida}: CSS crítico inline com ${Buffer.byteLength(critico)} bytes (teto ${LIMITES.cssCritico})`);
+  }
   const jsonld = (p.jsonld || []).map((o) => raw(`<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`));
 
   const doc = html`<!doctype html>
@@ -82,7 +91,7 @@ export function layout(p) {
 ${p.esperar ? html`<link rel="expect" href="#${p.esperar}" blocking="render">` : ''}
 ${A.preload.map((h) => html`<link rel="preload" href="${h}" as="font" type="font/woff2" crossorigin>`)}
 ${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, as: l.as, type: l.type, fetchpriority: l.fetchpriority, imagesrcset: l.imagesrcset, imagesizes: l.imagesizes })}>`)}
-<style>${raw(A.cssCritico)}${raw(p.cssCritico || '')}</style>
+<style>${raw(critico)}</style>
 <link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>
 <noscript><link rel="stylesheet" href="${A.cssSite}"></noscript>
 <meta name="theme-color" content="#071C2B">

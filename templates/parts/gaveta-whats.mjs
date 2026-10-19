@@ -48,6 +48,11 @@ export function listaConsultores({ contexto }) {
   )}</ol>`;
 }
 
+/** Horário literal da fonte, uma linha por trecho separado por "|" (só apresentação; o texto não muda). */
+export function horarioEmLinhas(literal) {
+  return String(literal).split(/\s*\|\s*/).map((h, i) => html`${i ? html`<br>` : ''}${h}`);
+}
+
 export function gavetaWhats() {
   const D = dados();
   const nLojas = D.lojas.length;
@@ -63,7 +68,7 @@ export function gavetaWhats() {
       ${linhaCanal('sac', { contexto: 'gaveta' })}
       <li><a class="canal" href="${url('lojas/loja-showrooms.html')}"><span class="canal__ic">${icone('loja', { tamanho: 20 })}</span><span><span class="canal__t">Lojas</span><span class="canal__s">${nLojas} lojas e showrooms</span></span>${icone('seta-dir', { tamanho: 18 })}</a></li>
     </ul>
-    <p class="gaveta__nota"><span class="vh">Horário: </span><span data-campo="empresa-horario">${D.empresa.horario.literal}</span></p>
+    <p class="gaveta__nota"><span class="vh">Horário: </span><span data-campo="empresa-horario">${horarioEmLinhas(D.empresa.horario.literal)}</span></p>
   </div>
 </dialog>`;
 }

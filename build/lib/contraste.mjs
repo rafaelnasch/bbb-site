@@ -53,6 +53,9 @@ export const PARES = [
   ['--focus', '--day', 3, 'contorno de foco no dia'],
   ['--focus-on-dark', '--room', 3, 'contorno de foco na sala'],
   ['--focus-on-dark', '--room-2', 3, 'contorno de foco na sala 2'],
+  ['--focus-on-dark', '--brand-deep', 3, 'contorno de foco na barra superior'],
+  ['--focus-on-dark', '--blueprint', 3, 'contorno de foco sobre a planta'],
+  ['#FFFFFF', '--whats-btn', 3, 'contorno de foco interno dos botões verdes do cabeçalho'],
 ];
 
 /** Calcula todos os pares; `ok` false indica falha AA. */

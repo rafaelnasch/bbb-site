@@ -4,7 +4,7 @@ import { html, attrs } from '../../build/lib/html.mjs';
 import { icone } from '../../build/lib/icons.mjs';
 import { url } from '../../build/lib/url.mjs';
 import { dados } from '../../build/lib/dados.mjs';
-import { linhaCanal, listaConsultores } from './gaveta-whats.mjs';
+import { linhaCanal, listaConsultores, horarioEmLinhas } from './gaveta-whats.mjs';
 import { MENU, COLECOES_SECUNDARIAS } from './header.mjs';
 
 // Páginas da SPEC 4 (tabela, linhas 8 a 11). Os rótulos são nomes de navegação, não dados da empresa.
@@ -50,7 +50,6 @@ export function rodape() {
   const colecoes = [...MENU.filter((m) => m.colecao).map((m) => m.colecao), ...COLECOES_SECUNDARIAS]
     .map((p) => D.catPorPath.get(p))
     .filter(Boolean);
-  const horario = String(E.horario.literal).split(/\s*\|\s*/);
   const redes = (E.redes || []).filter((r) => r.principal);
   return html`<footer class="rodape sala" id="rodape">
   <div class="wrap">
@@ -100,7 +99,7 @@ export function rodape() {
     <div class="rodape__fabrica">
       <address class="rodape__dado">${icone('fabrica')}<span><span class="vh">Endereço da fábrica: </span><a href="${E.mapa_fabrica.link}" target="_blank" rel="noopener" data-campo="empresa-endereco">${E.endereco_fabrica}</a></span></address>
       <p class="rodape__dado">${icone('telefone')}<span><span class="vh">Telefone fixo: </span><a class="num" href="${E.telefone_fixo.tel}" data-campo="empresa-telefone">${E.telefone_fixo.display}</a></span></p>
-      <p class="rodape__dado">${icone('relogio')}<span data-campo="empresa-horario">${horario.map((h, i) => html`${i ? html`<br>` : ''}${h}`)}</span></p>
+      <p class="rodape__dado">${icone('relogio')}<span data-campo="empresa-horario">${horarioEmLinhas(E.horario.literal)}</span></p>
       <div class="rodape__dado">${icone('email')}<ul>${E.emails.map((m) => html`<li><a href="mailto:${m.email}" data-campo="empresa-email">${m.email}</a></li>`)}</ul></div>
     </div>
 
