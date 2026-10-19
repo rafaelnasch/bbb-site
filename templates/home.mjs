@@ -50,6 +50,13 @@ export const FAQ_HOME = Object.freeze(['faq-03', 'faq-02', 'faq-05', 'faq-14', '
 const TIPOS_RAPIDO = [['banheira', 'Banheira'], ['spa', 'Spa'], ['ofuro', 'Ofurô'], ['sauna', 'Sauna']];
 const PESSOAS_GERAL = [['1', 'Individual'], ['2', '2 pessoas'], ['3+', '3 ou mais']];
 
+// Seções abaixo da primeira tela: o navegador pula o layout e a pintura delas (e não pede as fotos
+// dos cartões) até chegarem perto (SPEC 12: menos bytes e trabalho antes da primeira pintura, que é o
+// LCP). A altura reservada é a maior medida entre 320 e 1440 px com folga, nunca menor que a real:
+// assim os testes de contraste e de toque acham cada elemento dentro da própria seção. Depois de
+// pintada, a seção guarda a altura real (contain-intrinsic-size: auto); o tour da planta recalcula as
+// posições do ScrollTrigger quando uma seção é pintada (src/js/home.js).
+const tardio = (px) => `content-visibility:auto;contain-intrinsic-size:auto ${px}px`;
 const pad2 = (n) => String(n).padStart(2, '0');
 const dataBR = (iso) => {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ''));
@@ -68,6 +75,12 @@ export function numerosDeclarados(literal) {
     const m = /^(\+\s*(?:DE\s+)?[\d.,]+)\s+(.+)$/i.exec(s);
     return m ? { valor: m[1], rotulo: m[2], literal: s } : { valor: null, rotulo: s, literal: s };
   });
+}
+
+/** "+ DE 20.000" -> prefixo "+ DE " em tamanho menor e o número em destaque; o texto continua literal. */
+function valorDeclarado(valor) {
+  const m = /^(\+\s*(?:DE\s+)?)(.+)$/i.exec(valor);
+  return m ? html`<span class="home-fab__pre">${m[1]}</span><span class="home-fab__v">${m[2]}</span>` : valor;
 }
 
 /** Reclame Aqui (empresa.json): só formatação dos números publicados, com período e data da consulta. */
@@ -123,6 +136,14 @@ function videoFilme(f, classe, rotulo = null) {
   return html`<video class="${classe}" data-home-filme${attrs({ 'data-webm': f.webm, 'data-mp4': f.mp4, width: f.w, height: f.h, 'aria-hidden': rotulo ? null : 'true', 'aria-label': rotulo })} muted playsinline loop preload="none"></video>`;
 }
 
+/** Miniatura da porta (build/media-home.mjs): o poster do filme já recortado na foto, 240 px. */
+function miniPorta(D, id) {
+  if (!existsSync(join(paths.public, 'media', 'home', 'manifest.json'))) return null;
+  const m = D.ler('../public/media/home/manifest.json')?.portas?.[id];
+  if (!m || ![m.avif, m.webp].every((s) => existsSync(join(paths.public, s)))) return null;
+  return html`<picture><source type="image/avif" srcset="${url(m.avif)}"><img class="porta__img porta__img--foto" src="${url(m.webp)}" width="${m.lado}" height="${m.lado}" alt="" decoding="async"></picture>`;
+}
+
 /** Fotos da fábrica (build/media-fabrica.mjs). */
 function fotosFabrica(D) {
   const p = join(paths.public, 'media', 'fabrica', 'manifest.json');
@@ -161,7 +182,26 @@ export function opcoesPessoas(itens, tipo, cfg) {
   return ops.map(([v, r]) => [v, r, base.filter((it) => pessoasOk(it, v, cfg)).length]).filter((o) => o[2] > 0);
 }
 
-function escolhedorRapido(D, indice) {
+// Tipo de peça de cada porta (d_tipo), para explicar quando a coleção lista peça de outro tipo.
+const TIPO_DA_PORTA = Object.freeze({ banheiras: 'banheira', spas: 'spa', ofuros: 'ofuro' });
+const NOME_TIPO = Object.freeze({ banheira: 'banheira', spa: 'spa', ofuro: 'ofurô', sauna: 'sauna', acessorio: 'acessório' });
+
+/**
+ * A porta mostra o total exibido da coleção; o escolhedor conta por tipo de peça. Quando a coleção
+ * lista peças de outro tipo (ex.: um spa na listagem de ofurôs), a nota diz quais, com o nome literal.
+ */
+export function notasDeContagem(D, porSlug) {
+  return PORTAS.map(([path, id, nome]) => {
+    const cat = D.catPorPath.get(path);
+    const tipo = TIPO_DA_PORTA[id];
+    if (!cat || !tipo) return null;
+    const outros = produtosDaCategoria(cat, porSlug).filter((p) => p.d_tipo && p.d_tipo !== tipo);
+    if (!outros.length) return null;
+    return { nome, total: cat.total_exibido, tipo, outros: outros.map((p) => ({ nome: p.nome, tipo: NOME_TIPO[p.d_tipo] || p.d_tipo })) };
+  }).filter(Boolean);
+}
+
+function escolhedorRapido(D, indice, porSlug) {
   const cats = indice.cats.map((c) => c[0]);
   const cfg = {
     indice: url('dados/indice.json'),
@@ -177,8 +217,9 @@ function escolhedorRapido(D, indice) {
   const cont = Object.fromEntries(TIPOS_RAPIDO.map(([t]) => [t, itens.filter((it) => it.t === t).length]));
   const total = itens.length;
   const opsIni = opcoesPessoas(indice.itens, '', cfg);
+  const notas = notasDeContagem(D, porSlug);
   const op = (nome, valor, rot, n, marcado) => html`<label class="esc-op"><input type="radio" name="${nome}" value="${valor}"${attrs({ checked: marcado })}><span>${rot}${n != null ? html` <span class="num">${n}</span>` : ''}</span></label>`;
-  return html`<section class="dia secao home-esc" id="espaco" aria-labelledby="home-esc-h" data-home-esc>
+  return html`<section class="dia secao home-esc" id="espaco" style="${tardio(1300)}" aria-labelledby="home-esc-h" data-home-esc>
   <script type="application/json" data-config>${raw(JSON.stringify(cfg).replace(/</g, '\\u003c'))}</script>
   <div class="wrap home-esc__in">
     <div class="home-esc__cab" data-reveal>
@@ -190,6 +231,7 @@ function escolhedorRapido(D, indice) {
       <fieldset class="home-esc__fs">
         <legend class="home-esc__q"><span class="num">01</span>O que você procura?</legend>
         <div class="esc-ops">${TIPOS_RAPIDO.map(([v, r]) => op('tipo', v, r, cont[v], false))}${op('tipo', '', 'Tanto faz', total, true)}</div>
+        ${notas.length ? html`<p class="home-esc__nota">A contagem aqui é por tipo de peça. ${notas.map((n) => html`A coleção ${n.nome} exibe <span class="num">${n.total}</span> modelos porque também lista ${n.outros.map((o, i) => html`${i ? ', ' : ''}${o.nome} (${o.tipo})`)}. `)}</p>` : ''}
       </fieldset>
       <fieldset class="home-esc__fs">
         <legend class="home-esc__q"><span class="num">02</span>Quantas pessoas?</legend>
@@ -229,20 +271,30 @@ export function paginas(ctx) {
   const totalPecas = produtos.filter((p) => p.d_tipo !== 'acessorio').length;
 
   // 1. Abertura ---------------------------------------------------------------
+  // As portas mostram o poster do filme da coleção recortado na foto (sem a moldura e a legenda que o
+  // filme desenha). No desktop, a vitrine grande à direita toca o filme da porta ativa.
+  const filmes = new Map();
   const portas = PORTAS.map(([path, id, nome], i) => {
     const cat = D.catPorPath.get(path);
     if (!cat) return null;
     const filme = filmeColecao(D, id);
+    if (filme) filmes.set(id, { filme, nome, cat, path });
     const lista = produtosDaCategoria(cat, porSlug);
+    const mini = filme ? miniPorta(D, id) : null;
     const foto = filme ? null : lista.map((p) => fotoCartao(p.slug)).find(Boolean);
     return html`<li class="porta" data-intro style="--i:${4 + i}">
-  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta-filme': filme ? '' : null })}>
-    <span class="porta__mol">${filme ? html`${posterFilme(filme, { classe: 'porta__img', prioridade: true })}${videoFilme(filme, 'porta__video')}` : foto ? picture(foto, { classe: 'porta__img', sizes: '(min-width:1024px) 420px, 33vw', alt: '' }) : ''}</span>
+  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filme ? id : null })}>
+    <span class="porta__mol${filme && !mini ? ' recorte' : ''}">${mini || (filme ? posterFilme(filme, { classe: 'porta__img', prioridade: true }) : foto ? picture(foto, { classe: 'porta__img porta__img--foto', sizes: '(min-width:1024px) 420px, 33vw', alt: '' }) : '')}</span>
     <span class="porta__txt"><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></span>
     ${icone('seta-dir', { tamanho: 20, classe: 'porta__seta' })}
   </a>
 </li>`;
   }).filter(Boolean);
+  // Vitrine (só desktop, decorativa: as portas já dizem o mesmo): poster grande e filme da coleção.
+  const vitrine = filmes.size ? html`<div class="vitrine" aria-hidden="true" data-vitrine data-intro style="--i:2">
+    <div class="vitrine__mol">${[...filmes].map(([id, { filme }], i) => html`<div class="vitrine__cena recorte${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${posterFilme(filme, { classe: 'vitrine__img' })}${videoFilme(filme, 'vitrine__video')}</div>`)}<span class="vitrine__luz"></span></div>
+    <div class="vitrine__leg">${[...filmes].map(([id, { nome, cat }], i) => html`<p class="vitrine__item${i === 0 ? ' is-ativa' : ''}" data-cena-leg="${id}"><span class="vitrine__nome">${nome}</span><span class="vitrine__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></p>`)}</div>
+  </div>` : '';
 
   const abertura = html`<section class="sala home-abre" aria-labelledby="home-h1">
   <div class="home-abre__agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>
@@ -252,6 +304,7 @@ export function paginas(ctx) {
     <h1 id="home-h1" class="home-abre__h1">Banheiras, spas e ofurôs de hidromassagem, direto da fábrica em ${local.cidade}, ${local.uf}</h1>
     <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos com medidas e preços publicados, e planta técnica oficial em <span class="num">${comPlanta}</span> deles. Você escolhe pelo seu espaço e fecha com um consultor pelo WhatsApp.</p>
     <p class="home-abre__acoes" data-intro style="--i:3"><a class="btn btn--claro home-abre__cta" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Escolher pelo meu espaço</a><a class="home-abre__rolar" href="#salas">Conhecer as salas${icone('chevron-baixo', { tamanho: 18 })}</a></p>
+    ${vitrine}
     <ul class="portas" role="list" aria-label="Coleções">${portas}</ul>
   </div>
 </section>`;
@@ -264,7 +317,7 @@ export function paginas(ctx) {
     if (!lista.length) return null;
     const S = escalaDaColecao(lista);
     const id = `sala-${i + 1}`;
-    return html`<section class="sala-faixa" aria-labelledby="${id}-h">
+    return html`<section class="sala-faixa" style="${tardio(760)}" aria-labelledby="${id}-h">
   <header class="sala-faixa__cab" data-reveal>
     <p class="etiqueta"><span class="num">Sala ${pad2(i + 1)}</span></p>
     <h3 id="${id}-h" class="sala-faixa__h">${nome}</h3>
@@ -275,7 +328,7 @@ export function paginas(ctx) {
   </div>
 </section>`;
   }).filter(Boolean);
-  const galeria = html`<section class="sala secao home-salas" id="salas" aria-labelledby="home-salas-h">
+  const galeria = html`<section class="sala secao home-salas" id="salas" style="${tardio(5400)}" aria-labelledby="home-salas-h">
   <div class="wrap">
     <div class="home-salas__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">A galeria</p>
@@ -294,7 +347,7 @@ export function paginas(ctx) {
   if (plObra?.media && plObra.validada && plObra.cotas.length) {
     const rot = rotuloTam(tObra);
     const passos = OBRA_PASSOS.map((l) => plObra.cotas.find((c) => c.letra === l)).filter(Boolean);
-    obra = html`<section class="sala sala--planta secao home-obra" aria-labelledby="home-obra-h" data-obra${attrs(gsap ? { 'data-gsap': gsap.core, 'data-scrolltrigger': gsap.st } : {})}>
+    obra = html`<section class="sala sala--planta secao home-obra" style="${tardio(3200)}" aria-labelledby="home-obra-h" data-obra${attrs(gsap ? { 'data-gsap': gsap.core, 'data-scrolltrigger': gsap.st } : {})}>
   <div class="wrap home-obra__in" data-tam-painel="0">
     <div class="home-obra__texto">
       <div data-reveal>
@@ -322,7 +375,7 @@ export function paginas(ctx) {
     const lista = produtosDaCategoria(catL, porSlug);
     const filme = filmeColecao(D, 'lancamentos');
     const S = escalaDaColecao(lista);
-    lancamentos = html`<section class="sala sala--2 secao home-lanc" aria-labelledby="home-lanc-h">
+    lancamentos = html`<section class="sala sala--2 secao home-lanc" style="${tardio(4800)}" aria-labelledby="home-lanc-h">
   <div class="wrap">
     <div class="home-lanc__cab">
       <div data-reveal>
@@ -331,7 +384,7 @@ export function paginas(ctx) {
         <p class="lead"><span class="num" data-campo="categoria-total">${catL.total_exibido}</span> modelos novos no catálogo, todos com fotos reais da fábrica.</p>
         <p><a class="link" href="${url(LANCAMENTOS)}">Ver a coleção ${catL.nome}</a></p>
       </div>
-      ${filme ? html`<div class="home-lanc__filme" data-reveal>${posterFilme(filme, { classe: 'home-lanc__poster' })}${videoFilme(filme, 'home-lanc__video')}</div>` : ''}
+      ${filme ? html`<div class="home-lanc__filme" data-reveal aria-hidden="true"><div class="recorte">${posterFilme(filme, { classe: 'home-lanc__poster' })}${videoFilme(filme, 'home-lanc__video')}</div></div>` : ''}
     </div>
     <ol class="col-grade home-lanc__grade" role="list">${lista.map((p, i) => cartao(p, { pos: i, S, lqip: false }))}</ol>
   </div>
@@ -342,13 +395,13 @@ export function paginas(ctx) {
   const nums = numerosDeclarados(E.numeros_declarados?.[0]?.literal);
   const ff = fotosFabrica(D);
   const mosaico = ff.fotos.filter((f) => f.width >= f.height && f.width / f.height < 2).slice(0, 5);
-  const fabrica = html`<section class="dia secao home-fab" aria-labelledby="home-fab-h">
+  const fabrica = html`<section class="dia secao home-fab" style="${tardio(1900)}" aria-labelledby="home-fab-h">
   <div class="wrap home-fab__in">
     <div class="home-fab__texto" data-reveal>
       <p class="etiqueta etiqueta--linha">A fábrica</p>
       <h2 id="home-fab-h">Feita em ${local.cidade}, ${local.uf}</h2>
       <p class="home-fab__end">${icone('fabrica', { tamanho: 22 })}<span data-campo="empresa-endereco">${E.endereco_fabrica}</span></p>
-      ${nums.length ? html`<dl class="home-fab__nums">${nums.map((x) => html`<div class="home-fab__num" data-campo="empresa-numeros">${x.valor ? html`<dt class="num">${x.valor}</dt><dd>${x.rotulo}</dd>` : html`<dt class="vh">Número declarado</dt><dd>${x.rotulo}</dd>`}</div>`)}</dl>
+      ${nums.length ? html`<dl class="home-fab__nums">${nums.map((x) => html`<div class="home-fab__num" data-campo="empresa-numeros">${x.valor ? html`<dt class="num">${valorDeclarado(x.valor)}</dt><dd>${x.rotulo}</dd>` : html`<dt class="vh">Número declarado</dt><dd>${x.rotulo}</dd>`}</div>`)}</dl>
       <p class="home-fab__nota">Números segundo a empresa.</p>` : ''}
       ${E.inmetro?.certificado ? html`<p class="home-fab__selo">${icone('escudo', { tamanho: 22 })}<span>Certificação INMETRO, certificado nº <span class="num" data-campo="empresa-inmetro">${E.inmetro.certificado}</span>. <a class="link" href="${url('inmetro.html')}">Ver a certificação</a></span></p>` : ''}
       <p><a class="link" href="${url('lojas/loja-fisica.html')}">Conhecer a fábrica e as lojas</a></p>
@@ -360,7 +413,7 @@ export function paginas(ctx) {
   // 7. Prova ------------------------------------------------------------------
   const ra = reclameAqui(E.reclame_aqui);
   const deps = (E.depoimentos || []).filter((d) => d.autor && d.texto);
-  const prova = ra || deps.length ? html`<section class="dia dia--areia secao home-prova" aria-labelledby="home-prova-h">
+  const prova = ra || deps.length ? html`<section class="dia dia--areia secao home-prova" style="${tardio(1150)}" aria-labelledby="home-prova-h">
   <div class="wrap home-prova__in">
     <div class="home-prova__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">Quem já comprou</p>
@@ -381,7 +434,7 @@ export function paginas(ctx) {
   const pag = D.ler('politicas.json')?.pagamento?.literal || '';
   const formas = pag.split(/\s+(?=\d\.\s)/).map((s) => s.trim()).filter(Boolean);
   const waVenda = D.wa('venda_principal');
-  const comprar = html`<section class="dia secao home-comprar" aria-labelledby="home-comprar-h">
+  const comprar = html`<section class="dia secao home-comprar" style="${tardio(1350)}" aria-labelledby="home-comprar-h">
   <div class="wrap">
     <div class="home-comprar__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">Como comprar</p>
@@ -397,7 +450,7 @@ export function paginas(ctx) {
 
   // 9. Lojas ------------------------------------------------------------------
   const M = mapaLojas(D.lojas);
-  const lojas = html`<section class="sala secao home-lojas" aria-labelledby="home-lojas-h">
+  const lojas = html`<section class="sala secao home-lojas" style="${tardio(1100)}" aria-labelledby="home-lojas-h">
   <div class="wrap home-lojas__in">
     <div class="home-lojas__texto" data-reveal>
       <p class="etiqueta etiqueta--linha">Lojas</p>
@@ -420,7 +473,7 @@ export function paginas(ctx) {
   const faqTodas = new Map((D.ler('faq.json') || []).map((f) => [f.id, f]));
   const faqs = FAQ_HOME.map((id) => faqTodas.get(id)).filter((f) => f && f.tipo === 'publicada' && f.exibir !== false && !f.oculto_ate_decisao && !/garantia/i.test(`${f.pergunta} ${f.tema}`) && (f.resposta_exibida || '').trim());
   const blog = (D.ler('blog-recentes.json')?.recentes || []).filter((b) => b.exibir).slice(0, 3);
-  const fim = html`<section class="dia secao home-fim" aria-labelledby="home-faq-h">
+  const fim = html`<section class="dia secao home-fim" style="${tardio(1650)}" aria-labelledby="home-faq-h">
   <div class="wrap home-fim__in">
     <div class="home-faq">
       <p class="etiqueta etiqueta--linha">Dúvidas</p>
@@ -474,13 +527,17 @@ export function paginas(ctx) {
       saida: 'index.html',
       titulo,
       descricao,
-      corpo: html`${abertura}${escolhedorRapido(D, indice)}${galeria}${obra}${lancamentos}${fabrica}${prova}${comprar}${lojas}${fim}`,
+      corpo: html`${abertura}${escolhedorRapido(D, indice, porSlug)}${galeria}${obra}${lancamentos}${fabrica}${prova}${comprar}${lojas}${fim}`,
       jsonld: [jsonld],
       modulos,
       ativo: '',
       sobre: true,
       classe: 'pg-home',
       critico: ['home'],
+      fontes: ['fonts/fraunces-titulo.woff2'],
+      modulosTardios: true,
+      cssAposPintura: true,
+      rodapeTardio: 4000,
     }),
   }];
 }

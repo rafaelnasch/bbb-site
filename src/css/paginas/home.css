@@ -1,6 +1,18 @@
 /* Home (SPEC 9.1). A abertura está em critico/home.css; aqui o resto, já fora da primeira tela. */
 
 /* ---------- Abertura: água, vapor e portas ---------- */
+.home-abre__agua{background:radial-gradient(70% 60% at 78% 8%,#16405A,transparent 70%),var(--room)}
+.home-abre__agua::after{content:"";position:absolute;inset:0;background:radial-gradient(50% 50% at 8% 100%,color-mix(in srgb,var(--glow) 12%,transparent),transparent 70%)}
+.home-abre__vapor{z-index:-1;pointer-events:none}
+.home-abre__rolar{gap:6px;color:var(--fg);text-decoration:none}
+.home-abre__lead{color:var(--fg-2)}
+.porta__a{background:color-mix(in srgb,var(--room) 55%,transparent)}
+.porta__mol{border-radius:10px;background:var(--room-2)}
+.vitrine__item:not(.is-ativa){opacity:0}
+.porta__n{color:var(--fg-2)}
+.porta__img--foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vitrine__mol{position:relative;border-radius:var(--radius);background:var(--room-2)}
+.vitrine__cena{position:relative;border-radius:6px}
 .home-abre::after{content:"";position:absolute;inset:auto 0 0;height:1px;z-index:-1;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--line) 40%,transparent),transparent)}
 .agua__cv{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s var(--ease-out)}
 .agua__cv.is-viva{opacity:1}
@@ -12,14 +24,31 @@
 .porta__a{position:relative;transition:border-color var(--t-ui),background-color var(--t-ui),transform var(--t-press) var(--ease-out)}
 .porta__a:active{transform:scale(.985)}
 .porta__seta{color:var(--glow);transition:transform var(--t-ui) var(--ease-out)}
-.porta__video{opacity:0;transition:opacity .6s var(--ease-out)}
-.porta__a.is-tocando .porta__video{opacity:1}
-.porta__img{transition:transform 1.1s var(--ease-out)}
+.porta__img{transition:transform 1.1s var(--ease-out);transform-origin:50% 40%}
+.porta__a.is-ativa{border-color:color-mix(in srgb,var(--glow) 55%,transparent)}
 @media (hover:hover){
   .porta__a:hover{border-color:color-mix(in srgb,var(--line) 55%,transparent);background:color-mix(in srgb,var(--room-2) 80%,transparent)}
+  .porta__a.is-ativa:hover{border-color:color-mix(in srgb,var(--glow) 70%,transparent)}
   .porta__a:hover .porta__seta{transform:translateX(4px)}
-  .porta__a:hover .porta__img{transform:scale(1.36)}
+  .porta__a:hover .porta__img{transform:scale(1.06)}
 }
+
+/* Vitrine da abertura (desktop): moldura com passe-partout, luz de estúdio e o filme da coleção ativa. */
+.vitrine{position:relative;gap:16px;align-self:center;justify-self:end}
+.vitrine::before{content:"";position:absolute;inset:-14% -18% -6%;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,color-mix(in srgb,var(--glow) 16%,transparent),color-mix(in srgb,var(--line) 6%,transparent) 55%,transparent);filter:blur(8px)}
+.vitrine__mol{border:1px solid color-mix(in srgb,var(--line) 22%,transparent);box-shadow:0 50px 90px -40px rgba(0,0,0,.75),0 18px 40px -24px rgba(0,0,0,.6),inset 0 1px 0 color-mix(in srgb,var(--porcelain) 10%,transparent)}
+.vitrine__cena{transition:opacity .9s var(--ease-out),transform 1.4s var(--ease-out);transform:scale(1.015)}
+.vitrine__cena.is-ativa{transform:none}
+.vitrine__video{opacity:0;transition:opacity .9s var(--ease-out)}
+.vitrine__cena.is-tocando .vitrine__video{opacity:1}
+.vitrine__luz{position:relative;z-index:1;border-radius:6px;pointer-events:none;background:linear-gradient(115deg,color-mix(in srgb,var(--porcelain) 9%,transparent),transparent 38%,transparent 70%,rgba(0,0,0,.18));box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+.vitrine__leg{display:grid;padding-inline:4px}
+.vitrine__item{grid-area:1/1;display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--line) 22%,transparent);transition:opacity .6s var(--ease-out)}
+.vitrine__nome{font:600 var(--fs-label)/1.3 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--fg)}
+.vitrine__n{font-size:.875rem;color:var(--fg-2)}
+.vitrine__leg::after{content:"";grid-area:1/1;align-self:start;height:1px;background:var(--glow);transform-origin:left;transform:scaleX(0)}
+.vitrine.is-ciclo .vitrine__leg::after{animation:vitrine-ciclo var(--ciclo,8s) linear}
+@keyframes vitrine-ciclo{to{transform:scaleX(1)}}
 
 /* ---------- Comece pelo seu espaço ---------- */
 .home-esc__in{display:grid;gap:28px}
@@ -36,6 +65,7 @@
 .home-esc__ir.is-mudou .num{animation:home-pulso .42s var(--ease-out)}
 @keyframes home-pulso{from{transform:translateY(-6px);opacity:.2}}
 .home-esc__ir.is-zero{--b-bg:var(--muted)}
+.home-esc__nota{max-width:60ch;font-size:var(--fs-small);color:var(--fg-2)}
 .home-esc__mais{font-size:var(--fs-small);color:var(--fg-2)}
 .home-esc__aviso{max-width:70ch}
 @media (min-width:1024px){
@@ -106,11 +136,12 @@ html:not([data-lite]) .home-obra:not(.is-tour) .cota-marca span{animation:home-c
 /* ---------- Lançamentos ---------- */
 .home-lanc__cab{display:grid;gap:28px;align-items:center}
 .home-lanc__cab>div:first-child{display:grid;gap:12px}
-.home-lanc__filme{position:relative;overflow:hidden;border-radius:var(--radius);aspect-ratio:16/9;background:var(--room);box-shadow:var(--sombra-2)}
-.home-lanc__poster,.home-lanc__video,.home-lanc__filme picture{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.home-lanc__filme{position:relative;padding:12px;border-radius:var(--radius);background:var(--room-2);border:1px solid color-mix(in srgb,var(--line) 20%,transparent);box-shadow:var(--sombra-2)}
+.home-lanc__filme .recorte{border-radius:6px}
 .home-lanc__video{opacity:0;transition:opacity 1s var(--ease-out)}
 .home-lanc__filme.is-tocando .home-lanc__video{opacity:1}
-@media (min-width:1024px){.home-lanc__cab{grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(32px,5vw,88px)}}
+@media (min-width:600px) and (max-width:1023px){.home-lanc__filme{max-width:520px}}
+@media (min-width:1024px){.home-lanc__cab{grid-template-columns:minmax(0,6fr) minmax(0,6fr);column-gap:clamp(32px,5vw,88px)}.home-lanc__filme{width:min(100%,520px);justify-self:end;padding:16px}}
 
 /* ---------- A fábrica ---------- */
 .home-fab__in{display:grid;gap:36px}
@@ -119,7 +150,9 @@ html:not([data-lite]) .home-obra:not(.is-tour) .cota-marca span{animation:home-c
 .home-fab__end .ic,.home-fab__selo .ic{margin-top:3px;color:var(--brand)}
 .home-fab__nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;margin-top:8px}
 .home-fab__num{display:grid;gap:4px;padding-top:14px;border-top:1px solid var(--rule)}
-.home-fab__num dt{font:300 clamp(2rem,1.4rem + 2.4vw,3.25rem)/1 var(--f-display);letter-spacing:-.02em}
+.home-fab__num dt{display:grid;gap:6px;font:300 clamp(2rem,1.4rem + 2.4vw,3.25rem)/1 var(--f-display);letter-spacing:-.02em}
+.home-fab__pre{font:600 .75rem/1 var(--f-body);letter-spacing:.12em;color:var(--fg-2)}
+.home-fab__v{white-space:nowrap}
 .home-fab__num dd{margin:0;font:600 var(--fs-label)/1.35 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
 .home-fab__nota{font-size:var(--fs-small);color:var(--fg-2)}
 .home-fab__fotos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;align-content:start}
@@ -204,4 +237,5 @@ html:not([data-lite]) .mapa__onda{animation:mapa-onda 3.2s var(--ease-out) infin
 @media (min-width:1024px){.home-fim__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(32px,5vw,88px)}}
 
 /* Modo lite e movimento reduzido: nada de vídeo, água, vapor ou pulso. */
-html[data-lite] .agua__cv,html[data-lite] .vapor__cv,html[data-lite] .porta__video,html[data-lite] .home-lanc__video{display:none}
+html[data-lite] .agua__cv,html[data-lite] .vapor__cv,html[data-lite] .vitrine__video,html[data-lite] .home-lanc__video{display:none}
+html[data-lite] .vitrine__leg::after{display:none}

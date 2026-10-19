@@ -1,23 +1,33 @@
 /* CSS crítico da home (SPEC 9.1 e 12): só a abertura. O resto está em paginas/home.css. */
+/* Subconjunto da Fraunces só com os glifos do H1 (build/fontes-titulo.mjs), pré-carregado: o H1 pinta
+   com a fonte final logo na primeira pintura e não gera um segundo LCP na troca de fonte. */
+@font-face{font-family:"Fraunces Titulo";src:url("asset:fonts/fraunces-titulo.woff2");font-weight:300;font-display:swap}
 .home-abre{position:relative;isolation:isolate;overflow:clip;display:grid;align-items:end;min-height:100svh;padding:calc(var(--cab-h) + 28px) 0 clamp(28px,4vw,56px)}
 .home-abre__agua,.home-abre__vapor{position:absolute;inset:0;z-index:-2}
-.home-abre__agua{background:radial-gradient(70% 60% at 78% 8%,#16405A,transparent 70%),radial-gradient(50% 50% at 8% 100%,color-mix(in srgb,var(--glow) 12%,transparent),transparent 70%),var(--room)}
-.home-abre__vapor{z-index:-1;pointer-events:none}
+.home-abre__agua{background:var(--room)}
 .home-abre__in{display:grid;gap:18px}
-.home-abre__h1{max-width:17ch;font-size:clamp(2.375rem,1.1rem + 3.9vw,4.75rem);line-height:1.02}
-.home-abre__lead{max-width:52ch;color:var(--fg-2);font-size:clamp(1.0625rem,1rem + .45vw,1.3125rem);line-height:1.5}
+.home-abre__h1{max-width:17ch;font-family:"Fraunces Titulo",var(--f-display);font-size:clamp(2.375rem,1.1rem + 3.2vw,4.25rem);line-height:1.02}
+.home-abre__lead{max-width:52ch;font-size:clamp(1.0625rem,1rem + .45vw,1.3125rem);line-height:1.5}
+.home-abre__rolar{display:inline-flex;align-items:center;min-height:44px;font-size:.9375rem}
 .home-abre__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-.home-abre__rolar{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--fg);font-size:.9375rem;text-decoration:none}
-.portas{display:grid;gap:10px;margin-top:10px;list-style:none;padding:0}
-.porta__a{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:14px;padding:8px 14px 8px 8px;border:1px solid var(--rule);border-radius:var(--radius);color:var(--fg);text-decoration:none;background:color-mix(in srgb,var(--room) 55%,transparent)}
-.porta__mol{position:relative;display:block;aspect-ratio:1;overflow:hidden;border-radius:10px;background:var(--room-2)}
-.porta__img,.porta__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.3);transform-origin:50% 30%}
+/* Recorte do filme da coleção: mostra só a foto (484 px a partir de 399,79 no quadro de 1280x720). */
+.recorte{position:relative;overflow:hidden;aspect-ratio:1}
+.recorte img,.recorte video{position:absolute;left:-82.438%;top:-16.322%;width:264.463%;max-width:none;height:auto}
+.portas{display:grid;gap:10px;list-style:none;padding:0}
+.porta__a{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:14px;padding:8px 14px 8px 8px;border:1px solid var(--rule);border-radius:var(--radius);color:var(--fg);text-decoration:none}
+.porta__mol{position:relative;display:block;aspect-ratio:1;overflow:hidden}
 .porta__txt{display:grid}
+.porta__n{font-size:.875rem}
 .porta__nome{font:350 1.375rem/1.15 var(--f-display)}
-.porta__n{color:var(--fg-2);font-size:.875rem}
+.vitrine{display:none}
+.vitrine__cena:not(.is-ativa){opacity:0}
 @media (min-width:1024px){
-  .home-abre__in{gap:22px}
-  .portas{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:22px}
+  .home-abre__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:22px 5vw}
+  .home-abre__in>*{grid-column:1}
+  .home-abre__in>.vitrine{display:grid;grid-column:2;grid-row:1/span 4;width:min(100%,calc(100svh - var(--cab-h) - 300px))}
+  .vitrine__mol{display:grid;padding:14px}
+  .vitrine__cena,.vitrine__luz{grid-area:1/1}
+  .portas{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:22px}
   .porta__a{grid-template-columns:112px 1fr auto;gap:18px;padding:10px 20px 10px 10px}
   .porta__nome{font-size:1.75rem}
 }

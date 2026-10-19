@@ -131,26 +131,74 @@
   // Lançamentos: toca quando visível, pausa fora da tela.
   const lanc = d.querySelector('.home-lanc__filme video[data-home-filme]');
   if (lanc && !BBB.lite) {
+    const moldura = lanc.closest('.home-lanc__filme');
     aposLoad(() => {
       if (!('IntersectionObserver' in w)) return;
       new IntersectionObserver((es) => es.forEach((e) => {
         if (BBB.lite) return;
-        if (e.isIntersecting) { ligarFilme(lanc, lanc.parentElement); lanc.play?.().catch(() => {}); } else lanc.pause?.();
+        if (e.isIntersecting) { ligarFilme(lanc, moldura); lanc.play?.().catch(() => {}); } else lanc.pause?.();
       }), { threshold: 0.25 }).observe(lanc);
     });
   }
-  // Portas: o filme da coleção toca com o ponteiro em cima (ou foco), só onde há mouse.
-  if (w.matchMedia('(hover:hover) and (pointer:fine)').matches) {
-    d.querySelectorAll('[data-porta-filme]').forEach((a) => {
-      const v = a.querySelector('video[data-home-filme]');
-      if (!v) return;
-      const tocar = () => { if (BBB.lite) return; ligarFilme(v, a); v.play?.().catch(() => {}); };
-      const parar = () => { v.pause?.(); };
-      a.addEventListener('pointerenter', tocar);
-      a.addEventListener('focus', tocar);
-      a.addEventListener('pointerleave', parar);
-      a.addEventListener('blur', parar);
+
+  // Vitrine da abertura (desktop): a porta sob o ponteiro ou com foco escolhe a coleção; sozinha, a
+  // vitrine passa pelas coleções a cada CICLO ms. Filmes só depois do load, visíveis e fora do modo lite.
+  const vit = d.querySelector('[data-vitrine]');
+  const mqVit = w.matchMedia('(min-width:1024px)');
+  if (vit) {
+    const CICLO = 8000;
+    const cenas = [...vit.querySelectorAll('[data-cena]')];
+    const legs = [...vit.querySelectorAll('[data-cena-leg]')];
+    const portasF = [...d.querySelectorAll('[data-porta]')];
+    let ativa = cenas[0]?.dataset.cena, timer = 0, visivelV = true, emCima = false, vivo = false;
+    vit.style.setProperty('--ciclo', `${CICLO}ms`);
+    const tocar = () => {
+      cenas.forEach((c) => {
+        const v = c.querySelector('video[data-home-filme]');
+        if (!v) return;
+        if (vivo && c.dataset.cena === ativa && visivelV && !BBB.lite) { ligarFilme(v, c); v.play?.().catch(() => {}); } else v.pause?.();
+      });
+    };
+    const ciclo = () => {
+      clearTimeout(timer);
+      vit.classList.remove('is-ciclo');
+      if (!vivo || emCima || !visivelV || BBB.lite) return;
+      void vit.offsetWidth;
+      vit.classList.add('is-ciclo');
+      timer = setTimeout(() => {
+        const i = cenas.findIndex((c) => c.dataset.cena === ativa);
+        mostrar(cenas[(i + 1) % cenas.length].dataset.cena);
+        ciclo();
+      }, CICLO);
+    };
+    function mostrar(id) {
+      if (!id) return;
+      ativa = id;
+      cenas.forEach((c) => c.classList.toggle('is-ativa', c.dataset.cena === id));
+      legs.forEach((l) => l.classList.toggle('is-ativa', l.dataset.cenaLeg === id));
+      portasF.forEach((a) => a.classList.toggle('is-ativa', vivo && a.dataset.porta === id));
+      tocar();
+    }
+    portasF.forEach((a) => {
+      const entrar = () => { if (!mqVit.matches) return; emCima = true; mostrar(a.dataset.porta); ciclo(); };
+      const sair = () => { emCima = false; ciclo(); };
+      a.addEventListener('pointerenter', entrar);
+      a.addEventListener('focus', entrar);
+      a.addEventListener('pointerleave', sair);
+      a.addEventListener('blur', sair);
     });
+    const ligarVit = () => {
+      if (vivo || BBB.lite || !mqVit.matches) return;
+      vivo = true;
+      if ('IntersectionObserver' in w) {
+        new IntersectionObserver((es) => { visivelV = es.some((e) => e.isIntersecting); tocar(); ciclo(); }, { threshold: 0.2 }).observe(vit);
+      }
+      d.addEventListener('visibilitychange', () => { visivelV = !d.hidden; tocar(); ciclo(); });
+      mostrar(ativa);
+      ciclo();
+    };
+    aposLoad(ligarVit);
+    mqVit.addEventListener?.('change', (e) => { if (e.matches) aposLoad(ligarVit); });
   }
 
   // ---------------------------------------------------------------- tour da planta (P2, desktop)
@@ -172,8 +220,22 @@
       const p = fig?.planta;
       if (!p) return;
       const marca = letra && obra.querySelector(`.cota-marca[data-cota="${CSS.escape(letra)}"]`);
-      if (marca) p.centrarEm((parseFloat(marca.style.left) / 100) * Number(fig.dataset.w), (parseFloat(marca.style.top) / 100) * Number(fig.dataset.h));
+      if (marca) p.centrarEm((parseFloat(marca.style.left) / 100) * Number(fig.dataset.w), (parseFloat(marca.style.top) / 100) * Number(fig.dataset.h), caixa());
       else p.recentrar();
+    };
+    // Enquadramento do tour: a área do desenho onde estão as cotas, com folga de 6%. Assim a câmera
+    // não mostra a margem azul da folha oficial (cabeçalho e rodapé da prancha).
+    let caixaMemo = null;
+    const caixa = () => {
+      if (caixaMemo) return caixaMemo;
+      const W = Number(fig?.dataset.w), H = Number(fig?.dataset.h);
+      const ms = [...obra.querySelectorAll('.cota-marca')].map((m) => [parseFloat(m.style.left) / 100, parseFloat(m.style.top) / 100]).filter(([x, y]) => Number.isFinite(x) && Number.isFinite(y));
+      if (!W || !H || !ms.length) return null;
+      const F = 0.06;
+      const x0 = Math.max(0, Math.min(...ms.map((m) => m[0])) - F), x1 = Math.min(1, Math.max(...ms.map((m) => m[0])) + F);
+      const y0 = Math.max(0, Math.min(...ms.map((m) => m[1])) - F), y1 = Math.min(1, Math.max(...ms.map((m) => m[1])) + F);
+      caixaMemo = { x0: x0 * W, x1: x1 * W, y0: y0 * H, y1: y1 * H };
+      return caixaMemo;
     };
     const script = (src) => new Promise((ok, falha) => {
       if (!src) { falha(new Error('sem src')); return; }
@@ -207,6 +269,10 @@
           gsap.from(fig, { scale: 0.94, opacity: 0.4, ease: 'none', scrollTrigger: { trigger: obra, start: 'top 85%', end: 'top 25%', scrub: 0.6 } });
           return () => { obra.classList.remove('is-tour'); ativar(null); };
         });
+        // Seções com content-visibility mudam de altura quando são pintadas: recalcula as posições.
+        let rt = 0;
+        const refazer = () => { clearTimeout(rt); rt = setTimeout(() => ScrollTrigger.refresh(), 120); };
+        d.querySelectorAll('main > section[style*="content-visibility"]').forEach((s) => s.addEventListener('contentvisibilityautostatechange', refazer));
         // Mexer na planta com o ponteiro devolve o controle a quem está usando.
         fig?.addEventListener('pointerdown', () => obra.classList.add('is-manual'));
       }).catch(() => { iniciado = false; });

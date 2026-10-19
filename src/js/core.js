@@ -10,6 +10,17 @@
 
   // CSS fora do crítico: baixado sem bloquear a pintura e ligado aqui (sem JS, vale o <noscript>).
   $$('link[data-css-tardio]').forEach((l) => { l.media = 'all'; });
+  // CSS do site depois da primeira pintura (página com a primeira tela inteira no CSS crítico, ex.: home):
+  // não disputa banda com o LCP.
+  const cssDepois = $('#bbb-assets')?.dataset.css;
+  if (cssDepois) {
+    aposPintura(() => {
+      const l = d.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = cssDepois;
+      d.head.append(l);
+    });
+  }
 
   // Modo lite: movimento reduzido, Save-Data ou rede 2G. Flag global em <html data-lite="1">.
   const conn = navigator.connection || {};
@@ -44,11 +55,31 @@
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sem armazenamento */ } },
   };
 
+  // Roda fn uma vez, logo depois da primeira pintura com conteúdo (entrada "paint" first-contentful-paint).
+  // Sem a API, dois quadros; o tempo de 1 s é a reserva para aba em segundo plano, onde não há pintura.
+  function aposPintura(fn) {
+    let feito = false;
+    const ir = () => { if (!feito) { feito = true; fn(); } };
+    try {
+      const po = new PerformanceObserver((l) => { if (l.getEntriesByName('first-contentful-paint').length) { po.disconnect(); setTimeout(ir, 0); } });
+      po.observe({ type: 'paint', buffered: true });
+    } catch { requestAnimationFrame(() => requestAnimationFrame(ir)); }
+    setTimeout(ir, 1000);
+  }
+
   // Módulos sob demanda com nome de arquivo com hash (lista em <script type="application/json">).
   let mapa = {};
   try { mapa = JSON.parse($('#bbb-assets')?.textContent || '{}'); } catch { /* sem mapa */ }
   BBB.asset = (n) => mapa[n];
   BBB.carregar = (n) => (mapa[n] ? import(mapa[n]) : Promise.reject(new Error(`módulo ${n}`)));
+  // Módulos tardios da página (data-tardios): pedidos só depois do load, com o navegador ocioso, para
+  // não disputarem banda e CPU com a primeira pintura (a home usa: água, vapor, planta, escolhedor).
+  const tardios = ($('#bbb-assets')?.dataset.tardios || '').split(' ').filter((n) => mapa[n]);
+  if (tardios.length) {
+    const ir = () => tardios.forEach((n) => BBB.carregar(n).catch(() => {}));
+    const ocioso = () => (w.requestIdleCallback ? w.requestIdleCallback(ir, { timeout: 1500 }) : setTimeout(ir, 200));
+    aposPintura(() => { if (d.readyState === 'complete') ocioso(); else w.addEventListener('load', ocioso, { once: true }); });
+  }
 
   // Controles que só fazem sentido com JS.
   $$('[data-so-js]').forEach((el) => { el.hidden = false; });

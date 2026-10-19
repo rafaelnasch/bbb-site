@@ -44,14 +44,15 @@ const NOME_REDE = { 'Twitter/X': 'X (Twitter)' };
 
 const links = (pares) => html`<ul class="rodape__lista">${pares.map(([nome, p]) => html`<li><a href="${url(p)}">${nome}</a></li>`)}</ul>`;
 
-export function rodape() {
+/** @param {object} [o] { estilo } estilo inline do <footer> (ex.: content-visibility na home). */
+export function rodape({ estilo = null } = {}) {
   const D = dados();
   const E = D.empresa;
   const colecoes = [...MENU.filter((m) => m.colecao).map((m) => m.colecao), ...COLECOES_SECUNDARIAS]
     .map((p) => D.catPorPath.get(p))
     .filter(Boolean);
   const redes = (E.redes || []).filter((r) => r.principal);
-  return html`<footer class="rodape sala" id="rodape">
+  return html`<footer class="rodape sala" id="rodape"${attrs({ style: estilo })}>
   <div class="wrap">
     <section class="rodape__cta" aria-labelledby="rf-cta" data-reveal>
       <div>

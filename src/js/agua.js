@@ -1,8 +1,9 @@
 // Água WebGL (SPEC 6.2, P1): topo da home e das coleções, nunca no produto nem sobre foto de produto.
-// Shader próprio: ondas que refratam uma trama de cáusticas (células animadas) com o brilho da luz de
-// estúdio (--glow) e anéis de ondulação ao toque. Só nasce depois do load, com o navegador ocioso,
-// nunca é o LCP (o canvas aparece por cima de um gradiente estático já pintado). Pausa fora da tela e
-// com a aba oculta; DPR máximo 1,5 e resolução reduzida. Modo lite ou sem WebGL: fica o gradiente.
+// Shader próprio: ondas que refratam uma trama larga e suave de cáusticas (células animadas) com o brilho
+// da luz de estúdio (--glow), apagada atrás do texto para não disputar com o H1, e anéis de ondulação
+// ao toque. Só nasce depois do load, com o navegador ocioso, nunca é o LCP (o canvas aparece por cima
+// de um gradiente estático já pintado). Pausa fora da tela e com a aba oculta;
+// DPR máximo 1,5 e resolução reduzida. Modo lite ou sem WebGL: fica o gradiente.
 (() => {
   const d = document, w = window, BBB = w.BBB || {};
   const alvos = [...d.querySelectorAll('[data-agua]')];
@@ -22,13 +23,13 @@ vec2 ds=vec2(0.);float an=0.;
 for(int k=0;k<4;k++){vec4 r=uP[k];float age=t-r.z;if(r.w>0.&&age>0.&&age<4.){vec2 q=p-vec2(r.x*asp,r.y);float di=length(q);float fr=age*.42;float o=exp(-pow((di-fr)*14.,2.))*exp(-age*1.1)*r.w;ds+=q/(di+.001)*o*.035;an+=o;}}
 vec2 q=p*2.2;vec2 e=vec2(.01,0.);
 vec2 gr=vec2(onda(q+e.xy,t)-onda(q-e.xy,t),onda(q+e.yx,t)-onda(q-e.yx,t))/.02;
-vec2 pc=p*3.6+gr*.06+ds*6.;pc+=.32*vec2(sin(pc.y*1.3+t*.4),cos(pc.x*1.1-t*.35));
-float c1=cel(pc,t*.55),c2=cel(pc*1.9+3.1,t*.7);
-float wb=pow(1.-smoothstep(0.,.18,c1),2.2)*.75+pow(1.-smoothstep(0.,.12,c2),2.)*.35;
-float luz=smoothstep(1.25,.1,length(v-vec2(.78,.92)));
-float txt=mix(.55,1.,smoothstep(.0,.75,length((v-vec2(.12,.25))*vec2(1.,1.4))));
+vec2 pc=p*2.3+gr*.05+ds*5.;pc+=.38*vec2(sin(pc.y*1.1+t*.35),cos(pc.x*.9-t*.3));
+float c1=cel(pc,t*.45),c2=cel(pc*1.7+3.1,t*.6);
+float wb=pow(1.-smoothstep(0.,.34,c1),2.6)*.5+pow(1.-smoothstep(0.,.22,c2),2.4)*.18;
+float luz=smoothstep(1.3,.05,length(v-vec2(.8,.88)));
+float txt=mix(.12,1.,smoothstep(.15,.95,length((v-vec2(.2,.42))*vec2(.85,1.15))));
 vec3 base=mix(uA,uB,smoothstep(0.,1.,v.y*.8+.1));
-vec3 c=base+uL*wb*(.07+.2*luz)*txt+uG*pow(wb,3.)*.12*luz*txt+uL*an*.1;
+vec3 c=base+uL*wb*(.035+.12*luz)*txt+uG*pow(wb,3.)*.07*luz*txt+uL*an*.08;
 gl_FragColor=vec4(c,1.);}`;
 
   const hex = (s, padrao) => {

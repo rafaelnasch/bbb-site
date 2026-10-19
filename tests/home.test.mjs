@@ -177,7 +177,7 @@ test('primeira carga sem recurso de terceiros; LCP não é canvas (água e vapor
 });
 
 test('orçamento: JS da home <= 25 KB gzip (sem o GSAP do desktop), CSS crítico <= 14 KB, HTML válido', async () => {
-  const mods = JSON.parse(/<script type="application\/json" id="bbb-assets">([\s\S]*?)<\/script>/.exec(h)[1]);
+  const mods = JSON.parse(/<script type="application\/json" id="bbb-assets"[^>]*>([\s\S]*?)<\/script>/.exec(h)[1]);
   const nucleo = /<script type="module" src="([^"]+nucleo[^"]+)"/.exec(h)[1];
   const arq = (u) => readFileSync(join(DIST, u.slice(BASE_PATH.length)));
   const inline = /<script>([\s\S]*?)<\/script>/.exec(h)[1];
@@ -195,4 +195,62 @@ test('orçamento: JS da home <= 25 KB gzip (sem o GSAP do desktop), CSS crítico
 test('validador do build sem falhas na saída com a home', async () => {
   const { erros } = await validar(DIST);
   assert.deepEqual(erros.filter((e) => e.startsWith('index.html') || !/\.html:/.test(e)), []);
+});
+
+test('LCP: H1 com o subconjunto da Fraunces pré-carregado, que cobre todo o texto do H1; módulos e CSS do site depois da pintura', () => {
+  const cobertos = new Set([...readFileSync(join(paths.src, 'fonts', 'fraunces-titulo.txt'), 'utf8').replace(/\n$/, '')]);
+  const h1 = texto(/<h1[^>]*>([\s\S]*?)<\/h1>/.exec(h)[1]).trim();
+  const faltam = [...new Set([...h1])].filter((c) => !cobertos.has(c));
+  assert.deepEqual(faltam, [], 'rode node build/fontes-titulo.mjs depois de mudar o H1');
+  assert.match(h, /<link rel="preload" href="[^"]*fraunces-titulo\.[0-9a-f]{10}\.woff2" as="font" type="font\/woff2" crossorigin fetchpriority="high">/);
+  assert.doesNotMatch(h, /rel="preload" href="[^"]*fraunces-var-latin/, 'na home o preload é só o do H1');
+  assert.match(h, /font-family:"Fraunces Titulo"/);
+  // Módulos da página e CSS do site só depois da primeira pintura (core.js), fora do caminho do LCP.
+  assert.doesNotMatch(h, /<script type="module" src="[^"]*assets\/js\/(?!nucleo)/, 'só o núcleo no <head>');
+  const ass = /<script type="application\/json" id="bbb-assets"([^>]*)>([^<]*)</.exec(h);
+  const tardios = /data-tardios="([^"]+)"/.exec(ass[1])?.[1].split(' ') || [];
+  assert.deepEqual(tardios.sort(), Object.keys(JSON.parse(ass[2])).sort());
+  for (const m of ['home', 'agua', 'vapor', 'planta']) assert.ok(tardios.includes(m), m);
+  assert.match(ass[1], /data-css="[^"]*assets\/site\.[0-9a-f]{10}\.css"/);
+  assert.doesNotMatch(h, /<link rel="stylesheet" href="[^"]*site\.[0-9a-f]{10}\.css" media="print"/);
+  assert.match(h, /<noscript><link rel="stylesheet" href="[^"]*site\.[0-9a-f]{10}\.css"><\/noscript>/, 'sem JS, o CSS vem pelo noscript');
+});
+
+test('abertura: vitrine decorativa com os filmes das portas, recortados na foto; contagens reais', () => {
+  const v = /<div class="vitrine"[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/.exec(h)?.[0] || '';
+  assert.match(v, /aria-hidden="true"/);
+  for (const [path, id] of PORTAS) {
+    if (!h.includes(`data-porta="${id}"`)) continue;
+    assert.match(v, new RegExp(`data-cena="${id}"`));
+    assert.match(v, new RegExp(`data-cena-leg="${id}"[\\s\\S]*?>${cat(path).total_exibido}<`));
+  }
+  assert.doesNotMatch(h, /porta__video/, 'o filme toca na vitrine, não na miniatura');
+});
+
+test('fábrica: o prefixo "+ DE" fica menor, mas o texto do número continua literal', () => {
+  const nums = numerosDeclarados(empresa.numeros_declarados?.[0]?.literal).filter((x) => x.valor);
+  const dts = [...h.matchAll(/<div class="home-fab__num"[^>]*><dt class="num">([\s\S]*?)<\/dt>/g)].map((m) => texto(m[1]).replace(/\s+/g, ' ').trim());
+  assert.deepEqual(dts, nums.map((x) => x.valor.replace(/\s+/g, ' ').trim()));
+});
+
+test('escolhedor rápido explica quando a coleção lista peça de outro tipo (contagem por tipo)', () => {
+  const porSlug = new Map(produtos.map((p) => [p.slug, p]));
+  for (const [path, id, nome] of PORTAS) {
+    const tipo = { banheiras: 'banheira', spas: 'spa', ofuros: 'ofuro' }[id];
+    const outros = cat(path).produtos.map((s) => porSlug.get(s)).filter((p) => p && p.d_tipo !== tipo);
+    const nota = /<p class="home-esc__nota">([\s\S]*?)<\/p>/.exec(h)?.[1] || '';
+    if (!outros.length) continue;
+    assert.match(texto(nota), new RegExp(`A coleção ${nome} exibe ${cat(path).total_exibido} modelos`));
+    for (const p of outros) assert.ok(texto(nota).includes(p.nome), p.nome);
+  }
+});
+
+test('seções abaixo da primeira tela com content-visibility e altura reservada; a abertura e o tour não', () => {
+  const abre = /<section class="sala home-abre"[^>]*>/.exec(h)[0];
+  assert.doesNotMatch(abre, /content-visibility/);
+  for (const c of ['home-esc', 'home-salas', 'home-obra', 'home-lanc', 'home-fab', 'home-prova', 'home-comprar', 'home-lojas', 'home-fim']) {
+    const tag = new RegExp(`<section class="[^"]*\\b${c}\\b[^"]*"[^>]*>`).exec(h)?.[0] || '';
+    assert.match(tag, /content-visibility:auto;contain-intrinsic-size:auto \d+px/, c);
+  }
+  assert.match(h, /<footer class="rodape sala" id="rodape" style="content-visibility:auto;contain-intrinsic-size:auto \d+px">/);
 });

@@ -56,6 +56,13 @@ function ogPadrao() {
  * @param {string} [p.classe]     classe do <body>
  * @param {Array}  [p.critico]    extras de src/css/critico/ inline nesta página (ex.: ['peca'])
  * @param {string} [p.cssCritico] CSS crítico extra do tipo de página (já minificado)
+ * @param {Array}  [p.fontes]     fontes pré-carregadas (chaves de assets.fontes, ex.: 'fonts/fraunces-titulo.woff2');
+ *                                padrão: a Fraunces inteira (SPEC 5.3). A home pré-carrega só o subconjunto do H1.
+ * @param {boolean}[p.modulosTardios] módulos da página só pedidos depois do load (core.js), fora do caminho do LCP
+ * @param {boolean}[p.cssAposPintura] o CSS do site só é pedido depois da primeira pintura (core.js); a primeira
+ *                                tela tem de estar inteira no CSS crítico. Sem JS, o <noscript> carrega o CSS
+ * @param {number} [p.rodapeTardio] altura reservada (px, nunca menor que a real) para pular o layout do rodapé
+ *                                até ele chegar perto da tela (content-visibility); usado na home
  * @param {boolean}[p.bandeja]   false omite a bandeja do comparador (no próprio comparador ela só cobriria a página)
  */
 export function layout(p) {
@@ -76,6 +83,10 @@ export function layout(p) {
   if (Buffer.byteLength(critico) > LIMITES.cssCritico) {
     throw new Error(`${p.saida}: CSS crítico inline com ${Buffer.byteLength(critico)} bytes (teto ${LIMITES.cssCritico})`);
   }
+  const preloadFontes = p.fontes ? p.fontes.map((k) => {
+    if (!A.fontes[k]) throw new Error(`Fonte inexistente para preload: ${k}`);
+    return A.fontes[k];
+  }) : A.preload;
   const jsonld = (p.jsonld || []).map((o) => raw(`<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`));
 
   const doc = html`<!doctype html>
@@ -90,10 +101,10 @@ export function layout(p) {
 <link rel="canonical" href="${canonical}">
 <script>${raw(A.inlineJs)}</script>
 ${p.esperar ? html`<link rel="expect" href="#${p.esperar}" blocking="render">` : ''}
-${A.preload.map((h) => html`<link rel="preload" href="${h}" as="font" type="font/woff2" crossorigin>`)}
+${preloadFontes.map((h) => html`<link rel="preload" href="${h}" as="font" type="font/woff2" crossorigin${attrs({ fetchpriority: p.fontes ? 'high' : null })}>`)}
 ${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, as: l.as, type: l.type, fetchpriority: l.fetchpriority, imagesrcset: l.imagesrcset, imagesizes: l.imagesizes })}>`)}
 <style>${raw(critico)}</style>
-<link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>
+${p.cssAposPintura ? '' : html`<link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>`}
 <noscript><link rel="stylesheet" href="${A.cssSite}"></noscript>
 <meta name="theme-color" content="#071C2B">
 <link rel="icon" href="${url('brand/favicon-32.png')}" type="image/png" sizes="32x32">
@@ -114,9 +125,9 @@ ${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, a
 <meta name="twitter:description" content="${og.descricao || p.descricao}">
 <meta name="twitter:image" content="${ogImg}">
 ${jsonld}
-<script type="application/json" id="bbb-assets">${raw(JSON.stringify(mapaModulos).replace(/</g, '\\u003c'))}</script>
+<script type="application/json" id="bbb-assets"${attrs({ 'data-tardios': p.modulosTardios ? Object.keys(mapaModulos).join(' ') : null, 'data-css': p.cssAposPintura ? A.cssSite : null })}>${raw(JSON.stringify(mapaModulos).replace(/</g, '\\u003c'))}</script>
 <script type="module" src="${A.nucleo}"></script>
-${Object.values(mapaModulos).map((src) => html`<script type="module" src="${src}"></script>`)}
+${p.modulosTardios ? '' : Object.values(mapaModulos).map((src) => html`<script type="module" src="${src}"></script>`)}
 </head>
 <body${attrs({ class: p.classe || null })}>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -125,7 +136,7 @@ ${cabecalho({ ativo: p.ativo, sobre: p.sobre })}
 <main id="conteudo" tabindex="-1">
 ${p.corpo}
 </main>
-${rodape()}
+${rodape({ estilo: p.rodapeTardio ? `content-visibility:auto;contain-intrinsic-size:auto ${p.rodapeTardio}px` : null })}
 ${gavetaMenu({ ativo: p.ativo })}
 ${gavetaWhats()}
 ${p.bandeja === false ? '' : html`<div class="bandeja" data-bandeja hidden role="region" aria-label="Modelos para comparar">

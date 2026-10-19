@@ -1,0 +1,42 @@
+{
+ "gerado_de": "media/filmes/manifest.json (poster de cada filme de coleção)",
+ "recorte": {
+  "left": 399,
+  "top": 79,
+  "width": 484,
+  "height": 484
+ },
+ "lado": 240,
+ "portas": {
+  "banheiras": {
+   "avif": "media/home/porta-banheiras-240.avif",
+   "webp": "media/home/porta-banheiras-240.webp",
+   "lado": 240,
+   "poster": "media/filmes/colecao/banheiras-poster.webp"
+  },
+  "spas": {
+   "avif": "media/home/porta-spas-240.avif",
+   "webp": "media/home/porta-spas-240.webp",
+   "lado": 240,
+   "poster": "media/filmes/colecao/spas-poster.webp"
+  },
+  "ofuros": {
+   "avif": "media/home/porta-ofuros-240.avif",
+   "webp": "media/home/porta-ofuros-240.webp",
+   "lado": 240,
+   "poster": "media/filmes/colecao/ofuros-poster.webp"
+  },
+  "sauna": {
+   "avif": "media/home/porta-sauna-240.avif",
+   "webp": "media/home/porta-sauna-240.webp",
+   "lado": 240,
+   "poster": "media/filmes/colecao/sauna-poster.webp"
+  },
+  "lancamentos": {
+   "avif": "media/home/porta-lancamentos-240.avif",
+   "webp": "media/home/porta-lancamentos-240.webp",
+   "lado": 240,
+   "poster": "media/filmes/colecao/lancamentos-poster.webp"
+  }
+ }
+}

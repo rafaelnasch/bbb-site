@@ -25,8 +25,8 @@
     const blocos = new Map();
 
     const medir = () => {
-      const r = vista.getBoundingClientRect();
-      vw = r.width; vh = r.height; fit = vw / W;
+      // Tamanho de layout (sem transformações: o tour da home anima a escala da figura).
+      vw = vista.clientWidth; vh = vista.clientHeight; fit = vw / W;
     };
     const limitar = () => {
       const s = fit * z;
@@ -94,12 +94,19 @@
     const recentrar = () => { z = 1; x = 0; y = 0; pedir(); };
     fig.planta = { zoomEm, recentrar, centrarEm };
 
-    function centrarEm(px, py) {
+    function centrarEm(px, py, caixa = null) {
       // Leva o ponto (x, y em pixels da planta) ao centro, ampliando para 2,5x se estiver em 1x.
+      // Com caixa ({x0, y0, x1, y1} em pixels da planta), a vista não sai dela: se a caixa couber
+      // inteira na vista num eixo, fica centrada nesse eixo (usado pelo tour da home).
       if (z < 2) z = 2.5;
       const s = fit * z;
       x = vw / 2 - px * s;
       y = vh / 2 - py * s;
+      if (caixa) {
+        const prender = (v, a0, a1, tam) => ((a1 - a0) * s <= tam ? tam / 2 - ((a0 + a1) / 2) * s : Math.min(-a0 * s, Math.max(tam - a1 * s, v)));
+        x = prender(x, caixa.x0, caixa.x1, vw);
+        y = prender(y, caixa.y0, caixa.y1, vh);
+      }
       pedir();
     }
 
