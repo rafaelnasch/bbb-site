@@ -1,0 +1,279 @@
+{
+ "sha1": "64d07c6a24ac1c68cfa9b6efba133babc9cd6169",
+ "pdf_path": "plantas/banheiras/Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
+ "nome_arquivo": "Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Madrid%20-%201,20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 575,
+   "y": 1304,
+   "posicoes": [
+    {
+     "x": 575,
+     "y": 1304
+    }
+   ],
+   "tabela_x": 1991,
+   "tabela_y": 1414
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.7,
+   "valor_texto": "1,70",
+   "x": 1113,
+   "y": 923,
+   "posicoes": [
+    {
+     "x": 1113,
+     "y": 923
+    }
+   ],
+   "tabela_x": 1991,
+   "tabela_y": 1446
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.15,
+   "valor_texto": "1,15",
+   "x": 1158,
+   "y": 1256,
+   "posicoes": [
+    {
+     "x": 1158,
+     "y": 1256
+    }
+   ],
+   "tabela_x": 1993,
+   "tabela_y": 1488
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1378,
+   "y": 1301,
+   "posicoes": [
+    {
+     "x": 1378,
+     "y": 1301
+    }
+   ],
+   "tabela_x": 1996,
+   "tabela_y": 1523
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.68,
+   "valor_texto": "0,68",
+   "x": 915,
+   "y": 1303,
+   "posicoes": [
+    {
+     "x": 915,
+     "y": 1303
+    }
+   ],
+   "tabela_x": 1995,
+   "tabela_y": 1559
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.34,
+   "valor_texto": "0,34",
+   "x": 2671,
+   "y": 1124,
+   "posicoes": [
+    {
+     "x": 2671,
+     "y": 1124
+    }
+   ],
+   "tabela_x": 1994,
+   "tabela_y": 1600
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1520,
+     "y": 1289
+    },
+    {
+     "x": 2654,
+     "y": 1265
+    }
+   ],
+   "tabela_x": 1997,
+   "tabela_y": 1637
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.44,
+   "valor_texto": "0,44",
+   "x": 2476,
+   "y": 1096,
+   "posicoes": [
+    {
+     "x": 2476,
+     "y": 1096
+    }
+   ],
+   "tabela_x": 2003,
+   "tabela_y": 1681
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 2082,
+   "y": 1071,
+   "posicoes": [
+    {
+     "x": 2082,
+     "y": 1071
+    }
+   ],
+   "tabela_x": 2003,
+   "tabela_y": 1716
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.38,
+   "valor_texto": "1,38",
+   "x": 1131,
+   "y": 1365,
+   "posicoes": [
+    {
+     "x": 1131,
+     "y": 1365
+    }
+   ],
+   "tabela_x": 1997,
+   "tabela_y": 1754
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1434,
+   "y": 1474,
+   "posicoes": [
+    {
+     "x": 1434,
+     "y": 1474
+    }
+   ],
+   "tabela_x": 1995,
+   "tabela_y": 1794
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1405,
+   "y": 1329,
+   "posicoes": [
+    {
+     "x": 1405,
+     "y": 1329
+    }
+   ],
+   "tabela_x": 1995,
+   "tabela_y": 1839
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 847,
+   "y": 1303,
+   "posicoes": [
+    {
+     "x": 847,
+     "y": 1303
+    }
+   ],
+   "tabela_x": 1998,
+   "tabela_y": 1881
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-madrid-com-hidro-em-acrilico",
+   "rotulo": "1,20 x 1,70 x 0,44"
+  },
+  {
+   "slug": "banheira-dupla-madrid-com-hidro",
+   "rotulo": "1,20 x 1,70 x 0,44"
+  },
+  {
+   "slug": "banheira-dupla-madrid-completa-com-hidro-em-acrilico",
+   "rotulo": "1,20 x 1,70 x 0,44"
+  },
+  {
+   "slug": "banheira-dupla-madrid-completa-com-hidro",
+   "rotulo": "1,20 x 1,70 x 0,44"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-madrid-com-hidro-em-acrilico",
+    "rotulo": "1,20 x 1,70 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-madrid-com-hidro",
+    "rotulo": "1,20 x 1,70 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-madrid-completa-com-hidro-em-acrilico",
+    "rotulo": "1,20 x 1,70 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-madrid-completa-com-hidro",
+    "rotulo": "1,20 x 1,70 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

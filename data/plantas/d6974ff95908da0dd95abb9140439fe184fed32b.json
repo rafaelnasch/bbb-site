@@ -1,0 +1,38 @@
+{
+ "sha1": "d6974ff95908da0dd95abb9140439fe184fed32b",
+ "pdf_path": "plantas/banheiras/Ternura - 1,50 x 1,50 x 0,54 [GC].pdf",
+ "nome_arquivo": "Ternura - 1,50 x 1,50 x 0,54 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Ternura%20-%201,50%20x%201,50%20x%200,54%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "banheira-de-canto-ternura-completa-com-hidro",
+   "rotulo": "1,50 x 1,50 x 0,54"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

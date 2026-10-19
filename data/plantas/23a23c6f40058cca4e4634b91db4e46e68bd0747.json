@@ -1,0 +1,42 @@
+{
+ "sha1": "23a23c6f40058cca4e4634b91db4e46e68bd0747",
+ "pdf_path": "plantas/banheiras/Sensuale redonda - 1,60 x 1,60 x 0,43 [GC-AC].pdf",
+ "nome_arquivo": "Sensuale redonda - 1,60 x 1,60 x 0,43 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sensuale%20redonda%20-%201,60%20x%201,60%20x%200,43%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2374,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "banheira-redonda-sensuale-completa-com-hidro-em-acrilico",
+   "rotulo": "1,60 x 1,60 x 0,43"
+  },
+  {
+   "slug": "banheira-redonda-sensuale-completa-com-hidro",
+   "rotulo": "1,60 x 1,60 x 0,43"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": true,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

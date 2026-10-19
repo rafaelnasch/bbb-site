@@ -1,0 +1,263 @@
+{
+ "sha1": "b961cd3067367b7e2cce4c3f8888fd46b3520d00",
+ "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
+ "nome_arquivo": "Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,30%20x%200,39%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1872,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 1872,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2440,
+   "tabela_y": 690
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.3,
+   "valor_texto": "1,30",
+   "x": 1289,
+   "y": 742,
+   "posicoes": [
+    {
+     "x": 1289,
+     "y": 742
+    }
+   ],
+   "tabela_x": 2441,
+   "tabela_y": 733
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1337,
+   "y": 1133,
+   "posicoes": [
+    {
+     "x": 1337,
+     "y": 1133
+    }
+   ],
+   "tabela_x": 2442,
+   "tabela_y": 790
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.47,
+   "valor_texto": "0,47",
+   "x": 1537,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 1537,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2446,
+   "tabela_y": 837
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.37,
+   "valor_texto": "0,37",
+   "x": 1174,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 1174,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 2445,
+   "tabela_y": 884
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.29,
+   "valor_texto": "0,29",
+   "x": 1722,
+   "y": 1768,
+   "posicoes": [
+    {
+     "x": 1722,
+     "y": 1768
+    }
+   ],
+   "tabela_x": 2444,
+   "tabela_y": 939
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.25,
+   "valor_texto": "0,25",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1694,
+     "y": 1886
+    },
+    {
+     "x": 1696,
+     "y": 1060
+    }
+   ],
+   "tabela_x": 2447,
+   "tabela_y": 990
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1257,
+   "y": 1729,
+   "posicoes": [
+    {
+     "x": 1257,
+     "y": 1729
+    }
+   ],
+   "tabela_x": 2445,
+   "tabela_y": 1043
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.1,
+   "valor_texto": "1,10",
+   "x": 1288,
+   "y": 1036,
+   "posicoes": [
+    {
+     "x": 1288,
+     "y": 1036
+    }
+   ],
+   "tabela_x": 2442,
+   "tabela_y": 1102
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1580,
+   "y": 1206,
+   "posicoes": [
+    {
+     "x": 1580,
+     "y": 1206
+    }
+   ],
+   "tabela_x": 2440,
+   "tabela_y": 1143
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.65,
+   "valor_texto": "0,65",
+   "x": 1503,
+   "y": 1088,
+   "posicoes": [
+    {
+     "x": 1503,
+     "y": 1088
+    }
+   ],
+   "tabela_x": 2452,
+   "tabela_y": 1198
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.54,
+   "valor_texto": "0,54",
+   "x": 1058,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 1058,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 2459,
+   "tabela_y": 1251
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-buzios-com-hidro-em-acrilico",
+   "rotulo": "0,80 x 1,30 x 0,39"
+  },
+  {
+   "slug": "banheira-retangular-buzios-com-hidro",
+   "rotulo": "0,80 x 1,30 x 0,39"
+  },
+  {
+   "slug": "banheira-retangular-buzios-completa-com-hidro-em-acrilico",
+   "rotulo": "0,80 x 1,30 x 0,39"
+  },
+  {
+   "slug": "banheira-retangular-buzios-completa-com-hidro",
+   "rotulo": "0,80 x 1,30 x 0,39"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-buzios-com-hidro-em-acrilico",
+    "rotulo": "0,80 x 1,30 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-buzios-com-hidro",
+    "rotulo": "0,80 x 1,30 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-buzios-completa-com-hidro-em-acrilico",
+    "rotulo": "0,80 x 1,30 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-buzios-completa-com-hidro",
+    "rotulo": "0,80 x 1,30 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

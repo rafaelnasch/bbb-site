@@ -1,0 +1,58 @@
+{
+ "sha1": "fbd8b8f8740b420f7db4f48ec849255dc5c3d98d",
+ "pdf_path": "plantas/banheiras/Lyon - 1,43 x 1,96 x 0,51 [GC-AC].pdf",
+ "nome_arquivo": "Lyon - 1,43 x 1,96 x 0,51 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Lyon%20-%201,43%20x%201,96%20x%200,51%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2374,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "banheira-dupla-lyon-com-abas-completa-com-hidro-em-acrilico",
+   "rotulo": "1,43 x 1,96 x 0,51"
+  },
+  {
+   "slug": "banheira-dupla-lyon-com-abas-completa-com-hidro",
+   "rotulo": "1,43 x 1,96 x 0,51"
+  },
+  {
+   "slug": "banheira-dupla-lyon-com-hidro-em-acrilico",
+   "rotulo": "1,43 x 1,96 x 0,51"
+  },
+  {
+   "slug": "banheira-dupla-lyon-com-hidro",
+   "rotulo": "1,43 x 1,96 x 0,51"
+  },
+  {
+   "slug": "banheira-dupla-lyon-completa-com-hidro-em-acrilico",
+   "rotulo": "1,43 x 1,96 x 0,51"
+  },
+  {
+   "slug": "banheira-dupla-lyon-completa-com-hidro",
+   "rotulo": "1,43 x 1,96 x 051"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": true,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "contorno"
+}

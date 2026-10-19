@@ -1,0 +1,263 @@
+{
+ "sha1": "e335c3714e5ab105af39ea471b5a51f0907a6395",
+ "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
+ "nome_arquivo": "Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1962,
+   "y": 1104,
+   "posicoes": [
+    {
+     "x": 1962,
+     "y": 1104
+    }
+   ],
+   "tabela_x": 2337,
+   "tabela_y": 708
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.39,
+   "valor_texto": "1,39",
+   "x": 1325,
+   "y": 726,
+   "posicoes": [
+    {
+     "x": 1325,
+     "y": 726
+    }
+   ],
+   "tabela_x": 2338,
+   "tabela_y": 752
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.73,
+   "valor_texto": "0,73",
+   "x": 1429,
+   "y": 1143,
+   "posicoes": [
+    {
+     "x": 1429,
+     "y": 1143
+    }
+   ],
+   "tabela_x": 2339,
+   "tabela_y": 810
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1654,
+   "y": 1105,
+   "posicoes": [
+    {
+     "x": 1654,
+     "y": 1105
+    }
+   ],
+   "tabela_x": 2343,
+   "tabela_y": 857
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1237,
+   "y": 1105,
+   "posicoes": [
+    {
+     "x": 1237,
+     "y": 1105
+    }
+   ],
+   "tabela_x": 2342,
+   "tabela_y": 906
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": 1774,
+   "y": 1757,
+   "posicoes": [
+    {
+     "x": 1774,
+     "y": 1757
+    }
+   ],
+   "tabela_x": 2341,
+   "tabela_y": 962
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.24,
+   "valor_texto": "0,24",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1789,
+     "y": 1152
+    },
+    {
+     "x": 1813,
+     "y": 1884
+    }
+   ],
+   "tabela_x": 2345,
+   "tabela_y": 1014
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1611,
+   "y": 1718,
+   "posicoes": [
+    {
+     "x": 1611,
+     "y": 1718
+    }
+   ],
+   "tabela_x": 2343,
+   "tabela_y": 1068
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.15,
+   "valor_texto": "1,15",
+   "x": 1326,
+   "y": 1057,
+   "posicoes": [
+    {
+     "x": 1326,
+     "y": 1057
+    }
+   ],
+   "tabela_x": 2341,
+   "tabela_y": 1121
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1667,
+   "y": 1252,
+   "posicoes": [
+    {
+     "x": 1667,
+     "y": 1252
+    }
+   ],
+   "tabela_x": 2338,
+   "tabela_y": 1176
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.53,
+   "valor_texto": "0,53",
+   "x": 1585,
+   "y": 1104,
+   "posicoes": [
+    {
+     "x": 1585,
+     "y": 1104
+    }
+   ],
+   "tabela_x": 2338,
+   "tabela_y": 1238
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.65,
+   "valor_texto": "0,65",
+   "x": 1045,
+   "y": 1105,
+   "posicoes": [
+    {
+     "x": 1045,
+     "y": 1105
+    }
+   ],
+   "tabela_x": 2342,
+   "tabela_y": 1286
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-manaus-com-hidro-em-acrilico",
+   "rotulo": "0,80 x 1,39 x 0,38"
+  },
+  {
+   "slug": "banheira-retangular-manaus-com-hidro",
+   "rotulo": "0,80 x 1,39 x 0,38"
+  },
+  {
+   "slug": "banheira-retangular-manaus-completa-com-hidro-em-acrilico",
+   "rotulo": "0,80 x 1,39 x 0,38"
+  },
+  {
+   "slug": "banheira-retangular-manaus-completa-com-hidro",
+   "rotulo": "0,80 x 1,39 x 0,38"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-manaus-com-hidro-em-acrilico",
+    "rotulo": "0,80 x 1,39 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-manaus-com-hidro",
+    "rotulo": "0,80 x 1,39 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-manaus-completa-com-hidro-em-acrilico",
+    "rotulo": "0,80 x 1,39 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-manaus-completa-com-hidro",
+    "rotulo": "0,80 x 1,39 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

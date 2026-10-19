@@ -1074,7 +1074,7 @@
         "rotulo": "0,79 x 1,41 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
         "sha1": "75989809d5b14a699935be18472fd837ca8a067d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,41%20x%200,37%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
         "baixado": true
@@ -1083,7 +1083,7 @@
         "rotulo": "0,79 x 1,48 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,48 x 0,37 [GC].pdf",
         "sha1": "329abcf342447ae508199271832bca7294601bab",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,48%20x%200,37%20%5bGC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,48 x 0,37 [GC].pdf",
         "baixado": true
@@ -1098,7 +1098,7 @@
         "rotulo": "0,79 x 1,69 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,69 x 0,37 [GC-AC].pdf",
         "sha1": "a4942b37d6970f397e6bf89e4135cf15a2a8c66b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,69%20x%200,37%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,69 x 0,37 [GC-AC].pdf",
         "baixado": true
@@ -1107,7 +1107,7 @@
         "rotulo": "0,79 x 1,79 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,79 x 0,37 [GC-AC].pdf",
         "sha1": "7c2a0e118ba0574e30fbeb41341ce625fc43968d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,79%20x%200,37%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,79 x 0,37 [GC-AC].pdf",
         "baixado": true
@@ -1523,7 +1523,7 @@
         "rotulo": "0,79 x 1,41 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
         "sha1": "75989809d5b14a699935be18472fd837ca8a067d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,41%20x%200,37%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
         "baixado": true
@@ -1532,7 +1532,7 @@
         "rotulo": "0,79 x 1,48 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,48 x 0,37 [GC].pdf",
         "sha1": "329abcf342447ae508199271832bca7294601bab",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,48%20x%200,37%20%5bGC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,48 x 0,37 [GC].pdf",
         "baixado": true
@@ -1547,7 +1547,7 @@
         "rotulo": "0,79 x 1,69 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,69 x 0,37 [GC-AC].pdf",
         "sha1": "a4942b37d6970f397e6bf89e4135cf15a2a8c66b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,69%20x%200,37%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,69 x 0,37 [GC-AC].pdf",
         "baixado": true
@@ -1556,7 +1556,7 @@
         "rotulo": "0,79 x 1,79 x 0,37",
         "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,79 x 0,37 [GC-AC].pdf",
         "sha1": "7c2a0e118ba0574e30fbeb41341ce625fc43968d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,79%20x%200,37%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua linea - 0,79 x 1,79 x 0,37 [GC-AC].pdf",
         "baixado": true
@@ -1960,7 +1960,7 @@
         "rotulo": "0,69 x 1,49 x 0,41",
         "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,49 x 0,41 [GC-AC].pdf",
         "sha1": "ec93c554a7997b5837bc7db031b87bdc9cbdff87",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,49%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua spaço - 0,69 x 1,49 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -1969,7 +1969,7 @@
         "rotulo": "0,69 x 1,59 x 0,41",
         "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,59 x 0,41 [GC-AC].pdf",
         "sha1": "e8d23f3baaee8d1ba29649568179b3a79e36584d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,59%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua spaço - 0,69 x 1,59 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -1987,7 +1987,7 @@
         "rotulo": "0,69 x 1,79 x 0,41",
         "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,79 x 0,41 [GC-AC].pdf",
         "sha1": "15988b8642ad233c9592ee2637bde4856ee67c46",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,79%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua spaço - 0,69 x 1,79 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -2388,7 +2388,7 @@
         "rotulo": "0,69 x 1,49 x 0,41",
         "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,49 x 0,41 [GC-AC].pdf",
         "sha1": "ec93c554a7997b5837bc7db031b87bdc9cbdff87",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,49%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua spaço - 0,69 x 1,49 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -2397,7 +2397,7 @@
         "rotulo": "0,69 x 1,59 x 0,41",
         "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,59 x 0,41 [GC-AC].pdf",
         "sha1": "e8d23f3baaee8d1ba29649568179b3a79e36584d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,59%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua spaço - 0,69 x 1,59 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -2771,7 +2771,7 @@
         "rotulo": "0,90 x 1,80 x 0,36",
         "pdf_path": "plantas/banheiras/Acqua stylo - 0,90 x 1,80 x 0,36 [GC-AC].pdf",
         "sha1": "329ca78748ba738bb1e2eb7e038189ce9840fde4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20stylo%20-%200,90%20x%201,80%20x%200,36%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua stylo - 0,90 x 1,80 x 0,36 [GC-AC].pdf",
         "baixado": true
@@ -3128,7 +3128,7 @@
         "rotulo": "0,90 x 1,80 x 0,36",
         "pdf_path": "plantas/banheiras/Acqua stylo - 0,90 x 1,80 x 0,36 [GC-AC].pdf",
         "sha1": "329ca78748ba738bb1e2eb7e038189ce9840fde4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20stylo%20-%200,90%20x%201,80%20x%200,36%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua stylo - 0,90 x 1,80 x 0,36 [GC-AC].pdf",
         "baixado": true
@@ -3482,7 +3482,7 @@
         "rotulo": "0,80 x 1,80 x 0,41",
         "pdf_path": "plantas/banheiras/Acqua top - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "sha1": "a0ae194013f7148890b31a486c55841116de9334",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua top - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -3858,7 +3858,7 @@
         "rotulo": "0,81 x 1,60 x 0,42",
         "pdf_path": "plantas/banheiras/Acqua top - 0,81 x 1,60 x 0,42 [GC].pdf",
         "sha1": "411ecabc2264dba5d35959ee054e8e92d8f53370",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,81%20x%201,60%20x%200,42%20%5bGC%5d.pdf",
         "nome_arquivo": "Acqua top - 0,81 x 1,60 x 0,42 [GC].pdf",
         "baixado": true
@@ -3867,7 +3867,7 @@
         "rotulo": "0,81 x 1,70 x 0,42",
         "pdf_path": "plantas/banheiras/Acqua top - 0,81 x 1,70 x 0,42 [GC].pdf",
         "sha1": "d362b795871147ac1ad7ba3c62275002ad66bbb8",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,81%20x%201,70%20x%200,42%20%5bGC%5d.pdf",
         "nome_arquivo": "Acqua top - 0,81 x 1,70 x 0,42 [GC].pdf",
         "baixado": true
@@ -3876,7 +3876,7 @@
         "rotulo": "0,80 x 1,80 x 0,41",
         "pdf_path": "plantas/banheiras/Acqua top - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "sha1": "a0ae194013f7148890b31a486c55841116de9334",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua top - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -4365,7 +4365,7 @@
         "rotulo": "0,79 x 0,99 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 0,99 x 0,39 [GC-AC].pdf",
         "sha1": "1b80c946e37a92bc71f41d552892dd5ebf8d3299",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%200,99%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 0,99 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4374,7 +4374,7 @@
         "rotulo": "0,79 x 1,09 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,09 x 0,39 [GC-AC].pdf",
         "sha1": "755183833003f8bdc461a48f95b80de7a8000341",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,09%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,09 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4383,7 +4383,7 @@
         "rotulo": "0,79 x 1,19  x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
         "sha1": "082fbce11715a25aa6475ff5d592551f6b5a0ee0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,19%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4392,7 +4392,7 @@
         "rotulo": "0,79 x 1,29 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,29 x 0,39 [GC-AC].pdf",
         "sha1": "5209f66f5ce0658331b9c506af6aee8952f44bc1",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,29%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,29 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4401,7 +4401,7 @@
         "rotulo": "0,79 x 1,39 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,39 x 0,39 [GC-AC].pdf",
         "sha1": "c6193ba0cce824ec05a016b05dc1a14f20c52674",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,39%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,39 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4410,7 +4410,7 @@
         "rotulo": "0,80 x 1,49 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,80 x 1,49 x 0,39 [GC-AC].pdf",
         "sha1": "81525c5620582151c10a9895f9d72b1a3a30f3db",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,80%20x%201,49%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,80 x 1,49 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4419,7 +4419,7 @@
         "rotulo": "0,79 x 1,59 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,59 x 0,39 [GC-AC].pdf",
         "sha1": "c46a8cf02ba78b8631b671571593ccc9dd57956c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,59%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,59 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4428,7 +4428,7 @@
         "rotulo": "0,79 x 1,69 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,69 x 0,39 [GC-AC].pdf",
         "sha1": "311a6f9cb811db365f7426d29c7010547848be2a",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,69%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,69 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4437,7 +4437,7 @@
         "rotulo": "0,80 x 1,80 x 0,40",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,80 x 1,80 x 0,40 [GC-AC].pdf",
         "sha1": "295b0a6dafd478579ae13b906b0029d214e3666a",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,80%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,80 x 1,80 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -4927,7 +4927,7 @@
         "rotulo": "0,79 x 0,99 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 0,99 x 0,39 [GC-AC].pdf",
         "sha1": "1b80c946e37a92bc71f41d552892dd5ebf8d3299",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%200,99%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 0,99 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4936,7 +4936,7 @@
         "rotulo": "0,79 x 1,09 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,09 x 0,39 [GC-AC].pdf",
         "sha1": "755183833003f8bdc461a48f95b80de7a8000341",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,09%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,09 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4945,7 +4945,7 @@
         "rotulo": "0,79 x 1,19  x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
         "sha1": "082fbce11715a25aa6475ff5d592551f6b5a0ee0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,19%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4954,7 +4954,7 @@
         "rotulo": "0,79 x 1,29 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,29 x 0,39 [GC-AC].pdf",
         "sha1": "5209f66f5ce0658331b9c506af6aee8952f44bc1",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,29%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,29 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4963,7 +4963,7 @@
         "rotulo": "0,79 x 1,39 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,39 x 0,39 [GC-AC].pdf",
         "sha1": "c6193ba0cce824ec05a016b05dc1a14f20c52674",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,39%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,39 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4972,7 +4972,7 @@
         "rotulo": "0,80 x 1,49 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,80 x 1,49 x 0,39 [GC-AC].pdf",
         "sha1": "81525c5620582151c10a9895f9d72b1a3a30f3db",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,80%20x%201,49%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,80 x 1,49 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4981,7 +4981,7 @@
         "rotulo": "0,79 x 1,59 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,59 x 0,39 [GC-AC].pdf",
         "sha1": "c46a8cf02ba78b8631b671571593ccc9dd57956c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,59%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,59 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4990,7 +4990,7 @@
         "rotulo": "0,79 x 1,69 x 0,39",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,69 x 0,39 [GC-AC].pdf",
         "sha1": "311a6f9cb811db365f7426d29c7010547848be2a",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,69%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,79 x 1,69 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -4999,7 +4999,7 @@
         "rotulo": "0,80 x 1,80 x 0,40",
         "pdf_path": "plantas/banheiras/Acqua vip - 0,80 x 1,80 x 0,40 [GC-AC].pdf",
         "sha1": "295b0a6dafd478579ae13b906b0029d214e3666a",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,80%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Acqua vip - 0,80 x 1,80 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -7470,7 +7470,7 @@
         "rotulo": "1,38 x 1,38 x 0,45",
         "pdf_path": "plantas/banheiras/Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "sha1": "ebcc35fa35c11a3aa61b59a5398906422a3e17b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Santa%20monica%20-%201,38%20x%201,38%20x%200,45%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "baixado": true
@@ -7781,7 +7781,7 @@
         "rotulo": "1,38 x 1,38 x 0,45",
         "pdf_path": "plantas/banheiras/Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "sha1": "ebcc35fa35c11a3aa61b59a5398906422a3e17b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Santa%20monica%20-%201,38%20x%201,38%20x%200,45%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "baixado": true
@@ -8075,7 +8075,7 @@
         "rotulo": "1,38 x 1,38 x 0,45",
         "pdf_path": "plantas/banheiras/Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "sha1": "ebcc35fa35c11a3aa61b59a5398906422a3e17b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Santa%20monica%20-%201,38%20x%201,38%20x%200,45%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "baixado": true
@@ -8401,7 +8401,7 @@
         "rotulo": "1,38 x 1,38 x 0,45",
         "pdf_path": "plantas/banheiras/Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "sha1": "ebcc35fa35c11a3aa61b59a5398906422a3e17b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Santa%20monica%20-%201,38%20x%201,38%20x%200,45%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
         "baixado": true
@@ -11369,7 +11369,7 @@
         "rotulo": "1,57 x 1,57 x 0,51",
         "pdf_path": "plantas/banheiras/Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "sha1": "0231cc09abc1515351d5a4c90bd9fcad41104fc6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Veneza%20-%201,57%20x%201,57%20x%200,51%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "baixado": true
@@ -11674,7 +11674,7 @@
         "rotulo": "1,57 x 1,57 x 0,51",
         "pdf_path": "plantas/banheiras/Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "sha1": "0231cc09abc1515351d5a4c90bd9fcad41104fc6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Veneza%20-%201,57%20x%201,57%20x%200,51%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "baixado": true
@@ -11974,7 +11974,7 @@
         "rotulo": "1,57 x 1,57 x 0,51",
         "pdf_path": "plantas/banheiras/Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "sha1": "0231cc09abc1515351d5a4c90bd9fcad41104fc6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Veneza%20-%201,57%20x%201,57%20x%200,51%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "baixado": true
@@ -12297,7 +12297,7 @@
         "rotulo": "1,57 x 1,57 x 0,51",
         "pdf_path": "plantas/banheiras/Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "sha1": "0231cc09abc1515351d5a4c90bd9fcad41104fc6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Veneza%20-%201,57%20x%201,57%20x%200,51%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
         "baixado": true
@@ -13887,7 +13887,7 @@
         "rotulo": "1,09 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -13896,7 +13896,7 @@
         "rotulo": "1,09 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "045afa71db34a2c697c5f487eac51c399694a7c0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -13905,7 +13905,7 @@
         "rotulo": "1,09 x 1,59 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
         "sha1": "cdec52b5de727a9b07db3dad5edafedd0bac6070",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -13914,7 +13914,7 @@
         "rotulo": "1,09 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -14270,7 +14270,7 @@
         "rotulo": "1,09 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -14279,7 +14279,7 @@
         "rotulo": "1,09 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "045afa71db34a2c697c5f487eac51c399694a7c0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -14288,7 +14288,7 @@
         "rotulo": "1,09 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -14675,7 +14675,7 @@
         "rotulo": "1,09 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -14684,7 +14684,7 @@
         "rotulo": "1,09 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "045afa71db34a2c697c5f487eac51c399694a7c0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -14693,7 +14693,7 @@
         "rotulo": "1,09 x 1,59 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
         "sha1": "cdec52b5de727a9b07db3dad5edafedd0bac6070",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -14702,7 +14702,7 @@
         "rotulo": "1,09 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -15091,7 +15091,7 @@
         "rotulo": "1,09 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -15100,7 +15100,7 @@
         "rotulo": "1,09 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "045afa71db34a2c697c5f487eac51c399694a7c0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -15109,7 +15109,7 @@
         "rotulo": "1,09 x 1,59 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
         "sha1": "cdec52b5de727a9b07db3dad5edafedd0bac6070",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -15118,7 +15118,7 @@
         "rotulo": "1,09 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -15435,7 +15435,7 @@
         "rotulo": "1,15 x 1,43 x 0,43",
         "pdf_path": "plantas/banheiras/Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "sha1": "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Austria%20-%201,15%20x%201,43%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -15746,7 +15746,7 @@
         "rotulo": "1,15 x 1,43 x 0,43",
         "pdf_path": "plantas/banheiras/Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "sha1": "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Austria%20-%201,15%20x%201,43%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -16045,7 +16045,7 @@
         "rotulo": "1,15 x 1,43 x 0,43",
         "pdf_path": "plantas/banheiras/Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "sha1": "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Austria%20-%201,15%20x%201,43%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -16353,7 +16353,7 @@
         "rotulo": "1,15 x 1,43 x 0,43",
         "pdf_path": "plantas/banheiras/Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "sha1": "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Austria%20-%201,15%20x%201,43%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -16735,7 +16735,7 @@
         "rotulo": "1,20 x 1,40 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "sha1": "e9c26dfc3290225e8e996201d24f49d8a8b301e4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,40%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -16744,7 +16744,7 @@
         "rotulo": "1,20 x 1,50 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "sha1": "d8ac367b4d99e7e69f53f823618caa367a1829da",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,50%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -16753,7 +16753,7 @@
         "rotulo": "1,20 x 1,60 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "sha1": "886217edc4018851a658a5be77f7c224960b62f0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,60%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -16762,7 +16762,7 @@
         "rotulo": "1,20 x 1,70 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "sha1": "59f09ba69f10aea74c31e45a852c41d90b926cd8",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,70%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -16771,7 +16771,7 @@
         "rotulo": "1,20 x 1,80 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "sha1": "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17174,7 +17174,7 @@
         "rotulo": "1,20 x 1,40 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "sha1": "e9c26dfc3290225e8e996201d24f49d8a8b301e4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,40%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17183,7 +17183,7 @@
         "rotulo": "1,20 x 1,50 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "sha1": "d8ac367b4d99e7e69f53f823618caa367a1829da",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,50%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17192,7 +17192,7 @@
         "rotulo": "1,20 x 1,60 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "sha1": "886217edc4018851a658a5be77f7c224960b62f0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,60%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17201,7 +17201,7 @@
         "rotulo": "1,20 x 1,70 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "sha1": "59f09ba69f10aea74c31e45a852c41d90b926cd8",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,70%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17210,7 +17210,7 @@
         "rotulo": "1,20 x 1,80 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "sha1": "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17613,7 +17613,7 @@
         "rotulo": "1,20 x 1,40 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "sha1": "e9c26dfc3290225e8e996201d24f49d8a8b301e4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,40%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17622,7 +17622,7 @@
         "rotulo": "1,20 x 1,50 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "sha1": "d8ac367b4d99e7e69f53f823618caa367a1829da",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,50%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17631,7 +17631,7 @@
         "rotulo": "1,20 x 1,60 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "sha1": "886217edc4018851a658a5be77f7c224960b62f0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,60%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17640,7 +17640,7 @@
         "rotulo": "1,20 x 1,70 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "sha1": "59f09ba69f10aea74c31e45a852c41d90b926cd8",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,70%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -17649,7 +17649,7 @@
         "rotulo": "1,20 x 1,80 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "sha1": "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -18062,7 +18062,7 @@
         "rotulo": "1,20 x 1,40 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "sha1": "e9c26dfc3290225e8e996201d24f49d8a8b301e4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,40%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -18071,7 +18071,7 @@
         "rotulo": "1,20 x 1,50 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "sha1": "d8ac367b4d99e7e69f53f823618caa367a1829da",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,50%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -18080,7 +18080,7 @@
         "rotulo": "1,20 x 1,60 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "sha1": "886217edc4018851a658a5be77f7c224960b62f0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,60%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -18089,7 +18089,7 @@
         "rotulo": "1,20 x 1,70 x 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "sha1": "59f09ba69f10aea74c31e45a852c41d90b926cd8",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,70%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -18098,7 +18098,7 @@
         "rotulo": "1,20 x 1,80 , 0,40",
         "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "sha1": "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
         "baixado": true,
@@ -18454,7 +18454,7 @@
         "rotulo": "1,19 x 1,69 x 0,42",
         "pdf_path": "plantas/banheiras/California - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "sha1": "abd44c6659463bdbfb775d37efdaf9c63dc7b8f9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "California - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -18463,7 +18463,7 @@
         "rotulo": "1,29 x 1,78 x 0,40",
         "pdf_path": "plantas/banheiras/California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
         "sha1": "12f5ed700428073bb6caaa40231020d589fdabfb",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,29%20x%201,78%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -18811,7 +18811,7 @@
         "rotulo": "1,19 x 1,69 x 0,42",
         "pdf_path": "plantas/banheiras/California - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "sha1": "abd44c6659463bdbfb775d37efdaf9c63dc7b8f9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "California - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -18820,7 +18820,7 @@
         "rotulo": "1,29 x 1,78 x 0,40",
         "pdf_path": "plantas/banheiras/California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
         "sha1": "12f5ed700428073bb6caaa40231020d589fdabfb",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,29%20x%201,78%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -19175,7 +19175,7 @@
         "rotulo": "1,19 x 1,69 x 0,42",
         "pdf_path": "plantas/banheiras/California - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "sha1": "abd44c6659463bdbfb775d37efdaf9c63dc7b8f9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "California - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -19184,7 +19184,7 @@
         "rotulo": "1,29 x 1,78 x 0,40",
         "pdf_path": "plantas/banheiras/California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
         "sha1": "12f5ed700428073bb6caaa40231020d589fdabfb",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,29%20x%201,78%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -19516,7 +19516,7 @@
         "rotulo": "1,08 x 1,81 x 0,53",
         "pdf_path": "plantas/banheiras/Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "sha1": "e2a1e5dcf9de6dc151174da7fd4a3eab35215763",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Cancun%20-%201,08%20x%201,81%20x%200,53%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "baixado": true
@@ -19827,7 +19827,7 @@
         "rotulo": "1,08 x 1,81 x 0,53",
         "pdf_path": "plantas/banheiras/Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "sha1": "e2a1e5dcf9de6dc151174da7fd4a3eab35215763",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Cancun%20-%201,08%20x%201,81%20x%200,53%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "baixado": true
@@ -20137,7 +20137,7 @@
         "rotulo": "1,08 x 1,81 x 0,53",
         "pdf_path": "plantas/banheiras/Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "sha1": "e2a1e5dcf9de6dc151174da7fd4a3eab35215763",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Cancun%20-%201,08%20x%201,81%20x%200,53%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "baixado": true
@@ -20454,7 +20454,7 @@
         "rotulo": "1,08 x 1,81 x 0,53",
         "pdf_path": "plantas/banheiras/Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "sha1": "e2a1e5dcf9de6dc151174da7fd4a3eab35215763",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Cancun%20-%201,08%20x%201,81%20x%200,53%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
         "baixado": true
@@ -21761,7 +21761,7 @@
         "rotulo": "1,20 x 1,59 x 0,41",
         "pdf_path": "plantas/banheiras/Essenciale - 1,20 x 1,59 x 0,41 [GC].pdf",
         "sha1": "f5e1c50d831639980e6ebd428274d3c8ca78166c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Essenciale%20-%201,20%20x%201,59%20x%200,41%20%5bGC%5d.pdf",
         "nome_arquivo": "Essenciale - 1,20 x 1,59 x 0,41 [GC].pdf",
         "baixado": true
@@ -22072,7 +22072,7 @@
         "rotulo": "1,19 x 1,69 x 0,42",
         "pdf_path": "plantas/banheiras/Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "sha1": "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Firenze%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -22383,7 +22383,7 @@
         "rotulo": "1,19 x 1,69 x 0,42",
         "pdf_path": "plantas/banheiras/Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "sha1": "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Firenze%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -22698,7 +22698,7 @@
         "rotulo": "1,19 x 1,69 x 0,42",
         "pdf_path": "plantas/banheiras/Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "sha1": "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Firenze%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -23021,7 +23021,7 @@
         "rotulo": "1,19 x 1,69 x 0,42",
         "pdf_path": "plantas/banheiras/Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "sha1": "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Firenze%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -23367,7 +23367,7 @@
         "rotulo": "1,19 x 1,80 x 0,48",
         "pdf_path": "plantas/banheiras/Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
         "sha1": "b0e12533a00c6459ef3c65d945fa631de888b8fd",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,19%20x%201,80%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -23376,7 +23376,7 @@
         "rotulo": "1,40 x 1,78 x 0,48",
         "pdf_path": "plantas/banheiras/Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
         "sha1": "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,40%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -23725,7 +23725,7 @@
         "rotulo": "1,19 x 1,80 x 0,48",
         "pdf_path": "plantas/banheiras/Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
         "sha1": "b0e12533a00c6459ef3c65d945fa631de888b8fd",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,19%20x%201,80%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -23734,7 +23734,7 @@
         "rotulo": "1,40 x 1,78 x 0,48",
         "pdf_path": "plantas/banheiras/Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
         "sha1": "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,40%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -24079,7 +24079,7 @@
         "rotulo": "1,19 x 1,80 x 0,48",
         "pdf_path": "plantas/banheiras/Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
         "sha1": "b0e12533a00c6459ef3c65d945fa631de888b8fd",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,19%20x%201,80%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -24088,7 +24088,7 @@
         "rotulo": "1,40 x 1,78 x 0,48",
         "pdf_path": "plantas/banheiras/Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
         "sha1": "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,40%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -24771,7 +24771,7 @@
         "rotulo": "1,13 x 1,49 x 0,39",
         "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
         "sha1": "a1a7715851daa411970ff2a412c691d8230772f2",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,49%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -24780,7 +24780,7 @@
         "rotulo": "1,13 x 1,59 x 0,39",
         "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,59 x 0,39 [GC-AC].pdf",
         "sha1": "556eb4d6147d98571ded2133767941fbd8a9ba0f",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,59%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havana - 1,13 x 1,59 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -24789,7 +24789,7 @@
         "rotulo": "1,13 x 1,69 x 0,39",
         "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,69 x 0,39 [GC-AC].pdf",
         "sha1": "7fd5339ed299785b5e7805412980a556274d45dc",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,69%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havana - 1,13 x 1,69 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -25158,7 +25158,7 @@
         "rotulo": "1,13 x 1,49 x 0,39",
         "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
         "sha1": "a1a7715851daa411970ff2a412c691d8230772f2",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,49%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -25167,7 +25167,7 @@
         "rotulo": "1,13 x 1,59 x 0,39",
         "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,59 x 0,39 [GC-AC].pdf",
         "sha1": "556eb4d6147d98571ded2133767941fbd8a9ba0f",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,59%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havana - 1,13 x 1,59 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -25176,7 +25176,7 @@
         "rotulo": "1,13 x 1,69 x 0,39",
         "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,69 x 0,39 [GC-AC].pdf",
         "sha1": "7fd5339ed299785b5e7805412980a556274d45dc",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,69%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havana - 1,13 x 1,69 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -25488,7 +25488,7 @@
         "rotulo": "1,19 x 1,69 x 0,49",
         "pdf_path": "plantas/banheiras/Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "sha1": "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Hippolyte%20-%201,19%20x%201,69%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -25799,7 +25799,7 @@
         "rotulo": "1,19 x 1,69 x 0,49",
         "pdf_path": "plantas/banheiras/Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "sha1": "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Hippolyte%20-%201,19%20x%201,69%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -26109,7 +26109,7 @@
         "rotulo": "1,19 x 1,69 x 0,49",
         "pdf_path": "plantas/banheiras/Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "sha1": "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Hippolyte%20-%201,19%20x%201,69%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -26426,7 +26426,7 @@
         "rotulo": "1,19 x 1,69 x 0,49",
         "pdf_path": "plantas/banheiras/Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "sha1": "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Hippolyte%20-%201,19%20x%201,69%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -28626,7 +28626,7 @@
         "rotulo": "1,20 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "64d07c6a24ac1c68cfa9b6efba133babc9cd6169",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Madrid%20-%201,20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -28938,7 +28938,7 @@
         "rotulo": "1,20 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "64d07c6a24ac1c68cfa9b6efba133babc9cd6169",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Madrid%20-%201,20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -29248,7 +29248,7 @@
         "rotulo": "1,20 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "64d07c6a24ac1c68cfa9b6efba133babc9cd6169",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Madrid%20-%201,20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -29617,7 +29617,7 @@
         "rotulo": "1,20 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "64d07c6a24ac1c68cfa9b6efba133babc9cd6169",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Madrid%20-%201,20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -30043,7 +30043,7 @@
         "rotulo": "1,20 x 1,51 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,51 x 0,44 [GC-AC].pdf",
         "sha1": "f613861013988bf8cc0465cf725352ed950c4cf4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,51%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,51 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -30052,7 +30052,7 @@
         "rotulo": "1,20 x 1,60 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,60 x 0,44 [GC-AC].pdf",
         "sha1": "a1c2f6faa8bc36a5751cf514762bfd35388e07a0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,60%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,60 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -30061,7 +30061,7 @@
         "rotulo": "1,20 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "926dee707b0d55c211203de0207e0d1c07ff2b3d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -30070,7 +30070,7 @@
         "rotulo": "1,20 x 1,79 x 0,48",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
         "sha1": "c5188ae8dbeb870443aab3fa3a1e365d587972b0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,79%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -30079,7 +30079,7 @@
         "rotulo": "1,40 x 1,78 x 0,48",
         "pdf_path": "plantas/banheiras/Maresias - 1,40  x 1,78 x 0,48 [GC-AC].pdf",
         "sha1": "35dd55c5f3fd308af20709e881e7003f631c085c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,40%20%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,40  x 1,78 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -30516,7 +30516,7 @@
         "rotulo": "1,20 x 1,51 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,51 x 0,44 [GC-AC].pdf",
         "sha1": "f613861013988bf8cc0465cf725352ed950c4cf4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,51%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,51 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -30525,7 +30525,7 @@
         "rotulo": "1,20 x 1,60 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,60 x 0,44 [GC-AC].pdf",
         "sha1": "a1c2f6faa8bc36a5751cf514762bfd35388e07a0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,60%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,60 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -30534,7 +30534,7 @@
         "rotulo": "1,20 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "926dee707b0d55c211203de0207e0d1c07ff2b3d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -30543,7 +30543,7 @@
         "rotulo": "1,20 x 1,79 x 0,48",
         "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
         "sha1": "c5188ae8dbeb870443aab3fa3a1e365d587972b0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,79%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -30552,7 +30552,7 @@
         "rotulo": "1,40 x 1,78 x 0,48",
         "pdf_path": "plantas/banheiras/Maresias - 1,40  x 1,78 x 0,48 [GC-AC].pdf",
         "sha1": "35dd55c5f3fd308af20709e881e7003f631c085c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,40%20%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 1,40  x 1,78 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -30867,7 +30867,7 @@
         "rotulo": "1,03 x 1,84 x 0,40",
         "pdf_path": "plantas/banheiras/Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "sha1": "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Paris%20-%201,03%20x%201,84%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -31186,7 +31186,7 @@
         "rotulo": "1,03 x 1,84 x 0,40",
         "pdf_path": "plantas/banheiras/Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "sha1": "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Paris%20-%201,03%20x%201,84%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -31505,7 +31505,7 @@
         "rotulo": "1,03 x 1,84 x 0,40",
         "pdf_path": "plantas/banheiras/Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "sha1": "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Paris%20-%201,03%20x%201,84%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -31831,7 +31831,7 @@
         "rotulo": "1,03 x 1,84 x 0,40",
         "pdf_path": "plantas/banheiras/Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "sha1": "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Paris%20-%201,03%20x%201,84%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -32174,7 +32174,7 @@
         "rotulo": "1,09 x 1,89 x 0,45",
         "pdf_path": "plantas/banheiras/Requinte - 1,09 x 1,89 x 0,45 [GC-AC].pdf",
         "sha1": "a3b134fb38e709e8f9e58e132d945ff817391aa4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Requinte%20-%201,09%20x%201,89%20x%200,45%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Requinte - 1,09 x 1,89 x 0,45 [GC-AC].pdf",
         "baixado": true
@@ -32489,7 +32489,7 @@
         "rotulo": "1,09 x 1,89 x 0,45",
         "pdf_path": "plantas/banheiras/Requinte - 1,09 x 1,89 x 0,45 [GC-AC].pdf",
         "sha1": "a3b134fb38e709e8f9e58e132d945ff817391aa4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Requinte%20-%201,09%20x%201,89%20x%200,45%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Requinte - 1,09 x 1,89 x 0,45 [GC-AC].pdf",
         "baixado": true
@@ -34055,7 +34055,7 @@
         "rotulo": "1,19 x 1,80 x 0,42",
         "pdf_path": "plantas/banheiras/Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "sha1": "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Saara%20-%201,195%20x%201,80%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -34369,7 +34369,7 @@
         "rotulo": "1,19 x 1,80 x 0,42",
         "pdf_path": "plantas/banheiras/Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "sha1": "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Saara%20-%201,195%20x%201,80%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -34694,7 +34694,7 @@
         "rotulo": "1,19 x 1,80 x 0,42",
         "pdf_path": "plantas/banheiras/Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "sha1": "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Saara%20-%201,195%20x%201,80%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -35021,7 +35021,7 @@
         "rotulo": "1,19 x 1,80 x 0,42",
         "pdf_path": "plantas/banheiras/Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "sha1": "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Saara%20-%201,195%20x%201,80%20x%200,42%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
         "baixado": true
@@ -35336,7 +35336,7 @@
         "rotulo": "1,49 x 1,49 x 0,43",
         "pdf_path": "plantas/banheiras/Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
         "sha1": "7821d87845f46eadddcd42b195cd974566f07ba7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Solene%20redonda%20-%201,49%20x%201,49%20x%200,435%20%5bGC%5d.pdf",
         "nome_arquivo": "Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
         "baixado": true
@@ -35656,7 +35656,7 @@
         "rotulo": "1,49 x 1,49 x 0,43",
         "pdf_path": "plantas/banheiras/Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
         "sha1": "7821d87845f46eadddcd42b195cd974566f07ba7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Solene%20redonda%20-%201,49%20x%201,49%20x%200,435%20%5bGC%5d.pdf",
         "nome_arquivo": "Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
         "baixado": true
@@ -35964,7 +35964,7 @@
         "rotulo": "1,40 x 1,41 x 0,49",
         "pdf_path": "plantas/banheiras/Suiça - 1,40 x 1,41 x 0,49 [GC].pdf",
         "sha1": "2f7bff2ff06d1f862ff22104d20f1e8dd368e621",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sui%c3%a7a%20-%201,40%20x%201,41%20x%200,49%20%5bGC%5d.pdf",
         "nome_arquivo": "Suiça - 1,40 x 1,41 x 0,49 [GC].pdf",
         "baixado": true
@@ -36287,7 +36287,7 @@
         "rotulo": "1,40 x 1,41 x 0,49",
         "pdf_path": "plantas/banheiras/Suiça - 1,40 x 1,41 x 0,49 [GC].pdf",
         "sha1": "2f7bff2ff06d1f862ff22104d20f1e8dd368e621",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sui%c3%a7a%20-%201,40%20x%201,41%20x%200,49%20%5bGC%5d.pdf",
         "nome_arquivo": "Suiça - 1,40 x 1,41 x 0,49 [GC].pdf",
         "baixado": true
@@ -36593,7 +36593,7 @@
         "rotulo": "1,20 x 1,80 x 0,55",
         "pdf_path": "plantas/banheiras/Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
         "sha1": "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Supreme%20-%201,20%20x%201,80%20x%200,55%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
         "baixado": true
@@ -36928,7 +36928,7 @@
         "rotulo": "1,20 x 1,80 x 0,55",
         "pdf_path": "plantas/banheiras/Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
         "sha1": "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Supreme%20-%201,20%20x%201,80%20x%200,55%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
         "baixado": true
@@ -37238,7 +37238,7 @@
         "rotulo": "1,10 x 1,89 x 0,40",
         "pdf_path": "plantas/banheiras/Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "sha1": "f92fe93f38680b0a646460c4beaf418d8e9e6dd6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Valencia%20-%201,10%20x%201,89%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -37549,7 +37549,7 @@
         "rotulo": "1,10 x 1,89 x 0,40",
         "pdf_path": "plantas/banheiras/Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "sha1": "f92fe93f38680b0a646460c4beaf418d8e9e6dd6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Valencia%20-%201,10%20x%201,89%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -37871,7 +37871,7 @@
         "rotulo": "1,10 x 1,89 x 0,40",
         "pdf_path": "plantas/banheiras/Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "sha1": "f92fe93f38680b0a646460c4beaf418d8e9e6dd6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Valencia%20-%201,10%20x%201,89%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -38200,7 +38200,7 @@
         "rotulo": "1,10 x 1,89 x 0,40",
         "pdf_path": "plantas/banheiras/Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "sha1": "f92fe93f38680b0a646460c4beaf418d8e9e6dd6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Valencia%20-%201,10%20x%201,89%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -38510,7 +38510,7 @@
         "rotulo": "1,19 x 1,69 x 0,43",
         "pdf_path": "plantas/banheiras/Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "sha1": "2b7888d7c5536e763ae9febdbec02852ee5ed770",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Verona%20-%201,19%20x%201,69%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -38806,7 +38806,7 @@
         "rotulo": "1,19 x 1,69 x 0,43",
         "pdf_path": "plantas/banheiras/Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "sha1": "2b7888d7c5536e763ae9febdbec02852ee5ed770",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Verona%20-%201,19%20x%201,69%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -39118,7 +39118,7 @@
         "rotulo": "1,19 x 1,69 x 0,43",
         "pdf_path": "plantas/banheiras/Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "sha1": "2b7888d7c5536e763ae9febdbec02852ee5ed770",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Verona%20-%201,19%20x%201,69%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -39441,7 +39441,7 @@
         "rotulo": "1,19 x 1,69 x 0,43",
         "pdf_path": "plantas/banheiras/Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "sha1": "2b7888d7c5536e763ae9febdbec02852ee5ed770",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Verona%20-%201,19%20x%201,69%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -40131,7 +40131,7 @@
         "rotulo": "1,06 x 1,90 x 0,50",
         "pdf_path": "plantas/banheiras/Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoria%20-%201,06%20x%201,90%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -40441,7 +40441,7 @@
         "rotulo": "1,06 x 1,90 x 0,50",
         "pdf_path": "plantas/banheiras/Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoria%20-%201,06%20x%201,90%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -40755,7 +40755,7 @@
         "rotulo": "1,06 x 1,90 x 0,50",
         "pdf_path": "plantas/banheiras/Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoria%20-%201,06%20x%201,90%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -41087,7 +41087,7 @@
         "rotulo": "1,06 X 1,90 X 0,50",
         "pdf_path": "plantas/banheiras/Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoria%20-%201,06%20x%201,90%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -41404,7 +41404,7 @@
         "rotulo": "1,06 x 1,90 x 0,50",
         "pdf_path": "plantas/banheiras/Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoria%20-%201,06%20x%201,90%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -41714,7 +41714,7 @@
         "rotulo": "0,91 x 1,61 x 0,58",
         "pdf_path": "plantas/banheiras/Filipinas - 0,91 x 1,61 x 0,58 [GC].pdf",
         "sha1": "def36ce9953ccd82a0287455bbe3e52f44ec6b45",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Filipinas%20-%200,91%20x%201,61%20x%200,58%20%5bGC%5d.pdf",
         "nome_arquivo": "Filipinas - 0,91 x 1,61 x 0,58 [GC].pdf",
         "baixado": true
@@ -42033,7 +42033,7 @@
         "rotulo": "0,91 x 1,61 x 0,58",
         "pdf_path": "plantas/banheiras/Filipinas - 0,91 x 1,61 x 0,58 [GC].pdf",
         "sha1": "def36ce9953ccd82a0287455bbe3e52f44ec6b45",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Filipinas%20-%200,91%20x%201,61%20x%200,58%20%5bGC%5d.pdf",
         "nome_arquivo": "Filipinas - 0,91 x 1,61 x 0,58 [GC].pdf",
         "baixado": true
@@ -42976,7 +42976,7 @@
         "rotulo": "0,74 x 1,30 x 0,40",
         "pdf_path": "plantas/banheiras/Indonesia - 0,74 x 1,30 x 0,40 [GC].pdf",
         "sha1": "9e99439fa6a056b61c7244fa33b6c3df21d2811f",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Indonesia%20-%200,74%20x%201,30%20x%200,40%20%5bGC%5d.pdf",
         "nome_arquivo": "Indonesia - 0,74 x 1,30 x 0,40 [GC].pdf",
         "baixado": true
@@ -43567,7 +43567,7 @@
         "rotulo": "1,00 x 1,50 x 0,49",
         "pdf_path": "plantas/banheiras/Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
         "sha1": "aa1bc815e99f4242469fb27c25c65e3b0d35851d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Jordania%20-%201,00%20x%201,50%20x%200,49%20%5bGC%5d.pdf",
         "nome_arquivo": "Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
         "baixado": true
@@ -44164,7 +44164,7 @@
         "rotulo": "1,00 x 1,50 x 0,49",
         "pdf_path": "plantas/banheiras/Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
         "sha1": "aa1bc815e99f4242469fb27c25c65e3b0d35851d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Jordania%20-%201,00%20x%201,50%20x%200,49%20%5bGC%5d.pdf",
         "nome_arquivo": "Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
         "baixado": true
@@ -45148,7 +45148,7 @@
         "rotulo": "1,00 x 1,81 x 0,48",
         "pdf_path": "plantas/banheiras/Riviera - 1,00 x 1,81 x 0,48 [GC-AC].pdf",
         "sha1": "4adc81f0e58089b2485191813068fb99e4c688ea",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Riviera%20-%201,00%20x%201,81%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Riviera - 1,00 x 1,81 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -45467,7 +45467,7 @@
         "rotulo": "1,00 x 1,81 x 0,48",
         "pdf_path": "plantas/banheiras/Riviera - 1,00 x 1,81 x 0,48 [GC-AC].pdf",
         "sha1": "4adc81f0e58089b2485191813068fb99e4c688ea",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Riviera%20-%201,00%20x%201,81%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Riviera - 1,00 x 1,81 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -45770,7 +45770,7 @@
         "rotulo": "0,70 x 1,09 x 0,48",
         "pdf_path": "plantas/banheiras/Tailandia - 0,70 x 1,09 x 0,48 [GC].pdf",
         "sha1": "1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Tailandia%20-%200,70%20x%201,09%20x%200,48%20%5bGC%5d.pdf",
         "nome_arquivo": "Tailandia - 0,70 x 1,09 x 0,48 [GC].pdf",
         "baixado": true
@@ -46383,7 +46383,7 @@
         "rotulo": "0,70 x 1,09 x 0,48",
         "pdf_path": "plantas/banheiras/Tailandia - 0,70 x 1,09 x 0,48 [GC].pdf",
         "sha1": "1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Tailandia%20-%200,70%20x%201,09%20x%200,48%20%5bGC%5d.pdf",
         "nome_arquivo": "Tailandia - 0,70 x 1,09 x 0,48 [GC].pdf",
         "baixado": true
@@ -46714,7 +46714,7 @@
         "rotulo": "1,10 x 1,80 x 0,50",
         "pdf_path": "plantas/banheiras/Karisma - 1,10 x 1,80 x 0,50 [GC].pdf",
         "sha1": "cbed836840b19d5bdafc85421d30418c6a5c156b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Karisma%20-%201,10%20x%201,80%20x%200,50%20%5bGC%5d.pdf",
         "nome_arquivo": "Karisma - 1,10 x 1,80 x 0,50 [GC].pdf",
         "baixado": true
@@ -47597,7 +47597,7 @@
         "rotulo": "1,48 x 1,48 x 0,43",
         "pdf_path": "plantas/banheiras/Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "sha1": "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Caribe%20-%201,48%20x%201,48%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -47891,7 +47891,7 @@
         "rotulo": "1,48 x 1,48 x 0,43",
         "pdf_path": "plantas/banheiras/Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "sha1": "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Caribe%20-%201,48%20x%201,48%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -48189,7 +48189,7 @@
         "rotulo": "1,48 x 1,48 x 0,43",
         "pdf_path": "plantas/banheiras/Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "sha1": "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Caribe%20-%201,48%20x%201,48%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -48502,7 +48502,7 @@
         "rotulo": "1,48 x 1,48 x 0,43",
         "pdf_path": "plantas/banheiras/Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "sha1": "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Caribe%20-%201,48%20x%201,48%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -48788,7 +48788,7 @@
         "rotulo": "1,78 x 1,78 x 0,50",
         "pdf_path": "plantas/banheiras/Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "sha1": "562dfda879cb813a973368975a5bc01ab1ab2036",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havai%20-%201,78%20x%201,78%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -49088,7 +49088,7 @@
         "rotulo": "1,78 x 1,78 x 0,50",
         "pdf_path": "plantas/banheiras/Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "sha1": "562dfda879cb813a973368975a5bc01ab1ab2036",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havai%20-%201,78%20x%201,78%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -49387,7 +49387,7 @@
         "rotulo": "1,78 x 1,78 x 0,50",
         "pdf_path": "plantas/banheiras/Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "sha1": "562dfda879cb813a973368975a5bc01ab1ab2036",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havai%20-%201,78%20x%201,78%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -49705,7 +49705,7 @@
         "rotulo": "1,78 x 1,78 x 0,50",
         "pdf_path": "plantas/banheiras/Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "sha1": "562dfda879cb813a973368975a5bc01ab1ab2036",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havai%20-%201,78%20x%201,78%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -50300,7 +50300,7 @@
         "rotulo": "1,20 x 1,20 x 0,47",
         "pdf_path": "plantas/banheiras/Majory - 1,20 x 1,20 x 0,47 [GC-AC].pdf",
         "sha1": "d03d552049e0919534978c2336a3bdec678c3658",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Majory%20-%201,20%20x%201,20%20x%200,47%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Majory - 1,20 x 1,20 x 0,47 [GC-AC].pdf",
         "baixado": true
@@ -50632,7 +50632,7 @@
         "rotulo": "1,20 x 1,20 x 0,47",
         "pdf_path": "plantas/banheiras/Majory - 1,20 x 1,20 x 0,47 [GC-AC].pdf",
         "sha1": "d03d552049e0919534978c2336a3bdec678c3658",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Majory%20-%201,20%20x%201,20%20x%200,47%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Majory - 1,20 x 1,20 x 0,47 [GC-AC].pdf",
         "baixado": true
@@ -50641,7 +50641,7 @@
         "rotulo": "1,50 x 1,50 x 0,48",
         "pdf_path": "plantas/banheiras/Majory - 1,50 x 1,50 x 0,48 [GC].pdf",
         "sha1": "555a2e2d4ff25502b9fa4c186f7ad55acbd3855d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Majory%20-%201,50%20x%201,50%20x%200,48%20%5bGC%5d.pdf",
         "nome_arquivo": "Majory - 1,50 x 1,50 x 0,48 [GC].pdf",
         "baixado": true
@@ -50929,7 +50929,7 @@
         "rotulo": "1,70 x 1,70 x 0,50",
         "pdf_path": "plantas/banheiras/Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "sha1": "a4aba49302cf98b1dc62949450052aabe51cb0a4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Malibu%20-%201,70%20x%201,70%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -51229,7 +51229,7 @@
         "rotulo": "1,70 x 1,70 x 0,50",
         "pdf_path": "plantas/banheiras/Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "sha1": "a4aba49302cf98b1dc62949450052aabe51cb0a4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Malibu%20-%201,70%20x%201,70%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -51516,7 +51516,7 @@
         "rotulo": "1,70 x 1,70 x 0,50",
         "pdf_path": "plantas/banheiras/Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "sha1": "a4aba49302cf98b1dc62949450052aabe51cb0a4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Malibu%20-%201,70%20x%201,70%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -51822,7 +51822,7 @@
         "rotulo": "1,70 x 1,70 x 0,50",
         "pdf_path": "plantas/banheiras/Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "sha1": "a4aba49302cf98b1dc62949450052aabe51cb0a4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Malibu%20-%201,70%20x%201,70%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -52109,7 +52109,7 @@
         "rotulo": "1,50 x 1,50 x 0,49",
         "pdf_path": "plantas/banheiras/Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "sha1": "9d887ddf20dbb13fca423048a085319f32b859c7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Monte%20carlo%20-%201,50%20x%201,50%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -52409,7 +52409,7 @@
         "rotulo": "1,50 x 1,50 x 0,49",
         "pdf_path": "plantas/banheiras/Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "sha1": "9d887ddf20dbb13fca423048a085319f32b859c7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Monte%20carlo%20-%201,50%20x%201,50%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -52696,7 +52696,7 @@
         "rotulo": "1,50 x 1,50 x 0,49",
         "pdf_path": "plantas/banheiras/Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "sha1": "9d887ddf20dbb13fca423048a085319f32b859c7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Monte%20carlo%20-%201,50%20x%201,50%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -53002,7 +53002,7 @@
         "rotulo": "1,50 x 1,50 x 0,49",
         "pdf_path": "plantas/banheiras/Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "sha1": "9d887ddf20dbb13fca423048a085319f32b859c7",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Monte%20carlo%20-%201,50%20x%201,50%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -54682,7 +54682,7 @@
         "rotulo": "0,83 x 1,79 x 0,49",
         "pdf_path": "plantas/banheiras/Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "sha1": "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Agata%20-%200,83%20x%201,79%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -55015,7 +55015,7 @@
         "rotulo": "0,83 x 1,79 x 0,49",
         "pdf_path": "plantas/banheiras/Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "sha1": "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Agata%20-%200,83%20x%201,79%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -55348,7 +55348,7 @@
         "rotulo": "0,83 x 1,79 x 0,49",
         "pdf_path": "plantas/banheiras/Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "sha1": "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Agata%20-%200,83%20x%201,79%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -55705,7 +55705,7 @@
         "rotulo": "0,83 x 1,79 x 0,49",
         "pdf_path": "plantas/banheiras/Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "sha1": "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Agata%20-%200,83%20x%201,79%20x%200,49%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
         "baixado": true
@@ -56090,7 +56090,7 @@
         "rotulo": "0,85 x 1,20 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "sha1": "f97e1453710bca840bf3ee3fdf2511e8686957b0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,20%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -56099,7 +56099,7 @@
         "rotulo": "0,84 x 1,29 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "sha1": "54929a556c2f03a066073d151bb5e71d4ee52c23",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,84%20x%201,29%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -56108,7 +56108,7 @@
         "rotulo": "0,86 x 1,42 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "sha1": "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,86%20x%201,42%20x%200,44%20%5bGC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "baixado": true
@@ -56117,7 +56117,7 @@
         "rotulo": "0,90 x 1,60 x 0,43",
         "pdf_path": "plantas/banheiras/Barcelona - 0,90 x 1,60 x 0,43 [GC-AC].pdf",
         "sha1": "b10aabe1e49b4798ac5767768e8e935d4f277cb0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,90%20x%201,60%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,90 x 1,60 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -56126,7 +56126,7 @@
         "rotulo": "0,85 x 1,70 x 0,43",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "sha1": "086cf1509972a791636dcaa016f2d63ee73aa5db",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,70%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -56513,7 +56513,7 @@
         "rotulo": "0,85 x 1,20 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "sha1": "f97e1453710bca840bf3ee3fdf2511e8686957b0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,20%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -56522,7 +56522,7 @@
         "rotulo": "0,84 x 1,29 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "sha1": "54929a556c2f03a066073d151bb5e71d4ee52c23",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,84%20x%201,29%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -56531,7 +56531,7 @@
         "rotulo": "0,86 x 1,42 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "sha1": "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,86%20x%201,42%20x%200,44%20%5bGC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "baixado": true
@@ -56540,7 +56540,7 @@
         "rotulo": "0,85 x 1,70 x 0,43",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "sha1": "086cf1509972a791636dcaa016f2d63ee73aa5db",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,70%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -56938,7 +56938,7 @@
         "rotulo": "0,85 x 1,20 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "sha1": "f97e1453710bca840bf3ee3fdf2511e8686957b0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,20%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -56947,7 +56947,7 @@
         "rotulo": "0,84 x 1,29 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "sha1": "54929a556c2f03a066073d151bb5e71d4ee52c23",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,84%20x%201,29%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -56956,7 +56956,7 @@
         "rotulo": "0,86 x 1,42 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "sha1": "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,86%20x%201,42%20x%200,44%20%5bGC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "baixado": true
@@ -56965,7 +56965,7 @@
         "rotulo": "0,90 x 1,60 x 0,43",
         "pdf_path": "plantas/banheiras/Barcelona - 0,90 x 1,60 x 0,43 [GC-AC].pdf",
         "sha1": "b10aabe1e49b4798ac5767768e8e935d4f277cb0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,90%20x%201,60%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,90 x 1,60 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -56974,7 +56974,7 @@
         "rotulo": "0,85 x 1,70 x 0,43",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "sha1": "086cf1509972a791636dcaa016f2d63ee73aa5db",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,70%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -57398,7 +57398,7 @@
         "rotulo": "0,85 x 1,20 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "sha1": "f97e1453710bca840bf3ee3fdf2511e8686957b0",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,20%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -57407,7 +57407,7 @@
         "rotulo": "0,84 x 1,29 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "sha1": "54929a556c2f03a066073d151bb5e71d4ee52c23",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,84%20x%201,29%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -57416,7 +57416,7 @@
         "rotulo": "0,86 x 1,42 x 0,44",
         "pdf_path": "plantas/banheiras/Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "sha1": "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,86%20x%201,42%20x%200,44%20%5bGC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
         "baixado": true
@@ -57431,7 +57431,7 @@
         "rotulo": "0,85 x 1,70 x 0,43",
         "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "sha1": "086cf1509972a791636dcaa016f2d63ee73aa5db",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,70%20x%200,43%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
         "baixado": true
@@ -57902,7 +57902,7 @@
         "rotulo": "0,80 x 1,20 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "sha1": "9848385008665582cbe3824837726f1a7d49984c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,20%20x%200,39%20%5bGC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "baixado": true
@@ -57911,7 +57911,7 @@
         "rotulo": "0,80 x 1,30 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "sha1": "b961cd3067367b7e2cce4c3f8888fd46b3520d00",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,30%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -57920,7 +57920,7 @@
         "rotulo": "0,81 x 1,40 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "sha1": "0b50d0f36604f4f43e0c1d038e784082deb96b76",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,40%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -57935,7 +57935,7 @@
         "rotulo": "0,81 x 1,51 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "sha1": "d0ba82515c4cf0e0980e139f4f840e7c146bae46",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,51%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -57944,7 +57944,7 @@
         "rotulo": "0,80 x 1,60 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "sha1": "9661d218bb8617683d6d75d354c0e5fdb7f1f251",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,60%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -57953,7 +57953,7 @@
         "rotulo": "0,80 x 1,70 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "sha1": "fedda4bbdfb18617ab477029b312cdeb1a3818b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,70%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -57962,7 +57962,7 @@
         "rotulo": "0,80 x 1,80 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "sha1": "f74c5ad9176df7640a71fbf3781ba8f91f785880",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -58427,7 +58427,7 @@
         "rotulo": "0,80 x 1,20 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "sha1": "9848385008665582cbe3824837726f1a7d49984c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,20%20x%200,39%20%5bGC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "baixado": true
@@ -58436,7 +58436,7 @@
         "rotulo": "0,80 x 1,30 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "sha1": "b961cd3067367b7e2cce4c3f8888fd46b3520d00",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,30%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -58445,7 +58445,7 @@
         "rotulo": "0,81 x 1,40 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "sha1": "0b50d0f36604f4f43e0c1d038e784082deb96b76",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,40%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -58460,7 +58460,7 @@
         "rotulo": "0,81 x 1,51 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "sha1": "d0ba82515c4cf0e0980e139f4f840e7c146bae46",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,51%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -58469,7 +58469,7 @@
         "rotulo": "0,80 x 1,60 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "sha1": "9661d218bb8617683d6d75d354c0e5fdb7f1f251",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,60%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -58478,7 +58478,7 @@
         "rotulo": "0,80 x 1,70 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "sha1": "fedda4bbdfb18617ab477029b312cdeb1a3818b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,70%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -58487,7 +58487,7 @@
         "rotulo": "0,80 x 1,80 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "sha1": "f74c5ad9176df7640a71fbf3781ba8f91f785880",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -58978,7 +58978,7 @@
         "rotulo": "0,80 x 1,20 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "sha1": "9848385008665582cbe3824837726f1a7d49984c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,20%20x%200,39%20%5bGC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "baixado": true
@@ -58987,7 +58987,7 @@
         "rotulo": "0,80 x 1,30 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "sha1": "b961cd3067367b7e2cce4c3f8888fd46b3520d00",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,30%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -58996,7 +58996,7 @@
         "rotulo": "0,81 x 1,40 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "sha1": "0b50d0f36604f4f43e0c1d038e784082deb96b76",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,40%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -59011,7 +59011,7 @@
         "rotulo": "0,81 x 1,51 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "sha1": "d0ba82515c4cf0e0980e139f4f840e7c146bae46",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,51%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -59020,7 +59020,7 @@
         "rotulo": "0,80 x 1,60 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "sha1": "9661d218bb8617683d6d75d354c0e5fdb7f1f251",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,60%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -59029,7 +59029,7 @@
         "rotulo": "0,80 x 1,70 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "sha1": "fedda4bbdfb18617ab477029b312cdeb1a3818b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,70%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -59038,7 +59038,7 @@
         "rotulo": "0,80 x 1,80 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "sha1": "f74c5ad9176df7640a71fbf3781ba8f91f785880",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -59527,7 +59527,7 @@
         "rotulo": "0,80 x 1,20 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "sha1": "9848385008665582cbe3824837726f1a7d49984c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,20%20x%200,39%20%5bGC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
         "baixado": true
@@ -59536,7 +59536,7 @@
         "rotulo": "0,80 x 1,30 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "sha1": "b961cd3067367b7e2cce4c3f8888fd46b3520d00",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,30%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -59545,7 +59545,7 @@
         "rotulo": "0,81 x 1,40 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "sha1": "0b50d0f36604f4f43e0c1d038e784082deb96b76",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,40%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -59560,7 +59560,7 @@
         "rotulo": "0,81 x 1,51 x 0,39",
         "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "sha1": "d0ba82515c4cf0e0980e139f4f840e7c146bae46",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,51%20x%200,39%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
         "baixado": true
@@ -59569,7 +59569,7 @@
         "rotulo": "0,80 x 1,60 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "sha1": "9661d218bb8617683d6d75d354c0e5fdb7f1f251",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,60%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -59578,7 +59578,7 @@
         "rotulo": "0,80 x 1,70 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "sha1": "fedda4bbdfb18617ab477029b312cdeb1a3818b9",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,70%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -59587,7 +59587,7 @@
         "rotulo": "0,80 x 1,80 x 0,41",
         "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "sha1": "f74c5ad9176df7640a71fbf3781ba8f91f785880",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
         "baixado": true
@@ -59888,7 +59888,7 @@
         "rotulo": "0,81 x 1,80 x 0,48",
         "pdf_path": "plantas/banheiras/Conforto - 0,81 x 1,80 x 0,48 [GC-AC].pdf",
         "sha1": "7d386434779346c6b24257aaaa953a2b538953c8",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Conforto%20-%200,81%20x%201,80%20x%200,48%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Conforto - 0,81 x 1,80 x 0,48 [GC-AC].pdf",
         "baixado": true
@@ -60230,7 +60230,7 @@
         "rotulo": "0,82 x 1,51 x 0,48",
         "pdf_path": "plantas/banheiras/Conforto - 0,82 x 1,51 x 0,48 [GC].pdf",
         "sha1": "47ccaade016e846ee4f1c106c3e2794e270b79a4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Conforto%20-%200,82%20x%201,51%20x%200,48%20%5bGC%5d.pdf",
         "nome_arquivo": "Conforto - 0,82 x 1,51 x 0,48 [GC].pdf",
         "baixado": true
@@ -60544,7 +60544,7 @@
         "rotulo": "1,30 x 1,79 x 0,50",
         "pdf_path": "plantas/banheiras/Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "sha1": "a676f5483de0d538366133b9d4e35340f5625dec",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Denizard%20-%201,30%20x%201,79%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -60843,7 +60843,7 @@
         "rotulo": "1,30 x 1,79 x 0,50",
         "pdf_path": "plantas/banheiras/Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "sha1": "a676f5483de0d538366133b9d4e35340f5625dec",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Denizard%20-%201,30%20x%201,79%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -61141,7 +61141,7 @@
         "rotulo": "1,30 x 1,79 x 0,50",
         "pdf_path": "plantas/banheiras/Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "sha1": "a676f5483de0d538366133b9d4e35340f5625dec",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Denizard%20-%201,30%20x%201,79%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -61446,7 +61446,7 @@
         "rotulo": "1,30 x 1,79 x 0,50",
         "pdf_path": "plantas/banheiras/Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "sha1": "a676f5483de0d538366133b9d4e35340f5625dec",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Denizard%20-%201,30%20x%201,79%20x%200,50%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
         "baixado": true
@@ -61723,7 +61723,7 @@
         "rotulo": "0,88 x 1,81 x 0,40",
         "pdf_path": "plantas/banheiras/Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "sha1": "21bc5e68de73fa1b850617f898c7350b2ca73a8d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Dubai%20-%200,88%20x%201,81%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -62016,7 +62016,7 @@
         "rotulo": "0,88 x 1,81 x 0,40",
         "pdf_path": "plantas/banheiras/Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "sha1": "21bc5e68de73fa1b850617f898c7350b2ca73a8d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Dubai%20-%200,88%20x%201,81%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -62319,7 +62319,7 @@
         "rotulo": "0,88 x 1,81 x 0,40",
         "pdf_path": "plantas/banheiras/Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "sha1": "21bc5e68de73fa1b850617f898c7350b2ca73a8d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Dubai%20-%200,88%20x%201,81%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -62648,7 +62648,7 @@
         "rotulo": "0,88 x 1,81 x 0,40",
         "pdf_path": "plantas/banheiras/Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "sha1": "21bc5e68de73fa1b850617f898c7350b2ca73a8d",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Dubai%20-%200,88%20x%201,81%20x%200,40%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
         "baixado": true
@@ -62937,7 +62937,7 @@
         "rotulo": "0,99 x 1,78 x 0,52",
         "pdf_path": "plantas/banheiras/Genova - 0,99 x 1,78 x 0,52 [GC-AC].pdf",
         "sha1": "ad3b56e7bdac42d874f2f7e60dd36d010acdc577",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Genova%20-%200,99%20x%201,78%20x%200,52%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Genova - 0,99 x 1,78 x 0,52 [GC-AC].pdf",
         "baixado": true
@@ -63241,7 +63241,7 @@
         "rotulo": "0,99 x 1,78 x 0,52",
         "pdf_path": "plantas/banheiras/Genova - 0,99 x 1,78 x 0,52 [GC-AC].pdf",
         "sha1": "ad3b56e7bdac42d874f2f7e60dd36d010acdc577",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Genova%20-%200,99%20x%201,78%20x%200,52%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Genova - 0,99 x 1,78 x 0,52 [GC-AC].pdf",
         "baixado": true
@@ -63570,7 +63570,7 @@
         "rotulo": "0,99 x 1,78 x 0,52",
         "pdf_path": "plantas/banheiras/Genova - 0,99 x 1,78 x 0,52 [GC-AC].pdf",
         "sha1": "ad3b56e7bdac42d874f2f7e60dd36d010acdc577",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Genova%20-%200,99%20x%201,78%20x%200,52%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Genova - 0,99 x 1,78 x 0,52 [GC-AC].pdf",
         "baixado": true
@@ -64201,7 +64201,7 @@
         "rotulo": "0,90 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Lisboa - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "4ade3fbc0ff840928670780a2e1ca09474e22cb5",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Lisboa%20-%200,90%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Lisboa - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -64516,7 +64516,7 @@
         "rotulo": "0,90 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Lisboa - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "4ade3fbc0ff840928670780a2e1ca09474e22cb5",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Lisboa%20-%200,90%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Lisboa - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -64880,7 +64880,7 @@
         "rotulo": "0,80 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "e335c3714e5ab105af39ea471b5a51f0907a6395",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -64889,7 +64889,7 @@
         "rotulo": "0,79 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "37c5b627e3f5b623b2bde93508786fa399aef10c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,795%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -64898,7 +64898,7 @@
         "rotulo": "0,80 x 1,59 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "sha1": "870534e943f93a69e2c569831db4a7f1e82f76f4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -64907,7 +64907,7 @@
         "rotulo": "0,80 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "16f26697b4c035267fd0fcab27562391cc8f8261",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65290,7 +65290,7 @@
         "rotulo": "0,80 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "e335c3714e5ab105af39ea471b5a51f0907a6395",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65299,7 +65299,7 @@
         "rotulo": "0,79 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "37c5b627e3f5b623b2bde93508786fa399aef10c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,795%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65308,7 +65308,7 @@
         "rotulo": "0,80 x 1,59 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "sha1": "870534e943f93a69e2c569831db4a7f1e82f76f4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65317,7 +65317,7 @@
         "rotulo": "0,80 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "16f26697b4c035267fd0fcab27562391cc8f8261",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65688,7 +65688,7 @@
         "rotulo": "0,80 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "e335c3714e5ab105af39ea471b5a51f0907a6395",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65697,7 +65697,7 @@
         "rotulo": "0,79 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "37c5b627e3f5b623b2bde93508786fa399aef10c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,795%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65706,7 +65706,7 @@
         "rotulo": "0,80 x 1,59 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "sha1": "870534e943f93a69e2c569831db4a7f1e82f76f4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -65715,7 +65715,7 @@
         "rotulo": "0,80 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "16f26697b4c035267fd0fcab27562391cc8f8261",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -66110,7 +66110,7 @@
         "rotulo": "0,80 x 1,39 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "sha1": "e335c3714e5ab105af39ea471b5a51f0907a6395",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -66119,7 +66119,7 @@
         "rotulo": "0,79 x 1,49 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "sha1": "37c5b627e3f5b623b2bde93508786fa399aef10c",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,795%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -66128,7 +66128,7 @@
         "rotulo": "0,80 x 1,59 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "sha1": "870534e943f93a69e2c569831db4a7f1e82f76f4",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -66137,7 +66137,7 @@
         "rotulo": "0,80 x 1,69 x 0,38",
         "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "sha1": "16f26697b4c035267fd0fcab27562391cc8f8261",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
         "baixado": true
@@ -66737,7 +66737,7 @@
         "rotulo": "0,91 x 1,64 x 0,37",
         "pdf_path": "plantas/banheiras/Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
         "sha1": "7d9ae0d309fc6217c58bf4496e163b04d3205495",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Marcelle%20-%200,91%20x%201,64%20x%200,37%20%5bGC%5d.pdf",
         "nome_arquivo": "Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
         "baixado": true
@@ -67351,7 +67351,7 @@
         "rotulo": "0,91 x 1,64 x 0,37",
         "pdf_path": "plantas/banheiras/Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
         "sha1": "7d9ae0d309fc6217c58bf4496e163b04d3205495",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Marcelle%20-%200,91%20x%201,64%20x%200,37%20%5bGC%5d.pdf",
         "nome_arquivo": "Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
         "baixado": true
@@ -67747,7 +67747,7 @@
         "rotulo": "0,90 x 1,40 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,40 x 0,44 [GC-AC].pdf",
         "sha1": "c7a9e63a16c405f9285cfcf98dfac149f54a57f6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,40%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,40 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -67756,7 +67756,7 @@
         "rotulo": "0,90 x 1,50 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
         "sha1": "99dfd97f24e228e5d49117b25c8a8a3958ea9551",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,50%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -67765,7 +67765,7 @@
         "rotulo": "0,90 x 1,60 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,60 x 0,44 [GC-AC].pdf",
         "sha1": "798bbf86f9e359d9e510a00c8431ae705004194b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,60%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,60 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -67774,7 +67774,7 @@
         "rotulo": "0,90 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "e579ee9f079d786192f7315b112e5f8c28a589c6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -68170,7 +68170,7 @@
         "rotulo": "0,90 x 1,40 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,40 x 0,44 [GC-AC].pdf",
         "sha1": "c7a9e63a16c405f9285cfcf98dfac149f54a57f6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,40%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,40 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -68179,7 +68179,7 @@
         "rotulo": "0,90 x 1,50 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
         "sha1": "99dfd97f24e228e5d49117b25c8a8a3958ea9551",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,50%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -68188,7 +68188,7 @@
         "rotulo": "0,90 x 1,60 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,60 x 0,44 [GC-AC].pdf",
         "sha1": "798bbf86f9e359d9e510a00c8431ae705004194b",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,60%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,60 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -68197,7 +68197,7 @@
         "rotulo": "0,90 x 1,70 x 0,44",
         "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "sha1": "e579ee9f079d786192f7315b112e5f8c28a589c6",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Maresias - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
         "baixado": true
@@ -71346,7 +71346,7 @@
         "rotulo": "0,80 x 1,00 x 0,76",
         "pdf_path": "plantas/ofuros/Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
         "sha1": "7ea54835e81495a8c212f21e2fdce09a6e887c44",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20acqua%20vip%20-%200,80%20x%201,00%20x%200,76%20%5bGC%5d.pdf",
         "nome_arquivo": "Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
         "baixado": true
@@ -73564,7 +73564,7 @@
         "rotulo": "0,99 x 0,99 x 0,64",
         "pdf_path": "plantas/ofuros/Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "sha1": "6f3b6a75d0a137663ca918416060e7d41e678199",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20osaka%20-%200,99%20x%200,99%20x%200,64%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "baixado": true
@@ -73891,7 +73891,7 @@
         "rotulo": "0,99 x 0,99 x 0,64",
         "pdf_path": "plantas/ofuros/Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "sha1": "6f3b6a75d0a137663ca918416060e7d41e678199",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20osaka%20-%200,99%20x%200,99%20x%200,64%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "baixado": true
@@ -74210,7 +74210,7 @@
         "rotulo": "0,99 x 0,99 x 0,64",
         "pdf_path": "plantas/ofuros/Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "sha1": "6f3b6a75d0a137663ca918416060e7d41e678199",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20osaka%20-%200,99%20x%200,99%20x%200,64%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "baixado": true
@@ -74525,7 +74525,7 @@
         "rotulo": "0,99 x 0,99 x 0,64",
         "pdf_path": "plantas/ofuros/Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "sha1": "6f3b6a75d0a137663ca918416060e7d41e678199",
-        "cotas_validadas": false,
+        "cotas_validadas": true,
         "url_fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20osaka%20-%200,99%20x%200,99%20x%200,64%20%5bGC-AC%5d.pdf",
         "nome_arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
         "baixado": true

@@ -1,0 +1,194 @@
+{
+ "sha1": "1d3c2aee2104f556ceba816b5b755c22577b839a",
+ "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,69 x 0,41 [GC-AC].pdf",
+ "nome_arquivo": "Acqua spaço - 0,69 x 1,69 x 0,41 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,69%20x%200,41%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.69,
+   "valor_texto": "0,69",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2495,
+   "tabela_y": 916
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.69,
+   "valor_texto": "1,69",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2495,
+   "tabela_y": 952
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.18,
+   "valor_texto": "1,18",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2497,
+   "tabela_y": 998
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2500,
+   "tabela_y": 1037
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2500,
+   "tabela_y": 1076
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.31,
+   "valor_texto": "0,31",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2499,
+   "tabela_y": 1121
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2502,
+   "tabela_y": 1163
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2501,
+   "tabela_y": 1207
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.48,
+   "valor_texto": "1,48",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2502,
+   "tabela_y": 1248
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.345,
+   "valor_texto": "0,345",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2500,
+   "tabela_y": 1293
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.56,
+   "valor_texto": "0,56",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2499,
+   "tabela_y": 1343
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.59,
+   "valor_texto": "0,59",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2503,
+   "tabela_y": 1388
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-spaco-completa-com-hidro-em-acrilico",
+   "rotulo": "0,69 x 1,69 x 0,41"
+  },
+  {
+   "slug": "banheira-acqua-spaco-completa-com-hidro",
+   "rotulo": "0,69 x 1,69 x 0,41"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-spaco-completa-com-hidro-em-acrilico",
+    "rotulo": "0,69 x 1,69 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-acqua-spaco-completa-com-hidro",
+    "rotulo": "0,69 x 1,69 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": [
+   "A sem posição no desenho",
+   "B sem posição no desenho",
+   "H sem posição no desenho"
+  ]
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": false,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

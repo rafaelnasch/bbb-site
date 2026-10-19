@@ -1,0 +1,33 @@
+{
+ "sha1": "62d995afc462a534013006a73a2972a8e3acb277",
+ "pdf_path": "plantas/spas/Spa napole gel - 1,97 x 1,97 x 0,85 [GC].pdf",
+ "nome_arquivo": "Spa napole gel - 1,97 x 1,97 x 0,85 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20napole%20gel%20-%201,97%20x%201,97%20x%200,85%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

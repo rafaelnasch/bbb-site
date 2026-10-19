@@ -1,0 +1,254 @@
+{
+ "sha1": "75989809d5b14a699935be18472fd837ca8a067d",
+ "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
+ "nome_arquivo": "Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,41%20x%200,37%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.795,
+   "valor_texto": "0,795",
+   "x": 1871,
+   "y": 1067,
+   "posicoes": [
+    {
+     "x": 1871,
+     "y": 1067
+    }
+   ],
+   "tabela_x": 2392,
+   "tabela_y": 866
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.415,
+   "valor_texto": "1,415",
+   "x": 1349,
+   "y": 775,
+   "posicoes": [
+    {
+     "x": 1349,
+     "y": 775
+    }
+   ],
+   "tabela_x": 2392,
+   "tabela_y": 903
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1265,
+   "y": 1062,
+   "posicoes": [
+    {
+     "x": 1265,
+     "y": 1062
+    }
+   ],
+   "tabela_x": 2393,
+   "tabela_y": 953
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1150,
+   "y": 1070,
+   "posicoes": [
+    {
+     "x": 1150,
+     "y": 1070
+    }
+   ],
+   "tabela_x": 2397,
+   "tabela_y": 994
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1458,
+   "y": 1069,
+   "posicoes": [
+    {
+     "x": 1458,
+     "y": 1069
+    }
+   ],
+   "tabela_x": 2396,
+   "tabela_y": 1036
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.27,
+   "valor_texto": "0,27",
+   "x": 933,
+   "y": 1759,
+   "posicoes": [
+    {
+     "x": 933,
+     "y": 1759
+    }
+   ],
+   "tabela_x": 2396,
+   "tabela_y": 1084
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.22,
+   "valor_texto": "0,22",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 927,
+     "y": 1058
+    },
+    {
+     "x": 946,
+     "y": 1888
+    }
+   ],
+   "tabela_x": 2399,
+   "tabela_y": 1135
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.37,
+   "valor_texto": "0,37",
+   "x": 1352,
+   "y": 1723,
+   "posicoes": [
+    {
+     "x": 1352,
+     "y": 1723
+    }
+   ],
+   "tabela_x": 2397,
+   "tabela_y": 1181
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.18,
+   "valor_texto": "1,18",
+   "x": 1350,
+   "y": 1019,
+   "posicoes": [
+    {
+     "x": 1350,
+     "y": 1019
+    }
+   ],
+   "tabela_x": 2401,
+   "tabela_y": 1223
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.3975,
+   "valor_texto": "0,3975",
+   "x": 996,
+   "y": 1205,
+   "posicoes": [
+    {
+     "x": 996,
+     "y": 1205
+    }
+   ],
+   "tabela_x": 2399,
+   "tabela_y": 1270
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.66,
+   "valor_texto": "0,66",
+   "x": 1073,
+   "y": 1044,
+   "posicoes": [
+    {
+     "x": 1073,
+     "y": 1044
+    }
+   ],
+   "tabela_x": 2398,
+   "tabela_y": 1323
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.66,
+   "valor_texto": "0,66",
+   "x": 1647,
+   "y": 1068,
+   "posicoes": [
+    {
+     "x": 1647,
+     "y": 1068
+    }
+   ],
+   "tabela_x": 2404,
+   "tabela_y": 1366
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-linea-completa-com-hidro-em-acrilico",
+   "rotulo": "0,79 x 1,41 x 0,37"
+  },
+  {
+   "slug": "banheira-acqua-linea-completa-com-hidro",
+   "rotulo": "0,79 x 1,41 x 0,37"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-linea-completa-com-hidro-em-acrilico",
+    "rotulo": "0,79 x 1,41 x 0,37",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-acqua-linea-completa-com-hidro",
+    "rotulo": "0,79 x 1,41 x 0,37",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "verificador do bloco 2-midia",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "atestado",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

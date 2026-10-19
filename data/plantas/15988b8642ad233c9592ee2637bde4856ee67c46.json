@@ -1,0 +1,243 @@
+{
+ "sha1": "15988b8642ad233c9592ee2637bde4856ee67c46",
+ "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,79 x 0,41 [GC-AC].pdf",
+ "nome_arquivo": "Acqua spaço - 0,69 x 1,79 x 0,41 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,79%20x%200,41%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.69,
+   "valor_texto": "0,69",
+   "x": 2054,
+   "y": 1065,
+   "posicoes": [
+    {
+     "x": 2054,
+     "y": 1065
+    }
+   ],
+   "tabela_x": 2364,
+   "tabela_y": 770
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.79,
+   "valor_texto": "1,79",
+   "x": 1389,
+   "y": 788,
+   "posicoes": [
+    {
+     "x": 1389,
+     "y": 788
+    }
+   ],
+   "tabela_x": 2364,
+   "tabela_y": 808
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.26,
+   "valor_texto": "1,26",
+   "x": 1389,
+   "y": 1053,
+   "posicoes": [
+    {
+     "x": 1389,
+     "y": 1053
+    }
+   ],
+   "tabela_x": 2365,
+   "tabela_y": 859
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": 1657,
+   "y": 1064,
+   "posicoes": [
+    {
+     "x": 1657,
+     "y": 1064
+    }
+   ],
+   "tabela_x": 2369,
+   "tabela_y": 900
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": 1124,
+   "y": 1063,
+   "posicoes": [
+    {
+     "x": 1124,
+     "y": 1063
+    }
+   ],
+   "tabela_x": 2368,
+   "tabela_y": 942
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.31,
+   "valor_texto": "0,31",
+   "x": 1838,
+   "y": 1799,
+   "posicoes": [
+    {
+     "x": 1838,
+     "y": 1799
+    }
+   ],
+   "tabela_x": 2367,
+   "tabela_y": 990
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.34,
+   "valor_texto": "0,34",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1861,
+     "y": 1920
+    },
+    {
+     "x": 1887,
+     "y": 1043
+    }
+   ],
+   "tabela_x": 2370,
+   "tabela_y": 1035
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": 1661,
+   "y": 1764,
+   "posicoes": [
+    {
+     "x": 1661,
+     "y": 1764
+    }
+   ],
+   "tabela_x": 2369,
+   "tabela_y": 1083
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.58,
+   "valor_texto": "1,58",
+   "x": 1377,
+   "y": 1006,
+   "posicoes": [
+    {
+     "x": 1377,
+     "y": 1006
+    }
+   ],
+   "tabela_x": 2369,
+   "tabela_y": 1127
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.355,
+   "valor_texto": "0,355",
+   "x": 1755,
+   "y": 1179,
+   "posicoes": [
+    {
+     "x": 1755,
+     "y": 1179
+    }
+   ],
+   "tabela_x": 2367,
+   "tabela_y": 1174
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.56,
+   "valor_texto": "0,56",
+   "x": 1708,
+   "y": 1064,
+   "posicoes": [
+    {
+     "x": 1708,
+     "y": 1064
+    }
+   ],
+   "tabela_x": 2366,
+   "tabela_y": 1228
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.59,
+   "valor_texto": "0,59",
+   "x": 1062,
+   "y": 1064,
+   "posicoes": [
+    {
+     "x": 1062,
+     "y": 1064
+    }
+   ],
+   "tabela_x": 2370,
+   "tabela_y": 1277
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-spaco-completa-com-hidro-em-acrilico",
+   "rotulo": "0,69 x 1,79 x 0,41"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-spaco-completa-com-hidro-em-acrilico",
+    "rotulo": "0,69 x 1,79 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

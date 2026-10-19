@@ -1,0 +1,1015 @@
+{
+ "nota": "Registro das segundas leituras das cotas (SPEC 7.2). Só leituras com independente=true formam a amostra do lote.",
+ "revisoes": [
+  {
+   "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+   "independente": false,
+   "motivo_nao_independente": "leitura feita pelo próprio construtor do bloco 2; a SPEC pede um segundo agente",
+   "data": "2026-10-19",
+   "metodo": "Amostra de 20 plantas com tabela de cotas, sorteio com semente fixa, pelo menos uma por forma com tabela (banheira retangular, redonda, de canto; ofurô redondo), mais casos especiais (H1/H2, página girada, folha 842x595). As plantas sem tabela lida pelo pdfjs não entram nesta amostra.",
+   "leituras": {
+    "ebcc35fa35c11a3aa61b59a5398906422a3e17b9": {
+     "arquivo": "Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "De Canto"
+     ],
+     "cotas": {
+      "A": "1,38",
+      "B": "1,38",
+      "C": "0,90",
+      "D": "0,43",
+      "E": "0,50",
+      "F": "0,35",
+      "G": "0,85",
+      "H": "0,45",
+      "I": "1,34",
+      "J": "0,30",
+      "L/A": "0,68",
+      "M/A": "0,70",
+      "N": "1,95",
+      "O": "1,46"
+     }
+    },
+    "ef48a9c9e018ae0453d68c3157945ef23949b159": {
+     "arquivo": "Viena - 1,66 x 1,66 x 0,50 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "De Canto"
+     ],
+     "cotas": {
+      "A": "1,66",
+      "B": "1,66",
+      "C": "1,20",
+      "D": "0,25",
+      "E": "0,46",
+      "F": "0,40",
+      "G": "0,34",
+      "H": "0,50",
+      "I": "1,58",
+      "J": "1,17",
+      "L/A": "0,56",
+      "M/A": "0,70",
+      "N": "1,61",
+      "O": "2,53"
+     }
+    },
+    "5125421f00687d7a1fb2ea10a92946bd918c29d6": {
+     "arquivo": "Holanda - 1,68 x 1,68 x 0,53 [GC].pdf",
+     "forma": [
+      "banheira",
+      "Redonda"
+     ],
+     "cotas": {
+      "A": "1,68",
+      "B": "1,68",
+      "C": "1,14",
+      "D": "0,58",
+      "E": "0,45",
+      "F": "0,43",
+      "G": "0,60",
+      "H1": "0,53",
+      "H2": "0,39",
+      "I": "1,60",
+      "J": "0,60",
+      "L/A": "1,60",
+      "M/B": "0,60",
+      "M": "0,30"
+     }
+    },
+    "562dfda879cb813a973368975a5bc01ab1ab2036": {
+     "arquivo": "Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Redonda"
+     ],
+     "cotas": {
+      "A": "1,78",
+      "B": "1,78",
+      "C": "1,30",
+      "D": "1,50",
+      "E": "1,58",
+      "F": "0,40",
+      "G": "0,32",
+      "H": "0,50",
+      "J": "0,89"
+     }
+    },
+    "a4aba49302cf98b1dc62949450052aabe51cb0a4": {
+     "arquivo": "Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Redonda"
+     ],
+     "cotas": {
+      "A": "1,70",
+      "B": "1,70",
+      "C": "1,16",
+      "D": "0,90",
+      "E": "0,90",
+      "F": "0,40",
+      "G": "0,40",
+      "H": "0,50",
+      "I": "1,38",
+      "J": "0,85"
+     }
+    },
+    "7ea54835e81495a8c212f21e2fdce09a6e887c44": {
+     "arquivo": "Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
+     "forma": [
+      "ofuro",
+      "Redonda"
+     ],
+     "cotas": {
+      "A": "0,80",
+      "B": "1,00",
+      "C1": "0,23",
+      "C2": "0,31",
+      "D": "0,40",
+      "E": "0,35",
+      "F": "0,66",
+      "G": "0,26",
+      "H1": "0,76",
+      "H2": "0,47",
+      "J": "0,40",
+      "L/A": "0,50",
+      "M/A": "0,52"
+     }
+    },
+    "6f3b6a75d0a137663ca918416060e7d41e678199": {
+     "arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
+     "forma": [
+      "ofuro",
+      "Redonda"
+     ],
+     "cotas": {
+      "A": "0,99",
+      "B": "0,99",
+      "C1": "0,24",
+      "C2": "0,60",
+      "D": "0,40",
+      "E": "0,54",
+      "F": "0,54",
+      "G": "0,775",
+      "H1": "0,64",
+      "H2": "0,44",
+      "I": "1,00",
+      "J": "0,73",
+      "L": "0,62",
+      "M": "0,77",
+      "N": "0,50"
+     }
+    },
+    "0231cc09abc1515351d5a4c90bd9fcad41104fc6": {
+     "arquivo": "Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "De Canto"
+     ],
+     "cotas": {
+      "A": "1,57",
+      "B": "1,57",
+      "C": "1,21",
+      "D": "0,54",
+      "E": "0,40",
+      "F": "0,41",
+      "G": "1,13",
+      "H1": "0,51",
+      "H2": "0,39",
+      "I": "1,53",
+      "J": "0,30",
+      "L/A": "0,68",
+      "M/A": "0,62",
+      "N": "2,21",
+      "O": "1,65"
+     }
+    },
+    "086cf1509972a791636dcaa016f2d63ee73aa5db": {
+     "arquivo": "Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,85",
+      "B": "1,70",
+      "C": "1,14",
+      "D": "0,42",
+      "E": "0,35",
+      "F": "0,33",
+      "G": "0,33",
+      "H1": "0,43",
+      "H2": "0,37",
+      "I": "1,38",
+      "J": "0,45",
+      "L/A": "0,60",
+      "M/A": "0,60"
+     }
+    },
+    "0b50d0f36604f4f43e0c1d038e784082deb96b76": {
+     "arquivo": "Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,81",
+      "B": "1,40",
+      "C": "0,88",
+      "D": "0,47",
+      "E": "0,37",
+      "F": "0,29",
+      "G": "0,25",
+      "H": "0,39",
+      "I": "1,20",
+      "J": "0,405",
+      "L/A": "0,65",
+      "M/A": "0,54"
+     }
+    },
+    "12f5ed700428073bb6caaa40231020d589fdabfb": {
+     "arquivo": "California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "1,29",
+      "B": "1,78",
+      "C": "0,89",
+      "D": "0,85",
+      "E": "0,85",
+      "F": "0,30",
+      "G": "0,895",
+      "H": "0,40",
+      "I": "1,64",
+      "J": "0,27",
+      "L/A": "0,97",
+      "M/A": "0,97"
+     }
+    },
+    "21bc5e68de73fa1b850617f898c7350b2ca73a8d": {
+     "arquivo": "Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,88",
+      "B": "1,81",
+      "C": "1,00",
+      "D": "0,40",
+      "E": "0,45",
+      "F": "0,30",
+      "G": "0,80",
+      "H1": "0,40",
+      "H2": "0,35",
+      "I": "1,54",
+      "J": "0,425",
+      "L/A": "0,69",
+      "M/A": "0,60"
+     }
+    },
+    "16f26697b4c035267fd0fcab27562391cc8f8261": {
+     "arquivo": "Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,80",
+      "B": "1,69",
+      "C": "1,03",
+      "D": "0,33",
+      "E": "0,45",
+      "F": "0,28",
+      "G": "0,23",
+      "H": "0,38",
+      "I": "1,45",
+      "J": "0,40",
+      "L/A": "0,52",
+      "M/A": "0,63"
+     }
+    },
+    "99dfd97f24e228e5d49117b25c8a8a3958ea9551": {
+     "arquivo": "Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,90",
+      "B": "1,50",
+      "C": "0,85",
+      "D": "0,47",
+      "E": "0,46",
+      "F": "0,34",
+      "G": "0,24",
+      "H": "0,44",
+      "I": "1,20",
+      "J": "0,445",
+      "L/A": "0,68",
+      "M/A": "0,62"
+     }
+    },
+    "411ecabc2264dba5d35959ee054e8e92d8f53370": {
+     "arquivo": "Acqua top - 0,81 x 1,60 x 0,42 [GC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,81",
+      "B": "1,60",
+      "C": "0,76",
+      "D": "0,35",
+      "E": "0,35",
+      "F": "0,32",
+      "G": "0,80",
+      "H": "0,42",
+      "I": "1,36",
+      "J": "0,27",
+      "L/A": "0,57",
+      "M/A": "0,57"
+     }
+    },
+    "045afa71db34a2c697c5f487eac51c399694a7c0": {
+     "arquivo": "Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "1,09",
+      "B": "1,49",
+      "C": "0,82",
+      "D": "0,75",
+      "E": "0,60",
+      "F": "0,28",
+      "G": "0,24",
+      "H": "0,38",
+      "I": "1,22",
+      "J": "0,39",
+      "L/A": "0,93",
+      "M/A": "0,81"
+     }
+    },
+    "d8ac367b4d99e7e69f53f823618caa367a1829da": {
+     "arquivo": "Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "1,20",
+      "B": "1,50",
+      "C": "0,97",
+      "D": "0,86",
+      "E": "0,76",
+      "F": "0,30",
+      "G": "0,32",
+      "H": "0,40",
+      "I": "1,31",
+      "J": "0,60",
+      "L/A": "1,06",
+      "M/A": "0,92"
+     }
+    },
+    "870534e943f93a69e2c569831db4a7f1e82f76f4": {
+     "arquivo": "Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,80",
+      "B": "1,59",
+      "C": "0,93",
+      "D": "0,33",
+      "E": "0,45",
+      "F": "0,28",
+      "G": "0,24",
+      "H": "0,38",
+      "I": "1,35",
+      "J": "0,40",
+      "L/A": "0,53",
+      "M/A": "0,65"
+     }
+    },
+    "b0e12533a00c6459ef3c65d945fa631de888b8fd": {
+     "arquivo": "Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "1,19",
+      "B": "1,80",
+      "C": "0,98",
+      "D": "0,87",
+      "E": "0,72",
+      "F": "0,38",
+      "G": "0,29",
+      "H1": "0,48",
+      "H2": "0,42",
+      "I": "1,48",
+      "J": "0,595",
+      "L/A": "1,04",
+      "M/A": "1,01"
+     }
+    },
+    "f74c5ad9176df7640a71fbf3781ba8f91f785880": {
+     "arquivo": "Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
+     "forma": [
+      "banheira",
+      "Retangular"
+     ],
+     "cotas": {
+      "A": "0,80",
+      "B": "1,80",
+      "C": "1,26",
+      "D": "0,47",
+      "E": "0,37",
+      "F": "0,31",
+      "G": "0,25",
+      "H": "0,41",
+      "I": "1,62",
+      "J": "0,40",
+      "L/A": "0,65",
+      "M/A": "0,54"
+     }
+    }
+   }
+  },
+  {
+   "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+   "independente": true,
+   "data": "2026-10-19",
+   "metodo": "Leitura visual da tabela de cotas no PNG 3400 px (recorte ampliado 2x da tabela, sem os valores do pdfjs à vista). Amostra de 22 plantas com tabela lida, sorteio com semente fixa 20261019 e duas por forma quando existem (banheira de canto, redonda, retangular; ofurô redondo). Ofurô Osaka e Karisma ficaram fora porque este agente já tinha visto os valores extraídos delas.",
+   "leituras": {
+    "ef48a9c9e018ae0453d68c3157945ef23949b159": {
+     "arquivo": "Viena - 1,66 x 1,66 x 0,50 [GC-AC].pdf",
+     "forma": "banheira De Canto",
+     "cotas": {
+      "A": "1,66",
+      "B": "1,66",
+      "C": "1,20",
+      "D": "0,25",
+      "E": "0,46",
+      "F": "0,40",
+      "G": "0,34",
+      "H": "0,50",
+      "I": "1,58",
+      "J": "1,17",
+      "L/A": "0,56",
+      "M/A": "0,70",
+      "N": "1,61",
+      "O": "2,53"
+     }
+    },
+    "6b50df188c021bb6bf77280ee94e0ff4db0f99ad": {
+     "arquivo": "Simpatia de canto - 1,60 x 1,60 x 0,50 [GC].pdf",
+     "forma": "banheira De Canto",
+     "cotas": {
+      "A": "1,60",
+      "B": "1,60",
+      "C": "1,02",
+      "D": "0,45",
+      "E": "0,45",
+      "F": "0,40",
+      "G": "0,80",
+      "H1": "0,50",
+      "H2": "0,30",
+      "I": "1,72",
+      "J": "0,53",
+      "L/A": "0,58",
+      "M/A": "0,58",
+      "N": "2,25",
+      "O": "1,70"
+     }
+    },
+    "54929a556c2f03a066073d151bb5e71d4ee52c23": {
+     "arquivo": "Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,84",
+      "B": "1,29",
+      "C": "0,80",
+      "D": "0,40",
+      "E": "0,35",
+      "F": "0,34",
+      "G": "0,30",
+      "H1": "0,44",
+      "H2": "0,38",
+      "I": "1,02",
+      "J": "0,42",
+      "L/A": "0,60",
+      "M/A": "0,58"
+     }
+    },
+    "082fbce11715a25aa6475ff5d592551f6b5a0ee0": {
+     "arquivo": "Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,79",
+      "B": "1,19",
+      "C": "0,71",
+      "D": "0,33",
+      "E": "0,35",
+      "F": "0,29",
+      "G": "0,23",
+      "H": "0,39",
+      "I": "0,97",
+      "J": "0,395",
+      "L/A": "0,56",
+      "M/A": "0,60"
+     }
+    },
+    "5125421f00687d7a1fb2ea10a92946bd918c29d6": {
+     "arquivo": "Holanda - 1,68 x 1,68 x 0,53 [GC].pdf",
+     "forma": "banheira Redonda",
+     "cotas": {
+      "A": "1,68",
+      "B": "1,68",
+      "C": "1,14",
+      "D": "0,58",
+      "E": "0,45",
+      "F": "0,43",
+      "G": "0,60",
+      "H1": "0,53",
+      "H2": "0,39",
+      "I": "1,60",
+      "J": "0,60",
+      "L/A": "1,60",
+      "M/B": "0,60",
+      "M": "0,30"
+     }
+    },
+    "7821d87845f46eadddcd42b195cd974566f07ba7": {
+     "arquivo": "Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
+     "forma": "banheira Redonda",
+     "cotas": {
+      "A": "1,49",
+      "B": "1,49",
+      "C": "1,03",
+      "D": "0,97",
+      "E": "0,74",
+      "F": "0,335",
+      "G": "0,33",
+      "H1": "0,435",
+      "H2": "0,40",
+      "I": "1,21",
+      "J": "0,785",
+      "L/A": "1,20",
+      "M/A": "0,88"
+     }
+    },
+    "7ea54835e81495a8c212f21e2fdce09a6e887c44": {
+     "arquivo": "Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
+     "forma": "ofuro Redonda",
+     "cotas": {
+      "A": "0,80",
+      "B": "1,00",
+      "C1": "0,23",
+      "C2": "0,31",
+      "D": "0,40",
+      "E": "0,35",
+      "F": "0,66",
+      "G": "0,26",
+      "H1": "0,76",
+      "H2": "0,47",
+      "J": "0,40",
+      "L/A": "0,50",
+      "M/A": "0,52"
+     }
+    },
+    "c46a8cf02ba78b8631b671571593ccc9dd57956c": {
+     "arquivo": "Acqua vip - 0,79 x 1,59 x 0,39 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,79",
+      "B": "1,59",
+      "C": "0,92",
+      "D": "0,33",
+      "E": "0,35",
+      "F": "0,29",
+      "G": "0,23",
+      "H": "0,39",
+      "I": "1,35",
+      "J": "0,395",
+      "L/A": "0,50",
+      "M/A": "0,60"
+     }
+    },
+    "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2": {
+     "arquivo": "Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,195",
+      "B": "1,80",
+      "C": "0,90",
+      "D": "0,69",
+      "E": "0,76",
+      "F": "0,32",
+      "G": "0,73",
+      "H1": "0,42",
+      "H2": "0,35",
+      "I": "1,55",
+      "J": "0,585",
+      "L/A": "0,99",
+      "M/A": "1,01"
+     }
+    },
+    "c5188ae8dbeb870443aab3fa3a1e365d587972b0": {
+     "arquivo": "Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,20",
+      "B": "1,79",
+      "C": "1,10",
+      "D": "0,78",
+      "E": "0,74",
+      "F": "0,38",
+      "G": "0,87",
+      "H": "0,48",
+      "I": "1,57",
+      "J": "0,28",
+      "L/A": "1,04",
+      "M/A": "1,02"
+     }
+    },
+    "755183833003f8bdc461a48f95b80de7a8000341": {
+     "arquivo": "Acqua vip - 0,79 x 1,09 x 0,39 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,79",
+      "B": "1,09",
+      "C": "0,62",
+      "D": "0,33",
+      "E": "0,35",
+      "F": "0,29",
+      "G": "0,23",
+      "H": "0,39",
+      "I": "0,87",
+      "J": "0,395",
+      "L/A": "0,56",
+      "M/A": "0,60"
+     }
+    },
+    "f613861013988bf8cc0465cf725352ed950c4cf4": {
+     "arquivo": "Maresias - 1,20  x 1,51 x 0,44 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,20",
+      "B": "1,51",
+      "C": "0,88",
+      "D": "0,76",
+      "E": "0,79",
+      "F": "0,34",
+      "G": "0,32",
+      "H": "0,44",
+      "I": "1,21",
+      "J": "0,60",
+      "L/A": "0,97",
+      "M/A": "1,00"
+     }
+    },
+    "aa1bc815e99f4242469fb27c25c65e3b0d35851d": {
+     "arquivo": "Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,00",
+      "B": "1,50",
+      "C": "1,02",
+      "D": "0,70",
+      "E": "0,46",
+      "F": "0,39",
+      "G": "0,26",
+      "H": "0,49",
+      "I": "1,41",
+      "J": "0,54",
+      "L/A": "0,95",
+      "M/A": "0,69"
+     }
+    },
+    "7fd5339ed299785b5e7805412980a556274d45dc": {
+     "arquivo": "Havana - 1,13 x 1,69 x 0,39 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,13",
+      "B": "1,69",
+      "C": "1,10",
+      "D": "0,70",
+      "E": "0,77",
+      "F": "0,29",
+      "G": "0,28",
+      "H1": "0,39",
+      "H2": "0,38",
+      "I": "1,50",
+      "J": "0,39",
+      "L/A": "0,82",
+      "M/A": "0,95"
+     }
+    },
+    "15988b8642ad233c9592ee2637bde4856ee67c46": {
+     "arquivo": "Acqua spaço - 0,69 x 1,79 x 0,41 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,69",
+      "B": "1,79",
+      "C": "1,26",
+      "D": "0,36",
+      "E": "0,36",
+      "F": "0,31",
+      "G": "0,34",
+      "H": "0,41",
+      "I": "1,58",
+      "J": "0,355",
+      "L/A": "0,56",
+      "M/A": "0,59"
+     }
+    },
+    "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de": {
+     "arquivo": "Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,20",
+      "B": "1,80",
+      "C": "1,17",
+      "D": "0,77",
+      "E": "0,80",
+      "F": "0,45",
+      "G": "0,23",
+      "H1": "0,55",
+      "H2": "0,43",
+      "I": "1,60",
+      "J": "1,15",
+      "L/A": "0,99",
+      "M/A": "0,99"
+     }
+    },
+    "9e99439fa6a056b61c7244fa33b6c3df21d2811f": {
+     "arquivo": "Indonesia - 0,74 x 1,30 x 0,40 [GC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,745",
+      "B": "1,30",
+      "C": "0,74",
+      "D": "0,44",
+      "E": "0,36",
+      "F": "0,30",
+      "G": "0,28",
+      "H": "0,40",
+      "I": "1,08",
+      "J": "0,37",
+      "L/A": "0,56",
+      "M/A": "0,57"
+     }
+    },
+    "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7": {
+     "arquivo": "Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,195",
+      "B": "1,695",
+      "C": "1,03",
+      "D": "0,85",
+      "E": "0,77",
+      "F": "0,39",
+      "G": "0,27",
+      "H1": "0,48",
+      "H2": "0,49",
+      "I": "1,46",
+      "J": "0,595",
+      "L/A": "1,01",
+      "M/A": "1,01"
+     }
+    },
+    "cdec52b5de727a9b07db3dad5edafedd0bac6070": {
+     "arquivo": "Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "1,09",
+      "B": "1,59",
+      "C": "0,92",
+      "D": "0,75",
+      "E": "0,60",
+      "F": "0,28",
+      "G": "0,24",
+      "H": "0,38",
+      "I": "1,35",
+      "J": "0,39",
+      "L/A": "0,93",
+      "M/A": "0,81"
+     }
+    },
+    "47ccaade016e846ee4f1c106c3e2794e270b79a4": {
+     "arquivo": "Conforto - 0,82 x 1,51 x 0,48 [GC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,82",
+      "B": "1,51",
+      "C": "0,95",
+      "D": "0,35",
+      "E": "0,58",
+      "F": "0,38",
+      "G": "0,41",
+      "H": "0,48",
+      "I": "1,31",
+      "J": "0,42",
+      "L/A": "0,62",
+      "M/A": "0,77"
+     }
+    },
+    "fedda4bbdfb18617ab477029b312cdeb1a3818b9": {
+     "arquivo": "Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,80",
+      "B": "1,70",
+      "C": "1,16",
+      "D": "0,47",
+      "E": "0,36",
+      "F": "0,31",
+      "G": "0,25",
+      "H": "0,41",
+      "I": "1,53",
+      "J": "0,40",
+      "L/A": "0,65",
+      "M/A": "0,54"
+     }
+    },
+    "1d3c2aee2104f556ceba816b5b755c22577b839a": {
+     "arquivo": "Acqua spaço - 0,69 x 1,69 x 0,41 [GC-AC].pdf",
+     "forma": "banheira Retangular",
+     "cotas": {
+      "A": "0,69",
+      "B": "1,69",
+      "C": "1,18",
+      "D": "0,36",
+      "E": "0,36",
+      "F": "0,31",
+      "G": "0,28",
+      "H": "0,41",
+      "I": "1,48",
+      "J": "0,345",
+      "L/A": "0,56",
+      "M/A": "0,59"
+     }
+    }
+   },
+   "posicoes_conferidas": {
+    "15988b8642ad233c9592ee2637bde4856ee67c46": {
+     "arquivo": "Acqua spaço - 0,69 x 1,79 x 0,41 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H"
+     ]
+    },
+    "555a2e2d4ff25502b9fa4c186f7ad55acbd3855d": {
+     "arquivo": "Majory - 1,50 x 1,50 x 0,48 [GC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "556eb4d6147d98571ded2133767941fbd8a9ba0f": {
+     "arquivo": "Havana - 1,13 x 1,59 x 0,39 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "6f3b6a75d0a137663ca918416060e7d41e678199": {
+     "arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "7ea54835e81495a8c212f21e2fdce09a6e887c44": {
+     "arquivo": "Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "7fd5339ed299785b5e7805412980a556274d45dc": {
+     "arquivo": "Havana - 1,13 x 1,69 x 0,39 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "a1a7715851daa411970ff2a412c691d8230772f2": {
+     "arquivo": "Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "aa1bc815e99f4242469fb27c25c65e3b0d35851d": {
+     "arquivo": "Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H"
+     ]
+    },
+    "cbed836840b19d5bdafc85421d30418c6a5c156b": {
+     "arquivo": "Karisma - 1,10 x 1,80 x 0,50 [GC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H"
+     ]
+    },
+    "d03d552049e0919534978c2336a3bdec678c3658": {
+     "arquivo": "Majory - 1,20 x 1,20 x 0,47 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de": {
+     "arquivo": "Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "def36ce9953ccd82a0287455bbe3e52f44ec6b45": {
+     "arquivo": "Filipinas - 0,91 x 1,61 x 0,58 [GC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H1",
+      "H2"
+     ]
+    },
+    "ebcc35fa35c11a3aa61b59a5398906422a3e17b9": {
+     "arquivo": "Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H"
+     ]
+    },
+    "f92fe93f38680b0a646460c4beaf418d8e9e6dd6": {
+     "arquivo": "Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
+     "letras": [
+      "A",
+      "B",
+      "H"
+     ]
+    }
+   },
+   "metodo_posicoes": "Sobreposição visual: marcador vermelho no ponto (x, y) gravado para A, B e H (ou H1 e H2) sobre o PNG 3400 px. Em todas as plantas listadas o marcador cai sobre a letra da linha de cota certa, e não sobre a palavra VISTA. Inclui as 8 plantas apontadas pelo verificador."
+  },
+  {
+   "revisor": "verificador do bloco 2-midia",
+   "independente": true,
+   "data": "2026-10-19",
+   "metodo": "Atestado: o verificador leu visualmente a tabela destas plantas e registrou que os valores batem com o JSON do pdfjs. Os valores não foram transcritos; não entra na contagem da amostra com valores.",
+   "atestados": {
+    "5125421f00687d7a1fb2ea10a92946bd918c29d6": {
+     "arquivo": "Holanda - 1,68 x 1,68 x 0,53 [GC].pdf",
+     "nota": "valores lidos visualmente batem com o JSON (relatório do verificador)"
+    },
+    "6f3b6a75d0a137663ca918416060e7d41e678199": {
+     "arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
+     "nota": "valores lidos visualmente batem com o JSON (relatório do verificador)"
+    },
+    "75989809d5b14a699935be18472fd837ca8a067d": {
+     "arquivo": "Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
+     "nota": "valores lidos visualmente batem com o JSON (relatório do verificador)"
+    },
+    "7d9ae0d309fc6217c58bf4496e163b04d3205495": {
+     "arquivo": "Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
+     "nota": "valores lidos visualmente batem com o JSON (relatório do verificador)"
+    },
+    "cbed836840b19d5bdafc85421d30418c6a5c156b": {
+     "arquivo": "Karisma - 1,10 x 1,80 x 0,50 [GC].pdf",
+     "nota": "valores lidos visualmente batem com o JSON (relatório do verificador)"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "sha1": "6a316e900a3ff9c4cb5b5b33959caadd142a3792",
+ "pdf_path": "plantas/ofuros/Ofuro solene gel - 1,48 x 1,48 x 0,88 [GC].pdf",
+ "nome_arquivo": "Ofuro solene gel - 1,48 x 1,48 x 0,88 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20solene%20gel%20-%201,48%20x%201,48%20x%200,88%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "ofuro-duplo-solene-completo-com-hidro",
+   "rotulo": "1,48 x 1,48 x 0,88"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

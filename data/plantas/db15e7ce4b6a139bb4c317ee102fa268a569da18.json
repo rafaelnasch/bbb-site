@@ -1,0 +1,236 @@
+{
+ "sha1": "db15e7ce4b6a139bb4c317ee102fa268a569da18",
+ "pdf_path": "plantas/banheiras/Vitoriana - 0,75 x 1,63 x 0,49 [GC-AC].pdf",
+ "nome_arquivo": "Vitoriana - 0,75 x 1,63 x 0,49 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoriana%20-%200,75%20x%201,63%20x%200,49%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1972,
+   "y": 1003,
+   "posicoes": [
+    {
+     "x": 1972,
+     "y": 1003
+    }
+   ],
+   "tabela_x": 2437,
+   "tabela_y": 754
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.63,
+   "valor_texto": "1,63",
+   "x": 1348,
+   "y": 718,
+   "posicoes": [
+    {
+     "x": 1348,
+     "y": 718
+    }
+   ],
+   "tabela_x": 2437,
+   "tabela_y": 791
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.74,
+   "valor_texto": "0,74",
+   "x": 1436,
+   "y": 958,
+   "posicoes": [
+    {
+     "x": 1436,
+     "y": 958
+    }
+   ],
+   "tabela_x": 2439,
+   "tabela_y": 841
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1558,
+   "y": 1005,
+   "posicoes": [
+    {
+     "x": 1558,
+     "y": 1005
+    }
+   ],
+   "tabela_x": 2442,
+   "tabela_y": 882
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1263,
+   "y": 1006,
+   "posicoes": [
+    {
+     "x": 1263,
+     "y": 1006
+    }
+   ],
+   "tabela_x": 2441,
+   "tabela_y": 923
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1773,
+   "y": 1804,
+   "posicoes": [
+    {
+     "x": 1773,
+     "y": 1804
+    }
+   ],
+   "tabela_x": 2441,
+   "tabela_y": 970
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.425,
+   "valor_texto": "0,425",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1757,
+     "y": 995
+    },
+    {
+     "x": 1761,
+     "y": 1953
+    }
+   ],
+   "tabela_x": 2442,
+   "tabela_y": 1025
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.49,
+   "valor_texto": "0,49",
+   "x": 1570,
+   "y": 1771,
+   "posicoes": [
+    {
+     "x": 1570,
+     "y": 1771
+    }
+   ],
+   "tabela_x": 2447,
+   "tabela_y": 1067
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.79,
+   "valor_texto": "0,79",
+   "x": 785,
+   "y": 1706,
+   "posicoes": [
+    {
+     "x": 785,
+     "y": 1706
+    }
+   ],
+   "tabela_x": 2448,
+   "tabela_y": 1109
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.48,
+   "valor_texto": "1,48",
+   "x": 1377,
+   "y": 1084,
+   "posicoes": [
+    {
+     "x": 1377,
+     "y": 1084
+    }
+   ],
+   "tabela_x": 2444,
+   "tabela_y": 1152
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.355,
+   "valor_texto": "0,355",
+   "x": 1613,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1613,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2442,
+   "tabela_y": 1199
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.58,
+   "valor_texto": "0,58",
+   "x": 1348,
+   "y": 1006,
+   "posicoes": [
+    {
+     "x": 1348,
+     "y": 1006
+    }
+   ],
+   "tabela_x": 2442,
+   "tabela_y": 1252
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.565,
+   "valor_texto": "0,565",
+   "x": 1060,
+   "y": 1007,
+   "posicoes": [
+    {
+     "x": 1060,
+     "y": 1007
+    }
+   ],
+   "tabela_x": 2446,
+   "tabela_y": 1300
+  }
+ ],
+ "usos": [],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "nenhum tamanho vendido aponta para esta planta"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": null
+}

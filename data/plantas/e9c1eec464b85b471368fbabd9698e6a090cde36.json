@@ -1,0 +1,42 @@
+{
+ "sha1": "e9c1eec464b85b471368fbabd9698e6a090cde36",
+ "pdf_path": "plantas/banheiras/Mercury---1,50-x-1,50-x-0,47-[GC-AC].pdf",
+ "nome_arquivo": "Mercury---1,50-x-1,50-x-0,47-[GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Mercury---1,50-x-1,50-x-0,47-%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2375,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "banheira-de-canto-mercury-completa-com-hidro-em-acrilico",
+   "rotulo": "1,50 x 1,50 x 0,47"
+  },
+  {
+   "slug": "banheira-de-canto-mercury-completa-com-hidro",
+   "rotulo": "1,50 x 1,50 x 0,47"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "contorno"
+}

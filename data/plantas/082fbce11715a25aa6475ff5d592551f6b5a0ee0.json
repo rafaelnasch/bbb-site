@@ -1,0 +1,254 @@
+{
+ "sha1": "082fbce11715a25aa6475ff5d592551f6b5a0ee0",
+ "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
+ "nome_arquivo": "Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,19%20x%200,39%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.79,
+   "valor_texto": "0,79",
+   "x": 1815,
+   "y": 1077,
+   "posicoes": [
+    {
+     "x": 1815,
+     "y": 1077
+    }
+   ],
+   "tabela_x": 2276,
+   "tabela_y": 810
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.19,
+   "valor_texto": "1,19",
+   "x": 1312,
+   "y": 741,
+   "posicoes": [
+    {
+     "x": 1312,
+     "y": 741
+    }
+   ],
+   "tabela_x": 2277,
+   "tabela_y": 852
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.71,
+   "valor_texto": "0,71",
+   "x": 1341,
+   "y": 1077,
+   "posicoes": [
+    {
+     "x": 1341,
+     "y": 1077
+    }
+   ],
+   "tabela_x": 2278,
+   "tabela_y": 906
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1456,
+   "y": 1050,
+   "posicoes": [
+    {
+     "x": 1456,
+     "y": 1050
+    }
+   ],
+   "tabela_x": 2282,
+   "tabela_y": 951
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1193,
+   "y": 1046,
+   "posicoes": [
+    {
+     "x": 1193,
+     "y": 1046
+    }
+   ],
+   "tabela_x": 2281,
+   "tabela_y": 996
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.29,
+   "valor_texto": "0,29",
+   "x": 1684,
+   "y": 1798,
+   "posicoes": [
+    {
+     "x": 1684,
+     "y": 1798
+    }
+   ],
+   "tabela_x": 2280,
+   "tabela_y": 1049
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.23,
+   "valor_texto": "0,23",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1668,
+     "y": 1054
+    },
+    {
+     "x": 1669,
+     "y": 1934
+    }
+   ],
+   "tabela_x": 2283,
+   "tabela_y": 1097
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1363,
+   "y": 1760,
+   "posicoes": [
+    {
+     "x": 1363,
+     "y": 1760
+    }
+   ],
+   "tabela_x": 2282,
+   "tabela_y": 1149
+  },
+  {
+   "letra": "I",
+   "valor_m": 0.97,
+   "valor_texto": "0,97",
+   "x": 1350,
+   "y": 1043,
+   "posicoes": [
+    {
+     "x": 1350,
+     "y": 1043
+    }
+   ],
+   "tabela_x": 2282,
+   "tabela_y": 1197
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.395,
+   "valor_texto": "0,395",
+   "x": 1567,
+   "y": 1224,
+   "posicoes": [
+    {
+     "x": 1567,
+     "y": 1224
+    }
+   ],
+   "tabela_x": 2280,
+   "tabela_y": 1248
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.56,
+   "valor_texto": "0,56",
+   "x": 1530,
+   "y": 1049,
+   "posicoes": [
+    {
+     "x": 1530,
+     "y": 1049
+    }
+   ],
+   "tabela_x": 2279,
+   "tabela_y": 1306
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1129,
+   "y": 1052,
+   "posicoes": [
+    {
+     "x": 1129,
+     "y": 1052
+    }
+   ],
+   "tabela_x": 2284,
+   "tabela_y": 1360
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-vip-completa-com-hidro-em-acrilico",
+   "rotulo": "0,79 x 1,19  x 0,39"
+  },
+  {
+   "slug": "banheira-acqua-vip-completa-com-hidro",
+   "rotulo": "0,79 x 1,19  x 0,39"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-vip-completa-com-hidro-em-acrilico",
+    "rotulo": "0,79 x 1,19  x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-acqua-vip-completa-com-hidro",
+    "rotulo": "0,79 x 1,19  x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

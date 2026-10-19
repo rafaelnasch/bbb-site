@@ -1,0 +1,42 @@
+{
+ "sha1": "258b84b9e66d0ba5afc3cc68b7e520584c002553",
+ "pdf_path": "plantas/spas/Spa perola - 1,69 x 1,70 x 0,76 [GC-AC].pdf",
+ "nome_arquivo": "Spa perola - 1,69 x 1,70 x 0,76 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20perola%20-%201,69%20x%201,70%20x%200,76%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "spa-quadrado-perola-completo-com-hidro-em-acrilico",
+   "rotulo": "1,69 x 1,70 x 0,76"
+  },
+  {
+   "slug": "spa-quadrado-perola-completo-com-hidro",
+   "rotulo": "1,69 x 1,70 x 0,76"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

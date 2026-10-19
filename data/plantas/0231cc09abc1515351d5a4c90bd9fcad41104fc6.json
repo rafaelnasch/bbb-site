@@ -1,0 +1,322 @@
+{
+ "sha1": "0231cc09abc1515351d5a4c90bd9fcad41104fc6",
+ "pdf_path": "plantas/banheiras/Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
+ "nome_arquivo": "Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Veneza%20-%201,57%20x%201,57%20x%200,51%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.57,
+   "valor_texto": "1,57",
+   "x": 1435,
+   "y": 1162,
+   "posicoes": [
+    {
+     "x": 1435,
+     "y": 1162
+    }
+   ],
+   "tabela_x": 2019,
+   "tabela_y": 1376
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.57,
+   "valor_texto": "1,57",
+   "x": 844,
+   "y": 1165,
+   "posicoes": [
+    {
+     "x": 844,
+     "y": 1165
+    }
+   ],
+   "tabela_x": 2019,
+   "tabela_y": 1403
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.21,
+   "valor_texto": "1,21",
+   "x": 1155,
+   "y": 1466,
+   "posicoes": [
+    {
+     "x": 1155,
+     "y": 1466
+    }
+   ],
+   "tabela_x": 2020,
+   "tabela_y": 1439
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.54,
+   "valor_texto": "0,54",
+   "x": 1103,
+   "y": 1418,
+   "posicoes": [
+    {
+     "x": 1103,
+     "y": 1418
+    }
+   ],
+   "tabela_x": 2022,
+   "tabela_y": 1468
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1378,
+   "y": 1419,
+   "posicoes": [
+    {
+     "x": 1378,
+     "y": 1419
+    }
+   ],
+   "tabela_x": 2021,
+   "tabela_y": 1498
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": 2280,
+   "y": 1161,
+   "posicoes": [
+    {
+     "x": 2280,
+     "y": 1161
+    }
+   ],
+   "tabela_x": 2021,
+   "tabela_y": 1531
+  },
+  {
+   "letra": "G",
+   "valor_m": 1.13,
+   "valor_texto": "1,13",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1399,
+     "y": 1487
+    },
+    {
+     "x": 2597,
+     "y": 1276
+    }
+   ],
+   "tabela_x": 2023,
+   "tabela_y": 1563
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.51,
+   "valor_texto": "0,51",
+   "x": 2238,
+   "y": 1134,
+   "posicoes": [
+    {
+     "x": 2238,
+     "y": 1134
+    }
+   ],
+   "tabela_x": 2027,
+   "tabela_y": 1600
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 2349,
+   "y": 1106,
+   "posicoes": [
+    {
+     "x": 2349,
+     "y": 1106
+    }
+   ],
+   "tabela_x": 2027,
+   "tabela_y": 1630
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.53,
+   "valor_texto": "1,53",
+   "x": 1138,
+   "y": 1405,
+   "posicoes": [
+    {
+     "x": 1138,
+     "y": 1405
+    }
+   ],
+   "tabela_x": 2022,
+   "tabela_y": 1668
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1121,
+   "y": 1617,
+   "posicoes": [
+    {
+     "x": 1121,
+     "y": 1617
+    }
+   ],
+   "tabela_x": 2020,
+   "tabela_y": 1702
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.68,
+   "valor_texto": "0,68",
+   "x": 1136,
+   "y": 1113,
+   "posicoes": [
+    {
+     "x": 1136,
+     "y": 1113
+    }
+   ],
+   "tabela_x": 2014,
+   "tabela_y": 1738
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.62,
+   "valor_texto": "0,62",
+   "x": 1420,
+   "y": 1409,
+   "posicoes": [
+    {
+     "x": 1420,
+     "y": 1409
+    }
+   ],
+   "tabela_x": 2017,
+   "tabela_y": 1765
+  },
+  {
+   "letra": "N",
+   "valor_m": 2.21,
+   "valor_texto": "2,21",
+   "x": 1136,
+   "y": 1773,
+   "posicoes": [
+    {
+     "x": 1136,
+     "y": 1773
+    }
+   ],
+   "tabela_x": 2024,
+   "tabela_y": 1800
+  },
+  {
+   "letra": "O",
+   "valor_m": 1.65,
+   "valor_texto": "1,65",
+   "x": 570,
+   "y": 1320,
+   "posicoes": [
+    {
+     "x": 570,
+     "y": 1320
+    }
+   ],
+   "tabela_x": 2024,
+   "tabela_y": 1833
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-de-canto-veneza-com-hidro-em-acrilico",
+   "rotulo": "1,57 x 1,57 x 0,51"
+  },
+  {
+   "slug": "banheira-de-canto-veneza-com-hidro",
+   "rotulo": "1,57 x 1,57 x 0,51"
+  },
+  {
+   "slug": "banheira-de-canto-veneza-completa-com-hidro-em-acrilico",
+   "rotulo": "1,57 x 1,57 x 0,51"
+  },
+  {
+   "slug": "banheira-de-canto-veneza-completa-com-hidro",
+   "rotulo": "1,57 x 1,57 x 0,51"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-de-canto-veneza-com-hidro-em-acrilico",
+    "rotulo": "1,57 x 1,57 x 0,51",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-veneza-com-hidro",
+    "rotulo": "1,57 x 1,57 x 0,51",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-veneza-completa-com-hidro-em-acrilico",
+    "rotulo": "1,57 x 1,57 x 0,51",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-veneza-completa-com-hidro",
+    "rotulo": "1,57 x 1,57 x 0,51",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

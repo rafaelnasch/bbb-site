@@ -1,0 +1,265 @@
+{
+ "sha1": "12f5ed700428073bb6caaa40231020d589fdabfb",
+ "pdf_path": "plantas/banheiras/California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
+ "nome_arquivo": "California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,29%20x%201,78%20x%200,40%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.29,
+   "valor_texto": "1,29",
+   "x": 1945,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1945,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2417,
+   "tabela_y": 845
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.78,
+   "valor_texto": "1,78",
+   "x": 1312,
+   "y": 660,
+   "posicoes": [
+    {
+     "x": 1312,
+     "y": 660
+    }
+   ],
+   "tabela_x": 2417,
+   "tabela_y": 881
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.89,
+   "valor_texto": "0,89",
+   "x": 1312,
+   "y": 1139,
+   "posicoes": [
+    {
+     "x": 1312,
+     "y": 1139
+    }
+   ],
+   "tabela_x": 2418,
+   "tabela_y": 929
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": 1463,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1463,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2421,
+   "tabela_y": 969
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": 1151,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1151,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2421,
+   "tabela_y": 1009
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1292,
+   "y": 1880,
+   "posicoes": [
+    {
+     "x": 1292,
+     "y": 1880
+    }
+   ],
+   "tabela_x": 2420,
+   "tabela_y": 1055
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.895,
+   "valor_texto": "0,895",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1592,
+     "y": 2009
+    },
+    {
+     "x": 1601,
+     "y": 903
+    }
+   ],
+   "tabela_x": 2423,
+   "tabela_y": 1098
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1243,
+   "y": 1846,
+   "posicoes": [
+    {
+     "x": 1243,
+     "y": 1846
+    }
+   ],
+   "tabela_x": 2421,
+   "tabela_y": 1143
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.64,
+   "valor_texto": "1,64",
+   "x": 1312,
+   "y": 1041,
+   "posicoes": [
+    {
+     "x": 1312,
+     "y": 1041
+    }
+   ],
+   "tabela_x": 2422,
+   "tabela_y": 1185
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.27,
+   "valor_texto": "0,27",
+   "x": 1293,
+   "y": 786,
+   "posicoes": [
+    {
+     "x": 1293,
+     "y": 786
+    }
+   ],
+   "tabela_x": 2419,
+   "tabela_y": 1230
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.97,
+   "valor_texto": "0,97",
+   "x": 1693,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1693,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2419,
+   "tabela_y": 1281
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.97,
+   "valor_texto": "0,97",
+   "x": 950,
+   "y": 1118,
+   "posicoes": [
+    {
+     "x": 950,
+     "y": 1118
+    }
+   ],
+   "tabela_x": 2423,
+   "tabela_y": 1328
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-california-com-hidro",
+   "rotulo": "1,29 x 1,78 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-california-completa-com-hidro-em-acrilico",
+   "rotulo": "1,29 x 1,78 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-california-completa-com-hidro",
+   "rotulo": "1,29 x 1,78 x 0,40"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-california-com-hidro",
+    "rotulo": "1,29 x 1,78 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-california-completa-com-hidro-em-acrilico",
+    "rotulo": "1,29 x 1,78 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-california-completa-com-hidro",
+    "rotulo": "1,29 x 1,78 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

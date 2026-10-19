@@ -1,0 +1,250 @@
+{
+ "sha1": "a4aba49302cf98b1dc62949450052aabe51cb0a4",
+ "pdf_path": "plantas/banheiras/Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
+ "nome_arquivo": "Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Malibu%20-%201,70%20x%201,70%20x%200,50%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.7,
+   "valor_texto": "1,70",
+   "x": 1139,
+   "y": 1837,
+   "posicoes": [
+    {
+     "x": 1139,
+     "y": 1837
+    }
+   ],
+   "tabela_x": 1969,
+   "tabela_y": 1549
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.7,
+   "valor_texto": "1,70",
+   "x": 529,
+   "y": 1242,
+   "posicoes": [
+    {
+     "x": 529,
+     "y": 1242
+    }
+   ],
+   "tabela_x": 1969,
+   "tabela_y": 1580
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.16,
+   "valor_texto": "1,16",
+   "x": 1204,
+   "y": 1243,
+   "posicoes": [
+    {
+     "x": 1204,
+     "y": 1243
+    }
+   ],
+   "tabela_x": 1969,
+   "tabela_y": 1620
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1140,
+   "y": 1392,
+   "posicoes": [
+    {
+     "x": 1140,
+     "y": 1392
+    }
+   ],
+   "tabela_x": 1972,
+   "tabela_y": 1654
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1142,
+   "y": 1084,
+   "posicoes": [
+    {
+     "x": 1142,
+     "y": 1084
+    }
+   ],
+   "tabela_x": 1971,
+   "tabela_y": 1688
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 2237,
+   "y": 1075,
+   "posicoes": [
+    {
+     "x": 2237,
+     "y": 1075
+    }
+   ],
+   "tabela_x": 1971,
+   "tabela_y": 1727
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1126,
+   "y": 1598,
+   "posicoes": [
+    {
+     "x": 1126,
+     "y": 1598
+    }
+   ],
+   "tabela_x": 1973,
+   "tabela_y": 1763
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 2209,
+   "y": 1048,
+   "posicoes": [
+    {
+     "x": 2209,
+     "y": 1048
+    }
+   ],
+   "tabela_x": 1971,
+   "tabela_y": 1802
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.38,
+   "valor_texto": "1,38",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 593,
+     "y": 1242
+    },
+    {
+     "x": 1139,
+     "y": 1764
+    }
+   ],
+   "tabela_x": 1969,
+   "tabela_y": 1839
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1374,
+     "y": 1531
+    },
+    {
+     "x": 2465,
+     "y": 1216
+    }
+   ],
+   "tabela_x": 1967,
+   "tabela_y": 1877
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-redonda-malibu-com-hidro-em-acrilico",
+   "rotulo": "1,70 x 1,70 x 0,50"
+  },
+  {
+   "slug": "banheira-redonda-malibu-com-hidro",
+   "rotulo": "1,70 x 1,70 x 0,50"
+  },
+  {
+   "slug": "banheira-redonda-malibu-completa-com-hidro-em-acrilico",
+   "rotulo": "1,70 x 1,70 x 0,50"
+  },
+  {
+   "slug": "banheira-redonda-malibu-completa-com-hidro",
+   "rotulo": "1,70 x 1,70 x 0,50"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-redonda-malibu-com-hidro-em-acrilico",
+    "rotulo": "1,70 x 1,70 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-malibu-com-hidro",
+    "rotulo": "1,70 x 1,70 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-malibu-completa-com-hidro-em-acrilico",
+    "rotulo": "1,70 x 1,70 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-malibu-completa-com-hidro",
+    "rotulo": "1,70 x 1,70 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

@@ -1,0 +1,282 @@
+{
+ "sha1": "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5",
+ "pdf_path": "plantas/banheiras/Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
+ "nome_arquivo": "Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Caribe%20-%201,48%20x%201,48%20x%200,43%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.48,
+   "valor_texto": "1,48",
+   "x": 569,
+   "y": 1136,
+   "posicoes": [
+    {
+     "x": 569,
+     "y": 1136
+    }
+   ],
+   "tabela_x": 1949,
+   "tabela_y": 1495
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.48,
+   "valor_texto": "1,48",
+   "x": 1186,
+   "y": 1729,
+   "posicoes": [
+    {
+     "x": 1186,
+     "y": 1729
+    }
+   ],
+   "tabela_x": 1949,
+   "tabela_y": 1528
+  },
+  {
+   "letra": "C1",
+   "valor_m": 1.17,
+   "valor_texto": "1,17",
+   "x": 1188,
+   "y": 1618,
+   "posicoes": [
+    {
+     "x": 1188,
+     "y": 1618
+    }
+   ],
+   "tabela_x": 1957,
+   "tabela_y": 1571
+  },
+  {
+   "letra": "C2",
+   "valor_m": 1.08,
+   "valor_texto": "1,08",
+   "x": 714,
+   "y": 1136,
+   "posicoes": [
+    {
+     "x": 714,
+     "y": 1136
+    }
+   ],
+   "tabela_x": 1957,
+   "tabela_y": 1611
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.88,
+   "valor_texto": "0,88",
+   "x": 1355,
+   "y": 1138,
+   "posicoes": [
+    {
+     "x": 1355,
+     "y": 1138
+    }
+   ],
+   "tabela_x": 1953,
+   "tabela_y": 1643
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.88,
+   "valor_texto": "0,88",
+   "x": 1002,
+   "y": 1137,
+   "posicoes": [
+    {
+     "x": 1002,
+     "y": 1137
+    }
+   ],
+   "tabela_x": 1952,
+   "tabela_y": 1680
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 2304,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 2304,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 1951,
+   "tabela_y": 1721
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.74,
+   "valor_texto": "0,74",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1389,
+     "y": 1443
+    },
+    {
+     "x": 2516,
+     "y": 1215
+    }
+   ],
+   "tabela_x": 1954,
+   "tabela_y": 1760
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 2275,
+   "y": 1060,
+   "posicoes": [
+    {
+     "x": 2275,
+     "y": 1060
+    }
+   ],
+   "tabela_x": 1952,
+   "tabela_y": 1801
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.24,
+   "valor_texto": "1,24",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 653,
+     "y": 1136
+    },
+    {
+     "x": 1186,
+     "y": 1684
+    }
+   ],
+   "tabela_x": 1950,
+   "tabela_y": 1841
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.29,
+   "valor_texto": "0,29",
+   "x": 1172,
+   "y": 1492,
+   "posicoes": [
+    {
+     "x": 1172,
+     "y": 1492
+    }
+   ],
+   "tabela_x": 1948,
+   "tabela_y": 1882
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 1.1,
+   "valor_texto": "1,10",
+   "x": 1421,
+   "y": 1137,
+   "posicoes": [
+    {
+     "x": 1421,
+     "y": 1137
+    }
+   ],
+   "tabela_x": 1949,
+   "tabela_y": 1925
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 1.1,
+   "valor_texto": "1,10",
+   "x": 947,
+   "y": 1136,
+   "posicoes": [
+    {
+     "x": 947,
+     "y": 1136
+    }
+   ],
+   "tabela_x": 1952,
+   "tabela_y": 1967
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-redonda-caribe-com-hidro-em-acrilico",
+   "rotulo": "1,48 x 1,48 x 0,43"
+  },
+  {
+   "slug": "banheira-redonda-caribe-com-hidro",
+   "rotulo": "1,48 x 1,48 x 0,43"
+  },
+  {
+   "slug": "banheira-redonda-caribe-completa-com-hidro-em-acrilico",
+   "rotulo": "1,48 x 1,48 x 0,43"
+  },
+  {
+   "slug": "banheira-redonda-caribe-completa-com-hidro",
+   "rotulo": "1,48 x 1,48 x 0,43"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-redonda-caribe-com-hidro-em-acrilico",
+    "rotulo": "1,48 x 1,48 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-caribe-com-hidro",
+    "rotulo": "1,48 x 1,48 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-caribe-completa-com-hidro-em-acrilico",
+    "rotulo": "1,48 x 1,48 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-caribe-completa-com-hidro",
+    "rotulo": "1,48 x 1,48 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

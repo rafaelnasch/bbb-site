@@ -1,0 +1,33 @@
+{
+ "sha1": "aefd7b7dcd3acca407c0a45657432aad98717093",
+ "pdf_path": "plantas/banheiras/Sensuale de canto - 1,35 x 1,90 x 0,43 [GC-AC].pdf",
+ "nome_arquivo": "Sensuale de canto - 1,35 x 1,90 x 0,43 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sensuale%20de%20canto%20-%201,35%20x%201,90%20x%200,43%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

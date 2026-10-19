@@ -1,0 +1,230 @@
+{
+ "sha1": "d362b795871147ac1ad7ba3c62275002ad66bbb8",
+ "pdf_path": "plantas/banheiras/Acqua top - 0,81 x 1,70 x 0,42 [GC].pdf",
+ "nome_arquivo": "Acqua top - 0,81 x 1,70 x 0,42 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,81%20x%201,70%20x%200,42%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.81,
+   "valor_texto": "0,81",
+   "x": 1998,
+   "y": 1108,
+   "posicoes": [
+    {
+     "x": 1998,
+     "y": 1108
+    }
+   ],
+   "tabela_x": 2491,
+   "tabela_y": 889
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.7,
+   "valor_texto": "1,70",
+   "x": 1352,
+   "y": 798,
+   "posicoes": [
+    {
+     "x": 1352,
+     "y": 798
+    }
+   ],
+   "tabela_x": 2492,
+   "tabela_y": 926
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": 1352,
+   "y": 1107,
+   "posicoes": [
+    {
+     "x": 1352,
+     "y": 1107
+    }
+   ],
+   "tabela_x": 2493,
+   "tabela_y": 976
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1507,
+   "y": 1108,
+   "posicoes": [
+    {
+     "x": 1507,
+     "y": 1108
+    }
+   ],
+   "tabela_x": 2496,
+   "tabela_y": 1017
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1209,
+   "y": 1107,
+   "posicoes": [
+    {
+     "x": 1209,
+     "y": 1107
+    }
+   ],
+   "tabela_x": 2495,
+   "tabela_y": 1059
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.32,
+   "valor_texto": "0,32",
+   "x": 1332,
+   "y": 1731,
+   "posicoes": [
+    {
+     "x": 1332,
+     "y": 1731
+    }
+   ],
+   "tabela_x": 2494,
+   "tabela_y": 1106
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1639,
+     "y": 1874
+    },
+    {
+     "x": 1641,
+     "y": 1184
+    }
+   ],
+   "tabela_x": 2497,
+   "tabela_y": 1151
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 1595,
+   "y": 1698,
+   "posicoes": [
+    {
+     "x": 1595,
+     "y": 1698
+    }
+   ],
+   "tabela_x": 2496,
+   "tabela_y": 1198
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.46,
+   "valor_texto": "1,46",
+   "x": 1352,
+   "y": 1075,
+   "posicoes": [
+    {
+     "x": 1352,
+     "y": 1075
+    }
+   ],
+   "tabela_x": 2496,
+   "tabela_y": 1242
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": 1322,
+   "y": 1287,
+   "posicoes": [
+    {
+     "x": 1322,
+     "y": 1287
+    }
+   ],
+   "tabela_x": 2494,
+   "tabela_y": 1289
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.57,
+   "valor_texto": "0,57",
+   "x": 1690,
+   "y": 1108,
+   "posicoes": [
+    {
+     "x": 1690,
+     "y": 1108
+    }
+   ],
+   "tabela_x": 2494,
+   "tabela_y": 1342
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.57,
+   "valor_texto": "0,57",
+   "x": 991,
+   "y": 1107,
+   "posicoes": [
+    {
+     "x": 991,
+     "y": 1107
+    }
+   ],
+   "tabela_x": 2497,
+   "tabela_y": 1390
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-top-completa-com-hidro",
+   "rotulo": "0,81 x 1,70 x 0,42"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-top-completa-com-hidro",
+    "rotulo": "0,81 x 1,70 x 0,42",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

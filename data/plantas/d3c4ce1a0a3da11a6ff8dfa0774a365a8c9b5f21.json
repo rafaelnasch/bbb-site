@@ -1,0 +1,38 @@
+{
+ "sha1": "d3c4ce1a0a3da11a6ff8dfa0774a365a8c9b5f21",
+ "pdf_path": "plantas/spas/Spa Malbec 1,59 x 1,90 x 0,84 - PLANTA.PDF",
+ "nome_arquivo": "Spa Malbec 1,59 x 1,90 x 0,84 - PLANTA.PDF",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Malbec%201,59%20x%201,90%20x%200,84%20-%20PLANTA.PDF",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2402,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "spa-retangular-malbec-completo-com-hidro-em-acrilico",
+   "rotulo": "1,59 x 1,90 x 0, 84"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

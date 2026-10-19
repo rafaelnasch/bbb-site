@@ -1,0 +1,241 @@
+{
+ "sha1": "7c2a0e118ba0574e30fbeb41341ce625fc43968d",
+ "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,79 x 0,37 [GC-AC].pdf",
+ "nome_arquivo": "Acqua linea - 0,79 x 1,79 x 0,37 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,79%20x%200,37%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.795,
+   "valor_texto": "0,795",
+   "x": 2092,
+   "y": 1038,
+   "posicoes": [
+    {
+     "x": 2092,
+     "y": 1038
+    }
+   ],
+   "tabela_x": 2356,
+   "tabela_y": 741
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.795,
+   "valor_texto": "1,795",
+   "x": 1388,
+   "y": 728,
+   "posicoes": [
+    {
+     "x": 1388,
+     "y": 728
+    }
+   ],
+   "tabela_x": 2356,
+   "tabela_y": 781
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.17,
+   "valor_texto": "1,17",
+   "x": 1329,
+   "y": 1037,
+   "posicoes": [
+    {
+     "x": 1329,
+     "y": 1037
+    }
+   ],
+   "tabela_x": 2357,
+   "tabela_y": 834
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1087,
+   "y": 1003,
+   "posicoes": [
+    {
+     "x": 1087,
+     "y": 1003
+    }
+   ],
+   "tabela_x": 2361,
+   "tabela_y": 877
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1651,
+   "y": 1004,
+   "posicoes": [
+    {
+     "x": 1651,
+     "y": 1004
+    }
+   ],
+   "tabela_x": 2360,
+   "tabela_y": 921
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.27,
+   "valor_texto": "0,27",
+   "x": 843,
+   "y": 1763,
+   "posicoes": [
+    {
+     "x": 843,
+     "y": 1763
+    }
+   ],
+   "tabela_x": 2359,
+   "tabela_y": 971
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.22,
+   "valor_texto": "0,22",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 856,
+     "y": 1899
+    },
+    {
+     "x": 857,
+     "y": 1018
+    }
+   ],
+   "tabela_x": 2362,
+   "tabela_y": 1024
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.37,
+   "valor_texto": "0,37",
+   "x": 1428,
+   "y": 1727,
+   "posicoes": [
+    {
+     "x": 1428,
+     "y": 1727
+    }
+   ],
+   "tabela_x": 2360,
+   "tabela_y": 1074
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.56,
+   "valor_texto": "1,56",
+   "x": 1422,
+   "y": 985,
+   "posicoes": [
+    {
+     "x": 1422,
+     "y": 985
+    }
+   ],
+   "tabela_x": 2364,
+   "tabela_y": 1118
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.3975,
+   "valor_texto": "0,3975",
+   "x": 982,
+   "y": 1179,
+   "posicoes": [
+    {
+     "x": 982,
+     "y": 1179
+    }
+   ],
+   "tabela_x": 2362,
+   "tabela_y": 1168
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.66,
+   "valor_texto": "0,66",
+   "x": 994,
+   "y": 1009,
+   "posicoes": [
+    {
+     "x": 994,
+     "y": 1009
+    }
+   ],
+   "tabela_x": 2361,
+   "tabela_y": 1223
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.66,
+   "valor_texto": "0,66",
+   "x": 1799,
+   "y": 1037,
+   "posicoes": [
+    {
+     "x": 1799,
+     "y": 1037
+    }
+   ],
+   "tabela_x": 2367,
+   "tabela_y": 1269
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-linea-completa-com-hidro-em-acrilico",
+   "rotulo": "0,79 x 1,79 x 0,37"
+  },
+  {
+   "slug": "banheira-acqua-linea-completa-com-hidro",
+   "rotulo": "0,79 x 1,79 x 0,37"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-linea-completa-com-hidro-em-acrilico",
+    "rotulo": "0,79 x 1,79 x 0,37",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-acqua-linea-completa-com-hidro",
+    "rotulo": "0,79 x 1,79 x 0,37",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

@@ -1,0 +1,246 @@
+{
+ "sha1": "555a2e2d4ff25502b9fa4c186f7ad55acbd3855d",
+ "pdf_path": "plantas/banheiras/Majory - 1,50 x 1,50 x 0,48 [GC].pdf",
+ "nome_arquivo": "Majory - 1,50 x 1,50 x 0,48 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Majory%20-%201,50%20x%201,50%20x%200,48%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.5,
+   "valor_texto": "1,50",
+   "x": 1046,
+   "y": 1726,
+   "posicoes": [
+    {
+     "x": 1046,
+     "y": 1726
+    }
+   ],
+   "tabela_x": 1963,
+   "tabela_y": 1394
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.5,
+   "valor_texto": "1,50",
+   "x": 1641,
+   "y": 1200,
+   "posicoes": [
+    {
+     "x": 1641,
+     "y": 1200
+    }
+   ],
+   "tabela_x": 1963,
+   "tabela_y": 1426
+  },
+  {
+   "letra": "C1",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1525,
+   "y": 1199,
+   "posicoes": [
+    {
+     "x": 1525,
+     "y": 1199
+    }
+   ],
+   "tabela_x": 1971,
+   "tabela_y": 1468
+  },
+  {
+   "letra": "C2",
+   "valor_m": 0.68,
+   "valor_texto": "0,68",
+   "x": 1045,
+   "y": 1201,
+   "posicoes": [
+    {
+     "x": 1045,
+     "y": 1201
+    }
+   ],
+   "tabela_x": 1971,
+   "tabela_y": 1504
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1045,
+   "y": 1059,
+   "posicoes": [
+    {
+     "x": 1045,
+     "y": 1059
+    }
+   ],
+   "tabela_x": 1967,
+   "tabela_y": 1544
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1043,
+   "y": 1323,
+   "posicoes": [
+    {
+     "x": 1043,
+     "y": 1323
+    }
+   ],
+   "tabela_x": 1967,
+   "tabela_y": 1579
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 2607,
+   "y": 1001,
+   "posicoes": [
+    {
+     "x": 2607,
+     "y": 1001
+    }
+   ],
+   "tabela_x": 1966,
+   "tabela_y": 1619
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1028,
+     "y": 1529
+    },
+    {
+     "x": 2544,
+     "y": 1138
+    }
+   ],
+   "tabela_x": 1967,
+   "tabela_y": 1658
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": 2491,
+   "y": 974,
+   "posicoes": [
+    {
+     "x": 2491,
+     "y": 974
+    }
+   ],
+   "tabela_x": 1974,
+   "tabela_y": 1701
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 2052,
+   "y": 961,
+   "posicoes": [
+    {
+     "x": 2052,
+     "y": 961
+    }
+   ],
+   "tabela_x": 1974,
+   "tabela_y": 1739
+  },
+  {
+   "letra": "I1",
+   "valor_m": 0.92,
+   "valor_texto": "0,92",
+   "x": 1047,
+   "y": 1652,
+   "posicoes": [
+    {
+     "x": 1047,
+     "y": 1652
+    }
+   ],
+   "tabela_x": 1975,
+   "tabela_y": 1775
+  },
+  {
+   "letra": "I2",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1581,
+   "y": 1201,
+   "posicoes": [
+    {
+     "x": 1581,
+     "y": 1201
+    }
+   ],
+   "tabela_x": 1980,
+   "tabela_y": 1812
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1218,
+   "y": 1458,
+   "posicoes": [
+    {
+     "x": 1218,
+     "y": 1458
+    }
+   ],
+   "tabela_x": 1969,
+   "tabela_y": 1856
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-redonda-majory-completa-com-hidro",
+   "rotulo": "1,50 x 1,50 x 0,48"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-redonda-majory-completa-com-hidro",
+    "rotulo": "1,50 x 1,50 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

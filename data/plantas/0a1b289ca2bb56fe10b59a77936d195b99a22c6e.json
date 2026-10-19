@@ -1,0 +1,33 @@
+{
+ "sha1": "0a1b289ca2bb56fe10b59a77936d195b99a22c6e",
+ "pdf_path": "plantas/spas/Spa copacabana acrilico - 2,00 x 2,39 x 0,81 [AC].pdf",
+ "nome_arquivo": "Spa copacabana acrilico - 2,00 x 2,39 x 0,81 [AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20copacabana%20acrilico%20-%202,00%20x%202,39%20x%200,81%20%5bAC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

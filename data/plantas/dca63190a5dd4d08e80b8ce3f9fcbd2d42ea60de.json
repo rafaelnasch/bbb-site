@@ -1,0 +1,270 @@
+{
+ "sha1": "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de",
+ "pdf_path": "plantas/banheiras/Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
+ "nome_arquivo": "Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Supreme%20-%201,20%20x%201,80%20x%200,55%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1931,
+   "y": 1130,
+   "posicoes": [
+    {
+     "x": 1931,
+     "y": 1130
+    }
+   ],
+   "tabela_x": 2398,
+   "tabela_y": 751
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.8,
+   "valor_texto": "1,80",
+   "x": 1400,
+   "y": 773,
+   "posicoes": [
+    {
+     "x": 1400,
+     "y": 773
+    }
+   ],
+   "tabela_x": 2399,
+   "tabela_y": 782
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.17,
+   "valor_texto": "1,17",
+   "x": 1401,
+   "y": 1176,
+   "posicoes": [
+    {
+     "x": 1401,
+     "y": 1176
+    }
+   ],
+   "tabela_x": 2400,
+   "tabela_y": 822
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1167,
+   "y": 1132,
+   "posicoes": [
+    {
+     "x": 1167,
+     "y": 1132
+    }
+   ],
+   "tabela_x": 2403,
+   "tabela_y": 854
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1633,
+   "y": 1130,
+   "posicoes": [
+    {
+     "x": 1633,
+     "y": 1130
+    }
+   ],
+   "tabela_x": 2402,
+   "tabela_y": 888
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1793,
+   "y": 1778,
+   "posicoes": [
+    {
+     "x": 1793,
+     "y": 1778
+    }
+   ],
+   "tabela_x": 2402,
+   "tabela_y": 926
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.23,
+   "valor_texto": "0,23",
+   "x": 1251,
+   "y": 867,
+   "posicoes": [
+    {
+     "x": 1251,
+     "y": 867
+    }
+   ],
+   "tabela_x": 2404,
+   "tabela_y": 962
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.55,
+   "valor_texto": "0,55",
+   "x": 1211,
+   "y": 1753,
+   "posicoes": [
+    {
+     "x": 1211,
+     "y": 1753
+    }
+   ],
+   "tabela_x": 2409,
+   "tabela_y": 1000
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1647,
+   "y": 1718,
+   "posicoes": [
+    {
+     "x": 1647,
+     "y": 1718
+    }
+   ],
+   "tabela_x": 2410,
+   "tabela_y": 1044
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.6,
+   "valor_texto": "1,60",
+   "x": 1401,
+   "y": 1066,
+   "posicoes": [
+    {
+     "x": 1401,
+     "y": 1066
+    }
+   ],
+   "tabela_x": 2401,
+   "tabela_y": 1073
+  },
+  {
+   "letra": "J",
+   "valor_m": 1.15,
+   "valor_texto": "1,15",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1582,
+     "y": 1934
+    },
+    {
+     "x": 1579,
+     "y": 959
+    }
+   ],
+   "tabela_x": 2400,
+   "tabela_y": 1111
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.99,
+   "valor_texto": "0,99",
+   "x": 1042,
+   "y": 1132,
+   "posicoes": [
+    {
+     "x": 1042,
+     "y": 1132
+    }
+   ],
+   "tabela_x": 2408,
+   "tabela_y": 1150
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.99,
+   "valor_texto": "0,99",
+   "x": 1773,
+   "y": 1130,
+   "posicoes": [
+    {
+     "x": 1773,
+     "y": 1130
+    }
+   ],
+   "tabela_x": 2414,
+   "tabela_y": 1187
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-supreme-completa-com-hidro-em-acrilico",
+   "rotulo": "1,20 x 1,80 x 0,55"
+  },
+  {
+   "slug": "banheira-dupla-supreme-completa-com-hidro",
+   "rotulo": "1,20 x 1,80 x 0,55"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-supreme-completa-com-hidro-em-acrilico",
+    "rotulo": "1,20 x 1,80 x 0,55",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-supreme-completa-com-hidro",
+    "rotulo": "1,20 x 1,80 x 0,55",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

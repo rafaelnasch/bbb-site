@@ -1,0 +1,243 @@
+{
+ "sha1": "47ccaade016e846ee4f1c106c3e2794e270b79a4",
+ "pdf_path": "plantas/banheiras/Conforto - 0,82 x 1,51 x 0,48 [GC].pdf",
+ "nome_arquivo": "Conforto - 0,82 x 1,51 x 0,48 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Conforto%20-%200,82%20x%201,51%20x%200,48%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.82,
+   "valor_texto": "0,82",
+   "x": 2032,
+   "y": 1037,
+   "posicoes": [
+    {
+     "x": 2032,
+     "y": 1037
+    }
+   ],
+   "tabela_x": 2471,
+   "tabela_y": 851
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.51,
+   "valor_texto": "1,51",
+   "x": 1391,
+   "y": 704,
+   "posicoes": [
+    {
+     "x": 1391,
+     "y": 704
+    }
+   ],
+   "tabela_x": 2471,
+   "tabela_y": 894
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": 1392,
+   "y": 982,
+   "posicoes": [
+    {
+     "x": 1392,
+     "y": 982
+    }
+   ],
+   "tabela_x": 2473,
+   "tabela_y": 950
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1613,
+   "y": 1039,
+   "posicoes": [
+    {
+     "x": 1613,
+     "y": 1039
+    }
+   ],
+   "tabela_x": 2477,
+   "tabela_y": 991
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.58,
+   "valor_texto": "0,58",
+   "x": 1152,
+   "y": 1040,
+   "posicoes": [
+    {
+     "x": 1152,
+     "y": 1040
+    }
+   ],
+   "tabela_x": 2476,
+   "tabela_y": 1055
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1414,
+   "y": 1784,
+   "posicoes": [
+    {
+     "x": 1414,
+     "y": 1784
+    }
+   ],
+   "tabela_x": 2475,
+   "tabela_y": 1093
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1669,
+     "y": 1974
+    },
+    {
+     "x": 1677,
+     "y": 1074
+    }
+   ],
+   "tabela_x": 2479,
+   "tabela_y": 1143
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": 1246,
+   "y": 1746,
+   "posicoes": [
+    {
+     "x": 1246,
+     "y": 1746
+    }
+   ],
+   "tabela_x": 2477,
+   "tabela_y": 1197
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.31,
+   "valor_texto": "1,31",
+   "x": 1392,
+   "y": 927,
+   "posicoes": [
+    {
+     "x": 1392,
+     "y": 927
+    }
+   ],
+   "tabela_x": 2475,
+   "tabela_y": 1248
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 1367,
+   "y": 1193,
+   "posicoes": [
+    {
+     "x": 1367,
+     "y": 1193
+    }
+   ],
+   "tabela_x": 2472,
+   "tabela_y": 1301
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.62,
+   "valor_texto": "0,62",
+   "x": 1746,
+   "y": 1038,
+   "posicoes": [
+    {
+     "x": 1746,
+     "y": 1038
+    }
+   ],
+   "tabela_x": 2474,
+   "tabela_y": 1357
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1059,
+   "y": 1041,
+   "posicoes": [
+    {
+     "x": 1059,
+     "y": 1041
+    }
+   ],
+   "tabela_x": 2478,
+   "tabela_y": 1412
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-conforto-completa-com-hidro",
+   "rotulo": "0,82 x 1,51 x 0,48"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-conforto-completa-com-hidro",
+    "rotulo": "0,82 x 1,51 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

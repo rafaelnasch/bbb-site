@@ -1,0 +1,181 @@
+{
+ "sha1": "2f7bff2ff06d1f862ff22104d20f1e8dd368e621",
+ "pdf_path": "plantas/banheiras/Suiça - 1,40 x 1,41 x 0,49 [GC].pdf",
+ "nome_arquivo": "Suiça - 1,40 x 1,41 x 0,49 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sui%c3%a7a%20-%201,40%20x%201,41%20x%200,49%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.4,
+   "valor_texto": "1,40",
+   "x": 1764,
+   "y": 1292,
+   "posicoes": [
+    {
+     "x": 1764,
+     "y": 1292
+    }
+   ],
+   "tabela_x": 1942,
+   "tabela_y": 1424
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.41,
+   "valor_texto": "1,41",
+   "x": 1161,
+   "y": 758,
+   "posicoes": [
+    {
+     "x": 1161,
+     "y": 758
+    }
+   ],
+   "tabela_x": 1943,
+   "tabela_y": 1460
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1647,
+   "y": 1351,
+   "posicoes": [
+    {
+     "x": 1647,
+     "y": 1351
+    }
+   ],
+   "tabela_x": 1944,
+   "tabela_y": 1509
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 2400,
+   "y": 982,
+   "posicoes": [
+    {
+     "x": 2400,
+     "y": 982
+    }
+   ],
+   "tabela_x": 1946,
+   "tabela_y": 1550
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.25,
+   "valor_texto": "0,25",
+   "x": 1121,
+   "y": 1673,
+   "posicoes": [
+    {
+     "x": 1121,
+     "y": 1673
+    }
+   ],
+   "tabela_x": 1949,
+   "tabela_y": 1592
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.49,
+   "valor_texto": "0,49",
+   "x": 2218,
+   "y": 964,
+   "posicoes": [
+    {
+     "x": 2218,
+     "y": 964
+    }
+   ],
+   "tabela_x": 1948,
+   "tabela_y": 1642
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1695,
+   "y": 1337,
+   "posicoes": [
+    {
+     "x": 1695,
+     "y": 1337
+    }
+   ],
+   "tabela_x": 1949,
+   "tabela_y": 1688
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.71,
+   "valor_texto": "0,71",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 936,
+     "y": 1591
+    },
+    {
+     "x": 2156,
+     "y": 1142
+    }
+   ],
+   "tabela_x": 1947,
+   "tabela_y": 1734
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-suica-com-hidro",
+   "rotulo": "1,40 x 1,41 x 0,49"
+  },
+  {
+   "slug": "banheira-dupla-suica-completa-com-hidro",
+   "rotulo": "1,40 x 1,41 x 0,49"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-suica-com-hidro",
+    "rotulo": "1,40 x 1,41 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-suica-completa-com-hidro",
+    "rotulo": "1,40 x 1,41 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

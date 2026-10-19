@@ -1,0 +1,243 @@
+{
+ "sha1": "9e99439fa6a056b61c7244fa33b6c3df21d2811f",
+ "pdf_path": "plantas/banheiras/Indonesia - 0,74 x 1,30 x 0,40 [GC].pdf",
+ "nome_arquivo": "Indonesia - 0,74 x 1,30 x 0,40 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Indonesia%20-%200,74%20x%201,30%20x%200,40%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.745,
+   "valor_texto": "0,745",
+   "x": 1828,
+   "y": 1096,
+   "posicoes": [
+    {
+     "x": 1828,
+     "y": 1096
+    }
+   ],
+   "tabela_x": 2359,
+   "tabela_y": 818
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.3,
+   "valor_texto": "1,30",
+   "x": 1305,
+   "y": 770,
+   "posicoes": [
+    {
+     "x": 1305,
+     "y": 770
+    }
+   ],
+   "tabela_x": 2359,
+   "tabela_y": 857
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.74,
+   "valor_texto": "0,74",
+   "x": 1351,
+   "y": 1096,
+   "posicoes": [
+    {
+     "x": 1351,
+     "y": 1096
+    }
+   ],
+   "tabela_x": 2361,
+   "tabela_y": 908
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.44,
+   "valor_texto": "0,44",
+   "x": 1479,
+   "y": 1044,
+   "posicoes": [
+    {
+     "x": 1479,
+     "y": 1044
+    }
+   ],
+   "tabela_x": 2364,
+   "tabela_y": 950
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": 1206,
+   "y": 1044,
+   "posicoes": [
+    {
+     "x": 1206,
+     "y": 1044
+    }
+   ],
+   "tabela_x": 2363,
+   "tabela_y": 993
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1624,
+   "y": 1835,
+   "posicoes": [
+    {
+     "x": 1624,
+     "y": 1835
+    }
+   ],
+   "tabela_x": 2362,
+   "tabela_y": 1042
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1650,
+     "y": 1976
+    },
+    {
+     "x": 1662,
+     "y": 1077
+    }
+   ],
+   "tabela_x": 2366,
+   "tabela_y": 1088
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1331,
+   "y": 1800,
+   "posicoes": [
+    {
+     "x": 1331,
+     "y": 1800
+    }
+   ],
+   "tabela_x": 2364,
+   "tabela_y": 1136
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.08,
+   "valor_texto": "1,08",
+   "x": 1306,
+   "y": 1137,
+   "posicoes": [
+    {
+     "x": 1306,
+     "y": 1137
+    }
+   ],
+   "tabela_x": 2362,
+   "tabela_y": 1183
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.37,
+   "valor_texto": "0,37",
+   "x": 1547,
+   "y": 1227,
+   "posicoes": [
+    {
+     "x": 1547,
+     "y": 1227
+    }
+   ],
+   "tabela_x": 2359,
+   "tabela_y": 1231
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.56,
+   "valor_texto": "0,56",
+   "x": 1517,
+   "y": 1070,
+   "posicoes": [
+    {
+     "x": 1517,
+     "y": 1070
+    }
+   ],
+   "tabela_x": 2359,
+   "tabela_y": 1286
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.57,
+   "valor_texto": "0,57",
+   "x": 1079,
+   "y": 1097,
+   "posicoes": [
+    {
+     "x": 1079,
+     "y": 1097
+    }
+   ],
+   "tabela_x": 2363,
+   "tabela_y": 1328
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-individual-indonesia-completa-com-hidro",
+   "rotulo": "0,74 x 1,30 x 0,40"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-individual-indonesia-completa-com-hidro",
+    "rotulo": "0,74 x 1,30 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

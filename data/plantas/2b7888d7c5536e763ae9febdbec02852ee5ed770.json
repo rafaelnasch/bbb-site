@@ -1,0 +1,279 @@
+{
+ "sha1": "2b7888d7c5536e763ae9febdbec02852ee5ed770",
+ "pdf_path": "plantas/banheiras/Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
+ "nome_arquivo": "Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Verona%20-%201,19%20x%201,69%20x%200,43%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.195,
+   "valor_texto": "1,195",
+   "x": 1763,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 1763,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 2214,
+   "tabela_y": 764
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.69,
+   "valor_texto": "1,69",
+   "x": 1209,
+   "y": 697,
+   "posicoes": [
+    {
+     "x": 1209,
+     "y": 697
+    }
+   ],
+   "tabela_x": 2215,
+   "tabela_y": 798
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.07,
+   "valor_texto": "1,07",
+   "x": 1301,
+   "y": 1018,
+   "posicoes": [
+    {
+     "x": 1301,
+     "y": 1018
+    }
+   ],
+   "tabela_x": 2216,
+   "tabela_y": 844
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.84,
+   "valor_texto": "0,84",
+   "x": 1476,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 1476,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2219,
+   "tabela_y": 880
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1115,
+   "y": 1091,
+   "posicoes": [
+    {
+     "x": 1115,
+     "y": 1091
+    }
+   ],
+   "tabela_x": 2219,
+   "tabela_y": 918
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1631,
+   "y": 1844,
+   "posicoes": [
+    {
+     "x": 1631,
+     "y": 1844
+    }
+   ],
+   "tabela_x": 2218,
+   "tabela_y": 962
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.26,
+   "valor_texto": "0,26",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1652,
+     "y": 1966
+    },
+    {
+     "x": 1653,
+     "y": 1115
+    }
+   ],
+   "tabela_x": 2219,
+   "tabela_y": 1012
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1516,
+   "y": 1814,
+   "posicoes": [
+    {
+     "x": 1516,
+     "y": 1814
+    }
+   ],
+   "tabela_x": 2223,
+   "tabela_y": 1050
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 1079,
+   "y": 1811,
+   "posicoes": [
+    {
+     "x": 1079,
+     "y": 1811
+    }
+   ],
+   "tabela_x": 2224,
+   "tabela_y": 1088
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.52,
+   "valor_texto": "1,52",
+   "x": 1228,
+   "y": 1257,
+   "posicoes": [
+    {
+     "x": 1228,
+     "y": 1257
+    }
+   ],
+   "tabela_x": 2220,
+   "tabela_y": 1127
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.595,
+   "valor_texto": "0,595",
+   "x": 1556,
+   "y": 1275,
+   "posicoes": [
+    {
+     "x": 1556,
+     "y": 1275
+    }
+   ],
+   "tabela_x": 2218,
+   "tabela_y": 1170
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 1.02,
+   "valor_texto": "1,02",
+   "x": 1569,
+   "y": 1042,
+   "posicoes": [
+    {
+     "x": 1569,
+     "y": 1042
+    }
+   ],
+   "tabela_x": 2218,
+   "tabela_y": 1218
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 934,
+   "y": 1091,
+   "posicoes": [
+    {
+     "x": 934,
+     "y": 1091
+    }
+   ],
+   "tabela_x": 2221,
+   "tabela_y": 1263
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-verona-com-hidro-em-acrilico",
+   "rotulo": "1,19 x 1,69 x 0,43"
+  },
+  {
+   "slug": "banheira-dupla-verona-com-hidro",
+   "rotulo": "1,19 x 1,69 x 0,43"
+  },
+  {
+   "slug": "banheira-dupla-verona-completa-com-hidro-em-acrilico",
+   "rotulo": "1,19 x 1,69 x 0,43"
+  },
+  {
+   "slug": "banheira-dupla-verona-completa-com-hidro",
+   "rotulo": "1,19 x 1,69 x 0,43"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-verona-com-hidro-em-acrilico",
+    "rotulo": "1,19 x 1,69 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-verona-com-hidro",
+    "rotulo": "1,19 x 1,69 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-verona-completa-com-hidro-em-acrilico",
+    "rotulo": "1,19 x 1,69 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-verona-completa-com-hidro",
+    "rotulo": "1,19 x 1,69 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

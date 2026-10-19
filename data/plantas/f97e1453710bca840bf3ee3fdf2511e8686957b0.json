@@ -1,0 +1,279 @@
+{
+ "sha1": "f97e1453710bca840bf3ee3fdf2511e8686957b0",
+ "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
+ "nome_arquivo": "Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,20%20x%200,44%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": 1721,
+   "y": 1047,
+   "posicoes": [
+    {
+     "x": 1721,
+     "y": 1047
+    }
+   ],
+   "tabela_x": 2364,
+   "tabela_y": 682
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1224,
+   "y": 701,
+   "posicoes": [
+    {
+     "x": 1224,
+     "y": 701
+    }
+   ],
+   "tabela_x": 2364,
+   "tabela_y": 722
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1199,
+   "y": 1044,
+   "posicoes": [
+    {
+     "x": 1199,
+     "y": 1044
+    }
+   ],
+   "tabela_x": 2366,
+   "tabela_y": 775
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1336,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 1336,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2369,
+   "tabela_y": 818
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1093,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 1093,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2369,
+   "tabela_y": 862
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.34,
+   "valor_texto": "0,34",
+   "x": 1557,
+   "y": 1781,
+   "posicoes": [
+    {
+     "x": 1557,
+     "y": 1781
+    }
+   ],
+   "tabela_x": 2368,
+   "tabela_y": 913
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.24,
+   "valor_texto": "0,24",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1536,
+     "y": 1066
+    },
+    {
+     "x": 1571,
+     "y": 1938
+    }
+   ],
+   "tabela_x": 2371,
+   "tabela_y": 960
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.44,
+   "valor_texto": "0,44",
+   "x": 1333,
+   "y": 1745,
+   "posicoes": [
+    {
+     "x": 1333,
+     "y": 1745
+    }
+   ],
+   "tabela_x": 2378,
+   "tabela_y": 1010
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1078,
+   "y": 1724,
+   "posicoes": [
+    {
+     "x": 1078,
+     "y": 1724
+    }
+   ],
+   "tabela_x": 2375,
+   "tabela_y": 1065
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.02,
+   "valor_texto": "1,02",
+   "x": 1199,
+   "y": 1102,
+   "posicoes": [
+    {
+     "x": 1199,
+     "y": 1102
+    }
+   ],
+   "tabela_x": 2370,
+   "tabela_y": 1106
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.425,
+   "valor_texto": "0,425",
+   "x": 1403,
+   "y": 1198,
+   "posicoes": [
+    {
+     "x": 1403,
+     "y": 1198
+    }
+   ],
+   "tabela_x": 2368,
+   "tabela_y": 1155
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1413,
+   "y": 1016,
+   "posicoes": [
+    {
+     "x": 1413,
+     "y": 1016
+    }
+   ],
+   "tabela_x": 2367,
+   "tabela_y": 1212
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.58,
+   "valor_texto": "0,58",
+   "x": 1006,
+   "y": 1016,
+   "posicoes": [
+    {
+     "x": 1006,
+     "y": 1016
+    }
+   ],
+   "tabela_x": 2371,
+   "tabela_y": 1263
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-barcelona-com-hidro-em-acrilico",
+   "rotulo": "0,85 x 1,20 x 0,44"
+  },
+  {
+   "slug": "banheira-retangular-barcelona-com-hidro",
+   "rotulo": "0,85 x 1,20 x 0,44"
+  },
+  {
+   "slug": "banheira-retangular-barcelona-completa-com-hidro-em-acrilico",
+   "rotulo": "0,85 x 1,20 x 0,44"
+  },
+  {
+   "slug": "banheira-retangular-barcelona-completa-com-hidro",
+   "rotulo": "0,85 x 1,20 x 0,44"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-barcelona-com-hidro-em-acrilico",
+    "rotulo": "0,85 x 1,20 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-barcelona-com-hidro",
+    "rotulo": "0,85 x 1,20 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-barcelona-completa-com-hidro-em-acrilico",
+    "rotulo": "0,85 x 1,20 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-barcelona-completa-com-hidro",
+    "rotulo": "0,85 x 1,20 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

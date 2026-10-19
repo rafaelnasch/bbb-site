@@ -1,0 +1,263 @@
+{
+ "sha1": "a676f5483de0d538366133b9d4e35340f5625dec",
+ "pdf_path": "plantas/banheiras/Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
+ "nome_arquivo": "Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Denizard%20-%201,30%20x%201,79%20x%200,50%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.3,
+   "valor_texto": "1,30",
+   "x": 548,
+   "y": 1270,
+   "posicoes": [
+    {
+     "x": 548,
+     "y": 1270
+    }
+   ],
+   "tabela_x": 2032,
+   "tabela_y": 1501
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.795,
+   "valor_texto": "1,795",
+   "x": 1088,
+   "y": 841,
+   "posicoes": [
+    {
+     "x": 1088,
+     "y": 841
+    }
+   ],
+   "tabela_x": 2032,
+   "tabela_y": 1532
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.23,
+   "valor_texto": "1,23",
+   "x": 1089,
+   "y": 1323,
+   "posicoes": [
+    {
+     "x": 1089,
+     "y": 1323
+    }
+   ],
+   "tabela_x": 2033,
+   "tabela_y": 1573
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": 1274,
+   "y": 1269,
+   "posicoes": [
+    {
+     "x": 1274,
+     "y": 1269
+    }
+   ],
+   "tabela_x": 2036,
+   "tabela_y": 1607
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": 900,
+   "y": 1269,
+   "posicoes": [
+    {
+     "x": 900,
+     "y": 1269
+    }
+   ],
+   "tabela_x": 2036,
+   "tabela_y": 1642
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 2234,
+   "y": 1061,
+   "posicoes": [
+    {
+     "x": 2234,
+     "y": 1061
+    }
+   ],
+   "tabela_x": 2035,
+   "tabela_y": 1681
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1342,
+     "y": 1489
+    },
+    {
+     "x": 2496,
+     "y": 1204
+    }
+   ],
+   "tabela_x": 2038,
+   "tabela_y": 1718
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 2197,
+   "y": 1033,
+   "posicoes": [
+    {
+     "x": 2197,
+     "y": 1033
+    }
+   ],
+   "tabela_x": 2037,
+   "tabela_y": 1757
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.65,
+   "valor_texto": "1,65",
+   "x": 1089,
+   "y": 1223,
+   "posicoes": [
+    {
+     "x": 1089,
+     "y": 1223
+    }
+   ],
+   "tabela_x": 2037,
+   "tabela_y": 1794
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.23,
+   "valor_texto": "0,23",
+   "x": 1066,
+   "y": 1570,
+   "posicoes": [
+    {
+     "x": 1066,
+     "y": 1570
+    }
+   ],
+   "tabela_x": 2035,
+   "tabela_y": 1832
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 1.1,
+   "valor_texto": "1,10",
+   "x": 1410,
+   "y": 1269,
+   "posicoes": [
+    {
+     "x": 1410,
+     "y": 1269
+    }
+   ],
+   "tabela_x": 2035,
+   "tabela_y": 1876
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 1.1,
+   "valor_texto": "1,10",
+   "x": 807,
+   "y": 1270,
+   "posicoes": [
+    {
+     "x": 807,
+     "y": 1270
+    }
+   ],
+   "tabela_x": 2038,
+   "tabela_y": 1917
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-denizard-com-hidro-em-acrilico",
+   "rotulo": "1,30 x 1,79 x 0,50"
+  },
+  {
+   "slug": "banheira-retangular-denizard-com-hidro",
+   "rotulo": "1,30 x 1,79 x 0,50"
+  },
+  {
+   "slug": "banheira-retangular-denizard-completa-com-hidro-em-acrilico",
+   "rotulo": "1,30 x 1,79 x 0,50"
+  },
+  {
+   "slug": "banheira-retangular-denizard-completa-com-hidro",
+   "rotulo": "1,30 x 1,79 x 0,50"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-denizard-com-hidro-em-acrilico",
+    "rotulo": "1,30 x 1,79 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-denizard-com-hidro",
+    "rotulo": "1,30 x 1,79 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-denizard-completa-com-hidro-em-acrilico",
+    "rotulo": "1,30 x 1,79 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-denizard-completa-com-hidro",
+    "rotulo": "1,30 x 1,79 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

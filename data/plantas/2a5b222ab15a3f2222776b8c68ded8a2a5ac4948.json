@@ -1,0 +1,268 @@
+{
+ "sha1": "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948",
+ "pdf_path": "plantas/banheiras/Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
+ "nome_arquivo": "Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,40%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.4,
+   "valor_texto": "1,40",
+   "x": 560,
+   "y": 1231,
+   "posicoes": [
+    {
+     "x": 560,
+     "y": 1231
+    }
+   ],
+   "tabela_x": 2087,
+   "tabela_y": 1366
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.78,
+   "valor_texto": "1,78",
+   "x": 1088,
+   "y": 810,
+   "posicoes": [
+    {
+     "x": 1088,
+     "y": 810
+    }
+   ],
+   "tabela_x": 2087,
+   "tabela_y": 1397
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.97,
+   "valor_texto": "0,97",
+   "x": 1117,
+   "y": 1263,
+   "posicoes": [
+    {
+     "x": 1117,
+     "y": 1263
+    }
+   ],
+   "tabela_x": 2088,
+   "tabela_y": 1437
+  },
+  {
+   "letra": "D",
+   "valor_m": 1.06,
+   "valor_texto": "1,06",
+   "x": 1250,
+   "y": 1237,
+   "posicoes": [
+    {
+     "x": 1250,
+     "y": 1237
+    }
+   ],
+   "tabela_x": 2091,
+   "tabela_y": 1469
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.93,
+   "valor_texto": "0,93",
+   "x": 978,
+   "y": 1231,
+   "posicoes": [
+    {
+     "x": 978,
+     "y": 1231
+    }
+   ],
+   "tabela_x": 2090,
+   "tabela_y": 1503
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 2578,
+   "y": 1045,
+   "posicoes": [
+    {
+     "x": 2578,
+     "y": 1045
+    }
+   ],
+   "tabela_x": 2090,
+   "tabela_y": 1541
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1471,
+     "y": 1214
+    },
+    {
+     "x": 2557,
+     "y": 1165
+    }
+   ],
+   "tabela_x": 2092,
+   "tabela_y": 1577
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": 2370,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 2370,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2097,
+   "tabela_y": 1615
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 2115,
+   "y": 1001,
+   "posicoes": [
+    {
+     "x": 2115,
+     "y": 1001
+    }
+   ],
+   "tabela_x": 2097,
+   "tabela_y": 1654
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.44,
+   "valor_texto": "1,44",
+   "x": 1090,
+   "y": 1096,
+   "posicoes": [
+    {
+     "x": 1090,
+     "y": 1096
+    }
+   ],
+   "tabela_x": 2085,
+   "tabela_y": 1688
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1349,
+   "y": 1422,
+   "posicoes": [
+    {
+     "x": 1349,
+     "y": 1422
+    }
+   ],
+   "tabela_x": 2083,
+   "tabela_y": 1725
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 1.26,
+   "valor_texto": "1,26",
+   "x": 1333,
+   "y": 1230,
+   "posicoes": [
+    {
+     "x": 1333,
+     "y": 1230
+    }
+   ],
+   "tabela_x": 2083,
+   "tabela_y": 1768
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 1.24,
+   "valor_texto": "1,24",
+   "x": 827,
+   "y": 1230,
+   "posicoes": [
+    {
+     "x": 827,
+     "y": 1230
+    }
+   ],
+   "tabela_x": 2086,
+   "tabela_y": 1807
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-fortaleza-completa-com-hidro-em-acrilico",
+   "rotulo": "1,40 x 1,78 x 0,48"
+  },
+  {
+   "slug": "banheira-dupla-fortaleza-completa-com-hidro",
+   "rotulo": "1,40 x 1,78 x 0,48"
+  },
+  {
+   "slug": "banheira-dupla-fortaleza-excellence-completa-c-hidro-em-acrilico",
+   "rotulo": "1,40 x 1,78 x 0,48"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-fortaleza-completa-com-hidro-em-acrilico",
+    "rotulo": "1,40 x 1,78 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-fortaleza-completa-com-hidro",
+    "rotulo": "1,40 x 1,78 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-fortaleza-excellence-completa-c-hidro-em-acrilico",
+    "rotulo": "1,40 x 1,78 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

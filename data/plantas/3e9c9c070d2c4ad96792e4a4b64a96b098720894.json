@@ -1,0 +1,38 @@
+{
+ "sha1": "3e9c9c070d2c4ad96792e4a4b64a96b098720894",
+ "pdf_path": "plantas/spas/Spa Charlote 2,12 x 2,13 x 0,85 - PLANTA.PDF",
+ "nome_arquivo": "Spa Charlote 2,12 x 2,13 x 0,85 - PLANTA.PDF",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Charlote%202,12%20x%202,13%20x%200,85%20-%20PLANTA.PDF",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2402,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "spa-quadrado-charlote-completo-com-hidro-em-acrilico",
+   "rotulo": "2,12 x 2,13 x 0,85"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

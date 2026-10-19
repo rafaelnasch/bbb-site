@@ -1,0 +1,338 @@
+{
+ "sha1": "98db2fd5e442ff89f2d2878aa230dcd03416d4b6",
+ "pdf_path": "plantas/banheiras/Roma - 1,59 x 1,59 x 0,49 [GC-AC].pdf",
+ "nome_arquivo": "Roma - 1,59 x 1,59 x 0,49 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Roma%20-%201,59%20x%201,59%20x%200,49%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.59,
+   "valor_texto": "1,59",
+   "x": 1582,
+   "y": 1320,
+   "posicoes": [
+    {
+     "x": 1582,
+     "y": 1320
+    }
+   ],
+   "tabela_x": 1744,
+   "tabela_y": 1048
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.59,
+   "valor_texto": "1,59",
+   "x": 1095,
+   "y": 877,
+   "posicoes": [
+    {
+     "x": 1095,
+     "y": 877
+    }
+   ],
+   "tabela_x": 1745,
+   "tabela_y": 1078
+  },
+  {
+   "letra": "C",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1069,
+   "y": 1380,
+   "posicoes": [
+    {
+     "x": 1069,
+     "y": 1380
+    }
+   ],
+   "tabela_x": 1746,
+   "tabela_y": 1117
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1115,
+   "y": 1305,
+   "posicoes": [
+    {
+     "x": 1115,
+     "y": 1305
+    }
+   ],
+   "tabela_x": 1749,
+   "tabela_y": 1149
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.51,
+   "valor_texto": "0,51",
+   "x": 1285,
+   "y": 1469,
+   "posicoes": [
+    {
+     "x": 1285,
+     "y": 1469
+    }
+   ],
+   "tabela_x": 1748,
+   "tabela_y": 1182
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.53,
+   "valor_texto": "0,53",
+   "x": 1017,
+   "y": 1153,
+   "posicoes": [
+    {
+     "x": 1017,
+     "y": 1153
+    }
+   ],
+   "tabela_x": 1748,
+   "tabela_y": 1220
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 762,
+     "y": 1456
+    },
+    {
+     "x": 2091,
+     "y": 1266
+    }
+   ],
+   "tabela_x": 1751,
+   "tabela_y": 1255
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 2427,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 2427,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 1756,
+   "tabela_y": 1292
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 2773,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 2773,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 1756,
+   "tabela_y": 1332
+  },
+  {
+   "letra": "H3",
+   "valor_m": 0.49,
+   "valor_texto": "0,49",
+   "x": 2103,
+   "y": 1109,
+   "posicoes": [
+    {
+     "x": 2103,
+     "y": 1109
+    }
+   ],
+   "tabela_x": 1756,
+   "tabela_y": 1368
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.6,
+   "valor_texto": "1,60",
+   "x": 1184,
+   "y": 1346,
+   "posicoes": [
+    {
+     "x": 1184,
+     "y": 1346
+    }
+   ],
+   "tabela_x": 1751,
+   "tabela_y": 1405
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.57,
+   "valor_texto": "0,57",
+   "x": 814,
+   "y": 1597,
+   "posicoes": [
+    {
+     "x": 814,
+     "y": 1597
+    }
+   ],
+   "tabela_x": 1749,
+   "tabela_y": 1441
+  },
+  {
+   "letra": "K",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1125,
+   "y": 1260,
+   "posicoes": [
+    {
+     "x": 1125,
+     "y": 1260
+    }
+   ],
+   "tabela_x": 1752,
+   "tabela_y": 1482
+  },
+  {
+   "letra": "L",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 912,
+   "y": 1503,
+   "posicoes": [
+    {
+     "x": 912,
+     "y": 1503
+    }
+   ],
+   "tabela_x": 1751,
+   "tabela_y": 1512
+  },
+  {
+   "letra": "M",
+   "valor_m": 0.68,
+   "valor_texto": "0,68",
+   "x": 1320,
+   "y": 1508,
+   "posicoes": [
+    {
+     "x": 1320,
+     "y": 1508
+    }
+   ],
+   "tabela_x": 1756,
+   "tabela_y": 1550
+  },
+  {
+   "letra": "N",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 1342,
+   "y": 1067,
+   "posicoes": [
+    {
+     "x": 1342,
+     "y": 1067
+    }
+   ],
+   "tabela_x": 1753,
+   "tabela_y": 1586
+  },
+  {
+   "letra": "O",
+   "valor_m": 0.68,
+   "valor_texto": "0,68",
+   "x": 917,
+   "y": 1110,
+   "posicoes": [
+    {
+     "x": 917,
+     "y": 1110
+    }
+   ],
+   "tabela_x": 1755,
+   "tabela_y": 1623
+  },
+  {
+   "letra": "P",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 2690,
+   "y": 1122,
+   "posicoes": [
+    {
+     "x": 2690,
+     "y": 1122
+    }
+   ],
+   "tabela_x": 1753,
+   "tabela_y": 1655
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-quadrada-roma-completa-com-hidro-em-acrilico",
+   "rotulo": "1,59 x 1,59 x 0,49"
+  },
+  {
+   "slug": "banheira-quadrada-roma-completa-com-hidro",
+   "rotulo": "1,59 x 1,59 x 0,49"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "banheira-quadrada-roma-completa-com-hidro-em-acrilico: planta A=1.59 B=1.59 H=0.42/0.45 x rótulo 1,59 x 1,59 x 0,49",
+   "banheira-quadrada-roma-completa-com-hidro: planta A=1.59 B=1.59 H=0.42/0.45 x rótulo 1,59 x 1,59 x 0,49"
+  ],
+  "conferencias": [
+   {
+    "slug": "banheira-quadrada-roma-completa-com-hidro-em-acrilico",
+    "rotulo": "1,59 x 1,59 x 0,49",
+    "ok": false,
+    "troca_ab": false,
+    "legivel": true,
+    "motivo": "planta A=1.59 B=1.59 H=0.42/0.45 x rótulo 1,59 x 1,59 x 0,49"
+   },
+   {
+    "slug": "banheira-quadrada-roma-completa-com-hidro",
+    "rotulo": "1,59 x 1,59 x 0,49",
+    "ok": false,
+    "troca_ab": false,
+    "legivel": true,
+    "motivo": "planta A=1.59 B=1.59 H=0.42/0.45 x rótulo 1,59 x 1,59 x 0,49"
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": null
+}

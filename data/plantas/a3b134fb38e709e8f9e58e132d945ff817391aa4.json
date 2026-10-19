@@ -1,0 +1,241 @@
+{
+ "sha1": "a3b134fb38e709e8f9e58e132d945ff817391aa4",
+ "pdf_path": "plantas/banheiras/Requinte - 1,09 x 1,89 x 0,45 [GC-AC].pdf",
+ "nome_arquivo": "Requinte - 1,09 x 1,89 x 0,45 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Requinte%20-%201,09%20x%201,89%20x%200,45%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.09,
+   "valor_texto": "1,09",
+   "x": 2065,
+   "y": 1066,
+   "posicoes": [
+    {
+     "x": 2065,
+     "y": 1066
+    }
+   ],
+   "tabela_x": 2454,
+   "tabela_y": 788
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.89,
+   "valor_texto": "1,89",
+   "x": 1401,
+   "y": 682,
+   "posicoes": [
+    {
+     "x": 1401,
+     "y": 682
+    }
+   ],
+   "tabela_x": 2454,
+   "tabela_y": 824
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.04,
+   "valor_texto": "1,04",
+   "x": 1402,
+   "y": 1024,
+   "posicoes": [
+    {
+     "x": 1402,
+     "y": 1024
+    }
+   ],
+   "tabela_x": 2455,
+   "tabela_y": 870
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1181,
+   "y": 1070,
+   "posicoes": [
+    {
+     "x": 1181,
+     "y": 1070
+    }
+   ],
+   "tabela_x": 2458,
+   "tabela_y": 908
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.53,
+   "valor_texto": "0,53",
+   "x": 1370,
+   "y": 1069,
+   "posicoes": [
+    {
+     "x": 1370,
+     "y": 1069
+    }
+   ],
+   "tabela_x": 2458,
+   "tabela_y": 946
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1432,
+   "y": 1804,
+   "posicoes": [
+    {
+     "x": 1432,
+     "y": 1804
+    }
+   ],
+   "tabela_x": 2457,
+   "tabela_y": 991
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1386,
+   "y": 1302,
+   "posicoes": [
+    {
+     "x": 1386,
+     "y": 1302
+    }
+   ],
+   "tabela_x": 2460,
+   "tabela_y": 1032
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1539,
+   "y": 1772,
+   "posicoes": [
+    {
+     "x": 1539,
+     "y": 1772
+    }
+   ],
+   "tabela_x": 2459,
+   "tabela_y": 1084
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.73,
+   "valor_texto": "1,73",
+   "x": 1402,
+   "y": 1113,
+   "posicoes": [
+    {
+     "x": 1402,
+     "y": 1113
+    }
+   ],
+   "tabela_x": 2457,
+   "tabela_y": 1122
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.945,
+   "valor_texto": "0,945",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1705,
+     "y": 1956
+    },
+    {
+     "x": 1762,
+     "y": 1209
+    }
+   ],
+   "tabela_x": 2455,
+   "tabela_y": 1165
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1707,
+   "y": 1067,
+   "posicoes": [
+    {
+     "x": 1707,
+     "y": 1067
+    }
+   ],
+   "tabela_x": 2465,
+   "tabela_y": 1209
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1438,
+   "y": 1069,
+   "posicoes": [
+    {
+     "x": 1438,
+     "y": 1069
+    }
+   ],
+   "tabela_x": 2471,
+   "tabela_y": 1253
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-requinte-completa-com-hidro-em-acrilico",
+   "rotulo": "1,09 x 1,89 x 0,45"
+  },
+  {
+   "slug": "banheira-dupla-requinte-completa-com-hidro",
+   "rotulo": "1,09 x 1,89 x 0,45"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-requinte-completa-com-hidro-em-acrilico",
+    "rotulo": "1,09 x 1,89 x 0,45",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-requinte-completa-com-hidro",
+    "rotulo": "1,09 x 1,89 x 0,45",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

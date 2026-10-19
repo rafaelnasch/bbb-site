@@ -1,0 +1,305 @@
+{
+ "sha1": "ef48a9c9e018ae0453d68c3157945ef23949b159",
+ "pdf_path": "plantas/banheiras/Viena - 1,66 x 1,66 x 0,50 [GC-AC].pdf",
+ "nome_arquivo": "Viena - 1,66 x 1,66 x 0,50 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Viena%20-%201,66%20x%201,66%20x%200,50%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.66,
+   "valor_texto": "1,66",
+   "x": 785,
+   "y": 1066,
+   "posicoes": [
+    {
+     "x": 785,
+     "y": 1066
+    }
+   ],
+   "tabela_x": 1854,
+   "tabela_y": 1493
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.66,
+   "valor_texto": "1,66",
+   "x": 1356,
+   "y": 1072,
+   "posicoes": [
+    {
+     "x": 1356,
+     "y": 1072
+    }
+   ],
+   "tabela_x": 1854,
+   "tabela_y": 1518
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1076,
+   "y": 1634,
+   "posicoes": [
+    {
+     "x": 1076,
+     "y": 1634
+    }
+   ],
+   "tabela_x": 1855,
+   "tabela_y": 1552
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.25,
+   "valor_texto": "0,25",
+   "x": 857,
+   "y": 1369,
+   "posicoes": [
+    {
+     "x": 857,
+     "y": 1369
+    }
+   ],
+   "tabela_x": 1858,
+   "tabela_y": 1579
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.46,
+   "valor_texto": "0,46",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 1858,
+   "tabela_y": 1606
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 2231,
+   "y": 1178,
+   "posicoes": [
+    {
+     "x": 2231,
+     "y": 1178
+    }
+   ],
+   "tabela_x": 1857,
+   "tabela_y": 1638
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.34,
+   "valor_texto": "0,34",
+   "x": 1062,
+   "y": 1476,
+   "posicoes": [
+    {
+     "x": 1062,
+     "y": 1476
+    }
+   ],
+   "tabela_x": 1860,
+   "tabela_y": 1668
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 1859,
+   "tabela_y": 1699
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.58,
+   "valor_texto": "1,58",
+   "x": 1081,
+   "y": 1675,
+   "posicoes": [
+    {
+     "x": 1081,
+     "y": 1675
+    }
+   ],
+   "tabela_x": 1859,
+   "tabela_y": 1735
+  },
+  {
+   "letra": "J",
+   "valor_m": 1.17,
+   "valor_texto": "1,17",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1341,
+     "y": 1380
+    },
+    {
+     "x": 2529,
+     "y": 1288
+    }
+   ],
+   "tabela_x": 1858,
+   "tabela_y": 1767
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.56,
+   "valor_texto": "0,56",
+   "x": 800,
+   "y": 1351,
+   "posicoes": [
+    {
+     "x": 800,
+     "y": 1351
+    }
+   ],
+   "tabela_x": 1853,
+   "tabela_y": 1795
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1075,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 1075,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 1856,
+   "tabela_y": 1826
+  },
+  {
+   "letra": "N",
+   "valor_m": 1.61,
+   "valor_texto": "1,61",
+   "x": 503,
+   "y": 1181,
+   "posicoes": [
+    {
+     "x": 503,
+     "y": 1181
+    }
+   ],
+   "tabela_x": 1863,
+   "tabela_y": 1859
+  },
+  {
+   "letra": "O",
+   "valor_m": 2.53,
+   "valor_texto": "2,53",
+   "x": 1075,
+   "y": 1715,
+   "posicoes": [
+    {
+     "x": 1075,
+     "y": 1715
+    }
+   ],
+   "tabela_x": 1864,
+   "tabela_y": 1890
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-de-canto-viena-com-hidro-em-acrilico",
+   "rotulo": "1,66 x 1,66 x 0,50"
+  },
+  {
+   "slug": "banheira-de-canto-viena-com-hidro",
+   "rotulo": "1,66 x 1,66 x 0,50"
+  },
+  {
+   "slug": "banheira-de-canto-viena-completa-com-hidro-em-acrilico",
+   "rotulo": "1,66 x 1,66 x 0,50"
+  },
+  {
+   "slug": "banheira-de-canto-viena-completa-com-hidro",
+   "rotulo": "1,66 x 1,66 x 0,50"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-de-canto-viena-com-hidro-em-acrilico",
+    "rotulo": "1,66 x 1,66 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-viena-com-hidro",
+    "rotulo": "1,66 x 1,66 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-viena-completa-com-hidro-em-acrilico",
+    "rotulo": "1,66 x 1,66 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-viena-completa-com-hidro",
+    "rotulo": "1,66 x 1,66 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": [
+   "H sem posição no desenho"
+  ]
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   },
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": false,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

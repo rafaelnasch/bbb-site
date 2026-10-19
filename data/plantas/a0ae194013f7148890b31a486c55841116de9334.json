@@ -1,0 +1,241 @@
+{
+ "sha1": "a0ae194013f7148890b31a486c55841116de9334",
+ "pdf_path": "plantas/banheiras/Acqua top - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
+ "nome_arquivo": "Acqua top - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 2053,
+   "y": 1095,
+   "posicoes": [
+    {
+     "x": 2053,
+     "y": 1095
+    }
+   ],
+   "tabela_x": 2331,
+   "tabela_y": 718
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.8,
+   "valor_texto": "1,80",
+   "x": 1433,
+   "y": 810,
+   "posicoes": [
+    {
+     "x": 1433,
+     "y": 810
+    }
+   ],
+   "tabela_x": 2332,
+   "tabela_y": 753
+  },
+  {
+   "letra": "C",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1433,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1433,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2333,
+   "tabela_y": 800
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1628,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1628,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2336,
+   "tabela_y": 838
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1213,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1213,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2335,
+   "tabela_y": 877
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.31,
+   "valor_texto": "0,31",
+   "x": 1413,
+   "y": 1774,
+   "posicoes": [
+    {
+     "x": 1413,
+     "y": 1774
+    }
+   ],
+   "tabela_x": 2334,
+   "tabela_y": 921
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1719,
+     "y": 1197
+    },
+    {
+     "x": 1719,
+     "y": 1905
+    }
+   ],
+   "tabela_x": 2337,
+   "tabela_y": 963
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": 2018,
+   "y": 1745,
+   "posicoes": [
+    {
+     "x": 2018,
+     "y": 1745
+    }
+   ],
+   "tabela_x": 2336,
+   "tabela_y": 1007
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.57,
+   "valor_texto": "1,57",
+   "x": 1433,
+   "y": 1054,
+   "posicoes": [
+    {
+     "x": 1433,
+     "y": 1054
+    }
+   ],
+   "tabela_x": 2336,
+   "tabela_y": 1047
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": 1421,
+   "y": 1259,
+   "posicoes": [
+    {
+     "x": 1421,
+     "y": 1259
+    }
+   ],
+   "tabela_x": 2334,
+   "tabela_y": 1092
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.57,
+   "valor_texto": "0,57",
+   "x": 1804,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1804,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2334,
+   "tabela_y": 1141
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.57,
+   "valor_texto": "0,57",
+   "x": 1089,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1089,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2337,
+   "tabela_y": 1186
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-top-completa-com-hidro-em-acrilico",
+   "rotulo": "0,80 x 1,80 x 0,41"
+  },
+  {
+   "slug": "banheira-acqua-top-completa-com-hidro",
+   "rotulo": "0,80 x 1,80 x 0,41"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-top-completa-com-hidro-em-acrilico",
+    "rotulo": "0,80 x 1,80 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-acqua-top-completa-com-hidro",
+    "rotulo": "0,80 x 1,80 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

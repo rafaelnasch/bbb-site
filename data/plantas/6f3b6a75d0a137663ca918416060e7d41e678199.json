@@ -1,0 +1,341 @@
+{
+ "sha1": "6f3b6a75d0a137663ca918416060e7d41e678199",
+ "pdf_path": "plantas/ofuros/Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
+ "nome_arquivo": "Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20osaka%20-%200,99%20x%200,99%20x%200,64%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.99,
+   "valor_texto": "0,99",
+   "x": 806,
+   "y": 1027,
+   "posicoes": [
+    {
+     "x": 806,
+     "y": 1027
+    }
+   ],
+   "tabela_x": 1771,
+   "tabela_y": 1391
+  },
+  {
+   "letra": "B",
+   "valor_m": 0.99,
+   "valor_texto": "0,99",
+   "x": 809,
+   "y": 1537,
+   "posicoes": [
+    {
+     "x": 809,
+     "y": 1537
+    }
+   ],
+   "tabela_x": 1772,
+   "tabela_y": 1427
+  },
+  {
+   "letra": "C1",
+   "valor_m": 0.24,
+   "valor_texto": "0,24",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 2028,
+     "y": 1089
+    },
+    {
+     "x": 1097,
+     "y": 1061
+    }
+   ],
+   "tabela_x": 1780,
+   "tabela_y": 1473
+  },
+  {
+   "letra": "C2",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 2370,
+     "y": 1216
+    },
+    {
+     "x": 1086,
+     "y": 1357
+    }
+   ],
+   "tabela_x": 1779,
+   "tabela_y": 1512
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1062,
+   "y": 1214,
+   "posicoes": [
+    {
+     "x": 1062,
+     "y": 1214
+    }
+   ],
+   "tabela_x": 1776,
+   "tabela_y": 1551
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.54,
+   "valor_texto": "0,54",
+   "x": 1008,
+   "y": 1389,
+   "posicoes": [
+    {
+     "x": 1008,
+     "y": 1389
+    }
+   ],
+   "tabela_x": 1775,
+   "tabela_y": 1598
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.54,
+   "valor_texto": "0,54",
+   "x": 2589,
+   "y": 1011,
+   "posicoes": [
+    {
+     "x": 2589,
+     "y": 1011
+    }
+   ],
+   "tabela_x": 1775,
+   "tabela_y": 1641
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.775,
+   "valor_texto": "0,775",
+   "x": 864,
+   "y": 1325,
+   "posicoes": [
+    {
+     "x": 864,
+     "y": 1325
+    }
+   ],
+   "tabela_x": 1778,
+   "tabela_y": 1676
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.64,
+   "valor_texto": "0,64",
+   "x": 2520,
+   "y": 988,
+   "posicoes": [
+    {
+     "x": 2520,
+     "y": 988
+    }
+   ],
+   "tabela_x": 1784,
+   "tabela_y": 1720
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.44,
+   "valor_texto": "0,44",
+   "x": 2022,
+   "y": 923,
+   "posicoes": [
+    {
+     "x": 2022,
+     "y": 923
+    }
+   ],
+   "tabela_x": 1784,
+   "tabela_y": 1765
+  },
+  {
+   "letra": "I",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1040,
+   "y": 1314,
+   "posicoes": [
+    {
+     "x": 1040,
+     "y": 1314
+    }
+   ],
+   "tabela_x": 1771,
+   "tabela_y": 1805
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.73,
+   "valor_texto": "0,73",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1132,
+     "y": 1067
+    },
+    {
+     "x": 2044,
+     "y": 1206
+    }
+   ],
+   "tabela_x": 1769,
+   "tabela_y": 1849
+  },
+  {
+   "letra": "L",
+   "valor_m": 0.62,
+   "valor_texto": "0,62",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1062,
+     "y": 1083
+    },
+    {
+     "x": 1065,
+     "y": 1475
+    }
+   ],
+   "tabela_x": 1768,
+   "tabela_y": 1898
+  },
+  {
+   "letra": "M",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1145,
+   "y": 1262,
+   "posicoes": [
+    {
+     "x": 1145,
+     "y": 1262
+    }
+   ],
+   "tabela_x": 1772,
+   "tabela_y": 1944
+  },
+  {
+   "letra": "N",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 1062,
+   "y": 1160,
+   "posicoes": [
+    {
+     "x": 1062,
+     "y": 1160
+    }
+   ],
+   "tabela_x": 1771,
+   "tabela_y": 1986
+  }
+ ],
+ "usos": [
+  {
+   "slug": "ofuro-quadrado-osaka-completo-individual-com-hidro-em-acrilico",
+   "rotulo": "0,99 x 0,99 x 0,64"
+  },
+  {
+   "slug": "ofuro-quadrado-osaka-completo-individual-com-hidro",
+   "rotulo": "0,99 x 0,99 x 0,64"
+  },
+  {
+   "slug": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
+   "rotulo": "0,99 x 0,99 x 0,64"
+  },
+  {
+   "slug": "ofuro-quadrado-osaka-individual-com-hidro",
+   "rotulo": "0,99 x 0,99 x 0,64"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "ofuro-quadrado-osaka-completo-individual-com-hidro-em-acrilico",
+    "rotulo": "0,99 x 0,99 x 0,64",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "ofuro-quadrado-osaka-completo-individual-com-hidro",
+    "rotulo": "0,99 x 0,99 x 0,64",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
+    "rotulo": "0,99 x 0,99 x 0,64",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "ofuro-quadrado-osaka-individual-com-hidro",
+    "rotulo": "0,99 x 0,99 x 0,64",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   },
+   {
+    "revisor": "verificador do bloco 2-midia",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "atestado",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

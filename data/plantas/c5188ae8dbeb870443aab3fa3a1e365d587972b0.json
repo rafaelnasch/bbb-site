@@ -1,0 +1,254 @@
+{
+ "sha1": "c5188ae8dbeb870443aab3fa3a1e365d587972b0",
+ "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
+ "nome_arquivo": "Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,79%20x%200,48%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1990,
+   "y": 1073,
+   "posicoes": [
+    {
+     "x": 1990,
+     "y": 1073
+    }
+   ],
+   "tabela_x": 2482,
+   "tabela_y": 781
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.79,
+   "valor_texto": "1,79",
+   "x": 1379,
+   "y": 678,
+   "posicoes": [
+    {
+     "x": 1379,
+     "y": 678
+    }
+   ],
+   "tabela_x": 2482,
+   "tabela_y": 814
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.1,
+   "valor_texto": "1,10",
+   "x": 1363,
+   "y": 1108,
+   "posicoes": [
+    {
+     "x": 1363,
+     "y": 1108
+    }
+   ],
+   "tabela_x": 2483,
+   "tabela_y": 858
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.78,
+   "valor_texto": "0,78",
+   "x": 1176,
+   "y": 1071,
+   "posicoes": [
+    {
+     "x": 1176,
+     "y": 1071
+    }
+   ],
+   "tabela_x": 2486,
+   "tabela_y": 894
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.74,
+   "valor_texto": "0,74",
+   "x": 1593,
+   "y": 1072,
+   "posicoes": [
+    {
+     "x": 1593,
+     "y": 1072
+    }
+   ],
+   "tabela_x": 2485,
+   "tabela_y": 930
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1847,
+   "y": 1836,
+   "posicoes": [
+    {
+     "x": 1847,
+     "y": 1836
+    }
+   ],
+   "tabela_x": 2485,
+   "tabela_y": 972
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.87,
+   "valor_texto": "0,87",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1650,
+     "y": 1978
+    },
+    {
+     "x": 1654,
+     "y": 1242
+    }
+   ],
+   "tabela_x": 2487,
+   "tabela_y": 1012
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": 1927,
+   "y": 1806,
+   "posicoes": [
+    {
+     "x": 1927,
+     "y": 1806
+    }
+   ],
+   "tabela_x": 2486,
+   "tabela_y": 1053
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.57,
+   "valor_texto": "1,57",
+   "x": 1363,
+   "y": 1035,
+   "posicoes": [
+    {
+     "x": 1363,
+     "y": 1035
+    }
+   ],
+   "tabela_x": 2486,
+   "tabela_y": 1091
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": 1372,
+   "y": 1346,
+   "posicoes": [
+    {
+     "x": 1372,
+     "y": 1346
+    }
+   ],
+   "tabela_x": 2484,
+   "tabela_y": 1133
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 1.04,
+   "valor_texto": "1,04",
+   "x": 1710,
+   "y": 1072,
+   "posicoes": [
+    {
+     "x": 1710,
+     "y": 1072
+    }
+   ],
+   "tabela_x": 2483,
+   "tabela_y": 1179
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 1.02,
+   "valor_texto": "1,02",
+   "x": 1013,
+   "y": 1070,
+   "posicoes": [
+    {
+     "x": 1013,
+     "y": 1070
+    }
+   ],
+   "tabela_x": 2487,
+   "tabela_y": 1223
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-maresias-completa-com-hidro-em-acrilico",
+   "rotulo": "1,20 x 1,79 x 0,48"
+  },
+  {
+   "slug": "banheira-dupla-maresias-completa-com-hidro",
+   "rotulo": "1,20 x 1,79 x 0,48"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-maresias-completa-com-hidro-em-acrilico",
+    "rotulo": "1,20 x 1,79 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-maresias-completa-com-hidro",
+    "rotulo": "1,20 x 1,79 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

@@ -1,0 +1,276 @@
+{
+ "sha1": "d8ac367b4d99e7e69f53f823618caa367a1829da",
+ "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
+ "nome_arquivo": "Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,50%20x%200,40%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 2019,
+   "y": 1145,
+   "posicoes": [
+    {
+     "x": 2019,
+     "y": 1145
+    }
+   ],
+   "tabela_x": 2308,
+   "tabela_y": 790
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.5,
+   "valor_texto": "1,50",
+   "x": 1507,
+   "y": 712,
+   "posicoes": [
+    {
+     "x": 1507,
+     "y": 712
+    }
+   ],
+   "tabela_x": 2308,
+   "tabela_y": 826
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.97,
+   "valor_texto": "0,97",
+   "x": 1530,
+   "y": 1254,
+   "posicoes": [
+    {
+     "x": 1530,
+     "y": 1254
+    }
+   ],
+   "tabela_x": 2309,
+   "tabela_y": 874
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.86,
+   "valor_texto": "0,86",
+   "x": 1705,
+   "y": 1141,
+   "posicoes": [
+    {
+     "x": 1705,
+     "y": 1141
+    }
+   ],
+   "tabela_x": 2312,
+   "tabela_y": 912
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.76,
+   "valor_texto": "0,76",
+   "x": 1344,
+   "y": 1145,
+   "posicoes": [
+    {
+     "x": 1344,
+     "y": 1145
+    }
+   ],
+   "tabela_x": 2312,
+   "tabela_y": 952
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1925,
+   "y": 1856,
+   "posicoes": [
+    {
+     "x": 1925,
+     "y": 1856
+    }
+   ],
+   "tabela_x": 2311,
+   "tabela_y": 998
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.32,
+   "valor_texto": "0,32",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1889,
+     "y": 1973
+    },
+    {
+     "x": 1889,
+     "y": 1120
+    }
+   ],
+   "tabela_x": 2314,
+   "tabela_y": 1040
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1475,
+   "y": 1824,
+   "posicoes": [
+    {
+     "x": 1475,
+     "y": 1824
+    }
+   ],
+   "tabela_x": 2312,
+   "tabela_y": 1084
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.31,
+   "valor_texto": "1,31",
+   "x": 1565,
+   "y": 966,
+   "posicoes": [
+    {
+     "x": 1565,
+     "y": 966
+    }
+   ],
+   "tabela_x": 2310,
+   "tabela_y": 1133
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1770,
+   "y": 1338,
+   "posicoes": [
+    {
+     "x": 1770,
+     "y": 1338
+    }
+   ],
+   "tabela_x": 2308,
+   "tabela_y": 1167
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 1.06,
+   "valor_texto": "1,06",
+   "x": 1770,
+   "y": 1120,
+   "posicoes": [
+    {
+     "x": 1770,
+     "y": 1120
+    }
+   ],
+   "tabela_x": 2318,
+   "tabela_y": 1213
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.92,
+   "valor_texto": "0,92",
+   "x": 1260,
+   "y": 1145,
+   "posicoes": [
+    {
+     "x": 1260,
+     "y": 1145
+    }
+   ],
+   "tabela_x": 2324,
+   "tabela_y": 1257
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-bruxelas-com-hidro-em-acrilico",
+   "rotulo": "1,20 x 1,50 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-bruxelas-com-hidro",
+   "rotulo": "1,20 x 1,50 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-bruxelas-completa-com-hidro-em-acrilico",
+   "rotulo": "1,20 x 1,50 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-bruxelas-completa-com-hidro",
+   "rotulo": "1,20 x 1,50 x 0,40"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-bruxelas-com-hidro-em-acrilico",
+    "rotulo": "1,20 x 1,50 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-bruxelas-com-hidro",
+    "rotulo": "1,20 x 1,50 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-bruxelas-completa-com-hidro-em-acrilico",
+    "rotulo": "1,20 x 1,50 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-bruxelas-completa-com-hidro",
+    "rotulo": "1,20 x 1,50 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

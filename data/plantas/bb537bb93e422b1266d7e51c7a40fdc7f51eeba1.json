@@ -1,0 +1,279 @@
+{
+ "sha1": "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1",
+ "pdf_path": "plantas/banheiras/Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
+ "nome_arquivo": "Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Austria%20-%201,15%20x%201,43%20x%200,43%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.15,
+   "valor_texto": "1,15",
+   "x": 1835,
+   "y": 1067,
+   "posicoes": [
+    {
+     "x": 1835,
+     "y": 1067
+    }
+   ],
+   "tabela_x": 2336,
+   "tabela_y": 796
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.43,
+   "valor_texto": "1,43",
+   "x": 1321,
+   "y": 661,
+   "posicoes": [
+    {
+     "x": 1321,
+     "y": 661
+    }
+   ],
+   "tabela_x": 2336,
+   "tabela_y": 832
+  },
+  {
+   "letra": "C",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1357,
+   "y": 1103,
+   "posicoes": [
+    {
+     "x": 1357,
+     "y": 1103
+    }
+   ],
+   "tabela_x": 2337,
+   "tabela_y": 879
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.74,
+   "valor_texto": "0,74",
+   "x": 1555,
+   "y": 1062,
+   "posicoes": [
+    {
+     "x": 1555,
+     "y": 1062
+    }
+   ],
+   "tabela_x": 2341,
+   "tabela_y": 918
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1110,
+   "y": 1065,
+   "posicoes": [
+    {
+     "x": 1110,
+     "y": 1065
+    }
+   ],
+   "tabela_x": 2340,
+   "tabela_y": 958
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1686,
+   "y": 1827,
+   "posicoes": [
+    {
+     "x": 1686,
+     "y": 1827
+    }
+   ],
+   "tabela_x": 2339,
+   "tabela_y": 1003
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.2,
+   "valor_texto": "0,20",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1717,
+     "y": 1950
+    },
+    {
+     "x": 1718,
+     "y": 1047
+    }
+   ],
+   "tabela_x": 2342,
+   "tabela_y": 1046
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1529,
+   "y": 1795,
+   "posicoes": [
+    {
+     "x": 1529,
+     "y": 1795
+    }
+   ],
+   "tabela_x": 2348,
+   "tabela_y": 1090
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1182,
+   "y": 1778,
+   "posicoes": [
+    {
+     "x": 1182,
+     "y": 1778
+    }
+   ],
+   "tabela_x": 2348,
+   "tabela_y": 1136
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.23,
+   "valor_texto": "1,23",
+   "x": 1321,
+   "y": 997,
+   "posicoes": [
+    {
+     "x": 1321,
+     "y": 997
+    }
+   ],
+   "tabela_x": 2334,
+   "tabela_y": 1176
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.575,
+   "valor_texto": "0,575",
+   "x": 1660,
+   "y": 1252,
+   "posicoes": [
+    {
+     "x": 1660,
+     "y": 1252
+    }
+   ],
+   "tabela_x": 2332,
+   "tabela_y": 1221
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.94,
+   "valor_texto": "0,94",
+   "x": 1595,
+   "y": 1064,
+   "posicoes": [
+    {
+     "x": 1595,
+     "y": 1064
+    }
+   ],
+   "tabela_x": 2331,
+   "tabela_y": 1271
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": 985,
+   "y": 1066,
+   "posicoes": [
+    {
+     "x": 985,
+     "y": 1066
+    }
+   ],
+   "tabela_x": 2335,
+   "tabela_y": 1318
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-austria-com-hidro-em-acrilico",
+   "rotulo": "1,15 x 1,43 x 0,43"
+  },
+  {
+   "slug": "banheira-dupla-austria-com-hidro",
+   "rotulo": "1,15 x 1,43 x 0,43"
+  },
+  {
+   "slug": "banheira-dupla-austria-completa-com-hidro-em-acrilico",
+   "rotulo": "1,15 x 1,43 x 0,43"
+  },
+  {
+   "slug": "banheira-dupla-austria-completa-com-hidro",
+   "rotulo": "1,15 x 1,43 x 0,43"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-austria-com-hidro-em-acrilico",
+    "rotulo": "1,15 x 1,43 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-austria-com-hidro",
+    "rotulo": "1,15 x 1,43 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-austria-completa-com-hidro-em-acrilico",
+    "rotulo": "1,15 x 1,43 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-austria-completa-com-hidro",
+    "rotulo": "1,15 x 1,43 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

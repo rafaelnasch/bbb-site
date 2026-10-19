@@ -1,0 +1,29 @@
+{
+ "total": 152,
+ "tabela_lida": 112,
+ "validacao_automatica": 105,
+ "segunda_leitura_conferida": 42,
+ "validadas": 100,
+ "divergencias_segunda_leitura": 0,
+ "posicoes_ok": 105,
+ "ligacoes_nao_casadas": 23,
+ "posicoes_conferidas_visualmente": 14,
+ "amostra": 22,
+ "amostra_revisores": [
+  "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+  "verificador do bloco 2-midia"
+ ],
+ "sem_texto_extraivel": 3,
+ "tabela_em_contorno": 4,
+ "sem_tabela_de_letras": 36,
+ "tabela_nao_conferida": 0,
+ "formas_na_amostra": [
+  "banheira De Canto",
+  "banheira Redonda",
+  "banheira Retangular",
+  "ofuro Redonda"
+ ],
+ "formas_sem_amostra": [],
+ "lote_ok": true,
+ "a_revisar": 52
+}

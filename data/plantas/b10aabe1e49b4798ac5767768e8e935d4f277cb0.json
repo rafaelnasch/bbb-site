@@ -1,0 +1,257 @@
+{
+ "sha1": "b10aabe1e49b4798ac5767768e8e935d4f277cb0",
+ "pdf_path": "plantas/banheiras/Barcelona - 0,90 x 1,60 x 0,43 [GC-AC].pdf",
+ "nome_arquivo": "Barcelona - 0,90 x 1,60 x 0,43 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,90%20x%201,60%20x%200,43%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 2077,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 2077,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2299,
+   "tabela_y": 802
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.6,
+   "valor_texto": "1,60",
+   "x": 1443,
+   "y": 719,
+   "posicoes": [
+    {
+     "x": 1443,
+     "y": 719
+    }
+   ],
+   "tabela_x": 2300,
+   "tabela_y": 843
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.14,
+   "valor_texto": "1,14",
+   "x": 1416,
+   "y": 1057,
+   "posicoes": [
+    {
+     "x": 1416,
+     "y": 1057
+    }
+   ],
+   "tabela_x": 2301,
+   "tabela_y": 896
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 1659,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 1659,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2304,
+   "tabela_y": 940
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1167,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 1167,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2304,
+   "tabela_y": 985
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1967,
+   "y": 1816,
+   "posicoes": [
+    {
+     "x": 1967,
+     "y": 1816
+    }
+   ],
+   "tabela_x": 2303,
+   "tabela_y": 1037
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.27,
+   "valor_texto": "0,27",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1884,
+     "y": 1120
+    },
+    {
+     "x": 1944,
+     "y": 1960
+    }
+   ],
+   "tabela_x": 2306,
+   "tabela_y": 1085
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1702,
+   "y": 1779,
+   "posicoes": [
+    {
+     "x": 1702,
+     "y": 1779
+    }
+   ],
+   "tabela_x": 2313,
+   "tabela_y": 1135
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.37,
+   "valor_texto": "0,37",
+   "x": 1198,
+   "y": 1757,
+   "posicoes": [
+    {
+     "x": 1198,
+     "y": 1757
+    }
+   ],
+   "tabela_x": 2313,
+   "tabela_y": 1187
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.38,
+   "valor_texto": "1,38",
+   "x": 1403,
+   "y": 1137,
+   "posicoes": [
+    {
+     "x": 1403,
+     "y": 1137
+    }
+   ],
+   "tabela_x": 2297,
+   "tabela_y": 1232
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1731,
+   "y": 1212,
+   "posicoes": [
+    {
+     "x": 1731,
+     "y": 1212
+    }
+   ],
+   "tabela_x": 2294,
+   "tabela_y": 1283
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1702,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 1702,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2294,
+   "tabela_y": 1340
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1115,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 1115,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 2298,
+   "tabela_y": 1393
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-barcelona-com-hidro-em-acrilico",
+   "rotulo": "0,90 x 1,60 x 0,43"
+  },
+  {
+   "slug": "banheira-retangular-barcelona-completa-com-hidro-em-acrilico",
+   "rotulo": "0,90 x 1,60 x 0,43"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-barcelona-com-hidro-em-acrilico",
+    "rotulo": "0,90 x 1,60 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-barcelona-completa-com-hidro-em-acrilico",
+    "rotulo": "0,90 x 1,60 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

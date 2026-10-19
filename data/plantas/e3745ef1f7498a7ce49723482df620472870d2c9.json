@@ -1,0 +1,38 @@
+{
+ "sha1": "e3745ef1f7498a7ce49723482df620472870d2c9",
+ "pdf_path": "plantas/spas/Spa Siena 1,80 x 2,10 x 0,73 - PLANTA.PDF",
+ "nome_arquivo": "Spa Siena 1,80 x 2,10 x 0,73 - PLANTA.PDF",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Siena%201,80%20x%202,10%20x%200,73%20-%20PLANTA.PDF",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2402,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "spa-retangular-siena-completo-com-hidro-em-acrilico",
+   "rotulo": "1,80 x 2,10 x 0,73"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

@@ -1,0 +1,282 @@
+{
+ "sha1": "6b50df188c021bb6bf77280ee94e0ff4db0f99ad",
+ "pdf_path": "plantas/banheiras/Simpatia de canto - 1,60 x 1,60 x 0,50 [GC].pdf",
+ "nome_arquivo": "Simpatia de canto - 1,60 x 1,60 x 0,50 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Simpatia%20de%20canto%20-%201,60%20x%201,60%20x%200,50%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.6,
+   "valor_texto": "1,60",
+   "x": 1471,
+   "y": 1171,
+   "posicoes": [
+    {
+     "x": 1471,
+     "y": 1171
+    }
+   ],
+   "tabela_x": 2029,
+   "tabela_y": 1476
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.6,
+   "valor_texto": "1,60",
+   "x": 853,
+   "y": 1156,
+   "posicoes": [
+    {
+     "x": 853,
+     "y": 1156
+    }
+   ],
+   "tabela_x": 2029,
+   "tabela_y": 1504
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.02,
+   "valor_texto": "1,02",
+   "x": 1180,
+   "y": 1339,
+   "posicoes": [
+    {
+     "x": 1180,
+     "y": 1339
+    }
+   ],
+   "tabela_x": 2030,
+   "tabela_y": 1540
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1168,
+   "y": 1191,
+   "posicoes": [
+    {
+     "x": 1168,
+     "y": 1191
+    }
+   ],
+   "tabela_x": 2032,
+   "tabela_y": 1569
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 896,
+   "y": 1473,
+   "posicoes": [
+    {
+     "x": 896,
+     "y": 1473
+    }
+   ],
+   "tabela_x": 2031,
+   "tabela_y": 1599
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 2308,
+   "y": 1175,
+   "posicoes": [
+    {
+     "x": 2308,
+     "y": 1175
+    }
+   ],
+   "tabela_x": 2031,
+   "tabela_y": 1633
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1517,
+     "y": 1467
+    },
+    {
+     "x": 2711,
+     "y": 1295
+    }
+   ],
+   "tabela_x": 2033,
+   "tabela_y": 1665
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2037,
+   "tabela_y": 1699
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2038,
+   "tabela_y": 1737
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.72,
+   "valor_texto": "1,72",
+   "x": 1168,
+   "y": 1449,
+   "posicoes": [
+    {
+     "x": 1168,
+     "y": 1449
+    }
+   ],
+   "tabela_x": 2035,
+   "tabela_y": 1765
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.53,
+   "valor_texto": "0,53",
+   "x": 1406,
+   "y": 1573,
+   "posicoes": [
+    {
+     "x": 1406,
+     "y": 1573
+    }
+   ],
+   "tabela_x": 2033,
+   "tabela_y": 1798
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.58,
+   "valor_texto": "0,58",
+   "x": 1167,
+   "y": 1173,
+   "posicoes": [
+    {
+     "x": 1167,
+     "y": 1173
+    }
+   ],
+   "tabela_x": 2035,
+   "tabela_y": 1836
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.58,
+   "valor_texto": "0,58",
+   "x": 859,
+   "y": 1468,
+   "posicoes": [
+    {
+     "x": 859,
+     "y": 1468
+    }
+   ],
+   "tabela_x": 2040,
+   "tabela_y": 1870
+  },
+  {
+   "letra": "N",
+   "valor_m": 2.25,
+   "valor_texto": "2,25",
+   "x": 533,
+   "y": 1332,
+   "posicoes": [
+    {
+     "x": 533,
+     "y": 1332
+    }
+   ],
+   "tabela_x": 2038,
+   "tabela_y": 1898
+  },
+  {
+   "letra": "O",
+   "valor_m": 1.7,
+   "valor_texto": "1,70",
+   "x": 1160,
+   "y": 1769,
+   "posicoes": [
+    {
+     "x": 1160,
+     "y": 1769
+    }
+   ],
+   "tabela_x": 2035,
+   "tabela_y": 1932
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-de-canto-simpatia-completa-com-hidro",
+   "rotulo": "1,60 x 1,60 x 0,50"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-de-canto-simpatia-completa-com-hidro",
+    "rotulo": "1,60 x 1,60 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": [
+   "H1 sem posição no desenho",
+   "H2 sem posição no desenho"
+  ]
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": false,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

@@ -1,0 +1,263 @@
+{
+ "sha1": "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667",
+ "pdf_path": "plantas/banheiras/Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
+ "nome_arquivo": "Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Firenze%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.19,
+   "valor_texto": "1,19",
+   "x": 1692,
+   "y": 1203,
+   "posicoes": [
+    {
+     "x": 1692,
+     "y": 1203
+    }
+   ],
+   "tabela_x": 2060,
+   "tabela_y": 1458
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.69,
+   "valor_texto": "1,69",
+   "x": 1114,
+   "y": 794,
+   "posicoes": [
+    {
+     "x": 1114,
+     "y": 794
+    }
+   ],
+   "tabela_x": 2059,
+   "tabela_y": 1492
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1113,
+   "y": 1164,
+   "posicoes": [
+    {
+     "x": 1113,
+     "y": 1164
+    }
+   ],
+   "tabela_x": 2060,
+   "tabela_y": 1536
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1270,
+   "y": 1202,
+   "posicoes": [
+    {
+     "x": 1270,
+     "y": 1202
+    }
+   ],
+   "tabela_x": 2063,
+   "tabela_y": 1572
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 966,
+   "y": 1201,
+   "posicoes": [
+    {
+     "x": 966,
+     "y": 1201
+    }
+   ],
+   "tabela_x": 2062,
+   "tabela_y": 1610
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.32,
+   "valor_texto": "0,32",
+   "x": 2358,
+   "y": 1002,
+   "posicoes": [
+    {
+     "x": 2358,
+     "y": 1002
+    }
+   ],
+   "tabela_x": 2062,
+   "tabela_y": 1653
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.53,
+   "valor_texto": "0,53",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1437,
+     "y": 1208
+    },
+    {
+     "x": 2737,
+     "y": 1135
+    }
+   ],
+   "tabela_x": 2064,
+   "tabela_y": 1692
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 2299,
+   "y": 971,
+   "posicoes": [
+    {
+     "x": 2299,
+     "y": 971
+    }
+   ],
+   "tabela_x": 2063,
+   "tabela_y": 1735
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.56,
+   "valor_texto": "1,56",
+   "x": 1113,
+   "y": 1267,
+   "posicoes": [
+    {
+     "x": 1113,
+     "y": 1267
+    }
+   ],
+   "tabela_x": 2063,
+   "tabela_y": 1774
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.585,
+   "valor_texto": "0,585",
+   "x": 1290,
+   "y": 1386,
+   "posicoes": [
+    {
+     "x": 1290,
+     "y": 1386
+    }
+   ],
+   "tabela_x": 2061,
+   "tabela_y": 1816
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.86,
+   "valor_texto": "0,86",
+   "x": 1405,
+   "y": 1202,
+   "posicoes": [
+    {
+     "x": 1405,
+     "y": 1202
+    }
+   ],
+   "tabela_x": 2061,
+   "tabela_y": 1863
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.86,
+   "valor_texto": "0,86",
+   "x": 775,
+   "y": 1200,
+   "posicoes": [
+    {
+     "x": 775,
+     "y": 1200
+    }
+   ],
+   "tabela_x": 2064,
+   "tabela_y": 1907
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-firenze-com-hidro-em-acrilico",
+   "rotulo": "1,19 x 1,69 x 0,42"
+  },
+  {
+   "slug": "banheira-dupla-firenze-com-hidro",
+   "rotulo": "1,19 x 1,69 x 0,42"
+  },
+  {
+   "slug": "banheira-dupla-firenze-completa-com-hidro-em-acrilico",
+   "rotulo": "1,19 x 1,69 x 0,42"
+  },
+  {
+   "slug": "banheira-dupla-firenze-completa-com-hidro",
+   "rotulo": "1,19 x 1,69 x 0,42"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-firenze-com-hidro-em-acrilico",
+    "rotulo": "1,19 x 1,69 x 0,42",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-firenze-com-hidro",
+    "rotulo": "1,19 x 1,69 x 0,42",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-firenze-completa-com-hidro-em-acrilico",
+    "rotulo": "1,19 x 1,69 x 0,42",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-firenze-completa-com-hidro",
+    "rotulo": "1,19 x 1,69 x 0,42",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

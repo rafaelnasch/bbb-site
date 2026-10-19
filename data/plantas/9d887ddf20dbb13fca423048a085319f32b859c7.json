@@ -1,0 +1,271 @@
+{
+ "sha1": "9d887ddf20dbb13fca423048a085319f32b859c7",
+ "pdf_path": "plantas/banheiras/Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
+ "nome_arquivo": "Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Monte%20carlo%20-%201,50%20x%201,50%20x%200,49%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.5,
+   "valor_texto": "1,50",
+   "x": 1139,
+   "y": 1847,
+   "posicoes": [
+    {
+     "x": 1139,
+     "y": 1847
+    }
+   ],
+   "tabela_x": 1936,
+   "tabela_y": 1428
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.5,
+   "valor_texto": "1,50",
+   "x": 639,
+   "y": 1279,
+   "posicoes": [
+    {
+     "x": 639,
+     "y": 1279
+    }
+   ],
+   "tabela_x": 1936,
+   "tabela_y": 1459
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 707,
+     "y": 1301
+    },
+    {
+     "x": 1139,
+     "y": 1738
+    }
+   ],
+   "tabela_x": 1937,
+   "tabela_y": 1499
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1142,
+   "y": 1506,
+   "posicoes": [
+    {
+     "x": 1142,
+     "y": 1506
+    }
+   ],
+   "tabela_x": 1940,
+   "tabela_y": 1532
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 1140,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 1140,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 1939,
+   "tabela_y": 1565
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 2343,
+   "y": 1006,
+   "posicoes": [
+    {
+     "x": 2343,
+     "y": 1006
+    }
+   ],
+   "tabela_x": 1938,
+   "tabela_y": 1603
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.55,
+   "valor_texto": "0,55",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1345,
+     "y": 1521
+    },
+    {
+     "x": 2580,
+     "y": 1125
+    }
+   ],
+   "tabela_x": 1941,
+   "tabela_y": 1639
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.49,
+   "valor_texto": "0,49",
+   "x": 2299,
+   "y": 979,
+   "posicoes": [
+    {
+     "x": 2299,
+     "y": 979
+    }
+   ],
+   "tabela_x": 1940,
+   "tabela_y": 1677
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.3,
+   "valor_texto": "1,30",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1139,
+     "y": 1793
+    },
+    {
+     "x": 671,
+     "y": 1279
+    }
+   ],
+   "tabela_x": 1938,
+   "tabela_y": 1719
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.26,
+   "valor_texto": "0,26",
+   "x": 1126,
+   "y": 1618,
+   "posicoes": [
+    {
+     "x": 1126,
+     "y": 1618
+    }
+   ],
+   "tabela_x": 1936,
+   "tabela_y": 1747
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1198,
+   "y": 1591,
+   "posicoes": [
+    {
+     "x": 1198,
+     "y": 1591
+    }
+   ],
+   "tabela_x": 1944,
+   "tabela_y": 1786
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1139,
+   "y": 1009,
+   "posicoes": [
+    {
+     "x": 1139,
+     "y": 1009
+    }
+   ],
+   "tabela_x": 1950,
+   "tabela_y": 1824
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-redonda-monte-carlo-com-hidro-em-acrilico",
+   "rotulo": "1,50 x 1,50 x 0,49"
+  },
+  {
+   "slug": "banheira-redonda-monte-carlo-com-hidro",
+   "rotulo": "1,50 x 1,50 x 0,49"
+  },
+  {
+   "slug": "banheira-redonda-monte-carlo-completa-com-hidro-em-acrilico",
+   "rotulo": "1,50 x 1,50 x 0,49"
+  },
+  {
+   "slug": "banheira-redonda-monte-carlo-completa-com-hidro",
+   "rotulo": "1,50 x 1,50 x 0,49"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-redonda-monte-carlo-com-hidro-em-acrilico",
+    "rotulo": "1,50 x 1,50 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-monte-carlo-com-hidro",
+    "rotulo": "1,50 x 1,50 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-monte-carlo-completa-com-hidro-em-acrilico",
+    "rotulo": "1,50 x 1,50 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-redonda-monte-carlo-completa-com-hidro",
+    "rotulo": "1,50 x 1,50 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

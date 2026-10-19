@@ -1,0 +1,230 @@
+{
+ "sha1": "f5e1c50d831639980e6ebd428274d3c8ca78166c",
+ "pdf_path": "plantas/banheiras/Essenciale - 1,20 x 1,59 x 0,41 [GC].pdf",
+ "nome_arquivo": "Essenciale - 1,20 x 1,59 x 0,41 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Essenciale%20-%201,20%20x%201,59%20x%200,41%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1985,
+   "y": 1157,
+   "posicoes": [
+    {
+     "x": 1985,
+     "y": 1157
+    }
+   ],
+   "tabela_x": 2349,
+   "tabela_y": 885
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.59,
+   "valor_texto": "1,59",
+   "x": 1417,
+   "y": 702,
+   "posicoes": [
+    {
+     "x": 1417,
+     "y": 702
+    }
+   ],
+   "tabela_x": 2349,
+   "tabela_y": 922
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": 1339,
+   "y": 1159,
+   "posicoes": [
+    {
+     "x": 1339,
+     "y": 1159
+    }
+   ],
+   "tabela_x": 2350,
+   "tabela_y": 972
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1215,
+   "y": 1154,
+   "posicoes": [
+    {
+     "x": 1215,
+     "y": 1154
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 1012
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1512,
+   "y": 1155,
+   "posicoes": [
+    {
+     "x": 1512,
+     "y": 1155
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 1053
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.31,
+   "valor_texto": "0,31",
+   "x": 932,
+   "y": 1887,
+   "posicoes": [
+    {
+     "x": 932,
+     "y": 1887
+    }
+   ],
+   "tabela_x": 2352,
+   "tabela_y": 1100
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 977,
+     "y": 1026
+    },
+    {
+     "x": 974,
+     "y": 2019
+    }
+   ],
+   "tabela_x": 2355,
+   "tabela_y": 1144
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": 1450,
+   "y": 1855,
+   "posicoes": [
+    {
+     "x": 1450,
+     "y": 1855
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 1191
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.37,
+   "valor_texto": "1,37",
+   "x": 1391,
+   "y": 1306,
+   "posicoes": [
+    {
+     "x": 1391,
+     "y": 1306
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 1234
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.79,
+   "valor_texto": "0,79",
+   "x": 1084,
+   "y": 1291,
+   "posicoes": [
+    {
+     "x": 1084,
+     "y": 1291
+    }
+   ],
+   "tabela_x": 2351,
+   "tabela_y": 1280
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.98,
+   "valor_texto": "0,98",
+   "x": 1044,
+   "y": 1153,
+   "posicoes": [
+    {
+     "x": 1044,
+     "y": 1153
+    }
+   ],
+   "tabela_x": 2350,
+   "tabela_y": 1333
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.98,
+   "valor_texto": "0,98",
+   "x": 1726,
+   "y": 1154,
+   "posicoes": [
+    {
+     "x": 1726,
+     "y": 1154
+    }
+   ],
+   "tabela_x": 2354,
+   "tabela_y": 1381
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-essenciale-completa-com-hidro",
+   "rotulo": "1,20 x 1,59 x 0,41"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-essenciale-completa-com-hidro",
+    "rotulo": "1,20 x 1,59 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

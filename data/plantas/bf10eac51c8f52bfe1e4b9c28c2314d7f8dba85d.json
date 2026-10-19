@@ -1,0 +1,242 @@
+{
+ "sha1": "bf10eac51c8f52bfe1e4b9c28c2314d7f8dba85d",
+ "pdf_path": "plantas/banheiras/Sensuale - 1,20 x 1,80 x 0,43 [GC-AC].pdf",
+ "nome_arquivo": "Sensuale - 1,20 x 1,80 x 0,43 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sensuale%20-%201,20%20x%201,80%20x%200,43%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 629,
+   "y": 1306,
+   "posicoes": [
+    {
+     "x": 629,
+     "y": 1306
+    }
+   ],
+   "tabela_x": 2043,
+   "tabela_y": 1455
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.8,
+   "valor_texto": "1,80",
+   "x": 1150,
+   "y": 942,
+   "posicoes": [
+    {
+     "x": 1150,
+     "y": 942
+    }
+   ],
+   "tabela_x": 2043,
+   "tabela_y": 1484
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.98,
+   "valor_texto": "0,98",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 2044,
+   "tabela_y": 1522
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.65,
+   "valor_texto": "0,65",
+   "x": 1315,
+   "y": 1305,
+   "posicoes": [
+    {
+     "x": 1315,
+     "y": 1305
+    }
+   ],
+   "tabela_x": 2047,
+   "tabela_y": 1553
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.65,
+   "valor_texto": "0,65",
+   "x": 1009,
+   "y": 1312,
+   "posicoes": [
+    {
+     "x": 1009,
+     "y": 1312
+    }
+   ],
+   "tabela_x": 2046,
+   "tabela_y": 1585
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 2733,
+   "y": 1030,
+   "posicoes": [
+    {
+     "x": 2733,
+     "y": 1030
+    }
+   ],
+   "tabela_x": 2046,
+   "tabela_y": 1622
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1495,
+     "y": 1280
+    },
+    {
+     "x": 2667,
+     "y": 1145
+    }
+   ],
+   "tabela_x": 2048,
+   "tabela_y": 1656
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 2331,
+   "y": 1005,
+   "posicoes": [
+    {
+     "x": 2331,
+     "y": 1005
+    }
+   ],
+   "tabela_x": 2047,
+   "tabela_y": 1692
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.56,
+   "valor_texto": "1,56",
+   "x": 1150,
+   "y": 1191,
+   "posicoes": [
+    {
+     "x": 1150,
+     "y": 1191
+    }
+   ],
+   "tabela_x": 2045,
+   "tabela_y": 1728
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1368,
+   "y": 1448,
+   "posicoes": [
+    {
+     "x": 1368,
+     "y": 1448
+    }
+   ],
+   "tabela_x": 2043,
+   "tabela_y": 1764
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.99,
+   "valor_texto": "0,99",
+   "x": 1442,
+   "y": 1305,
+   "posicoes": [
+    {
+     "x": 1442,
+     "y": 1305
+    }
+   ],
+   "tabela_x": 2052,
+   "tabela_y": 1801
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.99,
+   "valor_texto": "0,99",
+   "x": 859,
+   "y": 1304,
+   "posicoes": [
+    {
+     "x": 859,
+     "y": 1304
+    }
+   ],
+   "tabela_x": 2057,
+   "tabela_y": 1837
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-sensuale-completa-com-hidro-em-acrilico",
+   "rotulo": "1,20 x 1,80 x 0,43"
+  },
+  {
+   "slug": "banheira-retangular-sensuale-completa-com-hidro",
+   "rotulo": "1,20 x 1,80 x 0,43"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "banheira-retangular-sensuale-completa-com-hidro-em-acrilico: planta A=1.2 B=1.8 H=0.45 x rótulo 1,20 x 1,80 x 0,43",
+   "banheira-retangular-sensuale-completa-com-hidro: planta A=1.2 B=1.8 H=0.45 x rótulo 1,20 x 1,80 x 0,43"
+  ],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-sensuale-completa-com-hidro-em-acrilico",
+    "rotulo": "1,20 x 1,80 x 0,43",
+    "ok": false,
+    "troca_ab": false,
+    "legivel": true,
+    "motivo": "planta A=1.2 B=1.8 H=0.45 x rótulo 1,20 x 1,80 x 0,43"
+   },
+   {
+    "slug": "banheira-retangular-sensuale-completa-com-hidro",
+    "rotulo": "1,20 x 1,80 x 0,43",
+    "ok": false,
+    "troca_ab": false,
+    "legivel": true,
+    "motivo": "planta A=1.2 B=1.8 H=0.45 x rótulo 1,20 x 1,80 x 0,43"
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": null
+}

@@ -1,0 +1,263 @@
+{
+ "sha1": "f92fe93f38680b0a646460c4beaf418d8e9e6dd6",
+ "pdf_path": "plantas/banheiras/Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
+ "nome_arquivo": "Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Valencia%20-%201,10%20x%201,89%20x%200,40%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.1,
+   "valor_texto": "1,10",
+   "x": 1117,
+   "y": 728,
+   "posicoes": [
+    {
+     "x": 1117,
+     "y": 728
+    }
+   ],
+   "tabela_x": 1766,
+   "tabela_y": 1439
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.89,
+   "valor_texto": "1,89",
+   "x": 1519,
+   "y": 1355,
+   "posicoes": [
+    {
+     "x": 1519,
+     "y": 1355
+    }
+   ],
+   "tabela_x": 1767,
+   "tabela_y": 1473
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.08,
+   "valor_texto": "1,08",
+   "x": 1163,
+   "y": 1356,
+   "posicoes": [
+    {
+     "x": 1163,
+     "y": 1356
+    }
+   ],
+   "tabela_x": 1768,
+   "tabela_y": 1518
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.47,
+   "valor_texto": "0,47",
+   "x": 1118,
+   "y": 1516,
+   "posicoes": [
+    {
+     "x": 1118,
+     "y": 1516
+    }
+   ],
+   "tabela_x": 1771,
+   "tabela_y": 1556
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.47,
+   "valor_texto": "0,47",
+   "x": 1117,
+   "y": 1174,
+   "posicoes": [
+    {
+     "x": 1117,
+     "y": 1174
+    }
+   ],
+   "tabela_x": 1770,
+   "tabela_y": 1593
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 2218,
+   "y": 1005,
+   "posicoes": [
+    {
+     "x": 2218,
+     "y": 1005
+    }
+   ],
+   "tabela_x": 1769,
+   "tabela_y": 1637
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": 1346,
+   "y": 1355,
+   "posicoes": [
+    {
+     "x": 1346,
+     "y": 1355
+    }
+   ],
+   "tabela_x": 1772,
+   "tabela_y": 1677
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 2379,
+   "y": 974,
+   "posicoes": [
+    {
+     "x": 2379,
+     "y": 974
+    }
+   ],
+   "tabela_x": 1771,
+   "tabela_y": 1724
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.68,
+   "valor_texto": "1,68",
+   "x": 1083,
+   "y": 1356,
+   "posicoes": [
+    {
+     "x": 1083,
+     "y": 1356
+    }
+   ],
+   "tabela_x": 1772,
+   "tabela_y": 1768
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.955,
+   "valor_texto": "0,955",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1224,
+     "y": 1644
+    },
+    {
+     "x": 2547,
+     "y": 1136
+    }
+   ],
+   "tabela_x": 1770,
+   "tabela_y": 1810
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1117,
+   "y": 1639,
+   "posicoes": [
+    {
+     "x": 1117,
+     "y": 1639
+    }
+   ],
+   "tabela_x": 1763,
+   "tabela_y": 1856
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1120,
+   "y": 1305,
+   "posicoes": [
+    {
+     "x": 1120,
+     "y": 1305
+    }
+   ],
+   "tabela_x": 1766,
+   "tabela_y": 1891
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-valencia-com-hidro-em-acrilico",
+   "rotulo": "1,10 x 1,89 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-valencia-com-hidro",
+   "rotulo": "1,10 x 1,89 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-valencia-completa-com-hidro-em-acrilico",
+   "rotulo": "1,10 x 1,89 x 0,40"
+  },
+  {
+   "slug": "banheira-dupla-valencia-completa-com-hidro",
+   "rotulo": "1,10 x 1,89 x 0,40"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-valencia-com-hidro-em-acrilico",
+    "rotulo": "1,10 x 1,89 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-valencia-com-hidro",
+    "rotulo": "1,10 x 1,89 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-valencia-completa-com-hidro-em-acrilico",
+    "rotulo": "1,10 x 1,89 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-valencia-completa-com-hidro",
+    "rotulo": "1,10 x 1,89 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

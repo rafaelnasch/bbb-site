@@ -1,0 +1,241 @@
+{
+ "sha1": "1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0",
+ "pdf_path": "plantas/banheiras/Tailandia - 0,70 x 1,09 x 0,48 [GC].pdf",
+ "nome_arquivo": "Tailandia - 0,70 x 1,09 x 0,48 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Tailandia%20-%200,70%20x%201,09%20x%200,48%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1749,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1749,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2095,
+   "tabela_y": 853
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.09,
+   "valor_texto": "1,09",
+   "x": 1269,
+   "y": 750,
+   "posicoes": [
+    {
+     "x": 1269,
+     "y": 750
+    }
+   ],
+   "tabela_x": 2095,
+   "tabela_y": 895
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.78,
+   "valor_texto": "0,78",
+   "x": 1268,
+   "y": 1111,
+   "posicoes": [
+    {
+     "x": 1268,
+     "y": 1111
+    }
+   ],
+   "tabela_x": 2096,
+   "tabela_y": 951
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1446,
+   "y": 1093,
+   "posicoes": [
+    {
+     "x": 1446,
+     "y": 1093
+    }
+   ],
+   "tabela_x": 2100,
+   "tabela_y": 996
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1065,
+   "y": 1092,
+   "posicoes": [
+    {
+     "x": 1065,
+     "y": 1092
+    }
+   ],
+   "tabela_x": 2099,
+   "tabela_y": 1043
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1575,
+   "y": 1875,
+   "posicoes": [
+    {
+     "x": 1575,
+     "y": 1875
+    }
+   ],
+   "tabela_x": 2098,
+   "tabela_y": 1096
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.25,
+   "valor_texto": "0,25",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1587,
+     "y": 1070
+    },
+    {
+     "x": 1595,
+     "y": 2039
+    }
+   ],
+   "tabela_x": 2101,
+   "tabela_y": 1146
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": 1248,
+   "y": 1837,
+   "posicoes": [
+    {
+     "x": 1248,
+     "y": 1837
+    }
+   ],
+   "tabela_x": 2100,
+   "tabela_y": 1203
+  },
+  {
+   "letra": "I",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": 1268,
+   "y": 1026,
+   "posicoes": [
+    {
+     "x": 1268,
+     "y": 1026
+    }
+   ],
+   "tabela_x": 2100,
+   "tabela_y": 1258
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1516,
+   "y": 1225,
+   "posicoes": [
+    {
+     "x": 1516,
+     "y": 1225
+    }
+   ],
+   "tabela_x": 2098,
+   "tabela_y": 1310
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.66,
+   "valor_texto": "0,66",
+   "x": 1483,
+   "y": 1025,
+   "posicoes": [
+    {
+     "x": 1483,
+     "y": 1025
+    }
+   ],
+   "tabela_x": 2089,
+   "tabela_y": 1367
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.66,
+   "valor_texto": "0,66",
+   "x": 992,
+   "y": 1092,
+   "posicoes": [
+    {
+     "x": 992,
+     "y": 1092
+    }
+   ],
+   "tabela_x": 2093,
+   "tabela_y": 1409
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-individual-tailandia-com-hidro",
+   "rotulo": "0,70 x 1,09 x 0,48"
+  },
+  {
+   "slug": "banheira-individual-tailandia-completa-com-hidro",
+   "rotulo": "0,70 x 1,09 x 0,48"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-individual-tailandia-com-hidro",
+    "rotulo": "0,70 x 1,09 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-individual-tailandia-completa-com-hidro",
+    "rotulo": "0,70 x 1,09 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

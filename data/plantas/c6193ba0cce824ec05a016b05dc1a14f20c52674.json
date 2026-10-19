@@ -1,0 +1,241 @@
+{
+ "sha1": "c6193ba0cce824ec05a016b05dc1a14f20c52674",
+ "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,39 x 0,39 [GC-AC].pdf",
+ "nome_arquivo": "Acqua vip - 0,79 x 1,39 x 0,39 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,39%20x%200,39%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.79,
+   "valor_texto": "0,79",
+   "x": 1783,
+   "y": 1096,
+   "posicoes": [
+    {
+     "x": 1783,
+     "y": 1096
+    }
+   ],
+   "tabela_x": 2342,
+   "tabela_y": 763
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.39,
+   "valor_texto": "1,39",
+   "x": 1218,
+   "y": 783,
+   "posicoes": [
+    {
+     "x": 1218,
+     "y": 783
+    }
+   ],
+   "tabela_x": 2342,
+   "tabela_y": 802
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.72,
+   "valor_texto": "0,72",
+   "x": 1295,
+   "y": 1097,
+   "posicoes": [
+    {
+     "x": 1295,
+     "y": 1097
+    }
+   ],
+   "tabela_x": 2344,
+   "tabela_y": 853
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1423,
+   "y": 1071,
+   "posicoes": [
+    {
+     "x": 1423,
+     "y": 1071
+    }
+   ],
+   "tabela_x": 2347,
+   "tabela_y": 894
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1170,
+   "y": 1068,
+   "posicoes": [
+    {
+     "x": 1170,
+     "y": 1068
+    }
+   ],
+   "tabela_x": 2346,
+   "tabela_y": 937
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.29,
+   "valor_texto": "0,29",
+   "x": 1594,
+   "y": 1705,
+   "posicoes": [
+    {
+     "x": 1594,
+     "y": 1705
+    }
+   ],
+   "tabela_x": 2346,
+   "tabela_y": 985
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.23,
+   "valor_texto": "0,23",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1622,
+     "y": 1823
+    },
+    {
+     "x": 1621,
+     "y": 1073
+    }
+   ],
+   "tabela_x": 2349,
+   "tabela_y": 1031
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1278,
+   "y": 1671,
+   "posicoes": [
+    {
+     "x": 1278,
+     "y": 1671
+    }
+   ],
+   "tabela_x": 2347,
+   "tabela_y": 1079
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.16,
+   "valor_texto": "1,16",
+   "x": 1263,
+   "y": 1047,
+   "posicoes": [
+    {
+     "x": 1263,
+     "y": 1047
+    }
+   ],
+   "tabela_x": 2348,
+   "tabela_y": 1124
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.395,
+   "valor_texto": "0,395",
+   "x": 1526,
+   "y": 1234,
+   "posicoes": [
+    {
+     "x": 1526,
+     "y": 1234
+    }
+   ],
+   "tabela_x": 2346,
+   "tabela_y": 1172
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 1466,
+   "y": 1070,
+   "posicoes": [
+    {
+     "x": 1466,
+     "y": 1070
+    }
+   ],
+   "tabela_x": 2345,
+   "tabela_y": 1226
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1117,
+   "y": 1073,
+   "posicoes": [
+    {
+     "x": 1117,
+     "y": 1073
+    }
+   ],
+   "tabela_x": 2349,
+   "tabela_y": 1276
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-vip-completa-com-hidro-em-acrilico",
+   "rotulo": "0,79 x 1,39 x 0,39"
+  },
+  {
+   "slug": "banheira-acqua-vip-completa-com-hidro",
+   "rotulo": "0,79 x 1,39 x 0,39"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-vip-completa-com-hidro-em-acrilico",
+    "rotulo": "0,79 x 1,39 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-acqua-vip-completa-com-hidro",
+    "rotulo": "0,79 x 1,39 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

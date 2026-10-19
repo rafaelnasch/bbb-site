@@ -1,0 +1,38 @@
+{
+ "sha1": "ebe7c1667450327a193a5bda4dd1161c608c5d7f",
+ "pdf_path": "plantas/spas/Spa Londres 1,50 x 1,65 x 0,92 - PLANTA.PDF",
+ "nome_arquivo": "Spa Londres 1,50 x 1,65 x 0,92 - PLANTA.PDF",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Londres%201,50%20x%201,65%20x%200,92%20-%20PLANTA.PDF",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2402,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "spa-retangular-londres-completo-com-hidro-em-acrilico",
+   "rotulo": "1,50 x 1,65 x 0,92"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

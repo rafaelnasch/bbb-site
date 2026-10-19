@@ -1,0 +1,263 @@
+{
+ "sha1": "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed",
+ "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
+ "nome_arquivo": "Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.09,
+   "valor_texto": "1,09",
+   "x": 1951,
+   "y": 1105,
+   "posicoes": [
+    {
+     "x": 1951,
+     "y": 1105
+    }
+   ],
+   "tabela_x": 2429,
+   "tabela_y": 803
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.69,
+   "valor_texto": "1,69",
+   "x": 1316,
+   "y": 719,
+   "posicoes": [
+    {
+     "x": 1316,
+     "y": 719
+    }
+   ],
+   "tabela_x": 2430,
+   "tabela_y": 839
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.02,
+   "valor_texto": "1,02",
+   "x": 1237,
+   "y": 1145,
+   "posicoes": [
+    {
+     "x": 1237,
+     "y": 1145
+    }
+   ],
+   "tabela_x": 2431,
+   "tabela_y": 887
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1398,
+   "y": 1110,
+   "posicoes": [
+    {
+     "x": 1398,
+     "y": 1110
+    }
+   ],
+   "tabela_x": 2434,
+   "tabela_y": 926
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1058,
+   "y": 1110,
+   "posicoes": [
+    {
+     "x": 1058,
+     "y": 1110
+    }
+   ],
+   "tabela_x": 2433,
+   "tabela_y": 966
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": 830,
+   "y": 1825,
+   "posicoes": [
+    {
+     "x": 830,
+     "y": 1825
+    }
+   ],
+   "tabela_x": 2432,
+   "tabela_y": 1013
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.24,
+   "valor_texto": "0,24",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 840,
+     "y": 1953
+    },
+    {
+     "x": 841,
+     "y": 989
+    }
+   ],
+   "tabela_x": 2435,
+   "tabela_y": 1055
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1236,
+   "y": 1793,
+   "posicoes": [
+    {
+     "x": 1236,
+     "y": 1793
+    }
+   ],
+   "tabela_x": 2433,
+   "tabela_y": 1101
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.47,
+   "valor_texto": "1,47",
+   "x": 1315,
+   "y": 1055,
+   "posicoes": [
+    {
+     "x": 1315,
+     "y": 1055
+    }
+   ],
+   "tabela_x": 2434,
+   "tabela_y": 1143
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 894,
+   "y": 881,
+   "posicoes": [
+    {
+     "x": 894,
+     "y": 881
+    }
+   ],
+   "tabela_x": 2432,
+   "tabela_y": 1188
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.93,
+   "valor_texto": "0,93",
+   "x": 1621,
+   "y": 1122,
+   "posicoes": [
+    {
+     "x": 1621,
+     "y": 1122
+    }
+   ],
+   "tabela_x": 2431,
+   "tabela_y": 1239
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.81,
+   "valor_texto": "0,81",
+   "x": 1007,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1007,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2435,
+   "tabela_y": 1286
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-amazonia-com-hidro-em-acrilico",
+   "rotulo": "1,09 x 1,69 x 0,38"
+  },
+  {
+   "slug": "banheira-dupla-amazonia-com-hidro",
+   "rotulo": "1,09 x 1,69 x 0,38"
+  },
+  {
+   "slug": "banheira-dupla-amazonia-completa-com-hidro-em-acrilico",
+   "rotulo": "1,09 x 1,69 x 0,38"
+  },
+  {
+   "slug": "banheira-dupla-amazonia-completa-com-hidro",
+   "rotulo": "1,09 x 1,69 x 0,38"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-amazonia-com-hidro-em-acrilico",
+    "rotulo": "1,09 x 1,69 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-amazonia-com-hidro",
+    "rotulo": "1,09 x 1,69 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-amazonia-completa-com-hidro-em-acrilico",
+    "rotulo": "1,09 x 1,69 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-amazonia-completa-com-hidro",
+    "rotulo": "1,09 x 1,69 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

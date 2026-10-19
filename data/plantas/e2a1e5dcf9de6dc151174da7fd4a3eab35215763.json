@@ -1,0 +1,263 @@
+{
+ "sha1": "e2a1e5dcf9de6dc151174da7fd4a3eab35215763",
+ "pdf_path": "plantas/banheiras/Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
+ "nome_arquivo": "Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Cancun%20-%201,08%20x%201,81%20x%200,53%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.08,
+   "valor_texto": "1,08",
+   "x": 2059,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 2059,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2285,
+   "tabela_y": 849
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.81,
+   "valor_texto": "1,81",
+   "x": 1395,
+   "y": 712,
+   "posicoes": [
+    {
+     "x": 1395,
+     "y": 712
+    }
+   ],
+   "tabela_x": 2285,
+   "tabela_y": 886
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.15,
+   "valor_texto": "1,15",
+   "x": 1396,
+   "y": 1180,
+   "posicoes": [
+    {
+     "x": 1396,
+     "y": 1180
+    }
+   ],
+   "tabela_x": 2286,
+   "tabela_y": 935
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1572,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1572,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2289,
+   "tabela_y": 974
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1229,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1229,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2289,
+   "tabela_y": 1015
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1793,
+   "y": 1842,
+   "posicoes": [
+    {
+     "x": 1793,
+     "y": 1842
+    }
+   ],
+   "tabela_x": 2288,
+   "tabela_y": 1062
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.905,
+   "valor_texto": "0,905",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1684,
+     "y": 2022
+    },
+    {
+     "x": 1692,
+     "y": 1331
+    }
+   ],
+   "tabela_x": 2291,
+   "tabela_y": 1105
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.53,
+   "valor_texto": "0,53",
+   "x": 1375,
+   "y": 1809,
+   "posicoes": [
+    {
+     "x": 1375,
+     "y": 1809
+    }
+   ],
+   "tabela_x": 2289,
+   "tabela_y": 1151
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.49,
+   "valor_texto": "1,49",
+   "x": 1360,
+   "y": 1300,
+   "posicoes": [
+    {
+     "x": 1360,
+     "y": 1300
+    }
+   ],
+   "tabela_x": 2290,
+   "tabela_y": 1194
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.22,
+   "valor_texto": "0,22",
+   "x": 1379,
+   "y": 1404,
+   "posicoes": [
+    {
+     "x": 1379,
+     "y": 1404
+    }
+   ],
+   "tabela_x": 2288,
+   "tabela_y": 1240
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1653,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1653,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2287,
+   "tabela_y": 1291
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1120,
+   "y": 1119,
+   "posicoes": [
+    {
+     "x": 1120,
+     "y": 1119
+    }
+   ],
+   "tabela_x": 2291,
+   "tabela_y": 1339
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-cancun-com-hidro-em-acrilico",
+   "rotulo": "1,08 x 1,81 x 0,53"
+  },
+  {
+   "slug": "banheira-dupla-cancun-com-hidro",
+   "rotulo": "1,08 x 1,81 x 0,53"
+  },
+  {
+   "slug": "banheira-dupla-cancun-completa-com-hidro-em-acrilico",
+   "rotulo": "1,08 x 1,81 x 0,53"
+  },
+  {
+   "slug": "banheira-dupla-cancun-completa-com-hidro",
+   "rotulo": "1,08 x 1,81 x 0,53"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-cancun-com-hidro-em-acrilico",
+    "rotulo": "1,08 x 1,81 x 0,53",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-cancun-com-hidro",
+    "rotulo": "1,08 x 1,81 x 0,53",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-cancun-completa-com-hidro-em-acrilico",
+    "rotulo": "1,08 x 1,81 x 0,53",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-cancun-completa-com-hidro",
+    "rotulo": "1,08 x 1,81 x 0,53",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

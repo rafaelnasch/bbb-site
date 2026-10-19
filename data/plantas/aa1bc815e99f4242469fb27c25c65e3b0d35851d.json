@@ -1,0 +1,249 @@
+{
+ "sha1": "aa1bc815e99f4242469fb27c25c65e3b0d35851d",
+ "pdf_path": "plantas/banheiras/Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
+ "nome_arquivo": "Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Jordania%20-%201,00%20x%201,50%20x%200,49%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1075,
+   "y": 1864,
+   "posicoes": [
+    {
+     "x": 1075,
+     "y": 1864
+    }
+   ],
+   "tabela_x": 1719,
+   "tabela_y": 1466
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.5,
+   "valor_texto": "1,50",
+   "x": 1412,
+   "y": 1325,
+   "posicoes": [
+    {
+     "x": 1412,
+     "y": 1325
+    }
+   ],
+   "tabela_x": 1719,
+   "tabela_y": 1500
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.02,
+   "valor_texto": "1,02",
+   "x": 1045,
+   "y": 1331,
+   "posicoes": [
+    {
+     "x": 1045,
+     "y": 1331
+    }
+   ],
+   "tabela_x": 1719,
+   "tabela_y": 1545
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1058,
+   "y": 1566,
+   "posicoes": [
+    {
+     "x": 1058,
+     "y": 1566
+    }
+   ],
+   "tabela_x": 1723,
+   "tabela_y": 1582
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.46,
+   "valor_texto": "0,46",
+   "x": 1153,
+   "y": 1172,
+   "posicoes": [
+    {
+     "x": 1153,
+     "y": 1172
+    }
+   ],
+   "tabela_x": 1722,
+   "tabela_y": 1619
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1660,
+   "y": 1053,
+   "posicoes": [
+    {
+     "x": 1660,
+     "y": 1053
+    }
+   ],
+   "tabela_x": 1720,
+   "tabela_y": 1662
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.26,
+   "valor_texto": "0,26",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1028,
+     "y": 1701
+    },
+    {
+     "x": 1706,
+     "y": 1179
+    }
+   ],
+   "tabela_x": 1723,
+   "tabela_y": 1708
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.49,
+   "valor_texto": "0,49",
+   "x": 1935,
+   "y": 1023,
+   "posicoes": [
+    {
+     "x": 1935,
+     "y": 1023
+    }
+   ],
+   "tabela_x": 1722,
+   "tabela_y": 1743
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.41,
+   "valor_texto": "1,41",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 1724,
+   "tabela_y": 1789
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.54,
+   "valor_texto": "0,54",
+   "x": 1220,
+   "y": 1703,
+   "posicoes": [
+    {
+     "x": 1220,
+     "y": 1703
+    }
+   ],
+   "tabela_x": 1720,
+   "tabela_y": 1831
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": 1043,
+   "y": 1677,
+   "posicoes": [
+    {
+     "x": 1043,
+     "y": 1677
+    }
+   ],
+   "tabela_x": 1719,
+   "tabela_y": 1867
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.69,
+   "valor_texto": "0,69",
+   "x": 1207,
+   "y": 1040,
+   "posicoes": [
+    {
+     "x": 1207,
+     "y": 1040
+    }
+   ],
+   "tabela_x": 1722,
+   "tabela_y": 1911
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-individual-jordania-com-hidro",
+   "rotulo": "1,00 x 1,50 x 0,49"
+  },
+  {
+   "slug": "banheira-individual-jordania-completa-com-hidro",
+   "rotulo": "1,00 x 1,50 x 0,49"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-individual-jordania-com-hidro",
+    "rotulo": "1,00 x 1,50 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-individual-jordania-completa-com-hidro",
+    "rotulo": "1,00 x 1,50 x 0,49",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

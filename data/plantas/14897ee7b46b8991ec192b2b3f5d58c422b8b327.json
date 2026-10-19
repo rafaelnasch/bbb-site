@@ -1,0 +1,33 @@
+{
+ "sha1": "14897ee7b46b8991ec192b2b3f5d58c422b8b327",
+ "pdf_path": "plantas/banheiras/monteverde.pdf",
+ "nome_arquivo": "monteverde.pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/monteverde.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 1835,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "contorno"
+}

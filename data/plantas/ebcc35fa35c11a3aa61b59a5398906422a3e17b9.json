@@ -1,0 +1,306 @@
+{
+ "sha1": "ebcc35fa35c11a3aa61b59a5398906422a3e17b9",
+ "pdf_path": "plantas/banheiras/Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
+ "nome_arquivo": "Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Santa%20monica%20-%201,38%20x%201,38%20x%200,45%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.38,
+   "valor_texto": "1,38",
+   "x": 1427,
+   "y": 1050,
+   "posicoes": [
+    {
+     "x": 1427,
+     "y": 1050
+    }
+   ],
+   "tabela_x": 1960,
+   "tabela_y": 1405
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.38,
+   "valor_texto": "1,38",
+   "x": 823,
+   "y": 1057,
+   "posicoes": [
+    {
+     "x": 823,
+     "y": 1057
+    }
+   ],
+   "tabela_x": 1960,
+   "tabela_y": 1433
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1121,
+   "y": 1378,
+   "posicoes": [
+    {
+     "x": 1121,
+     "y": 1378
+    }
+   ],
+   "tabela_x": 1961,
+   "tabela_y": 1471
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.43,
+   "valor_texto": "0,43",
+   "x": 1280,
+   "y": 1347,
+   "posicoes": [
+    {
+     "x": 1280,
+     "y": 1347
+    }
+   ],
+   "tabela_x": 1963,
+   "tabela_y": 1502
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 987,
+   "y": 1346,
+   "posicoes": [
+    {
+     "x": 987,
+     "y": 1346
+    }
+   ],
+   "tabela_x": 1962,
+   "tabela_y": 1534
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 2300,
+   "y": 1072,
+   "posicoes": [
+    {
+     "x": 2300,
+     "y": 1072
+    }
+   ],
+   "tabela_x": 1962,
+   "tabela_y": 1571
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1411,
+     "y": 1401
+    },
+    {
+     "x": 2593,
+     "y": 1188
+    }
+   ],
+   "tabela_x": 1964,
+   "tabela_y": 1605
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 2254,
+   "y": 1044,
+   "posicoes": [
+    {
+     "x": 2254,
+     "y": 1044
+    }
+   ],
+   "tabela_x": 1963,
+   "tabela_y": 1641
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.34,
+   "valor_texto": "1,34",
+   "x": 1135,
+   "y": 1314,
+   "posicoes": [
+    {
+     "x": 1135,
+     "y": 1314
+    }
+   ],
+   "tabela_x": 1963,
+   "tabela_y": 1682
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1188,
+   "y": 1524,
+   "posicoes": [
+    {
+     "x": 1188,
+     "y": 1524
+    }
+   ],
+   "tabela_x": 1961,
+   "tabela_y": 1718
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.68,
+   "valor_texto": "0,68",
+   "x": 1383,
+   "y": 1347,
+   "posicoes": [
+    {
+     "x": 1383,
+     "y": 1347
+    }
+   ],
+   "tabela_x": 1955,
+   "tabela_y": 1756
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 875,
+   "y": 1346,
+   "posicoes": [
+    {
+     "x": 875,
+     "y": 1346
+    }
+   ],
+   "tabela_x": 1958,
+   "tabela_y": 1786
+  },
+  {
+   "letra": "N",
+   "valor_m": 1.95,
+   "valor_texto": "1,95",
+   "x": 1120,
+   "y": 1660,
+   "posicoes": [
+    {
+     "x": 1120,
+     "y": 1660
+    }
+   ],
+   "tabela_x": 1965,
+   "tabela_y": 1823
+  },
+  {
+   "letra": "O",
+   "valor_m": 1.46,
+   "valor_texto": "1,46",
+   "x": 551,
+   "y": 1226,
+   "posicoes": [
+    {
+     "x": 551,
+     "y": 1226
+    }
+   ],
+   "tabela_x": 1965,
+   "tabela_y": 1858
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-de-canto-santa-monica-com-hidro-em-acrilico",
+   "rotulo": "1,38 x 1,38 x 0,45"
+  },
+  {
+   "slug": "banheira-de-canto-santa-monica-com-hidro",
+   "rotulo": "1,38 x 1,38 x 0,45"
+  },
+  {
+   "slug": "banheira-de-canto-santa-monica-completa-com-hidro-em-acrilico",
+   "rotulo": "1,38 x 1,38 x 0,45"
+  },
+  {
+   "slug": "banheira-de-canto-santa-monica-completa-com-hidro",
+   "rotulo": "1,38 x 1,38 x 0,45"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-de-canto-santa-monica-com-hidro-em-acrilico",
+    "rotulo": "1,38 x 1,38 x 0,45",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-santa-monica-com-hidro",
+    "rotulo": "1,38 x 1,38 x 0,45",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-santa-monica-completa-com-hidro-em-acrilico",
+    "rotulo": "1,38 x 1,38 x 0,45",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-de-canto-santa-monica-completa-com-hidro",
+    "rotulo": "1,38 x 1,38 x 0,45",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

@@ -1,0 +1,265 @@
+{
+ "sha1": "7821d87845f46eadddcd42b195cd974566f07ba7",
+ "pdf_path": "plantas/banheiras/Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
+ "nome_arquivo": "Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Solene%20redonda%20-%201,49%20x%201,49%20x%200,435%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.49,
+   "valor_texto": "1,49",
+   "x": 1172,
+   "y": 1869,
+   "posicoes": [
+    {
+     "x": 1172,
+     "y": 1869
+    }
+   ],
+   "tabela_x": 1922,
+   "tabela_y": 1427
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.49,
+   "valor_texto": "1,49",
+   "x": 630,
+   "y": 1251,
+   "posicoes": [
+    {
+     "x": 630,
+     "y": 1251
+    }
+   ],
+   "tabela_x": 1922,
+   "tabela_y": 1461
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.03,
+   "valor_texto": "1,03",
+   "x": 1172,
+   "y": 1745,
+   "posicoes": [
+    {
+     "x": 1172,
+     "y": 1745
+    }
+   ],
+   "tabela_x": 1923,
+   "tabela_y": 1506
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.97,
+   "valor_texto": "0,97",
+   "x": 1181,
+   "y": 1415,
+   "posicoes": [
+    {
+     "x": 1181,
+     "y": 1415
+    }
+   ],
+   "tabela_x": 1926,
+   "tabela_y": 1543
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.74,
+   "valor_texto": "0,74",
+   "x": 1133,
+   "y": 1285,
+   "posicoes": [
+    {
+     "x": 1133,
+     "y": 1285
+    }
+   ],
+   "tabela_x": 1926,
+   "tabela_y": 1580
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.335,
+   "valor_texto": "0,335",
+   "x": 2355,
+   "y": 1105,
+   "posicoes": [
+    {
+     "x": 2355,
+     "y": 1105
+    }
+   ],
+   "tabela_x": 1925,
+   "tabela_y": 1623
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1148,
+   "y": 1604,
+   "posicoes": [
+    {
+     "x": 1148,
+     "y": 1604
+    }
+   ],
+   "tabela_x": 1928,
+   "tabela_y": 1663
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.435,
+   "valor_texto": "0,435",
+   "x": 2229,
+   "y": 1074,
+   "posicoes": [
+    {
+     "x": 2229,
+     "y": 1074
+    }
+   ],
+   "tabela_x": 1934,
+   "tabela_y": 1706
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 2512,
+   "y": 1063,
+   "posicoes": [
+    {
+     "x": 2512,
+     "y": 1063
+    }
+   ],
+   "tabela_x": 1934,
+   "tabela_y": 1752
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.21,
+   "valor_texto": "1,21",
+   "x": 1172,
+   "y": 1812,
+   "posicoes": [
+    {
+     "x": 1172,
+     "y": 1812
+    }
+   ],
+   "tabela_x": 1927,
+   "tabela_y": 1793
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.785,
+   "valor_texto": "0,785",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1388,
+     "y": 1519
+    },
+    {
+     "x": 2561,
+     "y": 1241
+    }
+   ],
+   "tabela_x": 1925,
+   "tabela_y": 1836
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1161,
+   "y": 1137,
+   "posicoes": [
+    {
+     "x": 1161,
+     "y": 1137
+    }
+   ],
+   "tabela_x": 1939,
+   "tabela_y": 1876
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.88,
+   "valor_texto": "0,88",
+   "x": null,
+   "y": null,
+   "posicoes": [],
+   "tabela_x": 1944,
+   "tabela_y": 1920
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-solene-completa-com-hidro-em-acrilico",
+   "rotulo": "1,49 x 1,49 x 0,43"
+  },
+  {
+   "slug": "banheira-dupla-solene-completa-com-hidro",
+   "rotulo": "1,49 x 1,49 x 0,43"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-solene-completa-com-hidro-em-acrilico",
+    "rotulo": "1,49 x 1,49 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-solene-completa-com-hidro",
+    "rotulo": "1,49 x 1,49 x 0,43",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

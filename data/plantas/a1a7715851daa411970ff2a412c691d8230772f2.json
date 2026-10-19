@@ -1,0 +1,257 @@
+{
+ "sha1": "a1a7715851daa411970ff2a412c691d8230772f2",
+ "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
+ "nome_arquivo": "Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,49%20x%200,39%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.13,
+   "valor_texto": "1,13",
+   "x": 1853,
+   "y": 1099,
+   "posicoes": [
+    {
+     "x": 1853,
+     "y": 1099
+    }
+   ],
+   "tabela_x": 2348,
+   "tabela_y": 790
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.49,
+   "valor_texto": "1,49",
+   "x": 1340,
+   "y": 688,
+   "posicoes": [
+    {
+     "x": 1340,
+     "y": 688
+    }
+   ],
+   "tabela_x": 2349,
+   "tabela_y": 827
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1403,
+   "y": 1216,
+   "posicoes": [
+    {
+     "x": 1403,
+     "y": 1216
+    }
+   ],
+   "tabela_x": 2350,
+   "tabela_y": 876
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.7,
+   "valor_texto": "0,70",
+   "x": 1557,
+   "y": 1100,
+   "posicoes": [
+    {
+     "x": 1557,
+     "y": 1100
+    }
+   ],
+   "tabela_x": 2354,
+   "tabela_y": 915
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.77,
+   "valor_texto": "0,77",
+   "x": 1159,
+   "y": 1102,
+   "posicoes": [
+    {
+     "x": 1159,
+     "y": 1102
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 956
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.29,
+   "valor_texto": "0,29",
+   "x": 1688,
+   "y": 1824,
+   "posicoes": [
+    {
+     "x": 1688,
+     "y": 1824
+    }
+   ],
+   "tabela_x": 2352,
+   "tabela_y": 1003
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1698,
+     "y": 1973
+    },
+    {
+     "x": 1695,
+     "y": 1247
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 1057
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1539,
+   "y": 1792,
+   "posicoes": [
+    {
+     "x": 1539,
+     "y": 1792
+    }
+   ],
+   "tabela_x": 2358,
+   "tabela_y": 1098
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1187,
+   "y": 1790,
+   "posicoes": [
+    {
+     "x": 1187,
+     "y": 1790
+    }
+   ],
+   "tabela_x": 2359,
+   "tabela_y": 1139
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.3,
+   "valor_texto": "1,30",
+   "x": 1292,
+   "y": 1259,
+   "posicoes": [
+    {
+     "x": 1292,
+     "y": 1259
+    }
+   ],
+   "tabela_x": 2355,
+   "tabela_y": 1182
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1579,
+   "y": 1346,
+   "posicoes": [
+    {
+     "x": 1579,
+     "y": 1346
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 1228
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.82,
+   "valor_texto": "0,82",
+   "x": 1608,
+   "y": 1100,
+   "posicoes": [
+    {
+     "x": 1608,
+     "y": 1100
+    }
+   ],
+   "tabela_x": 2353,
+   "tabela_y": 1280
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": 929,
+   "y": 1102,
+   "posicoes": [
+    {
+     "x": 929,
+     "y": 1102
+    }
+   ],
+   "tabela_x": 2357,
+   "tabela_y": 1328
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-havana-completa-com-hidro-em-acrilico",
+   "rotulo": "1,13 x 1,49 x 0,39"
+  },
+  {
+   "slug": "banheira-dupla-havana-completa-com-hidro",
+   "rotulo": "1,13 x 1,49 x 0,39"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-havana-completa-com-hidro-em-acrilico",
+    "rotulo": "1,13 x 1,49 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-havana-completa-com-hidro",
+    "rotulo": "1,13 x 1,49 x 0,39",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

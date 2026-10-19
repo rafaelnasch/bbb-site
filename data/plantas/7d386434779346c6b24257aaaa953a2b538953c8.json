@@ -1,0 +1,230 @@
+{
+ "sha1": "7d386434779346c6b24257aaaa953a2b538953c8",
+ "pdf_path": "plantas/banheiras/Conforto - 0,81 x 1,80 x 0,48 [GC-AC].pdf",
+ "nome_arquivo": "Conforto - 0,81 x 1,80 x 0,48 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Conforto%20-%200,81%20x%201,80%20x%200,48%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.81,
+   "valor_texto": "0,81",
+   "x": 2018,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 2018,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2281,
+   "tabela_y": 818
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.8,
+   "valor_texto": "1,80",
+   "x": 1336,
+   "y": 697,
+   "posicoes": [
+    {
+     "x": 1336,
+     "y": 697
+    }
+   ],
+   "tabela_x": 2282,
+   "tabela_y": 857
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.03,
+   "valor_texto": "1,03",
+   "x": 1291,
+   "y": 986,
+   "posicoes": [
+    {
+     "x": 1291,
+     "y": 986
+    }
+   ],
+   "tabela_x": 2283,
+   "tabela_y": 909
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1583,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 1583,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2286,
+   "tabela_y": 947
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1111,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 1111,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2285,
+   "tabela_y": 1005
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1379,
+   "y": 1673,
+   "posicoes": [
+    {
+     "x": 1379,
+     "y": 1673
+    }
+   ],
+   "tabela_x": 2285,
+   "tabela_y": 1041
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.88,
+   "valor_texto": "0,88",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1663,
+     "y": 1017
+    },
+    {
+     "x": 1691,
+     "y": 1850
+    }
+   ],
+   "tabela_x": 2288,
+   "tabela_y": 1087
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": 1097,
+   "y": 1638,
+   "posicoes": [
+    {
+     "x": 1097,
+     "y": 1638
+    }
+   ],
+   "tabela_x": 2286,
+   "tabela_y": 1136
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.61,
+   "valor_texto": "1,61",
+   "x": 1279,
+   "y": 1089,
+   "posicoes": [
+    {
+     "x": 1279,
+     "y": 1089
+    }
+   ],
+   "tabela_x": 2283,
+   "tabela_y": 1183
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.405,
+   "valor_texto": "0,405",
+   "x": 1336,
+   "y": 1160,
+   "posicoes": [
+    {
+     "x": 1336,
+     "y": 1160
+    }
+   ],
+   "tabela_x": 2281,
+   "tabela_y": 1233
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.62,
+   "valor_texto": "0,62",
+   "x": 1758,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 1758,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2282,
+   "tabela_y": 1284
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.58,
+   "valor_texto": "0,58",
+   "x": 966,
+   "y": 1017,
+   "posicoes": [
+    {
+     "x": 966,
+     "y": 1017
+    }
+   ],
+   "tabela_x": 2286,
+   "tabela_y": 1334
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-conforto-completa-com-hidro-em-acrilico",
+   "rotulo": "0,81 x 1,80 x 0,48"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-conforto-completa-com-hidro-em-acrilico",
+    "rotulo": "0,81 x 1,80 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

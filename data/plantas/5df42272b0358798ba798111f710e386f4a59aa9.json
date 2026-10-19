@@ -1,0 +1,42 @@
+{
+ "sha1": "5df42272b0358798ba798111f710e386f4a59aa9",
+ "pdf_path": "plantas/banheiras/Vitoriana 0,58 x 1,21 x 0,40 - PLANTA.PDF",
+ "nome_arquivo": "Vitoriana 0,58 x 1,21 x 0,40 - PLANTA.PDF",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoriana%200,58%20x%201,21%20x%200,40%20-%20PLANTA.PDF",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2402,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "banheira-vitoriana-para-criancas-0-58-x-1-21-x-0-40",
+   "rotulo": "0,58m x 1,21m x 0,40m"
+  },
+  {
+   "slug": "banheira-vitoriana-para-pets-0-58-x-1-21-x-0-40",
+   "rotulo": "0,58m x 1,21m x 0,40m"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

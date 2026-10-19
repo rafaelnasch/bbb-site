@@ -1,0 +1,265 @@
+{
+ "sha1": "cdec52b5de727a9b07db3dad5edafedd0bac6070",
+ "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
+ "nome_arquivo": "Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.09,
+   "valor_texto": "1,09",
+   "x": 1937,
+   "y": 1103,
+   "posicoes": [
+    {
+     "x": 1937,
+     "y": 1103
+    }
+   ],
+   "tabela_x": 2380,
+   "tabela_y": 811
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.59,
+   "valor_texto": "1,59",
+   "x": 1374,
+   "y": 709,
+   "posicoes": [
+    {
+     "x": 1374,
+     "y": 709
+    }
+   ],
+   "tabela_x": 2380,
+   "tabela_y": 847
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.92,
+   "valor_texto": "0,92",
+   "x": 1294,
+   "y": 1140,
+   "posicoes": [
+    {
+     "x": 1294,
+     "y": 1140
+    }
+   ],
+   "tabela_x": 2381,
+   "tabela_y": 896
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.75,
+   "valor_texto": "0,75",
+   "x": 1499,
+   "y": 1104,
+   "posicoes": [
+    {
+     "x": 1499,
+     "y": 1104
+    }
+   ],
+   "tabela_x": 2384,
+   "tabela_y": 935
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 1075,
+   "y": 1104,
+   "posicoes": [
+    {
+     "x": 1075,
+     "y": 1104
+    }
+   ],
+   "tabela_x": 2384,
+   "tabela_y": 976
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": 919,
+   "y": 1826,
+   "posicoes": [
+    {
+     "x": 919,
+     "y": 1826
+    }
+   ],
+   "tabela_x": 2383,
+   "tabela_y": 1022
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.24,
+   "valor_texto": "0,24",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 929,
+     "y": 983
+    },
+    {
+     "x": 930,
+     "y": 1956
+    }
+   ],
+   "tabela_x": 2386,
+   "tabela_y": 1066
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 841,
+   "y": 1793,
+   "posicoes": [
+    {
+     "x": 841,
+     "y": 1793
+    }
+   ],
+   "tabela_x": 2385,
+   "tabela_y": 1111
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.35,
+   "valor_texto": "1,35",
+   "x": 1375,
+   "y": 1039,
+   "posicoes": [
+    {
+     "x": 1375,
+     "y": 1039
+    }
+   ],
+   "tabela_x": 2385,
+   "tabela_y": 1154
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.39,
+   "valor_texto": "0,39",
+   "x": 1006,
+   "y": 873,
+   "posicoes": [
+    {
+     "x": 1006,
+     "y": 873
+    }
+   ],
+   "tabela_x": 2383,
+   "tabela_y": 1200
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.93,
+   "valor_texto": "0,93",
+   "x": 1721,
+   "y": 1103,
+   "posicoes": [
+    {
+     "x": 1721,
+     "y": 1103
+    }
+   ],
+   "tabela_x": 2383,
+   "tabela_y": 1251
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.81,
+   "valor_texto": "0,81",
+   "x": 1021,
+   "y": 1104,
+   "posicoes": [
+    {
+     "x": 1021,
+     "y": 1104
+    }
+   ],
+   "tabela_x": 2387,
+   "tabela_y": 1299
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-amazonia-com-hidro-em-acrilico",
+   "rotulo": "1,09 x 1,59 x 0,38"
+  },
+  {
+   "slug": "banheira-dupla-amazonia-completa-com-hidro-em-acrilico",
+   "rotulo": "1,09 x 1,59 x 0,38"
+  },
+  {
+   "slug": "banheira-dupla-amazonia-completa-com-hidro",
+   "rotulo": "1,09 x 1,59 x 0,38"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-amazonia-com-hidro-em-acrilico",
+    "rotulo": "1,09 x 1,59 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-amazonia-completa-com-hidro-em-acrilico",
+    "rotulo": "1,09 x 1,59 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-amazonia-completa-com-hidro",
+    "rotulo": "1,09 x 1,59 x 0,38",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

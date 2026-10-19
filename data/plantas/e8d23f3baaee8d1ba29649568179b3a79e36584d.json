@@ -1,0 +1,241 @@
+{
+ "sha1": "e8d23f3baaee8d1ba29649568179b3a79e36584d",
+ "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,59 x 0,41 [GC-AC].pdf",
+ "nome_arquivo": "Acqua spaço - 0,69 x 1,59 x 0,41 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,59%20x%200,41%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.69,
+   "valor_texto": "0,69",
+   "x": 1887,
+   "y": 1006,
+   "posicoes": [
+    {
+     "x": 1887,
+     "y": 1006
+    }
+   ],
+   "tabela_x": 2376,
+   "tabela_y": 835
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.59,
+   "valor_texto": "1,59",
+   "x": 1277,
+   "y": 738,
+   "posicoes": [
+    {
+     "x": 1277,
+     "y": 738
+    }
+   ],
+   "tabela_x": 2376,
+   "tabela_y": 874
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.06,
+   "valor_texto": "1,06",
+   "x": 1277,
+   "y": 999,
+   "posicoes": [
+    {
+     "x": 1277,
+     "y": 999
+    }
+   ],
+   "tabela_x": 2378,
+   "tabela_y": 926
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": 1513,
+   "y": 1005,
+   "posicoes": [
+    {
+     "x": 1513,
+     "y": 1005
+    }
+   ],
+   "tabela_x": 2381,
+   "tabela_y": 968
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.36,
+   "valor_texto": "0,36",
+   "x": 1069,
+   "y": 1005,
+   "posicoes": [
+    {
+     "x": 1069,
+     "y": 1005
+    }
+   ],
+   "tabela_x": 2380,
+   "tabela_y": 1012
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.31,
+   "valor_texto": "0,31",
+   "x": 1739,
+   "y": 1760,
+   "posicoes": [
+    {
+     "x": 1739,
+     "y": 1760
+    }
+   ],
+   "tabela_x": 2379,
+   "tabela_y": 1061
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.28,
+   "valor_texto": "0,28",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1740,
+     "y": 994
+    },
+    {
+     "x": 1755,
+     "y": 1908
+    }
+   ],
+   "tabela_x": 2382,
+   "tabela_y": 1108
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": 1291,
+   "y": 1727,
+   "posicoes": [
+    {
+     "x": 1291,
+     "y": 1727
+    }
+   ],
+   "tabela_x": 2381,
+   "tabela_y": 1157
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.39,
+   "valor_texto": "1,39",
+   "x": 1276,
+   "y": 962,
+   "posicoes": [
+    {
+     "x": 1276,
+     "y": 962
+    }
+   ],
+   "tabela_x": 2382,
+   "tabela_y": 1202
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.345,
+   "valor_texto": "0,345",
+   "x": 1614,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1614,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2379,
+   "tabela_y": 1251
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.56,
+   "valor_texto": "0,56",
+   "x": 1572,
+   "y": 1005,
+   "posicoes": [
+    {
+     "x": 1572,
+     "y": 1005
+    }
+   ],
+   "tabela_x": 2379,
+   "tabela_y": 1307
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.59,
+   "valor_texto": "0,59",
+   "x": 977,
+   "y": 1005,
+   "posicoes": [
+    {
+     "x": 977,
+     "y": 1005
+    }
+   ],
+   "tabela_x": 2383,
+   "tabela_y": 1358
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-acqua-spaco-completa-com-hidro-em-acrilico",
+   "rotulo": "0,69 x 1,59 x 0,41"
+  },
+  {
+   "slug": "banheira-acqua-spaco-completa-com-hidro",
+   "rotulo": "0,69 x 1,59 x 0,41"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-acqua-spaco-completa-com-hidro-em-acrilico",
+    "rotulo": "0,69 x 1,59 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-acqua-spaco-completa-com-hidro",
+    "rotulo": "0,69 x 1,59 x 0,41",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

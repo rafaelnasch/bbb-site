@@ -1,0 +1,274 @@
+{
+ "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
+ "pdf_path": "plantas/banheiras/Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
+ "nome_arquivo": "Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoria%20-%201,06%20x%201,90%20x%200,50%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1.06,
+   "valor_texto": "1,06",
+   "x": 2001,
+   "y": 1125,
+   "posicoes": [
+    {
+     "x": 2001,
+     "y": 1125
+    }
+   ],
+   "tabela_x": 2321,
+   "tabela_y": 829
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.9,
+   "valor_texto": "1,90",
+   "x": 1374,
+   "y": 753,
+   "posicoes": [
+    {
+     "x": 1374,
+     "y": 753
+    }
+   ],
+   "tabela_x": 2321,
+   "tabela_y": 863
+  },
+  {
+   "letra": "C",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1399,
+   "y": 1142,
+   "posicoes": [
+    {
+     "x": 1399,
+     "y": 1142
+    }
+   ],
+   "tabela_x": 2322,
+   "tabela_y": 908
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1546,
+   "y": 1081,
+   "posicoes": [
+    {
+     "x": 1546,
+     "y": 1081
+    }
+   ],
+   "tabela_x": 2326,
+   "tabela_y": 944
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1245,
+   "y": 1082,
+   "posicoes": [
+    {
+     "x": 1245,
+     "y": 1082
+    }
+   ],
+   "tabela_x": 2325,
+   "tabela_y": 982
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1359,
+   "y": 1858,
+   "posicoes": [
+    {
+     "x": 1359,
+     "y": 1858
+    }
+   ],
+   "tabela_x": 2324,
+   "tabela_y": 1025
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.95,
+   "valor_texto": "0,95",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1669,
+     "y": 2001
+    },
+    {
+     "x": 1667,
+     "y": 1291
+    }
+   ],
+   "tabela_x": 2327,
+   "tabela_y": 1065
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 1305,
+   "y": 1828,
+   "posicoes": [
+    {
+     "x": 1305,
+     "y": 1828
+    }
+   ],
+   "tabela_x": 2326,
+   "tabela_y": 1107
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.7,
+   "valor_texto": "1,70",
+   "x": 1383,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1383,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2327,
+   "tabela_y": 1147
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.33,
+   "valor_texto": "0,33",
+   "x": 1360,
+   "y": 1349,
+   "posicoes": [
+    {
+     "x": 1360,
+     "y": 1349
+    }
+   ],
+   "tabela_x": 2325,
+   "tabela_y": 1189
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.82,
+   "valor_texto": "0,82",
+   "x": 1618,
+   "y": 1080,
+   "posicoes": [
+    {
+     "x": 1618,
+     "y": 1080
+    }
+   ],
+   "tabela_x": 2325,
+   "tabela_y": 1236
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.82,
+   "valor_texto": "0,82",
+   "x": 1206,
+   "y": 1081,
+   "posicoes": [
+    {
+     "x": 1206,
+     "y": 1081
+    }
+   ],
+   "tabela_x": 2328,
+   "tabela_y": 1280
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-dupla-vitoria-com-abas-completa-com-hidro",
+   "rotulo": "1,06 x 1,90 x 0,50"
+  },
+  {
+   "slug": "banheira-dupla-vitoria-com-hidro-em-acrilico",
+   "rotulo": "1,06 x 1,90 x 0,50"
+  },
+  {
+   "slug": "banheira-dupla-vitoria-com-hidro",
+   "rotulo": "1,06 x 1,90 x 0,50"
+  },
+  {
+   "slug": "banheira-dupla-vitoria-completa-com-hidro-em-acrilico",
+   "rotulo": "1,06 X 1,90 X 0,50"
+  },
+  {
+   "slug": "banheira-dupla-vitoria-completa-com-hidro",
+   "rotulo": "1,06 x 1,90 x 0,50"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-dupla-vitoria-com-abas-completa-com-hidro",
+    "rotulo": "1,06 x 1,90 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-vitoria-com-hidro-em-acrilico",
+    "rotulo": "1,06 x 1,90 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-vitoria-com-hidro",
+    "rotulo": "1,06 x 1,90 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-vitoria-completa-com-hidro-em-acrilico",
+    "rotulo": "1,06 X 1,90 X 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-dupla-vitoria-completa-com-hidro",
+    "rotulo": "1,06 x 1,90 x 0,50",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

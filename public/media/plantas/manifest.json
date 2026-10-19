@@ -1,0 +1,5783 @@
+{
+ "gerado_em": "2026-10-19T03:17:53.053Z",
+ "total": 152,
+ "lado_raster": 3400,
+ "plantas": {
+  "75989809d5b14a699935be18472fd837ca8a067d": {
+   "sha1": "75989809d5b14a699935be18472fd837ca8a067d",
+   "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,41 x 0,37 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,41%20x%200,37%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "329abcf342447ae508199271832bca7294601bab": {
+   "sha1": "329abcf342447ae508199271832bca7294601bab",
+   "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,48 x 0,37 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,48%20x%200,37%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a4942b37d6970f397e6bf89e4135cf15a2a8c66b": {
+   "sha1": "a4942b37d6970f397e6bf89e4135cf15a2a8c66b",
+   "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,69 x 0,37 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,69%20x%200,37%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "7c2a0e118ba0574e30fbeb41341ce625fc43968d": {
+   "sha1": "7c2a0e118ba0574e30fbeb41341ce625fc43968d",
+   "pdf_path": "plantas/banheiras/Acqua linea - 0,79 x 1,79 x 0,37 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20linea%20-%200,79%20x%201,79%20x%200,37%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "ec93c554a7997b5837bc7db031b87bdc9cbdff87": {
+   "sha1": "ec93c554a7997b5837bc7db031b87bdc9cbdff87",
+   "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,49 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,49%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "e8d23f3baaee8d1ba29649568179b3a79e36584d": {
+   "sha1": "e8d23f3baaee8d1ba29649568179b3a79e36584d",
+   "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,59 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,59%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "1d3c2aee2104f556ceba816b5b755c22577b839a": {
+   "sha1": "1d3c2aee2104f556ceba816b5b755c22577b839a",
+   "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,69 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,69%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "15988b8642ad233c9592ee2637bde4856ee67c46": {
+   "sha1": "15988b8642ad233c9592ee2637bde4856ee67c46",
+   "pdf_path": "plantas/banheiras/Acqua spaço - 0,69 x 1,79 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,69%20x%201,79%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "5f553e19a9285e6040609c8e3995a37b474d60be": {
+   "sha1": "5f553e19a9285e6040609c8e3995a37b474d60be",
+   "pdf_path": "plantas/banheiras/Acqua spaço - 0,79 x 1,49 x 0,41 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,79%20x%201,49%20x%200,41%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "329ca78748ba738bb1e2eb7e038189ce9840fde4": {
+   "sha1": "329ca78748ba738bb1e2eb7e038189ce9840fde4",
+   "pdf_path": "plantas/banheiras/Acqua stylo - 0,90 x 1,80 x 0,36 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20stylo%20-%200,90%20x%201,80%20x%200,36%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a0ae194013f7148890b31a486c55841116de9334": {
+   "sha1": "a0ae194013f7148890b31a486c55841116de9334",
+   "pdf_path": "plantas/banheiras/Acqua top - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "411ecabc2264dba5d35959ee054e8e92d8f53370": {
+   "sha1": "411ecabc2264dba5d35959ee054e8e92d8f53370",
+   "pdf_path": "plantas/banheiras/Acqua top - 0,81 x 1,60 x 0,42 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,81%20x%201,60%20x%200,42%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "d362b795871147ac1ad7ba3c62275002ad66bbb8": {
+   "sha1": "d362b795871147ac1ad7ba3c62275002ad66bbb8",
+   "pdf_path": "plantas/banheiras/Acqua top - 0,81 x 1,70 x 0,42 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20top%20-%200,81%20x%201,70%20x%200,42%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "1b80c946e37a92bc71f41d552892dd5ebf8d3299": {
+   "sha1": "1b80c946e37a92bc71f41d552892dd5ebf8d3299",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 0,99 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%200,99%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "755183833003f8bdc461a48f95b80de7a8000341": {
+   "sha1": "755183833003f8bdc461a48f95b80de7a8000341",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,09 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,09%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "082fbce11715a25aa6475ff5d592551f6b5a0ee0": {
+   "sha1": "082fbce11715a25aa6475ff5d592551f6b5a0ee0",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,19 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,19%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "5209f66f5ce0658331b9c506af6aee8952f44bc1": {
+   "sha1": "5209f66f5ce0658331b9c506af6aee8952f44bc1",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,29 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,29%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "c6193ba0cce824ec05a016b05dc1a14f20c52674": {
+   "sha1": "c6193ba0cce824ec05a016b05dc1a14f20c52674",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,39 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,39%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "c46a8cf02ba78b8631b671571593ccc9dd57956c": {
+   "sha1": "c46a8cf02ba78b8631b671571593ccc9dd57956c",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,59 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,59%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "311a6f9cb811db365f7426d29c7010547848be2a": {
+   "sha1": "311a6f9cb811db365f7426d29c7010547848be2a",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,79 x 1,69 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,79%20x%201,69%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "81525c5620582151c10a9895f9d72b1a3a30f3db": {
+   "sha1": "81525c5620582151c10a9895f9d72b1a3a30f3db",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,80 x 1,49 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,80%20x%201,49%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "295b0a6dafd478579ae13b906b0029d214e3666a": {
+   "sha1": "295b0a6dafd478579ae13b906b0029d214e3666a",
+   "pdf_path": "plantas/banheiras/Acqua vip - 0,80 x 1,80 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20vip%20-%200,80%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9": {
+   "sha1": "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9",
+   "pdf_path": "plantas/banheiras/Agata - 0,83 x 1,79 x 0,49 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Agata%20-%200,83%20x%201,79%20x%200,49%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b": {
+   "sha1": "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b",
+   "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,39 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "045afa71db34a2c697c5f487eac51c399694a7c0": {
+   "sha1": "045afa71db34a2c697c5f487eac51c399694a7c0",
+   "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,49 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "cdec52b5de727a9b07db3dad5edafedd0bac6070": {
+   "sha1": "cdec52b5de727a9b07db3dad5edafedd0bac6070",
+   "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,59 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed": {
+   "sha1": "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed",
+   "pdf_path": "plantas/banheiras/Amazonia - 1,09 x 1,69 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Amazonia%20-%201,09%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1": {
+   "sha1": "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1",
+   "pdf_path": "plantas/banheiras/Austria - 1,15 x 1,43 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Austria%20-%201,15%20x%201,43%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "54929a556c2f03a066073d151bb5e71d4ee52c23": {
+   "sha1": "54929a556c2f03a066073d151bb5e71d4ee52c23",
+   "pdf_path": "plantas/banheiras/Barcelona - 0,84 x 1,29 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,84%20x%201,29%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "f97e1453710bca840bf3ee3fdf2511e8686957b0": {
+   "sha1": "f97e1453710bca840bf3ee3fdf2511e8686957b0",
+   "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,20 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,20%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "086cf1509972a791636dcaa016f2d63ee73aa5db": {
+   "sha1": "086cf1509972a791636dcaa016f2d63ee73aa5db",
+   "pdf_path": "plantas/banheiras/Barcelona - 0,85 x 1,70 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,85%20x%201,70%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334": {
+   "sha1": "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334",
+   "pdf_path": "plantas/banheiras/Barcelona - 0,86 x 1,42 x 0,44 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,86%20x%201,42%20x%200,44%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "b10aabe1e49b4798ac5767768e8e935d4f277cb0": {
+   "sha1": "b10aabe1e49b4798ac5767768e8e935d4f277cb0",
+   "pdf_path": "plantas/banheiras/Barcelona - 0,90 x 1,60 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Barcelona%20-%200,90%20x%201,60%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "e9c26dfc3290225e8e996201d24f49d8a8b301e4": {
+   "sha1": "e9c26dfc3290225e8e996201d24f49d8a8b301e4",
+   "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,40 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,40%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "d8ac367b4d99e7e69f53f823618caa367a1829da": {
+   "sha1": "d8ac367b4d99e7e69f53f823618caa367a1829da",
+   "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,50 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,50%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "886217edc4018851a658a5be77f7c224960b62f0": {
+   "sha1": "886217edc4018851a658a5be77f7c224960b62f0",
+   "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,60 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,60%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "59f09ba69f10aea74c31e45a852c41d90b926cd8": {
+   "sha1": "59f09ba69f10aea74c31e45a852c41d90b926cd8",
+   "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,70 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,70%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac": {
+   "sha1": "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac",
+   "pdf_path": "plantas/banheiras/Bruxelas - 1,20 x 1,80 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Bruxelas%20-%201,20%20x%201,80%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "9848385008665582cbe3824837726f1a7d49984c": {
+   "sha1": "9848385008665582cbe3824837726f1a7d49984c",
+   "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,20 x 0,39 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,20%20x%200,39%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "b961cd3067367b7e2cce4c3f8888fd46b3520d00": {
+   "sha1": "b961cd3067367b7e2cce4c3f8888fd46b3520d00",
+   "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,30 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,30%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "9661d218bb8617683d6d75d354c0e5fdb7f1f251": {
+   "sha1": "9661d218bb8617683d6d75d354c0e5fdb7f1f251",
+   "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,60 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,60%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "fedda4bbdfb18617ab477029b312cdeb1a3818b9": {
+   "sha1": "fedda4bbdfb18617ab477029b312cdeb1a3818b9",
+   "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,70 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,70%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "f74c5ad9176df7640a71fbf3781ba8f91f785880": {
+   "sha1": "f74c5ad9176df7640a71fbf3781ba8f91f785880",
+   "pdf_path": "plantas/banheiras/Buzios - 0,80 x 1,80 x 0,41 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,80%20x%201,80%20x%200,41%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "0b50d0f36604f4f43e0c1d038e784082deb96b76": {
+   "sha1": "0b50d0f36604f4f43e0c1d038e784082deb96b76",
+   "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,40 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,40%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "d0ba82515c4cf0e0980e139f4f840e7c146bae46": {
+   "sha1": "d0ba82515c4cf0e0980e139f4f840e7c146bae46",
+   "pdf_path": "plantas/banheiras/Buzios - 0,81 x 1,51 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Buzios%20-%200,81%20x%201,51%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "abd44c6659463bdbfb775d37efdaf9c63dc7b8f9": {
+   "sha1": "abd44c6659463bdbfb775d37efdaf9c63dc7b8f9",
+   "pdf_path": "plantas/banheiras/California - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "12f5ed700428073bb6caaa40231020d589fdabfb": {
+   "sha1": "12f5ed700428073bb6caaa40231020d589fdabfb",
+   "pdf_path": "plantas/banheiras/California - 1,29 x 1,78 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/California%20-%201,29%20x%201,78%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "e2a1e5dcf9de6dc151174da7fd4a3eab35215763": {
+   "sha1": "e2a1e5dcf9de6dc151174da7fd4a3eab35215763",
+   "pdf_path": "plantas/banheiras/Cancun - 1,08 x 1,81 x 0,53 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Cancun%20-%201,08%20x%201,81%20x%200,53%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5": {
+   "sha1": "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5",
+   "pdf_path": "plantas/banheiras/Caribe - 1,48 x 1,48 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Caribe%20-%201,48%20x%201,48%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "7d386434779346c6b24257aaaa953a2b538953c8": {
+   "sha1": "7d386434779346c6b24257aaaa953a2b538953c8",
+   "pdf_path": "plantas/banheiras/Conforto - 0,81 x 1,80 x 0,48 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Conforto%20-%200,81%20x%201,80%20x%200,48%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "47ccaade016e846ee4f1c106c3e2794e270b79a4": {
+   "sha1": "47ccaade016e846ee4f1c106c3e2794e270b79a4",
+   "pdf_path": "plantas/banheiras/Conforto - 0,82 x 1,51 x 0,48 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Conforto%20-%200,82%20x%201,51%20x%200,48%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a676f5483de0d538366133b9d4e35340f5625dec": {
+   "sha1": "a676f5483de0d538366133b9d4e35340f5625dec",
+   "pdf_path": "plantas/banheiras/Denizard - 1,30 x 1,79 x 0,50 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Denizard%20-%201,30%20x%201,79%20x%200,50%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "21bc5e68de73fa1b850617f898c7350b2ca73a8d": {
+   "sha1": "21bc5e68de73fa1b850617f898c7350b2ca73a8d",
+   "pdf_path": "plantas/banheiras/Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Dubai%20-%200,88%20x%201,81%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "f5e1c50d831639980e6ebd428274d3c8ca78166c": {
+   "sha1": "f5e1c50d831639980e6ebd428274d3c8ca78166c",
+   "pdf_path": "plantas/banheiras/Essenciale - 1,20 x 1,59 x 0,41 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Essenciale%20-%201,20%20x%201,59%20x%200,41%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "def36ce9953ccd82a0287455bbe3e52f44ec6b45": {
+   "sha1": "def36ce9953ccd82a0287455bbe3e52f44ec6b45",
+   "pdf_path": "plantas/banheiras/Filipinas - 0,91 x 1,61 x 0,58 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Filipinas%20-%200,91%20x%201,61%20x%200,58%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667": {
+   "sha1": "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667",
+   "pdf_path": "plantas/banheiras/Firenze - 1,19 x 1,69 x 0,42 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Firenze%20-%201,19%20x%201,69%20x%200,42%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "b0e12533a00c6459ef3c65d945fa631de888b8fd": {
+   "sha1": "b0e12533a00c6459ef3c65d945fa631de888b8fd",
+   "pdf_path": "plantas/banheiras/Fortaleza - 1,19 x 1,80 x 0,48 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,19%20x%201,80%20x%200,48%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948": {
+   "sha1": "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948",
+   "pdf_path": "plantas/banheiras/Fortaleza - 1,40 x 1,78 x 0,48 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Fortaleza%20-%201,40%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "ad3b56e7bdac42d874f2f7e60dd36d010acdc577": {
+   "sha1": "ad3b56e7bdac42d874f2f7e60dd36d010acdc577",
+   "pdf_path": "plantas/banheiras/Genova - 0,99 x 1,78 x 0,52 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Genova%20-%200,99%20x%201,78%20x%200,52%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "562dfda879cb813a973368975a5bc01ab1ab2036": {
+   "sha1": "562dfda879cb813a973368975a5bc01ab1ab2036",
+   "pdf_path": "plantas/banheiras/Havai - 1,78 x 1,78 x 0,50 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havai%20-%201,78%20x%201,78%20x%200,50%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a1a7715851daa411970ff2a412c691d8230772f2": {
+   "sha1": "a1a7715851daa411970ff2a412c691d8230772f2",
+   "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,49 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,49%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "556eb4d6147d98571ded2133767941fbd8a9ba0f": {
+   "sha1": "556eb4d6147d98571ded2133767941fbd8a9ba0f",
+   "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,59 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,59%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "7fd5339ed299785b5e7805412980a556274d45dc": {
+   "sha1": "7fd5339ed299785b5e7805412980a556274d45dc",
+   "pdf_path": "plantas/banheiras/Havana - 1,13 x 1,69 x 0,39 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Havana%20-%201,13%20x%201,69%20x%200,39%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7": {
+   "sha1": "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7",
+   "pdf_path": "plantas/banheiras/Hippolyte - 1,19 x 1,69 x 0,49 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Hippolyte%20-%201,19%20x%201,69%20x%200,49%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "5125421f00687d7a1fb2ea10a92946bd918c29d6": {
+   "sha1": "5125421f00687d7a1fb2ea10a92946bd918c29d6",
+   "pdf_path": "plantas/banheiras/Holanda - 1,68 x 1,68 x 0,53 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Holanda%20-%201,68%20x%201,68%20x%200,53%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2404,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1202,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2404,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "9e99439fa6a056b61c7244fa33b6c3df21d2811f": {
+   "sha1": "9e99439fa6a056b61c7244fa33b6c3df21d2811f",
+   "pdf_path": "plantas/banheiras/Indonesia - 0,74 x 1,30 x 0,40 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Indonesia%20-%200,74%20x%201,30%20x%200,40%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "aa1bc815e99f4242469fb27c25c65e3b0d35851d": {
+   "sha1": "aa1bc815e99f4242469fb27c25c65e3b0d35851d",
+   "pdf_path": "plantas/banheiras/Jordania - 1,00 x 1,50 x 0,49 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Jordania%20-%201,00%20x%201,50%20x%200,49%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "cbed836840b19d5bdafc85421d30418c6a5c156b": {
+   "sha1": "cbed836840b19d5bdafc85421d30418c6a5c156b",
+   "pdf_path": "plantas/banheiras/Karisma - 1,10 x 1,80 x 0,50 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Karisma%20-%201,10%20x%201,80%20x%200,50%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "4ade3fbc0ff840928670780a2e1ca09474e22cb5": {
+   "sha1": "4ade3fbc0ff840928670780a2e1ca09474e22cb5",
+   "pdf_path": "plantas/banheiras/Lisboa - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Lisboa%20-%200,90%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "fbd8b8f8740b420f7db4f48ec849255dc5c3d98d": {
+   "sha1": "fbd8b8f8740b420f7db4f48ec849255dc5c3d98d",
+   "pdf_path": "plantas/banheiras/Lyon - 1,43 x 1,96 x 0,51 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Lyon%20-%201,43%20x%201,96%20x%200,51%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2374,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 297,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 594,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1187,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2374,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "64d07c6a24ac1c68cfa9b6efba133babc9cd6169": {
+   "sha1": "64d07c6a24ac1c68cfa9b6efba133babc9cd6169",
+   "pdf_path": "plantas/banheiras/Madrid - 1,20 x 1,70 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Madrid%20-%201,20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "d03d552049e0919534978c2336a3bdec678c3658": {
+   "sha1": "d03d552049e0919534978c2336a3bdec678c3658",
+   "pdf_path": "plantas/banheiras/Majory - 1,20 x 1,20 x 0,47 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Majory%20-%201,20%20x%201,20%20x%200,47%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "555a2e2d4ff25502b9fa4c186f7ad55acbd3855d": {
+   "sha1": "555a2e2d4ff25502b9fa4c186f7ad55acbd3855d",
+   "pdf_path": "plantas/banheiras/Majory - 1,50 x 1,50 x 0,48 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Majory%20-%201,50%20x%201,50%20x%200,48%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "19ce73ba1bf9e9e36e80bd98ae8810470c1551ff": {
+   "sha1": "19ce73ba1bf9e9e36e80bd98ae8810470c1551ff",
+   "pdf_path": "plantas/banheiras/Maldivas - 1,00 x 1,62 x 0,50 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maldivas%20-%201,00%20x%201,62%20x%200,50%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a4aba49302cf98b1dc62949450052aabe51cb0a4": {
+   "sha1": "a4aba49302cf98b1dc62949450052aabe51cb0a4",
+   "pdf_path": "plantas/banheiras/Malibu - 1,70 x 1,70 x 0,50 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Malibu%20-%201,70%20x%201,70%20x%200,50%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "37c5b627e3f5b623b2bde93508786fa399aef10c": {
+   "sha1": "37c5b627e3f5b623b2bde93508786fa399aef10c",
+   "pdf_path": "plantas/banheiras/Manaus - 0,795 x 1,49 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,795%20x%201,49%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "e335c3714e5ab105af39ea471b5a51f0907a6395": {
+   "sha1": "e335c3714e5ab105af39ea471b5a51f0907a6395",
+   "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,39 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,39%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "870534e943f93a69e2c569831db4a7f1e82f76f4": {
+   "sha1": "870534e943f93a69e2c569831db4a7f1e82f76f4",
+   "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,59 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,59%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "16f26697b4c035267fd0fcab27562391cc8f8261": {
+   "sha1": "16f26697b4c035267fd0fcab27562391cc8f8261",
+   "pdf_path": "plantas/banheiras/Manaus - 0,80 x 1,69 x 0,38 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Manaus%20-%200,80%20x%201,69%20x%200,38%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "7d9ae0d309fc6217c58bf4496e163b04d3205495": {
+   "sha1": "7d9ae0d309fc6217c58bf4496e163b04d3205495",
+   "pdf_path": "plantas/banheiras/Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Marcelle%20-%200,91%20x%201,64%20x%200,37%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "c7a9e63a16c405f9285cfcf98dfac149f54a57f6": {
+   "sha1": "c7a9e63a16c405f9285cfcf98dfac149f54a57f6",
+   "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,40 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,40%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "99dfd97f24e228e5d49117b25c8a8a3958ea9551": {
+   "sha1": "99dfd97f24e228e5d49117b25c8a8a3958ea9551",
+   "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,50%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "798bbf86f9e359d9e510a00c8431ae705004194b": {
+   "sha1": "798bbf86f9e359d9e510a00c8431ae705004194b",
+   "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,60 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,60%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "e579ee9f079d786192f7315b112e5f8c28a589c6": {
+   "sha1": "e579ee9f079d786192f7315b112e5f8c28a589c6",
+   "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,70 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "f613861013988bf8cc0465cf725352ed950c4cf4": {
+   "sha1": "f613861013988bf8cc0465cf725352ed950c4cf4",
+   "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,51 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,51%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a1c2f6faa8bc36a5751cf514762bfd35388e07a0": {
+   "sha1": "a1c2f6faa8bc36a5751cf514762bfd35388e07a0",
+   "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,60 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,60%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "926dee707b0d55c211203de0207e0d1c07ff2b3d": {
+   "sha1": "926dee707b0d55c211203de0207e0d1c07ff2b3d",
+   "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,70 x 0,44 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,70%20x%200,44%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "c5188ae8dbeb870443aab3fa3a1e365d587972b0": {
+   "sha1": "c5188ae8dbeb870443aab3fa3a1e365d587972b0",
+   "pdf_path": "plantas/banheiras/Maresias - 1,20  x 1,79 x 0,48 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,20%20%20x%201,79%20x%200,48%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "35dd55c5f3fd308af20709e881e7003f631c085c": {
+   "sha1": "35dd55c5f3fd308af20709e881e7003f631c085c",
+   "pdf_path": "plantas/banheiras/Maresias - 1,40  x 1,78 x 0,48 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%201,40%20%20x%201,78%20x%200,48%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "ed7888e402d0c03aac591d82f4a615aa7bc6b14f": {
+   "sha1": "ed7888e402d0c03aac591d82f4a615aa7bc6b14f",
+   "pdf_path": "plantas/banheiras/Mercury---1,36-x-1,36-x-0,47-[GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Mercury---1,36-x-1,36-x-0,47-%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2375,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 297,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 594,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1188,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2375,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "e9c1eec464b85b471368fbabd9698e6a090cde36": {
+   "sha1": "e9c1eec464b85b471368fbabd9698e6a090cde36",
+   "pdf_path": "plantas/banheiras/Mercury---1,50-x-1,50-x-0,47-[GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Mercury---1,50-x-1,50-x-0,47-%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2375,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 297,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 594,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1188,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2375,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "9d887ddf20dbb13fca423048a085319f32b859c7": {
+   "sha1": "9d887ddf20dbb13fca423048a085319f32b859c7",
+   "pdf_path": "plantas/banheiras/Monte carlo - 1,50 x 1,50 x 0,49 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Monte%20carlo%20-%201,50%20x%201,50%20x%200,49%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "14897ee7b46b8991ec192b2b3f5d58c422b8b327": {
+   "sha1": "14897ee7b46b8991ec192b2b3f5d58c422b8b327",
+   "pdf_path": "plantas/banheiras/monteverde.pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/monteverde.pdf",
+   "largura_px": 3400,
+   "altura_px": 1835,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 230,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 459,
+     "colunas": 2,
+     "linhas": 1
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 918,
+     "colunas": 4,
+     "linhas": 2
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 1835,
+     "colunas": 7,
+     "linhas": 4
+    }
+   ]
+  },
+  "543c684d1b2477b24c5c4cca65735d1f2c6da78d": {
+   "sha1": "543c684d1b2477b24c5c4cca65735d1f2c6da78d",
+   "pdf_path": "plantas/banheiras/Paraty 0,84 x1,56 x 0,48 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Paraty%200,84%20x1,56%20x%200,48%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "6430205173e93f1ff9719f1e4a5cec98013ae0e4": {
+   "sha1": "6430205173e93f1ff9719f1e4a5cec98013ae0e4",
+   "pdf_path": "plantas/banheiras/Paraty 0,84 x1,65 x 0,48 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Paraty%200,84%20x1,65%20x%200,48%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7": {
+   "sha1": "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7",
+   "pdf_path": "plantas/banheiras/Paris - 1,03 x 1,84 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Paris%20-%201,03%20x%201,84%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a3b134fb38e709e8f9e58e132d945ff817391aa4": {
+   "sha1": "a3b134fb38e709e8f9e58e132d945ff817391aa4",
+   "pdf_path": "plantas/banheiras/Requinte - 1,09 x 1,89 x 0,45 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Requinte%20-%201,09%20x%201,89%20x%200,45%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "f4b26e48dfea55612360595a802e4dc4e6d5fa7c": {
+   "sha1": "f4b26e48dfea55612360595a802e4dc4e6d5fa7c",
+   "pdf_path": "plantas/banheiras/Rivail - 1,20 x 1,80 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Rivail%20-%201,20%20x%201,80%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "4adc81f0e58089b2485191813068fb99e4c688ea": {
+   "sha1": "4adc81f0e58089b2485191813068fb99e4c688ea",
+   "pdf_path": "plantas/banheiras/Riviera - 1,00 x 1,81 x 0,48 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Riviera%20-%201,00%20x%201,81%20x%200,48%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "98db2fd5e442ff89f2d2878aa230dcd03416d4b6": {
+   "sha1": "98db2fd5e442ff89f2d2878aa230dcd03416d4b6",
+   "pdf_path": "plantas/banheiras/Roma - 1,59 x 1,59 x 0,49 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Roma%20-%201,59%20x%201,59%20x%200,49%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2": {
+   "sha1": "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2",
+   "pdf_path": "plantas/banheiras/Saara - 1,195 x 1,80 x 0,42 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Saara%20-%201,195%20x%201,80%20x%200,42%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "ebcc35fa35c11a3aa61b59a5398906422a3e17b9": {
+   "sha1": "ebcc35fa35c11a3aa61b59a5398906422a3e17b9",
+   "pdf_path": "plantas/banheiras/Santa monica - 1,38 x 1,38 x 0,45 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Santa%20monica%20-%201,38%20x%201,38%20x%200,45%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "bf10eac51c8f52bfe1e4b9c28c2314d7f8dba85d": {
+   "sha1": "bf10eac51c8f52bfe1e4b9c28c2314d7f8dba85d",
+   "pdf_path": "plantas/banheiras/Sensuale - 1,20 x 1,80 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sensuale%20-%201,20%20x%201,80%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "aefd7b7dcd3acca407c0a45657432aad98717093": {
+   "sha1": "aefd7b7dcd3acca407c0a45657432aad98717093",
+   "pdf_path": "plantas/banheiras/Sensuale de canto - 1,35 x 1,90 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sensuale%20de%20canto%20-%201,35%20x%201,90%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "23a23c6f40058cca4e4634b91db4e46e68bd0747": {
+   "sha1": "23a23c6f40058cca4e4634b91db4e46e68bd0747",
+   "pdf_path": "plantas/banheiras/Sensuale redonda - 1,60 x 1,60 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sensuale%20redonda%20-%201,60%20x%201,60%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2374,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 297,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 594,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1187,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2374,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "27c829d62eae5e5a1fbd21ed6f6ce1d7e851b1f3": {
+   "sha1": "27c829d62eae5e5a1fbd21ed6f6ce1d7e851b1f3",
+   "pdf_path": "plantas/banheiras/Sensuale redonda - 1,79 x 1,79 x 0,49 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sensuale%20redonda%20-%201,79%20x%201,79%20x%200,49%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "6b50df188c021bb6bf77280ee94e0ff4db0f99ad": {
+   "sha1": "6b50df188c021bb6bf77280ee94e0ff4db0f99ad",
+   "pdf_path": "plantas/banheiras/Simpatia de canto - 1,60 x 1,60 x 0,50 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Simpatia%20de%20canto%20-%201,60%20x%201,60%20x%200,50%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "7821d87845f46eadddcd42b195cd974566f07ba7": {
+   "sha1": "7821d87845f46eadddcd42b195cd974566f07ba7",
+   "pdf_path": "plantas/banheiras/Solene redonda - 1,49 x 1,49 x 0,435 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Solene%20redonda%20-%201,49%20x%201,49%20x%200,435%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "2f7bff2ff06d1f862ff22104d20f1e8dd368e621": {
+   "sha1": "2f7bff2ff06d1f862ff22104d20f1e8dd368e621",
+   "pdf_path": "plantas/banheiras/Suiça - 1,40 x 1,41 x 0,49 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Sui%c3%a7a%20-%201,40%20x%201,41%20x%200,49%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de": {
+   "sha1": "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de",
+   "pdf_path": "plantas/banheiras/Supreme - 1,20 x 1,80 x 0,55 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Supreme%20-%201,20%20x%201,80%20x%200,55%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0": {
+   "sha1": "1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0",
+   "pdf_path": "plantas/banheiras/Tailandia - 0,70 x 1,09 x 0,48 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Tailandia%20-%200,70%20x%201,09%20x%200,48%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "d6974ff95908da0dd95abb9140439fe184fed32b": {
+   "sha1": "d6974ff95908da0dd95abb9140439fe184fed32b",
+   "pdf_path": "plantas/banheiras/Ternura - 1,50 x 1,50 x 0,54 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Ternura%20-%201,50%20x%201,50%20x%200,54%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "f92fe93f38680b0a646460c4beaf418d8e9e6dd6": {
+   "sha1": "f92fe93f38680b0a646460c4beaf418d8e9e6dd6",
+   "pdf_path": "plantas/banheiras/Valencia - 1,10 x 1,89 x 0,40 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Valencia%20-%201,10%20x%201,89%20x%200,40%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "0231cc09abc1515351d5a4c90bd9fcad41104fc6": {
+   "sha1": "0231cc09abc1515351d5a4c90bd9fcad41104fc6",
+   "pdf_path": "plantas/banheiras/Veneza - 1,57 x 1,57 x 0,51 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Veneza%20-%201,57%20x%201,57%20x%200,51%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "2b7888d7c5536e763ae9febdbec02852ee5ed770": {
+   "sha1": "2b7888d7c5536e763ae9febdbec02852ee5ed770",
+   "pdf_path": "plantas/banheiras/Verona - 1,19 x 1,69 x 0,43 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Verona%20-%201,19%20x%201,69%20x%200,43%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "ef48a9c9e018ae0453d68c3157945ef23949b159": {
+   "sha1": "ef48a9c9e018ae0453d68c3157945ef23949b159",
+   "pdf_path": "plantas/banheiras/Viena - 1,66 x 1,66 x 0,50 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Viena%20-%201,66%20x%201,66%20x%200,50%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa": {
+   "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
+   "pdf_path": "plantas/banheiras/Vitoria - 1,06 x 1,90 x 0,50 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoria%20-%201,06%20x%201,90%20x%200,50%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "810168f51ee02a50a08dec4c62228c062fb501a6": {
+   "sha1": "810168f51ee02a50a08dec4c62228c062fb501a6",
+   "pdf_path": "plantas/banheiras/Vitória com abas 1,06x1,60x0,66.pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitória com abas 1,06x1,60x0,66.pdf",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "ca64210b518a56ad1b0b01112c153751e2d8b2ce": {
+   "sha1": "ca64210b518a56ad1b0b01112c153751e2d8b2ce",
+   "pdf_path": "plantas/banheiras/Vitória com abas 1,06x1,90x0,66.pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitória com abas 1,06x1,90x0,66.pdf",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "db15e7ce4b6a139bb4c317ee102fa268a569da18": {
+   "sha1": "db15e7ce4b6a139bb4c317ee102fa268a569da18",
+   "pdf_path": "plantas/banheiras/Vitoriana - 0,75 x 1,63 x 0,49 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoriana%20-%200,75%20x%201,63%20x%200,49%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "c7df33cf84633022a86a7ae36e05b2dd4e6ef7fa": {
+   "sha1": "c7df33cf84633022a86a7ae36e05b2dd4e6ef7fa",
+   "pdf_path": "plantas/banheiras/Vitoriana 0,32 x 0,60 x 0,20 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoriana%200,32%20x%200,60%20x%200,20%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "51fc5fc9f1a3947d08cca80020c9adfac4303732": {
+   "sha1": "51fc5fc9f1a3947d08cca80020c9adfac4303732",
+   "pdf_path": "plantas/banheiras/Vitoriana 0,38 x 0,77 x 0,19 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoriana%200,38%20x%200,77%20x%200,19%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "5df42272b0358798ba798111f710e386f4a59aa9": {
+   "sha1": "5df42272b0358798ba798111f710e386f4a59aa9",
+   "pdf_path": "plantas/banheiras/Vitoriana 0,58 x 1,21 x 0,40 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Vitoriana%200,58%20x%201,21%20x%200,40%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "7ea54835e81495a8c212f21e2fdce09a6e887c44": {
+   "sha1": "7ea54835e81495a8c212f21e2fdce09a6e887c44",
+   "pdf_path": "plantas/ofuros/Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20acqua%20vip%20-%200,80%20x%201,00%20x%200,76%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "6f3b6a75d0a137663ca918416060e7d41e678199": {
+   "sha1": "6f3b6a75d0a137663ca918416060e7d41e678199",
+   "pdf_path": "plantas/ofuros/Ofuro osaka - 0,99 x 0,99 x 0,64 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20osaka%20-%200,99%20x%200,99%20x%200,64%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "917304b9e0c6aae2554fad71e5d8fb1b020addee": {
+   "sha1": "917304b9e0c6aae2554fad71e5d8fb1b020addee",
+   "pdf_path": "plantas/ofuros/Ofuro solene acrilico - 1,48 x 1,48 x 0,73 [AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20solene%20acrilico%20-%201,48%20x%201,48%20x%200,73%20%5bAC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "6a316e900a3ff9c4cb5b5b33959caadd142a3792": {
+   "sha1": "6a316e900a3ff9c4cb5b5b33959caadd142a3792",
+   "pdf_path": "plantas/ofuros/Ofuro solene gel - 1,48 x 1,48 x 0,88 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20solene%20gel%20-%201,48%20x%201,48%20x%200,88%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "8a3e631f5f3269e23c72585776e1f02b1ac04aac": {
+   "sha1": "8a3e631f5f3269e23c72585776e1f02b1ac04aac",
+   "pdf_path": "plantas/spas/Spa atacama - 2,66 x 2,70 x 1,00 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20atacama%20-%202,66%20x%202,70%20x%201,00%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "96c52f2bba5cfef3e609799741a3bb4333da1d28": {
+   "sha1": "96c52f2bba5cfef3e609799741a3bb4333da1d28",
+   "pdf_path": "plantas/spas/Spa california gel - 2,01 x 2,10 x 0,81 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20california%20gel%20-%202,01%20x%202,10%20x%200,81%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "3916b53915da643b8b39d8c67672cc6718cbcc1c": {
+   "sha1": "3916b53915da643b8b39d8c67672cc6718cbcc1c",
+   "pdf_path": "plantas/spas/Spa cancun acrilico - 1,57 x 1,98 x 0,77 [AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20cancun%20acrilico%20-%201,57%20x%201,98%20x%200,77%20%5bAC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "c629dd8b3bb49e416fdd273f593aae5f18683500": {
+   "sha1": "c629dd8b3bb49e416fdd273f593aae5f18683500",
+   "pdf_path": "plantas/spas/Spa cancun gel - 1,57 x 1,98 x 0,87 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20cancun%20gel%20-%201,57%20x%201,98%20x%200,87%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "3e9c9c070d2c4ad96792e4a4b64a96b098720894": {
+   "sha1": "3e9c9c070d2c4ad96792e4a4b64a96b098720894",
+   "pdf_path": "plantas/spas/Spa Charlote 2,12 x 2,13 x 0,85 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Charlote%202,12%20x%202,13%20x%200,85%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "40c03e9d917d6bc9127db68b4841686e0e821769": {
+   "sha1": "40c03e9d917d6bc9127db68b4841686e0e821769",
+   "pdf_path": "plantas/spas/Spa Chicago 2,02 x 2,02 x 0,83 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Chicago%202,02%20x%202,02%20x%200,83%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "8ac1a1fba6849c0b769cc840fab2bf1238b32ce0": {
+   "sha1": "8ac1a1fba6849c0b769cc840fab2bf1238b32ce0",
+   "pdf_path": "plantas/spas/Spa coliseu - 2,64 x 2,64 x 0,76 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20coliseu%20-%202,64%20x%202,64%20x%200,76%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "0a1b289ca2bb56fe10b59a77936d195b99a22c6e": {
+   "sha1": "0a1b289ca2bb56fe10b59a77936d195b99a22c6e",
+   "pdf_path": "plantas/spas/Spa copacabana acrilico - 2,00 x 2,39 x 0,81 [AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20copacabana%20acrilico%20-%202,00%20x%202,39%20x%200,81%20%5bAC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "85a282d4e9a291fe4778c98a8d8d488891b20d88": {
+   "sha1": "85a282d4e9a291fe4778c98a8d8d488891b20d88",
+   "pdf_path": "plantas/spas/Spa fenix acrilico - 2,00 x 2,39 x 0,81 [AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20fenix%20acrilico%20-%202,00%20x%202,39%20x%200,81%20%5bAC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "cc10d274162802f16ee1b1c0e3f94c93c12cf98a": {
+   "sha1": "cc10d274162802f16ee1b1c0e3f94c93c12cf98a",
+   "pdf_path": "plantas/spas/Spa fenix gel - 2,20 x 2,39 x 0,81 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20fenix%20gel%20-%202,20%20x%202,39%20x%200,81%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "59775216e0601357e5cb03495fe88d4d99800745": {
+   "sha1": "59775216e0601357e5cb03495fe88d4d99800745",
+   "pdf_path": "plantas/spas/Spa florença - 2,00 x 2,00 x 0,86 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20floren%c3%a7a%20-%202,00%20x%202,00%20x%200,86%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "b84a4de306ef925b5dfc7afa714bc1be200c27f8": {
+   "sha1": "b84a4de306ef925b5dfc7afa714bc1be200c27f8",
+   "pdf_path": "plantas/spas/Spa florenza - 1,39 x 1,79 x 0,64 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20florenza%20-%201,39%20x%201,79%20x%200,64%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "b84ab9cd48047a351728dea5e641bb02990efeb0": {
+   "sha1": "b84ab9cd48047a351728dea5e641bb02990efeb0",
+   "pdf_path": "plantas/spas/Spa imola - 1,80 x 2,10 x 0,80 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20imola%20-%201,80%20x%202,10%20x%200,80%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "3a8b12c739d45fef5bcad8be7e72fec25a1aeb93": {
+   "sha1": "3a8b12c739d45fef5bcad8be7e72fec25a1aeb93",
+   "pdf_path": "plantas/spas/Spa ipanema - 1,81 x 1,83 x 0,69 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20ipanema%20-%201,81%20x%201,83%20x%200,69%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "b5ece607a750b14e9b447b523ae40b68d35206c1": {
+   "sha1": "b5ece607a750b14e9b447b523ae40b68d35206c1",
+   "pdf_path": "plantas/spas/Spa itacare - 2,00 x 2,00 x 0,84 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20itacare%20-%202,00%20x%202,00%20x%200,84%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "2481cc779420a1f420788e6760ef69330437fb6a": {
+   "sha1": "2481cc779420a1f420788e6760ef69330437fb6a",
+   "pdf_path": "plantas/spas/Spa Las Vegas 2,20 x 2,89 x 0,87-PLANTA.pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa Las Vegas 2,20 x 2,89 x 0,87-PLANTA.pdf",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "ebe7c1667450327a193a5bda4dd1161c608c5d7f": {
+   "sha1": "ebe7c1667450327a193a5bda4dd1161c608c5d7f",
+   "pdf_path": "plantas/spas/Spa Londres 1,50 x 1,65 x 0,92 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Londres%201,50%20x%201,65%20x%200,92%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "d3c4ce1a0a3da11a6ff8dfa0774a365a8c9b5f21": {
+   "sha1": "d3c4ce1a0a3da11a6ff8dfa0774a365a8c9b5f21",
+   "pdf_path": "plantas/spas/Spa Malbec 1,59 x 1,90 x 0,84 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Malbec%201,59%20x%201,90%20x%200,84%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "a1ddcf576d68e8c0be0ece54295c404172cdf58f": {
+   "sha1": "a1ddcf576d68e8c0be0ece54295c404172cdf58f",
+   "pdf_path": "plantas/spas/Spa napole acrilico - 1,96 x 1,96 x 0,86 [AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20napole%20acrilico%20-%201,96%20x%201,96%20x%200,86%20%5bAC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "62d995afc462a534013006a73a2972a8e3acb277": {
+   "sha1": "62d995afc462a534013006a73a2972a8e3acb277",
+   "pdf_path": "plantas/spas/Spa napole gel - 1,97 x 1,97 x 0,85 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20napole%20gel%20-%201,97%20x%201,97%20x%200,85%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "258b84b9e66d0ba5afc3cc68b7e520584c002553": {
+   "sha1": "258b84b9e66d0ba5afc3cc68b7e520584c002553",
+   "pdf_path": "plantas/spas/Spa perola - 1,69 x 1,70 x 0,76 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20perola%20-%201,69%20x%201,70%20x%200,76%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "b481d548a98a90cb99ff6b36a0b3387b0ce7b908": {
+   "sha1": "b481d548a98a90cb99ff6b36a0b3387b0ce7b908",
+   "pdf_path": "plantas/spas/Spa san marino - 2,19 x 2,20 x 0,79 [GC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20san%20marino%20-%202,19%20x%202,20%20x%200,79%20%5bGC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "3c0381f152e45071c0e75dde00d4c1a8f4fa6802": {
+   "sha1": "3c0381f152e45071c0e75dde00d4c1a8f4fa6802",
+   "pdf_path": "plantas/spas/Spa sensaçao gold - 1,87 x 1,87 x 0,90 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20sensa%c3%a7ao%20gold%20-%201,87%20x%201,87%20x%200,90%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2436,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 305,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 609,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1218,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2436,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "e3745ef1f7498a7ce49723482df620472870d2c9": {
+   "sha1": "e3745ef1f7498a7ce49723482df620472870d2c9",
+   "pdf_path": "plantas/spas/Spa Siena 1,80 x 2,10 x 0,73 - PLANTA.PDF",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20Siena%201,80%20x%202,10%20x%200,73%20-%20PLANTA.PDF",
+   "largura_px": 3400,
+   "altura_px": 2402,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 301,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 601,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1201,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2402,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  },
+  "9b9298e4184a973a70101c950d42fb8665641771": {
+   "sha1": "9b9298e4184a973a70101c950d42fb8665641771",
+   "pdf_path": "plantas/spas/Spa taiti - 2,27 x 2,27 x 0,82 [GC-AC].pdf",
+   "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20taiti%20-%202,27%20x%202,27%20x%200,82%20%5bGC-AC%5d.pdf",
+   "largura_px": 3400,
+   "altura_px": 2374,
+   "tile": 512,
+   "niveis": [
+    {
+     "z": 0,
+     "largura": 425,
+     "altura": 297,
+     "colunas": 1,
+     "linhas": 1
+    },
+    {
+     "z": 1,
+     "largura": 850,
+     "altura": 594,
+     "colunas": 2,
+     "linhas": 2
+    },
+    {
+     "z": 2,
+     "largura": 1700,
+     "altura": 1187,
+     "colunas": 4,
+     "linhas": 3
+    },
+    {
+     "z": 3,
+     "largura": 3400,
+     "altura": 2374,
+     "colunas": 7,
+     "linhas": 5
+    }
+   ]
+  }
+ }
+}

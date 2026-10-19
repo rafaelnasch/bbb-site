@@ -1,0 +1,236 @@
+{
+ "sha1": "5f553e19a9285e6040609c8e3995a37b474d60be",
+ "pdf_path": "plantas/banheiras/Acqua spaço - 0,79 x 1,49 x 0,41 [GC].pdf",
+ "nome_arquivo": "Acqua spaço - 0,79 x 1,49 x 0,41 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Acqua%20spa%c3%a7o%20-%200,79%20x%201,49%20x%200,41%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.79,
+   "valor_texto": "0,79",
+   "x": 1921,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1921,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2453,
+   "tabela_y": 855
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.49,
+   "valor_texto": "1,49",
+   "x": 1370,
+   "y": 835,
+   "posicoes": [
+    {
+     "x": 1370,
+     "y": 835
+    }
+   ],
+   "tabela_x": 2453,
+   "tabela_y": 893
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.96,
+   "valor_texto": "0,96",
+   "x": 1370,
+   "y": 1140,
+   "posicoes": [
+    {
+     "x": 1370,
+     "y": 1140
+    }
+   ],
+   "tabela_x": 2454,
+   "tabela_y": 943
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.42,
+   "valor_texto": "0,42",
+   "x": 1574,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1574,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2457,
+   "tabela_y": 984
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1165,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1165,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2456,
+   "tabela_y": 1026
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1787,
+   "y": 1699,
+   "posicoes": [
+    {
+     "x": 1787,
+     "y": 1699
+    }
+   ],
+   "tabela_x": 2455,
+   "tabela_y": 1074
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.55,
+   "valor_texto": "0,55",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1686,
+     "y": 1205
+    },
+    {
+     "x": 1690,
+     "y": 1839
+    }
+   ],
+   "tabela_x": 2459,
+   "tabela_y": 1125
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1610,
+   "y": 1665,
+   "posicoes": [
+    {
+     "x": 1610,
+     "y": 1665
+    }
+   ],
+   "tabela_x": 2461,
+   "tabela_y": 1172
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.41,
+   "valor_texto": "0,41",
+   "x": 1198,
+   "y": 1651,
+   "posicoes": [
+    {
+     "x": 1198,
+     "y": 1651
+    }
+   ],
+   "tabela_x": 2463,
+   "tabela_y": 1215
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.3,
+   "valor_texto": "1,30",
+   "x": 1372,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1372,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2461,
+   "tabela_y": 1258
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.24,
+   "valor_texto": "0,24",
+   "x": 1466,
+   "y": 1314,
+   "posicoes": [
+    {
+     "x": 1466,
+     "y": 1314
+    }
+   ],
+   "tabela_x": 2458,
+   "tabela_y": 1306
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.67,
+   "valor_texto": "0,67",
+   "x": 1534,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1534,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2458,
+   "tabela_y": 1358
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.65,
+   "valor_texto": "0,65",
+   "x": 1131,
+   "y": 1127,
+   "posicoes": [
+    {
+     "x": 1131,
+     "y": 1127
+    }
+   ],
+   "tabela_x": 2462,
+   "tabela_y": 1408
+  }
+ ],
+ "usos": [],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "nenhum tamanho vendido aponta para esta planta"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": null
+}

@@ -1,0 +1,50 @@
+{
+ "sha1": "3a8b12c739d45fef5bcad8be7e72fec25a1aeb93",
+ "pdf_path": "plantas/spas/Spa ipanema - 1,81 x 1,83 x 0,69 [GC-AC].pdf",
+ "nome_arquivo": "Spa ipanema - 1,81 x 1,83 x 0,69 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20ipanema%20-%201,81%20x%201,83%20x%200,69%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "spa-redondo-ipanema-com-hidro-em-acrilico",
+   "rotulo": "1,81 x 1,83 x 0,69"
+  },
+  {
+   "slug": "spa-redondo-ipanema-com-hidro",
+   "rotulo": "1,81 x 1,83 x 0,69"
+  },
+  {
+   "slug": "spa-redondo-ipanema-completo-com-hidro-em-acrilico",
+   "rotulo": "1,81 x 1,83 x 0,69"
+  },
+  {
+   "slug": "spa-redondo-ipanema-completo-com-hidro",
+   "rotulo": "1,81 x 1,83 x 0,69"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

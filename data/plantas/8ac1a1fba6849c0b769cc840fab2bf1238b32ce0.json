@@ -1,0 +1,33 @@
+{
+ "sha1": "8ac1a1fba6849c0b769cc840fab2bf1238b32ce0",
+ "pdf_path": "plantas/spas/Spa coliseu - 2,64 x 2,64 x 0,76 [GC].pdf",
+ "nome_arquivo": "Spa coliseu - 2,64 x 2,64 x 0,76 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20coliseu%20-%202,64%20x%202,64%20x%200,76%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

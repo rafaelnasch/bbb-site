@@ -1,0 +1,38 @@
+{
+ "sha1": "85a282d4e9a291fe4778c98a8d8d488891b20d88",
+ "pdf_path": "plantas/spas/Spa fenix acrilico - 2,00 x 2,39 x 0,81 [AC].pdf",
+ "nome_arquivo": "Spa fenix acrilico - 2,00 x 2,39 x 0,81 [AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/spas/Spa%20fenix%20acrilico%20-%202,00%20x%202,39%20x%200,81%20%5bAC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [],
+ "usos": [
+  {
+   "slug": "spa-quadrado-fenix-completo-com-hidro-em-acrilico",
+   "rotulo": "2,00 x 2,39 x 0,81"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": false,
+  "motivos": [
+   "tabela de cotas não encontrada no layout padrão"
+  ],
+  "conferencias": []
+ },
+ "posicoes": {
+  "ok": false,
+  "letras": [],
+  "motivos": [
+   "sem tabela lida"
+  ]
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": false,
+ "validada": false,
+ "revisor": null,
+ "tabela_sem_texto": "sem_tabela"
+}

@@ -1,0 +1,274 @@
+{
+ "sha1": "7ea54835e81495a8c212f21e2fdce09a6e887c44",
+ "pdf_path": "plantas/ofuros/Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
+ "nome_arquivo": "Ofuro acqua vip - 0,80 x 1,00 x 0,76 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/ofuros/Ofuro%20acqua%20vip%20-%200,80%20x%201,00%20x%200,76%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": 1046,
+   "y": 909,
+   "posicoes": [
+    {
+     "x": 1046,
+     "y": 909
+    }
+   ],
+   "tabela_x": 2549,
+   "tabela_y": 728
+  },
+  {
+   "letra": "B",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 718,
+   "y": 1302,
+   "posicoes": [
+    {
+     "x": 718,
+     "y": 1302
+    }
+   ],
+   "tabela_x": 2550,
+   "tabela_y": 768
+  },
+  {
+   "letra": "C1",
+   "valor_m": 0.23,
+   "valor_texto": "0,23",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1788,
+     "y": 1584
+    },
+    {
+     "x": 1005,
+     "y": 1182
+    }
+   ],
+   "tabela_x": 2559,
+   "tabela_y": 820
+  },
+  {
+   "letra": "C2",
+   "valor_m": 0.31,
+   "valor_texto": "0,31",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 2066,
+     "y": 1371
+    },
+    {
+     "x": 1066,
+     "y": 1355
+    }
+   ],
+   "tabela_x": 2558,
+   "tabela_y": 864
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1072,
+   "y": 1212,
+   "posicoes": [
+    {
+     "x": 1072,
+     "y": 1212
+    }
+   ],
+   "tabela_x": 2555,
+   "tabela_y": 907
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 1009,
+   "y": 1425,
+   "posicoes": [
+    {
+     "x": 1009,
+     "y": 1425
+    }
+   ],
+   "tabela_x": 2554,
+   "tabela_y": 960
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.66,
+   "valor_texto": "0,66",
+   "x": 1612,
+   "y": 1300,
+   "posicoes": [
+    {
+     "x": 1612,
+     "y": 1300
+    }
+   ],
+   "tabela_x": 2553,
+   "tabela_y": 1008
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.26,
+   "valor_texto": "0,26",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1075,
+     "y": 1037
+    },
+    {
+     "x": 1692,
+     "y": 1547
+    }
+   ],
+   "tabela_x": 2557,
+   "tabela_y": 1048
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.76,
+   "valor_texto": "0,76",
+   "x": 1841,
+   "y": 1258,
+   "posicoes": [
+    {
+     "x": 1841,
+     "y": 1258
+    }
+   ],
+   "tabela_x": 2563,
+   "tabela_y": 1097
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.47,
+   "valor_texto": "0,47",
+   "x": 2113,
+   "y": 1160,
+   "posicoes": [
+    {
+     "x": 2113,
+     "y": 1160
+    }
+   ],
+   "tabela_x": 2563,
+   "tabela_y": 1148
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 859,
+   "y": 1158,
+   "posicoes": [
+    {
+     "x": 859,
+     "y": 1158
+    }
+   ],
+   "tabela_x": 2556,
+   "tabela_y": 1204
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.5,
+   "valor_texto": "0,50",
+   "x": 1010,
+   "y": 1012,
+   "posicoes": [
+    {
+     "x": 1010,
+     "y": 1012
+    }
+   ],
+   "tabela_x": 2559,
+   "tabela_y": 1249
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.52,
+   "valor_texto": "0,52",
+   "x": 1046,
+   "y": 1590,
+   "posicoes": [
+    {
+     "x": 1046,
+     "y": 1590
+    }
+   ],
+   "tabela_x": 2563,
+   "tabela_y": 1300
+  }
+ ],
+ "usos": [
+  {
+   "slug": "ofuro-acqua-vip-completo-com-hidro",
+   "rotulo": "0,80 x 1,00 x 0,76"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "ofuro-acqua-vip-completo-com-hidro",
+    "rotulo": "0,80 x 1,00 x 0,76",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": true,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   },
+   {
+    "revisor": "agente corretor do bloco 2-midia (outro agente, não o construtor)",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente desta planta (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

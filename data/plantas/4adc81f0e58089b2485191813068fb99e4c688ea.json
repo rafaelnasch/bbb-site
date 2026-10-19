@@ -1,0 +1,241 @@
+{
+ "sha1": "4adc81f0e58089b2485191813068fb99e4c688ea",
+ "pdf_path": "plantas/banheiras/Riviera - 1,00 x 1,81 x 0,48 [GC-AC].pdf",
+ "nome_arquivo": "Riviera - 1,00 x 1,81 x 0,48 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Riviera%20-%201,00%20x%201,81%20x%200,48%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1866,
+   "y": 1073,
+   "posicoes": [
+    {
+     "x": 1866,
+     "y": 1073
+    }
+   ],
+   "tabela_x": 2294,
+   "tabela_y": 888
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.81,
+   "valor_texto": "1,81",
+   "x": 1330,
+   "y": 770,
+   "posicoes": [
+    {
+     "x": 1330,
+     "y": 770
+    }
+   ],
+   "tabela_x": 2294,
+   "tabela_y": 917
+  },
+  {
+   "letra": "C",
+   "valor_m": 1.07,
+   "valor_texto": "1,07",
+   "x": 1329,
+   "y": 1063,
+   "posicoes": [
+    {
+     "x": 1329,
+     "y": 1063
+    }
+   ],
+   "tabela_x": 2295,
+   "tabela_y": 955
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.49,
+   "valor_texto": "0,49",
+   "x": 1528,
+   "y": 1075,
+   "posicoes": [
+    {
+     "x": 1528,
+     "y": 1075
+    }
+   ],
+   "tabela_x": 2297,
+   "tabela_y": 986
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.49,
+   "valor_texto": "0,49",
+   "x": 1143,
+   "y": 1070,
+   "posicoes": [
+    {
+     "x": 1143,
+     "y": 1070
+    }
+   ],
+   "tabela_x": 2297,
+   "tabela_y": 1018
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.38,
+   "valor_texto": "0,38",
+   "x": 1358,
+   "y": 1747,
+   "posicoes": [
+    {
+     "x": 1358,
+     "y": 1747
+    }
+   ],
+   "tabela_x": 2296,
+   "tabela_y": 1055
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.885,
+   "valor_texto": "0,885",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1559,
+     "y": 1215
+    },
+    {
+     "x": 1557,
+     "y": 1871
+    }
+   ],
+   "tabela_x": 2298,
+   "tabela_y": 1089
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.48,
+   "valor_texto": "0,48",
+   "x": 1317,
+   "y": 1719,
+   "posicoes": [
+    {
+     "x": 1317,
+     "y": 1719
+    }
+   ],
+   "tabela_x": 2297,
+   "tabela_y": 1125
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.65,
+   "valor_texto": "1,65",
+   "x": 1329,
+   "y": 1110,
+   "posicoes": [
+    {
+     "x": 1329,
+     "y": 1110
+    }
+   ],
+   "tabela_x": 2295,
+   "tabela_y": 1159
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.29,
+   "valor_texto": "0,29",
+   "x": 1327,
+   "y": 1258,
+   "posicoes": [
+    {
+     "x": 1327,
+     "y": 1258
+    }
+   ],
+   "tabela_x": 2293,
+   "tabela_y": 1195
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.73,
+   "valor_texto": "0,73",
+   "x": 1649,
+   "y": 1072,
+   "posicoes": [
+    {
+     "x": 1649,
+     "y": 1072
+    }
+   ],
+   "tabela_x": 2301,
+   "tabela_y": 1232
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.73,
+   "valor_texto": "0,73",
+   "x": 1021,
+   "y": 1070,
+   "posicoes": [
+    {
+     "x": 1021,
+     "y": 1070
+    }
+   ],
+   "tabela_x": 2306,
+   "tabela_y": 1268
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-individual-riviera-completa-com-hidro-em-acrilico",
+   "rotulo": "1,00 x 1,81 x 0,48"
+  },
+  {
+   "slug": "banheira-individual-riviera-completa-com-hidro",
+   "rotulo": "1,00 x 1,81 x 0,48"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-individual-riviera-completa-com-hidro-em-acrilico",
+    "rotulo": "1,00 x 1,81 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-individual-riviera-completa-com-hidro",
+    "rotulo": "1,00 x 1,81 x 0,48",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": null,
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

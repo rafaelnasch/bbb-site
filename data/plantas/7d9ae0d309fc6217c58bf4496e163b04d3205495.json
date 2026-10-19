@@ -1,0 +1,270 @@
+{
+ "sha1": "7d9ae0d309fc6217c58bf4496e163b04d3205495",
+ "pdf_path": "plantas/banheiras/Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
+ "nome_arquivo": "Marcelle - 0,91 x 1,64 x 0,37 [GC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Marcelle%20-%200,91%20x%201,64%20x%200,37%20%5bGC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.91,
+   "valor_texto": "0,91",
+   "x": 1968,
+   "y": 1036,
+   "posicoes": [
+    {
+     "x": 1968,
+     "y": 1036
+    }
+   ],
+   "tabela_x": 2371,
+   "tabela_y": 638
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.64,
+   "valor_texto": "1,64",
+   "x": 1337,
+   "y": 691,
+   "posicoes": [
+    {
+     "x": 1337,
+     "y": 691
+    }
+   ],
+   "tabela_x": 2372,
+   "tabela_y": 676
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.67,
+   "valor_texto": "0,67",
+   "x": 1339,
+   "y": 1090,
+   "posicoes": [
+    {
+     "x": 1339,
+     "y": 1090
+    }
+   ],
+   "tabela_x": 2373,
+   "tabela_y": 726
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.51,
+   "valor_texto": "0,51",
+   "x": 1523,
+   "y": 1036,
+   "posicoes": [
+    {
+     "x": 1523,
+     "y": 1036
+    }
+   ],
+   "tabela_x": 2376,
+   "tabela_y": 767
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.51,
+   "valor_texto": "0,51",
+   "x": 1101,
+   "y": 1040,
+   "posicoes": [
+    {
+     "x": 1101,
+     "y": 1040
+    }
+   ],
+   "tabela_x": 2376,
+   "tabela_y": 809
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.27,
+   "valor_texto": "0,27",
+   "x": 1793,
+   "y": 1744,
+   "posicoes": [
+    {
+     "x": 1793,
+     "y": 1744
+    }
+   ],
+   "tabela_x": 2375,
+   "tabela_y": 857
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.71,
+   "valor_texto": "0,71",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1646,
+     "y": 1890
+    },
+    {
+     "x": 1657,
+     "y": 1066
+    }
+   ],
+   "tabela_x": 2377,
+   "tabela_y": 913
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.32,
+   "valor_texto": "0,32",
+   "x": 1230,
+   "y": 1696,
+   "posicoes": [
+    {
+     "x": 1230,
+     "y": 1696
+    }
+   ],
+   "tabela_x": 2382,
+   "tabela_y": 955
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.37,
+   "valor_texto": "0,37",
+   "x": 1538,
+   "y": 1711,
+   "posicoes": [
+    {
+     "x": 1538,
+     "y": 1711
+    }
+   ],
+   "tabela_x": 2383,
+   "tabela_y": 997
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.4,
+   "valor_texto": "1,40",
+   "x": 1339,
+   "y": 1018,
+   "posicoes": [
+    {
+     "x": 1339,
+     "y": 1018
+    }
+   ],
+   "tabela_x": 2378,
+   "tabela_y": 1041
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.455,
+   "valor_texto": "0,455",
+   "x": 1398,
+   "y": 1194,
+   "posicoes": [
+    {
+     "x": 1398,
+     "y": 1194
+    }
+   ],
+   "tabela_x": 2376,
+   "tabela_y": 1088
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.79,
+   "valor_texto": "0,79",
+   "x": 1714,
+   "y": 1037,
+   "posicoes": [
+    {
+     "x": 1714,
+     "y": 1037
+    }
+   ],
+   "tabela_x": 2376,
+   "tabela_y": 1141
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.78,
+   "valor_texto": "0,78",
+   "x": 942,
+   "y": 1040,
+   "posicoes": [
+    {
+     "x": 942,
+     "y": 1040
+    }
+   ],
+   "tabela_x": 2380,
+   "tabela_y": 1190
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-marcelle-com-hidro",
+   "rotulo": "0,91 x 1,64 x 0,37"
+  },
+  {
+   "slug": "banheira-retangular-marcelle-completa-com-hidro",
+   "rotulo": "0,91 x 1,64 x 0,37"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-marcelle-com-hidro",
+    "rotulo": "0,91 x 1,64 x 0,37",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-marcelle-completa-com-hidro",
+    "rotulo": "0,91 x 1,64 x 0,37",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "verificador do bloco 2-midia",
+    "independente": true,
+    "data": "2026-10-19",
+    "tipo": "atestado",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

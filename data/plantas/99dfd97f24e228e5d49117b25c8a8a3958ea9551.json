@@ -1,0 +1,254 @@
+{
+ "sha1": "99dfd97f24e228e5d49117b25c8a8a3958ea9551",
+ "pdf_path": "plantas/banheiras/Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
+ "nome_arquivo": "Maresias - 0,90 x 1,50 x 0,44 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Maresias%20-%200,90%20x%201,50%20x%200,44%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2436,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.9,
+   "valor_texto": "0,90",
+   "x": 1663,
+   "y": 1082,
+   "posicoes": [
+    {
+     "x": 1663,
+     "y": 1082
+    }
+   ],
+   "tabela_x": 2298,
+   "tabela_y": 757
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.5,
+   "valor_texto": "1,50",
+   "x": 1131,
+   "y": 740,
+   "posicoes": [
+    {
+     "x": 1131,
+     "y": 740
+    }
+   ],
+   "tabela_x": 2298,
+   "tabela_y": 794
+  },
+  {
+   "letra": "C",
+   "valor_m": 0.85,
+   "valor_texto": "0,85",
+   "x": 1211,
+   "y": 1114,
+   "posicoes": [
+    {
+     "x": 1211,
+     "y": 1114
+    }
+   ],
+   "tabela_x": 2299,
+   "tabela_y": 842
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.47,
+   "valor_texto": "0,47",
+   "x": 1401,
+   "y": 1060,
+   "posicoes": [
+    {
+     "x": 1401,
+     "y": 1060
+    }
+   ],
+   "tabela_x": 2302,
+   "tabela_y": 881
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.46,
+   "valor_texto": "0,46",
+   "x": 1013,
+   "y": 1058,
+   "posicoes": [
+    {
+     "x": 1013,
+     "y": 1058
+    }
+   ],
+   "tabela_x": 2302,
+   "tabela_y": 921
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.34,
+   "valor_texto": "0,34",
+   "x": 1531,
+   "y": 1742,
+   "posicoes": [
+    {
+     "x": 1531,
+     "y": 1742
+    }
+   ],
+   "tabela_x": 2301,
+   "tabela_y": 968
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.24,
+   "valor_texto": "0,24",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1541,
+     "y": 1871
+    },
+    {
+     "x": 1544,
+     "y": 1071
+    }
+   ],
+   "tabela_x": 2304,
+   "tabela_y": 1011
+  },
+  {
+   "letra": "H",
+   "valor_m": 0.44,
+   "valor_texto": "0,44",
+   "x": 1172,
+   "y": 1708,
+   "posicoes": [
+    {
+     "x": 1172,
+     "y": 1708
+    }
+   ],
+   "tabela_x": 2302,
+   "tabela_y": 1056
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.2,
+   "valor_texto": "1,20",
+   "x": 1130,
+   "y": 1033,
+   "posicoes": [
+    {
+     "x": 1130,
+     "y": 1033
+    }
+   ],
+   "tabela_x": 2302,
+   "tabela_y": 1099
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.445,
+   "valor_texto": "0,445",
+   "x": 1446,
+   "y": 1231,
+   "posicoes": [
+    {
+     "x": 1446,
+     "y": 1231
+    }
+   ],
+   "tabela_x": 2300,
+   "tabela_y": 1144
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.68,
+   "valor_texto": "0,68",
+   "x": 852,
+   "y": 1083,
+   "posicoes": [
+    {
+     "x": 852,
+     "y": 1083
+    }
+   ],
+   "tabela_x": 2299,
+   "tabela_y": 1195
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.62,
+   "valor_texto": "0,62",
+   "x": 1431,
+   "y": 1059,
+   "posicoes": [
+    {
+     "x": 1431,
+     "y": 1059
+    }
+   ],
+   "tabela_x": 2303,
+   "tabela_y": 1243
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-maresias-completa-com-hidro-em-acrilico",
+   "rotulo": "0,90 x 1,50 x 0,44"
+  },
+  {
+   "slug": "banheira-retangular-maresias-completa-com-hidro",
+   "rotulo": "0,90 x 1,50 x 0,44"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-maresias-completa-com-hidro-em-acrilico",
+    "rotulo": "0,90 x 1,50 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-maresias-completa-com-hidro",
+    "rotulo": "0,90 x 1,50 x 0,44",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}

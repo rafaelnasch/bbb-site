@@ -1,0 +1,292 @@
+{
+ "sha1": "21bc5e68de73fa1b850617f898c7350b2ca73a8d",
+ "pdf_path": "plantas/banheiras/Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
+ "nome_arquivo": "Dubai - 0,88 x 1,81 x 0,40 [GC-AC].pdf",
+ "fonte": "https://www.banheirasbombanho.com.br/plantas/banheiras/Dubai%20-%200,88%20x%201,81%20x%200,40%20%5bGC-AC%5d.pdf",
+ "coletado_em": "18/10/2026",
+ "largura_px": 3400,
+ "altura_px": 2404,
+ "paginas": 1,
+ "cotas": [
+  {
+   "letra": "A",
+   "valor_m": 0.88,
+   "valor_texto": "0,88",
+   "x": 1837,
+   "y": 1110,
+   "posicoes": [
+    {
+     "x": 1837,
+     "y": 1110
+    }
+   ],
+   "tabela_x": 2380,
+   "tabela_y": 836
+  },
+  {
+   "letra": "B",
+   "valor_m": 1.81,
+   "valor_texto": "1,81",
+   "x": 1240,
+   "y": 1421,
+   "posicoes": [
+    {
+     "x": 1240,
+     "y": 1421
+    }
+   ],
+   "tabela_x": 2380,
+   "tabela_y": 870
+  },
+  {
+   "letra": "C",
+   "valor_m": 1,
+   "valor_texto": "1,00",
+   "x": 1242,
+   "y": 1094,
+   "posicoes": [
+    {
+     "x": 1242,
+     "y": 1094
+    }
+   ],
+   "tabela_x": 2381,
+   "tabela_y": 915
+  },
+  {
+   "letra": "D",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1422,
+   "y": 1111,
+   "posicoes": [
+    {
+     "x": 1422,
+     "y": 1111
+    }
+   ],
+   "tabela_x": 2384,
+   "tabela_y": 951
+  },
+  {
+   "letra": "E",
+   "valor_m": 0.45,
+   "valor_texto": "0,45",
+   "x": 1058,
+   "y": 1111,
+   "posicoes": [
+    {
+     "x": 1058,
+     "y": 1111
+    }
+   ],
+   "tabela_x": 2383,
+   "tabela_y": 989
+  },
+  {
+   "letra": "F",
+   "valor_m": 0.3,
+   "valor_texto": "0,30",
+   "x": 1709,
+   "y": 1701,
+   "posicoes": [
+    {
+     "x": 1709,
+     "y": 1701
+    }
+   ],
+   "tabela_x": 2383,
+   "tabela_y": 1032
+  },
+  {
+   "letra": "G",
+   "valor_m": 0.8,
+   "valor_texto": "0,80",
+   "x": null,
+   "y": null,
+   "posicoes": [
+    {
+     "x": 1551,
+     "y": 1158
+    },
+    {
+     "x": 1555,
+     "y": 1825
+    }
+   ],
+   "tabela_x": 2386,
+   "tabela_y": 1072
+  },
+  {
+   "letra": "H1",
+   "valor_m": 0.4,
+   "valor_texto": "0,40",
+   "x": 1269,
+   "y": 1675,
+   "posicoes": [
+    {
+     "x": 1269,
+     "y": 1675
+    }
+   ],
+   "tabela_x": 2392,
+   "tabela_y": 1122
+  },
+  {
+   "letra": "H2",
+   "valor_m": 0.35,
+   "valor_texto": "0,35",
+   "x": 980,
+   "y": 1660,
+   "posicoes": [
+    {
+     "x": 980,
+     "y": 1660
+    }
+   ],
+   "tabela_x": 2392,
+   "tabela_y": 1157
+  },
+  {
+   "letra": "I",
+   "valor_m": 1.54,
+   "valor_texto": "1,54",
+   "x": 1242,
+   "y": 1050,
+   "posicoes": [
+    {
+     "x": 1242,
+     "y": 1050
+    }
+   ],
+   "tabela_x": 2382,
+   "tabela_y": 1198
+  },
+  {
+   "letra": "J",
+   "valor_m": 0.425,
+   "valor_texto": "0,425",
+   "x": 1287,
+   "y": 1250,
+   "posicoes": [
+    {
+     "x": 1287,
+     "y": 1250
+    }
+   ],
+   "tabela_x": 2380,
+   "tabela_y": 1240
+  },
+  {
+   "letra": "L/A",
+   "valor_m": 0.69,
+   "valor_texto": "0,69",
+   "x": 1607,
+   "y": 1110,
+   "posicoes": [
+    {
+     "x": 1607,
+     "y": 1110
+    }
+   ],
+   "tabela_x": 2390,
+   "tabela_y": 1283
+  },
+  {
+   "letra": "M/A",
+   "valor_m": 0.6,
+   "valor_texto": "0,60",
+   "x": 900,
+   "y": 1111,
+   "posicoes": [
+    {
+     "x": 900,
+     "y": 1111
+    }
+   ],
+   "tabela_x": 2396,
+   "tabela_y": 1326
+  }
+ ],
+ "usos": [
+  {
+   "slug": "banheira-retangular-dubai-com-hidro-em-acrilico",
+   "rotulo": "0,88 x 1,81 x 0,40"
+  },
+  {
+   "slug": "banheira-retangular-dubai-com-hidro",
+   "rotulo": "0,88 x 1,81 x 0,40"
+  },
+  {
+   "slug": "banheira-retangular-dubai-completa-com-hidro-em-acrilico",
+   "rotulo": "0,88 x 1,81 x 0,40"
+  },
+  {
+   "slug": "banheira-retangular-dubai-completa-com-hidro",
+   "rotulo": "0,88 x 1,81 x 0,40"
+  }
+ ],
+ "validacao_automatica": {
+  "ok": true,
+  "motivos": [],
+  "conferencias": [
+   {
+    "slug": "banheira-retangular-dubai-com-hidro-em-acrilico",
+    "rotulo": "0,88 x 1,81 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-dubai-com-hidro",
+    "rotulo": "0,88 x 1,81 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-dubai-completa-com-hidro-em-acrilico",
+    "rotulo": "0,88 x 1,81 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   },
+   {
+    "slug": "banheira-retangular-dubai-completa-com-hidro",
+    "rotulo": "0,88 x 1,81 x 0,40",
+    "ok": true,
+    "troca_ab": false,
+    "legivel": true
+   }
+  ]
+ },
+ "posicoes": {
+  "ok": true,
+  "letras": [
+   "A",
+   "B",
+   "H1",
+   "H2"
+  ],
+  "motivos": []
+ },
+ "segunda_leitura": {
+  "conferida": true,
+  "independente": false,
+  "divergencias": [],
+  "leituras": [
+   {
+    "revisor": "leitura visual do PNG 3400 px (recorte da tabela de cotas), feita sem consultar a extração do pdfjs; agente do bloco 2 de mídia",
+    "independente": false,
+    "data": "2026-10-19",
+    "tipo": "valores",
+    "conferida": true
+   }
+  ]
+ },
+ "avisos": [],
+ "sem_texto_extraivel": false,
+ "valores_validados": true,
+ "validada": true,
+ "revisor": "pdfjs (leitura automática) + segunda leitura visual independente por amostra do lote (agente corretor do bloco 2-midia (outro agente, não o construtor); verificador do bloco 2-midia)"
+}
