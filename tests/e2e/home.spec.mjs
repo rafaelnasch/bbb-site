@@ -121,3 +121,82 @@ test('sem JavaScript: portas, salas, preços e WhatsApp presentes; escolhedor vi
   await expect(page.locator('a[data-wa-contexto="home_como_comprar"]')).toHaveAttribute('href', /^https:\/\/wa\.me\/5535992194882\?text=/);
   await ctx.close();
 });
+
+// content-visibility (templates/parts/tardio.mjs): a altura reservada nunca passa da real, e a página
+// inteira mede quase o mesmo antes e depois de forçar a pintura de tudo (< 10%). Mede o conteúdo real de
+// cada seção pulada para dizer qual número trocar quando o conteúdo mudar.
+test('alturas reservadas: a página mede o real (< 10%) de 320 a 1920 px e nenhuma seção reserva mais que o conteúdo', async ({ page }) => {
+  for (const [w, h] of [[320, 700], [360, 780], [390, 844], [430, 932], [600, 900], [768, 1024], [1023, 800], [1024, 768], [1280, 800], [1440, 900], [1920, 1080]]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.goto(HOME(), { waitUntil: 'networkidle' });
+    await page.waitForFunction(() => [...document.styleSheets].some((s) => /\/site\.[^/]+\.css$/.test(s.href || '')));
+    const r = await page.evaluate(() => {
+      const secoes = [...document.querySelectorAll('[data-cv]')];
+      const reservado = secoes.map((s) => parseFloat(getComputedStyle(s).containIntrinsicBlockSize.replace(/^auto\s+/, '')));
+      const antes = document.documentElement.scrollHeight;
+      const st = document.createElement('style');
+      st.textContent = '*{content-visibility:visible!important}';
+      document.head.append(st);
+      const depois = document.documentElement.scrollHeight;
+      const real = secoes.map((s) => {
+        const cs = getComputedStyle(s);
+        return s.getBoundingClientRect().height - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - parseFloat(cs.borderTopWidth) - parseFloat(cs.borderBottomWidth);
+      });
+      st.remove();
+      return { antes, depois, secoes: secoes.map((s, i) => ({ nome: s.id || s.className, reservado: reservado[i], real: Math.floor(real[i]) })) };
+    });
+    expect(Math.abs(r.antes - r.depois) / r.depois, `${w}px: ${r.antes} contra ${r.depois}`).toBeLessThan(0.1);
+    for (const s of r.secoes) expect(s.reservado, `${w}px ${s.nome}: reserva ${s.reservado}, conteúdo real ${s.real}`).toBeLessThanOrEqual(s.real);
+  }
+});
+
+test('teclado: End leva ao rodapé e Home volta ao topo, no desktop e no celular', async ({ page }) => {
+  for (const [w, h] of [[1440, 900], [390, 844]]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.goto(HOME(), { waitUntil: 'networkidle' });
+    await page.locator('body').click({ position: { x: 5, y: 300 } });
+    // Um End já deixa o leitor dentro do rodapé (a altura reservada nunca passa da real).
+    await page.keyboard.press('End');
+    await page.waitForTimeout(600);
+    const um = await page.evaluate(() => { const r = document.getElementById('rodape').getBoundingClientRect(); return { topo: r.top, base: r.bottom, ih: innerHeight }; });
+    expect(um.topo, `${w}px: rodapé na tela depois de um End`).toBeLessThan(um.ih);
+    expect(um.base, `${w}px`).toBeGreaterThan(0);
+    // O rodapé pintado pode crescer um pouco (reserva arredondada para baixo): um segundo End chega ao fim.
+    await page.keyboard.press('End');
+    await page.waitForTimeout(600);
+    const fim = await page.evaluate(() => ({ y: scrollY + innerHeight, h: document.documentElement.scrollHeight, rodape: document.getElementById('rodape').getBoundingClientRect().bottom <= innerHeight + 1 }));
+    expect(fim.h - fim.y, `${w}px`).toBeLessThanOrEqual(2);
+    expect(fim.rodape, `${w}px: fim do rodapé visível`).toBe(true);
+    await page.keyboard.press('Home');
+    await page.waitForTimeout(500);
+    expect(await page.evaluate(() => scrollY)).toBe(0);
+  }
+});
+
+test('celular: a primeira tela mostra uma peça real (depois do load) sem tirar o LCP do H1', async ({ page }) => {
+  for (const [w, h] of [[360, 780], [390, 844], [430, 932]]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.addInitScript(() => {
+      window.__lcp = [];
+      new PerformanceObserver((l) => l.getEntries().forEach((e) => window.__lcp.push({ tag: e.element?.tagName, size: e.size }))).observe({ type: 'largest-contentful-paint', buffered: true });
+    });
+    await page.goto(HOME(), { waitUntil: 'load' });
+    const peca = page.locator('[data-abre-peca]');
+    await expect(peca).toBeVisible();
+    await expect(peca).toHaveClass(/is-viva/);
+    const box = await peca.boundingBox();
+    expect(box.y + box.height / 2, `${w}px: peça dentro da primeira tela`).toBeLessThan(h);
+    const ativa = page.locator('.abre-peca__img.is-ativa');
+    await expect(ativa).toHaveCount(1);
+    expect(await ativa.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
+    await page.waitForTimeout(400);
+    const lcp = await page.evaluate(() => window.__lcp);
+    expect(lcp.at(-1)?.tag, `${w}px: ${JSON.stringify(lcp)}`).toBe('H1');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), `${w}px`).toBeLessThanOrEqual(w);
+  }
+  // Desktop: a vitrine faz esse papel e a peça fica escondida.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(HOME(), { waitUntil: 'load' });
+  await page.waitForTimeout(300);
+  await expect(page.locator('[data-abre-peca]')).toBeHidden();
+});

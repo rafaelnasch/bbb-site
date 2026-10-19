@@ -201,6 +201,44 @@
     mqVit.addEventListener?.('change', (e) => { if (e.matches) aposLoad(ligarVit); });
   }
 
+  // ---------------------------------------------------------------- peça da abertura (celular e tablet)
+  // Foto real de cada coleção atrás do canto do título; aparece depois do load e do CSS do site (fora do
+  // caminho do LCP) e troca de coleção a cada CICLO_PECA ms, acendendo a porta correspondente. Modo
+  // lite: só a primeira foto, parada. No desktop quem faz isso é a vitrine.
+  const peca = d.querySelector('[data-abre-peca]');
+  const mqPeca = w.matchMedia('(max-width:1023.98px)');
+  if (peca) {
+    const CICLO_PECA = 6000;
+    const fotos = [...peca.querySelectorAll('[data-peca]')];
+    const portasP = [...d.querySelectorAll('.porta__a')];
+    let iP = 0, tP = 0, pecaViva = false;
+    const cssPronto = (fn) => {
+      const l = [...d.querySelectorAll('link[rel="stylesheet"]')].find((x) => /\/site\.[^/]+\.css$/.test(x.href));
+      if (l && !l.sheet) l.addEventListener('load', fn, { once: true }); else fn();
+    };
+    const marcar = () => {
+      fotos.forEach((f, i) => f.classList.toggle('is-ativa', i === iP));
+      const id = fotos[iP]?.dataset.peca;
+      portasP.forEach((a) => a.classList.toggle('is-ativa', mqPeca.matches && a.dataset.portaId === id));
+    };
+    const girar = () => {
+      clearTimeout(tP);
+      if (!pecaViva || BBB.lite || d.hidden || !mqPeca.matches || fotos.length < 2) return;
+      tP = setTimeout(() => { iP = (iP + 1) % fotos.length; marcar(); girar(); }, CICLO_PECA);
+    };
+    const ligarPeca = () => cssPronto(() => {
+      if (pecaViva || !mqPeca.matches) return;
+      pecaViva = true;
+      peca.hidden = false;
+      const primeira = fotos[0];
+      const mostrar = () => requestAnimationFrame(() => { peca.classList.add('is-viva'); girar(); });
+      if (primeira && !primeira.complete) primeira.addEventListener('load', mostrar, { once: true }); else mostrar();
+      d.addEventListener('visibilitychange', girar);
+    });
+    aposLoad(ligarPeca);
+    mqPeca.addEventListener?.('change', (e) => { if (e.matches) aposLoad(ligarPeca); else { clearTimeout(tP); portasP.forEach((a) => a.classList.remove('is-ativa')); } });
+  }
+
   // ---------------------------------------------------------------- tour da planta (P2, desktop)
   const obra = d.querySelector('[data-obra]');
   const passos = obra?.querySelector('[data-obra-passos]');
@@ -272,7 +310,7 @@
         // Seções com content-visibility mudam de altura quando são pintadas: recalcula as posições.
         let rt = 0;
         const refazer = () => { clearTimeout(rt); rt = setTimeout(() => ScrollTrigger.refresh(), 120); };
-        d.querySelectorAll('main > section[style*="content-visibility"]').forEach((s) => s.addEventListener('contentvisibilityautostatechange', refazer));
+        d.querySelectorAll('[data-cv]').forEach((s) => s.addEventListener('contentvisibilityautostatechange', refazer));
         // Mexer na planta com o ponteiro devolve o controle a quem está usando.
         fig?.addEventListener('pointerdown', () => obra.classList.add('is-manual'));
       }).catch(() => { iniciado = false; });

@@ -24,6 +24,7 @@ import { explorador, tabelaCotas, plantaDoTamanho, rotuloTam, urlPdf } from './p
 import { indiceCatalogo, fotoCartao, produtosDaCategoria, CAT_BANHEIRO, CAT_OFURO_EXTERNO, CAT_SPA_LUGARES } from '../build/lib/catalogo.mjs';
 import { QUASE_CM } from '../build/lib/encaixe.mjs';
 import { mapaLojas } from '../build/lib/mapa-lojas.mjs';
+import { tardio } from './parts/tardio.mjs';
 
 // Escolhas editoriais da home (quais coleções e peças mostrar); nenhum dado da empresa aqui.
 export const PORTAS = Object.freeze([
@@ -50,13 +51,14 @@ export const FAQ_HOME = Object.freeze(['faq-03', 'faq-02', 'faq-05', 'faq-14', '
 const TIPOS_RAPIDO = [['banheira', 'Banheira'], ['spa', 'Spa'], ['ofuro', 'Ofurô'], ['sauna', 'Sauna']];
 const PESSOAS_GERAL = [['1', 'Individual'], ['2', '2 pessoas'], ['3+', '3 ou mais']];
 
-// Seções abaixo da primeira tela: o navegador pula o layout e a pintura delas (e não pede as fotos
-// dos cartões) até chegarem perto (SPEC 12: menos bytes e trabalho antes da primeira pintura, que é o
-// LCP). A altura reservada é a maior medida entre 320 e 1440 px com folga, nunca menor que a real:
-// assim os testes de contraste e de toque acham cada elemento dentro da própria seção. Depois de
-// pintada, a seção guarda a altura real (contain-intrinsic-size: auto); o tour da planta recalcula as
-// posições do ScrollTrigger quando uma seção é pintada (src/js/home.js).
-const tardio = (px) => `content-visibility:auto;contain-intrinsic-size:auto ${px}px`;
+// Seções abaixo da primeira tela com content-visibility (templates/parts/tardio.mjs): só as pesadas e
+// de altura estável entre larguras, a galeria das salas (28 cartões) e o rodapé. A altura reservada é a
+// MENOR altura real do conteúdo medida em cada faixa de largura (320 a 599, 600 a 1023 e 1024 a 1920 px),
+// arredondada para baixo: a página nunca fica mais alta que o conteúdo, e a barra de rolagem e a tecla
+// End levam aonde devem. As demais seções têm altura que varia muito com a largura e não são puladas.
+// Se o conteúdo mudar, o teste e2e "alturas reservadas" acusa a diferença e mostra a medida nova.
+export const ALTURA_SALAS = Object.freeze({ m: 4750, t: 4850, d: 4000 });
+export const ALTURA_RODAPE = Object.freeze({ m: 2950, t: 2150, d: 1600 });
 const pad2 = (n) => String(n).padStart(2, '0');
 const dataBR = (iso) => {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ''));
@@ -144,6 +146,22 @@ function miniPorta(D, id) {
   return html`<picture><source type="image/avif" srcset="${url(m.avif)}"><img class="porta__img porta__img--foto" src="${url(m.webp)}" width="${m.lado}" height="${m.lado}" alt="" decoding="async"></picture>`;
 }
 
+/**
+ * Peça da abertura no celular e no tablet (a vitrine com o filme é só do desktop): a foto do quadro
+ * final de cada filme de coleção, recortada em 484 px por build/media-home.mjs (versionada, não depende
+ * dos filmes no build). Fica com `hidden` no HTML: o home.js mostra depois do load e do CSS do site,
+ * fora do caminho do LCP (o H1 continua sendo o maior elemento: a peça tem no máximo 240 px de lado).
+ * Decorativa (aria-hidden): as portas logo abaixo dizem o mesmo em texto.
+ */
+function pecaAbertura(D) {
+  if (!existsSync(join(paths.public, 'media', 'home', 'manifest.json'))) return '';
+  const ab = D.ler('../public/media/home/manifest.json')?.abertura || {};
+  const pecas = PORTAS.map(([path, id]) => ({ id, m: ab[id], cat: D.catPorPath.get(path) }))
+    .filter((x) => x.cat && x.m && [x.m.avif, x.m.webp].every((s) => existsSync(join(paths.public, s))));
+  if (!pecas.length) return '';
+  return html`<div class="abre-peca" aria-hidden="true" hidden data-abre-peca>${pecas.map(({ id, m }, i) => html`<picture><source type="image/avif" srcset="${url(m.avif)}"><img class="abre-peca__img${i === 0 ? ' is-ativa' : ''}" src="${url(m.webp)}" width="${m.lado}" height="${m.lado}" alt="" loading="lazy" decoding="async" data-peca="${id}"></picture>`)}</div>`;
+}
+
 /** Fotos da fábrica (build/media-fabrica.mjs). */
 function fotosFabrica(D) {
   const p = join(paths.public, 'media', 'fabrica', 'manifest.json');
@@ -219,7 +237,7 @@ function escolhedorRapido(D, indice, porSlug) {
   const opsIni = opcoesPessoas(indice.itens, '', cfg);
   const notas = notasDeContagem(D, porSlug);
   const op = (nome, valor, rot, n, marcado) => html`<label class="esc-op"><input type="radio" name="${nome}" value="${valor}"${attrs({ checked: marcado })}><span>${rot}${n != null ? html` <span class="num">${n}</span>` : ''}</span></label>`;
-  return html`<section class="dia secao home-esc" id="espaco" style="${tardio(1300)}" aria-labelledby="home-esc-h" data-home-esc>
+  return html`<section class="dia secao home-esc" id="espaco" aria-labelledby="home-esc-h" data-home-esc>
   <script type="application/json" data-config>${raw(JSON.stringify(cfg).replace(/</g, '\\u003c'))}</script>
   <div class="wrap home-esc__in">
     <div class="home-esc__cab" data-reveal>
@@ -283,7 +301,7 @@ export function paginas(ctx) {
     const mini = filme ? miniPorta(D, id) : null;
     const foto = filme ? null : lista.map((p) => fotoCartao(p.slug)).find(Boolean);
     return html`<li class="porta" data-intro style="--i:${4 + i}">
-  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filme ? id : null })}>
+  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filme ? id : null, 'data-porta-id': id })}>
     <span class="porta__mol${filme && !mini ? ' recorte' : ''}">${mini || (filme ? posterFilme(filme, { classe: 'porta__img', prioridade: true }) : foto ? picture(foto, { classe: 'porta__img porta__img--foto', sizes: '(min-width:1024px) 420px, 33vw', alt: '' }) : '')}</span>
     <span class="porta__txt"><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></span>
     ${icone('seta-dir', { tamanho: 20, classe: 'porta__seta' })}
@@ -299,6 +317,7 @@ export function paginas(ctx) {
   const abertura = html`<section class="sala home-abre" aria-labelledby="home-h1">
   <div class="home-abre__agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>
   ${temVapor ? html`<div class="home-abre__vapor" aria-hidden="true" data-vapor></div>` : ''}
+  ${pecaAbertura(D)}
   <div class="wrap home-abre__in">
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Fábrica em ${local.cidade}, ${local.uf}</p>
     <h1 id="home-h1" class="home-abre__h1">Banheiras, spas e ofurôs de hidromassagem, direto da fábrica em ${local.cidade}, ${local.uf}</h1>
@@ -317,7 +336,7 @@ export function paginas(ctx) {
     if (!lista.length) return null;
     const S = escalaDaColecao(lista);
     const id = `sala-${i + 1}`;
-    return html`<section class="sala-faixa" style="${tardio(760)}" aria-labelledby="${id}-h">
+    return html`<section class="sala-faixa" aria-labelledby="${id}-h">
   <header class="sala-faixa__cab" data-reveal>
     <p class="etiqueta"><span class="num">Sala ${pad2(i + 1)}</span></p>
     <h3 id="${id}-h" class="sala-faixa__h">${nome}</h3>
@@ -328,7 +347,7 @@ export function paginas(ctx) {
   </div>
 </section>`;
   }).filter(Boolean);
-  const galeria = html`<section class="sala secao home-salas" id="salas" style="${tardio(5400)}" aria-labelledby="home-salas-h">
+  const galeria = html`<section class="sala secao home-salas" id="salas"${attrs(tardio(ALTURA_SALAS))} aria-labelledby="home-salas-h">
   <div class="wrap">
     <div class="home-salas__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">A galeria</p>
@@ -347,7 +366,7 @@ export function paginas(ctx) {
   if (plObra?.media && plObra.validada && plObra.cotas.length) {
     const rot = rotuloTam(tObra);
     const passos = OBRA_PASSOS.map((l) => plObra.cotas.find((c) => c.letra === l)).filter(Boolean);
-    obra = html`<section class="sala sala--planta secao home-obra" style="${tardio(3200)}" aria-labelledby="home-obra-h" data-obra${attrs(gsap ? { 'data-gsap': gsap.core, 'data-scrolltrigger': gsap.st } : {})}>
+    obra = html`<section class="sala sala--planta secao home-obra" aria-labelledby="home-obra-h" data-obra${attrs(gsap ? { 'data-gsap': gsap.core, 'data-scrolltrigger': gsap.st } : {})}>
   <div class="wrap home-obra__in" data-tam-painel="0">
     <div class="home-obra__texto">
       <div data-reveal>
@@ -375,13 +394,13 @@ export function paginas(ctx) {
     const lista = produtosDaCategoria(catL, porSlug);
     const filme = filmeColecao(D, 'lancamentos');
     const S = escalaDaColecao(lista);
-    lancamentos = html`<section class="sala sala--2 secao home-lanc" style="${tardio(4800)}" aria-labelledby="home-lanc-h">
+    lancamentos = html`<section class="sala sala--2 secao home-lanc" aria-labelledby="home-lanc-h">
   <div class="wrap">
     <div class="home-lanc__cab">
       <div data-reveal>
         <p class="etiqueta etiqueta--linha">Novidades</p>
         <h2 id="home-lanc-h">${catL.nome}</h2>
-        <p class="lead"><span class="num" data-campo="categoria-total">${catL.total_exibido}</span> modelos novos no catálogo, todos com fotos reais da fábrica.</p>
+        <p class="lead"><span class="num" data-campo="categoria-total">${catL.total_exibido}</span> modelos na coleção ${catL.nome}, com fotos publicadas pela empresa.</p>
         <p><a class="link" href="${url(LANCAMENTOS)}">Ver a coleção ${catL.nome}</a></p>
       </div>
       ${filme ? html`<div class="home-lanc__filme" data-reveal aria-hidden="true"><div class="recorte">${posterFilme(filme, { classe: 'home-lanc__poster' })}${videoFilme(filme, 'home-lanc__video')}</div></div>` : ''}
@@ -395,7 +414,7 @@ export function paginas(ctx) {
   const nums = numerosDeclarados(E.numeros_declarados?.[0]?.literal);
   const ff = fotosFabrica(D);
   const mosaico = ff.fotos.filter((f) => f.width >= f.height && f.width / f.height < 2).slice(0, 5);
-  const fabrica = html`<section class="dia secao home-fab" style="${tardio(1900)}" aria-labelledby="home-fab-h">
+  const fabrica = html`<section class="dia secao home-fab" aria-labelledby="home-fab-h">
   <div class="wrap home-fab__in">
     <div class="home-fab__texto" data-reveal>
       <p class="etiqueta etiqueta--linha">A fábrica</p>
@@ -413,7 +432,7 @@ export function paginas(ctx) {
   // 7. Prova ------------------------------------------------------------------
   const ra = reclameAqui(E.reclame_aqui);
   const deps = (E.depoimentos || []).filter((d) => d.autor && d.texto);
-  const prova = ra || deps.length ? html`<section class="dia dia--areia secao home-prova" style="${tardio(1150)}" aria-labelledby="home-prova-h">
+  const prova = ra || deps.length ? html`<section class="dia dia--areia secao home-prova" aria-labelledby="home-prova-h">
   <div class="wrap home-prova__in">
     <div class="home-prova__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">Quem já comprou</p>
@@ -434,7 +453,7 @@ export function paginas(ctx) {
   const pag = D.ler('politicas.json')?.pagamento?.literal || '';
   const formas = pag.split(/\s+(?=\d\.\s)/).map((s) => s.trim()).filter(Boolean);
   const waVenda = D.wa('venda_principal');
-  const comprar = html`<section class="dia secao home-comprar" style="${tardio(1350)}" aria-labelledby="home-comprar-h">
+  const comprar = html`<section class="dia secao home-comprar" aria-labelledby="home-comprar-h">
   <div class="wrap">
     <div class="home-comprar__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">Como comprar</p>
@@ -450,7 +469,7 @@ export function paginas(ctx) {
 
   // 9. Lojas ------------------------------------------------------------------
   const M = mapaLojas(D.lojas);
-  const lojas = html`<section class="sala secao home-lojas" style="${tardio(1100)}" aria-labelledby="home-lojas-h">
+  const lojas = html`<section class="sala secao home-lojas" aria-labelledby="home-lojas-h">
   <div class="wrap home-lojas__in">
     <div class="home-lojas__texto" data-reveal>
       <p class="etiqueta etiqueta--linha">Lojas</p>
@@ -473,7 +492,7 @@ export function paginas(ctx) {
   const faqTodas = new Map((D.ler('faq.json') || []).map((f) => [f.id, f]));
   const faqs = FAQ_HOME.map((id) => faqTodas.get(id)).filter((f) => f && f.tipo === 'publicada' && f.exibir !== false && !f.oculto_ate_decisao && !/garantia/i.test(`${f.pergunta} ${f.tema}`) && (f.resposta_exibida || '').trim());
   const blog = (D.ler('blog-recentes.json')?.recentes || []).filter((b) => b.exibir).slice(0, 3);
-  const fim = html`<section class="dia secao home-fim" style="${tardio(1650)}" aria-labelledby="home-faq-h">
+  const fim = html`<section class="dia secao home-fim" aria-labelledby="home-faq-h">
   <div class="wrap home-fim__in">
     <div class="home-faq">
       <p class="etiqueta etiqueta--linha">Dúvidas</p>
@@ -537,7 +556,7 @@ export function paginas(ctx) {
       fontes: ['fonts/fraunces-titulo.woff2'],
       modulosTardios: true,
       cssAposPintura: true,
-      rodapeTardio: 4000,
+      rodapeTardio: ALTURA_RODAPE,
     }),
   }];
 }

@@ -6,6 +6,7 @@ import { url } from '../../build/lib/url.mjs';
 import { dados } from '../../build/lib/dados.mjs';
 import { linhaCanal, listaConsultores, horarioEmLinhas } from './gaveta-whats.mjs';
 import { MENU, COLECOES_SECUNDARIAS } from './header.mjs';
+import { tardio } from './tardio.mjs';
 
 // Páginas da SPEC 4 (tabela, linhas 8 a 11). Os rótulos são nomes de navegação, não dados da empresa.
 const COMPRA_E_SUPORTE = [
@@ -44,15 +45,15 @@ const NOME_REDE = { 'Twitter/X': 'X (Twitter)' };
 
 const links = (pares) => html`<ul class="rodape__lista">${pares.map(([nome, p]) => html`<li><a href="${url(p)}">${nome}</a></li>`)}</ul>`;
 
-/** @param {object} [o] { estilo } estilo inline do <footer> (ex.: content-visibility na home). */
-export function rodape({ estilo = null } = {}) {
+/** @param {object} [o] { tardio } alturas reservadas {m,t,d} para o content-visibility do rodapé (home). */
+export function rodape({ tardio: alturas = null } = {}) {
   const D = dados();
   const E = D.empresa;
   const colecoes = [...MENU.filter((m) => m.colecao).map((m) => m.colecao), ...COLECOES_SECUNDARIAS]
     .map((p) => D.catPorPath.get(p))
     .filter(Boolean);
   const redes = (E.redes || []).filter((r) => r.principal);
-  return html`<footer class="rodape sala" id="rodape"${attrs({ style: estilo })}>
+  return html`<footer class="rodape sala" id="rodape"${attrs(tardio(alturas))}>
   <div class="wrap">
     <section class="rodape__cta" aria-labelledby="rf-cta" data-reveal>
       <div>

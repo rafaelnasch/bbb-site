@@ -61,8 +61,8 @@ function ogPadrao() {
  * @param {boolean}[p.modulosTardios] módulos da página só pedidos depois do load (core.js), fora do caminho do LCP
  * @param {boolean}[p.cssAposPintura] o CSS do site só é pedido depois da primeira pintura (core.js); a primeira
  *                                tela tem de estar inteira no CSS crítico. Sem JS, o <noscript> carrega o CSS
- * @param {number} [p.rodapeTardio] altura reservada (px, nunca menor que a real) para pular o layout do rodapé
- *                                até ele chegar perto da tela (content-visibility); usado na home
+ * @param {object} [p.rodapeTardio] alturas reservadas {m,t,d} (px, iguais ou menores que as reais) para pular o
+ *                                layout do rodapé até ele chegar perto da tela (templates/parts/tardio.mjs); usado na home
  * @param {boolean}[p.bandeja]   false omite a bandeja do comparador (no próprio comparador ela só cobriria a página)
  */
 export function layout(p) {
@@ -136,7 +136,7 @@ ${cabecalho({ ativo: p.ativo, sobre: p.sobre })}
 <main id="conteudo" tabindex="-1">
 ${p.corpo}
 </main>
-${rodape({ estilo: p.rodapeTardio ? `content-visibility:auto;contain-intrinsic-size:auto ${p.rodapeTardio}px` : null })}
+${rodape({ tardio: p.rodapeTardio || null })}
 ${gavetaMenu({ ativo: p.ativo })}
 ${gavetaWhats()}
 ${p.bandeja === false ? '' : html`<div class="bandeja" data-bandeja hidden role="region" aria-label="Modelos para comparar">

@@ -9,8 +9,9 @@ import { gzipSync } from 'node:zlib';
 import { HtmlValidate } from 'html-validate';
 import { renderizar } from '../build/render.mjs';
 import { paths, BASE_PATH } from '../site.config.mjs';
-import { PORTAS, SALAS, PECAS_POR_SALA, FAQ_HOME, numerosDeclarados, reclameAqui, horarioSchema, cidadeDaFabrica, opcoesPessoas } from '../templates/home.mjs';
+import { PORTAS, SALAS, PECAS_POR_SALA, FAQ_HOME, ALTURA_SALAS, ALTURA_RODAPE, numerosDeclarados, reclameAqui, horarioSchema, cidadeDaFabrica, opcoesPessoas } from '../templates/home.mjs';
 import { mapaLojas } from '../build/lib/mapa-lojas.mjs';
+import { alturaReservada } from '../templates/parts/tardio.mjs';
 import { validar } from '../build/validate.mjs';
 
 const DIST = join(paths.cache, 'dist-home');
@@ -245,12 +246,61 @@ test('escolhedor rápido explica quando a coleção lista peça de outro tipo (c
   }
 });
 
-test('seções abaixo da primeira tela com content-visibility e altura reservada; a abertura e o tour não', () => {
+test('content-visibility só na galeria das salas e no rodapé, com altura reservada por faixa de largura', () => {
   const abre = /<section class="sala home-abre"[^>]*>/.exec(h)[0];
   assert.doesNotMatch(abre, /content-visibility/);
-  for (const c of ['home-esc', 'home-salas', 'home-obra', 'home-lanc', 'home-fab', 'home-prova', 'home-comprar', 'home-lojas', 'home-fim']) {
-    const tag = new RegExp(`<section class="[^"]*\\b${c}\\b[^"]*"[^>]*>`).exec(h)?.[0] || '';
-    assert.match(tag, /content-visibility:auto;contain-intrinsic-size:auto \d+px/, c);
+  const tag = (c) => new RegExp(`<section class="[^"]*\\b${c}\\b[^"]*"[^>]*>`).exec(h)?.[0] || '';
+  // Seções de altura muito variável entre larguras não são puladas (reservar errado mentiria na rolagem).
+  for (const c of ['home-esc', 'home-obra', 'home-lanc', 'home-fab', 'home-prova', 'home-comprar', 'home-lojas', 'home-fim']) {
+    assert.doesNotMatch(tag(c), /content-visibility/, c);
   }
-  assert.match(h, /<footer class="rodape sala" id="rodape" style="content-visibility:auto;contain-intrinsic-size:auto \d+px">/);
+  assert.doesNotMatch(h, /<section class="sala-faixa"[^>]*content-visibility/, 'sem content-visibility aninhado nas faixas');
+  const esperado = (a) => alturaReservada(a).replace(/[()*+]/g, (x) => `\\${x}`);
+  assert.match(tag('home-salas'), new RegExp(`content-visibility:auto;contain-intrinsic-block-size:auto ${esperado(ALTURA_SALAS)}" data-cv`));
+  assert.match(h, new RegExp(`<footer class="rodape sala" id="rodape" style="content-visibility:auto;contain-intrinsic-block-size:auto ${esperado(ALTURA_RODAPE)}" data-cv`));
+});
+
+test('altura reservada: degraus nos mesmos cortes das media queries (600 e 1024 px)', () => {
+  assert.equal(alturaReservada({ m: 4750, t: 4850, d: 4000 }), 'calc(4750px + clamp(0px, (100vw - 599px) * 100000, 100px) - clamp(0px, (100vw - 1023px) * 100000, 850px))');
+  assert.equal(alturaReservada({ m: 900, t: 900, d: 900 }), 'calc(900px)');
+  assert.throws(() => alturaReservada({ m: 1, t: 0, d: 1 }));
+});
+
+test('abertura no celular: peça real de cada porta, escondida no HTML, lazy e menor que o H1', () => {
+  const p = /<div class="abre-peca"[\s\S]*?<\/div>/.exec(h)?.[0] || '';
+  assert.ok(p, 'peça da abertura presente');
+  assert.match(p, /aria-hidden="true" hidden data-abre-peca/);
+  const imgs = [...p.matchAll(/<img [^>]*>/g)].map((m) => m[0]);
+  assert.equal(imgs.length, PORTAS.length);
+  for (const [i, [, id]] of PORTAS.entries()) {
+    assert.match(imgs[i], new RegExp(`data-peca="${id}"`));
+    assert.match(imgs[i], /loading="lazy"/);
+    assert.doesNotMatch(imgs[i], /fetchpriority/);
+    assert.match(imgs[i], new RegExp(`src="${BASE_PATH}/media/home/abertura-${id}-484\\.webp"`));
+    assert.ok(existsSync(join(paths.public, 'media', 'home', `abertura-${id}-484.avif`)), id);
+  }
+  // Não depende dos filmes: as portas sempre sabem qual peça acender.
+  for (const [, id] of PORTAS) assert.match(h, new RegExp(`data-porta-id="${id}"`));
+});
+
+test('lançamentos: texto derivado, sem afirmar a origem das fotos além de "publicadas pela empresa"', () => {
+  const sec = /<section class="sala sala--2 secao home-lanc"[\s\S]*?<\/section>/.exec(h)[0];
+  const c = cat('lancamentos.html');
+  assert.match(texto(sec), new RegExp(`${c.total_exibido} modelos na coleção ${c.nome}, com fotos publicadas pela empresa\\.`));
+  assert.doesNotMatch(texto(sec), /reais da fábrica|fotos reais/);
+});
+
+// Filmes (public/media/filmes, gerados por build/films.mjs): no build de publicação (CI), a home precisa
+// deles versionados; sem eles a vitrine e os lançamentos caem para a foto, e a imersão anunciada some.
+test('publicação: filmes das portas e dos lançamentos presentes no build de CI', { skip: !process.env.CI && 'só no CI (localmente os filmes podem estar fora do git)' }, () => {
+  const man = join(paths.public, 'media', 'filmes', 'manifest.json');
+  assert.ok(existsSync(man), 'public/media/filmes/manifest.json ausente: commite os filmes antes do deploy');
+  const col = JSON.parse(readFileSync(man, 'utf8')).colecao || {};
+  for (const id of [...PORTAS.map(([, i]) => i), 'lancamentos']) {
+    const f = col[id];
+    assert.ok(f, `filme ${id} no manifest`);
+    for (const src of [f.webm?.src, f.mp4?.src, f.poster?.avif?.src]) assert.ok(src && existsSync(join(paths.public, src)), `${id}: ${src} ausente`);
+  }
+  assert.match(h, /data-vitrine/);
+  assert.match(h, /home-lanc__video/);
 });

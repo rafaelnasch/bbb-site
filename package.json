@@ -18,7 +18,7 @@
     "test:midia": "node --test tests/media.test.mjs",
     "e2e": "playwright test tests/e2e",
     "lhci": "lhci autorun",
-    "all": "npm run normalize && npm run media && npm run films && npm run og && npm run build && npm test",
+    "all": "npm run normalize && npm run media && npm run films && npm run media:home && npm run og && npm run build && npm run fontes:titulo && npm test",
     "brand": "node build/brand.mjs",
     "fontes": "node build/fontes.mjs",
     "build:sistema": "node build/render.mjs --sistema",
@@ -30,7 +30,9 @@
     "e2e:produto": "node build/render.mjs && playwright test tests/e2e/produto.spec.mjs",
     "media:fabrica": "node build/media-fabrica.mjs",
     "test:home": "node --test tests/home.test.mjs",
-    "e2e:home": "node build/render.mjs && playwright test tests/e2e/home.spec.mjs"
+    "e2e:home": "node build/render.mjs && playwright test tests/e2e/home.spec.mjs",
+    "media:home": "node build/media-home.mjs",
+    "fontes:titulo": "node build/fontes-titulo.mjs"
   },
   "devDependencies": {
     "@lhci/cli": "0.15.1",

@@ -38,5 +38,25 @@
    "lado": 240,
    "poster": "media/filmes/colecao/lancamentos-poster.webp"
   }
+ },
+ "abertura": {
+  "banheiras": {
+   "avif": "media/home/abertura-banheiras-484.avif",
+   "webp": "media/home/abertura-banheiras-484.webp",
+   "lado": 484,
+   "poster": "media/filmes/colecao/banheiras-poster.webp"
+  },
+  "spas": {
+   "avif": "media/home/abertura-spas-484.avif",
+   "webp": "media/home/abertura-spas-484.webp",
+   "lado": 484,
+   "poster": "media/filmes/colecao/spas-poster.webp"
+  },
+  "ofuros": {
+   "avif": "media/home/abertura-ofuros-484.avif",
+   "webp": "media/home/abertura-ofuros-484.webp",
+   "lado": 484,
+   "poster": "media/filmes/colecao/ofuros-poster.webp"
+  }
  }
 }

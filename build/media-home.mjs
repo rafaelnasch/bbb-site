@@ -2,14 +2,18 @@
 // A porta mostra a foto do quadro final do filme da coleção (o poster), recortada na área da foto do
 // filme (484 px a partir de 399,79 no quadro de 1280x720, a mesma do recorte em CSS) e reduzida a
 // 240 px: cerca de 3 KB em vez dos 7 a 11 KB do poster inteiro, pedidos antes da primeira pintura.
+// A mesma área, no tamanho original de 484 px (sem ampliar), é a peça da abertura no celular e no
+// tablet (vitrine compacta atrás do título, pedida só depois do load).
 // Sem recorte de fundo, sem upscaling, sem geração (SPEC 0.8): só corte e redução do quadro real.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import sharp from 'sharp';
 import { paths } from '../site.config.mjs';
+import { PORTAS } from '../templates/home.mjs';
 
 export const RECORTE = Object.freeze({ left: 399, top: 79, width: 484, height: 484 });
 const LADO = 240;
+const LADO_ABERTURA = RECORTE.width; // tamanho original da área recortada: nunca ampliar (SPEC 0.8)
 const man = JSON.parse(readFileSync(join(paths.public, 'media', 'filmes', 'manifest.json'), 'utf8'));
 const out = join(paths.public, 'media', 'home');
 mkdirSync(out, { recursive: true });
@@ -24,6 +28,13 @@ for (const [id, f] of Object.entries(man.colecao || {})) {
   await base.clone().avif({ quality: 55 }).toFile(join(paths.public, avif));
   await base.clone().webp({ quality: 80 }).toFile(join(paths.public, webp));
   saida.portas[id] = { avif, webp, lado: LADO, poster: src };
+  if (!PORTAS.some(([, pid]) => pid === id)) continue; // a peça da abertura só existe para as três portas
+  const crop = sharp(join(paths.public, src)).extract(RECORTE);
+  const aAvif = `media/home/abertura-${id}-${LADO_ABERTURA}.avif`, aWebp = `media/home/abertura-${id}-${LADO_ABERTURA}.webp`;
+  await crop.clone().avif({ quality: 50 }).toFile(join(paths.public, aAvif));
+  await crop.clone().webp({ quality: 78 }).toFile(join(paths.public, aWebp));
+  saida.abertura ||= {};
+  saida.abertura[id] = { avif: aAvif, webp: aWebp, lado: LADO_ABERTURA, poster: src };
   console.log(id, avif);
 }
 writeFileSync(join(out, 'manifest.json'), `${JSON.stringify(saida, null, 1)}\n`);
