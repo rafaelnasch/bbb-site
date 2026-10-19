@@ -122,6 +122,14 @@
 .inst-tab td a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
 .inst-tab tr.is-uf>*{background:color-mix(in srgb,var(--glow) 22%,transparent)}
 .inst-tab tr.is-fora>*{opacity:.5}
+/* Tabelas do manual (grade do PDF, com células mescladas) */
+.inst-prosa>.inst-mtab-rol{margin-top:1.25em}
+.inst-mtab{font-size:.9375rem}
+.inst-mtab th,.inst-mtab td{padding:10px 12px;border:1px solid var(--rule);vertical-align:middle}
+.inst-mtab thead th{background:color-mix(in srgb,var(--porcelain) 70%,var(--bg));letter-spacing:.04em;text-transform:none;font-size:.8125rem;color:var(--fg)}
+.inst-mtab tbody th{font-weight:600}
+.inst-mtab td{font-variant-numeric:tabular-nums}
+.inst-mtab--larga{min-width:560px}
 .inst-uf__campo{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;font-weight:600;font-size:.9375rem}
 .inst-uf select{min-height:44px;padding:0 14px;border:1px solid var(--rule);border-radius:10px;background:var(--bg)}
 .inst-notas{display:grid;gap:8px;font-size:.9375rem;color:var(--fg-2);max-width:68ch}
@@ -169,7 +177,8 @@
 @media (min-width:1024px){.inst-colunas-lista{columns:3}}
 .inst-colunas-lista li{break-inside:avoid;padding:6px 0;font-size:.9375rem;line-height:1.4}
 .inst-colunas-lista .num{color:var(--fg-2);font-size:.8125rem}
-.inst-conta{color:var(--fg-2);font:400 .875rem/1 var(--f-body)}
+.inst-conta{color:var(--fg-2);font:400 .875rem/1.3 var(--f-body);letter-spacing:0;text-transform:none}
+.inst-conta-rot{color:var(--fg-2);font-size:.875rem;white-space:nowrap}
 
 /* ---------- Mapa (localização) ---------- */
 .inst--sala{padding-top:clamp(24px,3vw,48px)}

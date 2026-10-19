@@ -170,6 +170,21 @@ export async function validar(dist = paths.dist) {
   if (existsSync(join(paths.templates, 'produto.mjs'))) {
     const prods = JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8'));
     for (const p of prods) if (!existsSync(join(dist, `${p.slug}.html`))) erro(dist, `produto ausente: ${p.slug}.html`);
+    // Mesmo path do catalog.json (d_path): a página ali tem de ser a do produto. Uma ponte no caminho
+    // atual não conta como página de produto; só passa (como pendente, nunca como coberto) quando o
+    // desvio está registrado em institucionais.json para decisão do dono.
+    const instF = join(paths.data, 'institucionais.json');
+    const decisoes = existsSync(instF) ? JSON.parse(readFileSync(instF, 'utf8')).decisoes || [] : [];
+    const aguardando = new Set(decisoes.filter((d) => d.aprovacao_do_dono === 'pendente').flatMap((d) => d.produtos || []));
+    const soPonte = [];
+    for (const p of prods) {
+      const f = join(dist, p.d_path || `${p.slug}.html`);
+      if (!existsSync(f)) { erro(dist, `13.10 produto ausente no caminho do catalog.json: ${p.d_path}`); continue; }
+      if (/"@type":"Product"/.test(readFileSync(f, 'utf8'))) continue;
+      if (aguardando.has(p.slug)) soPonte.push(p.d_path);
+      else erro(dist, `13.10 ${p.d_path}: não é página de produto`);
+    }
+    if (soPonte.length) pendentes.push(`13.10 ${prods.length - soPonte.length} de ${prods.length} produtos no caminho do catalog.json; ${soPonte.length} só com ponte no caminho atual, aguardando decisão do dono: ${soPonte.join(', ')}`);
     if (existsSync(join(dist, 'produto-outlet.html'))) erro(dist, 'produto-outlet.html não deve existir');
   } else pendentes.push('13.10 produtos (template ainda não existe)');
 

@@ -172,7 +172,9 @@ function fotosFabrica(D) {
   const p = join(paths.public, 'media', 'fabrica', 'manifest.json');
   if (!existsSync(p)) return { fotos: [], titulo: null, fonte: null };
   const m = D.ler('../public/media/fabrica/manifest.json');
-  const fotos = (m.fotos || []).filter((f) => f.fontes?.['image/webp']?.every(([s]) => existsSync(join(paths.public, s)))).map((f) => {
+  // Fotos com telefone fora dos contatos no muro: fora até a revisão (data/institucionais.json).
+  const fora = new Set((D.ler('institucionais.json')?.fotos_fabrica_fora || []).map((x) => x.sha1));
+  const fotos = (m.fotos || []).filter((f) => !fora.has(f.sha1)).filter((f) => f.fontes?.['image/webp']?.every(([s]) => existsSync(join(paths.public, s)))).map((f) => {
     const webp = f.fontes['image/webp'], avif = f.fontes['image/avif'] || [];
     return {
       n: f.n,

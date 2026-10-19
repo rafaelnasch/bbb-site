@@ -9,6 +9,7 @@ import { filtrarFrasesEditorial, filtrarFrasesEditorialMultilinha, detectoresEdi
 // Qual lista pegou o trecho: a fechada da SPEC 0.5 ou a ampliada por decisão do dono (texto.mjs).
 const listaSaude = (termos) => (termosSaudeSpec(termos.join(' ')).length ? 'spec_0.5' : 'ampliada_dono');
 import { somaReais } from './lib/money.mjs';
+import { lerTabelasDoManual, corrigirGrafiaDoManual, conferirCaracteres } from './manual-tabelas.mjs';
 import { parseRotuloTamanho, valorUnicoFicha, numerosNoNome, mesmasMedidas } from './lib/medidas.mjs';
 
 const R = paths.recon;
@@ -1137,7 +1138,7 @@ function filtrarManual(paginas) {
   let aberto = null;
   // 1) Capítulos inteiros e linhas do índice (por linha: são blocos com título de início e de fim).
   for (const pg of paginas) {
-    const linhas = pg.texto.split('\n');
+    const linhas = (pg.texto_grafia ?? pg.texto).split('\n');
     pg._ficam = [];
     pg.trechos_ocultos = [];
     linhas.forEach((linha, idx) => {
@@ -1241,6 +1242,29 @@ function fraseCompletaPolitica(k) {
   return m ? t.slice(i, i + Math.max(0, k.length - 1) + m.index + 1).trim() : null;
 }
 
+// Manual: grafia conferida no próprio PDF (palavra que a extração partiu) e tabelas lidas do PDF
+// pela grade (build/manual-tabelas.mjs). Cada correção e cada item omitido vai ao editorial-log.
+const PDF_MANUAL = join(R, 'html', 'pdf', 'manual-do-usuario.pdf');
+const paginasManual = paginasDoManual();
+if (existsSync(PDF_MANUAL)) {
+  for (const c of await corrigirGrafiaDoManual(PDF_MANUAL, paginasManual)) {
+    editorialLog.push({ manual_pagina: c.pagina, campo: 'politicas.manual.paginas[].texto', regra: 'palavra_partida_na_extracao', antes: c.antes, depois: c.depois, obs: 'a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF' });
+  }
+}
+filtrarManual(paginasManual);
+if (existsSync(PDF_MANUAL)) {
+  for (const t of await lerTabelasDoManual(PDF_MANUAL)) {
+    const pg = paginasManual.find((p) => p.pagina === t.pagina);
+    if (!pg || pg.sem_texto_exibido) throw new Error(`manual: página ${t.pagina} da tabela ${t.id} sem texto exibido`);
+    conferirCaracteres(pg.texto_exibido.split('\n'), t);
+    delete t._caracteres;
+    if (t.omitidos.length) {
+      editorialLog.push({ manual_pagina: t.pagina, campo: 'politicas.manual.paginas[].tabelas', regra: t.omitidos_motivo, removido: t.omitidos.join(' | '), obs: 'texto presente no arquivo do PDF, mas sem lugar visível na página impressa (abaixo da etiqueta desenhada); fora do HTML até a empresa confirmar' });
+    }
+    (pg.tabelas ||= []).push(t);
+  }
+}
+
 const pz = inst.comercial.prazo_de_entrega;
 const politicas = {
   como_comprar: { texto: inst.comercial.como_comprar.texto, telefone: inst.comercial.como_comprar.telefone, fonte: inst.comercial.como_comprar.source_url },
@@ -1290,7 +1314,7 @@ const politicas = {
     pdf_path: 'manual/manual-do-usuario.pdf',
     paginas_total: inst.suporte_pos_venda.manual_usuario_pdf.paginas,
     descricao_literal: inst.suporte_pos_venda.manual_usuario_pdf.descricao_literal,
-    paginas: filtrarManual(paginasDoManual()),
+    paginas: paginasManual,
     fonte: inst.suporte_pos_venda.manual_usuario_pdf.source_url,
   },
   rastreio: { campos: inst.suporte_pos_venda.rastreio.campos, cnpjs_aceitos_literal: inst.empresa.cnpjs_aceitos_no_rastreio.literal, fonte: inst.suporte_pos_venda.rastreio.source_url },
@@ -1393,7 +1417,8 @@ const exibidos = {
     'prazo-entrega': { data: 'politicas.json:prazo_de_entrega.tabela[].linhas[].prazo', origem: 'institucional.json:comercial.prazo_de_entrega.tabela' },
     pagamento: { data: 'politicas.json:pagamento.literal', origem: 'institucional.json:comercial.formas_pagamento.literal' },
     'categoria-descricao': { data: 'categorias.json[].d_descricao_exibida', origem: 'catalog.json:categories[].descricao_texto', obs: 'menos o filtro editorial de data/editorial-log.json' },
-    'manual-texto': { data: 'politicas.json:manual.paginas[].texto_exibido', origem: '_recon/html/pdf/manual-do-usuario.txt', obs: 'menos garantia e afirmações de saúde (editorial-log)' },
+    'manual-tabela': { data: 'politicas.json:manual.paginas[].tabelas[]', origem: '_recon/html/pdf/manual-do-usuario.pdf (texto lido com pdfjs, na grade de build/manual-tabelas.mjs)', obs: 'caracteres conferidos com o trecho do texto do manual que a tabela substitui' },
+    'manual-texto': { data: 'politicas.json:manual.paginas[].texto_exibido', origem: '_recon/html/pdf/manual-do-usuario.txt', obs: 'menos garantia e afirmações de saúde (editorial-log); palavras que a extração partiu, unidas como no PDF (texto_grafia, regra palavra_partida_na_extracao); tabelas em manual-tabela' },
     'faq-resposta': { data: 'faq.json[].resposta_exibida', origem: 'faq-source.json:faq[].resposta_literal', obs: 'presente nos 46 itens; exibir só quando exibir=true; resposta (literal) nunca vai ao HTML direto' },
     'empresa-texto': { data: 'empresa.json:textos_integrais.<chave>.texto_exibido', origem: 'institucional.json:empresa.textos_integrais.<chave>.texto', obs: 'menos o filtro editorial (saúde, superlativo, autodeclaração, garantia, número da empresa)' },
     'meta-title': { data: 'produtos.json[]|categorias.json[].d_meta_exibida.title', origem: 'catalog.json:products[]|categories[].meta.title', obs: 'null = gerar de campos reais (SPEC 11.1); nunca usar meta.title cru' },

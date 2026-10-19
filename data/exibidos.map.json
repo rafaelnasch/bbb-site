@@ -136,10 +136,15 @@
       "origem": "catalog.json:categories[].descricao_texto",
       "obs": "menos o filtro editorial de data/editorial-log.json"
     },
+    "manual-tabela": {
+      "data": "politicas.json:manual.paginas[].tabelas[]",
+      "origem": "_recon/html/pdf/manual-do-usuario.pdf (texto lido com pdfjs, na grade de build/manual-tabelas.mjs)",
+      "obs": "caracteres conferidos com o trecho do texto do manual que a tabela substitui"
+    },
     "manual-texto": {
       "data": "politicas.json:manual.paginas[].texto_exibido",
       "origem": "_recon/html/pdf/manual-do-usuario.txt",
-      "obs": "menos garantia e afirmações de saúde (editorial-log)"
+      "obs": "menos garantia e afirmações de saúde (editorial-log); palavras que a extração partiu, unidas como no PDF (texto_grafia, regra palavra_partida_na_extracao); tabelas em manual-tabela"
     },
     "faq-resposta": {
       "data": "faq.json[].resposta_exibida",

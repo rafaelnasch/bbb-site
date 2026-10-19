@@ -12,6 +12,7 @@
 //  - o sumário é o índice do PDF: o texto literal de cada linha do índice, ligado ao título
 //    correspondente. Linha do índice sem título correspondente no texto exibido fica fora.
 import { slugify, semAcento } from '../../build/lib/texto.mjs';
+import { trechoDaTabela } from '../../build/manual-tabelas.mjs';
 
 const letras = (s) => (s.match(/\p{L}/gu) || []).length;
 const caixaAlta = (s) => letras(s) >= 4 && s === s.toLocaleUpperCase('pt-BR') && /\p{Lu}/u.test(s);
@@ -56,7 +57,8 @@ function refluir(linhas) {
       // Item de lista em caixa alta que continua na linha seguinte.
       else if (caixaAlta(ant) && caixaAlta(l) && RE_ITEM.test(ant)) junta = true;
     }
-    if (junta) out[out.length - 1] = `${ant} ${l}`; else out.push(l);
+    // Palavra com hífen no fim da linha impressa ("tomando-" / "se", "vice-" / "versa") continua colada.
+    if (junta) out[out.length - 1] = /\p{L}-$/u.test(ant) && /^\p{Ll}/u.test(l) ? `${ant}${l}` : `${ant} ${l}`; else out.push(l);
   }
   return out;
 }
@@ -80,19 +82,36 @@ export function blocosDoManual(paginas, indice) {
   const saida = paginas.map((pg) => {
     const linhasPg = [];
     let ls = String(pg.texto_exibido || '').split('\n').map((l) => l.replace(/\s+/g, ' ').trim());
+    // Tabelas lidas do PDF (build/manual-tabelas.mjs): o trecho que a extração desmontou sai do texto
+    // e a tabela entra no lugar (ou acima da linha onde o PDF a desenha). O título da tabela vira
+    // linha própria (título ou parágrafo, pelas regras de sempre).
+    for (const t of pg.tabelas || []) {
+      const { de, ate } = trechoDaTabela(ls, t);
+      const antes = t.titulo.map((x) => x.texto);
+      const bloco = ['', ...antes, { tabela: t }, ''];
+      ls.splice(de, ate - de + 1, ...(t.inserir_antes ? [''] : bloco));
+      if (t.inserir_antes) {
+        const k = ls.findIndex((l) => typeof l === 'string' && l === t.inserir_antes);
+        if (k < 0) throw new Error(`manual p. ${pg.pagina}: linha "${t.inserir_antes}" não encontrada para a tabela ${t.id}`);
+        ls.splice(k, 0, ...bloco);
+      }
+    }
     if (ls[0] === String(pg.pagina)) ls = ls.slice(1);
     // Trechos separados por linha em branco não se juntam.
     let trecho = [];
     const fecha = () => { if (trecho.length) linhasPg.push(...refluir(trecho)); trecho = []; };
-    for (const l of ls) { if (l) trecho.push(l); else fecha(); }
+    for (const l of ls) {
+      if (typeof l === 'object') { fecha(); linhasPg.push(l); } else if (l) trecho.push(l); else fecha();
+    }
     fecha();
     const blocos = linhasPg.map((l, i) => {
+      if (typeof l === 'object') return { tipo: 'tabela', tabela: l.tabela };
       const prox = linhasPg[i + 1];
       if (RE_ITEM.test(l)) return { tipo: 'li', texto: l.replace(RE_ITEM, '') };
       if (linhaDeTabela(l)) return { tipo: 'linha', texto: l };
       // Última linha da página (o texto do capítulo é desenho no PDF): só vale como título se for
       // capítulo do índice; senão volta a parágrafo.
-      if (caixaAlta(l) && l.length <= 80 && !/[;,]$/.test(l) && (prox == null || !linhaDeTabela(prox))) {
+      if (caixaAlta(l) && l.length <= 80 && !/[;,]$/.test(l) && (prox == null || typeof prox === 'object' || !linhaDeTabela(prox))) {
         const b = { tipo: 'titulo', texto: l, id: novoId(pg.pagina, l), pagina: pg.pagina, sem_corpo: prox == null };
         titulos.push(b);
         return b;

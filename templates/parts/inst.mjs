@@ -97,11 +97,38 @@ export function prosa(blocos, { campo = 'institucional-texto' } = {}) {
       while (blocos[i]?.tipo === 'linha') itens.push(blocos[i++]);
       i--;
       out.push(html`<ul class="inst-lista inst-lista--linhas num">${itens.map((x) => html`<li>${x.texto}</li>`)}</ul>`);
+    } else if (b.tipo === 'tabela') {
+      out.push(tabelaDoManual(b.tabela, blocos.slice(0, i).reverse().find((x) => (x.tipo === 'h2' || x.tipo === 'h3') && x.id)));
     } else if (b.tipo === 'h2') out.push(html`<h2${attrs({ id: b.id, class: b.caixa ? 'inst-h2 inst-h2--caixa' : 'inst-h2' })}>${b.texto}</h2>`);
     else if (b.tipo === 'h3') out.push(html`<h3${attrs({ id: b.id, class: b.caixa ? 'inst-h3 inst-h3--caixa' : 'inst-h3' })}>${b.texto}</h3>`);
     else out.push(html`<p>${comLinks(b.texto)}</p>`);
   }
   return html`<div class="inst-prosa" data-campo="${campo}">${out}</div>`;
+}
+
+/**
+ * Tabela do manual lida do PDF (build/manual-tabelas.mjs): células e mesclas como na página
+ * impressa; a primeira coluna das linhas de dados é o rótulo da linha (<th scope="row">). O nome
+ * acessível é o rótulo da configuração ou o título que vem antes (aria-labelledby).
+ */
+function tabelaDoManual(t, tituloAntes) {
+  // Nome: o rótulo da configuração; senão o título da própria tabela; senão o último título da página.
+  const nome = t.rotulo || null;
+  const titulo = nome ? null : (tituloAntes?.id || null);
+  const cab = t.linhas.slice(0, t.cabecalho);
+  const corpo = t.linhas.slice(t.cabecalho);
+  const celula = (c, tag, extra = {}) => {
+    const partes = String(c.texto).split('\n');
+    return html`<${tag}${attrs({ rowspan: c.rs || null, colspan: c.cs || null, ...extra })}>${partes.map((x, k) => html`${k ? html`<br>` : ''}${x}`)}</${tag}>`;
+  };
+  return html`<div${attrs({ class: 'rolagem inst-mtab-rol', tabindex: '0', role: 'region', 'aria-labelledby': titulo, 'aria-label': nome })}><table${attrs({ class: `inst-tab inst-mtab${t.linhas[0]?.length > 3 ? ' inst-mtab--larga' : ''}`, id: `tab-${t.id}`, 'aria-labelledby': titulo, 'aria-label': nome, 'data-campo': 'manual-tabela', 'data-pagina': String(t.pagina) })}>
+    ${cab.length ? html`<thead>${cab.map((l) => html`<tr>${l.map((c) => celula(c, 'th', { scope: c.cs ? 'colgroup' : 'col' }))}</tr>`)}</thead>` : ''}
+    <tbody>${corpo.map((l) => {
+      // Linha que continua uma célula mesclada de cima não tem a primeira coluna: nenhuma célula é rótulo.
+      const completa = l.length === Math.max(...corpo.map((x) => x.reduce((n, c) => n + (c.cs || 1), 0)));
+      return html`<tr>${l.map((c, j) => celula(c, t.rotulo_linha && j === 0 && completa ? 'th' : 'td', t.rotulo_linha && j === 0 && completa ? { scope: c.rs ? 'rowgroup' : 'row' } : {}))}</tr>`;
+    })}</tbody>
+  </table></div>`;
 }
 
 /** Sumário "Nesta página" (âncoras das seções). */

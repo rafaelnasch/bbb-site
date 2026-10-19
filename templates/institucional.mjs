@@ -30,7 +30,9 @@ export function fotosFabrica(D) {
   const p = join(paths.public, 'media', 'fabrica', 'manifest.json');
   if (!existsSync(p)) return [];
   const m = D.ler('../public/media/fabrica/manifest.json');
-  return (m.fotos || []).filter((f) => f.fontes?.['image/webp']?.every(([s]) => existsSync(join(paths.public, s)))).map((f) => {
+  // Fotos com telefone fora dos contatos no muro: fora até a revisão (data/institucionais.json).
+  const fora = new Set((D.ler('institucionais.json')?.fotos_fabrica_fora || []).map((x) => x.sha1));
+  return (m.fotos || []).filter((f) => !fora.has(f.sha1)).filter((f) => f.fontes?.['image/webp']?.every(([s]) => existsSync(join(paths.public, s)))).map((f) => {
     const webp = f.fontes['image/webp'], avif = f.fontes['image/avif'] || [];
     return {
       n: f.n,
@@ -250,7 +252,7 @@ function prazoDeEntrega(ctx) {
   const antes = ls.slice(ls[0] && /^Prazo de Entrega$/i.test(ls[0]) ? 1 : 0, iTab >= 0 ? iTab : ls.length);
   const notas = ls.filter((l) => l.startsWith('*'));
   const { blocos } = blocosDoTexto(antes.join('\n'), { nivelCaixaAlta: 3 });
-  const corpo = html`${topo({ trilha, etiqueta: 'Entrega', h1: 'Prazo de entrega', lead: 'Prazo estimado por estado, contado em dias úteis depois da produção, e as condições de entrega publicadas pela empresa.' })}
+  const corpo = html`${topo({ trilha, etiqueta: 'Entrega', h1: 'Prazo de entrega', lead: 'Prazo estimado por estado, em dias úteis, e as condições de entrega publicadas pela empresa.' })}
 ${corpoLeitura({
     lado: html`<div class="inst-ajuda"><p class="inst-ajuda__t">Pedido já feito?</p>${botaoWhats(D, 'rastreio', { rotulo: 'Rastrear pelo WhatsApp', contexto: 'prazo_de_entrega', classe: 'btn btn--whats btn--bloco' })}<p class="inst-ajuda__s">Antes de comprar, o prazo do seu pedido é confirmado pelo consultor.</p></div>`,
     conteudo: html`${prosa(blocos)}
@@ -577,10 +579,11 @@ function mapaDoSite(ctx, outras) {
 <article class="dia inst">
   <div class="wrap inst__largo inst-mapa-site">
     <section aria-labelledby="ms-col"><h2 id="ms-col" class="inst-h2">Coleções</h2>
-      <ul class="inst-colunas-lista">${cats.sort((a, b) => (raiz.has(b.d_path) - raiz.has(a.d_path)) || a.d_path.localeCompare(b.d_path)).map((c) => html`<li><a class="link" href="${url(c.d_path)}">${c.nome}</a> <span class="num" data-campo="categoria-total">${c.total_exibido}</span></li>`)}</ul></section>
+      <p class="inst-notas">Ao lado de cada coleção, quantos itens a listagem dela exibe no site. Mais abaixo, os modelos aparecem por tipo, com a contagem de modelos publicados de cada tipo: uma listagem pode incluir modelos de outro tipo, e alguns modelos não estão em nenhuma listagem, por isso os dois números podem diferir.</p>
+      <ul class="inst-colunas-lista">${cats.sort((a, b) => (raiz.has(b.d_path) - raiz.has(a.d_path)) || a.d_path.localeCompare(b.d_path)).map((c) => html`<li><a class="link" href="${url(c.d_path)}">${c.nome}</a> <span class="inst-conta-rot"><span class="num" data-campo="categoria-total">${c.total_exibido}</span> na listagem</span></li>`)}</ul></section>
     <section aria-labelledby="ms-pg"><h2 id="ms-pg" class="inst-h2">Escolha, atendimento e empresa</h2>
       <ul class="inst-colunas-lista">${outras.map(([nome, path]) => html`<li><a class="link" href="${url(path)}">${nome}</a></li>`)}</ul></section>
-    ${grupos.map((g) => html`<section aria-labelledby="ms-${g.t}"><h2 id="ms-${g.t}" class="inst-h2">${NOME_TIPO[g.t]}${g.ps.length > 1 ? 's' : ''} <span class="num inst-conta">${g.ps.length}</span></h2>
+    ${grupos.map((g) => html`<section aria-labelledby="ms-${g.t}"><h2 id="ms-${g.t}" class="inst-h2">${NOME_TIPO[g.t]}${g.ps.length > 1 ? 's' : ''} <span class="inst-conta"><span class="num">${g.ps.length}</span> ${g.ps.length > 1 ? 'modelos publicados' : 'modelo publicado'}</span></h2>
       <ul class="inst-colunas-lista">${g.ps.map((p) => html`<li><a class="link" href="${url(`${p.slug}.html`)}">${p.nome}</a></li>`)}</ul></section>`)}
   </div>
 </article>`;

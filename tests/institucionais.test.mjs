@@ -182,6 +182,8 @@ test('404: busca, escolhedor e ajuda; fora do índice', () => {
 
 const ent = (s) => s.replace(/&nbsp;|&#160;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
 const norm = (s) => ent(String(s)).replace(/\s+/g, ' ').trim();
+// Palavra com hífen no fim da linha impressa continua colada no HTML ("tomando-" / "se").
+const normHifen = (s) => norm(s).replace(/(\p{L})- (?=\p{Ll})/gu, '$1-');
 
 test('manual: todo parágrafo, item, título e linha exibidos é recorte contínuo do texto original da página', () => {
   const h = pg('manual-usuario-instalacao.html');
@@ -191,10 +193,12 @@ test('manual: todo parágrafo, item, título e linha exibidos é recorte contín
   let n = 0;
   const falhas = [];
   for (const [sec, num] of secoes) {
-    const original = norm(m.paginas.find((x) => x.pagina === Number(num)).texto);
+    const pgm = m.paginas.find((x) => x.pagina === Number(num));
+    // Texto da página com as palavras partidas pela extração unidas (texto_grafia, conferido no PDF).
+    const original = normHifen(pgm.texto_grafia ?? pgm.texto);
     const prosa = /<div class="inst-prosa"[^>]*>([\s\S]*)<\/div>/.exec(sec)[1];
     for (const [, , conteudo] of prosa.matchAll(/<(p|li|h2|h3)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
-      const t = norm(conteudo.replace(/<[^>]+>/g, ''));
+      const t = normHifen(conteudo.replace(/<[^>]+>/g, ''));
       if (!t) continue;
       n++;
       if (!original.includes(t)) falhas.push(`p. ${num}: ${t.slice(0, 120)}`);
@@ -230,13 +234,13 @@ test('manual: sumário é o índice do PDF, sem fragmento nem linha de tabela; t
   for (const f of ['DENTRO DA BANHEIRA;', 'QUALQUER NIVEL QUE ESTEJA ACIMA DO SOLO.', 'AQUECEDOR);', 'LEPONO 1CV 127 5,91 0,75 10', 'SENSUALE REDONDA 215,42']) {
     assert.ok(!titulos.includes(f), `título indevido: ${f}`);
   }
-  assert.ok(texto(h).includes('LEPONO 1CV 127 5,91 0,75 10'), 'linha da tabela continua no texto');
+  assert.ok(/<tr><th scope="row">Motobomba LEPONO<\/th><td>1CV<\/td><td>127<\/td><td>5,91<\/td><td>0,75<\/td><td>10<\/td><\/tr>/.test(h), 'linha da tabela da p. 27 como linha de <table>');
 });
 
 test('manual: nivelamento de volta, superlativo do ozônio fora', () => {
   const h = texto(pg('manual-usuario-instalacao.html'));
   assert.ok(h.includes('NIVELAMENTO DA BANHEIRA NO LOCAL ONDE SERÁ INSTALADA:'));
-  assert.ok(h.includes('tomando- se a superfície das bordas como referência'));
+  assert.ok(h.includes('tomando-se a superfície das bordas como referência'));
   assert.ok(!/mais seguro e eficaz|do mundo/.test(h));
   const p38 = ler('politicas.json').manual.paginas.find((x) => x.pagina === 38);
   assert.ok(p38.trechos_ocultos.some((o) => /mais seguro e eficaz/.test(o.texto)), 'registro em trechos_ocultos');
@@ -310,4 +314,70 @@ test('depoimentos dos projetos: opinião assinada com nota; nenhum depoimento co
     assert.deepEqual(termosSaudeSpec(d.texto), []);
   }
   assert.ok(texto(h).includes('Opiniões de clientes, assinadas'));
+});
+
+// ---------------------------------------------------------------- correções do verificador (bloco 7, rodada 2)
+
+const secaoDoManual = (h, n) => new RegExp(`<section class="inst-pagina" id="p-${n}"[\\s\\S]*?</section>`).exec(h)?.[0] || '';
+const linhasDaTabela = (t) => [...t.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((r) => [...r[1].matchAll(/<(t[hd])\b[^>]*>([\s\S]*?)<\/\1>/g)].map((c) => norm(c[2].replace(/<br>/g, ' ').replace(/<[^>]+>/g, ''))));
+
+test('manual: tabelas das p. 7, 18, 27, 30 e de peso e carga são <table> reais, com as células pareadas como no PDF', () => {
+  const h = pg('manual-usuario-instalacao.html');
+  for (const n of [7, 18, 27, 30, 32, 33, 34, 35, 36, 37]) assert.ok(/<table\b/.test(secaoDoManual(h, n)), `p. ${n} sem <table>`);
+  // p. 7: sintoma, causa e medida na mesma linha; o sintoma mesclado cobre as três primeiras causas.
+  const p7 = secaoDoManual(h, 7);
+  const t7 = linhasDaTabela(p7);
+  assert.deepEqual(t7[0], ['Sintoma', 'Possível causa', 'Medida a tomar']);
+  assert.deepEqual(t7[1], ['Não se inicia função nenhuma.', 'Falha na alimentação eléctrica.', 'Verifique se existe tensão na rede.']);
+  assert.ok(/<th rowspan="3" scope="rowgroup">Não se inicia função nenhuma\.<\/th>/.test(p7));
+  assert.deepEqual(t7[3], ['Há pouca água na banheira.', 'Encha a banheira até o nível do ladrão cobrindo todos os bicos.']);
+  assert.deepEqual(t7[5], ['Bomba não liga', 'Conector dos painéis mal encaixados ou amassados', 'Desencaixar o plug do painel da central de comando e verificar os pinos']);
+  assert.deepEqual(t7[6], ['Banheira não aquece', 'Tempo inferior ao mínimo necessário para aquecimento', 'Aguardar tempo mínimo: Spas: 1,5h Banheiras: 40min']);
+  // O título e o cabeçalho vêm antes do conteúdo, e o título não sai colado em parágrafo.
+  assert.ok(p7.indexOf('TABELA DE DEFEITOS') < p7.indexOf('<table'));
+  assert.ok(p7.indexOf('<table') < p7.indexOf('CUIDADOS IMPORTANTES'), 'tabela acima de Cuidados importantes, como no PDF');
+  const tp7 = texto(p7);
+  assert.ok(!tp7.includes('Bomba não liga Banheira não aquece'));
+  assert.ok(!tp7.includes('amassados Verifique se existe'));
+  // p. 18: bitola e disjuntor por componente; o título inteiro; nada da tabela fora dela.
+  const p18 = secaoDoManual(h, 18);
+  const t18 = linhasDaTabela(p18);
+  assert.deepEqual(t18[0], ['Acessórios', 'Bitola (mm²)', 'DISJUNTOR (A)', 'TIPO DISJUNTOR', 'Tensão (V)']);
+  assert.deepEqual(t18[4], ['Moto bomba bifásico', '6', 'Ver tabela pág. 26', '-', '127']);
+  assert.deepEqual(t18[5], ['-', '220']);
+  assert.deepEqual(t18[6], ['Acionador', '6', '10', '-', '127/220']);
+  assert.deepEqual(t18[9], ['Controlador 8 funções', '6', '10', '-', '127/220']);
+  assert.ok(/<h[23][^>]*>DADOS TÉCNICOS PARA INSTALAÇÃO ELÉTRICA<\/h[23]>/.test(p18), 'título inteiro');
+  assert.ok(!/<li>[^<]*Acionador/.test(p18) && !/<p>[^<]*Bitola/.test(p18), 'tabela fora de <p>/<li>');
+  assert.ok(!/Frequência em Hz|Corrente em A com/.test(p18), 'texto sem lugar visível na página impressa fica fora');
+  // p. 27 e p. 30.
+  const t27 = linhasDaTabela(secaoDoManual(h, 27));
+  assert.deepEqual(t27[0], ['Equipamento', 'Potência nominal', 'Tensão nominal V', 'Corrente nominal A', 'Consumo aproximado KW', 'Disjuntor recomendado A']);
+  assert.deepEqual(t27[6], ['Aquecedor', '5000 W', '127', '39,37', '5', 'Ver modelo pág. 20']);
+  const p30 = secaoDoManual(h, 30);
+  const t30 = linhasDaTabela(p30);
+  assert.deepEqual(t30[0], ['Acessórios', 'Diâmetro das tubulações (mm)']);
+  assert.deepEqual(t30[2], ['Aquecedor', "40 ou 32 (Se D'aqua Storm - 40)"]);
+  assert.deepEqual(t30[11], ['Jatos', 'Ar = 20']);
+  assert.deepEqual(t30[12], ['Água = 32']);
+  assert.ok(p30.indexOf('<table') < p30.indexOf('CUIDADOS NA MONTAGEM DO RALO'));
+  // Peso e carga: modelo e valor na mesma linha.
+  const t32 = linhasDaTabela(secaoDoManual(h, 32));
+  assert.deepEqual(t32[0], ['Modelo', 'Carga do produto sob o piso (cheio) - Kg/m²']);
+  assert.deepEqual(t32[1], ['ACQUA LINEA', '141,34']);
+  assert.deepEqual(linhasDaTabela(secaoDoManual(h, 37)).at(-1), ['VITORIANA', '253,58']);
+  // Toda tabela do manual tem nome acessível.
+  for (const [t] of h.matchAll(/<table\b[^>]*data-campo="manual-tabela"[^>]*>/g)) assert.ok(/aria-label(ledby)?="[^"]+"/.test(t), t);
+});
+
+test('manual: sem palavra partida pela extração do PDF, e cada correção no editorial-log', () => {
+  const t = texto(pg('manual-usuario-instalacao.html'));
+  for (const s of ['originam -se', 'proce sso', 'abasteciment o', 'dispos itivo', 'comp onentes', 'estocá -lo', 'nivele -a', 'fio -terra', 'magneto- térmico', 'atenção ,', 'vice- versa']) assert.ok(!t.includes(s), s);
+  for (const s of ['originam-se durante um mau processo', 'abastecimento', 'dispositivo DR', 'componentes energizados', 'estocá-lo', 'nivele-a', 'fio-terra', 'magneto-térmico', 'Leia com atenção, pois']) assert.ok(t.includes(s), s);
+  const log = ler('editorial-log.json').itens.filter((x) => x.regra === 'palavra_partida_na_extracao');
+  assert.ok(log.length >= 15);
+  for (const x of log) assert.equal(x.antes.replace(/\s+/g, ''), x.depois.replace(/\s+/g, ''), 'correção só muda espaços');
+  // O literal da extração continua no dado; a grafia corrigida fica ao lado.
+  const p7 = ler('politicas.json').manual.paginas.find((x) => x.pagina === 7);
+  assert.ok(p7.texto.includes('originam -se durante um mau proce sso') && p7.texto_grafia.includes('originam-se durante um mau processo'));
 });

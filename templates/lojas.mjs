@@ -72,7 +72,7 @@ export function paginas(ctx) {
   const corpo = html`${topo({
     trilha, etiqueta: 'Lojas', h1: html`<span class="num">${D.lojas.length}</span> lojas para ver as peças de perto`,
     lead: lead || null,
-    extra: html`<p class="inst-topo__acoes" data-intro style="--i:3">${botaoWhats(D, 'ajuda', { rotulo: (chamadaWhats || 'Fale com um representante agora!').replace(/!$/, ''), contexto: 'lojas_topo' })}</p>`,
+    extra: html`<p class="inst-topo__acoes" data-intro style="--i:3">${botaoWhats(D, 'ajuda', { rotulo: chamadaWhats || 'Fale com um representante agora!', contexto: 'lojas_topo' })}</p>`,
     classe: 'lojas-topo',
   })}
 <section class="sala lojas-mapa-sec" aria-label="Mapa das lojas">

@@ -514,6 +514,18 @@
       ]
     }
   ],
+  "fotos_fabrica_fora": [
+    {
+      "n": 1,
+      "sha1": "d1ea056689c3f2bc39563cb7f6380ce219e1516d",
+      "motivo": "o muro da fábrica mostra \"VENDA DIRETO DA FÁBRICA FONE: 35 3432-7644\" (aprox.), número fora de contatos.json"
+    },
+    {
+      "n": 8,
+      "sha1": "87244f508f3865f24890bca5f436805d33320598",
+      "motivo": "o mesmo muro com o telefone, em vista mais distante"
+    }
+  ],
   "decisoes": [
     {
       "item": "faq.json faq-01 (valor do frete)",
@@ -546,6 +558,12 @@
       "motivo": "versão antiga não linkada, sem confirmação (institucional.json)"
     },
     {
+      "item": "galeria da fábrica: fotos 1 e 8",
+      "decisao": "fora de todas as páginas (sobre-nos, loja-fisica, loja-fabrica-de-banheiras e home)",
+      "motivo": "as duas mostram, pintado no muro da fábrica, um telefone fora dos contatos ativos (mesmo critério das fotos de banheiras-instaladas); voltam com a revisão da empresa",
+      "aprovacao_do_dono": "pendente"
+    },
+    {
       "item": "banheiras-instaladas: fotos dos projetos",
       "decisao": "não publicadas",
       "motivo": "as fotos dos projetos e das fachadas ainda não passaram pela revisão (uma foto da galeria mostra telefone fora dos contatos ativos); a página traz os nomes e legendas literais"
@@ -553,7 +571,8 @@
     {
       "item": "perguntas-frequentes: 42 de 44 itens (SPEC 14)",
       "decisao": "desvio do critério, para aprovação do dono",
-      "motivo": "ficam fora faq-01 (carrinho do site antigo, acima) e faq-17 (abaixo); faq-07 e faq-45 são de garantia (SPEC 15)",
+      "motivo": "ficam fora faq-01 (carrinho do site antigo, acima) e faq-17 (abaixo); faq-07 e faq-45 são de garantia (SPEC 15). O aceite do SPEC 14 (46 itens visíveis menos garantia) segue descumprido até a decisão. Opções para o dono: (a) manter assim; (b) mostrar a pergunta da faq-01 com o canal atual do frete (consultor pelo WhatsApp), sem a resposta literal do carrinho; (c) a empresa reescrever a resposta da faq-17 sem afirmação de saúde",
+      "spec": "14 (FAQ)",
       "aprovacao_do_dono": "pendente"
     },
     {
@@ -590,8 +609,14 @@
     {
       "item": "aquecedor-digital-com-sensor-de-níve-bbb.html e as duas URLs com espaço da Acquaview",
       "decisao": "produto no slug sem acento e sem espaço; o endereço atual vira ponte (noindex) e entra em build/redirects.csv para o 301",
-      "motivo": "a SPEC 4 pede o produto no endereço atual com acento, em UTF-8; o gerador do produto (bloco 4) publica pelo slug ASCII. Muda a URL desses 3 produtos: o dono decide se mantém assim ou se a página passa para o caminho atual",
-      "aprovacao_do_dono": "pendente"
+      "motivo": "a SPEC 4 pede o produto no endereço atual com acento, em UTF-8; o gerador do produto (bloco 4) publica pelo slug ASCII. Muda a URL desses 3 produtos: o dono decide se mantém assim ou se a página passa para o caminho atual. Desvio da SPEC 4 (origem: bloco 4), não ponte de URL morta: o validate (13.10) não conta a ponte como página de produto e lista os 3 como pendentes",
+      "aprovacao_do_dono": "pendente",
+      "spec": "4 (linha 3) e 13.10",
+      "produtos": [
+        "aquecedor-digital-com-sensor-de-nive-bbb",
+        "spa-retangular-acquaview-completa-com-hidro-em-acrilico",
+        "spa-retangular-acquaview-completa-com-hidro-em-gel-coat"
+      ]
     },
     {
       "item": "politica-devolucao-reembolso: estorno no cartão da seção \"Por defeito\"",
@@ -608,7 +633,23 @@
     {
       "item": "manual-usuario-instalacao: filtro editorial",
       "decisao": "frase inteira, nunca linha solta",
-      "motivo": "o PDF quebra a frase no meio da linha; o filtro tira a frase de ponto a ponto (também na virada de página) e o texto de antes e de depois não se juntam. O sumário é o índice do próprio PDF (p. 3), ligado aos títulos do texto; linhas de tabela ficam como linhas"
+      "motivo": "o PDF quebra a frase no meio da linha; o filtro tira a frase de ponto a ponto (também na virada de página) e o texto de antes e de depois não se juntam. O sumário é o índice do próprio PDF (p. 3), ligado aos títulos do texto"
+    },
+    {
+      "item": "manual-usuario-instalacao: tabelas",
+      "decisao": "tabelas HTML montadas pela grade do PDF",
+      "motivo": "a extração em texto desmonta as tabelas coluna por coluna (pares sintoma e medida trocados na p. 7, bitola e disjuntor misturados na p. 18). As tabelas das p. 7, 18, 27, 30 e 32 a 37 saem do texto do PDF lido com pdfjs, célula por célula, na grade desenhada na página (build/manual-tabelas.mjs); o build confere que os caracteres de cada tabela são os do trecho que ela substitui"
+    },
+    {
+      "item": "manual-usuario-instalacao: etiqueta da p. 18",
+      "decisao": "só a parte visível da etiqueta",
+      "motivo": "abaixo da etiqueta desenhada o arquivo traz tensão, potência, frequência e corrente sem lugar visível na página impressa; ficam fora do HTML (editorial-log, regra texto_invisivel_no_pdf) até a empresa confirmar",
+      "aprovacao_do_dono": "pendente"
+    },
+    {
+      "item": "manual-usuario-instalacao: palavras partidas",
+      "decisao": "unidas como no PDF",
+      "motivo": "a extração em texto pôs espaços dentro de palavras (\"proce sso\", \"originam -se\"); a forma unida é a do texto do PDF lido com pdfjs, e cada correção está no editorial-log (regra palavra_partida_na_extracao). Erro da própria fonte continua literal"
     }
   ]
 }

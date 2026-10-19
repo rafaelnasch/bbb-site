@@ -100,7 +100,7 @@
     "afirmacao_de_saude": "capítulo \"Benefícios da cromoterapia\" do manual sai inteiro",
     "espaco_apos_virgula_decimal_ignorado": "só em rótulo de formato regular: medida \"0, 84\" seria lida como 0,84; rótulo irregular não tem profundidade lida (profundidade_nao_lida_formato_irregular)"
   },
-  "total": 904,
+  "total": 928,
   "itens": [
     {
       "slug": "apoio-de-cabeca-oval",
@@ -5874,6 +5874,190 @@
       "lista": "ampliada_dono"
     },
     {
+      "manual_pagina": 2,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "inovando sempre, garanti ndo conforto, saúde e bem -estar. Nossos produtos são",
+      "depois": "inovando sempre, garantindo conforto, saúde e bem-estar. Nossos produtos são",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 7,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "ocorrem com este tipo de produto, originam -se durante um mau proce sso de instalação, escolha um",
+      "depois": "ocorrem com este tipo de produto, originam-se durante um mau processo de instalação, escolha um",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 8,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "4) Ao estocar o produto, não deixe fora da caixa ou descoberto, evite estocá -lo em lugar de muito",
+      "depois": "4) Ao estocar o produto, não deixe fora da caixa ou descoberto, evite estocá-lo em lugar de muito",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "A Banheira s Bom Banho, garante este produto contra qualquer defeito de fabricação pelo prazo",
+      "depois": "A Banheiras Bom Banho, garante este produto contra qualquer defeito de fabricação pelo prazo",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "técnicos e recomendados para instalações observadas às regras e princípios de hidráulica e elétrica . As",
+      "depois": "técnicos e recomendados para instalações observadas às regras e princípios de hidráulica e elétrica. As",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "banheiras e spas têm garantia concedida de 2 (doi s) ano s para casco e tubulação e 1 (ano) para motor,",
+      "depois": "banheiras e spas têm garantia concedida de 2 (dois) anos para casco e tubulação e 1 (ano) para motor,",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "▪ Danos por maus tratos, provocando mal -uso e negligência na conservação, descuidos ou",
+      "depois": "▪ Danos por maus tratos, provocando mal-uso e negligência na conservação, descuidos ou",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 11,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "Esta informação é muito importante. Leia com atenção , pois a falta da observação da mesma pode",
+      "depois": "Esta informação é muito importante. Leia com atenção, pois a falta da observação da mesma pode",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 11,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "Caso exista a necessidade de higienização, deve ser utilizada  água quente (não superior a 40° C) e",
+      "depois": "Caso exista a necessidade de higienização, deve ser utilizada  água quente (não superior a 40°C) e",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 12,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "houver possibilidade da água que é fornecida no ponto de abasteciment o da banheira ultrapassar 40°C. Na",
+      "depois": "houver possibilidade da água que é fornecida no ponto de abastecimento da banheira ultrapassar 40°C. Na",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 13,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "▪ O circuito de alimentação deverá ser protegido por dispos itivo DR de alta sensibilidade (Corrente",
+      "depois": "▪ O circuito de alimentação deverá ser protegido por dispositivo DR de alta sensibilidade (Corrente",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 14,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "O piso e paredes devem ser rígidos, lisos, sem ondulações e imperfeições e não devem apresentar -",
+      "depois": "O piso e paredes devem ser rígidos, lisos, sem ondulações e imperfeições e não devem apresentar-",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 15,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "materiais de construção ou acabamento (cal, gesso, cimento, tintas , argamassa etc.). Também não se deve",
+      "depois": "materiais de construção ou acabamento (cal, gesso, cimento, tintas, argamassa etc.). Também não se deve",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 15,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "Coloque a banheira no local onde será instalada e nivele -a, acrescentando-se pequenos calços de",
+      "depois": "Coloque a banheira no local onde será instalada e nivele-a, acrescentando-se pequenos calços de",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 17,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "A conexão do fio -terra da banheira ao fio -terra proveniente do sistema de aterramento junto ao",
+      "depois": "A conexão do fio-terra da banheira ao fio-terra proveniente do sistema de aterramento junto ao",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 19,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "utilitário energizado eletricamente ou que contenha comp onentes energizados em seu interior, devem ser",
+      "depois": "utilitário energizado eletricamente ou que contenha componentes energizados em seu interior, devem ser",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 26,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "Caso ocorra  queda repentina de tensão, que ocorre em algumas regiões , pode ocorrer do",
+      "depois": "Caso ocorra  queda repentina de tensão, que ocorre em algumas regiões, pode ocorrer do",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 26,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "sensor descalibrar, sendo necessário calibrar novamente a sensibilidade de detecção , evitando",
+      "depois": "sensor descalibrar, sendo necessário calibrar novamente a sensibilidade de detecção, evitando",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 29,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "Recomendamos executar a saída de água diretamente para o ralo ou caixa de inspeção .",
+      "depois": "Recomendamos executar a saída de água diretamente para o ralo ou caixa de inspeção.",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "Aplicado na desinfecção da água, o ozônio f az o papel de agente microbiológico e oxidante e elimina",
+      "depois": "Aplicado na desinfecção da água, o ozônio faz o papel de agente microbiológico e oxidante e elimina",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "O ozônio (O 3), conhecido como oxigênio ativo, é um gás natural e protege os se - res vivos, como um filtro,",
+      "depois": "O ozônio (O 3), conhecido como oxigênio ativo, é um gás natural e protege os se- res vivos, como um filtro,",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 39,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "filtragem, isso se traduz em mínima m anutenção, ou seja, proporciona redução",
+      "depois": "filtragem, isso se traduz em mínima manutenção, ou seja, proporciona redução",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
+      "manual_pagina": 42,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "palavra_partida_na_extracao",
+      "antes": "engenheiro civil responsável da obra, manual do condomínio ou  construtora, para certificar -se que a",
+      "depois": "engenheiro civil responsável da obra, manual do condomínio ou  construtora, para certificar-se que a",
+      "obs": "a forma unida é a do texto do PDF lido com pdfjs; a partida não existe no PDF"
+    },
+    {
       "manual_pagina": 3,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
@@ -5895,7 +6079,7 @@
       "manual_pagina": 9,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
-      "removido": "A Banheira s Bom Banho, garante este produto contra qualquer defeito de fabricação pelo prazo"
+      "removido": "A Banheiras Bom Banho, garante este produto contra qualquer defeito de fabricação pelo prazo"
     },
     {
       "manual_pagina": 9,
@@ -5907,13 +6091,13 @@
       "manual_pagina": 9,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
-      "removido": "técnicos e recomendados para instalações observadas às regras e princípios de hidráulica e elétrica . As"
+      "removido": "técnicos e recomendados para instalações observadas às regras e princípios de hidráulica e elétrica. As"
     },
     {
       "manual_pagina": 9,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
-      "removido": "banheiras e spas têm garantia concedida de 2 (doi s) ano s para casco e tubulação e 1 (ano) para motor,"
+      "removido": "banheiras e spas têm garantia concedida de 2 (dois) anos para casco e tubulação e 1 (ano) para motor,"
     },
     {
       "manual_pagina": 9,
@@ -6189,7 +6373,7 @@
       "manual_pagina": 10,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
-      "removido": "▪ Danos por maus tratos, provocando mal -uso e negligência na conservação, descuidos ou"
+      "removido": "▪ Danos por maus tratos, provocando mal-uso e negligência na conservação, descuidos ou"
     },
     {
       "manual_pagina": 10,
@@ -6580,10 +6764,11 @@
     {
       "manual_pagina": 2,
       "campo": "politicas.manual.paginas[].texto",
-      "removido": "Seguimos as tendências\nde vários países e atendemos as necessidades e expectativas de cada cliente,\ninovando sempre, garanti ndo conforto, saúde e bem -estar.",
+      "removido": "Seguimos as tendências\nde vários países e atendemos as necessidades e expectativas de cada cliente,\ninovando sempre, garantindo conforto, saúde e bem-estar.",
       "regra": "termo_de_saude",
       "termos": [
-        "saude"
+        "saude",
+        "bem-estar"
       ],
       "lista": "ampliada_dono"
     },
@@ -6647,6 +6832,13 @@
         "bactericida"
       ],
       "lista": "ampliada_dono"
+    },
+    {
+      "manual_pagina": 18,
+      "campo": "politicas.manual.paginas[].tabelas",
+      "regra": "texto_invisivel_no_pdf",
+      "removido": "Tensão em V | 220 | 220 | 220 | Potência em CV | 0,5 | 1 | 1,5 | Frequência em Hz | 60 | 60 | 60 | Corrente em A com | carga máxima | 3,5 a 4,5 | 5,5 a 7 | 6,2 a 8,0 | Etiqueta de Especificação técnica",
+      "obs": "texto presente no arquivo do PDF, mas sem lugar visível na página impressa (abaixo da etiqueta desenhada); fora do HTML até a empresa confirmar"
     },
     {
       "blog_post": 1252,

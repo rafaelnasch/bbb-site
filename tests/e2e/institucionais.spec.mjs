@@ -33,7 +33,7 @@ for (const js of [true, false]) {
     const t0 = Date.now();
     await page.goto(`${BASE}/taubate`);
     await page.waitForURL(/lojas\/loja-showrooms\.html#taubate$/, { timeout: 3000 });
-    expect(Date.now() - t0).toBeLessThan(js ? 1000 : 2000);
+    expect(Date.now() - t0, "SPEC 14: menos de 1 s, com e sem JS").toBeLessThan(1000);
     await page.goto(`${BASE}/catalog/category/view/id/130`);
     await page.waitForURL(/\/banheiras\.html$/, { timeout: 3000 });
     await page.goto(`${BASE}/downloads`);
