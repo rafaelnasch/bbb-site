@@ -17,7 +17,12 @@
     "test:dados": "node --test tests/data.test.mjs",
     "e2e": "playwright test tests/e2e",
     "lhci": "lhci autorun",
-    "all": "npm run normalize && npm run media && npm run films && npm run og && npm run build && npm test"
+    "all": "npm run normalize && npm run media && npm run films && npm run og && npm run build && npm test",
+    "brand": "node build/brand.mjs",
+    "fontes": "node build/fontes.mjs",
+    "build:sistema": "node build/render.mjs --sistema",
+    "test:nucleo": "node --test tests/nucleo.test.mjs",
+    "e2e:nucleo": "node build/render.mjs --sistema && playwright test tests/e2e/nucleo.spec.mjs"
   },
   "devDependencies": {
     "@lhci/cli": "0.15.1",

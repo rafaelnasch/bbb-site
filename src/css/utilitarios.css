@@ -1,0 +1,22 @@
+/* Utilitários fora do CSS crítico (seleção, prosa, links, rolagem local, preço antigo, impressão). */
+::selection{background:color-mix(in srgb,var(--line) 55%,transparent);color:var(--ink)}
+.sala ::selection{color:var(--porcelain);background:color-mix(in srgb,var(--line) 40%,transparent)}
+table{border-collapse:collapse}
+.t-italico{font-style:normal;font-variation-settings:"opsz" 144;color:color-mix(in srgb,var(--fg) 82%,var(--glow))}
+.prosa{max-width:68ch}
+.prosa>*+*{margin-top:1em}
+.prosa h2,.prosa h3{margin-top:1.6em}
+.prosa ul,.prosa ol{padding-left:1.2em}
+.link{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 40%,transparent);transition:text-decoration-color var(--t-ui)}
+@media (hover:hover){.link:hover{text-decoration-color:currentColor}}
+/* Rolagem local de tabelas largas (SPEC 5.4): sombra indica que há mais conteúdo ao lado. */
+.rolagem{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;background:linear-gradient(to right,var(--bg) 30%,transparent) left/40px 100% no-repeat local,linear-gradient(to left,var(--bg) 30%,transparent) right/40px 100% no-repeat local,radial-gradient(farthest-side at 0 50%,rgb(0 0 0/.22),transparent) left/14px 100% no-repeat scroll,radial-gradient(farthest-side at 100% 50%,rgb(0 0 0/.22),transparent) right/14px 100% no-repeat scroll}
+.rolagem:focus-visible{outline-offset:-2px}
+@media print{[data-reveal],[data-intro]{opacity:1!important;transform:none!important;animation:none!important;clip-path:none!important}}
+/* Preço antigo (SPEC 9.2): o vermelho da marca fica no risco; o texto usa --fg-2 para passar AA
+   (--price-old sobre --day dá 4,24:1, abaixo de 4,5). */
+.preco-de{color:var(--fg-2);font-size:.875em;text-decoration:line-through;text-decoration-color:var(--price-old);text-decoration-thickness:1.5px}
+/* Grade (SPEC 5.4): 4 colunas no celular, 6 no tablet, 12 no desktop. */
+.grade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gutter)}
+@media (min-width:600px){.grade{grid-template-columns:repeat(6,minmax(0,1fr));--gutter:20px}}
+@media (min-width:1024px){.grade{grid-template-columns:repeat(12,minmax(0,1fr));--gutter:24px}}

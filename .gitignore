@@ -12,3 +12,7 @@ dist/
 *.log
 .env
 .env.*
+
+# Saídas dos testes de navegador
+test-results/
+playwright-report/

@@ -1,0 +1,41 @@
+/* Tokens (SPEC 5.2). Cores reais da marca, elevadas; o resto é derivado delas. */
+:root{
+  /* marca real */
+  --brand:#044E7C; --brand-deep:#03324F; --blueprint:#1C476B;
+  --price-old:#E31A3B; --whats-icon:#51CB5E;
+  /* sala (derivados do azul escuro) */
+  --room:#071C2B; --room-2:#0C2A3D; --porcelain:#F3F6F8; --line:#8DBBD9;
+  /* dia */
+  --day:#F7F3EC; --sand:#E9DFD0; --ink:#0E1A22; --muted:#4A5862;
+  /* texto secundário na sala (AA sobre --room e --room-2) */
+  --muted-on-dark:#A3B6C3;
+  /* luz de estúdio (só traços e brilhos, nunca texto pequeno) */
+  --glow:#E9B87C;
+  /* botão de compra, contraste AA com texto branco */
+  --whats-btn:#1E7F3A; --whats-btn-hover:#176A30;
+  --focus:#044E7C; --focus-on-dark:#8DBBD9;
+  /* movimento */
+  --ease-out:cubic-bezier(.22,1,.36,1); --ease-io:cubic-bezier(.77,0,.175,1);
+  --ease-sheet:cubic-bezier(.32,.72,0,1);
+  --t-press:140ms; --t-ui:200ms; --t-out:260ms; --t-in:420ms; --t-reveal:700ms; --t-stagger:70ms; --t-swap:800ms;
+  /* espaço e forma */
+  --gutter:16px; --radius:14px; --radius-chip:999px; --maxw:1320px;
+  --pad-x:clamp(16px, 3.2vw + 4px, 64px);
+  --cab-h:64px; --topo-h:36px; --doca-h:0px;
+
+  /* tipografia (SPEC 5.3) */
+  --f-display:"Fraunces","Fraunces Fallback",ui-serif,Georgia,serif;
+  --f-body:"Open Sans","Open Sans Fallback",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --fs-h1:clamp(2.25rem, 1.2rem + 4vw, 4.5rem);
+  --fs-h2:clamp(1.5rem, 1.1rem + 2vw, 2.25rem);
+  --fs-h3:clamp(1.1875rem, 1.05rem + .6vw, 1.4375rem);
+  --fs-display:clamp(2.75rem, 1.4rem + 6vw, 7.5rem);
+  --fs-body:1.125rem; --fs-small:.9375rem; --fs-label:.75rem; --lh:1.6;
+
+  /* superfícies semânticas (o tema da seção troca estas) */
+  --bg:var(--day); --fg:var(--ink); --fg-2:var(--muted); --rule:color-mix(in srgb, var(--ink) 14%, transparent);
+  --focus-ring:var(--focus);
+  --sombra-1:0 1px 2px rgb(7 28 43 / .06), 0 8px 24px -12px rgb(7 28 43 / .18);
+  --sombra-2:0 2px 6px rgb(7 28 43 / .08), 0 28px 60px -24px rgb(7 28 43 / .35);
+}
+@media (max-width:430px){ :root{ --fs-body:1.0625rem; --cab-h:60px; } }
