@@ -86,6 +86,7 @@ export function paginas(ctx) {
         modulos: ['comparar'],
         sobre: true,
         classe: 'pg-comparar',
+        bandeja: false,
         critico: ['ferramenta'],
       }),
     },

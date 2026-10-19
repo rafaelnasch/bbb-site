@@ -3,6 +3,8 @@
 //   cabe se menor + folga <= menor lado do espaço e maior + folga <= maior lado do espaço;
 //   quase cabe se só uma dimensão passa, por até 10 cm.
 // Medida a confirmar: o índice já traz a maior das duas medidas publicadas.
+// Orçamento: 7,4 KB gzip contra a meta de 4 KB por arquivo da SPEC 6.2 (o teto de 25 KB por página da
+// SPEC 12 é respeitado). Desvio declarado, aguardando a decisão do dono do projeto.
 (() => {
   const d = document, w = window, BBB = w.BBB || {};
   const raiz = d.querySelector('[data-esc]');
@@ -149,8 +151,9 @@
     n.textContent = t;
     n.hidden = !t;
     const aq = $('[data-esc-aq-nota]');
-    const com = filtrar({ ...s, aq: true }, new Set(['espaco', 'max'])).cabem.length;
-    aq.textContent = `O aquecedor é opcional em ${com} dos modelos destas respostas; o preço publicado aparece em cada resultado.`;
+    const tot = filtrar(s).cabem.length, com = s.aq ? tot : filtrar({ ...s, aq: true }).cabem.length;
+    aq.textContent = !tot ? 'Nenhum modelo nestas respostas para contar o aquecedor opcional.'
+      : `O aquecedor é opcional em ${com} de ${tot} ${tot === 1 ? 'modelo' : 'modelos'} deste resultado; o preço publicado aparece em cada um.`;
   }
 
   // ---------- Resultado ----------
@@ -166,6 +169,8 @@
     li.style.setProperty('--i', Math.min(i, 12));
     li.dataset.sku = it.k;
     const t = m ? it.ts[m.i] : it.ts.length === 1 ? it.ts[0] : null;
+    const mc = it.mc === 1;
+    const ti = m ? m.i : it.ts.length === 1 ? 0 : '';
     const eti = [it.fo, it.lu, it.ma, it.co].filter(Boolean).join(' · ');
     const href = `${cfg.base}${it.s}.html`;
     const precoTxt = t && t[3] ? `${brl(preco)} com este tamanho` : it.po || (preco != null ? brl(preco) : '');
@@ -175,8 +180,8 @@
 ${t ? `<span class="esc-c__tam num">${m ? (m.cabe ? 'Tamanho que cabe' : 'Tamanho mais próximo') : 'Tamanho'}: ${esc(t[0])}${m && it.ts.length > 1 ? ` (${it.ts.length} tamanhos)` : ''}</span>` : `<span class="esc-c__tam num">${it.ts.length} tamanhos</span>`}
 ${m ? `<span class="esc-c__folga${m.cabe ? '' : ' is-quase'}">${textoFolga(m)}</span>` : ''}
 <span class="esc-c__preco num">${esc(precoTxt)}</span>
-<span class="esc-c__acoes">${t && t[4] ? '<span class="selo selo--confirmar" title="A ficha técnica e a opção de tamanho publicadas divergem; o cálculo usa a maior das duas medidas.">Medida a confirmar</span>' : ''}${it.d ? `<span class="selo selo--esgotado">${esc(it.d)}</span>` : ''}<button class="cart__cmp" type="button" data-comparar="${esc(it.s)}" data-nome="${esc(it.n)}" data-sku="${esc(it.k)}" aria-pressed="${BBB.comparar?.tem(it.s) ? 'true' : 'false'}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect width="7" height="16" x="3" y="4" rx="1.5"/><rect width="7" height="16" x="14" y="4" rx="1.5"/></svg><span>Comparar</span></button></span>
-${t && t[4] ? '<span class="esc-nota">A ficha e a opção de tamanho divergem; o cálculo usa a maior das duas medidas.</span>' : ''}`;
+<span class="esc-c__acoes">${mc ? '<span class="selo selo--confirmar" title="A ficha técnica e a opção de tamanho publicadas divergem; o encaixe usa a maior das duas medidas.">Medida a confirmar</span>' : ''}${it.d ? `<span class="selo selo--esgotado">${esc(it.d)}</span>` : ''}<button class="cart__cmp" type="button" data-comparar="${esc(it.s)}" data-nome="${esc(it.n)}" data-sku="${esc(it.k)}" data-t="${ti}"${sAtual?.l ? ` data-l="${sAtual.l}" data-c="${sAtual.c}"` : ''} aria-pressed="${BBB.comparar?.tem(it.s) ? 'true' : 'false'}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect width="7" height="16" x="3" y="4" rx="1.5"/><rect width="7" height="16" x="14" y="4" rx="1.5"/></svg><span>Comparar</span></button></span>
+${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicadas divergem; o encaixe usa a maior das duas medidas. Confirme com o consultor.</span>' : ''}`;
     return li;
   }
   const ORD = {
@@ -228,15 +233,28 @@ ${t && t[4] ? '<span class="esc-nota">A ficha e a opção de tamanho divergem; o
   }
 
   function mensagem(s, lista) {
+    const r = [
+      s.l ? `Meu espaço: ${s.l} x ${s.c} cm${s.folga ? `, com folga de ${s.folga} cm` : ''}.` : s.ns ? 'Meu espaço: ainda não sei.' : '',
+      s.pessoas ? `Pessoas: ${ROT_FILTRO.pessoas(s)}.` : '',
+      s.onde ? `Onde vou instalar: ${s.onde === 'banheiro' ? 'no banheiro' : 'área externa'}.` : '',
+      s.forma ? `Formato: ${s.forma}.` : '',
+      s.conf ? `Configuração: ${s.conf}.` : '',
+      s.mat ? `Material: ${s.mat}.` : '',
+      s.aq ? 'Com aquecedor.' : '',
+      s.max != null ? `Orçamento: até ${brl(s.max)}.` : '',
+    ].filter(Boolean);
+    const qs = consulta(s);
     const linhas = [
-      `Olá! Estou escolhendo ${s.tipo ? ARTIGO[s.tipo] : 'um modelo'}.${s.l ? ` Meu espaço: ${s.l} x ${s.c} cm.` : ''}${s.pessoas ? ` Pessoas: ${ROT_FILTRO.pessoas(s)}.` : ''}${s.forma ? ` Formato: ${s.forma}.` : ''}`,
+      `Olá! Estou escolhendo ${s.tipo ? ARTIGO[s.tipo] : 'um modelo'}.${r.length ? ` ${r.join(' ')}` : ''}`,
       ...lista.slice(0, 5).map((x) => `${x.it.n}: ${cfg.pagina.replace(/escolher\.html$/, '')}${x.it.s}.html`),
-      `${cfg.pagina}${location.search}`,
+      `${cfg.pagina}${qs ? `?${qs}` : ''}`,
     ];
     return linhas.filter(Boolean).join('\n');
   }
 
+  let sAtual = null;
   function resultado(s) {
+    sAtual = s;
     const { cabem, quase } = filtrar(s);
     const ordem = $('[data-esc-ordem]')?.value || 'encaixe';
     cabem.sort(ORD[ordem]);
@@ -299,7 +317,8 @@ ${t && t[4] ? '<span class="esc-nota">A ficha e a opção de tamanho divergem; o
     }
   }
 
-  function gravarUrl(s) {
+  /** Estado em query string: a mesma da URL da página e do link na mensagem ao consultor. */
+  function consulta(s) {
     const q = new URLSearchParams();
     for (const k of ['tipo', 'pessoas', 'onde', 'forma', 'conf', 'mat']) if (s[k]) q.set(k, s[k]);
     if (s.l) { q.set('l', s.l); q.set('c', s.c); }
@@ -308,7 +327,10 @@ ${t && t[4] ? '<span class="esc-nota">A ficha e a opção de tamanho divergem; o
     if (s.aq) q.set('aq', '1');
     if (s.max != null) q.set('max', s.max);
     if (passo > 1) q.set('passo', passo);
-    const qs = q.toString();
+    return q.toString();
+  }
+  function gravarUrl(s) {
+    const qs = consulta(s);
     try { history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname); } catch { /* sem history */ }
   }
   function lerUrl() {

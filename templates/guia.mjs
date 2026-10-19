@@ -9,6 +9,7 @@ import { formatBRL } from '../build/lib/money.mjs';
 import { fmtMetros } from '../build/lib/medidas.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
 import { perguntaLegivel } from './parts/faq-bloco.mjs';
+import { rotuloTam } from './parts/planta.mjs';
 import { campo, tamanhosProduto, faixaMedidas, NOME_TIPO, PLURAL_TIPO } from '../build/lib/catalogo.mjs';
 
 const HOJE = new Date().toISOString().slice(0, 10);
@@ -86,21 +87,28 @@ const linkProduto = (p) => html`<a class="link" href="${url(`${p.slug}.html`)}">
 // ---------------------------------------------------------------- guias
 function guiaTamanho(D, produtos) {
   const ban = produtos.filter((p) => p.d_tipo === 'banheira');
-  const unicos = new Map();
-  for (const p of ban) for (const x of tamanhosProduto(p)) {
-    if (!x.cm) continue;
-    const k = `${x.cm.menor}x${x.cm.maior}`;
-    if (!unicos.has(k)) unicos.set(k, { ...x.cm, rotulo: x.rotulo, produtos: new Set() });
-    unicos.get(k).produtos.add(p.slug);
+  // Só as medidas publicadas na opção de tamanho (ou na ficha, sem opção): a, b e c em metros.
+  // O envelope "maior das duas" dos modelos com medida a confirmar vale só no encaixe (escolhedor).
+  const cm = (m) => Math.round(m * 1000) / 10;
+  const medidas = new Map(), contornos = new Map();
+  for (const p of ban) for (const t of p.d_tamanhos || []) {
+    const a = Number(t.a), b = Number(t.b);
+    if (!(a > 0 && b > 0)) continue;
+    const me = Math.min(a, b), ma = Math.max(a, b), c = Number(t.c) > 0 ? Number(t.c) : 0;
+    const km = `${me}x${ma}x${c}`, kc = `${me}x${ma}`;
+    if (!medidas.has(km)) medidas.set(km, { menor: cm(me), maior: cm(ma), prof: cm(c), rotulo: rotuloTam(t), produtos: new Set() });
+    medidas.get(km).produtos.add(p.slug);
+    if (!contornos.has(kc)) contornos.set(kc, { menor: cm(me), maior: cm(ma) });
   }
-  const tams = [...unicos.values()].sort((a, b) => a.maior - b.maior || a.menor - b.menor);
-  const fx = faixaMedidas(ban);
+  const tams = [...medidas.values()].sort((a, b) => a.maior - b.maior || a.menor - b.menor || a.prof - b.prof);
+  const ctns = [...contornos.values()].sort((a, b) => a.maior - b.maior || a.menor - b.menor);
+  const fx = { min: tams[0].maior / 100, max: tams[tams.length - 1].maior / 100 };
   const faixas = D.categorias.filter((c) => c.filtro_implicito?.tipo === 'banheira' && c.filtro_implicito?.faixa_m).sort((a, b) => a.filtro_implicito.faixa_m.min - b.filtro_implicito.faixa_m.min);
-  const S = Math.ceil(Math.max(...tams.map((t) => t.maior)));
+  const S = Math.ceil(Math.max(...ctns.map((t) => t.maior)));
   const menor = tams[0], maior = tams[tams.length - 1];
-  const comMenor = ban.filter((p) => tamanhosProduto(p).some((x) => x.cm && x.cm.menor === menor.menor && x.cm.maior === menor.maior));
-  const comMaior = ban.filter((p) => tamanhosProduto(p).some((x) => x.cm && x.cm.menor === maior.menor && x.cm.maior === maior.maior));
-  // Lado maior em faixas de 20 cm (contagem de tamanhos distintos e de modelos)
+  const comMenor = ban.filter((p) => menor.produtos.has(p.slug));
+  const comMaior = ban.filter((p) => maior.produtos.has(p.slug));
+  // Lado maior em faixas de 20 cm (contagem de medidas publicadas distintas e de modelos)
   const balde = new Map();
   for (const t of tams) {
     const b = Math.floor(t.maior / 20) * 20;
@@ -113,8 +121,8 @@ function guiaTamanho(D, produtos) {
     saida: 'guia/banheira-por-tamanho.html',
     h1: 'Que banheira cabe no meu espaço?',
     curto: 'Banheira por tamanho',
-    descricao: `As ${ban.length} banheiras publicadas em ${tams.length} tamanhos, de ${fmtMetros(fx.min)} a ${fmtMetros(fx.max)} m no lado maior: quantas há em cada faixa e como conferir se cabem no seu espaço.`,
-    lead: html`O catálogo publicado tem <b class="num">${ban.length}</b> banheiras em <b class="num">${tams.length}</b> tamanhos diferentes, de <b class="num">${fmtMetros(fx.min)} m</b> a <b class="num">${fmtMetros(fx.max)} m</b> no lado maior. Abaixo, a conta feita com as medidas externas de cada opção de tamanho.`,
+    descricao: `As ${ban.length} banheiras publicadas em ${tams.length} medidas diferentes, de ${fmtMetros(fx.min)} a ${fmtMetros(fx.max)} m no lado maior: quantas há em cada faixa e como conferir se cabem no seu espaço.`,
+    lead: html`O catálogo publicado tem <b class="num">${ban.length}</b> banheiras em <b class="num">${tams.length}</b> medidas diferentes (largura x comprimento x profundidade), de <b class="num">${fmtMetros(fx.min)} m</b> a <b class="num">${fmtMetros(fx.max)} m</b> no lado maior. Abaixo, a conta feita com as medidas externas publicadas em cada opção de tamanho.`,
     escolher: 'escolher.html?tipo=banheira&passo=2',
     corpo: html`
 <section class="guia-sec" aria-labelledby="g1-a"><h2 id="g1-a">Quantos modelos há em cada faixa de tamanho?</h2>
@@ -123,15 +131,15 @@ function guiaTamanho(D, produtos) {
 <thead><tr><th scope="col">Faixa</th><th scope="col">Modelos</th></tr></thead>
 <tbody>${faixas.map((c) => html`<tr><th scope="row"><a class="link" href="${url(c.d_path)}">${c.nome}</a></th><td class="num" data-campo="categoria-total">${c.total_exibido}</td></tr>`)}</tbody></table></div></section>
 <section class="guia-sec guia-sec--sala sala" aria-labelledby="g1-b"><h2 id="g1-b">Todos os tamanhos na mesma escala</h2>
-<p id="g1-nuvem">Os ${tams.length} tamanhos de banheira desenhados a partir do mesmo canto, sobre uma grade de 10 cm. Em destaque, o menor (${menor.rotulo}) e o maior (${maior.rotulo}).</p>
-${nuvem(tams, { S, destaque: [menor, maior], id: 'g1-nuvem' })}
+<p id="g1-nuvem">Os ${ctns.length} contornos de planta (largura x comprimento, sem a profundidade) das ${tams.length} medidas publicadas, desenhados a partir do mesmo canto sobre uma grade de 10 cm. Em destaque, a menor (${menor.rotulo}) e a maior (${maior.rotulo}).</p>
+${nuvem(ctns, { S, destaque: [menor, maior], id: 'g1-nuvem' })}
 <p class="guia-nota">Contornos externos pelas medidas publicadas; o formato real de cada peça está na planta oficial.</p></section>
-<section class="guia-sec" aria-labelledby="g1-c"><h2 id="g1-c">Como os tamanhos se distribuem pelo lado maior</h2>
-<div class="rolagem guia-rol" tabindex="0" role="region" aria-label="Tamanhos por lado maior"><table class="guia-tab"><caption class="vh">Tamanhos de banheira pelo lado maior</caption>
-<thead><tr><th scope="col">Lado maior</th><th scope="col">Tamanhos</th><th scope="col">Modelos</th></tr></thead>
+<section class="guia-sec" aria-labelledby="g1-c"><h2 id="g1-c">Como as medidas se distribuem pelo lado maior</h2>
+<div class="rolagem guia-rol" tabindex="0" role="region" aria-label="Medidas por lado maior"><table class="guia-tab"><caption class="vh">Medidas de banheira publicadas, pelo lado maior</caption>
+<thead><tr><th scope="col">Lado maior</th><th scope="col">Medidas</th><th scope="col">Modelos</th></tr></thead>
 <tbody>${[...balde.values()].sort((a, b) => a.b - b.b).map((x) => html`<tr><th scope="row" class="num">De ${fmtMetros(x.b / 100)} m a menos de ${fmtMetros((x.b + 20) / 100)} m</th><td class="num">${x.tams}</td><td class="num">${x.prods.size}</td></tr>`)}</tbody></table></div>
 <p>A menor medida publicada é ${menor.rotulo} (${comMenor.map((p, i) => html`${i ? ', ' : ''}${linkProduto(p)}`)}). A maior é ${maior.rotulo} (${comMaior.map((p, i) => html`${i ? ', ' : ''}${linkProduto(p)}`)}).</p>
-${confirmar.length ? html`<p class="guia-nota">Em ${confirmar.length} modelos a ficha técnica e a opção de tamanho publicadas trazem medidas diferentes. Nesses casos, o escolhedor e as contas acima usam a maior das duas, e a página de cada modelo mostra as duas versões.</p>` : ''}</section>
+${confirmar.length ? html`<p class="guia-nota">Em ${confirmar.length} modelos a ficha técnica e a opção de tamanho publicadas trazem medidas diferentes. As contas acima usam a medida da opção de tamanho; o escolhedor, para conferir o encaixe, usa a maior das duas, e a página de cada modelo mostra as duas versões.</p>` : ''}</section>
 <section class="guia-sec" aria-labelledby="g1-d"><h2 id="g1-d">O que a fábrica responde sobre medidas</h2>${faqLiteral(D, ['faq-40', 'faq-39', 'faq-03'])}</section>`,
   };
 }

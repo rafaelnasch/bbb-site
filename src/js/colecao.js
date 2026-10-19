@@ -17,6 +17,7 @@
   const CAMPOS = ['fo', 'lu', 'ma', 'co', 'fx'];
   const NOME_CAMPO = { fo: 'Forma', lu: 'Lugares', ma: 'Material', co: 'Configuração', fx: 'Tamanho' };
   const brl = (n) => `R$ ${Number(n).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  let tamSel = null; // rótulo literal escolhido nas respostas da coleção (?tam=)
   const m2 = (cm) => (cm / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   const itens = [...grade.children].map((li) => {
@@ -27,6 +28,7 @@
       pos: Number(li.dataset.pos),
       fo: li.dataset.fo, lu: li.dataset.lu, ma: li.dataset.ma, co: li.dataset.co,
       fx: new Set((li.dataset.fx || '').split(',').filter(Boolean)),
+      tr: (li.dataset.tr || '').split('|'),
       p: li.dataset.p === '' ? null : Number(li.dataset.p),
       t,
       big: maior,
@@ -45,7 +47,7 @@
   const cabeEm = (it, L, C) => it.t.some(([me, ma]) => avalia(me, ma, L, C).cabe);
 
   function estado() {
-    const s = { fo: [], lu: [], ma: [], co: [], fx: [], ate: null, l: null, c: null };
+    const s = { fo: [], lu: [], ma: [], co: [], fx: [], ate: null, l: null, c: null, tam: tamSel };
     if (!form) return s;
     for (const el of form.elements) {
       if (!el.name) continue;
@@ -60,6 +62,7 @@
   const passa = (it, s, ignorar) => {
     for (const k of ['fo', 'lu', 'ma', 'co']) if (k !== ignorar && s[k].length && !s[k].includes(it[k])) return false;
     if (ignorar !== 'fx' && s.fx.length && !s.fx.some((x) => it.fx.has(x))) return false;
+    if (s.tam && !it.tr.includes(s.tam)) return false;
     if (ignorar !== 'ate' && s.ate != null && !(it.p != null && it.p <= s.ate)) return false;
     if (ignorar !== 'cabe' && s.l && !cabeEm(it, s.l, s.c)) return false;
     return true;
@@ -76,6 +79,7 @@
     const lista = [];
     for (const k of CAMPOS) for (const v of s[k]) lista.push({ t: `${NOME_CAMPO[k]}: ${rotuloValor(k, v)}`, tirar: () => { const el = form.querySelector(`input[name="${k}"][value="${CSS.escape(v)}"]`); if (el) el.checked = false; } });
     if (s.ate != null) lista.push({ t: `Até ${brl(s.ate)}`, tirar: () => { const r = form.elements.ate; r.value = r.max; } });
+    if (s.tam) lista.push({ t: `Tamanho ${s.tam}`, tirar: () => { tamSel = null; } });
     if (s.l) lista.push({ t: `Cabe em ${s.l} x ${s.c} cm`, tirar: () => { form.elements.l.value = ''; form.elements.c.value = ''; } });
     ativos.hidden = !lista.length;
     ativos.replaceChildren(...lista.map((x) => {
@@ -106,6 +110,7 @@
     const q = new URLSearchParams();
     for (const k of CAMPOS) for (const v of s[k]) q.append(k, v);
     if (s.ate != null) q.set('ate', s.ate);
+    if (s.tam) q.set('tam', s.tam);
     if (s.l) { q.set('l', s.l); q.set('c', s.c); }
     const o = ordemSel?.value;
     if (o && o !== 'posicao') q.set('ordem', o);
@@ -115,6 +120,8 @@
 
   function lerUrl() {
     const q = new URLSearchParams(location.search);
+    const tq = q.get('tam');
+    if (tq && itens.some((it) => it.tr.includes(tq))) tamSel = tq;
     if (form) {
       for (const k of CAMPOS) for (const v of q.getAll(k)) { const el = form.querySelector(`input[name="${k}"][value="${CSS.escape(v)}"]`); if (el) el.checked = true; }
       const ate = Number(q.get('ate'));
@@ -172,7 +179,9 @@
   }
 
   function limpar() {
+    tamSel = null;
     form?.reset();
+    if (!form) aplicar(true);
   }
 
   // ---------- Ver em escala ----------
@@ -218,6 +227,8 @@
       frag.append(li);
     }
     lista.replaceChildren(frag);
+    const av = $('[data-col-escala-aviso]');
+    if (av) av.textContent = esp ? `O desenho usa só as medidas externas publicadas: de cada peça, o tamanho que cabe em ${s.l} x ${s.c} cm com a menor folga, ou o menor tamanho quando ela não cabe.` : 'O desenho usa só as medidas externas publicadas, com o maior tamanho de cada peça.';
     const t = $('[data-col-escala-txt]');
     if (t) {
       const cabem = esp ? linhas.filter((l) => l.x.cabe).length : null;
@@ -240,9 +251,19 @@
   // ---------- Eventos ----------
   form?.addEventListener('input', () => aplicar(true));
   form?.addEventListener('change', () => aplicar(true));
-  form?.addEventListener('reset', () => requestAnimationFrame(() => { ordens.forEach((x) => { x.value = 'posicao'; }); ordenar(); aplicar(true); }));
+  form?.addEventListener('reset', () => requestAnimationFrame(() => { tamSel = null; ordens.forEach((x) => { x.value = 'posicao'; }); ordenar(); aplicar(true); }));
   form?.addEventListener('submit', (e) => { e.preventDefault(); aplicar(true); });
   d.querySelector('[data-col-limpar]')?.addEventListener('click', limpar);
+  d.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-col-tam]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    tamSel = a.dataset.colTam;
+    aplicar(true);
+    grade.closest('section')?.scrollIntoView({ block: 'start', behavior: BBB.lite ? 'auto' : 'smooth' });
+    const n = itens.filter((it) => !it.li.hidden).length;
+    BBB.anunciar?.(`${n} ${n === 1 ? 'peça' : 'peças'} no tamanho ${tamSel}.`);
+  });
   ordens.forEach((o) => o.addEventListener('change', (e) => { e.stopPropagation(); ordens.forEach((x) => { x.value = o.value; }); ordenar(); aplicar(false); }));
 
   lerUrl();

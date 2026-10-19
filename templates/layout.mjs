@@ -56,6 +56,7 @@ function ogPadrao() {
  * @param {string} [p.classe]     classe do <body>
  * @param {Array}  [p.critico]    extras de src/css/critico/ inline nesta página (ex.: ['peca'])
  * @param {string} [p.cssCritico] CSS crítico extra do tipo de página (já minificado)
+ * @param {boolean}[p.bandeja]   false omite a bandeja do comparador (no próprio comparador ela só cobriria a página)
  */
 export function layout(p) {
   if (!A) throw new Error('layout: configurarLayout(assets) não foi chamado');
@@ -127,7 +128,7 @@ ${p.corpo}
 ${rodape()}
 ${gavetaMenu({ ativo: p.ativo })}
 ${gavetaWhats()}
-<div class="bandeja" data-bandeja hidden role="region" aria-label="Modelos para comparar">
+${p.bandeja === false ? '' : html`<div class="bandeja" data-bandeja hidden role="region" aria-label="Modelos para comparar">
   <div class="wrap bandeja__in">
     <span class="bandeja__rot">Comparar</span>
     <ol class="bandeja__lista" data-bandeja-lista></ol>
@@ -136,7 +137,7 @@ ${gavetaWhats()}
       <a class="btn btn--claro" href="${url('comparar.html')}" data-bandeja-ir>${icone('comparar', { tamanho: 18 })}Comparar <span class="num" data-comparar-n>0</span></a>
     </div>
   </div>
-</div>
+</div>`}
 <div id="anuncio" class="vh" aria-live="polite" aria-atomic="true"></div>
 </body>
 </html>

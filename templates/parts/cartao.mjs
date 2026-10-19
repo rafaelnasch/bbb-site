@@ -54,6 +54,8 @@ export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqi
     'data-p': p.d_preco_min ?? p.preco?.valores_numericos?.finalPrice ?? '',
     'data-t': medidasCm || null,
     'data-fx': faixas.length ? faixas.join(',') : null,
+    // Rótulos literais dos tamanhos ("Toque num tamanho" nas respostas da coleção filtra por eles)
+    'data-tr': tams.map((x) => x.rotulo).filter(Boolean).join('|') || null,
   };
   const medida = t0 ? rotuloTam(t0.t) : '';
   return html`<li${attrs(dados)}>

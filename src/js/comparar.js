@@ -1,6 +1,8 @@
 // Comparador (SPEC 6.2 P0): até 3 peças da URL (?p=) ou da bandeja; contornos sobrepostos na mesma
 // escala, com "meu espaço"; tabela semântica com "Mostrar só as diferenças"; WhatsApp com os 3.
 // Tudo o que aparece vem de dados/indice.json e dados/fichas.json (rótulos literais da ficha).
+// Orçamento: 4,7 KB gzip contra a meta de 3 KB por arquivo da SPEC 6.2 (o teto de 25 KB por página da
+// SPEC 12 é respeitado). Desvio declarado, aguardando a decisão do dono do projeto.
 (() => {
   const d = document, w = window, BBB = w.BBB || {};
   const raiz = d.querySelector('[data-cmp]');
@@ -12,7 +14,7 @@
   const brl = (n) => `R$ ${Number(n).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   const fcm = (n) => (Math.round(n * 10) / 10).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
   const norm = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-  const CORES = [['var(--glow)', ''], ['var(--line)', '7 4'], ['#F4A6C0', '2 3']];
+  const CORES = [['var(--glow)', ''], ['var(--line)', '7 4'], ['var(--cmp-3)', '2 3']];
   const ROT = { Configuracao: 'Configuração', frete: 'Frete' };
   const ORDEM = ['Forma', 'Lugares', 'Material', 'Configuracao', 'Comprimento', 'Largura', 'Profundidade', 'Altura', 'frete'];
   let porSlug = new Map(), fichas = {}, sel = [], tam = {};
@@ -22,11 +24,14 @@
     const p = (q.get('p') || '').split(',').map((s) => s.trim()).filter((s) => porSlug.has(s)).slice(0, 3);
     const t = (q.get('t') || '').split(',');
     p.forEach((s, i) => { const n = Number(t[i]); if (Number.isInteger(n) && n >= 0) tam[s] = n; });
+    const l = Number(q.get('l')), c = Number(q.get('c')), f = $('[data-cmp-espaco]');
+    if (l > 0 && c > 0 && f) { f.elements.l.value = l; f.elements.c.value = c; }
     return p;
   }
   function gravarUrl() {
     // Vírgulas sem codificar: o endereço fica legível para quem copia e manda (slugs já são seguros).
-    const q = sel.length ? `?p=${sel.map(encodeURIComponent).join(',')}${sel.some((s) => tam[s]) ? `&t=${sel.map((s) => tam[s] || 0).join(',')}` : ''}` : '';
+    const sp = espaco();
+    const q = sel.length ? `?p=${sel.map(encodeURIComponent).join(',')}${sel.some((s) => tam[s]) ? `&t=${sel.map((s) => tam[s] || 0).join(',')}` : ''}${sp ? `&l=${sp.l}&c=${sp.c}` : ''}` : '';
     try { history.replaceState(history.state, '', q || location.pathname); } catch { /* sem history */ }
   }
   const tamanho = (it) => it.ts[Math.min(tam[it.s] || 0, it.ts.length - 1)] || null;
@@ -147,7 +152,16 @@
     desenhar();
   }
 
+  /** Tamanho vindo da bandeja (escolhido no escolhedor), quando a URL não traz um. */
+  const tamDaBandeja = () => { for (const x of BBB.comparar?.lista() || []) if (x.t > 0 && tam[x.slug] == null) tam[x.slug] = x.t; };
+  /** Guarda na bandeja o tamanho de cada peça e o espaço, para o link do cabeçalho abrir igual. */
+  const guardar = () => {
+    if (!BBB.comparar) return;
+    const sp = espaco();
+    BBB.comparar.definir(sel.map((s) => ({ slug: s, nome: porSlug.get(s).n, ...(tam[s] > 0 ? { t: tam[s] } : {}), ...(sp || {}) })));
+  };
   function sincronizar() {
+    tamDaBandeja();
     const lista = (BBB.comparar?.lista() || []).map((x) => x.slug).filter((s) => porSlug.has(s));
     if (lista.join() !== sel.join()) { sel = lista; render(); }
   }
@@ -177,14 +191,15 @@
   });
   d.addEventListener('change', (e) => {
     const s = e.target.closest('[data-cmp-tam]');
-    if (s) { tam[s.dataset.cmpTam] = Number(s.value); render(); return; }
+    if (s) { tam[s.dataset.cmpTam] = Number(s.value); guardar(); render(); return; }
     if (e.target.closest('[data-cmp-dif]')) {
       const so = e.target.checked;
       d.querySelectorAll('[data-cmp-tbody] tr[data-igual]').forEach((tr) => { tr.hidden = so; });
       BBB.anunciar?.(so ? 'Mostrando só as linhas que mudam entre os modelos.' : 'Mostrando todas as linhas.');
     }
   });
-  $('[data-cmp-espaco]')?.addEventListener('input', desenhar);
+  $('[data-cmp-espaco]')?.addEventListener('input', () => { desenhar(); gravarUrl(); });
+  $('[data-cmp-espaco]')?.addEventListener('change', guardar);
   $('[data-cmp-espaco]')?.addEventListener('submit', (e) => e.preventDefault());
   w.addEventListener('storage', (e) => { if (e.key === 'bbb:comparar') requestAnimationFrame(sincronizar); });
 
@@ -195,8 +210,14 @@
     fichas = fic || {};
     carregando.hidden = true;
     const daUrl = lerUrl();
-    if (daUrl.length && BBB.comparar) BBB.comparar.definir(daUrl.map((s) => ({ slug: s, nome: porSlug.get(s).n })));
-    sel = daUrl.length ? daUrl : (BBB.comparar?.lista() || []).map((x) => x.slug).filter((s) => porSlug.has(s));
+    if (daUrl.length) sel = daUrl;
+    else {
+      tamDaBandeja();
+      sel = (BBB.comparar?.lista() || []).map((x) => x.slug).filter((s) => porSlug.has(s));
+      const e = (BBB.comparar?.lista() || []).findLast((x) => x.l && x.c), f = $('[data-cmp-espaco]');
+      if (e && f && !espaco()) { f.elements.l.value = e.l; f.elements.c.value = e.c; }
+    }
+    if (daUrl.length) guardar();
     render();
   }).catch(() => { carregando.textContent = 'Não foi possível carregar os dados agora.'; });
 })();

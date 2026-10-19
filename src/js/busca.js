@@ -1,7 +1,10 @@
 // Busca local (SPEC 6.2 P0). O índice (dados/indice.json) só é baixado quando a página abre.
 // Normaliza acento e caixa, aceita "1.70" como "1,70", tolera 1 erro por termo (Levenshtein) em termos
 // de 4 letras ou mais e aceita prefixo. Todos os termos precisam casar (E). Sugere coleções reais por
-// faceta (ex.: "spa 6 lugares" sugere as categorias de lugares que contêm 6).
+// faceta (ex.: "spa 6 lugares" sugere as categorias de lugares que contêm 6). Uma medida digitada
+// ("1,60 x 1,60 x 0,50") só encontra os modelos com esse tamanho publicado, na mesma ordem.
+// Orçamento: 3,0 KB gzip contra a meta de 2 KB por arquivo da SPEC 6.2 (o teto de 25 KB por página da
+// SPEC 12 é respeitado). Desvio declarado, aguardando a decisão do dono do projeto.
 (() => {
   const d = document, w = window, BBB = w.BBB || {};
   const raiz = d.querySelector('[data-bus]');
@@ -13,6 +16,7 @@
   const PARADAS = new Set(['de', 'da', 'do', 'das', 'dos', 'com', 'em', 'para', 'e', 'a', 'o', 'x', 'p', 'um', 'uma', 'ate', 'm', 'cm']);
   const TIPO = { banheira: 'banheira banheiras', spa: 'spa spas', ofuro: 'ofuro ofuros', sauna: 'sauna saunas', acessorio: 'acessorio acessorios' };
   const PASSO = 48;
+  const MED = /^\d+,\d+$/;
 
   const norm = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
     .replace(/(\d)\.(\d)/g, '$1,$2').replace(/(\d)\s*x\s*(\d)/g, '$1 x $2');
@@ -56,11 +60,16 @@
         [termos(it.ts.map((t) => t[0]).join(' ')), 1],
         [termos((it.c || []).map((i) => cats[i]?.nome || '').join(' ')), 0.5],
       ];
-      return { it, campos };
+      // Medidas de cada tamanho como sequência de números ("1,60 1,60 0,50"), para busca exata de medida.
+      const meds = it.ts.map((t) => ` ${termos(t[0]).filter((x) => MED.test(x)).join(' ')} `);
+      return { it, campos, meds };
     });
   }
 
   function pontuar(doc, qs) {
+    // Dois ou mais números com vírgula = uma medida: casa só o tamanho publicado com essa sequência exata.
+    const nq = qs.filter((q) => MED.test(q));
+    if (nq.length > 1 && !doc.meds.some((m) => m.includes(` ${nq.join(' ')} `))) return 0;
     let total = 0;
     for (const q of qs) {
       let melhor = 0;

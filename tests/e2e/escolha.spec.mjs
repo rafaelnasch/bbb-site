@@ -228,3 +228,88 @@ test('nenhuma rolagem horizontal da página em 320 e 430 px', async ({ page }) =
     }
   }
 });
+
+// ---------------------------------------------------------------- correções do verificador (bloco 5)
+test.describe('correções do verificador', () => {
+  const msgDe = async (page, sel) => decodeURIComponent((await page.locator(sel).getAttribute('href')).split('?text=')[1]);
+  const linkEscolher = (msg) => msg.split('\n').pop();
+
+  test('o link na mensagem acompanha a URL da página no mesmo instante (desktop e celular)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(pg('escolher.html?tipo=banheira&l=80&c=150&passo=8'));
+    await expect(page.locator('[data-esc-lista] > li').first()).toBeVisible();
+    await page.locator('label.esc-op', { hasText: 'Redonda' }).first().click();
+    await expect(page).toHaveURL(/forma=Redonda/);
+    expect(linkEscolher(await msgDe(page, '[data-esc-wa]')).split('?')[1]).toBe(page.url().split('?')[1]);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(pg('escolher.html?tipo=banheira&l=80&c=150&passo=7'));
+    await expect(page.locator('.esc-p[data-passo="7"]')).toHaveClass(/is-atual/);
+    await page.locator('[data-esc-avancar]').click();
+    await expect(page).toHaveURL(/passo=8/);
+    expect(linkEscolher(await msgDe(page, '[data-esc-wa]')).split('?')[1]).toBe(page.url().split('?')[1]);
+  });
+
+  test('a mensagem leva todas as respostas ativas', async ({ page }) => {
+    await page.goto(pg('escolher.html?tipo=banheira&l=90&c=170&folga=5&pessoas=1&onde=banheiro&conf=Completa&aq=1&passo=8'));
+    await expect(page.locator('[data-esc-res-n]')).not.toHaveText('');
+    const l1 = (await msgDe(page, '[data-esc-wa]')).split('\n')[0];
+    for (const t of ['uma banheira', 'Meu espaço: 90 x 170 cm, com folga de 5 cm.', 'Pessoas: Individual.', 'Onde vou instalar: no banheiro.', 'Configuração: Completa.', 'Com aquecedor.']) expect(l1).toContain(t);
+  });
+
+  test('selo "Medida a confirmar" nos 12 modelos, mesmo sem espaço informado', async ({ page }) => {
+    const doze = produtos.filter((p) => p.d_medida_confirmada === false && p.d_tipo !== 'acessorio');
+    expect(doze.length).toBe(12);
+    await page.goto(pg('escolher.html?passo=8'));
+    await expect(page.locator('[data-esc-lista] > li').first()).toBeVisible();
+    for (const p of doze) await expect(page.locator(`[data-esc-lista] > li:has(a[href$="/${p.slug}.html"]) .selo--confirmar`)).toHaveCount(1);
+    await expect(page.locator('[data-esc-lista] .selo--confirmar')).toHaveCount(12);
+  });
+
+  test('a nota do aquecedor conta sobre o mesmo resultado', async ({ page }) => {
+    await page.goto(pg('escolher.html?tipo=banheira&l=80&c=150&passo=8'));
+    const n = await page.locator('[data-esc-res-n]').textContent();
+    await expect(page.locator('[data-esc-aq-nota]')).toContainText(new RegExp(`em \\d+ de ${n} modelos? deste resultado`));
+  });
+
+  test('tamanhos das respostas da coleção: o número prometido é o que aparece', async ({ page }) => {
+    await page.goto(pg('banheiras.html'));
+    const links = page.locator('[data-col-tam]');
+    const n = await links.count();
+    expect(n).toBeGreaterThan(10);
+    for (const i of [0, Math.floor(n / 2), n - 1]) {
+      const a = links.nth(i);
+      const prometido = Number((await a.locator('span').textContent()).match(/\d+/)[0]);
+      await a.click();
+      await expect(page.locator('[data-col-n]')).toHaveText(String(prometido));
+      await expect(page.locator('[data-col-grade] > li:not([hidden])')).toHaveCount(prometido);
+      expect(page.url()).toContain('tam=');
+      await page.locator('[data-col-ativos] .col-ativo button').first().click();
+    }
+    // e pelo endereço direto (sem JS no clique)
+    const r = '1,60 x 1,60 x 0,50';
+    await page.goto(pg(`banheiras.html?tam=${encodeURIComponent(r)}`));
+    const esperado = categorias.find((c) => c.d_path === 'banheiras.html').produtos.filter((s) => (porSlug.get(s).d_tamanhos || []).some((t) => (t.rotulo ?? t.rotulo_ficha) === r)).length;
+    await expect(page.locator('[data-col-grade] > li:not([hidden])')).toHaveCount(esperado);
+  });
+
+  test('busca por medida casa só o tamanho publicado exato', async ({ page }) => {
+    const r = '1,60 x 1,60 x 0,50';
+    await page.goto(pg(`busca.html?q=${encodeURIComponent(r)}`));
+    const esperado = produtos.filter((p) => (p.d_tamanhos || []).some((t) => (t.rotulo ?? t.rotulo_ficha) === r)).length;
+    await expect(page.locator('[data-bus-lista] > li')).toHaveCount(esperado);
+  });
+
+  test('comparador: sem bandeja na própria página; do escolhedor leva tamanho e espaço', async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 760 });
+    await page.goto(pg('escolher.html?tipo=banheira&l=90&c=170&passo=8'));
+    const cart = page.locator('[data-esc-lista] > li').first();
+    await expect(cart).toBeVisible();
+    const tam = (await cart.locator('.esc-c__tam').textContent()).replace(/^[^:]+:\s*/, '').replace(/\s*\(.*$/, '').trim();
+    await cart.locator('[data-comparar]').click();
+    await page.locator('[data-bandeja-ir]').click();
+    await expect(page).toHaveURL(/comparar\.html\?p=.*&l=90&c=170/);
+    await expect(page.locator('[data-bandeja]')).toHaveCount(0);
+    await expect(page.locator('[data-cmp-espaco] input[name="l"]')).toHaveValue('90');
+    await expect(page.locator('[data-cmp-tbody] tr', { hasText: /^Tamanho/ }).first()).toContainText(tam);
+  });
+});

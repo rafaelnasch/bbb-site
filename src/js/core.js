@@ -89,7 +89,12 @@
   };
   let comp = ler();
   const base = () => ($('[data-comparar-contador]')?.getAttribute('href') || '').split('?')[0];
-  const destino = () => (comp.length ? `${base()}?p=${comp.map((x) => encodeURIComponent(x.slug)).join(',')}` : base());
+  // Leva também o tamanho escolhido de cada peça (t) e o espaço do cliente (l, c), quando vieram do escolhedor.
+  const destino = () => {
+    if (!comp.length) return base();
+    const e = comp.findLast((x) => x.l && x.c);
+    return `${base()}?p=${comp.map((x) => encodeURIComponent(x.slug)).join(',')}${comp.some((x) => x.t) ? `&t=${comp.map((x) => x.t || 0).join(',')}` : ''}${e ? `&l=${e.l}&c=${e.c}` : ''}`;
+  };
   const pintar = () => {
     const n = comp.length;
     $$('[data-comparar-n]').forEach((e) => { e.textContent = n; e.dataset.n = n; });
@@ -132,7 +137,8 @@
         BBB.anunciar(`Você já escolheu ${MAX} modelos. Tire um para incluir outro.`);
         return false;
       }
-      comp.push({ slug: item.slug, nome: item.nome || item.slug });
+      const t = Number(item.t), l = Number(item.l), c = Number(item.c);
+      comp.push({ slug: item.slug, nome: item.nome || item.slug, ...(t > 0 ? { t } : {}), ...(l > 0 && c > 0 ? { l, c } : {}) });
       salvar();
       BBB.evento('comparar_add', { slug: item.slug, sku: item.sku || null });
       BBB.anunciar(`${item.nome || item.slug} entrou na comparação. ${comp.length} de ${MAX}.`);
@@ -169,7 +175,7 @@
       e.preventDefault();
       const slug = tog.dataset.comparar;
       if (BBB.comparar.tem(slug)) BBB.comparar.remover(slug);
-      else BBB.comparar.add({ slug, nome: tog.dataset.nome, sku: tog.dataset.sku });
+      else BBB.comparar.add({ slug, nome: tog.dataset.nome, sku: tog.dataset.sku, t: tog.dataset.t, l: tog.dataset.l, c: tog.dataset.c });
       return;
     }
     const rem = t.closest('[data-comparar-rem]');

@@ -118,10 +118,10 @@ function respostas(cat, produtos) {
   for (const p of produtos) for (const t of p.d_tamanhos || []) {
     const r = rotuloTam(t);
     if (!r) continue;
-    if (!porTam.has(r)) porTam.set(r, { r, n: 0, a: Math.max(t.a || 0, t.b || 0), m: Math.min(t.a || 0, t.b || 0) });
-    porTam.get(r).n++;
+    if (!porTam.has(r)) porTam.set(r, { r, ps: new Set(), a: Math.max(t.a || 0, t.b || 0), m: Math.min(t.a || 0, t.b || 0) });
+    porTam.get(r).ps.add(p.slug);
   }
-  const tams = [...porTam.values()].sort((a, b) => a.a - b.a || a.m - b.m || a.r.localeCompare(b.r));
+  const tams = [...porTam.values()].map((t) => ({ ...t, n: t.ps.size })).sort((a, b) => a.a - b.a || a.m - b.m || a.r.localeCompare(b.r));
   const lug = valoresFaceta(produtos, 'Lugares');
   const mat = valoresFaceta(produtos, 'Material');
   const conf = valoresFaceta(produtos, 'Configuracao');
@@ -129,8 +129,8 @@ function respostas(cat, produtos) {
   return html`<section class="col-resp" aria-labelledby="col-resp-h">
   <h2 id="col-resp-h">Respostas sobre ${nomeMin}</h2>
   ${tams.length ? html`<div class="col-resp__b"><h3>Quais tamanhos existem nesta coleção?</h3>
-    <p>${tams.length} ${tams.length === 1 ? 'tamanho publicado' : 'tamanhos publicados'}, como aparecem nas opções de cada peça (largura x comprimento x profundidade, em metros). Toque num tamanho para ver os modelos.</p>
-    <ul class="col-tams num" role="list">${tams.map((t) => html`<li><a href="${url(`busca.html?q=${encodeURIComponent(t.r)}`)}">${t.r}<span>${t.n} ${t.n === 1 ? 'modelo' : 'modelos'}</span></a></li>`)}</ul></div>` : ''}
+    <p>${tams.length} ${tams.length === 1 ? 'tamanho publicado' : 'tamanhos publicados'}, como aparecem nas opções de cada peça (largura x comprimento x profundidade, em metros). Toque num tamanho para ver os modelos desta coleção.</p>
+    <ul class="col-tams num" role="list">${tams.map((t) => html`<li><a href="${url(`${cat.d_path}?tam=${encodeURIComponent(t.r)}`)}" data-col-tam="${t.r}">${t.r}<span>${t.n} ${t.n === 1 ? 'modelo' : 'modelos'}</span></a></li>`)}</ul></div>` : ''}
   ${lug.length ? html`<div class="col-resp__b"><h3>Para quantas pessoas?</h3>
     <p>Pela ficha técnica de cada peça: ${lug.map(([v, n], i) => html`${i ? (i === lug.length - 1 ? ' e ' : ', ') : ''}<b>${n}</b> ${n === 1 ? 'peça' : 'peças'} ${/^individual/i.test(v) ? 'individual' + (n === 1 ? '' : 'is') : `de ${v.toLocaleLowerCase('pt-BR')}`}`)}.</p></div>` : ''}
   ${mat.length || conf.length ? html`<div class="col-resp__b"><h3>Qual a diferença entre as versões?</h3>
@@ -220,7 +220,7 @@ export function paginas(ctx) {
     ${S ? html`<div class="col-escala sala" id="col-escala" data-col-escala-painel hidden>
       <div class="col-escala__cab"><p class="etiqueta etiqueta--linha">Mesma escala, do menor ao maior</p><p class="col-escala__txt" data-col-escala-txt></p></div>
       <div class="rolagem col-escala__rol" tabindex="0" role="region" aria-label="Peças em escala, role para os lados"><ol class="col-escala__lista" role="list" data-col-escala-lista></ol></div>
-      <p class="escala__aviso">O desenho usa só as medidas externas publicadas, com o maior tamanho de cada peça. Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.</p>
+      <p class="escala__aviso"><span data-col-escala-aviso>O desenho usa só as medidas externas publicadas, com o maior tamanho de cada peça.</span> Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.</p>
     </div>` : ''}
     <ol class="col-grade" role="list" data-col-grade>${lista.map((p, i) => {
       const fx = faixas.map((c, j) => ((p.d_categorias_paths || []).includes(c.d_path) ? j : -1)).filter((j) => j >= 0);
@@ -257,7 +257,7 @@ export function paginas(ctx) {
           mainEntity: {
             '@type': 'ItemList',
             numberOfItems: lista.length,
-            itemListOrder: 'https://schema.org/ItemListUnordered',
+            itemListOrder: 'https://schema.org/ItemListOrderAscending',
             itemListElement: lista.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`${p.slug}.html`), name: p.nome })),
           },
         },
