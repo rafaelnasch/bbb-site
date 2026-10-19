@@ -35,7 +35,7 @@ export function entrega(D) {
   <ul class="entrega__lista" role="list">
     ${pol.entrega?.literal ? html`<li>${icone('caminhao', { tamanho: 22 })}<span data-campo="prazo-entrega">${pol.entrega.literal}</span></li>` : ''}
     ${pol.pagamento?.literal ? html`<li>${icone('escudo', { tamanho: 22 })}<span data-campo="pagamento">${pol.pagamento.literal}</span></li>` : ''}
-    ${pol.desistencia?.literal ? html`<li>${icone('relogio', { tamanho: 22 })}<span>${pol.desistencia.literal}.</span></li>` : ''}
+    ${pol.desistencia?.literal ? html`<li>${icone('relogio', { tamanho: 22 })}<span>${pol.desistencia.literal}${/[.;!?]$/.test(pol.desistencia.literal) ? '' : '.'}</span></li>` : ''}
     ${pol.garantia?.texto_exibido ? html`<li>${icone('boia', { tamanho: 22 })}<span>${pol.garantia.texto_exibido}</span></li>` : ''}
   </ul>
   <p class="entrega__links">

@@ -13,7 +13,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from
 import { join, dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { paths } from '../site.config.mjs';
-import { filtrarFrasesEditorial, detectoresEditoriais } from './lib/texto.mjs';
+import { filtrarFrasesEditorial, detectoresEditoriais, superlativos } from './lib/texto.mjs';
 
 const R = paths.recon;
 const SITE_ATUAL = 'https://www.banheirasbombanho.com.br';
@@ -190,14 +190,19 @@ export function gerarInstitucionais({ gravar = true } = {}) {
   const fim = bi.findIndex((l) => /^Projetos de Banheiras$/i.test(l));
   if (ini >= 0 && fim > ini) {
     const bloco = bi.slice(ini + 1, fim).map((l) => l.trim()).filter(Boolean);
+    // Depoimento assinado é opinião do cliente, não afirmação da empresa: o superlativo do cliente
+    // ("a melhor opção de compra") fica, exibido como citação com o nome e a nota de opinião.
+    // As demais regras (saúde, autodeclaração, termo proibido) continuam valendo.
+    const detDep = detectores.filter((d) => d.regra !== 'superlativo_nao_comprovado');
     for (let i = 0; i + 1 < bloco.length; i += 2) {
       // O depoimento cuja frase viola a regra editorial sai inteiro, com o nome de quem assina.
-      const f = filtrarFrasesEditorial(bloco[i], detectores);
+      const f = filtrarFrasesEditorial(bloco[i], detDep);
       if (f.removidos.length) {
         paginas['banheiras-instaladas'].removidos.push(...f.removidos.map((x) => ({ frase: `${x.frase} (${bloco[i + 1]})`, regra: x.regra, termos: x.termos, obs: 'depoimento inteiro fora da exibição' })));
         continue;
       }
-      depoimentos.push({ texto: bloco[i], autor: bloco[i + 1] });
+      const sup = superlativos(bloco[i]);
+      depoimentos.push({ texto: bloco[i], autor: bloco[i + 1], ...(sup.length ? { opiniao_do_cliente_com_superlativo: sup } : {}) });
     }
   }
 
@@ -210,6 +215,21 @@ export function gerarInstitucionais({ gravar = true } = {}) {
     { item: 'inmetro: organismo certificador', decisao: 'as duas versões, com nota', motivo: 'a página cita ACERT e o rodapé cita o Instituto Brasileiro de Certificação (SPEC 0.3)' },
     { item: 'loja-showrooms2 (lojas antigas: Pouso Alegre e outro endereço em Taubaté)', decisao: 'não publicado', motivo: 'versão antiga não linkada, sem confirmação (institucional.json)' },
     { item: 'banheiras-instaladas: fotos dos projetos', decisao: 'não publicadas', motivo: 'as fotos dos projetos e das fachadas ainda não passaram pela revisão (uma foto da galeria mostra telefone fora dos contatos ativos); a página traz os nomes e legendas literais' },
+    // Perguntas frequentes: a SPEC 14 pede "46 itens visíveis menos garantia" (44). A página mostra 42.
+    { item: 'perguntas-frequentes: 42 de 44 itens (SPEC 14)', decisao: 'desvio do critério, para aprovação do dono', motivo: 'ficam fora faq-01 (carrinho do site antigo, acima) e faq-17 (abaixo); faq-07 e faq-45 são de garantia (SPEC 15)', aprovacao_do_dono: 'pendente' },
+    { item: 'faq.json faq-17 ("O que é CROMOTERAPIA?")', decisao: 'fora da página de perguntas', motivo: 'a única frase da resposta atribui efeito ao acessório ("luzes coloridas de terapia alternativa", "maior relaxamento e bem estar"), afirmação de saúde (SPEC 0.5 e decisão do dono); nada sobra para publicar sem reescrever', aprovacao_do_dono: 'pendente' },
+    { item: 'faq.json faq-34 e faq-38 (frases da lista de autodeclarações)', decisao: 'publicadas, literais', motivo: 'o filtro de autodeclaração tirava as duas respostas; não há superlativo, número da empresa nem saúde, e o dado confirma cada uma (faq-34: condição de atacado literal da empresa; faq-38: ofurôs "Individual" e spa de 8 lugares no catálogo). A conferência roda no normalize (revisao_autodeclaracao no item)' },
+    // URLs que respondem 200 no site atual sem página equivalente (SPEC 4: preservar ou fazer ponte).
+    { item: 'beneficios-cromoterapia e beneficios-da-hidromassagem', decisao: 'ponte para a página inicial', motivo: 'páginas de benefícios do banho e das luzes, com afirmações de saúde (SPEC 0.5); não são publicadas e o endereço não cai no 404' },
+    { item: 'downloads', decisao: 'ponte para o manual', motivo: 'materiais de apoio: o manual em texto e o PDF original' },
+    { item: 'situacao-rastreio e sucesso', decisao: 'ponte para rastreio.html', motivo: 'etapas do formulário de rastreio do site atual; o rastreio novo é pelo WhatsApp do rastreio' },
+    { item: 'sauna/por-tamanho/sauna-de-1-30-x-1-10-x-2-00.html', decisao: 'ponte para sauna.html', motivo: 'categoria do site atual sem produtos (catalog.json: página de conteúdo)' },
+    // Endereços de produto que não são o caminho atual.
+    { item: 'aquecedor-digital-com-sensor-de-níve-bbb.html e as duas URLs com espaço da Acquaview', decisao: 'produto no slug sem acento e sem espaço; o endereço atual vira ponte (noindex) e entra em build/redirects.csv para o 301', motivo: 'a SPEC 4 pede o produto no endereço atual com acento, em UTF-8; o gerador do produto (bloco 4) publica pelo slug ASCII. Muda a URL desses 3 produtos: o dono decide se mantém assim ou se a página passa para o caminho atual', aprovacao_do_dono: 'pendente' },
+    // Remoções que tiram conteúdo (registradas em `removidos` da página).
+    { item: 'politica-devolucao-reembolso: estorno no cartão da seção "Por defeito"', decisao: 'fora, até a empresa confirmar', motivo: 'a frase literal cita outra empresa ("Randora", resíduo de modelo); não dá para trocar o nome sem reescrever o texto. A seção fica sem a regra do cartão; a regra com o nome da Banheiras Bom Banho segue na seção de desistência', aprovacao_do_dono: 'pendente' },
+    { item: 'banheiras-instaladas: depoimento de Fábio Henrique', decisao: 'publicado como opinião do cliente', motivo: '"a melhor opção de compra" é opinião assinada de um cliente, não afirmação da empresa; sai como citação com o nome e a nota "Opiniões de clientes, assinadas". As regras de saúde e de autodeclaração continuam valendo nos depoimentos', aprovacao_do_dono: 'pendente' },
+    { item: 'manual-usuario-instalacao: filtro editorial', decisao: 'frase inteira, nunca linha solta', motivo: 'o PDF quebra a frase no meio da linha; o filtro tira a frase de ponto a ponto (também na virada de página) e o texto de antes e de depois não se juntam. O sumário é o índice do próprio PDF (p. 3), ligado aos títulos do texto; linhas de tabela ficam como linhas' },
   ];
 
   const out = {

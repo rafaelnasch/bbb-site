@@ -27,15 +27,35 @@ for (const js of [true, false]) {
   test(`ponte redireciona em menos de 1 s ${js ? 'com' : 'sem'} JavaScript`, async ({ browser }) => {
     const ctx = await browser.newContext({ javaScriptEnabled: js });
     const page = await ctx.newPage();
+    // Erro de script na ponte derruba o teste (o location.replace() precisa rodar de fato).
+    const erros = [];
+    page.on('pageerror', (e) => erros.push(e.message));
     const t0 = Date.now();
     await page.goto(`${BASE}/taubate`);
     await page.waitForURL(/lojas\/loja-showrooms\.html#taubate$/, { timeout: 3000 });
     expect(Date.now() - t0).toBeLessThan(js ? 1000 : 2000);
     await page.goto(`${BASE}/catalog/category/view/id/130`);
     await page.waitForURL(/\/banheiras\.html$/, { timeout: 3000 });
+    await page.goto(`${BASE}/downloads`);
+    await page.waitForURL(/\/manual-usuario-instalacao\.html$/, { timeout: 3000 });
+    expect(erros, 'erros de script').toEqual([]);
     await ctx.close();
   });
 }
+
+test('ponte: o location.replace() leva ao destino mesmo sem o meta refresh', async ({ page }) => {
+  // Tira o meta refresh da resposta: só o script pode redirecionar. Erro de script derruba o teste.
+  const erros = [];
+  page.on('pageerror', (e) => erros.push(e.message));
+  await page.route('**/sobre-nos', async (route) => {
+    const r = await route.fetch();
+    const corpo = (await r.text()).replace(/<meta http-equiv="refresh"[^>]*>/, '');
+    await route.fulfill({ response: r, body: corpo });
+  });
+  await page.goto(`${BASE}/sobre-nos`);
+  await page.waitForURL(/lojas\/sobre-nos\.html$/, { timeout: 3000 });
+  expect(erros).toEqual([]);
+});
 
 test('FAQ: busca filtra, abre o item e mostra o vazio com ajuda', async ({ page }) => {
   await page.goto(`${BASE}/perguntas-frequentes.html`);

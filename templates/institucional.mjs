@@ -13,6 +13,7 @@ import { linhaCanal, listaConsultores, horarioEmLinhas } from './parts/gaveta-wh
 import { numerosDeclarados, reclameAqui, cidadeDaFabrica } from './home.mjs';
 import { mapaLojas } from '../build/lib/mapa-lojas.mjs';
 import { CATEGORIAS_PONTE, NOME_TIPO, TIPOS, RAIZ_TIPO } from '../build/lib/catalogo.mjs';
+import { blocosDoManual, indiceDoManual } from './parts/manual.mjs';
 import { blocosDoTexto, prosa, sumario, notaFonte, topo, botaoWhats, inicio, pagina, comLinks, emCaixaAlta } from './parts/inst.mjs';
 
 const P = (D, k) => {
@@ -419,18 +420,12 @@ function manual(ctx) {
   const mb = existsSync(pdf) ? (statSync(pdf).size / 1048576).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) : null;
   // Abertura literal da página do manual (sem o título e o rótulo do botão).
   const intro = linhasDe(pi.texto_exibido).filter((l) => !/^Manual do Usuário e Instalação de/i.test(l) && !/^Baixar agora/i.test(l));
-  // Páginas do PDF em HTML: a 1 é a capa e a 3 é o índice do PDF (o sumário daqui é calculado das seções).
-  const secoes = [];
-  const paginas = [];
-  for (const pg of m.paginas || []) {
-    if (pg.pagina === 1 || pg.pagina === 3 || pg.oculto_ate_decisao) continue;
-    const ls = linhasDe(pg.texto_exibido);
-    if (ls[0] === String(pg.pagina)) ls.shift();
-    if (!ls.length) continue;
-    const { blocos, secoes: s } = blocosDoTexto(ls.join('\n'), { prefixo: `m${pg.pagina}`, refluir: true, subtitulos: false });
-    secoes.push(...s);
-    paginas.push({ n: pg.pagina, blocos });
-  }
+  // Páginas do PDF em HTML: a 1 é a capa e a 3 é o índice do PDF, que vira o sumário (só as linhas do
+  // índice com título correspondente no texto exibido; regras em parts/manual.mjs).
+  const exibir = (m.paginas || []).filter((pg) => pg.pagina !== 1 && pg.pagina !== 3 && !pg.oculto_ate_decisao && !pg.sem_texto_exibido);
+  const indice = indiceDoManual((m.paginas || []).find((pg) => pg.pagina === 3)?.texto_exibido);
+  const { paginas: paginasM, secoes } = blocosDoManual(exibir, indice);
+  const paginas = paginasM.filter((pg) => pg.blocos.length);
   const corpo = html`${topo({
     trilha, etiqueta: 'Suporte', h1: 'Manual do usuário e instalação',
     lead: intro[0] || null,
@@ -557,7 +552,8 @@ function projetos(ctx) {
 <article class="dia inst">
   <div class="wrap inst__largo">
     ${I.depoimentos_projetos.length ? html`<section class="inst-bloco" aria-labelledby="pj-dep"><h2 id="pj-dep" class="inst-h2">O que os clientes falam</h2>
-      <div class="inst-deps">${I.depoimentos_projetos.map((d, i) => html`<figure class="inst-dep" data-reveal style="--i:${i}"><blockquote><p data-campo="institucional-texto">${d.texto}</p></blockquote><figcaption>${d.autor}</figcaption></figure>`)}</div></section>` : ''}
+      <div class="inst-deps">${I.depoimentos_projetos.map((d, i) => html`<figure class="inst-dep" data-reveal style="--i:${i}"><blockquote><p data-campo="institucional-texto">${d.texto}</p></blockquote><figcaption>${d.autor}</figcaption></figure>`)}</div>
+      <p class="inst-legenda">Opiniões de clientes, assinadas, como publicadas pela empresa no site atual. Não são afirmações da Banheiras Bom Banho.</p></section>` : ''}
     <div class="inst-colunas inst-colunas--topo">
       ${I.projetos.banheiras.length ? html`<section class="inst-bloco" aria-labelledby="pj-ban"><h2 id="pj-ban" class="inst-h2">Projetos de banheiras</h2>${lista(I.projetos.banheiras)}</section>` : ''}
       ${I.projetos.spas.length ? html`<section class="inst-bloco" aria-labelledby="pj-spa"><h2 id="pj-spa" class="inst-h2">Projetos de spas</h2>${lista(I.projetos.spas)}</section>` : ''}

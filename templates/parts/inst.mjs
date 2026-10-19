@@ -91,6 +91,12 @@ export function prosa(blocos, { campo = 'institucional-texto' } = {}) {
       while (blocos[i]?.tipo === 'li') itens.push(blocos[i++]);
       i--;
       out.push(html`<ul class="inst-lista">${itens.map((x) => html`<li>${comLinks(x.texto)}</li>`)}</ul>`);
+    } else if (b.tipo === 'linha') {
+      // Linhas de tabela do PDF (manual): uma por linha, sem marcador, na ordem do original.
+      const itens = [];
+      while (blocos[i]?.tipo === 'linha') itens.push(blocos[i++]);
+      i--;
+      out.push(html`<ul class="inst-lista inst-lista--linhas num">${itens.map((x) => html`<li>${x.texto}</li>`)}</ul>`);
     } else if (b.tipo === 'h2') out.push(html`<h2${attrs({ id: b.id, class: b.caixa ? 'inst-h2 inst-h2--caixa' : 'inst-h2' })}>${b.texto}</h2>`);
     else if (b.tipo === 'h3') out.push(html`<h3${attrs({ id: b.id, class: b.caixa ? 'inst-h3 inst-h3--caixa' : 'inst-h3' })}>${b.texto}</h3>`);
     else out.push(html`<p>${comLinks(b.texto)}</p>`);

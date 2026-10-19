@@ -100,7 +100,7 @@
     "afirmacao_de_saude": "capítulo \"Benefícios da cromoterapia\" do manual sai inteiro",
     "espaco_apos_virgula_decimal_ignorado": "só em rótulo de formato regular: medida \"0, 84\" seria lida como 0,84; rótulo irregular não tem profundidade lida (profundidade_nao_lida_formato_irregular)"
   },
-  "total": 909,
+  "total": 904,
   "itens": [
     {
       "slug": "apoio-de-cabeca-oval",
@@ -5874,74 +5874,6 @@
       "lista": "ampliada_dono"
     },
     {
-      "faq": "faq-34",
-      "campo": "resposta",
-      "removido": "Confira as condições especiais de preço de banheiras para pedidos com mais de 5 unidades em nosso chat ou televendas.",
-      "regra": "autodeclaracao_nao_publicar",
-      "termos": [
-        "confira as condicoes especiais de preco de banheiras para pedidos com mais de 5 unidades em nosso chat ou televendas"
-      ]
-    },
-    {
-      "faq": "faq-34",
-      "campo": "item",
-      "removido": "Vocês têm condição especial para compra em quantidade?",
-      "decisao": "nada sobra da resposta depois do filtro editorial: item fora da exibição",
-      "regra": "autodeclaracao_nao_publicar",
-      "termos": [
-        "confira as condicoes especiais de preco de banheiras para pedidos com mais de 5 unidades em nosso chat ou televendas"
-      ]
-    },
-    {
-      "faq": "faq-38",
-      "campo": "resposta",
-      "removido": "Aproveite os modelos de spas e ofurôs com hidro para banhos individuais ou até para 8 pessoas.",
-      "regra": "autodeclaracao_nao_publicar",
-      "termos": [
-        "aproveite os modelos de spas e ofuros com hidro para banhos individuais ou ate para 8 pessoas"
-      ]
-    },
-    {
-      "faq": "faq-38",
-      "campo": "item",
-      "removido": "Quantas pessoas cabem nos spas e ofurôs?",
-      "decisao": "nada sobra da resposta depois do filtro editorial: item fora da exibição",
-      "regra": "autodeclaracao_nao_publicar",
-      "termos": [
-        "aproveite os modelos de spas e ofuros com hidro para banhos individuais ou ate para 8 pessoas"
-      ]
-    },
-    {
-      "manual_pagina": 2,
-      "campo": "politicas.manual.paginas[].texto",
-      "regra": "termo_de_saude",
-      "termos": [
-        "saude"
-      ],
-      "lista": "ampliada_dono",
-      "removido": "inovando sempre, garanti ndo conforto, saúde e bem -estar. Nossos produtos são"
-    },
-    {
-      "manual_pagina": 2,
-      "campo": "politicas.manual.paginas[].texto",
-      "removido": "Há mais de 11 anos no mercado a Banheiras Bom Banho tornou-se referência na\nfabricação de banheiras, spas e ofurôs.",
-      "regra": "superlativo_nao_comprovado",
-      "termos": [
-        "referência"
-      ]
-    },
-    {
-      "manual_pagina": 2,
-      "campo": "politicas.manual.paginas[].texto",
-      "removido": "As Banheiras Bom Banho tornou-se uma das líderes de vendas no segmento, com\ndesigns sofisticados e o melhor custo/benefício do mercado.",
-      "regra": "superlativo_nao_comprovado",
-      "termos": [
-        "o melhor / a maior",
-        "melhor + atributo",
-        "líder"
-      ]
-    },
-    {
       "manual_pagina": 3,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
@@ -6314,254 +6246,214 @@
       "removido": "garantia."
     },
     {
-      "manual_pagina": 12,
-      "campo": "politicas.manual.paginas[].texto",
-      "regra": "termo_de_saude",
-      "termos": [
-        "bem-estar"
-      ],
-      "lista": "ampliada_dono",
-      "removido": "condição de conforto, bem-estar e não agredir o material do casco."
-    },
-    {
-      "manual_pagina": 15,
-      "campo": "politicas.manual.paginas[].texto",
-      "removido": "NIVELAMENTO DA BANHEIRA NO LOCAL ONDE SERÁ INSTALADA:\nO nivelamento da banheira é feito com a mesma posicionada no local onde será instalada tomando-\nse a superfície das bordas como referência e sempre após a montagem do tubo de interligação do dreno ao\nladrão.",
-      "regra": "superlativo_nao_comprovado",
-      "termos": [
-        "referência"
-      ]
-    },
-    {
-      "manual_pagina": 31,
-      "campo": "politicas.manual.paginas[].texto",
-      "removido": "Importante seguir as orientações acima e usar dos recursos de mídias digitais\ndisponibilizados pela empresa para o melhor entendimento de instalação do produto.",
-      "regra": "superlativo_nao_comprovado",
-      "termos": [
-        "o melhor / a maior"
-      ]
-    },
-    {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "BENEFÍCIOS DA CROMOTERAPIA"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "A cromoterapia, terapia das cores, é a ciência que usa diferentes cores para mudar e manter as"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "vibrações do corpo na “frequência” da saúde, do bem-estar e da energia."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Desde sempre fora e é utilizada como tratamento natural para curar, por conservar o organismo em"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "equilíbrio e harmonia. Existe uma extraordinária capacidade nas cores de orientarem a mente e agilizarem"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "funções fisiológicas."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Há tempos conhecida, e hoje explicada pela cromoterapia, que está encontrando aplicações sempre"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "mais abrangentes. É fato provado que as cores da natureza tem um valor próprio expressivo, o qual"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "influencia profundamente a nível psicológico e fisiológico."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "O amarelo, o vermelho, o verde e o azul, as quatro cores fundamentais, são por excelência os"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "símbolos da totalidade e harmonia."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "a) Amarelo"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Induz a alegria e á luminosidade irradia o metabolismo Emagrecedor e anticelulite, corresponde"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "simbolicamente ao agradável calor do sol, ao espírito alegre e a luz da esperança. Age estimulando a"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "digestão evitando assim o acúmulo de substâncias gordas não metabolizadas e a formação de celulite."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Melhora também a função renal impedindo o excesso de acúmulo de líquido."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "b) Vermelho"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Transmite uma forte carga de energia, age sobre a capacidade de tomar decisões, contrastando a"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "tendência a meditação (divagação). Drenagem linfática, a expressão da força vital, do desejo e do calor."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Age sobre o sistema cardiovascular, melhorando a circulação do sangue a nível capilar."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "c) Verde"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Tonificante, conduz ao equilíbrio emocional, ao pensamento positivo, a uma respiração mais regular."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Significa o florir da esperança. Significa o florir da esperança, perseverança, firmeza e resistência às"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "transformações. Provoca uma sensação de particular frescor e bem-estar no organismo. Produz"
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "estabilidade emotiva tonifica os músculos e fornece energia."
     },
     {
       "manual_pagina": 37,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "d) Azul"
     },
     {
       "manual_pagina": 38,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Predispõe, renova a harmonia consigo mesmo e com o mundo, fornecendo o repouso e a"
     },
     {
       "manual_pagina": 38,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "serenidade. Relaxante, representa a tranquilidade, a calma e a satisfação de se sentir em paz."
     },
     {
       "manual_pagina": 38,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "Particularmente preferido à noite, ajuda a afastar o stress, o empenho do dia de trabalho. Calmante e"
     },
     {
       "manual_pagina": 38,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "afirmacao_de_saude",
+      "obs": "capítulo inteiro",
       "removido": "de efeito sereno, alivia a excitação, relaxante a mente e levando a circulação a nível ótimo."
-    },
-    {
-      "manual_pagina": 38,
-      "campo": "politicas.manual.paginas[].texto",
-      "regra": "termo_de_saude",
-      "termos": [
-        "inflamacao",
-        "otite"
-      ],
-      "lista": "ampliada_dono",
-      "removido": "• Inflamação nos ouvidos (conhecida como otite);"
-    },
-    {
-      "manual_pagina": 38,
-      "campo": "politicas.manual.paginas[].texto",
-      "regra": "termo_de_saude",
-      "termos": [
-        "pele"
-      ],
-      "lista": "ampliada_dono",
-      "removido": "• Ressecamento da pele e cabelos;"
-    },
-    {
-      "manual_pagina": 38,
-      "campo": "politicas.manual.paginas[].texto",
-      "regra": "termo_de_saude",
-      "termos": [
-        "alergicos",
-        "respiratorios"
-      ],
-      "lista": "ampliada_dono",
-      "removido": "• Agravamento dos problemas alérgicos e respiratórios;"
-    },
-    {
-      "manual_pagina": 38,
-      "campo": "politicas.manual.paginas[].texto",
-      "regra": "termo_de_saude",
-      "termos": [
-        "bactericida"
-      ],
-      "lista": "ampliada_dono",
-      "removido": "dos raios solares malignos. Ele é um poderoso bactericida, algicida, fungicida e viricida, além de serem"
     },
     {
       "manual_pagina": 43,
@@ -6664,6 +6556,97 @@
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
       "removido": "padrões estabelecidos no mesmo, com risco de perder a garantia."
+    },
+    {
+      "manual_pagina": 2,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "Há mais de 11 anos no mercado a Banheiras Bom Banho tornou-se referência na\nfabricação de banheiras, spas e ofurôs.",
+      "regra": "superlativo_nao_comprovado",
+      "termos": [
+        "referência"
+      ]
+    },
+    {
+      "manual_pagina": 2,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "As Banheiras Bom Banho tornou-se uma das líderes de vendas no segmento, com\ndesigns sofisticados e o melhor custo/benefício do mercado.",
+      "regra": "superlativo_nao_comprovado",
+      "termos": [
+        "o melhor / a maior",
+        "melhor + atributo",
+        "líder"
+      ]
+    },
+    {
+      "manual_pagina": 2,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "Seguimos as tendências\nde vários países e atendemos as necessidades e expectativas de cada cliente,\ninovando sempre, garanti ndo conforto, saúde e bem -estar.",
+      "regra": "termo_de_saude",
+      "termos": [
+        "saude"
+      ],
+      "lista": "ampliada_dono"
+    },
+    {
+      "manual_pagina": 12,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "É muito importante realizar o tratamento da água no Spa corretamente para que tenhamos uma\ncondição de conforto, bem-estar e não agredir o material do casco.",
+      "regra": "termo_de_saude",
+      "termos": [
+        "bem-estar"
+      ],
+      "lista": "ampliada_dono"
+    },
+    {
+      "manual_pagina": 31,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "Importante seguir as orientações acima e usar dos recursos de mídias digitais\ndisponibilizados pela empresa para o melhor entendimento de instalação do produto.",
+      "regra": "superlativo_nao_comprovado",
+      "termos": [
+        "o melhor / a maior"
+      ]
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "• Inflamação nos ouvidos (conhecida como otite);",
+      "regra": "termo_de_saude",
+      "termos": [
+        "inflamacao",
+        "otite"
+      ],
+      "lista": "ampliada_dono"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "• Ressecamento da pele e cabelos;",
+      "regra": "termo_de_saude",
+      "termos": [
+        "pele"
+      ],
+      "lista": "ampliada_dono"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "• Agravamento dos problemas alérgicos e respiratórios;",
+      "regra": "termo_de_saude",
+      "termos": [
+        "alergicos",
+        "respiratorios"
+      ],
+      "lista": "ampliada_dono"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "removido": "Ele é um poderoso bactericida, algicida, fungicida e viricida, além de serem\nreconhecido como o mais seguro e eficaz método de tratamento de água do mundo, com aplicações em\nindústrias, piscinas, águas municipais, medicina e odontologia.",
+      "regra": "termo_de_saude",
+      "termos": [
+        "bactericida"
+      ],
+      "lista": "ampliada_dono"
     },
     {
       "blog_post": 1252,

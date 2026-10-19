@@ -1007,6 +1007,22 @@ const TEMAS = [
 ];
 if (TEMAS.length !== faqSrc.faq.length) throw new Error(`faq: ${faqSrc.faq.length} itens e ${TEMAS.length} temas`);
 
+// Frases da lista de autodeclarações (empresa.claims_nao_publicar) que a FAQ pode publicar porque o
+// próprio dado confirma (decisão do bloco 7, registrada em institucionais.json `decisoes` e no item):
+// a frase literal só volta quando a conferência passa; se o dado mudar, o item volta a sair.
+const lugaresTipo = (t) => produtos.filter((p) => p.d_tipo === t).map((p) => p.d_lugares_num).filter(Number.isFinite);
+const FAQ_AUTODECLARACAO_CONFERIDA = {
+  'faq-38': () => {
+    const sp = lugaresTipo('spa');
+    const of = produtos.filter((p) => p.d_tipo === 'ofuro');
+    const ok = sp.length && Math.max(...sp) === 8 && of.some((p) => /^individual$/i.test(String(p.especificacoes?.Lugares ?? '').trim()));
+    return ok ? `conferido no catálogo: há ofurôs com "Lugares: Individual" e o maior spa tem "${Math.max(...sp)} Lugares"` : null;
+  },
+  'faq-34': () => (String(inst.comercial.atacado?.literal || '').trim() === 'Confira as condições especiais de preço de banheiras para pedidos com mais de 5 unidades em nosso chat ou televendas.'
+    ? 'condição comercial literal da empresa (institucional.json comercial.atacado), sem número da empresa nem superlativo; o pedido é feito pelo chat ou televendas'
+    : null),
+};
+
 const faq = faqSrc.faq.map((x, i) => {
   const garantia = /garantia/i.test(x.pergunta);
   const termos = termosSaude(`${x.pergunta}\n${x.resposta_literal}`);
@@ -1028,12 +1044,15 @@ const faq = faqSrc.faq.map((x, i) => {
   // Resposta exibível em todos os itens (igual ao literal quando nada sai): sem as frases que violam
   // as regras editoriais (frase inteira, com registro). Pergunta com violação, resposta vazia ou item
   // de garantia oculto até a decisão: exibir=false.
-  const r = filtrarFrasesEditorial(x.resposta_literal, DETECTORES);
+  const conferida = FAQ_AUTODECLARACAO_CONFERIDA[item.id]?.() ?? null;
+  const detFaq = conferida ? DETECTORES.filter((d) => d.regra !== 'autodeclaracao_nao_publicar') : DETECTORES;
+  if (conferida) item.revisao_autodeclaracao = { decisao: 'publicar literal: frase da lista de autodeclarações confirmada pelo dado', motivo: conferida };
+  const r = filtrarFrasesEditorial(x.resposta_literal, detFaq);
   for (const f of r.removidos) {
     editorialLog.push(comRegra({ faq: item.id, campo: 'resposta', removido: f.frase }, f));
   }
   item.resposta_exibida = r.texto;
-  const naPergunta = violacaoEditorial(x.pergunta, DETECTORES);
+  const naPergunta = violacaoEditorial(x.pergunta, detFaq);
   const vazia = !String(r.texto ?? '').trim();
   item.exibir = !(naPergunta || vazia || garantia);
   if (naPergunta || vazia) {
@@ -1067,20 +1086,60 @@ const faq = faqSrc.faq.map((x, i) => {
 // - o capítulo de garantia e o certificado de garantia (prazos de garantia: oculto_ate_decisao);
 // - as linhas do índice que apontam para esses dois capítulos;
 // - o capítulo "Benefícios da cromoterapia" inteiro (afirmações de saúde do começo ao fim);
-// - qualquer outra linha com termo de saúde da lista (fora das exceções fixas de texto.mjs).
+// - fora desses capítulos, a FRASE inteira (de ponto a ponto, mesmo atravessando linhas ou a virada
+//   de página) que tiver termo de saúde, superlativo, autodeclaração, ISO 9001 ou número da empresa.
+//   Nunca uma linha solta: o PDF quebra a frase no meio da linha, e tirar só a linha deixaria pedaços
+//   de frases diferentes colados como se fossem texto da empresa.
+// Onde uma frase sai, o texto exibido ganha uma quebra (ou uma linha em branco, se o texto de antes
+// não terminou a frase): o template nunca junta o que vinha antes do corte com o que vem depois. Cada parágrafo exibido é recorte contínuo do
+// literal (teste em tests/institucionais.test.mjs).
 const MANUAL_CAPITULOS_OCULTOS = [
   { inicio: /^GARANTIA E CONTRATO DE GARANTIA$/, fim: /^MODO DE LIMPEZA$/, motivo: 'garantia', oculto_ate_decisao: true },
   { inicio: /^CERTIFICADO DE GARANTIA$/, fim: /^“?DIREITOS AUTORAIS/, motivo: 'garantia', oculto_ate_decisao: true },
   { inicio: /^BENEF[IÍ]CIOS DA CROMOTERAPIA$/, fim: /^A FUN[CÇ][AÃ]O DO OZ[OÔ]NIO$/, motivo: 'afirmacao_de_saude', oculto_ate_decisao: false },
 ];
 const reIndiceGarantia = /^(garantia e contrato de garantia|certificado de garantia)\s*\.{3,}/i;
+const RE_ITEM_MANUAL = /^(?:[_▪•●–-]|\d+\))\s+/u;
+const caixaAltaManual = (s) => (s.match(/\p{L}/gu) || []).length >= 4 && s === s.toLocaleUpperCase('pt-BR') && /\p{Lu}/u.test(s);
+
+/**
+ * Unidades de corte de uma página: frases, itens de lista e títulos, com o separador original
+ * depois de cada uma (a concatenação de `t + sep` reproduz o texto). A frase atravessa a quebra de
+ * linha; a fronteira dura fica entre título e corpo, antes de item de lista, depois de ":" ou ";"
+ * no fim da linha e na linha em branco.
+ */
+function unidadesManual(linhas) {
+  const blocos = []; // { linhas: [], sep }
+  let atual = null;
+  let branco = false;
+  for (const l of linhas) {
+    if (!l.trim()) { branco = true; continue; }
+    const ant = atual?.linhas[atual.linhas.length - 1];
+    const fronteira = !atual || branco || RE_ITEM_MANUAL.test(l) || /[:;]$/.test(ant)
+      || caixaAltaManual(ant) !== caixaAltaManual(l);
+    if (fronteira) {
+      if (atual) atual.sep = branco ? '\n\n' : '\n';
+      atual = { linhas: [l], sep: '' };
+      blocos.push(atual);
+    } else atual.linhas.push(l);
+    branco = false;
+  }
+  const out = [];
+  for (const b of blocos) {
+    const partes = b.linhas.join('\n').split(/(?<=[.!?])(\s+)(?=\S)/u);
+    for (let i = 0; i < partes.length; i += 2) out.push({ t: partes[i], sep: i + 2 < partes.length ? partes[i + 1] : b.sep });
+  }
+  return out;
+}
 
 function filtrarManual(paginas) {
+  const detectores = [...DETECTORES, DETECTOR_NUMERO_EMPRESA];
   let aberto = null;
+  // 1) Capítulos inteiros e linhas do índice (por linha: são blocos com título de início e de fim).
   for (const pg of paginas) {
     const linhas = pg.texto.split('\n');
-    const ficam = [];
-    const ocultos = [];
+    pg._ficam = [];
+    pg.trechos_ocultos = [];
     linhas.forEach((linha, idx) => {
       const limpa = linha.trim();
       if (aberto && aberto.fim.test(limpa)) aberto = null;
@@ -1088,41 +1147,70 @@ function filtrarManual(paginas) {
         const cap = MANUAL_CAPITULOS_OCULTOS.find((c) => c.inicio.test(limpa));
         if (cap) aberto = cap;
       }
-      // O número da página (primeira linha) fica sempre.
-      if (idx === 0 && /^\d+$/.test(limpa)) { ficam.push(linha); return; }
+      // O número da página (primeira linha) fica sempre, fora das unidades de texto.
+      if (idx === 0 && /^\d+$/.test(limpa)) { pg._numero = limpa; return; }
       let motivo = null;
       if (aberto && limpa) motivo = aberto.motivo;
       else if (reIndiceGarantia.test(limpa)) motivo = 'garantia';
-      else if (termosSaude(limpa).length) motivo = 'termo_de_saude';
       if (motivo) {
-        ocultos.push({ motivo, texto: linha, ...(motivo === 'garantia' ? { oculto_ate_decisao: true } : {}) });
-        editorialLog.push({ manual_pagina: pg.pagina, campo: 'politicas.manual.paginas[].texto', regra: motivo, ...(motivo === 'termo_de_saude' ? { termos: termosSaude(limpa), lista: listaSaude(termosSaude(limpa)) } : {}), removido: linha });
+        pg.trechos_ocultos.push({ motivo, texto: linha, ...(motivo === 'garantia' ? { oculto_ate_decisao: true } : {}) });
+        editorialLog.push({ manual_pagina: pg.pagina, campo: 'politicas.manual.paginas[].texto', regra: motivo, ...(motivo === 'afirmacao_de_saude' ? { obs: 'capítulo inteiro' } : {}), removido: linha });
+        // Linha em branco no lugar do capítulo: o texto de antes e o de depois não se juntam.
+        if (pg._ficam.length && pg._ficam[pg._ficam.length - 1] !== '') pg._ficam.push('');
         return;
       }
-      ficam.push(linha);
+      pg._ficam.push(limpa);
     });
-    // Segunda passada por frase (a frase do manual atravessa linhas): superlativo, autodeclaração,
-    // ISO 9001 e número da empresa saem inteiros, com o mesmo registro. O número da página fica.
-    let texto = ficam.join('\n').replace(/\n{3,}/g, '\n\n').trim();
-    const mPag = texto.match(/^(\d+)(\n+)/);
-    const cabeca = mPag ? mPag[0] : '';
-    const corpo = filtrarFrasesEditorialMultilinha(texto.slice(cabeca.length), [...DETECTORES, DETECTOR_NUMERO_EMPRESA]);
-    for (const x of corpo.removidos) {
-      ocultos.push({ motivo: x.regra, texto: x.frase });
-      editorialLog.push(comRegra({ manual_pagina: pg.pagina, campo: 'politicas.manual.paginas[].texto', removido: x.frase }, x));
+  }
+  if (aberto) throw new Error('manual: capítulo oculto sem fim encontrado');
+
+  // 2) Frases (atravessam linhas e a virada de página): a que viola uma regra sai inteira.
+  const unidades = paginas.map((pg) => unidadesManual(pg._ficam).map((u) => ({ ...u, pagina: pg.pagina, sai: null })));
+  const fechada = (t) => /[.!?:;]["”)]?$/.test(t.trim()) || caixaAltaManual(t.trim());
+  for (let i = 0; i < unidades.length; i++) {
+    const us = unidades[i];
+    for (let j = 0; j < us.length; j++) {
+      const u = us[j];
+      if (u.sai) continue;
+      // Frase que continua na página seguinte: julgada inteira, as duas metades saem juntas.
+      const grupo = [u];
+      if (j === us.length - 1 && !fechada(u.t)) {
+        const prox = unidades[i + 1]?.[0];
+        const l0 = prox ? prox.t.split('\n')[0] : '';
+        if (prox && !RE_ITEM_MANUAL.test(l0) && !caixaAltaManual(l0)) grupo.push(prox);
+      }
+      const v = violacaoEditorial(grupo.map((x) => x.t).join('\n'), detectores);
+      if (!v) continue;
+      for (const x of grupo) x.sai = v;
+      const frase = grupo.map((x) => x.t).join('\n');
+      for (const x of grupo) paginas.find((p) => p.pagina === x.pagina).trechos_ocultos.push({ motivo: v.regra, texto: x.t, ...(grupo.length > 1 ? { frase_continua_na_outra_pagina: true } : {}) });
+      editorialLog.push(comRegra({ manual_pagina: u.pagina, campo: 'politicas.manual.paginas[].texto', removido: frase }, v));
     }
-    texto = (cabeca + corpo.texto).replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  paginas.forEach((pg, i) => {
+    let out = '';
+    let corte = false;
+    for (const u of unidades[i]) {
+      if (u.sai) { corte = true; continue; }
+      // Depois de frase fechada basta a quebra de linha (o template não junta linha que termina em
+      // ponto); depois de texto aberto, linha em branco.
+      if (corte && out) { const ant = out.replace(/\s+$/u, ''); out = ant + (fechada(ant) ? '\n' : '\n\n'); }
+      corte = false;
+      out += u.t + u.sep;
+    }
+    const corpo = out.replace(/\n{3,}/g, '\n\n').trim();
+    const texto = [pg._numero, corpo].filter(Boolean).join('\n\n');
+    delete pg._ficam;
+    delete pg._numero;
     pg.texto_exibido = texto;
-    pg.trechos_ocultos = ocultos;
     // Página que fica só com o número (só imagem no PDF, ou tudo oculto): nenhum texto no HTML.
-    const conteudo = texto.split('\n').filter((l) => l.trim() && !/^\d+$/.test(l.trim()));
-    pg.sem_texto_exibido = conteudo.length === 0;
-    if (ocultos.some((o) => o.motivo === 'garantia')) {
+    pg.sem_texto_exibido = !corpo;
+    if (pg.trechos_ocultos.some((o) => o.motivo === 'garantia')) {
       if (pg.sem_texto_exibido) pg.oculto_ate_decisao = true;
       else pg.tem_trecho_oculto_ate_decisao = true;
     }
-  }
-  if (aberto) throw new Error('manual: capítulo oculto sem fim encontrado');
+  });
   return paginas;
 }
 
@@ -1142,6 +1230,15 @@ function paginasDoManual() {
     }
     return acc;
   }, []);
+}
+
+/** Frase literal inteira da política de troca que começa com o trecho `k` (até ".", "!", "?" ou ";"). */
+function fraseCompletaPolitica(k) {
+  const t = String(inst.politicas.troca_devolucao_reembolso.texto || '');
+  const i = t.indexOf(k);
+  if (i < 0) return null;
+  const m = /[.;!?](?=\s|$)/.exec(t.slice(i + Math.max(0, k.length - 1)));
+  return m ? t.slice(i, i + Math.max(0, k.length - 1) + m.index + 1).trim() : null;
 }
 
 const pz = inst.comercial.prazo_de_entrega;
@@ -1164,9 +1261,14 @@ const politicas = {
   itens_avulsos_suspensos: { literal: inst.comercial.itens_avulsos_suspensos.literal, fonte: inst.comercial.itens_avulsos_suspensos.source_url },
   instalacao: { literal: inst.comercial.instalacao.literal, fonte: inst.comercial.instalacao.source_url },
   art_rrt: { literal: inst.comercial.art_rrt.literal, fonte: inst.comercial.art_rrt.source_url },
+  // Os pontos-chave da coleta são começos de frase ("... em até 10 (dez) dias úteis"): o que vai ao
+  // HTML é a frase literal inteira do texto da política, até o ponto (ou ";") que a fecha. Ponto que
+  // não se acha no texto não é publicado (`pontos_chave_sem_frase`).
   desistencia: {
-    literal: inst.politicas.troca_devolucao_reembolso.pontos_chave_literais[0],
-    pontos_chave: inst.politicas.troca_devolucao_reembolso.pontos_chave_literais,
+    literal: fraseCompletaPolitica(inst.politicas.troca_devolucao_reembolso.pontos_chave_literais[0]),
+    pontos_chave: inst.politicas.troca_devolucao_reembolso.pontos_chave_literais.map(fraseCompletaPolitica).filter(Boolean),
+    pontos_chave_da_coleta: inst.politicas.troca_devolucao_reembolso.pontos_chave_literais,
+    pontos_chave_sem_frase: inst.politicas.troca_devolucao_reembolso.pontos_chave_literais.filter((k) => !fraseCompletaPolitica(k)),
     fonte: inst.politicas.troca_devolucao_reembolso.source_url,
   },
   troca_devolucao_reembolso: {

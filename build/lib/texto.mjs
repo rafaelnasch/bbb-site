@@ -173,7 +173,7 @@ export function filtrarFrasesSaudeMultilinha(texto) {
 
 // Padrões sobre o texto sem acento, em minúsculas e com os espaços (inclusive quebras de linha)
 // reduzidos a um. Só a forma superlativa ou de ranking: "o melhor", "os melhores", "a maior",
-// "a única com", "líder", "referência", "mais vendidos". O comparativo sem artigo ("maior
+// "a única com", "líder", "é referência em", "o mais seguro", "do mundo", "mais vendidos". O comparativo sem artigo ("maior
 // durabilidade", "experiência ainda melhor", "os itens que melhor atendem") não é afirmação de
 // posição no mercado e fica.
 export const PADROES_SUPERLATIVO = [
@@ -182,11 +182,16 @@ export const PADROES_SUPERLATIVO = [
   { re: /(?<![\p{L}\p{N}])melhor\s+(?:custo|preco|qualidade|desempenho|oportunidade|opcao|valor)/u, rotulo: 'melhor + atributo' },
   { re: /(?<![\p{L}\p{N}])ha de melhor(?![\p{L}\p{N}])/u, rotulo: 'o que há de melhor' },
   { re: /(?<![\p{L}\p{N}])lider(?:es)?(?![\p{L}\p{N}])/u, rotulo: 'líder' },
-  { re: /(?<![\p{L}\p{N}])(?:tornou-se|tornou se|e|somos|como)\s+referencia(?![\p{L}\p{N}])/u, rotulo: 'referência' },
+  // "Referência" só como posição de mercado ("tornou-se referência", "é referência", "como referência
+  // no mercado"). O uso técnico fica ("tomando-se a superfície das bordas como referência", "tem como
+  // referência o Código de Defesa do Consumidor").
+  { re: /(?<![\p{L}\p{N}])(?:(?:tornou-se|tornou se|e|somos)\s+referencia|como\s+referencia\s+(?:em|no|na|nos|nas|nacional|mundial))(?![\p{L}\p{N}])/u, rotulo: 'referência' },
   { re: /(?<![\p{L}\p{N}])(?:a|o|somos a|somos o)\s+unic[ao]s?(?![\p{L}\p{N}])/u, rotulo: 'a única' },
   { re: /(?<![\p{L}\p{N}])unic[ao]s?\s+(?:com|empresa|certificad\p{L}*|fabrica|loja)(?![\p{L}\p{N}])/u, rotulo: 'única com' },
   { re: /(?<![\p{L}\p{N}])mais\s+(?:complet|vendid|desejad|procurad)\p{L}*/u, rotulo: 'mais completa / vendida / desejada' },
   { re: /(?<![\p{L}\p{N}])sem duvida(?![\p{L}\p{N}])/u, rotulo: 'sem dúvida' },
+  { re: /(?<![\p{L}\p{N}])(?:o|a|os|as)\s+mais\s+(?:segur|eficaz|eficien|modern|confiav|barat|resistent|sofisticad|famos|conhecid|recomendad)\p{L}*/u, rotulo: 'o mais seguro / eficaz' },
+  { re: /(?<![\p{L}\p{N}])(?:do|no) mundo(?![\p{L}\p{N}])/u, rotulo: 'do mundo' },
 ];
 
 // Certificação sem número nem certificadora publicados (SPEC 15: ISO 9001 fora até a empresa enviar).

@@ -514,9 +514,12 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
-    "resposta_exibida": "",
-    "exibir": false,
-    "motivo_nao_exibir": "nada sobra da resposta depois do filtro editorial"
+    "revisao_autodeclaracao": {
+      "decisao": "publicar literal: frase da lista de autodeclarações confirmada pelo dado",
+      "motivo": "condição comercial literal da empresa (institucional.json comercial.atacado), sem número da empresa nem superlativo; o pedido é feito pelo chat ou televendas"
+    },
+    "resposta_exibida": "Confira as condições especiais de preço de banheiras para pedidos com mais de 5 unidades em nosso chat ou televendas.",
+    "exibir": true
   },
   {
     "id": "faq-35",
@@ -575,9 +578,12 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
-    "resposta_exibida": "",
-    "exibir": false,
-    "motivo_nao_exibir": "nada sobra da resposta depois do filtro editorial"
+    "revisao_autodeclaracao": {
+      "decisao": "publicar literal: frase da lista de autodeclarações confirmada pelo dado",
+      "motivo": "conferido no catálogo: há ofurôs com \"Lugares: Individual\" e o maior spa tem \"8 Lugares\""
+    },
+    "resposta_exibida": "Aproveite os modelos de spas e ofurôs com hidro para banhos individuais ou até para 8 pessoas.",
+    "exibir": true
   },
   {
     "id": "faq-39",

@@ -27,6 +27,9 @@
 .inst-lista{display:grid;gap:.5em;padding-left:0;list-style:none}
 .inst-lista>li{position:relative;padding-left:1.4em;max-width:66ch}
 .inst-lista>li::before{content:"";position:absolute;left:0;top:.8em;width:.7em;height:1px;background:currentColor;opacity:.55}
+.inst-lista--linhas{gap:0;font-variant-numeric:tabular-nums}
+.inst-lista--linhas>li{padding:.35em 0;border-bottom:1px solid var(--rule)}
+.inst-lista--linhas>li::before{content:none}
 .inst-intro{font-size:clamp(1.125rem,1.05rem + .3vw,1.25rem);line-height:1.55;max-width:62ch}
 .inst-legenda{font-size:.8125rem;line-height:1.5;color:var(--fg-2);max-width:68ch}
 .inst-fonte{display:flex;gap:8px;align-items:flex-start;font-size:.8125rem;line-height:1.5;color:var(--fg-2);max-width:72ch}

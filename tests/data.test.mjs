@@ -407,6 +407,9 @@ describe('filtro editorial e texto oculto (SPEC 0.3, 0.4, 0.5)', () => {
     }
     for (const [k, t] of Object.entries(empresa.textos_integrais)) exibidos.push([`empresa.${k}`, t.texto_exibido]);
     for (const pg of politicas.manual.paginas) exibidos.push([`manual.p${pg.pagina}`, pg.texto_exibido]);
+    // Item da FAQ com frase da lista de autodeclarações conferida pelo dado (revisao_autodeclaracao,
+    // decisão registrada em institucionais.json): só o teste de autodeclaração não se aplica a ele.
+    const conferidas = new Set(faq.filter((f) => f.revisao_autodeclaracao).map((f) => f.id));
     for (const f of faq) if (f.exibir) exibidos.push([f.id, `${f.pergunta}\n${f.resposta_exibida}`]);
     for (const [onde, texto] of exibidos) {
       if (texto == null) continue;
@@ -414,7 +417,7 @@ describe('filtro editorial e texto oculto (SPEC 0.3, 0.4, 0.5)', () => {
       assert.deepEqual(certificacoesNaoConfirmadas(texto), [], `${onde}: ISO 9001`);
       assert.deepEqual(termosSaude(texto), [], `${onde}: saúde`);
       const k = chaveFrase(texto);
-      for (const c of claims) assert.ok(!k.includes(c), `${onde}: autodeclaração "${c}"`);
+      if (!conferidas.has(onde)) for (const c of claims) assert.ok(!k.includes(c), `${onde}: autodeclaração "${c}"`);
     }
     // Os casos apontados pelo verificador.
     const mn = empresa.textos_integrais.manual_nossa_empresa.texto_exibido;

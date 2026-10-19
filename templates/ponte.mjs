@@ -8,7 +8,8 @@
 //  - categorias do Magento sem .html (CATEGORIAS_PONTE) e aliases de categoria (skipped.alias_de);
 //  - a duplicata do produto 6 (skipped: "mesmo product_id 6 da URL canônica ...");
 //  - produtos cujo endereço atual difere do arquivo gerado (slug com acento do Aquecedor);
-//  - as páginas institucionais renomeadas ou vazias da tabela da SPEC 4.1;
+//  - as páginas institucionais renomeadas ou vazias da tabela da SPEC 4.1 e as demais URLs 200 do site
+//    atual sem página equivalente (benefícios, downloads, etapas do rastreio, categoria de sauna vazia);
 //  - combos (skipped) para a coleção raiz do modelo citado no endereço.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -39,6 +40,14 @@ const INSTITUCIONAIS = Object.freeze([
   ['lojas.html', 'lojas/loja-showrooms.html'],
   ['energia-solar-fotovoltaica.html', ''],
   ['iso-9001-2015', 'inmetro.html'],
+  // URLs que respondem 200 no site atual e não têm página equivalente no site novo (decisões em
+  // data/institucionais.json, `decisoes`). /outlet fica fora (SPEC 4: não publicar).
+  ['beneficios-cromoterapia', '', 'página de benefícios com afirmações de saúde, não publicada (SPEC 0.5); vai para a página inicial'],
+  ['beneficios-da-hidromassagem', '', 'página de benefícios com afirmações de saúde, não publicada (SPEC 0.5); vai para a página inicial'],
+  ['downloads', 'manual-usuario-instalacao.html', 'materiais de apoio: o manual em texto e o PDF original'],
+  ['situacao-rastreio', 'rastreio.html', 'etapa do rastreio do site atual; o rastreio novo é pelo WhatsApp'],
+  ['sucesso', 'rastreio.html', 'página de confirmação do formulário de rastreio do site atual'],
+  ['sauna/por-tamanho/sauna-de-1-30-x-1-10-x-2-00.html', 'sauna.html', 'categoria do site atual sem produtos; vai para a coleção de saunas'],
 ]);
 
 /** Arquivo em dist/ que responde pelo caminho antigo no GitHub Pages. */
@@ -51,7 +60,7 @@ export function arquivoDaOrigem(origem) {
 
 function destinoCombo(origem, produtos) {
   const resto = origem.replace(/\.html(\.html)?$/, '').replace(/-1$/, '')
-    .replace(/^combo-(?:basic|basico|premium|premum)-?/, '').replace(/^combo-/, '').replace(/-c-hidro-/, '-com-hidro-');
+    .replace(/^combo-(?:basico|basic|premium|premum)-?/, '').replace(/^combo-/, '').replace(/-c-hidro-/, '-com-hidro-');
   if (!resto || /^combos?($|\/)/.test(resto)) return '';
   const p = produtos.find((x) => x.slug === resto) || produtos.find((x) => x.slug.endsWith(`-${resto}`) || x.slug.endsWith(resto));
   if (p && RAIZ_TIPO[p.d_tipo]) return RAIZ_TIPO[p.d_tipo];
@@ -88,7 +97,7 @@ export function listaPontes(D) {
     if (p.d_path && p.d_path !== `${p.slug}.html` && !p.d_path.includes('/')) add(p.d_path, `${p.slug}.html`, 'endereço atual com acento; a página nova usa o slug sem acento');
   }
   const blog = /(https?:\/\/blog\.[^/\s]+)/.exec(D.ler('blog-recentes.json')?.fonte || '')?.[1] || null;
-  for (const [origem, destino0] of INSTITUCIONAIS) {
+  for (const [origem, destino0, motivo] of INSTITUCIONAIS) {
     if (!publicadas.has(origem)) continue;
     let destino = destino0;
     if (destino === '@blog') { if (!blog) continue; destino = `${blog}/`; }
@@ -97,15 +106,18 @@ export function listaPontes(D) {
       const l = lojas.find((x) => x.ancora === m[1]);
       destino = l ? destino.replace(/#@\w+$/, `#${l.ancora}`) : destino.replace(/#@\w+$/, '');
     }
-    add(origem, destino, 'página antiga substituída (SPEC 4.1)');
+    add(origem, destino, motivo || 'página antiga substituída (SPEC 4.1)');
   }
   for (const s of skipped) {
     const o = caminho(s.url);
-    if (/^combo/.test(o)) add(o, destinoCombo(o, produtos), 'combo não publicado; vai para a coleção do modelo citado');
+    if (!/^combo/.test(o)) continue;
+    const d = destinoCombo(o, produtos);
+    add(o, d, d ? 'combo não publicado; vai para a coleção do modelo citado' : 'lista de combos não publicada (sem modelo no endereço); vai para a página inicial');
   }
   return out;
 }
 
+// O script fica no fim do <body>, depois do link: no <head> o #destino ainda não existe.
 const SCRIPT = "location.replace(document.getElementById('destino').href)";
 const HASH = `sha256-${createHash('sha256').update(SCRIPT).digest('base64')}`;
 
@@ -131,7 +143,6 @@ export function htmlPonte(p, nomeDestino) {
 <link rel="canonical" href="${esc(canonical)}">
 <meta property="og:image" content="${esc(abs(ogPadrao()))}">
 <meta http-equiv="refresh" content="${esc(`0;url=${href}`)}">
-<script>${SCRIPT}</script>
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#071C2B;color:#F3F6F8;font:400 1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:24px}main{max-width:36rem}h1{font:300 1.75rem/1.2 Georgia,serif;margin:0 0 .5em}a{color:#F3F6F8}</style>
 </head>
 <body>
@@ -139,6 +150,7 @@ export function htmlPonte(p, nomeDestino) {
 <h1>Esta página mudou de endereço</h1>
 <p>Você está sendo levado para <a id="destino" href="${esc(href)}">${esc(nomeDestino)}</a>.</p>
 </main>
+<script>${SCRIPT}</script>
 </body>
 </html>
 `;
@@ -155,6 +167,7 @@ function nomeDe(D, destino) {
   const NOMES = {
     'lojas/sobre-nos.html': 'Sobre nós', 'lojas/loja-fisica.html': 'Conheça nossa fábrica', 'lojas/loja-showrooms.html': 'Lojas e showrooms',
     'vendas-corporativas.html': 'Vendas corporativas', 'manual-usuario-instalacao.html': 'Manual do usuário e instalação', 'inmetro.html': 'Certificação INMETRO',
+    'rastreio.html': 'Rastreio do pedido',
   };
   return NOMES[d] || 'Banheiras Bom Banho';
 }

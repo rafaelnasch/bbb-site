@@ -11,7 +11,8 @@ import { faqsVisiveis, FORA } from '../templates/faq.mjs';
 import { listaPontes, arquivoDaOrigem } from '../templates/ponte.mjs';
 import { decodificarCfemail, trocarEmails } from '../build/institucional-dados.mjs';
 import { dados } from '../build/lib/dados.mjs';
-import { termosSaudeSpec } from '../build/lib/texto.mjs';
+import { termosSaudeSpec, superlativos } from '../build/lib/texto.mjs';
+import { indiceDoManual, linhaDeTabela } from '../templates/parts/manual.mjs';
 import { numerosProibidosEm } from '../build/lib/wa.mjs';
 
 const DIST = join(paths.cache, 'dist-institucionais');
@@ -175,4 +176,138 @@ test('404: busca, escolhedor e ajuda; fora do índice', () => {
   assert.ok(h.includes(`href="${BASE_PATH}/escolher.html"`));
   assert.ok(wa(h).includes('5535992192256'));
   assert.match(h, /<meta name="robots" content="noindex,/);
+});
+
+// ---------------------------------------------------------------- correções do verificador (bloco 7)
+
+const ent = (s) => s.replace(/&nbsp;|&#160;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+const norm = (s) => ent(String(s)).replace(/\s+/g, ' ').trim();
+
+test('manual: todo parágrafo, item, título e linha exibidos é recorte contínuo do texto original da página', () => {
+  const h = pg('manual-usuario-instalacao.html');
+  const m = ler('politicas.json').manual;
+  const secoes = [...h.matchAll(/<section class="inst-pagina" id="p-(\d+)"[\s\S]*?<\/section>/g)];
+  assert.ok(secoes.length >= 30, `${secoes.length} páginas`);
+  let n = 0;
+  const falhas = [];
+  for (const [sec, num] of secoes) {
+    const original = norm(m.paginas.find((x) => x.pagina === Number(num)).texto);
+    const prosa = /<div class="inst-prosa"[^>]*>([\s\S]*)<\/div>/.exec(sec)[1];
+    for (const [, , conteudo] of prosa.matchAll(/<(p|li|h2|h3)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
+      const t = norm(conteudo.replace(/<[^>]+>/g, ''));
+      if (!t) continue;
+      n++;
+      if (!original.includes(t)) falhas.push(`p. ${num}: ${t.slice(0, 120)}`);
+    }
+  }
+  assert.ok(n > 200, `${n} blocos`);
+  assert.deepEqual(falhas, []);
+  // Os dois casos apontados: nenhuma frase colada de pedaços.
+  const t = texto(h);
+  assert.ok(!t.includes('cada cliente, fáceis de limpar'), 'p. 2');
+  assert.ok(!t.includes('para que tenhamos uma Não é recomendado'), 'p. 12');
+  assert.ok(!t.includes('como um filtro, reconhecido'), 'p. 38');
+});
+
+test('manual: sumário é o índice do PDF, sem fragmento nem linha de tabela; tabela nunca vira título', () => {
+  const h = pg('manual-usuario-instalacao.html');
+  const m = ler('politicas.json').manual;
+  const indice = indiceDoManual(m.paginas.find((x) => x.pagina === 3).texto_exibido).map((e) => e.texto);
+  assert.ok(indice.length >= 20);
+  const nav = /<nav class="inst-sumario[^"]*"[\s\S]*?<\/nav>/.exec(h)[0];
+  const itens = [...nav.matchAll(/<li><a href="#([^"]+)">[\s\S]*?<span[^>]*>([^<]+)<\/span><\/a><\/li>/g)].map((x) => ({ id: x[1], texto: ent(x[2]) }));
+  assert.ok(itens.length >= 15 && itens.length <= indice.length, `${itens.length} entradas`);
+  for (const x of itens) {
+    assert.ok(indice.includes(x.texto), `entrada fora do índice: ${x.texto}`);
+    assert.ok(new RegExp(`<h2 id="${x.id}"`).test(h), `âncora h2 ${x.id}`);
+  }
+  assert.ok(!itens.some((x) => /garantia/i.test(x.texto)), 'sem garantia no sumário');
+  const titulos = [...h.matchAll(/<h[23] id="m\d+-[^"]*"[^>]*>([^<]+)<\/h[23]>/g)].map((x) => ent(x[1]));
+  for (const t of titulos) {
+    assert.ok(!linhaDeTabela(t), `linha de tabela como título: ${t}`);
+    assert.ok(!/[;,]$/.test(t), `fragmento como título: ${t}`);
+  }
+  for (const f of ['DENTRO DA BANHEIRA;', 'QUALQUER NIVEL QUE ESTEJA ACIMA DO SOLO.', 'AQUECEDOR);', 'LEPONO 1CV 127 5,91 0,75 10', 'SENSUALE REDONDA 215,42']) {
+    assert.ok(!titulos.includes(f), `título indevido: ${f}`);
+  }
+  assert.ok(texto(h).includes('LEPONO 1CV 127 5,91 0,75 10'), 'linha da tabela continua no texto');
+});
+
+test('manual: nivelamento de volta, superlativo do ozônio fora', () => {
+  const h = texto(pg('manual-usuario-instalacao.html'));
+  assert.ok(h.includes('NIVELAMENTO DA BANHEIRA NO LOCAL ONDE SERÁ INSTALADA:'));
+  assert.ok(h.includes('tomando- se a superfície das bordas como referência'));
+  assert.ok(!/mais seguro e eficaz|do mundo/.test(h));
+  const p38 = ler('politicas.json').manual.paginas.find((x) => x.pagina === 38);
+  assert.ok(p38.trechos_ocultos.some((o) => /mais seguro e eficaz/.test(o.texto)), 'registro em trechos_ocultos');
+  // Detectores: uso técnico de "referência" fica; posição de mercado sai.
+  assert.deepEqual(superlativos('tomando-se a superfície das bordas como referência e sempre após'), []);
+  assert.deepEqual(superlativos('que tem como referência o Código de Defesa do Consumidor'), []);
+  assert.ok(superlativos('tornou-se referência na fabricação de banheiras').length);
+  assert.ok(superlativos('é referência em banheiras').length);
+  assert.ok(superlativos('reconhecido como o mais seguro e eficaz método').length);
+  assert.ok(superlativos('método de tratamento de água do mundo').length);
+});
+
+test('desistência: só frases literais inteiras, nunca cortadas', () => {
+  const pol = ler('politicas.json');
+  const t = pol.troca_devolucao_reembolso.texto;
+  assert.ok(pol.desistencia.pontos_chave.length >= 3);
+  for (const k of [pol.desistencia.literal, ...pol.desistencia.pontos_chave]) {
+    assert.ok(t.includes(k), `literal: ${k.slice(0, 60)}`);
+    assert.match(k, /[.;!?]$/, `frase inteira: ${k.slice(0, 60)}`);
+    const depois = t.slice(t.indexOf(k) + k.length);
+    assert.ok(depois === '' || /^\s/.test(depois), `termina onde a frase termina: ${k.slice(0, 60)}`);
+  }
+  const h = texto(pg('como-comprar.html'));
+  assert.ok(h.includes('após esse prazo, as solicitações não mais serão acatadas'));
+  assert.ok(h.includes('poderá ser verificado em até duas fatura subsequentes'));
+});
+
+test('FAQ: 44 itens fora da garantia, cada ausência com decisão registrada', () => {
+  const faq = ler('faq.json');
+  const inst = ler('institucionais.json');
+  const vis = new Set(faqsVisiveis(dados()).map((f) => f.id));
+  const naoGarantia = faq.filter((f) => !f.oculto_ate_decisao);
+  assert.equal(naoGarantia.length, 44);
+  for (const f of naoGarantia) {
+    if (vis.has(f.id)) continue;
+    assert.ok(inst.decisoes.some((d) => d.item.includes(f.id)), `${f.id} fora sem decisão registrada`);
+  }
+  for (const id of ['faq-34', 'faq-38']) assert.ok(vis.has(id), `${id} visível`);
+  assert.ok(inst.decisoes.some((d) => /42 de 44/.test(d.item) && d.aprovacao_do_dono === 'pendente'));
+});
+
+test('pontes: toda URL 200 do site atual tem página ou ponte (menos /outlet); script depois do link', () => {
+  const D = dados();
+  const lista = listaPontes(D);
+  const porOrigem = new Map(lista.map((p) => [p.origem, p]));
+  const meta = ler('meta.json');
+  for (const p of meta.paginas_institucionais_e_blog.filter((x) => x.status === 200)) {
+    const c = p.url.replace(/^https?:\/\/www\.banheirasbombanho\.com\.br\/?/, '');
+    if (!c || c === 'outlet') continue;
+    const arq = arquivoDaOrigem(c);
+    assert.ok(existsSync(join(DIST, arq)), `${c}: sem página nem ponte (${arq})`);
+  }
+  assert.equal(porOrigem.get('downloads').destino, 'manual-usuario-instalacao.html');
+  assert.equal(porOrigem.get('situacao-rastreio').destino, 'rastreio.html');
+  assert.equal(porOrigem.get('sucesso').destino, 'rastreio.html');
+  assert.equal(porOrigem.get('sauna/por-tamanho/sauna-de-1-30-x-1-10-x-2-00.html').destino, 'sauna.html');
+  const csv = readFileSync(join(paths.root, 'build', 'redirects.csv'), 'utf8');
+  for (const o of ['/beneficios-cromoterapia', '/beneficios-da-hidromassagem', '/downloads', '/situacao-rastreio', '/sucesso']) assert.ok(csv.includes(`"${o}"`), o);
+  // Combos com modelo no endereço vão para a coleção do modelo (nunca para a home).
+  for (const p of lista.filter((x) => /^combo-/.test(x.origem))) assert.ok(['banheiras.html', 'spas.html'].includes(p.destino), `${p.origem} -> ${p.destino}`);
+  const h = pg('taubate.html');
+  assert.ok(h.indexOf('<script>') > h.indexOf('id="destino"'), 'script depois do link');
+  assert.ok(!/<head>[\s\S]*<script>[\s\S]*<\/head>/.test(h), 'nenhum script no head');
+});
+
+test('depoimentos dos projetos: opinião assinada com nota; nenhum depoimento com saúde', () => {
+  const h = pg('banheiras-instaladas.html');
+  const inst = ler('institucionais.json');
+  for (const d of inst.depoimentos_projetos) {
+    assert.ok(texto(h).includes(norm(d.texto)), d.autor);
+    assert.deepEqual(termosSaudeSpec(d.texto), []);
+  }
+  assert.ok(texto(h).includes('Opiniões de clientes, assinadas'));
 });
