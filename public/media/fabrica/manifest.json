@@ -1,0 +1,200 @@
+{
+ "sobre": "Fotos da fábrica da galeria publicada pela empresa, reduzidas e recomprimidas (sem ampliação, recorte ou geração).",
+ "titulo_publicado": "CONHEÇA NOSSA FÁBRICA / ALGUNS DE NOSSOS PROJETOS FINALIZADOS",
+ "pagina_fonte": "https://www.banheirasbombanho.com.br/lojas/loja-fisica.html",
+ "coletado_em": "2026-10-18",
+ "fotos": [
+  {
+   "n": 1,
+   "largura": 800,
+   "altura": 216,
+   "alt_publicado": "Conheça a fábrica de banheiras da Banheiras Bom Banho",
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-1-400.avif",
+      400
+     ],
+     [
+      "media/fabrica/fabrica-1-800.avif",
+      800
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-1-400.webp",
+      400
+     ],
+     [
+      "media/fabrica/fabrica-1-800.webp",
+      800
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYAAYAPu1kqk4ppaQiMAgBMB2JQBUesMAGOKgs2lJwnLwAAP7N9azw/Gd/xj6L1YQkRC5NpriJAYK90xdOwVCSUzYXcyZJPyyni4WSdT/+nBb/+HffLgS31nYRieE6OXSafctHmOVCpAAA",
+   "sha1": "d1ea056689c3f2bc39563cb7f6380ce219e1516d",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/aaaaaa.jpg"
+  },
+  {
+   "n": 2,
+   "largura": 400,
+   "altura": 300,
+   "alt_publicado": "Fábrica de Banheiras: Venha conhecer | Banheiras Bom Banho",
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-2-400.avif",
+      400
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-2-400.webp",
+      400
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAACQBQCdASoYABIAPu1srFEppaQiqAqpMB2JQBYdsZyOMLSIEaGreQsdPrbLtix2DNsqtvaKAAD+v/HbnHwsRmECrAy/QSToQV3ZTPfENM6ukqIelffeEjTeVD9DPPuOKo2xo2bcBsOd0oDvdVUFypPKU5B3bsWbjiGeeegOremSC3qHNNVAPqYFpiRKRe53CGBlOrmN4qxAsBVZWhjVGOFfo1PA5HaK7OG663qZyht7hG8lbo7mOqlYV+XGxLyg4plrPvBW0Pgje0qv0yjhHrSjMq8W+jMhHw0AAA==",
+   "sha1": "abe3f7527bbbd20a6676a4a36055f9edb6453533",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini1.jpg"
+  },
+  {
+   "n": 3,
+   "largura": 400,
+   "altura": 300,
+   "alt_publicado": null,
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-3-400.avif",
+      400
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-3-400.webp",
+      400
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAACQBQCdASoYABIAPu1qsFAppaSiqAqpMB2JZACxDP8qWfc+RJMq6+x391xUMdF3avCjRk0iwAD+2YorOLfgFmIsyuHf0i2+O9TN5yQyaYfmsdWwb5HGe0kKxKVaGc2Zjj9xg70zh1JiPAx1OtPK3+JqDnmsFr1t3wKvh09LzZMbfKXnsog977SnslzVEQDaQsSxGHKCi38M6FV9Zb1uz5o9r8cBNUpmbNGq13hKsDpZOQ15oYEBMi8uFb04VJx8SJfplPVaIprp6mmFJhTJBQ5yAZjwAA==",
+   "sha1": "6c230218e02ab19babc10262a148c9d960811be5",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini2.jpg"
+  },
+  {
+   "n": 4,
+   "largura": 400,
+   "altura": 300,
+   "alt_publicado": null,
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-4-400.avif",
+      400
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-4-400.webp",
+      400
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAAAwBQCdASoYABIAPu1qrVCppaQiqAqpMB2JaACsHYAAY7DrpEQhPV+IEt3npB7tktEDnAD+xgGk4synSdV4NpywIr8dgrig6yT3jVs/59GKL1JpsVqjUesafpwequFZS0XiVOOddcOdNaYApWaDINEFEE8rULHagicWNCy/PVE17FV/zbXobn+WT9IAoUn7WIU8PkEo9rUwMvCYD6W+8resQvkMFbQTMiWGq9gseeBHriRhmmyvoU2h2BBxzbMnNXsDwdfi/8buQICRYAA=",
+   "sha1": "fa2619942de124d8efdbc0c36c83200d12c43fef",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini3.jpg"
+  },
+  {
+   "n": 5,
+   "largura": 400,
+   "altura": 300,
+   "alt_publicado": "Conheça a Fábrica da Banheiras Bom Banho",
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-5-400.avif",
+      400
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-5-400.webp",
+      400
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAACQBQCdASoYABIAPu1ur1KppiQiqAgBMB2JZgCxB1/H0AISigfa8gjXtf/XoNlQVtCb4BIi4AD+eRwxRc2OeEOMoXLf5FmGvcdjVSz7P5CuueKvxotUCTw5EWS+ge2zTeqqvCPTnE+ZZA9xJ1OHb7B0FP899lLrn3C/eiRFaZ3jBf6F08oaWx1RwLrh2wYSjdG2Nd4a4IdMEt7tFrfHf5xHDvPoBraUUwNraRsUsfEDMhoMix1fQ/j1l9chjZm2gC7daaD0GhNKF6GGEmxgAA==",
+   "sha1": "2b446700539d11632c2e9c4386614fbab3dfcdf1",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini4.jpg"
+  },
+  {
+   "n": 6,
+   "largura": 400,
+   "altura": 300,
+   "alt_publicado": "Compre Banheiras, Spas e Ofurôs direto da fábrica | BBB",
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-6-400.avif",
+      400
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-6-400.webp",
+      400
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASoYABIAPu1ur1KppiQiqAgBMB2JQBYj2+AsVbv1d9ztfH+KaZpjYTwnsUbPAAD+6PDzYUMcGoM40tlbGjFMzPOGPBujxitRK3yJEGbT44iolFHRwHVLq18rmZrN/IwJEOYSjLEWQGj7/irW2ClmPAcHskMvtZGYgzCE9AtXy2H1VP4G//uBSNVCjNpWvZQc3Qiq47W78tt0ayjwFLEAXJxSruCOB2UBpy82+dtWAAA=",
+   "sha1": "cf10e1975abb4fe9d3812e2ead32d357358a7244",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini5.jpg"
+  },
+  {
+   "n": 8,
+   "largura": 400,
+   "altura": 300,
+   "alt_publicado": "Fábrica de Banheiras da Banheiras Bom Banho",
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-8-400.avif",
+      400
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-8-400.webp",
+      400
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADQBACdASoYABIAPu1qrVCppaQiqAqpMB2JZAC2yA9VWfpmGOlD5a+V6fXk5DUWWAD+0JWTOMxXRKVpiCfIqerKYD2i5/wkjQ8HycT2OvFSSqmsLkEcNdqERaumlm8w8gTIOcS9SiUl9jcIjDyB5gT4EDMqSs/VGFiNY+GCCKvUljR2a+ImwcoYI6GGmpK9Rw7QTdWp/YirW0EDVTc47TWUAEOg8+hStLWR2r7vGV1zPEIsOAXs+KKyEycJA0QA",
+   "sha1": "87244f508f3865f24890bca5f436805d33320598",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini7.jpg"
+  },
+  {
+   "n": 9,
+   "largura": 400,
+   "altura": 300,
+   "alt_publicado": "Fábrica Banheiras Bom Banho",
+   "fontes": {
+    "image/avif": [
+     [
+      "media/fabrica/fabrica-9-400.avif",
+      400
+     ]
+    ],
+    "image/webp": [
+     [
+      "media/fabrica/fabrica-9-400.webp",
+      400
+     ]
+    ]
+   },
+   "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAADwBACdASoYABIAPu1qrVCppaQiqAqpMB2JbACdL8CAwYIZ5KtFm09lmzqSXKrvwjAA/qntKDF8x+GHJVi6oYqFlrC7ewHs9LpJfwSxkp0o9pT+sE+0x/E5o9IWUm+c/VVJNQHOD5/H0RQ/8uqFv+DpxVsTybI7Y/6a1n7+A8dK4JjRGxkXvOdjv4NQWmYClhhwh2QMVbiHnp2wYyAHb1CVycYXMdEte/oT9jidVOTcYhNvtIqu49nHCIePIwCwKUQ3QSDGDIMeN+nC/RAAAA==",
+   "sha1": "fa52225b02b640e161278ddebaaf73811a7a9c48",
+   "fonte": "https://www.banheirasbombanho.com.br/media/loja-fisica/mini8.jpg"
+  }
+ ]
+}

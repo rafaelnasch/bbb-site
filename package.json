@@ -27,7 +27,10 @@
     "test:colecoes": "node --test tests/colecoes.test.mjs",
     "e2e:escolha": "node build/render.mjs && playwright test tests/e2e/escolha.spec.mjs",
     "test:produto": "node --test tests/produto.test.mjs",
-    "e2e:produto": "node build/render.mjs && playwright test tests/e2e/produto.spec.mjs"
+    "e2e:produto": "node build/render.mjs && playwright test tests/e2e/produto.spec.mjs",
+    "media:fabrica": "node build/media-fabrica.mjs",
+    "test:home": "node --test tests/home.test.mjs",
+    "e2e:home": "node build/render.mjs && playwright test tests/e2e/home.spec.mjs"
   },
   "devDependencies": {
     "@lhci/cli": "0.15.1",

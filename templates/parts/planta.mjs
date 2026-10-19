@@ -60,7 +60,7 @@ export function falaCota(c) {
 
 const pct = (v, total) => `${((v / total) * 100).toFixed(3)}%`;
 
-function tabelaCotas(pl, id) {
+export function tabelaCotas(pl, id) {
   return html`<div class="cotas" data-cotas>
   <table class="cotas__tabela num">
     <caption class="cotas__cap">Cotas da planta oficial, em metros. Toque numa letra para achá-la no desenho.</caption>
@@ -75,7 +75,7 @@ function tabelaCotas(pl, id) {
 
 // No celular a imagem estática é a WebP de 1200 px (38 KB contra 51 KB da AVIF de 2400): o zoom fino vem
 // dos blocos de 512 px do planta.js.
-function explorador(p, t, pl, id, { prioridade = false } = {}) {
+export function explorador(p, t, pl, id, { prioridade = false } = {}) {
   const m = pl.media;
   const base = `media/plantas/${pl.sha1}`;
   const temAvif = existsSync(join(paths.public, base, 'planta-2400.avif'));
