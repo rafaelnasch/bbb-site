@@ -4,7 +4,7 @@
 //
 // Uso: node build/render.mjs [--skip-media] [--sistema]
 //   --sistema  inclui as páginas de conferência do sistema visual (_sistema.html), fora do sitemap.
-import { rmSync, mkdirSync, cpSync, writeFileSync, existsSync, copyFileSync } from 'node:fs';
+import { rmSync, mkdirSync, cpSync, writeFileSync, existsSync, copyFileSync, renameSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { paths, SITE_URL, BASE_PATH, INDEXAR, CNAME } from '../site.config.mjs';
@@ -12,7 +12,8 @@ import { construirAssets } from './lib/assets.mjs';
 import { prepararMidia } from './lib/midia.mjs';
 import { dados } from './lib/dados.mjs';
 import { url, abs } from './lib/url.mjs';
-import { configurarLayout, layout } from '../templates/layout.mjs';
+import { configurarLayout, layout, PAGINAS } from '../templates/layout.mjs';
+import { caminhoDoRegistro } from './seo.mjs';
 
 export const REGISTRO = [
   'home', 'colecao', 'produto', 'escolher', 'comparar', 'busca', 'consultores', 'guia',
@@ -23,6 +24,7 @@ const SISTEMA = process.argv.includes('--sistema') || process.env.SISTEMA === '1
 
 export async function renderizar({ sistema = SISTEMA, dist = paths.dist } = {}) {
   const t0 = Date.now();
+  PAGINAS.length = 0;
   rmSync(dist, { recursive: true, force: true });
   mkdirSync(dist, { recursive: true });
 
@@ -50,6 +52,13 @@ export async function renderizar({ sistema = SISTEMA, dist = paths.dist } = {}) 
       geradas.push(pg.saida);
     }
   }
+
+  // Registro para o seo.mjs (sitemaps): fora de dist/, não é publicado. Escrita atômica (os testes
+  // renderizam em paralelo, cada um na sua pasta e com o seu registro).
+  const reg = caminhoDoRegistro(dist);
+  mkdirSync(dirname(reg), { recursive: true });
+  writeFileSync(`${reg}.tmp${process.pid}`, JSON.stringify(PAGINAS.filter((x) => geradas.includes(x.saida)), null, 1));
+  renameSync(`${reg}.tmp${process.pid}`, reg);
 
   writeFileSync(join(dist, '.nojekyll'), '');
   if (CNAME) writeFileSync(join(dist, 'CNAME'), `${CNAME}\n`);

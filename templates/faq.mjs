@@ -91,7 +91,7 @@ export function paginas(ctx) {
   </div>
 </article>`;
 
-  const descricao = 'Perguntas frequentes sobre banheiras, spas e ofurôs da Banheiras Bom Banho: gel coat ou acrílico, cores, itens e opcionais, pagamento, prazo de entrega, instalação e cuidados.';
+  const descricao = 'Perguntas frequentes sobre banheiras, spas e ofurôs da Banheiras Bom Banho: gel coat ou acrílico, cores, opcionais, pagamento, prazo de entrega e instalação.';
   // FAQPage só com itens tipo=publicada visíveis na página (SPEC 11.2), sem garantia.
   const pub = itens.filter((f) => f.tipo === 'publicada');
   const faqPage = {

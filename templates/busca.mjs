@@ -2,6 +2,7 @@
 // acento, tolera 1 erro por termo (distância de Levenshtein), sugere coleções por faceta ("spa 6
 // lugares"). Sem resultado: escolhedor e WhatsApp de ajuda. Página não indexável (noindex,follow).
 import { html, attrs, raw } from '../build/lib/html.mjs';
+import { breadcrumb as breadcrumbLd } from '../build/lib/jsonld.mjs';
 import { url, abs } from '../build/lib/url.mjs';
 import { icone } from '../build/lib/icons.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
@@ -55,7 +56,7 @@ export function paginas(ctx) {
       descricao: 'Busque banheiras, spas, ofurôs, saunas e acessórios pelo nome, nº de catálogo, forma, lugares ou medida. Tolera acentos e erros de digitação.',
       corpo: html`${topo}${app}`,
       robots: 'noindex,follow',
-      jsonld: [{ '@context': 'https://schema.org', '@type': 'SearchResultsPage', name: 'Buscar no catálogo', url: abs('busca.html') }],
+      jsonld: [{ '@context': 'https://schema.org', '@graph': [{ '@type': 'SearchResultsPage', '@id': `${abs('busca.html')}#pagina`, name: 'Buscar no catálogo', url: abs('busca.html'), inLanguage: 'pt-BR' }, breadcrumbLd([{ nome: 'Início', path: '' }, { nome: 'Buscar no catálogo', path: 'busca.html' }])] }],
       modulos: ['busca'],
       sobre: true,
       classe: 'pg-busca',

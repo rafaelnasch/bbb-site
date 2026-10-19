@@ -10,8 +10,16 @@ import { barraTopo, cabecalho, gavetaMenu } from './parts/header.mjs';
 import { rodape } from './parts/footer.mjs';
 import { gavetaWhats } from './parts/gaveta-whats.mjs';
 import { icone } from '../build/lib/icons.mjs';
+import { consolidar, serializar } from '../build/lib/jsonld.mjs';
 
 let A = null; // assets do build (build/lib/assets.mjs)
+
+/**
+ * Registro das páginas renderizadas nesta execução (saída, canonical, robots pretendido, título e
+ * descrição). O render.mjs grava em .cache/paginas.json; o seo.mjs monta os sitemaps a partir dele,
+ * porque com INDEXAR=false o robots do HTML sai forçado em noindex e não diz mais o que é indexável.
+ */
+export const PAGINAS = [];
 
 /** Chamado uma vez pelo render.mjs depois de construirAssets(). */
 export function configurarLayout(assets) {
@@ -67,6 +75,7 @@ function ogPadrao() {
  * @param {object} [p.rodapeTardio] alturas reservadas {m,t,d} (px, iguais ou menores que as reais) para pular o
  *                                layout do rodapé até ele chegar perto da tela (templates/parts/tardio.mjs); usado na home
  * @param {boolean}[p.bandeja]   false omite a bandeja do comparador (no próprio comparador ela só cobriria a página)
+ * @param {boolean}[p.semImagem] Product sem foto publicada (Spa Serena): a validação do JSON-LD aceita Product sem image
  */
 export function layout(p) {
   if (!A) throw new Error('layout: configurarLayout(assets) não foi chamado');
@@ -92,7 +101,9 @@ export function layout(p) {
     if (!A.fontes[k]) throw new Error(`Fonte inexistente para preload: ${k}`);
     return A.fontes[k];
   }) : A.preload;
-  const jsonld = (p.jsonld || []).map((o) => raw(`<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`));
+  // Um só bloco por página, com a Organization completa em todas (build/lib/jsonld.mjs, SPEC 11.2).
+  const jsonld = raw(`<script type="application/ld+json">${serializar(consolidar(p.jsonld || [], { saida: p.saida, semImagem: p.semImagem }))}</script>`);
+  PAGINAS.push({ saida: p.saida, caminho, canonical, robots: p.robots || 'index,follow', titulo: p.titulo, descricao: p.descricao });
 
   const doc = html`<!doctype html>
 <html lang="pt-BR">

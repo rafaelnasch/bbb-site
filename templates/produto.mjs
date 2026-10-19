@@ -73,16 +73,42 @@ function camposEtiqueta(p) {
 }
 
 /** <title> com no máximo 60 caracteres, cortado por palavra no nome (SPEC 11.1). */
+/**
+ * <title> de produto até 60 caracteres (SPEC 11.1), sempre com o nome literal completo quando cabe:
+ * "{nome} | Banheiras Bom Banho"; se não couber, "{nome} | BBB" (sigla da marca que o site atual já usa
+ * nos títulos de produto); depois só o nome. Nomes acima de 60 perdem primeiro o trecho "com hidro"
+ * (que o tipo já diz) e só então são cortados por palavra, sem terminar em preposição. Assim as versões
+ * em gel coat e em acrílico não ficam com o mesmo título.
+ */
 export function tituloProduto(nome) {
-  const suf = ' | Banheiras Bom Banho';
-  if ((nome + suf).length <= 60) return nome + suf;
-  const palavras = String(nome).split(/\s+/);
+  const n = String(nome).replace(/\s+/g, ' ').trim();
+  const sufixos = /\bBBB\b/.test(n) ? [' | Banheiras Bom Banho'] : [' | Banheiras Bom Banho', ' | BBB'];
+  for (const suf of sufixos) if ((n + suf).length <= 60) return n + suf;
+  if (n.length <= 60) return n;
+  const sem = n.replace(/\s+(com|c\/)\s+hidro\b/i, '');
+  if (sem.length <= 60) return sem;
+  const palavras = sem.split(' ');
   let t = '';
   for (const w of palavras) {
-    if ((`${t} ${w}`.trim() + suf).length > 60) break;
+    if (`${t} ${w}`.trim().length > 60) break;
     t = `${t} ${w}`.trim();
   }
-  return (t || palavras[0]) + suf;
+  return (t.replace(/\s+(com|em|de|da|do|e|c\/)$/i, '') || palavras[0]);
+}
+
+/** Títulos únicos entre os produtos: em colisão, o nº de catálogo (SKU literal) desempata. */
+export function titulosUnicos(produtos) {
+  const t = new Map(produtos.map((p) => [p.slug, tituloProduto(p.nome)]));
+  const conta = new Map();
+  for (const v of t.values()) conta.set(v, (conta.get(v) || 0) + 1);
+  for (const p of produtos) {
+    if (conta.get(t.get(p.slug)) < 2) continue;
+    const suf = ` (${p.sku})`;
+    let base = t.get(p.slug).replace(/ \| (Banheiras Bom Banho|BBB)$/, '');
+    while (base.length + suf.length > 60 && base.includes(' ')) base = base.replace(/\s+\S+$/, '');
+    t.set(p.slug, base + suf);
+  }
+  return t;
 }
 
 /** Meta description de 140 a 160 caracteres só com campos reais (SPEC 11.1). */
@@ -362,6 +388,7 @@ export function paginas(ctx) {
   const abertura = venda.prefilled_text || '';
   const BASE = ctx.BASE_PATH;
   const out = [];
+  const titulos = titulosUnicos(produtos);
 
   for (const p of produtos) {
     const saida = `${p.slug}.html`;
@@ -520,11 +547,12 @@ ${avaliacao(p)}`;
       saida,
       html: comContextoDeVenda(layout({
         saida,
-        titulo: tituloProduto(p.nome),
+        titulo: titulos.get(p.slug),
         descricao: descricaoProduto(p, tamanhos, itens),
         corpo,
         og,
         jsonld: [jsonLd(p, { D, fotos, tamanhos, trilha, faqs, familia: fam, BASE })],
+        semImagem: !fotos.length,
         modulos,
         ativo: raiz,
         sobre: true,

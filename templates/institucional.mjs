@@ -265,7 +265,7 @@ ${corpoLeitura({
   return pagina(ctx, {
     saida: 'prazo-de-entrega.html',
     titulo: 'Prazo de entrega por estado | Banheiras Bom Banho',
-    descricao: 'Prazo de entrega por estado das banheiras, ofurôs e spas da Banheiras Bom Banho, em dias úteis, com as condições de entrega: térreo, sem zona rural e conferência no recebimento.',
+    descricao: 'Prazo de entrega por estado de banheiras, spas e ofurôs da Banheiras Bom Banho, em dias úteis, e as condições: térreo, sem zona rural e conferência na entrega.',
     corpo,
     trilha,
     modulos: ['institucional'],
@@ -292,7 +292,7 @@ ${corpoLeitura({
   return pagina(ctx, {
     saida: 'inmetro.html',
     titulo: 'Certificação INMETRO | Banheiras Bom Banho',
-    descricao: `Certificação INMETRO da Banheiras Bom Banho: certificado nº ${E.inmetro.certificado}, classe do produto, tipo, laboratório de ensaio e documento normativo publicados pela empresa.`,
+    descricao: `Certificação INMETRO da Banheiras Bom Banho: certificado nº ${E.inmetro.certificado}, classe do produto, tipo, laboratório de ensaio e norma, como publicados.`,
     corpo,
     trilha,
   });
@@ -324,7 +324,7 @@ function politicaQualidade(ctx) {
     ${notaFonte(D, p.fonte)}
   </div>
 </article>`;
-  return pagina(ctx, { saida: 'politica-da-qualidade.html', titulo: 'Política da qualidade | Banheiras Bom Banho', descricao: 'Política da qualidade da Banheiras Bom Banho (FR-001): o foco na fabricação de banheiras, spas e ofurôs de hidromassagem e na melhoria contínua, como publicado pela empresa.', corpo, trilha });
+  return pagina(ctx, { saida: 'politica-da-qualidade.html', titulo: 'Política da qualidade | Banheiras Bom Banho', descricao: 'Política da qualidade da Banheiras Bom Banho (FR-001): fabricação de banheiras, spas e ofurôs de hidromassagem e melhoria contínua, como publicado pela empresa.', corpo, trilha });
 }
 
 // ------------------------------------------------------------------ Instaladores
@@ -409,7 +409,7 @@ function vendasCorporativas(ctx) {
     ${notaFonte(D, p.fonte)}
   </div>
 </article>`;
-  return pagina(ctx, { saida: 'vendas-corporativas.html', titulo: 'Vendas corporativas: construtoras e hotéis | Banheiras Bom Banho', descricao: 'Atendimento exclusivo da Banheiras Bom Banho para construtoras, incorporadoras e hotéis: banheiras, spas e ofurôs com condições especiais. Fale com a equipe pelo WhatsApp.', corpo, trilha });
+  return pagina(ctx, { saida: 'vendas-corporativas.html', titulo: 'Vendas corporativas: construtoras e hotéis | Banheiras Bom Banho', descricao: 'Vendas corporativas da Banheiras Bom Banho para construtoras, incorporadoras e hotéis: banheiras, spas e ofurôs com condições especiais, pelo WhatsApp.', corpo, trilha });
 }
 
 // ------------------------------------------------------------------ Manual
@@ -443,7 +443,7 @@ ${corpoLeitura({
   return pagina(ctx, {
     saida: 'manual-usuario-instalacao.html',
     titulo: 'Manual do usuário e instalação | Banheiras Bom Banho',
-    descricao: 'Manual do usuário e instalação de banheiras, spas e ofurôs da Banheiras Bom Banho em texto, com sumário por seção: cuidados, limpeza, rede elétrica, hidráulica e montagem. PDF original para baixar.',
+    descricao: 'Manual do usuário e instalação de banheiras, spas e ofurôs da Banheiras Bom Banho: cuidados, limpeza, rede elétrica, hidráulica e montagem, com o PDF original.',
     corpo,
     trilha,
     tipo: 'WebPage',
@@ -604,7 +604,7 @@ export function paginas(ctx) {
     paginaDeTexto(ctx, {
       chave: 'politica-devolucao-reembolso', saida: 'politica-devolucao-reembolso.html', h1: 'Política de troca, devolução e reembolso', etiqueta: 'Pós-venda',
       titulo: 'Troca, devolução e reembolso | Banheiras Bom Banho',
-      descricao: 'Política de troca, devolução e reembolso da Banheiras Bom Banho: conferência na entrega, desistência em até 7 dias corridos, avaria, defeito, cancelamento e ressarcimento.',
+      descricao: 'Troca, devolução e reembolso na Banheiras Bom Banho: conferência na entrega, desistência em até 7 dias corridos, avaria, defeito, cancelamento e ressarcimento.',
       trilha: [inicio, { nome: 'Troca, devolução e reembolso', path: 'politica-devolucao-reembolso.html' }],
       lado: ajudaLado(D, 'devolucao', { papel: 'sac', rotulo: 'Falar com o SAC', titulo: 'Troca, avaria ou devolução?' }),
     }),
@@ -617,7 +617,7 @@ export function paginas(ctx) {
     paginaDeTexto(ctx, {
       chave: 'termos-de-uso', saida: 'termos-de-uso.html', h1: 'Termos de Uso', etiqueta: 'Termos',
       titulo: 'Termos de uso | Banheiras Bom Banho',
-      descricao: 'Termos de uso do site da Banheiras Bom Banho: restrições ao uso de materiais, direitos autorais e marcas.',
+      descricao: 'Termos de uso do site da Banheiras Bom Banho: quem opera o site, restrições ao uso de textos e imagens, direitos autorais e uso das marcas publicadas.',
       trilha: [inicio, { nome: 'Termos de uso', path: 'termos-de-uso.html' }],
     }),
     paginaDeTexto(ctx, {

@@ -141,7 +141,19 @@ export function htmlPonte(p, nomeDestino) {
 <meta name="description" content="${esc(`Este endereço mudou. O conteúdo está em: ${nomeDestino}.`)}">
 <meta name="robots" content="${robots}">
 <link rel="canonical" href="${esc(canonical)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Banheiras Bom Banho">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="${esc(nomeDestino)} | Banheiras Bom Banho">
+<meta property="og:description" content="${esc(`Este endereço mudou. O conteúdo está em: ${nomeDestino}.`)}">
+<meta property="og:url" content="${esc(canonical)}">
 <meta property="og:image" content="${esc(abs(ogPadrao()))}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(nomeDestino)} | Banheiras Bom Banho">
+<meta name="twitter:description" content="${esc(`Este endereço mudou. O conteúdo está em: ${nomeDestino}.`)}">
+<meta name="twitter:image" content="${esc(abs(ogPadrao()))}">
 <meta http-equiv="refresh" content="${esc(`0;url=${href}`)}">
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#071C2B;color:#F3F6F8;font:400 1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:24px}main{max-width:36rem}h1{font:300 1.75rem/1.2 Georgia,serif;margin:0 0 .5em}a{color:#F3F6F8}</style>
 </head>

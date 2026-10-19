@@ -147,9 +147,55 @@ function vizinhas(cat, D) {
     .slice(0, 14);
 }
 
-function descricaoGerada(cat, frase) {
-  let d = `${cat.nome}: ${frase}. Fotos, medidas, planta oficial e preços publicados pela fábrica. Compra pelo WhatsApp com consultor.`;
-  if (d.length > 160) d = `${cat.nome}: ${frase}. Medidas, planta e preços publicados; compra pelo WhatsApp.`;
+/**
+ * Nome de busca da coleção, a partir do nome literal e da trilha real: "3 a 4 Lugares" sob Spas vira
+ * "Spas de 3 a 4 lugares"; "Por Tamanho" sob Sauna vira "Sauna por tamanho"; "Kids" na raiz, com só
+ * banheiras na lista, vira "Banheiras Kids". Nenhuma palavra que não esteja no nome, na trilha ou no tipo.
+ */
+export function nomeDeBusca(cat, trilha, tipos) {
+  let n = String(cat.nome).trim();
+  if (n.length > 3 && n === n.toLocaleUpperCase('pt-BR')) n = n[0] + n.slice(1).toLocaleLowerCase('pt-BR');
+  const temTipo = /banheir|spa|ofur|sauna/i.test(n);
+  const pai = trilha.length > 2 ? trilha[trilha.length - 2].nome : null;
+  const minus = (x) => (/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]/.test(x) ? x[0].toLocaleLowerCase('pt-BR') + x.slice(1) : x);
+  if (pai && /^por tamanho$/i.test(n)) return `${pai} por tamanho`;
+  // Subcoleção de uma página de palavra-chave (Ofurô com hidro sob Ofurô Externo): junta as duas.
+  const paiPath = trilha.length > 2 ? trilha[trilha.length - 2].path : null;
+  if (pai && temTipo && !Object.values(RAIZ_TIPO).includes(paiPath) && !/^por tamanho$/i.test(pai)) {
+    const [p0, ...pr] = n.split(' ');
+    return p0 === pai.split(' ')[0] ? `${pai} ${pr.join(' ')}` : `${n} (${pai})`;
+  }
+  if (pai && !temTipo && !/^por tamanho$/i.test(pai)) return /^\d/.test(n) ? `${pai} de ${minus(n).replace(/ Lugares$/i, ' lugares')}` : `${pai} ${minus(n)}`;
+  if (!pai && !temTipo && tipos.size === 1 && !/\s/.test(n)) {
+    const t = PLURAL_TIPO[[...tipos][0]];
+    if (t) return `${t[0].toLocaleUpperCase('pt-BR')}${t.slice(1)} ${n}`;
+  }
+  return n;
+}
+
+/**
+ * <title> da coleção (SPEC 11.1): o título atual da empresa quando existe e é forte; senão, um gerado
+ * a partir do nome de busca, mantendo a palavra-chave que a página já mira. Fraco = ausente (cortado pelo
+ * filtro editorial), curto (até 20 caracteres), todo em caixa alta, começando por número ou no padrão
+ * automático "X - Por Tamanho - Y" do Magento.
+ */
+export function tituloColecao(cat, trilha, tipos) {
+  const t = String(cat.d_meta_exibida?.title || '').replace(/\s+/g, ' ').trim();
+  const fraco = !t || t.length <= 20 || t === t.toLocaleUpperCase('pt-BR') || /^\d/.test(t) || / - Por Tamanho - /i.test(t);
+  if (!fraco) return t;
+  let n = nomeDeBusca(cat, trilha, tipos);
+  // Coleção raiz cujo título foi cortado (superlativo): o trecho literal sem superlativo do título atual.
+  if (!t && trilha.length === 2 && cat.meta?.title) {
+    const seg = String(cat.meta.title).split(/\s+-\s+/)[0].trim();
+    if (seg && seg !== cat.meta.title && !/melhor|maior|única|unica/i.test(seg)) n = seg;
+  }
+  for (const suf of [' | Banheiras Bom Banho', ' | BBB']) if ((n + suf).length <= 60) return n + suf;
+  return n.slice(0, 60);
+}
+
+function descricaoGerada(cat, frase, nome = cat.nome) {
+  let d = `${nome}: ${frase}. Fotos, medidas, planta oficial e preços publicados pela fábrica. Compra pelo WhatsApp com consultor.`;
+  if (d.length > 160) d = `${nome}: ${frase}. Medidas, planta e preços publicados; compra pelo WhatsApp.`;
   if (d.length > 160) d = `${d.slice(0, 157).replace(/\s+\S*$/, '')}...`;
   return d;
 }
@@ -243,8 +289,10 @@ export function paginas(ctx) {
 </section>`;
 
     const meta = cat.d_meta_exibida || {};
-    const titulo = (meta.title || '').trim() || `${cat.nome} | Banheiras Bom Banho`;
-    const descricao = (meta.description || '').trim() || descricaoGerada(cat, frase);
+    const titulo = tituloColecao(cat, trilha, tipos);
+    // Descrição atual da empresa quando existe e não é só o título repetido; senão, gerada dos dados.
+    const dAtual = String(meta.description || '').replace(/\s+/g, ' ').trim();
+    const descricao = dAtual && dAtual.length >= 70 && dAtual !== String(meta.title || '').trim() ? dAtual : descricaoGerada(cat, frase, nomeDeBusca(cat, trilha, tipos));
     const jsonld = {
       '@context': 'https://schema.org',
       '@graph': [

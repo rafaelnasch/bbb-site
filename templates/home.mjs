@@ -25,6 +25,9 @@ import { indiceCatalogo, fotoCartao, produtosDaCategoria, CAT_BANHEIRO, CAT_OFUR
 import { QUASE_CM } from '../build/lib/encaixe.mjs';
 import { mapaLojas } from '../build/lib/mapa-lojas.mjs';
 import { tardio } from './parts/tardio.mjs';
+import { cidadeDaFabrica, horarioSchema, organizacao, website } from '../build/lib/jsonld.mjs';
+
+export { cidadeDaFabrica, horarioSchema };
 
 // Escolhas editoriais da home (quais coleções e peças mostrar); nenhum dado da empresa aqui.
 export const PORTAS = Object.freeze([
@@ -65,12 +68,6 @@ const dataBR = (iso) => {
   return m ? `${m[3]}/${m[2]}/${m[1]}` : null;
 };
 
-/** "…, Coutinhos, Congonhal-MG" -> { cidade: 'Congonhal', uf: 'MG' } (derivado do endereço literal). */
-export function cidadeDaFabrica(endereco) {
-  const m = /([^,]+?)\s*-\s*([A-Z]{2})\s*$/.exec(String(endereco || ''));
-  return m ? { cidade: m[1].trim(), uf: m[2] } : null;
-}
-
 /** Números declarados: "+ DE 80 COLABORADORES DIRETOS" -> { valor: '+ DE 80', rotulo: 'COLABORADORES DIRETOS' }. */
 export function numerosDeclarados(literal) {
   return String(literal || '').split('|').map((s) => s.trim()).filter(Boolean).map((s) => {
@@ -97,25 +94,6 @@ export function reclameAqui(ra) {
   if (!periodo || !consultado) return null; // sem período e data, o número não é publicado (SPEC 9.1)
   return { url: ra.url, reputacao: ra.reputacao || null, nota, resolve, periodo, consultado };
 }
-
-/** "Segunda à Quinta-feira: 07:00 às 17:00 | Sexta-feira: 07:00 às 16:00" -> OpeningHoursSpecification. */
-export function horarioSchema(literal) {
-  const DIA = { segunda: 'Monday', terca: 'Tuesday', quarta: 'Wednesday', quinta: 'Thursday', sexta: 'Friday', sabado: 'Saturday', domingo: 'Sunday' };
-  const ORDEM = Object.keys(DIA);
-  const norm = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const out = [];
-  for (const parte of String(literal || '').split('|')) {
-    const m = /^(.*?):\s*(\d{2}:\d{2})\s*(?:às|as|a)\s*(\d{2}:\d{2})/i.exec(parte.trim());
-    if (!m) continue;
-    const dias = [...norm(m[1]).matchAll(/(segunda|terca|quarta|quinta|sexta|sabado|domingo)/g)].map((x) => x[1]);
-    if (!dias.length) continue;
-    const lista = dias.length === 2 && /\b(a|à|ate)\b/.test(norm(m[1])) ? ORDEM.slice(ORDEM.indexOf(dias[0]), ORDEM.indexOf(dias[1]) + 1) : dias;
-    out.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: lista.map((d) => `https://schema.org/${DIA[d]}`), opens: m[2], closes: m[3] });
-  }
-  return out;
-}
-
-const telefoneSchema = (n) => (/^55(\d{2})(\d{4,5})(\d{4})$/.test(n) ? n.replace(/^55(\d{2})(\d{4,5})(\d{4})$/, '+55 $1 $2-$3') : `+${n}`);
 
 /** Poster e vídeo do filme de uma coleção (public/media/filmes/manifest.json), se existirem. */
 function filmeColecao(D, id) {
@@ -524,28 +502,12 @@ export function paginas(ctx) {
   const titulo = 'Banheiras, spas e ofurôs com hidro | Banheiras Bom Banho';
   let descricao = `${nB} banheiras, ${nS} spas e ${nO} ofurôs de hidromassagem da fábrica em ${local.cidade}, ${local.uf}, com medidas, planta oficial e preços publicados. Compra pelo WhatsApp.`;
   if (descricao.length > 160) descricao = `${nB} banheiras, ${nS} spas e ${nO} ofurôs de hidromassagem da fábrica em ${local.cidade}, ${local.uf}. Compra pelo WhatsApp.`;
-  const contatoPonto = (papel, tipo) => {
-    try { return { '@type': 'ContactPoint', contactType: tipo, telephone: telefoneSchema(D.contato(papel).numero), areaServed: 'BR', availableLanguage: 'pt-BR', hoursAvailable: horarioSchema(E.horario?.literal) }; } catch { return null; }
-  };
-  const org = {
-    '@type': 'Organization',
-    '@id': `${abs('')}#org`,
-    name: E.nome,
-    alternateName: E.alternate_name || undefined,
-    url: abs(''),
-    logo: abs('brand/logo-bbb-azul-oficial-206x99.png'),
-    email: E.emails?.find((e) => /^sac@/.test(e.email))?.email,
-    telephone: E.telefone_fixo?.tel ? E.telefone_fixo.tel.replace(/^tel:/, '').replace(/^\+55(\d{2})(\d{4})(\d{4})$/, '+55 $1 $2-$3') : undefined,
-    address: { '@type': 'PostalAddress', streetAddress: E.endereco_fabrica, addressLocality: local.cidade, addressRegion: local.uf, addressCountry: 'BR' },
-    contactPoint: [contatoPonto('venda_principal', 'sales'), contatoPonto('ajuda', 'customer support'), contatoPonto('sac', 'customer service'), contatoPonto('rastreio', 'order tracking')].filter(Boolean),
-    sameAs: [...(E.redes || []).filter((r) => r.principal).map((r) => r.url), E.reclame_aqui?.url].filter(Boolean),
-  };
-  if (!existsSync(join(paths.public, 'brand', 'logo-bbb-azul-oficial-206x99.png'))) delete org.logo;
+  // Organization completa e WebSite com SearchAction (build/lib/jsonld.mjs; o layout consolida o grafo).
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
-      org,
-      { '@type': 'WebSite', '@id': `${abs('')}#site`, name: E.nome, url: abs(''), inLanguage: 'pt-BR', publisher: { '@id': `${abs('')}#org` }, potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${abs('busca.html')}?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } },
+      organizacao(D),
+      website(D, { busca: true }),
       ...(faqJsonLd(faqs) ? [faqJsonLd(faqs)] : []),
     ],
   };

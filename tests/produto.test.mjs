@@ -137,11 +137,15 @@ test('Monte a sua: preços reais, "Nenhum" quando a fonte exibe, AggregateOffer 
   assert.equal(prod.offers.highPrice, P('banheira-contemporanea-paraty-sem-hidro').d_preco_max);
 });
 
-test('cabeça e SEO de produto: título até 60, descrição de 140 a 160, Product, Breadcrumb e ProductGroup', () => {
+test('cabeça e SEO de produto: título único até 60, descrição de 140 a 160, Product, Breadcrumb e ProductGroup', () => {
+  const vistos = new Map();
   for (const p of produtos) {
     const h = pagina(p.slug);
     const t = /<title>([^<]+)<\/title>/.exec(h)[1].replace(/&amp;/g, '&');
-    assert.ok(t.length <= 60 && t.endsWith(' | Banheiras Bom Banho'), `${p.slug}: título "${t}"`);
+    // Nome literal com a marca quando cabe (" | Banheiras Bom Banho" ou a sigla " | BBB"); nome acima de 60 sai sem marca.
+    assert.ok(t.length <= 60 && (t.startsWith(p.nome) || t.length >= 50), `${p.slug}: título "${t}"`);
+    assert.ok(!vistos.has(t), `${p.slug}: título repetido de ${vistos.get(t)}`);
+    vistos.set(t, p.slug);
     const d = /<meta name="description" content="([^"]+)">/.exec(h)[1].replace(/&amp;/g, '&').replace(/&quot;/g, '"');
     assert.ok(d.length >= 140 && d.length <= 160, `${p.slug}: descrição com ${d.length}`);
     const n = nos(h);

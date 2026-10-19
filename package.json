@@ -33,7 +33,8 @@
     "test:home": "node --test tests/home.test.mjs",
     "e2e:home": "node build/render.mjs && playwright test tests/e2e/home.spec.mjs",
     "media:home": "node build/media-home.mjs",
-    "fontes:titulo": "node build/fontes-titulo.mjs"
+    "fontes:titulo": "node build/fontes-titulo.mjs",
+    "test:seo": "node --test tests/seo.test.mjs"
   },
   "devDependencies": {
     "@lhci/cli": "0.15.1",

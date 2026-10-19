@@ -18,6 +18,8 @@ import { termosSaudeSpec } from './lib/texto.mjs';
 import { REGISTRO } from './render.mjs';
 import { verificarDiferencaZero, rastreio } from './lib/diferenca-zero.mjs';
 import { CATEGORIAS_PONTE } from './lib/catalogo.mjs';
+import { verificarSeo } from './lib/seo-checks.mjs';
+import { caminhoDoRegistro } from './seo.mjs';
 
 const PROIBIDOS = [/\(VERIFICAR\)/, /BANHEIRA COLORIDA/i, /a maior loja/i, /a única com selo/i, /\blorem\b/i];
 const TEXTO_EXT = new Set(['.html', '.json', '.txt', '.xml', '.js', '.css', '.webmanifest', '.csv', '.md']);
@@ -204,6 +206,11 @@ export async function validar(dist = paths.dist) {
     }
     if (comGaleria.has(relative(dist, f)) && !/\bmedia\/p\//.test(h)) erro(f, 'produto com galeria sem foto de media/p');
   }
+
+  // SEO, GEO e AEO (SPEC 11 e 14): JSON-LD por tipo, cabeça única, OG/Twitter, CSP, sitemaps, robots,
+  // llms e dados abertos. Precisa do seo.mjs rodado antes (npm run build faz render, seo e validate).
+  if (existsSync(join(dist, 'sitemap.xml')) && existsSync(caminhoDoRegistro(dist))) erros.push(...verificarSeo(dist).map((e) => `seo ${e}`));
+  else pendentes.push('seo: sitemap.xml ou .cache/paginas.json ausente (rode render e seo antes do validate)');
 
   // 13.12 contraste
   for (const r of verificarContraste().filter((x) => !x.ok)) erros.push(`contraste ${r.fg} sobre ${r.bg} = ${r.razao}:1 (mínimo ${r.minimo}) [${r.uso}]`);

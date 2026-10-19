@@ -3,6 +3,7 @@
 // As peças vêm da URL (?p=slug,slug,slug) ou da bandeja (localStorage "bbb:comparar"). A página não é
 // indexável (noindex,follow). Dados: dados/indice.json (do escolhedor) e dados/fichas.json (daqui).
 import { html, attrs, raw } from '../build/lib/html.mjs';
+import { breadcrumb as breadcrumbLd } from '../build/lib/jsonld.mjs';
 import { url, abs } from '../build/lib/url.mjs';
 import { icone } from '../build/lib/icons.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
@@ -83,6 +84,7 @@ export function paginas(ctx) {
         descricao: 'Compare até três banheiras, spas ou ofurôs lado a lado: medidas na mesma escala, ficha técnica, itens de série, planta oficial e preços publicados pela fábrica.',
         corpo: html`${topo}${app}`,
         robots: 'noindex,follow',
+        jsonld: [{ '@context': 'https://schema.org', '@graph': [{ '@type': 'WebPage', '@id': `${abs('comparar.html')}#pagina`, name: 'Comparar modelos', url: abs('comparar.html'), inLanguage: 'pt-BR' }, breadcrumbLd([{ nome: 'Início', path: '' }, { nome: 'Comparar modelos', path: 'comparar.html' }])] }],
         modulos: ['comparar'],
         sobre: true,
         classe: 'pg-comparar',
