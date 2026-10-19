@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR" data-composition-variables='[
+  {"id":"name","type":"string","label":"Arquivo de saída","default":""},
+  {"id":"fonte","type":"string","label":"URL da coleção","default":""},
+  {"id":"etiqueta","type":"string","label":"Nome da coleção e contagem","default":""},
+  {"id":"total_fotos","type":"number","label":"Quantidade de fotos","default":0},
+  {"id":"f1","type":"string","label":"Foto 1","default":""},
+  {"id":"f2","type":"string","label":"Foto 2","default":""},
+  {"id":"f3","type":"string","label":"Foto 3","default":""},
+  {"id":"f4","type":"string","label":"Foto 4","default":""},
+  {"id":"f5","type":"string","label":"Foto 5","default":""},
+  {"id":"f6","type":"string","label":"Foto 6","default":""},
+  {"id":"w1","type":"string","label":"Cor da parede 1","default":"#0C2A3D"},
+  {"id":"w2","type":"string","label":"Cor da parede 2","default":"#0C2A3D"},
+  {"id":"w3","type":"string","label":"Cor da parede 3","default":"#0C2A3D"},
+  {"id":"w4","type":"string","label":"Cor da parede 4","default":"#0C2A3D"},
+  {"id":"w5","type":"string","label":"Cor da parede 5","default":"#0C2A3D"},
+  {"id":"w6","type":"string","label":"Cor da parede 6","default":"#0C2A3D"}
+]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, height=720" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Open Sans"; src: url("assets/opensans-var-latin.woff2") format("woff2"); font-weight: 300 800; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; background: #071C2B; }
+      #root { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #071C2B; }
+      .clip { position: absolute; inset: 0; }
+      #halo { position: absolute; left: 290px; top: 10px; width: 700px; height: 700px; border-radius: 50%; opacity: .55;
+        background: radial-gradient(closest-side, var(--wall, #0C2A3D), rgba(7,28,43,0)); }
+      #moldura { position: absolute; left: 380px; top: 60px; width: 520px; height: 520px; padding: 18px;
+        background: #0C2A3D; border: 1px solid rgba(141,187,217,.28);
+        box-shadow: 0 40px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(0,0,0,.4) inset; overflow: hidden; }
+      .foto { position: absolute; left: 18px; top: 18px; width: 484px; height: 484px; object-fit: cover; opacity: 0; }
+      #luz { position: absolute; top: 0; left: 0; width: 220px; height: 520px;
+        background: linear-gradient(100deg, rgba(233,184,124,0) 0%, rgba(233,184,124,.22) 50%, rgba(233,184,124,0) 100%);
+        mix-blend-mode: screen; }
+      #piso { position: absolute; left: 330px; top: 600px; width: 620px; height: 2px;
+        background: linear-gradient(90deg, rgba(141,187,217,0), rgba(141,187,217,.55), rgba(141,187,217,0)); }
+      #etiqueta { position: absolute; left: 0; width: 1280px; top: 628px; text-align: center;
+        font: 600 15px/1 "Open Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #F3F6F8; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1280" data-height="720">
+      <div id="sala" class="clip" data-start="0" data-duration="6" data-track-index="0" data-layout-allow-overflow>
+        <div id="halo"></div>
+        <div id="moldura"><div id="luz"></div></div>
+        <div id="piso"></div>
+      </div>
+      <div id="etiqueta" data-start="0" data-duration="6" data-track-index="1"></div>
+    </div>
+    <script>
+      (function () {
+        const v = window.__hyperframes.getVariables();
+        const n = v.total_fotos;
+        const moldura = document.getElementById("moldura");
+        const luz = document.getElementById("luz");
+        document.getElementById("etiqueta").textContent = v.etiqueta;
+        for (let i = 1; i <= n; i++) {
+          const img = document.createElement("img");
+          img.className = "foto"; img.id = "f" + i; img.alt = ""; img.src = v["f" + i];
+          moldura.insertBefore(img, luz);
+        }
+        const D = 6, passo = (D - 0.6) / n;
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
+        tl.fromTo("#moldura", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0);
+        tl.fromTo("#piso", { scaleX: 0.2, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 1.0, ease: "power2.out" }, 0.2);
+        tl.fromTo("#etiqueta", { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" }, 0.5);
+        for (let i = 1; i <= n; i++) {
+          const t = 0.15 + (i - 1) * passo;
+          tl.fromTo("#f" + i, { opacity: 0, y: 30, scale: 1.05 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" }, t);
+          tl.fromTo("#halo", { "--wall": i === 1 ? v.w1 : v["w" + (i - 1)] }, { "--wall": v["w" + i], duration: 0.7, ease: "none" }, t);
+          tl.fromTo("#luz", { x: -240 }, { x: 560, duration: 0.9, ease: "power2.inOut" }, t + 0.35);
+          if (i < n) tl.fromTo("#f" + i, { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power1.in" }, t + passo + 0.1);
+        }
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      })();
+    </script>
+  </body>
+</html>

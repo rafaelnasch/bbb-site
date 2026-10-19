@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR" data-composition-variables='[
+  {"id":"name","type":"string","label":"Arquivo de saída (sha1 da planta)","default":""},
+  {"id":"fonte","type":"string","label":"URL do PDF oficial","default":""},
+  {"id":"planta_src","type":"string","label":"Imagem da planta (derivada do PDF)","default":""},
+  {"id":"planta_w","type":"number","label":"Largura exibida","default":0},
+  {"id":"planta_h","type":"number","label":"Altura exibida","default":0},
+  {"id":"c1_letra","type":"string","label":"Cota 1","default":""},
+  {"id":"c1_valor","type":"string","label":"Valor 1","default":""},
+  {"id":"c1_x","type":"number","label":"x 1","default":-1},
+  {"id":"c1_y","type":"number","label":"y 1","default":-1},
+  {"id":"c2_letra","type":"string","label":"Cota 2","default":""},
+  {"id":"c2_valor","type":"string","label":"Valor 2","default":""},
+  {"id":"c2_x","type":"number","label":"x 2","default":-1},
+  {"id":"c2_y","type":"number","label":"y 2","default":-1},
+  {"id":"c3_letra","type":"string","label":"Cota 3","default":""},
+  {"id":"c3_valor","type":"string","label":"Valor 3","default":""},
+  {"id":"c3_x","type":"number","label":"x 3","default":-1},
+  {"id":"c3_y","type":"number","label":"y 3","default":-1},
+  {"id":"c4_letra","type":"string","label":"Cota 4","default":""},
+  {"id":"c4_valor","type":"string","label":"Valor 4","default":""},
+  {"id":"c4_x","type":"number","label":"x 4","default":-1},
+  {"id":"c4_y","type":"number","label":"y 4","default":-1}
+]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, height=720" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Open Sans"; src: url("assets/opensans-var-latin.woff2") format("woff2"); font-weight: 300 800; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; background: #071C2B; }
+      #root { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #071C2B; }
+      .clip { position: absolute; inset: 0; }
+      #grade {
+        background-image:
+          repeating-linear-gradient(0deg, rgba(141,187,217,.07) 0 1px, transparent 1px 40px),
+          repeating-linear-gradient(90deg, rgba(141,187,217,.07) 0 1px, transparent 1px 40px);
+      }
+      #folha { position: absolute; left: 0; top: 0; }
+      #folha img { display: block; width: 100%; height: 100%; }
+      #varre { position: absolute; top: 0; width: 3px; height: 100%; left: 0;
+        background: #E9B87C; box-shadow: 0 0 18px 4px rgba(233,184,124,.55); }
+      .marca { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%;
+        border: 2px solid #E9B87C; box-shadow: 0 0 10px rgba(233,184,124,.6); opacity: 0; }
+      #legenda { position: absolute; left: 0; width: 1280px; top: 660px; display: flex; justify-content: center; gap: 16px; }
+      .chip { display: flex; align-items: center; gap: 10px; padding: 7px 16px 7px 7px; border-radius: 999px;
+        background: rgba(12,42,61,.92); border: 1px solid rgba(141,187,217,.45);
+        font: 600 20px/1 "Open Sans", sans-serif; color: #F3F6F8; font-variant-numeric: tabular-nums; opacity: 0; }
+      .chip b { display: grid; place-items: center; min-width: 32px; height: 32px; padding: 0 6px; border-radius: 999px;
+        background: #E9B87C; color: #071C2B; font-weight: 700; font-size: 16px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="7" data-width="1280" data-height="720">
+      <div id="grade" class="clip" data-start="0" data-duration="7" data-track-index="0"></div>
+      <div id="palco" class="clip" data-start="0" data-duration="7" data-track-index="1" data-layout-allow-overflow>
+        <div id="folha"><img id="planta" alt="" /><div id="varre"></div></div>
+      </div>
+      <div id="legenda" data-start="0" data-duration="7" data-track-index="2"></div>
+    </div>
+    <script>
+      (function () {
+        const v = window.__hyperframes.getVariables();
+        const W = v.planta_w, H = v.planta_h;
+        const L = Math.round((1280 - W) / 2), T = 24;
+        const folha = document.getElementById("folha");
+        folha.style.cssText = `left:${L}px;top:${T}px;width:${W}px;height:${H}px`;
+        document.getElementById("planta").src = v.planta_src;
+        const legenda = document.getElementById("legenda");
+        const cotas = [1, 2, 3, 4].map((i) => ({ letra: v["c" + i + "_letra"], valor: v["c" + i + "_valor"], x: v["c" + i + "_x"], y: v["c" + i + "_y"] })).filter((c) => c.letra);
+        cotas.forEach((c, i) => {
+          if (c.x >= 0 && c.y >= 0) {
+            const m = document.createElement("div");
+            m.className = "marca"; m.id = "m" + i;
+            m.style.left = c.x + "px"; m.style.top = c.y + "px";
+            folha.appendChild(m);
+          }
+          const chip = document.createElement("div");
+          chip.className = "chip"; chip.id = "c" + i;
+          const b = document.createElement("b"); b.textContent = c.letra;
+          const s = document.createElement("span"); s.textContent = c.valor + " m";
+          chip.append(b, s); legenda.appendChild(chip);
+        });
+
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
+        tl.fromTo("#grade", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power1.out" }, 0);
+        tl.fromTo("#planta", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 3.2, ease: "power2.inOut" }, 0.3);
+        tl.fromTo("#varre", { x: 0, opacity: 1 }, { x: W, opacity: 1, duration: 3.2, ease: "power2.inOut" }, 0.3);
+        tl.fromTo("#varre", { opacity: 1 }, { opacity: 0, duration: 0.4, ease: "power1.out" }, 3.5);
+        tl.fromTo("#folha", { scale: 1.06 }, { scale: 1, duration: 4.2, ease: "power3.out" }, 0);
+        cotas.forEach((c, i) => {
+          const t = 3.7 + i * 0.35;
+          if (document.getElementById("m" + i)) {
+            tl.fromTo("#m" + i, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2)" }, t);
+          }
+          tl.fromTo("#c" + i, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, t + 0.1);
+        });
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      })();
+    </script>
+  </body>
+</html>

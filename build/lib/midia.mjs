@@ -4,14 +4,11 @@
 // 1. Mídia final versionada em public/media/p/<slug>/<slug>-<n>-<w>.(avif|webp), gerada pelo
 //    build/media-photos.mjs. Dimensões, --wall, fundo vermelho e LQIP vêm de public/media/p/manifest.json
 //    quando ele existir; sem manifesto, as dimensões são lidas do maior WebP.
-// 2. Fonte provisória: a imagem baixada em _recon/images (só no Mac, enquanto a mídia final não chega).
-//    É copiada para dist/media/provisorio/ com nome descritivo e sem os números do nome original
-//    (SPEC 0.7). Nada de upscaling: a largura servida é a do arquivo.
-// 3. Nenhuma das duas (CI sem _recon e sem mídia): devolve null e o template mostra a moldura vazia.
+// 2. Sem mídia final para a foto: devolve null e o template mostra a moldura vazia.
 //
-// Quando a mídia final chega, a troca é automática: nenhum template muda.
+// O build nunca lê _recon/images (SPEC 0.9): a única fonte de foto publicada é public/media/p.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { join, extname } from 'node:path';
+import { join } from 'node:path';
 import { paths } from '../../site.config.mjs';
 import { url } from './url.mjs';
 import { lerJson } from './dados.mjs';
@@ -21,8 +18,6 @@ const RE_FINAL = /^(.+)-(\d+)-(\d+)\.(avif|webp|jpe?g)$/;
 
 let indiceFinal = null; // slug -> n -> { larguras:Set, formatos:Set, meta }
 let manifestoFinal = null;
-let reconPorSlug = null; // slug -> [entrada do images-manifest (tipo galeria), na ordem]
-const copiasProvisorias = new Map(); // destino relativo a dist -> origem absoluta
 
 function lerManifestoFinal() {
   const p = join(DIR_FINAL, 'manifest.json');
@@ -93,20 +88,10 @@ export async function prepararMidia() {
       }
     }
   }
-  reconPorSlug = new Map();
-  const manRecon = join(paths.recon, 'images-manifest.json');
-  if (existsSync(manRecon)) {
-    const man = JSON.parse(readFileSync(manRecon, 'utf8'));
-    for (const a of man.arquivos || []) {
-      if (a.tipo !== 'galeria') continue;
-      if (!reconPorSlug.has(a.slug)) reconPorSlug.set(a.slug, []);
-      reconPorSlug.get(a.slug).push(a);
-    }
-  }
 }
 
 function exigirPreparo() {
-  if (!indiceFinal || !reconPorSlug) throw new Error('midia: chame prepararMidia() antes de renderizar');
+  if (!indiceFinal) throw new Error('midia: chame prepararMidia() antes de renderizar');
 }
 
 /** Itens de galeria publicáveis do produto (sem o placeholder do tema), na ordem da página atual. */
@@ -141,30 +126,6 @@ function fotoFinal(slug, n, alt) {
     lqip: m.lqip ?? null,
     wall: m.wall ?? m['--wall'] ?? null,
     vermelho: Boolean(m.vermelho ?? m.fundo_vermelho ?? false),
-    provisoria: false,
-  };
-}
-
-function fotoProvisoria(slug, n, alt) {
-  const e = reconPorSlug.get(slug)?.[n - 1];
-  if (!e || !e.largura || !e.altura) return null;
-  const origem = join(paths.recon, e.arquivo);
-  if (!existsSync(origem)) return null;
-  const ext = extname(e.arquivo).toLowerCase() || '.jpg';
-  const destino = `media/provisorio/${slug}/${slug}-${n}${ext}`;
-  copiasProvisorias.set(destino, origem);
-  return {
-    slug,
-    n,
-    alt,
-    width: e.largura,
-    height: e.altura,
-    src: url(destino),
-    fontes: [],
-    lqip: null,
-    wall: null,
-    vermelho: false,
-    provisoria: true,
   };
 }
 
@@ -178,7 +139,7 @@ export function fotoProduto(slug, n = 1) {
   if (!gal[n - 1]) return null;
   const prods = lerJson('produtos.json') || [];
   const alt = gal[n - 1].legenda || prods.find((x) => x.slug === slug)?.nome || '';
-  return fotoFinal(slug, n, alt) ?? fotoProvisoria(slug, n, alt);
+  return fotoFinal(slug, n, alt);
 }
 
 /** Todas as fotos publicáveis do produto, na ordem da galeria. */
@@ -187,9 +148,4 @@ export function fotosProduto(slug) {
   return galeriaDoProduto(slug)
     .map((_, i) => fotoProduto(slug, i + 1))
     .filter(Boolean);
-}
-
-/** Cópias provisórias pedidas durante o render (destino relativo a dist → origem). */
-export function copiasPendentes() {
-  return [...copiasProvisorias.entries()];
 }

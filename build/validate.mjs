@@ -188,6 +188,23 @@ export async function validar(dist = paths.dist) {
     if (existsSync(join(dist, 'produto-outlet.html'))) erro(dist, 'produto-outlet.html não deve existir');
   } else pendentes.push('13.10 produtos (template ainda não existe)');
 
+  // Mídia final (integração dos blocos 2 e 8): nenhuma foto provisória do _recon em dist/, nenhuma
+  // página apontando para _recon/ ou media/provisorio/, todo filme (data-webm/data-mp4, atribuídos só
+  // por JS e por isso fora da 13.8) resolve para um arquivo de dist/, e todo produto com galeria
+  // publicável mostra foto de public/media/p.
+  if (existsSync(join(dist, 'media', 'provisorio'))) erro(join(dist, 'media', 'provisorio'), 'foto provisória do _recon em dist/');
+  const prodsMidia = JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8'));
+  const comGaleria = new Set(prodsMidia.filter((p) => !p.d_sem_foto && (p.galeria || []).some((g) => g && g.placeholder_do_tema === false && g.tipo === 'image')).map((p) => `${p.slug}.html`));
+  for (const f of htmls) {
+    const h = readFileSync(f, 'utf8');
+    if (/_recon\/|media\/provisorio\//.test(h)) erro(f, 'referência a _recon/ ou media/provisorio/');
+    for (const [, s] of h.matchAll(/data-(?:webm|mp4)="([^"]+)"/g)) {
+      const rel = decodeURI(s).replace(new RegExp(`^${BASE_PATH}/?`), '');
+      if (!existsSync(join(dist, rel))) erro(f, `filme ausente em dist/: ${s}`);
+    }
+    if (comGaleria.has(relative(dist, f)) && !/\bmedia\/p\//.test(h)) erro(f, 'produto com galeria sem foto de media/p');
+  }
+
   // 13.12 contraste
   for (const r of verificarContraste().filter((x) => !x.ok)) erros.push(`contraste ${r.fg} sobre ${r.bg} = ${r.razao}:1 (mínimo ${r.minimo}) [${r.uso}]`);
 

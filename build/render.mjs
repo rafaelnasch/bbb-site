@@ -9,7 +9,7 @@ import { join, dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { paths, SITE_URL, BASE_PATH, INDEXAR, CNAME } from '../site.config.mjs';
 import { construirAssets } from './lib/assets.mjs';
-import { prepararMidia, copiasPendentes } from './lib/midia.mjs';
+import { prepararMidia } from './lib/midia.mjs';
 import { dados } from './lib/dados.mjs';
 import { url, abs } from './lib/url.mjs';
 import { configurarLayout, layout } from '../templates/layout.mjs';
@@ -51,13 +51,6 @@ export async function renderizar({ sistema = SISTEMA, dist = paths.dist } = {}) 
     }
   }
 
-  // Fotos provisórias pedidas pelos templates (só no Mac, enquanto a mídia final não chega).
-  for (const [rel, origem] of copiasPendentes()) {
-    const destino = join(dist, rel);
-    mkdirSync(dirname(destino), { recursive: true });
-    copyFileSync(origem, destino);
-  }
-
   writeFileSync(join(dist, '.nojekyll'), '');
   if (CNAME) writeFileSync(join(dist, 'CNAME'), `${CNAME}\n`);
   if (!existsSync(join(dist, 'site.webmanifest'))) {
@@ -78,7 +71,7 @@ export async function renderizar({ sistema = SISTEMA, dist = paths.dist } = {}) 
   }
 
   const r = assets.relatorio;
-  console.log(`render: ${geradas.length} páginas em ${Date.now() - t0} ms · CSS crítico ${r.css_critico_bytes} B · site.css ${r.css_site_gzip} B gzip · núcleo ${r.nucleo_gzip} B gzip · inline ${r.inline_gzip} B gzip · provisórias ${copiasPendentes().length}`);
+  console.log(`render: ${geradas.length} páginas em ${Date.now() - t0} ms · CSS crítico ${r.css_critico_bytes} B · site.css ${r.css_site_gzip} B gzip · núcleo ${r.nucleo_gzip} B gzip · inline ${r.inline_gzip} B gzip`);
   return { geradas, assets };
 }
 
