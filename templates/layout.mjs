@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { html, raw, attrs, render } from '../build/lib/html.mjs';
 import { url, abs, caminhoDaSaida } from '../build/lib/url.mjs';
 import { INDEXAR, paths } from '../site.config.mjs';
-import { LIMITES } from '../build/lib/assets.mjs';
+import { LIMITES, FONT_FACES_INTEIRAS } from '../build/lib/assets.mjs';
 import { barraTopo, cabecalho, gavetaMenu } from './parts/header.mjs';
 import { rodape } from './parts/footer.mjs';
 import { gavetaWhats } from './parts/gaveta-whats.mjs';
@@ -61,6 +61,9 @@ function ogPadrao() {
  * @param {boolean}[p.modulosTardios] módulos da página só pedidos depois do load (core.js), fora do caminho do LCP
  * @param {boolean}[p.cssAposPintura] o CSS do site só é pedido depois da primeira pintura (core.js); a primeira
  *                                tela tem de estar inteira no CSS crítico. Sem JS, o <noscript> carrega o CSS
+ * @param {boolean}[p.fontesAposPintura] tira do CSS crítico as @font-face da Fraunces e da Open Sans (vêm no
+ *                                site.css, pedido depois da primeira pintura): na primeira pintura só a fonte do H1
+ *                                é baixada; o resto usa o fallback com métricas ajustadas. Exige cssAposPintura
  * @param {object} [p.rodapeTardio] alturas reservadas {m,t,d} (px, iguais ou menores que as reais) para pular o
  *                                layout do rodapé até ele chegar perto da tela (templates/parts/tardio.mjs); usado na home
  * @param {boolean}[p.bandeja]   false omite a bandeja do comparador (no próprio comparador ela só cobriria a página)
@@ -76,7 +79,9 @@ export function layout(p) {
     if (!A.modulos[m]) throw new Error(`Módulo JS inexistente: ${m}`);
     return [m, A.modulos[m]];
   }));
-  const critico = A.cssCritico + (p.critico || []).map((n) => {
+  if (p.fontesAposPintura && !p.cssAposPintura) throw new Error(`${p.saida}: fontesAposPintura exige cssAposPintura`);
+  const base = p.fontesAposPintura ? A.cssCritico.replace(FONT_FACES_INTEIRAS, '') : A.cssCritico;
+  const critico = base + (p.critico || []).map((n) => {
     if (A.criticos[n] == null) throw new Error(`CSS crítico inexistente: critico/${n}.css`);
     return A.criticos[n];
   }).join('') + (p.cssCritico || '');

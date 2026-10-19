@@ -3,6 +3,7 @@
 // do celular, tour da planta no desktop e nenhuma rolagem horizontal de 320 a 430 px.
 // Pré-requisito: dist/ renderizado (`node build/render.mjs`), ou E2E_DIST apontando para outra pasta.
 import { test, expect } from '@playwright/test';
+import sharp from 'sharp';
 import { iniciar } from './servidor.mjs';
 
 let srv, BASE;
@@ -173,30 +174,59 @@ test('teclado: End leva ao rodapé e Home volta ao topo, no desktop e no celular
   }
 });
 
-test('celular: a primeira tela mostra uma peça real (depois do load) sem tirar o LCP do H1', async ({ page }) => {
-  for (const [w, h] of [[360, 780], [390, 844], [430, 932]]) {
+// Contraste medido nos pixels: esconde o texto, fotografa a área dele já com tudo aceso (água, vapor,
+// fotos que entram depois do load) e compara a cor do texto com o pixel mais claro do fundo.
+const lum = ([r, g, b]) => {
+  const c = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
+  return 0.2126 * c(r) + 0.7152 * c(g) + 0.0722 * c(b);
+};
+const razao = (a, b) => (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+async function contrasteMinimo(page, seletor) {
+  const el = page.locator(seletor).first();
+  const cor = (await el.evaluate((e) => getComputedStyle(e).color)).match(/\d+(\.\d+)?/g).slice(0, 3).map(Number);
+  await el.evaluate((e) => { e.dataset.cor = e.style.color; e.style.color = 'transparent'; e.style.textShadow = 'none'; });
+  const png = await page.screenshot({ clip: await el.boundingBox() });
+  await el.evaluate((e) => { e.style.color = e.dataset.cor; e.style.textShadow = ''; });
+  const { data, info } = await sharp(png).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  let max = 0;
+  for (let i = 0; i < data.length; i += info.channels) max = Math.max(max, lum([data[i], data[i + 1], data[i + 2]]));
+  return razao(lum(cor), max);
+}
+
+test('celular: título sem foto por trás (contraste medido depois de tudo aceso), portas com foto real e LCP no H1', async ({ page }) => {
+  for (const [w, h] of [[360, 780], [390, 844], [430, 932], [768, 1024]]) {
     await page.setViewportSize({ width: w, height: h });
     await page.addInitScript(() => {
       window.__lcp = [];
       new PerformanceObserver((l) => l.getEntries().forEach((e) => window.__lcp.push({ tag: e.element?.tagName, size: e.size }))).observe({ type: 'largest-contentful-paint', buffered: true });
     });
     await page.goto(HOME(), { waitUntil: 'load' });
-    const peca = page.locator('[data-abre-peca]');
-    await expect(peca).toBeVisible();
-    await expect(peca).toHaveClass(/is-viva/);
-    const box = await peca.boundingBox();
-    expect(box.y + box.height / 2, `${w}px: peça dentro da primeira tela`).toBeLessThan(h);
-    const ativa = page.locator('.abre-peca__img.is-ativa');
-    await expect(ativa).toHaveCount(1);
-    expect(await ativa.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(7000);
+    // Nenhuma imagem, vídeo ou foto sob o título e o parágrafo de abertura.
+    const sob = await page.evaluate(() => {
+      const achados = [];
+      for (const s of ['.home-abre__h1', '.home-abre__lead']) {
+        const r = document.querySelector(s).getBoundingClientRect();
+        for (let x = r.left + 4; x < r.right; x += 24) for (let y = r.top + 4; y < r.bottom; y += 16) {
+          for (const e of document.elementsFromPoint(x, y)) if (/^(IMG|VIDEO|PICTURE)$/.test(e.tagName)) achados.push(`${s}: ${e.tagName}.${e.className}`);
+        }
+      }
+      return [...new Set(achados)];
+    });
+    expect(sob, `${w}px`).toEqual([]);
+    expect(await contrasteMinimo(page, '.home-abre__h1'), `${w}px: H1 (texto grande, mínimo 3:1)`).toBeGreaterThanOrEqual(3);
+    expect(await contrasteMinimo(page, '.home-abre__lead'), `${w}px: parágrafo (mínimo 4,5:1)`).toBeGreaterThanOrEqual(4.5);
+    // As três portas com a foto real carregada e inteira na primeira tela (do 390 px para cima).
+    const fotos = page.locator('.porta__img--foto');
+    await expect(fotos).toHaveCount(3);
+    for (const f of await fotos.all()) {
+      expect(await f.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
+      const bx = await f.boundingBox();
+      if (w >= 390) expect(bx.y + bx.height, `${w}px: foto da porta inteira na primeira tela`).toBeLessThanOrEqual(h);
+      else expect(bx.y + bx.height / 2, `${w}px: foto da porta visível`).toBeLessThan(h);
+    }
     const lcp = await page.evaluate(() => window.__lcp);
     expect(lcp.at(-1)?.tag, `${w}px: ${JSON.stringify(lcp)}`).toBe('H1');
     expect(await page.evaluate(() => document.documentElement.scrollWidth), `${w}px`).toBeLessThanOrEqual(w);
   }
-  // Desktop: a vitrine faz esse papel e a peça fica escondida.
-  await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto(HOME(), { waitUntil: 'load' });
-  await page.waitForTimeout(300);
-  await expect(page.locator('[data-abre-peca]')).toBeHidden();
 });

@@ -2,8 +2,8 @@
 // A porta mostra a foto do quadro final do filme da coleção (o poster), recortada na área da foto do
 // filme (484 px a partir de 399,79 no quadro de 1280x720, a mesma do recorte em CSS) e reduzida a
 // 240 px: cerca de 3 KB em vez dos 7 a 11 KB do poster inteiro, pedidos antes da primeira pintura.
-// A mesma área, no tamanho original de 484 px (sem ampliar), é a peça da abertura no celular e no
-// tablet (vitrine compacta atrás do título, pedida só depois do load).
+// A mesma área, no tamanho original de 484 px (sem ampliar), entra no srcset das portas para telas
+// densas e é a cena parada da vitrine do desktop quando o build não tem os filmes (--skip-media).
 // Sem recorte de fundo, sem upscaling, sem geração (SPEC 0.8): só corte e redução do quadro real.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';

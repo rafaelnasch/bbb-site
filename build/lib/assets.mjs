@@ -23,6 +23,9 @@ const JS_INLINE = ['boot.js', 'vt.js'];
 // Pacotes de módulos (nome -> arquivos de src/js, na ordem de execução).
 const PACOTES = { produto: ['galeria.js', 'monte.js', 'seletor.js', 'planta.js', 'escala.js'] };
 
+/** @font-face das fontes inteiras no CSS crítico minificado (não pega os fallbacks nem o subconjunto do H1). */
+export const FONT_FACES_INTEIRAS = /@font-face\{font-family:(?:Fraunces|"?Open Sans"?);[^}]*\}/g;
+
 const hash = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 10);
 const gz = (s) => gzipSync(Buffer.from(s), { level: 9 }).length;
 
@@ -82,14 +85,22 @@ export function construirAssets({ dist = paths.dist } = {}) {
   if (existsSync(dirCritico)) {
     for (const f of readdirSync(dirCritico).filter((n) => n.endsWith('.css')).sort()) {
       const min = minCss(trocarAssets(readFileSync(join(dirCritico, f), 'utf8')), `critico/${f}`);
-      const total = Buffer.byteLength(cssCritico) + Buffer.byteLength(min);
+      // Base mínima (sem as @font-face inteiras, como na página com fontesAposPintura); o layout confere
+      // o total real de cada página contra o mesmo teto.
+      const total = Buffer.byteLength(cssCritico.replace(FONT_FACES_INTEIRAS, '')) + Buffer.byteLength(min);
       if (total > LIMITES.cssCritico) throw new Error(`CSS crítico base + critico/${f} com ${total} bytes (teto ${LIMITES.cssCritico})`);
       criticos[basename(f, '.css')] = min;
     }
   }
   const dirPaginas = join(paths.src, 'css', 'paginas');
   const extras = existsSync(dirPaginas) ? readdirSync(dirPaginas).filter((n) => n.endsWith('.css')).sort().map((n) => `paginas/${n}`) : [];
-  const siteMin = minCss(trocarAssets(lerCss([...CSS_SITE, ...extras])), 'site.css');
+  // As @font-face das fontes inteiras (Fraunces e Open Sans) também vão no site.css: a página com
+  // fontesAposPintura (home) as tira do CSS crítico, e o pedido das fontes sai junto com o site.css,
+  // depois da primeira pintura; até lá vale o fallback com métricas ajustadas (base.css). Nas demais
+  // páginas a regra repetida é inofensiva (mesma família e mesmo arquivo).
+  const fontFaces = cssCritico.match(FONT_FACES_INTEIRAS) || [];
+  if (fontFaces.length !== 2) throw new Error(`CSS crítico: esperadas 2 @font-face inteiras (Fraunces e Open Sans), achadas ${fontFaces.length}`);
+  const siteMin = fontFaces.join('') + minCss(trocarAssets(lerCss([...CSS_SITE, ...extras])), 'site.css');
   const siteNome = `site.${hash(siteMin)}.css`;
   writeFileSync(join(out, siteNome), siteMin);
 

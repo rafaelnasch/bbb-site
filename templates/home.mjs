@@ -138,28 +138,33 @@ function videoFilme(f, classe, rotulo = null) {
   return html`<video class="${classe}" data-home-filme${attrs({ 'data-webm': f.webm, 'data-mp4': f.mp4, width: f.w, height: f.h, 'aria-hidden': rotulo ? null : 'true', 'aria-label': rotulo })} muted playsinline loop preload="none"></video>`;
 }
 
-/** Miniatura da porta (build/media-home.mjs): o poster do filme já recortado na foto, 240 px. */
-function miniPorta(D, id) {
-  if (!existsSync(join(paths.public, 'media', 'home', 'manifest.json'))) return null;
-  const m = D.ler('../public/media/home/manifest.json')?.portas?.[id];
-  if (!m || ![m.avif, m.webp].every((s) => existsSync(join(paths.public, s)))) return null;
-  return html`<picture><source type="image/avif" srcset="${url(m.avif)}"><img class="porta__img porta__img--foto" src="${url(m.webp)}" width="${m.lado}" height="${m.lado}" alt="" decoding="async"></picture>`;
+/** Recortes da foto de cada coleção (build/media-home.mjs, versionados): miniatura de 240 px e área de 484 px. */
+function recortesHome(D) {
+  if (!existsSync(join(paths.public, 'media', 'home', 'manifest.json'))) return { portas: {}, abertura: {} };
+  const m = D.ler('../public/media/home/manifest.json') || {};
+  const ok = (x) => x && [x.avif, x.webp].every((s) => existsSync(join(paths.public, s)));
+  const filtrar = (o) => Object.fromEntries(Object.entries(o || {}).filter(([, x]) => ok(x)));
+  return { portas: filtrar(m.portas), abertura: filtrar(m.abertura) };
 }
 
 /**
- * Peça da abertura no celular e no tablet (a vitrine com o filme é só do desktop): a foto do quadro
- * final de cada filme de coleção, recortada em 484 px por build/media-home.mjs (versionada, não depende
- * dos filmes no build). Fica com `hidden` no HTML: o home.js mostra depois do load e do CSS do site,
- * fora do caminho do LCP (o H1 continua sendo o maior elemento: a peça tem no máximo 240 px de lado).
- * Decorativa (aria-hidden): as portas logo abaixo dizem o mesmo em texto.
+ * Foto da porta: o quadro final do filme da coleção recortado na foto (build/media-home.mjs), em 240 px
+ * e, quando houver, na área de 484 px (sem ampliar) para telas densas. Versionada em public/media/home:
+ * não depende dos filmes no build de publicação (--skip-media).
  */
-function pecaAbertura(D) {
-  if (!existsSync(join(paths.public, 'media', 'home', 'manifest.json'))) return '';
-  const ab = D.ler('../public/media/home/manifest.json')?.abertura || {};
-  const pecas = PORTAS.map(([path, id]) => ({ id, m: ab[id], cat: D.catPorPath.get(path) }))
-    .filter((x) => x.cat && x.m && [x.m.avif, x.m.webp].every((s) => existsSync(join(paths.public, s))));
-  if (!pecas.length) return '';
-  return html`<div class="abre-peca" aria-hidden="true" hidden data-abre-peca>${pecas.map(({ id, m }, i) => html`<picture><source type="image/avif" srcset="${url(m.avif)}"><img class="abre-peca__img${i === 0 ? ' is-ativa' : ''}" src="${url(m.webp)}" width="${m.lado}" height="${m.lado}" alt="" loading="lazy" decoding="async" data-peca="${id}"></picture>`)}</div>`;
+function fotoPorta(R, id) {
+  const m = R.portas[id];
+  if (!m) return null;
+  const g = R.abertura[id];
+  const srcset = (k) => (g ? `${url(m[k])} ${m.lado}w, ${url(g[k])} ${g.lado}w` : null);
+  return html`<picture><source type="image/avif"${attrs({ srcset: srcset('avif') || url(m.avif), sizes: g ? SIZES_PORTA : null })}><img${attrs({ class: 'porta__img porta__img--foto', src: url(m.webp), srcset: srcset('webp'), sizes: g ? SIZES_PORTA : null, width: m.lado, height: m.lado, alt: '', decoding: 'async' })}></picture>`;
+}
+// Celular e tablet: três portas lado a lado (um terço da largura); desktop: miniatura de 112 px.
+const SIZES_PORTA = '(min-width:1024px) 112px, 31vw';
+
+/** Cena da vitrine (desktop) sem filme: a mesma área da foto, já recortada em 484 px. */
+function cenaSemFilme(g) {
+  return html`<picture><source type="image/avif" srcset="${url(g.avif)}"><img class="vitrine__img" src="${url(g.webp)}" width="${g.lado}" height="${g.lado}" alt="" loading="lazy" decoding="async"></picture>`;
 }
 
 /** Fotos da fábrica (build/media-fabrica.mjs). */
@@ -292,17 +297,19 @@ export function paginas(ctx) {
   // As portas mostram o poster do filme da coleção recortado na foto (sem a moldura e a legenda que o
   // filme desenha). No desktop, a vitrine grande à direita toca o filme da porta ativa.
   const filmes = new Map();
+  const R = recortesHome(D);
   const portas = PORTAS.map(([path, id, nome], i) => {
     const cat = D.catPorPath.get(path);
     if (!cat) return null;
     const filme = filmeColecao(D, id);
-    if (filme) filmes.set(id, { filme, nome, cat, path });
+    // Vitrine do desktop: o filme da coleção ou, sem ele, a foto recortada (versionada) parada.
+    if (filme || R.abertura[id]) filmes.set(id, { filme, foto: R.abertura[id], nome, cat, path });
     const lista = produtosDaCategoria(cat, porSlug);
-    const mini = filme ? miniPorta(D, id) : null;
-    const foto = filme ? null : lista.map((p) => fotoCartao(p.slug)).find(Boolean);
+    const mini = fotoPorta(R, id);
+    const foto = mini || filme ? null : lista.map((p) => fotoCartao(p.slug)).find(Boolean);
     return html`<li class="porta" data-intro style="--i:${4 + i}">
-  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filme ? id : null, 'data-porta-id': id })}>
-    <span class="porta__mol${filme && !mini ? ' recorte' : ''}">${mini || (filme ? posterFilme(filme, { classe: 'porta__img', prioridade: true }) : foto ? picture(foto, { classe: 'porta__img porta__img--foto', sizes: '(min-width:1024px) 420px, 33vw', alt: '' }) : '')}</span>
+  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filmes.has(id) ? id : null, 'data-porta-id': id })}>
+    <span class="porta__mol${filme && !mini ? ' recorte' : ''}">${mini || (filme ? posterFilme(filme, { classe: 'porta__img', prioridade: true }) : foto ? picture(foto, { classe: 'porta__img porta__img--foto', sizes: SIZES_PORTA, alt: '' }) : '')}</span>
     <span class="porta__txt"><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></span>
     ${icone('seta-dir', { tamanho: 20, classe: 'porta__seta' })}
   </a>
@@ -310,14 +317,13 @@ export function paginas(ctx) {
   }).filter(Boolean);
   // Vitrine (só desktop, decorativa: as portas já dizem o mesmo): poster grande e filme da coleção.
   const vitrine = filmes.size ? html`<div class="vitrine" aria-hidden="true" data-vitrine data-intro style="--i:2">
-    <div class="vitrine__mol">${[...filmes].map(([id, { filme }], i) => html`<div class="vitrine__cena recorte${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${posterFilme(filme, { classe: 'vitrine__img' })}${videoFilme(filme, 'vitrine__video')}</div>`)}<span class="vitrine__luz"></span></div>
+    <div class="vitrine__mol">${[...filmes].map(([id, { filme, foto }], i) => html`<div class="vitrine__cena${filme ? ' recorte' : ''}${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${filme ? html`${posterFilme(filme, { classe: 'vitrine__img' })}${videoFilme(filme, 'vitrine__video')}` : cenaSemFilme(foto)}</div>`)}<span class="vitrine__luz"></span></div>
     <div class="vitrine__leg">${[...filmes].map(([id, { nome, cat }], i) => html`<p class="vitrine__item${i === 0 ? ' is-ativa' : ''}" data-cena-leg="${id}"><span class="vitrine__nome">${nome}</span><span class="vitrine__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></p>`)}</div>
   </div>` : '';
 
   const abertura = html`<section class="sala home-abre" aria-labelledby="home-h1">
   <div class="home-abre__agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>
   ${temVapor ? html`<div class="home-abre__vapor" aria-hidden="true" data-vapor></div>` : ''}
-  ${pecaAbertura(D)}
   <div class="wrap home-abre__in">
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Fábrica em ${local.cidade}, ${local.uf}</p>
     <h1 id="home-h1" class="home-abre__h1">Banheiras, spas e ofurôs de hidromassagem, direto da fábrica em ${local.cidade}, ${local.uf}</h1>
@@ -451,7 +457,10 @@ export function paginas(ctx) {
 
   // 8. Como comprar -----------------------------------------------------------
   const pag = D.ler('politicas.json')?.pagamento?.literal || '';
-  const formas = pag.split(/\s+(?=\d\.\s)/).map((s) => s.trim()).filter(Boolean);
+  // Texto literal da empresa, em parágrafos (a numeração já vem no texto): o rótulo em caixa alta antes
+  // dos dois-pontos vira uma etiqueta pequena; o resto segue no corpo. Juntos, reproduzem o literal.
+  const formas = pag.split(/\s+(?=\d\.\s)/).map((s) => s.trim()).filter(Boolean)
+    .map((f) => { const m = /^(\d\.\s[^:]{1,60}:)\s+(.+)$/.exec(f); return m ? { rotulo: m[1], texto: m[2] } : { rotulo: null, texto: f }; });
   const waVenda = D.wa('venda_principal');
   const comprar = html`<section class="dia secao home-comprar" aria-labelledby="home-comprar-h">
   <div class="wrap">
@@ -462,7 +471,7 @@ export function paginas(ctx) {
     <ol class="home-passos" role="list" data-reveal-grupo>
       <li class="home-passo" data-reveal><span class="home-passo__n num">01</span><h3>Escolha a peça</h3><p>Pelo seu espaço, pela coleção ou pela busca. Cada modelo mostra fotos, medidas, planta e o preço publicado.</p><p><a class="link" href="${url('escolher.html')}">Escolher pelo meu espaço</a></p></li>
       <li class="home-passo" data-reveal><span class="home-passo__n num">02</span><h3>Fale com um consultor</h3><p>Pelo WhatsApp, com o modelo, o tamanho e os opcionais já na mensagem. O valor final é confirmado pelo consultor.</p><p><a${attrs({ class: 'btn btn--whats', href: waVenda, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'home_como_comprar', 'data-campo': 'contato-numero' })}>${icone('whatsapp', { tamanho: 20 })}Comprar pelo WhatsApp</a></p></li>
-      <li class="home-passo" data-reveal><span class="home-passo__n num">03</span><h3>Pague como preferir</h3>${formas.length ? html`<ul class="home-passo__pag">${formas.map((f) => html`<li data-campo="pagamento">${f}</li>`)}</ul>` : ''}<p><a class="link" href="${url('prazo-de-entrega.html')}">Prazo de entrega por estado</a> · <a class="link" href="${url('como-comprar.html')}">Como comprar</a></p></li>
+      <li class="home-passo" data-reveal><span class="home-passo__n num">03</span><h3>Pague como preferir</h3>${formas.length ? html`<div class="home-passo__pag">${formas.map((f) => html`<p>${f.rotulo ? html`<span class="home-passo__forma" data-campo="pagamento">${f.rotulo}</span> ` : ''}<span data-campo="pagamento">${f.texto}</span></p>`)}</div>` : ''}<p><a class="link" href="${url('prazo-de-entrega.html')}">Prazo de entrega por estado</a> · <a class="link" href="${url('como-comprar.html')}">Como comprar</a></p></li>
     </ol>
   </div>
 </section>`;
@@ -556,6 +565,7 @@ export function paginas(ctx) {
       fontes: ['fonts/fraunces-titulo.woff2'],
       modulosTardios: true,
       cssAposPintura: true,
+      fontesAposPintura: true,
       rodapeTardio: ALTURA_RODAPE,
     }),
   }];

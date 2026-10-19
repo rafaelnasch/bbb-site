@@ -4,6 +4,7 @@
 import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { join } from 'node:path';
 import { gzipSync } from 'node:zlib';
 import { HtmlValidate } from 'html-validate';
@@ -123,6 +124,11 @@ test('como comprar: pagamento literal e botão de compra com o número de venda'
   const pag = ler('politicas.json').pagamento.literal;
   const partes = [...h.matchAll(/data-campo="pagamento">([^<]+)</g)].map((m) => m[1]);
   assert.equal(partes.join(' '), pag);
+  // Numeração só a do texto literal: parágrafos, sem lista com marcador.
+  const passo = /<div class="home-passo__pag">[\s\S]*?<\/div>/.exec(h)?.[0] || '';
+  assert.ok(passo, 'formas de pagamento em parágrafos');
+  assert.doesNotMatch(passo, /<[ou]l|<li/);
+  assert.equal((passo.match(/<p>/g) || []).length, (pag.match(/\d\.\s/g) || []).length);
   assert.match(h, /href="https:\/\/wa\.me\/5535992194882\?text=[^"]+"[^>]*data-wa-contexto="home_como_comprar"/);
 });
 
@@ -266,21 +272,46 @@ test('altura reservada: degraus nos mesmos cortes das media queries (600 e 1024 
   assert.throws(() => alturaReservada({ m: 1, t: 0, d: 1 }));
 });
 
-test('abertura no celular: peça real de cada porta, escondida no HTML, lazy e menor que o H1', () => {
-  const p = /<div class="abre-peca"[\s\S]*?<\/div>/.exec(h)?.[0] || '';
-  assert.ok(p, 'peça da abertura presente');
-  assert.match(p, /aria-hidden="true" hidden data-abre-peca/);
-  const imgs = [...p.matchAll(/<img [^>]*>/g)].map((m) => m[0]);
-  assert.equal(imgs.length, PORTAS.length);
-  for (const [i, [, id]] of PORTAS.entries()) {
-    assert.match(imgs[i], new RegExp(`data-peca="${id}"`));
-    assert.match(imgs[i], /loading="lazy"/);
-    assert.doesNotMatch(imgs[i], /fetchpriority/);
-    assert.match(imgs[i], new RegExp(`src="${BASE_PATH}/media/home/abertura-${id}-484\\.webp"`));
-    assert.ok(existsSync(join(paths.public, 'media', 'home', `abertura-${id}-484.avif`)), id);
+test('abertura: nenhuma foto atrás do título; as portas trazem a foto real da coleção, versionada', () => {
+  const ab = /<section class="sala home-abre"[\s\S]*?<\/section>/.exec(h)[0];
+  assert.doesNotMatch(ab, /abre-peca/, 'sem peça sobreposta ao H1');
+  // Antes do H1 só há água, vapor e textos: nenhuma imagem.
+  assert.doesNotMatch(ab.slice(0, ab.indexOf('<h1')), /<img|<picture|<video/);
+  const versionados = new Set(execSync('git ls-files public/media/home', { cwd: paths.raiz || join(paths.public, '..') }).toString().trim().split('\n'));
+  for (const [, id] of PORTAS) {
+    const a = new RegExp(`<a class="porta__a"[^>]*data-porta-id="${id}"[\\s\\S]*?</a>`).exec(ab)?.[0] || '';
+    assert.match(a, new RegExp(`src="${BASE_PATH}/media/home/porta-${id}-240\\.webp"`), id);
+    assert.match(a, new RegExp(`srcset="${BASE_PATH}/media/home/porta-${id}-240\\.avif 240w, ${BASE_PATH}/media/home/abertura-${id}-484\\.avif 484w"`), id);
+    assert.doesNotMatch(a, /loading="lazy"/, `${id}: primeira tela, sem lazy`);
+    for (const f of [`porta-${id}-240.avif`, `porta-${id}-240.webp`, `abertura-${id}-484.avif`, `abertura-${id}-484.webp`]) {
+      assert.ok(versionados.has(`public/media/home/${f}`), `${f} versionado (o build de publicação não tem os filmes)`);
+    }
   }
-  // Não depende dos filmes: as portas sempre sabem qual peça acender.
-  for (const [, id] of PORTAS) assert.match(h, new RegExp(`data-porta-id="${id}"`));
+});
+
+test('abertura: fontes inteiras fora do CSS crítico da home, pedidas com o site.css', () => {
+  const inline = /<style>([\s\S]*?)<\/style>/.exec(h)[1];
+  assert.doesNotMatch(inline, /@font-face\{font-family:(Fraunces|"?Open Sans"?);/);
+  assert.match(inline, /@font-face\{font-family:"?Fraunces Titulo"?;/);
+  assert.match(inline, /Open Sans Fallback/);
+  const css = /data-css="([^"]+)"/.exec(h)[1].slice(BASE_PATH.length + 1);
+  const site = readFileSync(join(paths.dist, css), 'utf8');
+  assert.match(site, /@font-face\{font-family:Fraunces;/);
+  assert.match(site, /@font-face\{font-family:"?Open Sans"?;/);
+  // As demais páginas continuam com as fontes no CSS crítico.
+  const outra = readFileSync(join(paths.dist, 'banheiras.html'), 'utf8');
+  assert.match(/<style>([\s\S]*?)<\/style>/.exec(outra)[1], /@font-face\{font-family:Fraunces;/);
+});
+
+test('vitrine do desktop: cena com o filme ou, sem ele, a foto recortada parada', () => {
+  const v = /<div class="vitrine"[\s\S]*?<div class="vitrine__leg">/.exec(h)?.[0] || '';
+  assert.ok(v, 'vitrine presente (os recortes de media/home são versionados)');
+  for (const [, id] of PORTAS) {
+    const cena = new RegExp(`<div class="vitrine__cena([^"]*)"[^>]*data-cena="${id}">([\\s\\S]*?)</div>`).exec(v);
+    assert.ok(cena, id);
+    if (/recorte/.test(cena[1])) assert.match(cena[2], /<video/);
+    else assert.match(cena[2], new RegExp(`abertura-${id}-484\\.webp`));
+  }
 });
 
 test('lançamentos: texto derivado, sem afirmar a origem das fotos além de "publicadas pela empresa"', () => {
