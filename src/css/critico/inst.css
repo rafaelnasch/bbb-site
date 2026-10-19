@@ -1,0 +1,12 @@
+/* CSS crítico extra das páginas institucionais (lojas, FAQ, consultores, manual, políticas, 404): a
+   grade do corpo e as ações do topo, para o site.css tardio não deslocar a primeira tela (CLS). */
+.inst{padding:clamp(32px,4vw,64px) 0 clamp(56px,6vw,112px)}
+.inst__grade{display:grid;gap:32px}
+.inst__corpo,.inst__lado{min-width:0}
+.inst__largo{display:grid;gap:clamp(40px,5vw,72px)}
+.inst__estreito{display:grid;gap:32px;max-width:860px}
+.inst-topo__acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.faq-busca{position:relative;display:flex;flex-wrap:wrap;gap:10px;max-width:640px;margin-top:8px}
+.faq-busca__in{flex:1 1 220px;min-width:0;min-height:52px;padding:0 18px 0 48px;border:1px solid var(--rule);border-radius:var(--radius-chip);background:color-mix(in srgb,var(--porcelain) 6%,transparent);color:var(--fg)}
+.faq-busca__ic{position:absolute;left:16px;top:16px;color:var(--fg-2)}
+@media (min-width:1024px){.inst__grade{grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:clamp(48px,6vw,96px)}.inst__lado{order:-1}}

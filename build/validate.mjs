@@ -14,11 +14,11 @@ import { HtmlValidate } from 'html-validate';
 import { paths, BASE_PATH, SITE_URL, INDEXAR } from '../site.config.mjs';
 import { verificarContraste } from './lib/contraste.mjs';
 import { numerosProibidosEm } from './lib/wa.mjs';
+import { termosSaudeSpec } from './lib/texto.mjs';
 import { REGISTRO } from './render.mjs';
 import { verificarDiferencaZero, rastreio } from './lib/diferenca-zero.mjs';
 import { CATEGORIAS_PONTE } from './lib/catalogo.mjs';
 
-const SAUDE = ['cura', 'trata', 'tratamento', 'diabetes', 'celulite', 'varizes', 'circulação', 'emagrec', 'terapêutic', 'medicinal'];
 const PROIBIDOS = [/\(VERIFICAR\)/, /BANHEIRA COLORIDA/i, /a maior loja/i, /a única com selo/i, /\blorem\b/i];
 const TEXTO_EXT = new Set(['.html', '.json', '.txt', '.xml', '.js', '.css', '.webmanifest', '.csv', '.md']);
 
@@ -42,9 +42,12 @@ export function textoVisivel(h) {
     .replace(/\s+/g, ' ');
 }
 
+// Mesma lista da SPEC 0.5 (por início de palavra, sem acento) e as mesmas exceções fixas do filtro
+// editorial (build/lib/texto.mjs, EXCECOES_NAO_SAUDE): o nome do imposto ("Imposto sobre Circulação de
+// Mercadorias", ICMS), o tratamento de dados pessoais (LGPD), o tratamento da água do spa, a área de
+// circulação de um cômodo. Qualquer outro uso das palavras continua reprovando a página.
 function termoSaude(texto) {
-  const t = texto.toLowerCase();
-  return SAUDE.filter((w) => new RegExp(`(^|[^\\p{L}])${w}`, 'u').test(t));
+  return termosSaudeSpec(texto);
 }
 
 export async function validar(dist = paths.dist) {
@@ -96,7 +99,8 @@ export async function validar(dist = paths.dist) {
     if ((txt.match(/—/g) || []).length > 2) erro(f, 'mais de 2 travessões');
 
     // 13.6 emoji
-    if (/\p{Extended_Pictographic}/u.test(h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, ''))) erro(f, 'emoji no HTML');
+    // ©, ® e ™ são sinais de texto (apresentação de texto por padrão); só contam como emoji com o seletor U+FE0F.
+    if (/(?![\u00a9\u00ae\u2122](?!\uFE0F))\p{Extended_Pictographic}/u.test(h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, ''))) erro(f, 'emoji no HTML');
 
     // 13.7 JSON-LD
     for (const [, j] of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {

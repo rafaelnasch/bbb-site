@@ -23,7 +23,12 @@ const paginas = {};
 before(async () => {
   R = await renderizar({ sistema: true, dist: DIST });
   // Só páginas HTML: os templates também geram arquivos de dados (ex.: dados/indice.json do escolhedor).
-  for (const s of R.geradas.filter((x) => x.endsWith('.html'))) paginas[s] = readFileSync(join(DIST, s), 'utf8');
+  // As páginas-ponte (SPEC 4.1) são HTML mínimo de redirecionamento, sem o layout: ficam fora daqui
+  // (têm o próprio teste em tests/institucionais.test.mjs).
+  for (const s of R.geradas.filter((x) => x.endsWith('.html'))) {
+    const h = readFileSync(join(DIST, s), 'utf8');
+    if (!/<meta http-equiv="refresh"/.test(h)) paginas[s] = h;
+  }
 });
 
 const texto = (h) => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ');
@@ -87,8 +92,9 @@ test('cabeça: lang, um H1, title, description, canonical absoluto, robots, OG, 
 
 test('links internos com BASE_PATH; assets, marca e mídia existem em dist', () => {
   for (const [nome, p] of Object.entries(paginas)) {
-    for (const m of p.matchAll(/\s(?:href|src|srcset)="([^"]+)"/g)) {
-      for (const v of m[1].split(/,\s*/).map((x) => x.split(' ')[0])) {
+    for (const m of p.matchAll(/\s(href|src|srcset)="([^"]+)"/g)) {
+      // Só srcset é lista separada por vírgula; um href pode ter vírgula (link de mapa "@-23.05,-45.60,17z").
+      for (const v of (m[1] === 'srcset' ? m[2].split(/,\s*/) : [m[2]]).map((x) => x.split(' ')[0])) {
         if (/^(https?:|mailto:|tel:|#|data:)/.test(v)) continue;
         assert.ok(BASE_PATH === '' || v.startsWith(`${BASE_PATH}/`), `${nome}: link sem BASE_PATH ${v}`);
         const rel = v.slice(BASE_PATH.length).split(/[?#]/)[0];
@@ -147,7 +153,8 @@ test('cabeçalho: menu da SPEC 6.1, contagens reais, busca, comparador e botão 
 
 test('texto público: sem emoji, sem travessão em títulos, sem termos proibidos no núcleo', () => {
   for (const [nome, p] of Object.entries(paginas)) {
-    assert.doesNotMatch(p, /\p{Extended_Pictographic}/u, `${nome}: emoji`);
+    // ©, ® e ™ (texto literal do manual) são sinais de texto; só contam como emoji com o seletor U+FE0F.
+    assert.doesNotMatch(p, /(?![\u00a9\u00ae\u2122](?!\uFE0F))\p{Extended_Pictographic}/u, `${nome}: emoji`);
     for (const m of p.matchAll(/<(h[1-3]|title)[^>]*>([\s\S]*?)<\/\1>/g)) assert.ok(!m[2].includes('—'), `${nome}: travessão em ${m[1]}`);
     assert.ok((texto(p).match(/—/g) || []).length <= 2);
     assert.doesNotMatch(texto(p), /\(VERIFICAR\)|BANHEIRA COLORIDA|a maior loja|lorem/i);

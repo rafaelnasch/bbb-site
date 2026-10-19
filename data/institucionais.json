@@ -1,0 +1,562 @@
+{
+  "sobre": "Textos das páginas institucionais do site atual (literal em `texto`, recorte publicado em `texto_exibido`). Gerado por build/institucional-dados.mjs.",
+  "coletado_em": "2026-10-18",
+  "paginas": {
+    "como-comprar": {
+      "fonte": "https://www.banheirasbombanho.com.br/como-comprar",
+      "meta_atual": {
+        "title": "Como Comprar - Banheiras Bom Banho",
+        "description": "Comprar uma banheira de hidromassagem, spa ou ofuro é simples e seguro na Banheiras Bom Banho. Acesse para saber mais!"
+      },
+      "texto": "Saiba como comprar na Loja Virtual da Banheiras Bom Banho\nComprar na Loja Virtual da Banheiras Bom Banho é muito mais simples do que se pode imaginar! Seguindo os passos abaixo você notará que tudo foi pensado para facilitar a sua escolha, dando-lhe tantas alternativas, que sempre será possível encontrar aquilo que você procura. Mas, se você preferir tirar alguma dúvida por telefone, ligue para (35) 99219-2256.\nCOMO LOCALIZAR O PRODUTO\nA qualquer momento de sua navegação pela loja virtual da Banheiras Bom Banho, você encontrará facilmente os produtos/serviços que está procurando através dos recursos introduzidos em nosso sistema.\nLOCALIZANDO VIA MENU\nConstará no menu vertical e horizontal a relação de categorias que dispomos, clicando em qualquer uma delas serão listados os produtos relacionados a categoria selecionada.\nLOCALIZANDO VIA BUSCA\nOutra maneira é utilizando-se da facilidade da busca, cujo formulário pode ser localizado no cabeçalho de nossa loja representado pelo icone de uma LUPA. Você deverá digitar uma palavra que identifique o que está buscando e o sistema localizará o item. É obrigatório digitar no mínimo três caracteres.\nCOMO COMPRAR NA LOJA\nO critério utilizado pela Banheiras Bom Banho é o fundamento do carrinho de compras; método interativo e mais adequado à sua comodidade. Desta maneira você poderá ter sempre o controle sobre os produtos já lançados, impedindo-o de cometer um erro de avaliação no momento da escolha dos produtos pretendidos.\nCOLOCANDO OS PRODUTOS NO CARRINHO\nApós encontrar o produto desejado, clique no botão \"ADD CARRINHO\". Esse botão encontra-se junto ao produto desejado. Clicando no botão, o produto escolhido será inserido no carrinho de compras, demonstrando qual o valor individual de cada item, assim como a somatória dos itens já escolhidos. Caso queira continuar sua compra, clique no botão \"CONTINUAR COMPRANDO\".\nA qualquer momento você poderá editar seu carrinho, bastando para isso, clicar sobre o link \"CARRINHO\" na topo do site, obtendo assim uma listagem dos produtos adicionados, onde você poderá verificar a quantidade e preços individuais de cada produto, calcular o frete e ainda alterar a quantidade de algum item. Você poderá também excluir um produto, caso queira.\nFECHANDO O SEU PEDIDO\nPara finalizar a compra basta clicar no botão \"FECHAR PEDIDO\" localizado no menu superior ou no carrinho de comprar. Será exibida a listagem de produtos adicionados, onde você terá a opção de editar sua compra caso seja necessário (alterar a quantidade, deletar algum item etc).\nNesta página você deverá informar um CEP válido para o cálculo do frete e escolher a forma de pagamento. Após este procedimento clique no botão \"FECHAR PEDIDO\".\nAUTENTICAÇÃO DO USUÁRIO\nNesta página você deverá informar seu usuário (e-mail) e senha. Caso não seja cadastrado será necessário fazê-lo. Para isso, você informará os dados pessoais e endereço de entrega e, após este passo, você será encaminhado para página de confirmação.\nCONFIRMAÇÃO DO PEDIDO\nApós feito o registro, será exibida a ficha do pedido com o valor do frete calculado e acrescentado ao total. Uma vez decidida à compra, o pedido será colocado no nosso sistema, estando sujeito à confirmação do pagamento.\nO usuário declara conhecer e aceitar que os seus dados pessoais e a sua interação como comprador em nosso site sejam usados rotineiramente para a verificação e aprovação de seu crédito em cada oportunidade de compra, estando nossa empresa livre para verificar a veracidade de todos os dados do comprador e condições de crédito.",
+      "texto_exibido": "Saiba como comprar na Loja Virtual da Banheiras Bom Banho\nComprar na Loja Virtual da Banheiras Bom Banho é muito mais simples do que se pode imaginar! Seguindo os passos abaixo você notará que tudo foi pensado para facilitar a sua escolha, dando-lhe tantas alternativas, que sempre será possível encontrar aquilo que você procura. Mas, se você preferir tirar alguma dúvida por telefone, ligue para (35) 99219-2256.\nCOMO LOCALIZAR O PRODUTO\nA qualquer momento de sua navegação pela loja virtual da Banheiras Bom Banho, você encontrará facilmente os produtos/serviços que está procurando através dos recursos introduzidos em nosso sistema.\nLOCALIZANDO VIA MENU\nConstará no menu vertical e horizontal a relação de categorias que dispomos, clicando em qualquer uma delas serão listados os produtos relacionados a categoria selecionada.\nLOCALIZANDO VIA BUSCA\nOutra maneira é utilizando-se da facilidade da busca, cujo formulário pode ser localizado no cabeçalho de nossa loja representado pelo icone de uma LUPA. Você deverá digitar uma palavra que identifique o que está buscando e o sistema localizará o item. É obrigatório digitar no mínimo três caracteres.\nCOMO COMPRAR NA LOJA\nO critério utilizado pela Banheiras Bom Banho é o fundamento do carrinho de compras; método interativo e mais adequado à sua comodidade. Desta maneira você poderá ter sempre o controle sobre os produtos já lançados, impedindo-o de cometer um erro de avaliação no momento da escolha dos produtos pretendidos.\nCOLOCANDO OS PRODUTOS NO CARRINHO\nApós encontrar o produto desejado, clique no botão \"ADD CARRINHO\". Esse botão encontra-se junto ao produto desejado. Clicando no botão, o produto escolhido será inserido no carrinho de compras, demonstrando qual o valor individual de cada item, assim como a somatória dos itens já escolhidos. Caso queira continuar sua compra, clique no botão \"CONTINUAR COMPRANDO\".\nA qualquer momento você poderá editar seu carrinho, bastando para isso, clicar sobre o link \"CARRINHO\" na topo do site, obtendo assim uma listagem dos produtos adicionados, onde você poderá verificar a quantidade e preços individuais de cada produto, calcular o frete e ainda alterar a quantidade de algum item. Você poderá também excluir um produto, caso queira.\nFECHANDO O SEU PEDIDO\nPara finalizar a compra basta clicar no botão \"FECHAR PEDIDO\" localizado no menu superior ou no carrinho de comprar. Será exibida a listagem de produtos adicionados, onde você terá a opção de editar sua compra caso seja necessário (alterar a quantidade, deletar algum item etc).\nNesta página você deverá informar um CEP válido para o cálculo do frete e escolher a forma de pagamento. Após este procedimento clique no botão \"FECHAR PEDIDO\".\nAUTENTICAÇÃO DO USUÁRIO\nNesta página você deverá informar seu usuário (e-mail) e senha. Caso não seja cadastrado será necessário fazê-lo. Para isso, você informará os dados pessoais e endereço de entrega e, após este passo, você será encaminhado para página de confirmação.\nCONFIRMAÇÃO DO PEDIDO\nApós feito o registro, será exibida a ficha do pedido com o valor do frete calculado e acrescentado ao total. Uma vez decidida à compra, o pedido será colocado no nosso sistema, estando sujeito à confirmação do pagamento.\nO usuário declara conhecer e aceitar que os seus dados pessoais e a sua interação como comprador em nosso site sejam usados rotineiramente para a verificação e aprovação de seu crédito em cada oportunidade de compra, estando nossa empresa livre para verificar a veracidade de todos os dados do comprador e condições de crédito.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "prazo-de-entrega": {
+      "fonte": "https://www.banheirasbombanho.com.br/prazo-de-entrega",
+      "meta_atual": {
+        "title": "Prazo de Entrega",
+        "description": "Aqui na Banheiras Bom Banho você encontra os modelos de banheira que você sempre sonhou. Entre em contato conosco e confira o melhor prazo de entrega do mercado!"
+      },
+      "texto": "Prazo de Entrega\nEnvio:\nApós serem produzidos os produtos serão enviados por transportadora, respeitando o prazo de entrega para cada estado, que  é estimado a depender da localização e dificuldade de entrega da mercadoria, conforme tabela abaixo:\nEntregas em edifícios e residências são realizadas somente no térreo, não fazemos içamento dos produtos adquiridos.\nEntregamos para todo Brasil, exceto zona rural e estradas não asfaltadas assim como sítios e chácaras. Favor conferir a mercadoria no ato do recebimento, caso haja avaria, fazer ressalva na Nota Fiscal ou devolver imediatamente. Dúvidas entre em contato pelos telefones: (35) 99269-9530\nPrazo de Entrega:\nBANHEIRAS E OFURÔS\nEstados: MG, SP, ES, PR, RS, SC, GO\nde 7 a 15 dias úteis.\nEstados Capitais: RJ, DF, BA, PE, RN, CE, MT, MS\nde 10 a 20 dias úteis.\nEstados Interior: BA, PE, RN, CE, MT, MS\nde 12 a 30 dias úteis.\nEstados: RJ,AM, RR, AP, PA, TO, RO, AC, MA, PI, PB, SE, AL\nde 12 a 30 dias úteis\nSPAS E PRODUTOS EM ACRÍLICO OU COM DECK:\nEstados: MG, SP, ES, PR, RS, SC, GO\nde 10 a 25 dias úteis.\nEstados Capitais: RJ, DF, BA, PE, RN, CE, MT, MS\nde 15 a 25 dias úteis.\nEstados Interior: BA, PE, RN, CE, MT, MS\nde 15 a 30 dias úteis.\nEstados: RJ,AM, RR, AP, PA, TO, RO, AC, MA, PI, PB, SE, AL\nde 15 a 35 dias úteis.\n*Informamos que nossos prazos podem ser extendidos em até 30 dias úteis para banheiras e ofurôs e até 35 dias úteis para Spas; para aferir o prazo real de seu pedido - consulte os nossos representantes online!\n*Temporariamente não estaremos comercializando os seguintes itens avulsos: aquecedores, acionadores e cromoterapia; os mesmos estão disponíveis apenas como opcionais que acompanharão spas, banheiras e ofurôs.",
+      "texto_exibido": "Prazo de Entrega\nEnvio:\nApós serem produzidos os produtos serão enviados por transportadora, respeitando o prazo de entrega para cada estado, que  é estimado a depender da localização e dificuldade de entrega da mercadoria, conforme tabela abaixo:\nEntregas em edifícios e residências são realizadas somente no térreo, não fazemos içamento dos produtos adquiridos.\nEntregamos para todo Brasil, exceto zona rural e estradas não asfaltadas assim como sítios e chácaras. Favor conferir a mercadoria no ato do recebimento, caso haja avaria, fazer ressalva na Nota Fiscal ou devolver imediatamente. Dúvidas entre em contato pelos telefones: (35) 99269-9530\nPrazo de Entrega:\nBANHEIRAS E OFURÔS\nEstados: MG, SP, ES, PR, RS, SC, GO\nde 7 a 15 dias úteis.\nEstados Capitais: RJ, DF, BA, PE, RN, CE, MT, MS\nde 10 a 20 dias úteis.\nEstados Interior: BA, PE, RN, CE, MT, MS\nde 12 a 30 dias úteis.\nEstados: RJ,AM, RR, AP, PA, TO, RO, AC, MA, PI, PB, SE, AL\nde 12 a 30 dias úteis\nSPAS E PRODUTOS EM ACRÍLICO OU COM DECK:\nEstados: MG, SP, ES, PR, RS, SC, GO\nde 10 a 25 dias úteis.\nEstados Capitais: RJ, DF, BA, PE, RN, CE, MT, MS\nde 15 a 25 dias úteis.\nEstados Interior: BA, PE, RN, CE, MT, MS\nde 15 a 30 dias úteis.\nEstados: RJ,AM, RR, AP, PA, TO, RO, AC, MA, PI, PB, SE, AL\nde 15 a 35 dias úteis.\n*Informamos que nossos prazos podem ser extendidos em até 30 dias úteis para banheiras e ofurôs e até 35 dias úteis para Spas; para aferir o prazo real de seu pedido - consulte os nossos representantes online!\n*Temporariamente não estaremos comercializando os seguintes itens avulsos: aquecedores, acionadores e cromoterapia; os mesmos estão disponíveis apenas como opcionais que acompanharão spas, banheiras e ofurôs.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "politica-devolucao-reembolso": {
+      "fonte": "https://www.banheirasbombanho.com.br/politica-devolucao-reembolso",
+      "meta_atual": {
+        "title": "Política de Devolução",
+        "description": "A troca, devolução ou reembolso de um produto será regida pela seguinte Política de Troca, Devolução e Reembolso criada pela BBB."
+      },
+      "texto": "POLÍTICA DE TROCA, DEVOLUÇÃO E REEMBOLSO\nCONSIDERAÇÕES GERAIS\nVisando um relacionamento de respeito e confiança entre você cliente e a Banheiras Bom Banho, oferecemos produtos de qualidade, para isso sempre estabelecemos parcerias com os melhores fornecedores. Para melhorar o nosso atendimento, disponibilizamos nossa política de Trocas e Devoluções que tem como referência o Código de Defesa do Consumidor (CDC).\nA seguir estão as regras da nossa política. É muito importante que esteja atento à ela em todos os momentos de sua compra.\nAntes de Finalizar a compra\nLeia com atenção a descrição e ficha técnica do produto que você quer comprar;\nSe o produto for elétrico: não se esqueça de conferir se a voltagem (110v ou 220v) corresponde à região que você vai utilizá-lo;\nCor do produto: alguns produtos possuem cores diversas e a foto no site é meramente ilustrativa;\nDimensões do produto: verifique se o espaço físico comporta o produto, uma vez que a adequação é de responsabilidade do cliente;\nCertifique-se do endereço de entrega: após a confirmação do pedido não será possível a mudança do endereço de entrega em virtude da variação de frete e alíquotas de impostos que já foram recolhidas, como por exemplo, o ICMS (Imposto sobre Circulação de Mercadorias e Serviços).\nApós finalizar a compra\nA conferência no ato da entrega é obrigatória e apenas dessa forma garantirá seu direito de troca ou devolução do produto. Caso verifique alguma divergência (embalagem aberta ou avariada; produto avariado - amassado, arranhado, trincado ou quebrado; produto em desacordo com o pedido; falta de acessórios) é necessário que recuse o produto, não assine o canhoto, justificando o motivo da recusa e comunique-nos via e-mail sac@banheirasbombanho.com.br.\nMantenha a embalagem original pois ela é necessária em caso de troca do produto;\nFique atento às informações logo abaixo:\nTROCA DO PRODUTO\nPor motivo de desistência ou arrependimento\nO prazo para desistir ou se arrepender do produto adquirido é de até 7 (sete) dias corridos, contando da data do recebimento do produto, após esse prazo, as solicitações não mais serão acatadas;\nPara realizar a devolução da sua mercadoria você deverá reenviar para o endereço indicado pelo sac da empresa. O ressarcimento só ocorre quando é confirmado o retorno da mercadoria e análise da mesma no Centro de Distribuição.\nCartão de crédito: O valor será estornado em até 10 (dez) dias úteis da data se solicitação daBanheiras Bom Banho com à operadora do cartão e poderá ser verificado em até duas fatura subsequentes, à depender da data de vencimento do seu cartão e dos procedimentos do seu banco.\nBoleto Bancário: Terão seus valores creditados em agência e conta corrente ou conta poupança a serem informados pelo Consumidor à Banheiras Bom Banho. A conta deverá estar no nome do titular da compra. O prazo para verificar o depósito são de 10 (dez) dias úteis contados da data se solicitação da Banheiras Bom Banho ao departamento financeiro.\nPor motivo de avaria\nNos empenhamos em oferecer os melhores serviços para que os produtos estejam em perfeito estado até chegar à você cliente, no entanto, podem ocorrer imprevistos alheios ao nosso empenho que não permitam que isso ocorra. Nestes casos, informamos os nossos clientes sobre a obrigação da conferência da mercadoria no ato da entrega. Cliente ou pessoa responsável pelo recebimento do produto deve checar rigorosamente na presença do entregador se:\nA embalagem está aberta ou avariada;\nO produto está avariado (amassado, arranhado, trincado, quebrado);\nCaso seja verificado qualquer dos itens acima, é necessário que recuse o produto, não assine o canhoto, justifique o motivo da recusa. Apenas dessa forma garantirá seu direito de troca ou devolução.\nSe mesmo assim receber o produto, dentro do prazo de 7 (sete) dias corridos da data do recebimento, abra uma solicitação de troca e seu pedido passará por uma análise, caso a substituição seja aprovada (troca ou cancelamento), sendo que os valores de transporte ficarão a cargo do comprador.\nPor motivo de defeito na mercadoria\nDe acordo com o artigo 18 do CDC, o fornecedor e o fabricante têm 30 dias, a partir da reclamação, para sanar o problema do produto. Extrapolado esse prazo, o consumidor pode exigir um produto similar, a restituição imediata da quantia paga ou o abatimento proporcional do preço.\nPelo produto ser diferente do pedido\nApesar de termos todo o cuidado necessário para garantir a entrega do pedido dentro das condições desejadas e de acordo com a compra realizada, recomendamos que seja observado durante o recebimento do pedido se o mesmo foi apresentado exatamente como solicitado (cor, modelo, voltagem).\nCaso seja verificada qualquer divergência, recuse o produto, não assine o canhoto, justifique o motivo da recusa. Se mesmo assim receber o produto, o mantenha-o em sua embalagem original, sem indícios de uso e acompanhada do manual e acessórios.\nRessarcimentos de valores\nA Banheiras Bom Banho restitui os valores pagos utilizando a mesma forma de pagamento escolhida no processo de compras. O ressarcimento só ocorre quando é confirmado o retorno da mercadoria e análise da mesma no Centro de Distribuição.\nCartão de crédito: O valor será estornado em até 10 (dez) dias úteis da data se solicitação da Randora com à operadora do cartão e poderá ser verificado em até duas fatura subsequentes, à depender da data de vencimento do seu cartão e dos procedimentos do seu banco.\nBoleto Bancário: Terão seus valores creditados em agência e conta corrente ou conta poupança a serem informados pelo Consumidor à Banheiras Bom Banho. A conta deverá estar no nome do titular da compra. O prazo para verificar o depósito são de 10 (dez) dias úteis contados da data se solicitação da Banheiras Bom Banho ao departamento financeiro.\nCancelamentos de pedidos serão aceitos com reembolso total dos valores pagos somente se ainda não tiverem sidos despachados.\nATENÇÃO\nPedimos sua atenção, ao receber o produto que realizou a compra, pedimos a gentileza que o abra na frente do entregador.\nCaso verifique qualquer avaria no produto, NÃO receba, se negue a receber e devolva ao funcionário dos Correios/Transportadora. Danos ocasionados no transporte, somente são reembolsados, caso o destinatário se negue a receber e informe o motivo de avaria no transporte.\nTodos os produtos saem de fábrica testados, e passam pelo Controle de Qualidade. Infelizmente para tomarmos as medidas cabíveis com os Correios ou com a Transportadora, é necessário, que este procedimento do regulamento destas seja atendido. Caso ocorra este incidente, devolva a mercadoria e nos informe pelo e-mail sac@banheirasbombanho.com.br IMEDIATAMENTE, Pois lhe enviaremos um novo produto na mesma data.\nObrigada.\nAtenciosamente, equipe Banheiras Bom Banho.",
+      "texto_exibido": "POLÍTICA DE TROCA, DEVOLUÇÃO E REEMBOLSO\nCONSIDERAÇÕES GERAIS\nA seguir estão as regras da nossa política. É muito importante que esteja atento à ela em todos os momentos de sua compra.\nAntes de Finalizar a compra\nLeia com atenção a descrição e ficha técnica do produto que você quer comprar;\nSe o produto for elétrico: não se esqueça de conferir se a voltagem (110v ou 220v) corresponde à região que você vai utilizá-lo;\nCor do produto: alguns produtos possuem cores diversas e a foto no site é meramente ilustrativa;\nDimensões do produto: verifique se o espaço físico comporta o produto, uma vez que a adequação é de responsabilidade do cliente;\nCertifique-se do endereço de entrega: após a confirmação do pedido não será possível a mudança do endereço de entrega em virtude da variação de frete e alíquotas de impostos que já foram recolhidas, como por exemplo, o ICMS (Imposto sobre Circulação de Mercadorias e Serviços).\nApós finalizar a compra\nA conferência no ato da entrega é obrigatória e apenas dessa forma garantirá seu direito de troca ou devolução do produto. Caso verifique alguma divergência (embalagem aberta ou avariada; produto avariado - amassado, arranhado, trincado ou quebrado; produto em desacordo com o pedido; falta de acessórios) é necessário que recuse o produto, não assine o canhoto, justificando o motivo da recusa e comunique-nos via e-mail sac@banheirasbombanho.com.br.\nMantenha a embalagem original pois ela é necessária em caso de troca do produto;\nFique atento às informações logo abaixo:\nTROCA DO PRODUTO\nPor motivo de desistência ou arrependimento\nO prazo para desistir ou se arrepender do produto adquirido é de até 7 (sete) dias corridos, contando da data do recebimento do produto, após esse prazo, as solicitações não mais serão acatadas;\nPara realizar a devolução da sua mercadoria você deverá reenviar para o endereço indicado pelo sac da empresa. O ressarcimento só ocorre quando é confirmado o retorno da mercadoria e análise da mesma no Centro de Distribuição.\nCartão de crédito: O valor será estornado em até 10 (dez) dias úteis da data se solicitação daBanheiras Bom Banho com à operadora do cartão e poderá ser verificado em até duas fatura subsequentes, à depender da data de vencimento do seu cartão e dos procedimentos do seu banco.\nBoleto Bancário: Terão seus valores creditados em agência e conta corrente ou conta poupança a serem informados pelo Consumidor à Banheiras Bom Banho. A conta deverá estar no nome do titular da compra. O prazo para verificar o depósito são de 10 (dez) dias úteis contados da data se solicitação da Banheiras Bom Banho ao departamento financeiro.\nPor motivo de avaria\nNestes casos, informamos os nossos clientes sobre a obrigação da conferência da mercadoria no ato da entrega. Cliente ou pessoa responsável pelo recebimento do produto deve checar rigorosamente na presença do entregador se:\nA embalagem está aberta ou avariada;\nO produto está avariado (amassado, arranhado, trincado, quebrado);\nCaso seja verificado qualquer dos itens acima, é necessário que recuse o produto, não assine o canhoto, justifique o motivo da recusa. Apenas dessa forma garantirá seu direito de troca ou devolução.\nSe mesmo assim receber o produto, dentro do prazo de 7 (sete) dias corridos da data do recebimento, abra uma solicitação de troca e seu pedido passará por uma análise, caso a substituição seja aprovada (troca ou cancelamento), sendo que os valores de transporte ficarão a cargo do comprador.\nPor motivo de defeito na mercadoria\nDe acordo com o artigo 18 do CDC, o fornecedor e o fabricante têm 30 dias, a partir da reclamação, para sanar o problema do produto. Extrapolado esse prazo, o consumidor pode exigir um produto similar, a restituição imediata da quantia paga ou o abatimento proporcional do preço.\nPelo produto ser diferente do pedido\nApesar de termos todo o cuidado necessário para garantir a entrega do pedido dentro das condições desejadas e de acordo com a compra realizada, recomendamos que seja observado durante o recebimento do pedido se o mesmo foi apresentado exatamente como solicitado (cor, modelo, voltagem).\nCaso seja verificada qualquer divergência, recuse o produto, não assine o canhoto, justifique o motivo da recusa. Se mesmo assim receber o produto, o mantenha-o em sua embalagem original, sem indícios de uso e acompanhada do manual e acessórios.\nRessarcimentos de valores\nA Banheiras Bom Banho restitui os valores pagos utilizando a mesma forma de pagamento escolhida no processo de compras. O ressarcimento só ocorre quando é confirmado o retorno da mercadoria e análise da mesma no Centro de Distribuição.\nBoleto Bancário: Terão seus valores creditados em agência e conta corrente ou conta poupança a serem informados pelo Consumidor à Banheiras Bom Banho. A conta deverá estar no nome do titular da compra. O prazo para verificar o depósito são de 10 (dez) dias úteis contados da data se solicitação da Banheiras Bom Banho ao departamento financeiro.\nCancelamentos de pedidos serão aceitos com reembolso total dos valores pagos somente se ainda não tiverem sidos despachados.\nATENÇÃO\nPedimos sua atenção, ao receber o produto que realizou a compra, pedimos a gentileza que o abra na frente do entregador.\nCaso verifique qualquer avaria no produto, NÃO receba, se negue a receber e devolva ao funcionário dos Correios/Transportadora. Danos ocasionados no transporte, somente são reembolsados, caso o destinatário se negue a receber e informe o motivo de avaria no transporte.\nTodos os produtos saem de fábrica testados, e passam pelo Controle de Qualidade. Infelizmente para tomarmos as medidas cabíveis com os Correios ou com a Transportadora, é necessário, que este procedimento do regulamento destas seja atendido. Caso ocorra este incidente, devolva a mercadoria e nos informe pelo e-mail sac@banheirasbombanho.com.br IMEDIATAMENTE, Pois lhe enviaremos um novo produto na mesma data.\nObrigada.\nAtenciosamente, equipe Banheiras Bom Banho.",
+      "emails_decodificados": [
+        "sac@banheirasbombanho.com.br",
+        "sac@banheirasbombanho.com.br"
+      ],
+      "removidos": [
+        {
+          "frase": "Cartão de crédito: O valor será estornado em até 10 (dez) dias úteis da data se solicitação da Randora com à operadora do cartão e poderá ser verificado em até duas fatura subsequentes, à depender da data de vencimento do seu cartão e dos procedimentos do seu banco.",
+          "regra": "residuo_de_template",
+          "motivo": "a frase cita outra empresa (\"Randora\", resíduo de modelo, alerta da própria coleta); a mesma regra aparece, com o nome da Banheiras Bom Banho, na seção \"Por motivo de desistência ou arrependimento\""
+        },
+        {
+          "frase": "Visando um relacionamento de respeito e confiança entre você cliente e a Banheiras Bom Banho, oferecemos produtos de qualidade, para isso sempre estabelecemos parcerias com os melhores fornecedores.",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "o melhor / a maior",
+            "melhores"
+          ]
+        },
+        {
+          "frase": "Para melhorar o nosso atendimento, disponibilizamos nossa política de Trocas e Devoluções que tem como referência o Código de Defesa do Consumidor (CDC).",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "referência"
+          ]
+        },
+        {
+          "frase": "Nos empenhamos em oferecer os melhores serviços para que os produtos estejam em perfeito estado até chegar à você cliente, no entanto, podem ocorrer imprevistos alheios ao nosso empenho que não permitam que isso ocorra.",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "o melhor / a maior",
+            "melhores"
+          ]
+        }
+      ]
+    },
+    "politica-de-privacidade": {
+      "fonte": "https://www.banheirasbombanho.com.br/politica-de-privacidade",
+      "meta_atual": {
+        "title": "Política de Privacidade",
+        "description": "Conheça a Política de Privacidade da Banheiras Bom Banho e fique seguro sobre a utilização dos seus dados pessoais."
+      },
+      "texto": "Política de Privacidade\nA sua privacidade é importante para nós.\nÉ política do Banheiras Bom Banho respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Banheiras Bom Banho , e outros sites que possuímos e operamos. Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fizemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado. Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados. Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei. O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade. Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados. O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais.\nGostaríamos de informar que existe um canal específico para atender às solicitações relacionadas à Lei Geral de Proteção de Dados (LGPD). Caso você tenha alguma dúvida, solicitação ou reclamação relacionada ao tratamento de seus dados pessoais, por favor, entre em contato conosco através do e-mail: contatolgpd@banheirasbombanho.com.br.\nPolítica de Cookies Banheiras Bom Banho\nO que são cookies?\nComo é prática comum em quase todos os sites profissionais, este site usa cookies, que são pequenos arquivos baixados no seu computador, para melhorar sua experiência. Esta página descreve quais informações eles coletam como as usamos e por que às vezes precisamos armazenar esses cookies. Também compartilharemos como você pode impedir que esses cookies fôsseis armazenados, no entanto, isso pode fazer o downgrade ou 'quebrar' certos elementos da funcionalidade do site.\nComo usamos os cookies?\nUtilizamos cookies por vários motivos, detalhados abaixo. Infelizmente, na maioria dos casos, não existem opções padrão do setor para desativar os cookies sem desativar completamente a funcionalidade e os recursos que eles adicionam a este site. É recomendável que você deixe todos os cookies se não tiver certeza se precisa ou não deles, caso sejam usados ​​para fornecer um serviço que você usa.\nDesativar cookies\nVocê pode impedir a configuração de cookies ajustando as configurações do seu navegador (consulte a Ajuda do navegador para saber como fazer isso). Esteja ciente de que a desativação de cookies afetará a funcionalidade deste e de muitos outros sites que você visita. A desativação de cookies geralmente resultará na desativação de determinadas funcionalidades e recursos deste site. Portanto, é recomendável que você não desative os cookies.\nCookies que definimos\nCookies relacionados à conta se você criar uma conta conosco, usaremos cookies para o gerenciamento do processo de inscrição e administração geral. Esses cookies geralmente serão excluídos quando você sair do sistema, porém, em alguns casos, eles poderão permanecer posteriormente para lembrar as preferências do seu site ao sair.\nCookies relacionados ao login\nUtilizamos cookies quando você está logado, para que possamos lembrar-nos dessa ação. Isso evita que você precise fazer login sempre que visitar uma nova página. Esses cookies são normalmente removidos ou limpos quando você efetua logout para garantir que você possa acessar apenas a recursos e áreas restritas ao efetuar login.\nCookies relacionados a boletins por e-mail\nEste site oferece serviços de assinatura de boletim informativo ou e-mail e os cookies podem ser usados ​​para lembrar se você já está registrado e se devem mostrar determinadas notificações válidas apenas para usuários inscritos/não inscritos.\nPedidos processando cookies relacionados\nEste site oferecem facilidades de comércio eletrônico ou pagamento e alguns cookies são essenciais para garantir que seu pedido seja lembrado entre as páginas, para que possamos processá-lo adequadamente.\nCookies relacionados a pesquisas\nPeriodicamente, oferecemos pesquisas e questionários para fornecer informações interessantes, ferramentas úteis ou para entender nossa base de usuários com mais precisão. Essas pesquisas podem usar cookies para lembrar quem já participou numa pesquisa ou para fornecer resultados precisos após a alteração das páginas.\nCookies relacionados a formulários\nQuando você envia dados por meio de um formulário como os encontrados nas páginas de contacto ou nos formulários de comentários, os cookies podem ser configurados para lembrar os detalhes do usuário para correspondência futura.\nCookies de preferências do site\nPara proporcionar uma ótima experiência neste site, fornecemos a funcionalidade para definir suas preferências de como esse site é executado quando você o usa. Para lembrar suas preferências, precisamos definir cookies para que essas informações possam ser chamadas sempre que você interagir com uma página for afetada por suas preferências.\nCookies de Terceiros\nEm alguns casos especiais, também usamos cookies fornecidos por terceiros confiáveis. A seção a seguir detalha quais cookies de terceiros você pode encontrar através deste site. Este site usa o Google Analytics, que é uma das soluções de análise mais difundidas e confiáveis ​​da Web, para nos ajudar a entender como você usa o site e como podemos melhorar sua experiência. Esses cookies podem rastrear itens como quanto tempo você gasta no site e as páginas visitadas, para que possamos continuar produzindo conteúdo atraente.\nPara mais informações sobre cookies do Google Analytics, consulte a página oficial do Google Analytics. As análises de terceiros são usadas para rastrear e medir o uso deste site, para que possamos continuar produzindo conteúdo atrativo. Esses cookies podem rastrear itens como o tempo que você passa no site ou as páginas visitadas, o que nos ajuda a entender como podemos melhorar o site para você. Periodicamente, testamos novos recursos e fazemos alterações subtis na maneira como o site se apresenta. Quando ainda estamos testando novos recursos, esses cookies podem ser usados ​​para garantir que você receba uma experiência consistente enquanto estiver no site, enquanto entendemos quais otimizações os nossos usuários mais apreciam. À medida que vendemos produtos, é importante entendermos as estatísticas sobre quantos visitantes de nosso site realmente compram e, portanto, esse é o tipo de dados que esses cookies rastrearão. Isso é importante para você, pois significa que podemos fazer previsões de negócios com precisão que nos permitem analisar nossos custos de publicidade e produtos para garantir o melhor preço possível.\nCompromisso do Usuário\nO usuário se compromete a fazer uso adequado dos conteúdos e da informação que o Banheiras Bom Banho oferece no site e com caráter enunciativo, mas não limitativo:\nNão se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;\nNão difundir propaganda ou conteúdo de natureza racista, xenofóbica, jogos de hoje ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;\nNão causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do Banheiras Bom Banho , de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.\nMais informações\nEsperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.\nEsta política é efetiva a partir de Outubro/2021.",
+      "texto_exibido": "Política de Privacidade\nA sua privacidade é importante para nós.\nÉ política do Banheiras Bom Banho respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Banheiras Bom Banho , e outros sites que possuímos e operamos. Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fizemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado. Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados. Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei. O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade. Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados. O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais.\nGostaríamos de informar que existe um canal específico para atender às solicitações relacionadas à Lei Geral de Proteção de Dados (LGPD). Caso você tenha alguma dúvida, solicitação ou reclamação relacionada ao tratamento de seus dados pessoais, por favor, entre em contato conosco através do e-mail: contatolgpd@banheirasbombanho.com.br.\nPolítica de Cookies Banheiras Bom Banho\nO que são cookies?\nComo é prática comum em quase todos os sites profissionais, este site usa cookies, que são pequenos arquivos baixados no seu computador, para melhorar sua experiência. Esta página descreve quais informações eles coletam como as usamos e por que às vezes precisamos armazenar esses cookies. Também compartilharemos como você pode impedir que esses cookies fôsseis armazenados, no entanto, isso pode fazer o downgrade ou 'quebrar' certos elementos da funcionalidade do site.\nComo usamos os cookies?\nUtilizamos cookies por vários motivos, detalhados abaixo. Infelizmente, na maioria dos casos, não existem opções padrão do setor para desativar os cookies sem desativar completamente a funcionalidade e os recursos que eles adicionam a este site. É recomendável que você deixe todos os cookies se não tiver certeza se precisa ou não deles, caso sejam usados ​​para fornecer um serviço que você usa.\nDesativar cookies\nVocê pode impedir a configuração de cookies ajustando as configurações do seu navegador (consulte a Ajuda do navegador para saber como fazer isso). Esteja ciente de que a desativação de cookies afetará a funcionalidade deste e de muitos outros sites que você visita. A desativação de cookies geralmente resultará na desativação de determinadas funcionalidades e recursos deste site. Portanto, é recomendável que você não desative os cookies.\nCookies que definimos\nCookies relacionados à conta se você criar uma conta conosco, usaremos cookies para o gerenciamento do processo de inscrição e administração geral. Esses cookies geralmente serão excluídos quando você sair do sistema, porém, em alguns casos, eles poderão permanecer posteriormente para lembrar as preferências do seu site ao sair.\nCookies relacionados ao login\nUtilizamos cookies quando você está logado, para que possamos lembrar-nos dessa ação. Isso evita que você precise fazer login sempre que visitar uma nova página. Esses cookies são normalmente removidos ou limpos quando você efetua logout para garantir que você possa acessar apenas a recursos e áreas restritas ao efetuar login.\nCookies relacionados a boletins por e-mail\nEste site oferece serviços de assinatura de boletim informativo ou e-mail e os cookies podem ser usados ​​para lembrar se você já está registrado e se devem mostrar determinadas notificações válidas apenas para usuários inscritos/não inscritos.\nPedidos processando cookies relacionados\nEste site oferecem facilidades de comércio eletrônico ou pagamento e alguns cookies são essenciais para garantir que seu pedido seja lembrado entre as páginas, para que possamos processá-lo adequadamente.\nCookies relacionados a pesquisas\nPeriodicamente, oferecemos pesquisas e questionários para fornecer informações interessantes, ferramentas úteis ou para entender nossa base de usuários com mais precisão. Essas pesquisas podem usar cookies para lembrar quem já participou numa pesquisa ou para fornecer resultados precisos após a alteração das páginas.\nCookies relacionados a formulários\nQuando você envia dados por meio de um formulário como os encontrados nas páginas de contacto ou nos formulários de comentários, os cookies podem ser configurados para lembrar os detalhes do usuário para correspondência futura.\nCookies de preferências do site\nPara proporcionar uma ótima experiência neste site, fornecemos a funcionalidade para definir suas preferências de como esse site é executado quando você o usa. Para lembrar suas preferências, precisamos definir cookies para que essas informações possam ser chamadas sempre que você interagir com uma página for afetada por suas preferências.\nCookies de Terceiros\nEm alguns casos especiais, também usamos cookies fornecidos por terceiros confiáveis. A seção a seguir detalha quais cookies de terceiros você pode encontrar através deste site. Este site usa o Google Analytics, que é uma das soluções de análise mais difundidas e confiáveis ​​da Web, para nos ajudar a entender como você usa o site e como podemos melhorar sua experiência. Esses cookies podem rastrear itens como quanto tempo você gasta no site e as páginas visitadas, para que possamos continuar produzindo conteúdo atraente.\nPara mais informações sobre cookies do Google Analytics, consulte a página oficial do Google Analytics. As análises de terceiros são usadas para rastrear e medir o uso deste site, para que possamos continuar produzindo conteúdo atrativo. Esses cookies podem rastrear itens como o tempo que você passa no site ou as páginas visitadas, o que nos ajuda a entender como podemos melhorar o site para você. Periodicamente, testamos novos recursos e fazemos alterações subtis na maneira como o site se apresenta. Quando ainda estamos testando novos recursos, esses cookies podem ser usados ​​para garantir que você receba uma experiência consistente enquanto estiver no site, enquanto entendemos quais otimizações os nossos usuários mais apreciam. À medida que vendemos produtos, é importante entendermos as estatísticas sobre quantos visitantes de nosso site realmente compram e, portanto, esse é o tipo de dados que esses cookies rastrearão.\nCompromisso do Usuário\nO usuário se compromete a fazer uso adequado dos conteúdos e da informação que o Banheiras Bom Banho oferece no site e com caráter enunciativo, mas não limitativo:\nNão se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;\nNão difundir propaganda ou conteúdo de natureza racista, xenofóbica, jogos de hoje ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;\nNão causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do Banheiras Bom Banho , de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.\nMais informações\nEsperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.\nEsta política é efetiva a partir de Outubro/2021.",
+      "emails_decodificados": [
+        "contatolgpd@banheirasbombanho.com.br"
+      ],
+      "removidos": [
+        {
+          "frase": "Isso é importante para você, pois significa que podemos fazer previsões de negócios com precisão que nos permitem analisar nossos custos de publicidade e produtos para garantir o melhor preço possível.",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "o melhor / a maior",
+            "melhor + atributo"
+          ]
+        }
+      ]
+    },
+    "termos-de-uso": {
+      "fonte": "https://www.banheirasbombanho.com.br/termos-de-uso",
+      "meta_atual": {
+        "title": "Termos de Uso",
+        "description": "Este site pertence e é operado pela Banheiras Bom Banho. Nenhum material como textos e imagens podem ser copiados, mantendo intacto os direitos autorais da BBB"
+      },
+      "texto": "Termos de Uso\nRestrições ao uso de materiais\nEste site pertence e é operado pela Banheiras Bom Banho. Nenhum material da https://www.banheirasbombanho.com.br/ ou qualquer outro site pertencente, operado, licenciado ou controlado pela Banheiras Bom Banho pode ser copiado, reproduzido, republicado, atualizado, enviado, transmitido ou distribuído em hipótese nenhuma, a não ser que seja permitido o download do material e sua impressão somente para uso pessoal, não comercial, mantendo intacto todo os direitos autorais e qualquer outra nota de propriedade.\nModificar matérias ou usar matérias para qualquer outro propósito é violação dos direitos autorais da Banheiras Bom Banho, e qualquer outro direito de propriedade.\nPermissão para qualquer outro uso das matérias do site, incluindo reprodução e distribuição, ou links a qualquer outra página deve ser obtida permissão com antecedência. A solicitação deverá ser enviada via e-mail.\nPara propósitos deste acordo, o uso de qualquer material (ou matéria) em referência em qualquer outro site ou em rede é proibido. Todas as marcas registradas, marcas de serviço, marca ou nome comercial de produto são de propriedade da Banheiras Bom Banho.\nConcluindo, o download de qualquer tipo de arquivo, imagens incorporadas ou geradas pelo aplicativo estão licenciados para uso pessoal pela Banheiras Bom Banho. Não transferimos os direitos autorais a você, você possui a mídia onde o software é gravado, mas a Banheiras Bom Banho retém toda e qualquer titularidade do software, inclusive sua propriedade intelectual.\nNão é autorizado redistribuir, revender, particionar, reprojetar ou reduzir o aplicativo de forma perceptiva.",
+      "texto_exibido": "Termos de Uso\nRestrições ao uso de materiais\nEste site pertence e é operado pela Banheiras Bom Banho. Nenhum material da https://www.banheirasbombanho.com.br/ ou qualquer outro site pertencente, operado, licenciado ou controlado pela Banheiras Bom Banho pode ser copiado, reproduzido, republicado, atualizado, enviado, transmitido ou distribuído em hipótese nenhuma, a não ser que seja permitido o download do material e sua impressão somente para uso pessoal, não comercial, mantendo intacto todo os direitos autorais e qualquer outra nota de propriedade.\nModificar matérias ou usar matérias para qualquer outro propósito é violação dos direitos autorais da Banheiras Bom Banho, e qualquer outro direito de propriedade.\nPermissão para qualquer outro uso das matérias do site, incluindo reprodução e distribuição, ou links a qualquer outra página deve ser obtida permissão com antecedência. A solicitação deverá ser enviada via e-mail.\nPara propósitos deste acordo, o uso de qualquer material (ou matéria) em referência em qualquer outro site ou em rede é proibido. Todas as marcas registradas, marcas de serviço, marca ou nome comercial de produto são de propriedade da Banheiras Bom Banho.\nConcluindo, o download de qualquer tipo de arquivo, imagens incorporadas ou geradas pelo aplicativo estão licenciados para uso pessoal pela Banheiras Bom Banho. Não transferimos os direitos autorais a você, você possui a mídia onde o software é gravado, mas a Banheiras Bom Banho retém toda e qualquer titularidade do software, inclusive sua propriedade intelectual.\nNão é autorizado redistribuir, revender, particionar, reprojetar ou reduzir o aplicativo de forma perceptiva.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "seguranca": {
+      "fonte": "https://www.banheirasbombanho.com.br/seguranca",
+      "meta_atual": {
+        "title": "Compre com segurança - Banheiras Bom Banho",
+        "description": "Tratamos dos seus dados com a mais absoluta segurança e sigilo, este é o principal compromisso da Banheiras Bom Banho com seus clientes."
+      },
+      "texto": "Segurança e Sigilo\nA Banheiras Bom Banho reserva-se ao direito de, sem necessidade de aviso prévio, alterar e atualizar os procedimentos de segurança, sempre que necessário.\nCom relação aos seus dados pessoais de endereçamento, pagamento e conteúdo do pedido, você pode estar certo de que não serão utilizados para outros fins que não o de processamento dos pedidos realizados, não sendo, portanto divulgados em hipótese alguma.\nOs dados recolhidos são de fornecimento obrigatório e confidencial, destinando-se à faturação do(s) produto(s) adquirido(s) e à expedição do pedido. Para maior segurança entre as partes, os cadastros falsos ou tentativas de fraude, serão bloqueados pelo sistema, sendo que todos os dados recolhidos serão encaminhados para a autoridade competente a fim de serem investigados.\nA Banheiras Bom Banho não se responsabiliza por informações falsas e fraudulentas, bem como das suas consequências penais e jurídicas oriundas dessas informações.\nInformações necessárias para se cadastrar no site e realizar um pedido:\n_ nome completo\n_ CPF (e CNPJ para pessoa jurídica)\n_ RG\n_ endereço completo\n_ telefone para contato\n_ email\nFique tranquilo, tratamos dos seus dados com a mais absoluta segurança e sigilo, este é o principal compromisso da Banheiras Bom Banho com seus clientes.",
+      "texto_exibido": "Segurança e Sigilo\nA Banheiras Bom Banho reserva-se ao direito de, sem necessidade de aviso prévio, alterar e atualizar os procedimentos de segurança, sempre que necessário.\nCom relação aos seus dados pessoais de endereçamento, pagamento e conteúdo do pedido, você pode estar certo de que não serão utilizados para outros fins que não o de processamento dos pedidos realizados, não sendo, portanto divulgados em hipótese alguma.\nOs dados recolhidos são de fornecimento obrigatório e confidencial, destinando-se à faturação do(s) produto(s) adquirido(s) e à expedição do pedido. Para maior segurança entre as partes, os cadastros falsos ou tentativas de fraude, serão bloqueados pelo sistema, sendo que todos os dados recolhidos serão encaminhados para a autoridade competente a fim de serem investigados.\nA Banheiras Bom Banho não se responsabiliza por informações falsas e fraudulentas, bem como das suas consequências penais e jurídicas oriundas dessas informações.\nInformações necessárias para se cadastrar no site e realizar um pedido:\n_ nome completo\n_ CPF (e CNPJ para pessoa jurídica)\n_ RG\n_ endereço completo\n_ telefone para contato\n_ email\nFique tranquilo, tratamos dos seus dados com a mais absoluta segurança e sigilo, este é o principal compromisso da Banheiras Bom Banho com seus clientes.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "inmetro": {
+      "fonte": "https://www.banheirasbombanho.com.br/inmetro",
+      "meta_atual": {
+        "title": "Banheiras com Certificação do INMETRO | Banheiras Bom Banho",
+        "description": "Banheiras com Certificação do INMETRO | Banheiras Bom Banho"
+      },
+      "texto": "Certificação Inmetro\nOrganismo Acreditado: ACERT ORGANISMO DE CERTIFICACAO DE PRODUTOS EM SISTEMAS LTDA.\nNº do Certificado: CE-EL-041/20-F01.\nClasse do Produto: Aparelhos eletrodomésticos e similares - PT Inmetro nº 371/2009.\nTipo do Certificado: Produto.\nLaboratório de Ensaio: TECHMULTLAB ENSAIOS LTDA (CRL 0632).\nDocumento Normativo, Portaria Inmetro nº 371 de 29/12/2009.\nSite de busca Inmetro",
+      "texto_exibido": "Certificação Inmetro\nOrganismo Acreditado: ACERT ORGANISMO DE CERTIFICACAO DE PRODUTOS EM SISTEMAS LTDA.\nNº do Certificado: CE-EL-041/20-F01.\nClasse do Produto: Aparelhos eletrodomésticos e similares - PT Inmetro nº 371/2009.\nTipo do Certificado: Produto.\nLaboratório de Ensaio: TECHMULTLAB ENSAIOS LTDA (CRL 0632).\nDocumento Normativo, Portaria Inmetro nº 371 de 29/12/2009.\nSite de busca Inmetro",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "politica-da-qualidade": {
+      "fonte": "https://www.banheirasbombanho.com.br/politica-da-qualidade",
+      "meta_atual": {
+        "title": "Política da Qualidade",
+        "description": null
+      },
+      "texto": "Emissão:\n03/08/2021\nAnálise Crítica:\n05/08/2021\nAprovação:\n05/08/2021\nREV.\n00\nPOLÍTICA DA QUALIDADE\nFR-001\nA BBB tem como foco principal a fabricação de Banheiras e Spa's de hidromassagem e Ofurôs,\ngarantindo a satisfação de seus clientes no atendimento aos requisitos das partes interessadas\npertinentes e melhorando continuamente o sistema de gestão e processos de trabalho\nconstatando a excelência de nossos produtos, valorizando a parceria com colaboradores, clientes\ne fornecedores.\nCongonhal, 03 de Agosto de 2021.",
+      "texto_exibido": "Emissão:\n03/08/2021\nAnálise Crítica:\n05/08/2021\nAprovação:\n05/08/2021\nREV.\n00\nPOLÍTICA DA QUALIDADE\nFR-001\nA BBB tem como foco principal a fabricação de Banheiras e Spa's de hidromassagem e Ofurôs,\ngarantindo a satisfação de seus clientes no atendimento aos requisitos das partes interessadas\npertinentes e melhorando continuamente o sistema de gestão e processos de trabalho\nconstatando a excelência de nossos produtos, valorizando a parceria com colaboradores, clientes\ne fornecedores.\nCongonhal, 03 de Agosto de 2021.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "instaladores": {
+      "fonte": "https://www.banheirasbombanho.com.br/instaladores",
+      "meta_atual": {
+        "title": "Instaladores",
+        "description": null
+      },
+      "texto": "Instaladores\nSegue a lista dos Instaladores Abaixo:\nESTADO\nCIDADE\nTÉCNICO\nTELEFONE\nWHATSAPP\nMG\nCONGONHAL\nEDUARDO LUCAS DE VASCONCELOS SILVA\n(35) 99133-9244\n(35) 99133-9244\nMG\nPOUSO ALEGRE\nKLEBER AUGUSTO PEREIRA\n(35) 99252-4555\n(35) 99252-4555\nMG\nBELO HORIZONTE\nSAULO FELIPE DOS SANTOS\n(31) 99465-8686\n(31) 99465-8686\nMG\nBELO HORIZONTE\nVINICIUS BERNARDO\n(31) 99691-2521\n(31)  99691-2521\nRJ\nSÃO GONÇALO\nANTÔNIO LÁZARO\n(21) 98110-4807\n(21) 98110-4807\nRJ\nNOVA IGUAÇU\nCLOBER GUEDES\n(21) 97269-1963\n(21) 97269-1963\nSP\nCARAGUATATUBA\nDEVANIL PEREIRA DE FARIAS JUNIOR\n(12) 98216-2998\n(12) 98216-2998\nSP\nRIBEIRÃO PRETO\nEDSON PEREIRA DA SILVA\n(16) 99624-8326\n(16) 99624-8326\nSP\nSÃO JOSÉ DOS CAMPOS\nMARCIO IVAN WAGNER\n(12) 98703-4125\n(12) 98703-4125\nSP\nJUNDIAI\nMICHEL RODRIGO DO PRADO\n(11) 98682-5077\n(11) 98682-5077\nSP\nCAMPINAS\nRONALD ROSA SANCHES\n(19) 99816-7099\n(19) 99816-7099\nSP\nCOTIA\nWESLEI LUCIDE\n(11) 94136-8858\n(11)  94136-8858",
+      "texto_exibido": "Instaladores\nSegue a lista dos Instaladores Abaixo:\nESTADO\nCIDADE\nTÉCNICO\nTELEFONE\nWHATSAPP\nMG\nCONGONHAL\nEDUARDO LUCAS DE VASCONCELOS SILVA\n(35) 99133-9244\n(35) 99133-9244\nMG\nPOUSO ALEGRE\nKLEBER AUGUSTO PEREIRA\n(35) 99252-4555\n(35) 99252-4555\nMG\nBELO HORIZONTE\nSAULO FELIPE DOS SANTOS\n(31) 99465-8686\n(31) 99465-8686\nMG\nBELO HORIZONTE\nVINICIUS BERNARDO\n(31) 99691-2521\n(31)  99691-2521\nRJ\nSÃO GONÇALO\nANTÔNIO LÁZARO\n(21) 98110-4807\n(21) 98110-4807\nRJ\nNOVA IGUAÇU\nCLOBER GUEDES\n(21) 97269-1963\n(21) 97269-1963\nSP\nCARAGUATATUBA\nDEVANIL PEREIRA DE FARIAS JUNIOR\n(12) 98216-2998\n(12) 98216-2998\nSP\nRIBEIRÃO PRETO\nEDSON PEREIRA DA SILVA\n(16) 99624-8326\n(16) 99624-8326\nSP\nSÃO JOSÉ DOS CAMPOS\nMARCIO IVAN WAGNER\n(12) 98703-4125\n(12) 98703-4125\nSP\nJUNDIAI\nMICHEL RODRIGO DO PRADO\n(11) 98682-5077\n(11) 98682-5077\nSP\nCAMPINAS\nRONALD ROSA SANCHES\n(19) 99816-7099\n(19) 99816-7099\nSP\nCOTIA\nWESLEI LUCIDE\n(11) 94136-8858\n(11)  94136-8858",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "seja-revendedor": {
+      "fonte": "https://www.banheirasbombanho.com.br/seja-revendedor",
+      "meta_atual": {
+        "title": "Seja Revendedor",
+        "description": "Seja um revendedor da Banheiras Bom Banho. Acesse nosso site e saiba mais como se tornar um revendedor BBB."
+      },
+      "texto": "Seja um Revendedor\nPreencha o formulário abaixo e aguarde nosso retorno.",
+      "texto_exibido": "Seja um Revendedor",
+      "emails_decodificados": [],
+      "removidos": [
+        {
+          "frase": "Preencha o formulário abaixo e aguarde nosso retorno.",
+          "regra": "formulario_inexistente",
+          "motivo": "o site novo não tem formulário (CSP form-action 'none', SPEC 9.6): o contato é pelo WhatsApp"
+        }
+      ]
+    },
+    "vendas-corporativas": {
+      "fonte": "https://www.banheirasbombanho.com.br/vendas-corporativas.html",
+      "meta_atual": {
+        "title": "Corporativo",
+        "description": null
+      },
+      "texto": "Atendimento exclusivo para Construtoras, Incorporadoras e Hotéis.\nEncontre\nBanheiras\npara seu negócio!\nValorize seus empreendimentos com Banheiras, Spas e Ofurôs com preços e condições especiais para Construtoras, Incorporadoras e Hotéis!\nVeja nossos projetos!\nFale com nossa equipe!\nTEMOS A LINHA MAIS COMPLETA DE BANHEIRAS, SPAS E OFURÔS\nSomos a maior fábrica de banheiras, spas e ofurôs!\nISO 9001:2015\nProduzimos de acordo com nossa certificação ISO 9001:2015, garantia de produtos de alta qualidade\nSaiba Mais\nINMETRO\nNossas banheiras, spas e ofurôs são certificadas pelo Inmetro, garantindo alta qualidade aos nossos clientes\nSaiba Mais\nATENDIMENTO\nNossos representantes oferecem as melhores condições comerciais e entrega rápida e segura\nSaiba Mais\nAgora saiba\nPorquê escolher a\nBanheiras Bom Banho\n200 +\nMODELOS\n20 MIL\nM2 FÁBRICA\n11 +\nANOS HISTÓRIA\n25 +\nREPRESENTANTES",
+      "texto_exibido": "Atendimento exclusivo para Construtoras, Incorporadoras e Hotéis.\nEncontre\nBanheiras\npara seu negócio!\nValorize seus empreendimentos com Banheiras, Spas e Ofurôs com preços e condições especiais para Construtoras, Incorporadoras e Hotéis!\nINMETRO\nNossas banheiras, spas e ofurôs são certificadas pelo Inmetro, garantindo alta qualidade aos nossos clientes",
+      "emails_decodificados": [],
+      "removidos": [
+        {
+          "frase": "Veja nossos projetos!",
+          "regra": "navegacao_do_tema",
+          "motivo": "rótulo de botão do tema antigo, sem texto"
+        },
+        {
+          "frase": "Fale com nossa equipe!",
+          "regra": "navegacao_do_tema",
+          "motivo": "rótulo de botão do tema antigo, sem texto"
+        },
+        {
+          "frase": "Saiba Mais",
+          "regra": "navegacao_do_tema",
+          "motivo": "rótulo de botão do tema antigo, sem texto"
+        },
+        {
+          "frase": "Saiba Mais",
+          "regra": "navegacao_do_tema",
+          "motivo": "rótulo de botão do tema antigo, sem texto"
+        },
+        {
+          "frase": "Saiba Mais",
+          "regra": "navegacao_do_tema",
+          "motivo": "rótulo de botão do tema antigo, sem texto"
+        },
+        {
+          "frase": "ATENDIMENTO\nNossos representantes oferecem as melhores condições comerciais e entrega rápida e segura",
+          "regra": "superlativo_nao_comprovado",
+          "motivo": "\"as melhores condições\" (SPEC 0.5); o título sai junto com a única frase do bloco"
+        },
+        {
+          "frase": "Agora saiba\nPorquê escolher a\nBanheiras Bom Banho\n200 +\nMODELOS\n20 MIL\nM2 FÁBRICA\n11 +\nANOS HISTÓRIA\n25 +\nREPRESENTANTES",
+          "regra": "numero_da_empresa_sem_segundo_a_empresa",
+          "motivo": "os números aparecem só por empresa.numeros_declarados, com \"segundo a empresa\""
+        },
+        {
+          "frase": "TEMOS A LINHA MAIS COMPLETA DE BANHEIRAS, SPAS E OFURÔS",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "mais completa / vendida / desejada"
+          ]
+        },
+        {
+          "frase": "Somos a maior fábrica de banheiras, spas e ofurôs!",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "o melhor / a maior"
+          ]
+        },
+        {
+          "frase": "ISO 9001:2015",
+          "regra": "certificacao_nao_confirmada",
+          "termos": [
+            "ISO 9001"
+          ]
+        },
+        {
+          "frase": "Produzimos de acordo com nossa certificação ISO 9001:2015, garantia de produtos de alta qualidade",
+          "regra": "certificacao_nao_confirmada",
+          "termos": [
+            "ISO 9001"
+          ]
+        }
+      ]
+    },
+    "localizacao": {
+      "fonte": "https://www.banheirasbombanho.com.br/localizacao",
+      "meta_atual": {
+        "title": "Localização",
+        "description": "A Banheiras Bom Banho está localizada na Rodovia Juscelino Kubitscheck de Oliveira em Minas Gerais. Saiba como chegar e faça-nos uma visita."
+      },
+      "texto": "Onde Estamos\nSaiba como chegar e faça-nos uma visita.",
+      "texto_exibido": "Onde Estamos\nSaiba como chegar e faça-nos uma visita.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "loja-fabrica-de-banheiras": {
+      "fonte": "https://www.banheirasbombanho.com.br/loja-fabrica-de-banheiras",
+      "meta_atual": {
+        "title": "Conheça nossa empresa - Banheiras Bom Banho",
+        "description": "Compre sua banheira direto da fábrica. Na Banheiras Bom Banho você encontra as melhores opções de banheiras, spas e ofurôs. Confira!"
+      },
+      "texto": "CONHEÇA A BBB BANHEIRAS BOM BANHO\nA EMPRESA\nSituada no Sul de Minas com suporte e estrutura para atender todo território Brasileiro e América do Sul. A BBB | Banheiras Bom Banho oferece aos clientes, conforto, qualidade de vida e momentos agradáveis, realizamos sonhos.\nEQUIPE\nA empresa conta com uma equipe experiente e especializada no desenvolvimento de cada peça. Somente quem entende muito do produto, consegue desenvolver o design e formas perfeitas para cada modelo.\nPRODUTOS\nBanheiras Bom Banho obtêm vários modelos diferenciados, atendendo todo gosto e ambiente. Os produtos são ricos em detalhes, possuem design sofisticados seguindo as tendências de vários países. Conheça melhor nossa empresa, faça-nos uma visita.\nBanheiras Bom Banho, aprecie.",
+      "texto_exibido": "CONHEÇA A BBB BANHEIRAS BOM BANHO\nA EMPRESA\nSituada no Sul de Minas com suporte e estrutura para atender todo território Brasileiro e América do Sul.\nEQUIPE\nA empresa conta com uma equipe experiente e especializada no desenvolvimento de cada peça. Somente quem entende muito do produto, consegue desenvolver o design e formas perfeitas para cada modelo.\nPRODUTOS\nBanheiras Bom Banho obtêm vários modelos diferenciados, atendendo todo gosto e ambiente. Os produtos são ricos em detalhes, possuem design sofisticados seguindo as tendências de vários países. Conheça melhor nossa empresa, faça-nos uma visita.\nBanheiras Bom Banho, aprecie.",
+      "emails_decodificados": [],
+      "removidos": [
+        {
+          "frase": "A BBB | Banheiras Bom Banho oferece aos clientes, conforto, qualidade de vida e momentos agradáveis, realizamos sonhos.",
+          "regra": "termo_de_saude",
+          "termos": [
+            "qualidade de vida"
+          ]
+        }
+      ]
+    },
+    "loja-fisica": {
+      "fonte": "https://www.banheirasbombanho.com.br/loja-fisica",
+      "meta_atual": {
+        "title": "Loja Fisica",
+        "description": "Venha visitar nossa loja física. Com produtos de alta qualidade, a BBB está preparada para atender a sua necessidade, deixando seu ambiente ainda mais elegante e confortável."
+      },
+      "texto": "Nossa Fábrica\nALGUNS DE NOSSOS PROJETOS FINALIZADOS\nCom produtos de alta qualidade e visual sofisticados, a nossa equipe de vendas é muito bem preparada para atender a sua necessidade, atingindo sua expectativa deixando seu ambiente ainda mais elegante e confortável.",
+      "texto_exibido": "Nossa Fábrica\nALGUNS DE NOSSOS PROJETOS FINALIZADOS\nCom produtos de alta qualidade e visual sofisticados, a nossa equipe de vendas é muito bem preparada para atender a sua necessidade, atingindo sua expectativa deixando seu ambiente ainda mais elegante e confortável.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "lojas/loja-fisica": {
+      "fonte": "https://www.banheirasbombanho.com.br/lojas/loja-fisica.html",
+      "meta_atual": {
+        "title": "Fábrica - Institucional",
+        "description": "Venha visitar nossa loja física. Com produtos de alta qualidade, a BBB está preparada para atender a sua necessidade, deixando seu ambiente ainda mais elegante e confortável."
+      },
+      "texto": "CONHEÇA NOSSA FÁBRICA\nALGUNS DE NOSSOS PROJETOS FINALIZADOS\nCom produtos de alta qualidade e visual sofisticados, a nossa equipe de vendas é muito bem preparada paraa\n    atender a sua necessidade, atingindo sua expectativa deixando seu ambiente ainda mais elegante e confortável.",
+      "texto_exibido": "CONHEÇA NOSSA FÁBRICA\nALGUNS DE NOSSOS PROJETOS FINALIZADOS\nCom produtos de alta qualidade e visual sofisticados, a nossa equipe de vendas é muito bem preparada paraa\n    atender a sua necessidade, atingindo sua expectativa deixando seu ambiente ainda mais elegante e confortável.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "lojas/loja-showrooms": {
+      "fonte": "https://www.banheirasbombanho.com.br/lojas/loja-showrooms.html",
+      "meta_atual": {
+        "title": "Loja Showrooms - Institucional",
+        "description": null
+      },
+      "texto": "Loja Showrooms\nVenha conhecer as\n                    lojas da\nBanheiras Bom Banho!\nFale com um representante agora!",
+      "texto_exibido": "Loja Showrooms\nVenha conhecer as\n                    lojas da\nBanheiras Bom Banho!\nFale com um representante agora!",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "contacts": {
+      "fonte": "https://www.banheirasbombanho.com.br/contacts",
+      "meta_atual": {
+        "title": "Fale Conosco - Banheiras Bom Banho",
+        "description": "Caso você tenha alguma dúvida sobre compra de banheira de hidro ou outras questões, entre em contato conosco! Acesse!"
+      },
+      "texto": "Fale Conosco\nEntre em contato com a Banheiras Bom Banho atráves do formulário de contato abaixo, ou pelos telefones ao lado. Estamos á sua disposição.",
+      "texto_exibido": "Fale Conosco\nEntre em contato com a Banheiras Bom Banho atráves do formulário de contato abaixo, ou pelos telefones ao lado. Estamos á sua disposição.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "rastreio": {
+      "fonte": "https://www.banheirasbombanho.com.br/rastreio",
+      "meta_atual": {
+        "title": "Banheiras - Rastreio | Banheiras Bom Banho",
+        "description": "Banheiras - Rastreio | Banheiras Bom Banho"
+      },
+      "texto": "Rastreio\nCNPJ1\nSelecione o CNPJ\n36.956.018/0001-09\n34.098.618.0001/58\nNumero do Pedido\nE-mail",
+      "texto_exibido": "Rastreio\nCNPJ1\nSelecione o CNPJ\n36.956.018/0001-09\n34.098.618.0001/58\nNumero do Pedido\nE-mail",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "manual-usuario-instalacao": {
+      "fonte": "https://www.banheirasbombanho.com.br/manual-usuario-instalacao",
+      "meta_atual": {
+        "title": "Manual do Usuário BBB",
+        "description": null
+      },
+      "texto": "Manual do Usuário e Instalação de Banheiras, Spas e Ôfuros\nBaixar agora o Manual do Usuário e Instalação\nCaro cliente, aqui você encontra um produto de alta tecnologia, resistência e qualidade, que irá lhe proporcionar momentos agradáveis, com amigos e familiares.\nImportante ler este manual atenciosamente, pois nele você encontrará informações quanto aos cuidados, manuseio e instalação do produto.",
+      "texto_exibido": "Manual do Usuário e Instalação de Banheiras, Spas e Ôfuros\nBaixar agora o Manual do Usuário e Instalação\nCaro cliente, aqui você encontra um produto de alta tecnologia, resistência e qualidade, que irá lhe proporcionar momentos agradáveis, com amigos e familiares.\nImportante ler este manual atenciosamente, pois nele você encontrará informações quanto aos cuidados, manuseio e instalação do produto.",
+      "emails_decodificados": [],
+      "removidos": []
+    },
+    "banheiras-instaladas": {
+      "fonte": "https://www.banheirasbombanho.com.br/banheiras-instaladas.html",
+      "meta_atual": {
+        "title": "Banheiras Instaladas | Banheiras Bom Banho",
+        "description": "A BBB Banheiras produz e instala todos os produtos com excelência. Acesse o site e confira os depoimentos dos nossos clientes. Leia agora!"
+      },
+      "texto": "Projetos\nTestemunhos\nO que nossos clientes falam da Banheiras Bom Banho?\nProfissionalismo, qualidade. Um conjunto de boas coisas, em meu caso especialmente para toda equipe da BBB.\nBeto Rodrigues\nExcelente atendimento, produtos de ótima qualidade!\nPriscila Silva\nExcelentes produtos, profissionais e atendimento sem exceção, a melhor opção de compra quando falamos de banheiras de hidromassagem e spas\nFábio Henrique\nProjetos de Banheiras\nMalibu\nBanheira completa em acrílico\nVitória com Abas\nBanheira completa em acrílico\nSevilha\nBanheira completa em acrílico\nFortaleza Excellence\nBanheira completa em acrílico\nFlorenza\nBanheira completa em acrílico\nMaresias\nBanheira completa em acrílico\nProjetos realizados de Spas\n<\nSpa Napole\nSpa completo em acrílico com cromoterapia\nSpa Atacama\nSpa completo em acrílico com cromoterapia\nSpa Fenix\nSpa completo em acrílico com cromoterapia\nSensação Gold\nSpa completo em acrílico com cromoterapia\nCalifornia\nSpa completo em acrílico com cromoterapia\nIpanema\nSpa completo em acrílico com cromoterapia",
+      "texto_exibido": "Projetos\nTestemunhos\nO que nossos clientes falam da Banheiras Bom Banho?\nProfissionalismo, qualidade. Um conjunto de boas coisas, em meu caso especialmente para toda equipe da BBB.\nBeto Rodrigues\nExcelente atendimento, produtos de ótima qualidade!\nPriscila Silva\nFábio Henrique\nProjetos de Banheiras\nMalibu\nBanheira completa em acrílico\nVitória com Abas\nBanheira completa em acrílico\nSevilha\nBanheira completa em acrílico\nFortaleza Excellence\nBanheira completa em acrílico\nFlorenza\nBanheira completa em acrílico\nMaresias\nBanheira completa em acrílico\nProjetos realizados de Spas\n<\nSpa Napole\nSpa completo em acrílico com cromoterapia\nSpa Atacama\nSpa completo em acrílico com cromoterapia\nSpa Fenix\nSpa completo em acrílico com cromoterapia\nSensação Gold\nSpa completo em acrílico com cromoterapia\nCalifornia\nSpa completo em acrílico com cromoterapia\nIpanema\nSpa completo em acrílico com cromoterapia",
+      "emails_decodificados": [],
+      "removidos": [
+        {
+          "frase": "Excelentes produtos, profissionais e atendimento sem exceção, a melhor opção de compra quando falamos de banheiras de hidromassagem e spas",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "o melhor / a maior",
+            "melhor + atributo"
+          ]
+        },
+        {
+          "frase": "Excelentes produtos, profissionais e atendimento sem exceção, a melhor opção de compra quando falamos de banheiras de hidromassagem e spas (Fábio Henrique)",
+          "regra": "superlativo_nao_comprovado",
+          "termos": [
+            "o melhor / a maior",
+            "melhor + atributo"
+          ],
+          "obs": "depoimento inteiro fora da exibição"
+        }
+      ]
+    }
+  },
+  "instaladores": {
+    "fonte": "https://www.banheirasbombanho.com.br/instaladores",
+    "intro_literal": "Segue a lista dos Instaladores Abaixo:",
+    "lista": [
+      {
+        "uf": "MG",
+        "cidade": "CONGONHAL",
+        "tecnico": "EDUARDO LUCAS DE VASCONCELOS SILVA",
+        "telefone": "(35) 99133-9244"
+      },
+      {
+        "uf": "MG",
+        "cidade": "POUSO ALEGRE",
+        "tecnico": "KLEBER AUGUSTO PEREIRA",
+        "telefone": "(35) 99252-4555"
+      },
+      {
+        "uf": "MG",
+        "cidade": "BELO HORIZONTE",
+        "tecnico": "SAULO FELIPE DOS SANTOS",
+        "telefone": "(31) 99465-8686"
+      },
+      {
+        "uf": "MG",
+        "cidade": "BELO HORIZONTE",
+        "tecnico": "VINICIUS BERNARDO",
+        "telefone": "(31) 99691-2521"
+      },
+      {
+        "uf": "RJ",
+        "cidade": "SÃO GONÇALO",
+        "tecnico": "ANTÔNIO LÁZARO",
+        "telefone": "(21) 98110-4807"
+      },
+      {
+        "uf": "RJ",
+        "cidade": "NOVA IGUAÇU",
+        "tecnico": "CLOBER GUEDES",
+        "telefone": "(21) 97269-1963"
+      },
+      {
+        "uf": "SP",
+        "cidade": "CARAGUATATUBA",
+        "tecnico": "DEVANIL PEREIRA DE FARIAS JUNIOR",
+        "telefone": "(12) 98216-2998"
+      },
+      {
+        "uf": "SP",
+        "cidade": "RIBEIRÃO PRETO",
+        "tecnico": "EDSON PEREIRA DA SILVA",
+        "telefone": "(16) 99624-8326"
+      },
+      {
+        "uf": "SP",
+        "cidade": "SÃO JOSÉ DOS CAMPOS",
+        "tecnico": "MARCIO IVAN WAGNER",
+        "telefone": "(12) 98703-4125"
+      },
+      {
+        "uf": "SP",
+        "cidade": "JUNDIAI",
+        "tecnico": "MICHEL RODRIGO DO PRADO",
+        "telefone": "(11) 98682-5077"
+      },
+      {
+        "uf": "SP",
+        "cidade": "CAMPINAS",
+        "tecnico": "RONALD ROSA SANCHES",
+        "telefone": "(19) 99816-7099"
+      },
+      {
+        "uf": "SP",
+        "cidade": "COTIA",
+        "tecnico": "WESLEI LUCIDE",
+        "telefone": "(11) 94136-8858"
+      }
+    ]
+  },
+  "tutoriais": {
+    "fonte": "https://www.banheirasbombanho.com.br/tutoriais",
+    "canal": "https://www.youtube.com/@bbbbanheiras",
+    "videos": [
+      {
+        "titulo": "Banheiras Bom Banho: Cuidados e Manutenção com Spa",
+        "url": "https://youtu.be/8Mr1cJ3yeo4"
+      },
+      {
+        "titulo": "Banheiras Bom Banho: Montagem e instalação elétrica de banheiras, spas e ofurôs",
+        "url": "https://youtu.be/MRBmxdMQuzg"
+      },
+      {
+        "titulo": "Banheiras Bom Banho: Montagem e instalação hidráulica de banheiras, spas e ofurôs",
+        "url": "https://youtu.be/6xCrQy5KtOU"
+      }
+    ]
+  },
+  "projetos": {
+    "banheiras": [
+      {
+        "nome": "Malibu",
+        "legenda": "Banheira completa em acrílico"
+      },
+      {
+        "nome": "Vitória com Abas",
+        "legenda": "Banheira completa em acrílico"
+      },
+      {
+        "nome": "Sevilha",
+        "legenda": "Banheira completa em acrílico"
+      },
+      {
+        "nome": "Fortaleza Excellence",
+        "legenda": "Banheira completa em acrílico"
+      },
+      {
+        "nome": "Florenza",
+        "legenda": "Banheira completa em acrílico"
+      },
+      {
+        "nome": "Maresias",
+        "legenda": "Banheira completa em acrílico"
+      }
+    ],
+    "spas": [
+      {
+        "nome": "Spa Napole",
+        "legenda": "Spa completo em acrílico com cromoterapia"
+      },
+      {
+        "nome": "Spa Atacama",
+        "legenda": "Spa completo em acrílico com cromoterapia"
+      },
+      {
+        "nome": "Spa Fenix",
+        "legenda": "Spa completo em acrílico com cromoterapia"
+      },
+      {
+        "nome": "Sensação Gold",
+        "legenda": "Spa completo em acrílico com cromoterapia"
+      },
+      {
+        "nome": "California",
+        "legenda": "Spa completo em acrílico com cromoterapia"
+      },
+      {
+        "nome": "Ipanema",
+        "legenda": "Spa completo em acrílico com cromoterapia"
+      }
+    ]
+  },
+  "depoimentos_projetos": [
+    {
+      "texto": "Profissionalismo, qualidade. Um conjunto de boas coisas, em meu caso especialmente para toda equipe da BBB.",
+      "autor": "Beto Rodrigues"
+    },
+    {
+      "texto": "Excelente atendimento, produtos de ótima qualidade!",
+      "autor": "Priscila Silva"
+    }
+  ],
+  "decisoes": [
+    {
+      "item": "faq.json faq-01 (valor do frete)",
+      "decisao": "fora da página de perguntas",
+      "motivo": "a resposta descreve o carrinho do site atual (\"ADD CARRINHO\", \"CALCULAR\"), que não existe no site novo (alerta da coleta); o texto literal fica no dado"
+    },
+    {
+      "item": "como-comprar: passos do carrinho",
+      "decisao": "fora da página",
+      "motivo": "o texto literal ensina a usar o carrinho, o login e o \"FECHAR PEDIDO\" da loja antiga; no site novo o pedido é feito com um consultor pelo WhatsApp (SPEC 10). A página mostra o caminho do site novo e os textos literais que continuam válidos (pagamento, entrega, desistência)"
+    },
+    {
+      "item": "representantes-credenciados: nomes, e-mails, CNPJs e CORE",
+      "decisao": "não publicados",
+      "motivo": "SPEC 4 e 15, até autorização da empresa; a página leva aos 8 consultores do rodapé"
+    },
+    {
+      "item": "contacts: lista de \"Vendas\", telefone e e-mail de marketing",
+      "decisao": "não publicados",
+      "motivo": "a lista diverge do rodapé e tem números fora de contatos.json; marketing omitido até confirmação (SPEC 15)"
+    },
+    {
+      "item": "inmetro: organismo certificador",
+      "decisao": "as duas versões, com nota",
+      "motivo": "a página cita ACERT e o rodapé cita o Instituto Brasileiro de Certificação (SPEC 0.3)"
+    },
+    {
+      "item": "loja-showrooms2 (lojas antigas: Pouso Alegre e outro endereço em Taubaté)",
+      "decisao": "não publicado",
+      "motivo": "versão antiga não linkada, sem confirmação (institucional.json)"
+    },
+    {
+      "item": "banheiras-instaladas: fotos dos projetos",
+      "decisao": "não publicadas",
+      "motivo": "as fotos dos projetos e das fachadas ainda não passaram pela revisão (uma foto da galeria mostra telefone fora dos contatos ativos); a página traz os nomes e legendas literais"
+    }
+  ]
+}

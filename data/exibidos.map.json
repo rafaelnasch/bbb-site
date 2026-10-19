@@ -169,6 +169,19 @@
     "data-coleta": {
       "data": "meta.json:data_coleta",
       "origem": "catalog.json:generated_at_source.coletado_em"
+    },
+    "institucional-texto": {
+      "data": "institucionais.json:paginas.<chave>.texto_exibido",
+      "origem": "_recon/html/inst-txt/<página>.txt | catalog.json:paginas_institucionais_e_blog[].texto",
+      "obs": "e-mails protegidos decodificados da mesma página; menos o filtro editorial e as remoções listadas em institucionais.json:paginas.<chave>.removidos"
+    },
+    "instalador": {
+      "data": "institucionais.json:instaladores.lista[]",
+      "origem": "institucional.json:instaladores.lista[]"
+    },
+    "loja-nome": {
+      "data": "lojas.json[].nome",
+      "origem": "institucional.json:lojas_showrooms.lojas[].nome"
     }
   }
 }

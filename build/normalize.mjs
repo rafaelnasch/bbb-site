@@ -1298,6 +1298,9 @@ const exibidos = {
     'meta-description': { data: 'produtos.json[]|categorias.json[].d_meta_exibida.description', origem: 'catalog.json:products[]|categories[].meta.description', obs: 'null = gerar de campos reais (SPEC 11.1); nunca usar meta.description nem og:description cru' },
     'contagem-por-tipo': { data: 'categorias.json[d_path=banheiras.html|spas.html|ofuros.html|sauna.html|acessorios.html].total_exibido', origem: 'catalog.json:categories[].total_exibido', obs: 'não contar produtos por d_tipo: o Spa Serena é listado em ofuros.html e em spas.html (conflito da fonte, d_tipo_conflito)' },
     'data-coleta': { data: 'meta.json:data_coleta', origem: 'catalog.json:generated_at_source.coletado_em' },
+    'institucional-texto': { data: 'institucionais.json:paginas.<chave>.texto_exibido', origem: '_recon/html/inst-txt/<página>.txt | catalog.json:paginas_institucionais_e_blog[].texto', obs: 'e-mails protegidos decodificados da mesma página; menos o filtro editorial e as remoções listadas em institucionais.json:paginas.<chave>.removidos' },
+    instalador: { data: 'institucionais.json:instaladores.lista[]', origem: 'institucional.json:instaladores.lista[]' },
+    'loja-nome': { data: 'lojas.json[].nome', origem: 'institucional.json:lojas_showrooms.lojas[].nome' },
   },
 };
 
@@ -1362,5 +1365,10 @@ gravar('editorial-log.json', {
   itens: editorialLog,
 });
 
+// Páginas institucionais (bloco 7): data/institucionais.json e o PDF do manual em public/manual/.
+const { gerarInstitucionais } = await import('./institucional-dados.mjs');
+const institucionais = gerarInstitucionais();
+
 console.log(`normalize: ${produtos.length} produtos, ${categorias.length} categorias, ${Object.keys(familias).length} famílias, ${contatos.length} contatos, ${lojasOut.length} lojas, ${faq.length} FAQ; coleta ${DATA_COLETA}; ${editorialLog.length} registros editoriais`);
+console.log(`normalize: ${Object.keys(institucionais.paginas).length} páginas institucionais, ${institucionais.instaladores.lista.length} instaladores`);
 for (const a of avisos) console.log(`aviso: ${a}`);
