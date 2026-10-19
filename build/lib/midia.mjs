@@ -123,6 +123,7 @@ function fotoFinal(slug, n, alt) {
     height: e.height,
     src: url(`media/p/${slug}/${slug}-${n}-${wSrc}.${fmtSrc}`),
     fontes,
+    sha1: m.sha1 ?? null,
     lqip: m.lqip ?? null,
     wall: m.wall ?? m['--wall'] ?? null,
     vermelho: Boolean(m.vermelho ?? m.fundo_vermelho ?? false),

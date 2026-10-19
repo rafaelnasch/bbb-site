@@ -10,6 +10,7 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, extname } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { gzipSync } from 'node:zlib';
 import { HtmlValidate } from 'html-validate';
 import { paths, BASE_PATH, SITE_URL, INDEXAR } from '../site.config.mjs';
 import { verificarContraste } from './lib/contraste.mjs';
@@ -73,6 +74,15 @@ export async function validar(dist = paths.dist) {
   // Produtos sem foto publicada (d_sem_foto, hoje só o Spa Serena): o Product sai sem image, porque a
   // regra 0.1 (nenhum dado inventado) prevalece sobre o campo recomendado da 13.7.
   const semFoto = new Set(JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8')).filter((p) => p.d_sem_foto).map((p) => `${p.slug}.html`));
+  // A exceção é registrada (institucionais.json `decisoes`) e aparece como pendente em todo build.
+  {
+    const instF0 = join(paths.data, 'institucionais.json');
+    const dec = existsSync(instF0) ? JSON.parse(readFileSync(instF0, 'utf8')).decisoes || [] : [];
+    const registrados = new Set(dec.flatMap((x) => x.produtos_jsonld || []).map((s) => `${s}.html`));
+    const semRegistro = [...semFoto].filter((f) => !registrados.has(f));
+    if (semRegistro.length) erros.push(`13.7 Product sem image sem exceção registrada em institucionais.json: ${semRegistro.join(', ')}`);
+    if (semFoto.size) pendentes.push(`13.7 Product sem image (sem foto na fonte), aguardando decisão do dono: ${[...semFoto].join(', ')}`);
+  }
 
   // 13.3 lista negra em qualquer arquivo de texto de dist/
   for (const f of todos.filter((x) => TEXTO_EXT.has(extname(x)))) {
@@ -205,6 +215,32 @@ export async function validar(dist = paths.dist) {
       if (!existsSync(join(dist, rel))) erro(f, `filme ausente em dist/: ${s}`);
     }
     if (comGaleria.has(relative(dist, f)) && !/\bmedia\/p\//.test(h)) erro(f, 'produto com galeria sem foto de media/p');
+  }
+
+  // SPEC 12: orçamento de JS (gzip) por tipo de página, somando os módulos referenciados no HTML e o JS
+  // inline; o índice do escolhedor e do comparador tem teto próprio (40 KB gzip).
+  {
+    const gz = new Map();
+    const gzDe = (f) => { if (!gz.has(f)) gz.set(f, gzipSync(readFileSync(f)).length); return gz.get(f); };
+    const cats = new Set(JSON.parse(readFileSync(join(paths.data, 'categorias.json'), 'utf8')).map((c) => c.d_path));
+    const slugsP = new Set(JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8')).map((p) => `${p.slug}.html`));
+    const KB = 1024;
+    const teto = (rel) => (slugsP.has(rel) ? 30 * KB : 25 * KB);
+    for (const f of htmls) {
+      const h = readFileSync(f, 'utf8');
+      if (/<meta http-equiv="refresh"/i.test(h)) continue;
+      const rel = relative(dist, f).split('\\').join('/');
+      let total = 0;
+      // Módulos em src e no JSON de configuração (carregados sob demanda): todos contam, uma vez cada.
+      for (const src of new Set([...h.matchAll(/"([^"]*\/assets\/js\/[^"]+\.js)"/g)].map((m) => m[1]))) {
+        const a = join(dist, decodeURI(src).replace(new RegExp(`^${BASE_PATH}/?`), ''));
+        if (existsSync(a)) total += gzDe(a);
+      }
+      for (const [, js] of h.matchAll(/<script>([\s\S]*?)<\/script>/g)) total += gzipSync(js).length;
+      if (total > teto(rel)) erro(f, `JS ${(total / KB).toFixed(1)} KB gzip acima do teto de ${teto(rel) / KB} KB (SPEC 12${cats.has(rel) ? ', coleção' : ''})`);
+    }
+    const ind = join(dist, 'dados', 'indice.json');
+    if (existsSync(ind) && gzDe(ind) > 40 * KB) erro(ind, `índice com ${(gzDe(ind) / KB).toFixed(1)} KB gzip (teto 40 KB, SPEC 12)`);
   }
 
   // SEO, GEO e AEO (SPEC 11 e 14): JSON-LD por tipo, cabeça única, OG/Twitter, CSP, sitemaps, robots,

@@ -294,6 +294,8 @@ export function gerarLlms(D, { imagensPorSlug = new Map(), colecoesIndexaveis = 
   L.push(...blocoComprar(D));
   L.push('## Coleções');
   L.push('');
+  L.push('Contagem de cada coleção: modelos listados na página da coleção. O catálogo em texto (llms-full.txt) agrupa por tipo de produto, e a contagem pode diferir quando a listagem do site inclui um modelo de outro tipo ou deixa de fora um item sem coleção.');
+  L.push('');
   for (const { t, c } of raizes) L.push(`- [${c.nome}](${link(c.d_path)}): ${c.total_exibido} ${c.total_exibido === 1 ? NOME_TIPO[t].toLowerCase() : PLURAL_TIPO[t]}`);
   for (const c of colecoesIndexaveis) {
     if (Object.values(RAIZ_TIPO).includes(c.d_path)) continue;
@@ -338,6 +340,13 @@ export function gerarLlms(D, { imagensPorSlug = new Map(), colecoesIndexaveis = 
     if (!lista.length) continue;
     F.push(`## ${PLURAL_TIPO[tipo][0].toUpperCase()}${PLURAL_TIPO[tipo].slice(1)} (${lista.length})`);
     F.push('');
+    // Mesma base do llms.txt quando possível; se a listagem da coleção traz outro número, as duas
+    // contagens aparecem com a explicação (nenhuma é escolhida).
+    const raizCat = D.catPorPath.get(RAIZ_TIPO[tipo]);
+    if (raizCat && raizCat.total_exibido !== lista.length) {
+      F.push(`Contagem por tipo de produto: ${lista.length}. A página da coleção [${raizCat.nome}](${link(raizCat.d_path)}) lista ${raizCat.total_exibido}, porque a listagem do site inclui ou deixa de fora modelos de outro tipo (por exemplo, um spa listado entre os ofurôs ou um acessório sem coleção).`);
+      F.push('');
+    }
     for (const p of lista) F.push(...linhasProduto(p, imagensPorSlug.get(p.slug) || [], produtos));
   }
   F.push('## Perguntas frequentes (respostas publicadas pela empresa)');
@@ -434,10 +443,13 @@ export function gerarSeo(dist = paths.dist) {
     .map((f) => ({ loc: abs(relative(dist, f).split('\\').join('/')), lastmod: hoje }))
     .sort((a, b) => (a.loc < b.loc ? -1 : 1));
 
-  writeFileSync(join(dist, 'sitemap-produtos.xml'), urlset(grupos.produtos, { imagens: true }));
-  writeFileSync(join(dist, 'sitemap-colecoes.xml'), urlset(grupos.colecoes));
-  writeFileSync(join(dist, 'sitemap-paginas.xml'), urlset(grupos.paginas));
-  writeFileSync(join(dist, 'sitemap-plantas.xml'), urlset(pdfs));
+  // Com INDEXAR=false (prévia), todas as páginas saem com noindex: os sitemaps saem vazios (SPEC 14:
+  // nenhuma URL noindex dentro do sitemap). A estrutura fica pronta e se enche ao ligar INDEXAR.
+  const so = (lista) => (INDEXAR ? lista : []);
+  writeFileSync(join(dist, 'sitemap-produtos.xml'), urlset(so(grupos.produtos), { imagens: true }));
+  writeFileSync(join(dist, 'sitemap-colecoes.xml'), urlset(so(grupos.colecoes)));
+  writeFileSync(join(dist, 'sitemap-paginas.xml'), urlset(so(grupos.paginas)));
+  writeFileSync(join(dist, 'sitemap-plantas.xml'), urlset(so(pdfs)));
   writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${SITEMAPS.map((s) => `  <sitemap>\n    <loc>${xml(abs(s))}</loc>\n    <lastmod>${hoje}</lastmod>\n  </sitemap>`).join('\n')}\n</sitemapindex>\n`);
   writeFileSync(join(dist, 'robots.txt'), robotsTxt());
 
@@ -460,5 +472,5 @@ export function gerarSeo(dist = paths.dist) {
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const r = gerarSeo();
-  console.log(`seo: robots.txt (${r.indexar ? 'indexa' : 'Disallow: /'}) · sitemaps: ${r.produtos} produtos (${r.imagens} imagens), ${r.colecoes} coleções, ${r.paginas} páginas, ${r.pdfs} PDFs · llms.txt, llms-full.txt, dados/catalogo.json`);
+  console.log(`seo: robots.txt (${r.indexar ? 'indexa' : 'Disallow: /'}) · sitemaps${r.indexar ? '' : ' vazios na prévia (com INDEXAR=true)'}: ${r.produtos} produtos (${r.imagens} imagens), ${r.colecoes} coleções, ${r.paginas} páginas, ${r.pdfs} PDFs · llms.txt, llms-full.txt, dados/catalogo.json`);
 }

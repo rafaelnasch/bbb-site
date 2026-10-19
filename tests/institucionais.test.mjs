@@ -279,7 +279,9 @@ test('FAQ: 44 itens fora da garantia, cada ausência com decisão registrada', (
     assert.ok(inst.decisoes.some((d) => d.item.includes(f.id)), `${f.id} fora sem decisão registrada`);
   }
   for (const id of ['faq-34', 'faq-38']) assert.ok(vis.has(id), `${id} visível`);
-  assert.ok(inst.decisoes.some((d) => /42 de 44/.test(d.item) && d.aprovacao_do_dono === 'pendente'));
+  assert.ok(inst.decisoes.some((d) => /41 de 44/.test(d.item) && d.aprovacao_do_dono === 'pendente'));
+  // faq-46 (cor de outra cor): conflito da fonte sobre cor, fora até a decisão (SPEC 0.3 e 15).
+  assert.ok(!vis.has('faq-46'));
 });
 
 test('pontes: toda URL 200 do site atual tem página ou ponte (menos /outlet); script depois do link', () => {

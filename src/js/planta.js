@@ -95,10 +95,13 @@
     fig.planta = { zoomEm, recentrar, centrarEm };
 
     function centrarEm(px, py, caixa = null) {
-      // Leva o ponto (x, y em pixels da planta) ao centro, ampliando para 2,5x se estiver em 1x.
+      // Leva o ponto (x, y em pixels da planta) ao centro, ampliando para 2,5x se estiver em 1x (sem caixa).
       // Com caixa ({x0, y0, x1, y1} em pixels da planta), a vista não sai dela: se a caixa couber
       // inteira na vista num eixo, fica centrada nesse eixo (usado pelo tour da home).
-      if (z < 2) z = 2.5;
+      // Com caixa, o zoom é o que faz a caixa inteira caber na vista (todas as cotas visíveis, nunca
+      // cortadas na borda), entre 1x e 2,5x.
+      if (caixa) z = Math.max(1, Math.min(2.5, vw / ((caixa.x1 - caixa.x0) * fit), vh / ((caixa.y1 - caixa.y0) * fit)));
+      else if (z < 2) z = 2.5;
       const s = fit * z;
       x = vw / 2 - px * s;
       y = vh / 2 - py * s;

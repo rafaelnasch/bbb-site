@@ -1,3 +1,5 @@
+/* Tokens usados só fora da primeira tela (fora do CSS crítico; SPEC 5.2). */
+:root{--cmp-3:#F4A6C0;--ease-io:cubic-bezier(.77,0,.175,1);--ease-sheet:cubic-bezier(.32,.72,0,1);--t-press:140ms;--t-ui:200ms;--t-swap:800ms;--fs-display:clamp(2.75rem,1.4rem + 6vw,7.5rem);--sombra-1:0 1px 2px rgb(7 28 43 / .06),0 8px 24px -12px rgb(7 28 43 / .18)}
 /* Componentes do núcleo carregados fora do CSS crítico: gavetas, canais de WhatsApp, rodapé,
    bandeja do comparador, trilha e moldura de foto. */
 
@@ -78,6 +80,23 @@ html:has(.gaveta[open]){overflow:hidden}
 .bandeja__rem{display:inline-grid;place-items:center;width:44px;height:44px;margin:-4px 0;border-radius:50%;color:var(--porcelain)}
 .bandeja__acoes{display:flex;align-items:center;gap:6px;margin-left:auto}
 .bandeja__acoes .btn{min-height:44px;padding:.5em 1.2em;font-size:.9375rem}
+/* Foco pelo teclado nunca fica atrás da doca de compra nem da bandeja (WCAG 2.4.11): as duas alturas
+   vêm de monte.js (--doca-h) e core.js (--bandeja-h). Fora do crítico: as barras só existem com JS. */
+html{scroll-padding-bottom:calc(var(--doca-h,0px) + var(--bandeja-h,0px) + 16px)}
+/* Celular: a bandeja fica recolhida numa linha (contagem + Comparar) e abre a lista ao tocar, para não
+   tomar a tela nem esconder o foco (SPEC 13; WCAG 2.4.11). */
+.bandeja__abre{display:none}
+@media (max-width:1023px){
+  .bandeja{padding-block:6px calc(6px + env(safe-area-inset-bottom))}
+  .bandeja__in{flex-wrap:nowrap;gap:8px}
+  .bandeja__rot{display:none}
+  .bandeja__abre{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px 0 10px;border-radius:var(--radius-chip);background:rgb(243 246 248/.09);color:var(--porcelain);font-size:.875rem;font-weight:600}
+  .bandeja__abre svg{transition:transform var(--t-ui) var(--ease-out);transform:rotate(180deg)}
+  .bandeja.is-aberta .bandeja__abre svg{transform:none}
+  .bandeja:not(.is-aberta) .bandeja__lista,.bandeja:not(.is-aberta) .bandeja__limpar{display:none}
+  .bandeja.is-aberta .bandeja__in{flex-wrap:wrap}
+  .bandeja.is-aberta .bandeja__lista{order:3;flex:1 1 100%}
+}
 .bandeja__limpar{min-height:44px;padding:0 12px;color:var(--muted-on-dark);font-size:.875rem;text-decoration:underline;text-underline-offset:.2em}
 
 /* ---------- Rodapé (SPEC 10.4) ---------- */
@@ -154,3 +173,24 @@ html:not(.js) .cab{position:relative}
 .cab__whats .btn:focus-visible,.cab__whats-mais:focus-visible{outline-color:#fff;outline-offset:-5px}
 html[data-lite] *,html[data-lite] *::before,html[data-lite] *::after{scroll-behavior:auto!important}
 .cab__badge{position:absolute;top:5px;right:3px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--porcelain);color:var(--ink);font:700 .6875rem/18px var(--f-body);text-align:center;box-shadow:0 0 0 2px var(--room)}
+/* Pausar movimento (barra superior; WCAG 2.2.2). Só texto a partir de 768 px; no celular, ícone de 44 px. */
+.topo__mov{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:44px;padding:0;border:0;background:none;color:inherit;font:inherit;cursor:pointer}
+@media (min-width:768px){.topo__mov-t{display:inline}}
+.topo__mov[hidden]{display:none}
+.topo__mov-r,.topo__mov[aria-pressed="true"] .topo__mov-p{display:none}
+.topo__mov[aria-pressed="true"] .topo__mov-r{display:inline}
+
+/* Detalhes só visuais do cabeçalho (sem efeito no layout): fora do CSS crítico. */
+.topo .ic{opacity:.8}
+.cab.is-rolado{background:color-mix(in srgb,var(--room) 86%,transparent)}
+.cab__nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--glow);transform:scaleX(0);transform-origin:right}
+.cab__nav a[aria-current="page"]::after{transform:scaleX(1)}
+.cab__nav .cab__escolher::after{display:none}
+.cab__nav .cab__escolher .ic{color:var(--glow)}
+.cab__whats .btn .ic{color:#fff}
+
+/* Fora do crítico (só aparecem com foco ou abaixo da dobra). */
+.fio{height:1px;border:0;background:var(--rule)}
+
+/* Título de exibição (só na página do sistema visual): fora do crítico. */
+.t-display{font-size:var(--fs-display);font-weight:300;line-height:.98;letter-spacing:-.03em}

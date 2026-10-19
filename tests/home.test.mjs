@@ -49,12 +49,23 @@ test('portas com a contagem real (total_exibido) de cada coleção', () => {
   });
 });
 
-test('salas: 7 faixas, 4 peças cada, na ordem da listagem do site atual, contagem real e contorno', () => {
+test('salas: 7 faixas, 4 peças distintas cada, na ordem da listagem do site atual, contagem real e contorno', () => {
   const faixas = [...h.matchAll(/<section class="sala-faixa"[\s\S]*?<\/section>/g)].map((m) => m[0]);
   assert.equal(faixas.length, SALAS.length);
+  const porSlug = new Map(produtos.map((p) => [p.slug, p]));
+  const vistos = new Set();
   SALAS.forEach(([path], i) => {
     const slugs = [...faixas[i].matchAll(/<li class="cart" data-slug="([^"]+)"/g)].map((m) => m[1]);
-    assert.deepEqual(slugs, cat(path).produtos.slice(0, PECAS_POR_SALA), `${path}: ordem`);
+    assert.equal(slugs.length, PECAS_POR_SALA, `${path}: 4 peças`);
+    // Ordem do site atual (subsequência da listagem), com foto e sem repetir peça de outra sala.
+    const ordem = cat(path).produtos;
+    const pos = slugs.map((s) => ordem.indexOf(s));
+    assert.ok(pos.every((x, k) => x >= 0 && (k === 0 || x > pos[k - 1])), `${path}: ordem da listagem`);
+    for (const s of slugs) {
+      assert.ok(!porSlug.get(s).d_sem_foto, `${s}: sem foto`);
+      assert.ok(!vistos.has(s), `${s}: repetida entre salas`);
+      vistos.add(s);
+    }
     assert.equal(Number(/data-campo="categoria-total">(\d+)</.exec(faixas[i])[1]), cat(path).total_exibido);
     assert.ok(faixas[i].includes(`href="${BASE_PATH}/${path}"`));
   });
@@ -298,9 +309,12 @@ test('abertura: fontes inteiras fora do CSS crítico da home, pedidas com o site
   const site = readFileSync(join(paths.dist, css), 'utf8');
   assert.match(site, /@font-face\{font-family:Fraunces;/);
   assert.match(site, /@font-face\{font-family:"?Open Sans"?;/);
-  // As demais páginas continuam com as fontes no CSS crítico.
-  const outra = readFileSync(join(paths.dist, 'banheiras.html'), 'utf8');
+  // Páginas sem fontes depois da pintura (institucionais) continuam com as fontes no CSS crítico; coleção,
+  // produto e comparador também pedem as fontes só com o site.css (o LCP é a foto ou o texto da ferramenta).
+  const outra = readFileSync(join(paths.dist, 'como-comprar.html'), 'utf8');
   assert.match(/<style>([\s\S]*?)<\/style>/.exec(outra)[1], /@font-face\{font-family:Fraunces;/);
+  const col = readFileSync(join(paths.dist, 'banheiras.html'), 'utf8');
+  assert.doesNotMatch(/<style>([\s\S]*?)<\/style>/.exec(col)[1], /@font-face\{font-family:Fraunces;/);
 });
 
 test('vitrine do desktop: cena com o filme ou, sem ele, a foto recortada parada', () => {

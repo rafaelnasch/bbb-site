@@ -219,11 +219,15 @@ export function verificarSeo(dist = paths.dist) {
         if (!a || !existsSync(a)) erro(s, `imagem sem arquivo em dist/: ${i}`);
       }
     }
+    // Prévia (INDEXAR=false): toda página sai com noindex, então os sitemaps ficam vazios.
+    if (!INDEXAR) for (const s of SITEMAPS) if (existsSync(join(dist, s)) && /<url>/.test(readFileSync(join(dist, s), 'utf8'))) erro(s, 'INDEXAR=false com URL no sitemap (todas as páginas são noindex)');
     // Cobertura: todo produto e toda coleção indexáveis estão no sitemap certo.
+    if (INDEXAR) {
     const prodSm = new Set((existsSync(join(dist, 'sitemap-produtos.xml')) ? locs(readFileSync(join(dist, 'sitemap-produtos.xml'), 'utf8').replace(/<image:loc>[^<]*<\/image:loc>/g, '')) : []).map(decodeURIComponent));
     for (const r of regs) {
       if (/noindex/.test(r.robots) || r.canonical !== `${SITE_URL}/${r.caminho}`) continue;
       if (slugProd.has(r.saida) && !prodSm.has(r.canonical)) erro('sitemap-produtos.xml', `produto indexável ausente: ${r.saida}`);
+    }
     }
   }
 

@@ -163,7 +163,7 @@ export function doca(p, c) {
       ${c.esgotado
         ? html`<a${attrs({ class: 'btn btn--whats doca__btn', href: c.waEsgotado, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'doca_esgotado', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}Perguntar</a>`
         : html`<a${attrs({ class: 'btn btn--whats doca__btn', href: c.waCompra, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'doca', 'data-wa-sync': 'venda', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}<span>Comprar<span class="doca__longo"> pelo WhatsApp</span></span></a>`}
-      <a class="doca__cons" href="${url('consultores.html')}" data-gaveta-abrir="gaveta-whats" data-gaveta-foco="consultores">Escolher meu consultor</a>
+      <a class="doca__cons" href="${url('consultores.html')}" data-gaveta-abrir="gaveta-whats" data-gaveta-foco="consultores" aria-label="Escolher meu consultor">${icone('pessoas', { tamanho: 18 })}<span class="doca__cons-t" aria-hidden="true">Consultor</span></a>
     </div>
   </div>
 </div>`;

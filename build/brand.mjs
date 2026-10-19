@@ -31,6 +31,10 @@ await sharp({ create: { width: meta.width, height: meta.height, channels: 3, bac
   .png({ compressionLevel: 9 })
   .toFile(join(OUT, 'logo-bbb-claro-206x99.png'));
 
+// Logo claro no tamanho exibido no cabeçalho (40 px de altura, telas 1x), PNG com paleta: só redução, nunca
+// ampliação (SPEC 0.8). Telas densas usam o original de 206 x 99 (2x), que pesa menos que um 2x reamostrado.
+await sharp(join(OUT, 'logo-bbb-claro-206x99.png')).resize({ height: 40 }).png({ compressionLevel: 9, palette: true, colors: 32, effort: 10 }).toFile(join(OUT, 'logo-bbb-claro-h40.png'));
+
 const gota = join(SRC, GOTA);
 await sharp(gota).resize(32, 32).png({ compressionLevel: 9 }).toFile(join(OUT, 'favicon-32.png'));
 await sharp(gota).resize(192, 192).png({ compressionLevel: 9 }).toFile(join(OUT, 'favicon-192.png'));

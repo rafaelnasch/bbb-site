@@ -71,12 +71,14 @@
     if ('ResizeObserver' in w) new ResizeObserver(medir).observe(el); else w.addEventListener('resize', medir);
     if ('IntersectionObserver' in w) new IntersectionObserver((es) => { vis = es.some((x) => x.isIntersecting); ligar(); }).observe(el);
     d.addEventListener('visibilitychange', ligar);
+    d.addEventListener('bbb:movimento', ligar);
     w.matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change', (e) => { if (e.matches) cv.remove(); });
     medir();
     ligar();
   }
 
   const iniciar = () => { if (!BBB.lite) alvos.forEach(montar); };
+  d.addEventListener('bbb:movimento', () => { if (!BBB.lite) iniciar(); });
   const ocioso = () => requestAnimationFrame(() => requestAnimationFrame(() => (w.requestIdleCallback ? w.requestIdleCallback(iniciar, { timeout: 3000 }) : setTimeout(iniciar, 400))));
   if (d.readyState === 'complete') ocioso(); else w.addEventListener('load', ocioso, { once: true });
 })();

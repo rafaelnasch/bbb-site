@@ -9,9 +9,11 @@ export const SIZES_PRODUTO = '(min-width:1024px) 640px, 100vw';
  * @param foto  objeto de fotoProduto()
  * @param opts  { sizes, classe, prioridade: bool (LCP), alt (sobrescreve), vt, vtChegada }
  */
-export function picture(foto, { sizes = SIZES_CARTAO, classe = '', prioridade = false, alt = null, vt = null, vtChegada = null } = {}) {
+export function picture(foto, { sizes = SIZES_CARTAO, classe = '', prioridade = false, alt = null, vt = null, vtChegada = null, proporcao = false } = {}) {
   if (!foto) return html``;
-  const estilo = foto.lqip ? `background-image:url(${foto.lqip});background-size:cover` : null;
+  // proporcao: a proporção real da foto vai inline, para o espaço ficar reservado antes de a foto chegar
+  // mesmo quando o CSS troca o aspect-ratio (moldura do produto: "auto", sem recorte).
+  const estilo = [foto.lqip ? `background-image:url(${foto.lqip});background-size:cover` : null, proporcao && foto.width && foto.height ? `aspect-ratio:${foto.width}/${foto.height}` : null].filter(Boolean).join(';') || null;
   const img = html`<img${attrs({
     class: classe || null,
     src: foto.src,

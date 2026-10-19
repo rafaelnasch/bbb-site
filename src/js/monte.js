@@ -25,7 +25,8 @@
       g.querySelectorAll('input:checked').forEach((i) => {
         c += cent(i.dataset.preco);
         const rot = i.dataset.rotulo;
-        if (!rot) return;
+        // Opção vazia ("Nenhum", value="") é ausência de escolha: não entra na mensagem, como no build.
+        if (!rot || i.value === '') return;
         if (g.dataset.grupo === 'adicionais') s.adicionais.push(rot);
         else if (g.dataset.grupo === 'voltagem') s.voltagem = rot;
         else if (g.dataset.grupo === 'cor') s.cor = rot;

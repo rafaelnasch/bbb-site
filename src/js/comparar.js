@@ -30,9 +30,23 @@
   }
   function gravarUrl() {
     // Vírgulas sem codificar: o endereço fica legível para quem copia e manda (slugs já são seguros).
-    const sp = espaco();
-    const q = sel.length ? `?p=${sel.map(encodeURIComponent).join(',')}${sel.some((s) => tam[s]) ? `&t=${sel.map((s) => tam[s] || 0).join(',')}` : ''}${sp ? `&l=${sp.l}&c=${sp.c}` : ''}` : '';
+    const q = consulta();
     try { history.replaceState(history.state, '', q || location.pathname); } catch { /* sem history */ }
+  }
+  function consulta() {
+    const sp = espaco();
+    return sel.length ? `?p=${sel.map(encodeURIComponent).join(',')}${sel.some((s) => tam[s]) ? `&t=${sel.map((s) => tam[s] || 0).join(',')}` : ''}${sp ? `&l=${sp.l}&c=${sp.c}` : ''}` : '';
+  }
+  /**
+   * Mensagem ao consultor (SPEC 10.2): os modelos, o tamanho escolhido de cada um (rótulo literal da
+   * opção, só quando há escolha) e a URL do comparador com o estado. Um modelo só tem frase própria.
+   */
+  function mensagemWa(its) {
+    const nomes = its.map((it) => it.n);
+    const lista = nomes.length > 1 ? `${nomes.slice(0, -1).join(', ')} e ${nomes[nomes.length - 1]}` : nomes[0];
+    const abre = its.length > 1 ? `Quero ajuda para decidir entre ${lista}.` : `Quero ajuda com o modelo ${lista}.`;
+    const linha = (it) => `${it.n}${it.ts.length > 1 && tamanho(it) ? ` (tamanho ${tamanho(it)[0]})` : ''}: ${cfg.site}${it.s}.html`;
+    return [abre, ...its.map(linha), `${cfg.site}comparar.html${consulta()}`].join('\n');
   }
   const tamanho = (it) => it.ts[Math.min(tam[it.s] || 0, it.ts.length - 1)] || null;
   const espaco = () => {
@@ -133,18 +147,16 @@
       return `<tr${iguais ? ' data-igual' : ''}${iguais && so ? ' hidden' : ''}><th scope="row">${esc(l.rot)}</th>${l.vals.map((v) => `<td>${v}</td>`).join('')}</tr>`;
     }).join('');
     const wa = $('[data-cmp-wa]');
-    if (wa && BBB.wa) {
-      const nomes = its.map((it) => it.n);
-      const lista = nomes.length > 1 ? `${nomes.slice(0, -1).join(', ')} e ${nomes[nomes.length - 1]}` : nomes[0];
-      BBB.wa.texto(wa, [`Quero ajuda para decidir entre ${lista}.`, ...its.map((it) => `${cfg.site}${it.s}.html`)].join('\n'));
-    }
+    if (wa && BBB.wa) BBB.wa.texto(wa, mensagemWa(its));
   }
 
   function render() {
     const vazio = !sel.length;
     $('[data-cmp-vazio]').hidden = !vazio;
     $('[data-cmp-corpo]').hidden = vazio;
-    $('[data-cmp-planta]').hidden = vazio;
+    // A faixa das plantas fica sempre no fluxo (altura fixa): vazia, mostra só o convite (sem CLS).
+    $('[data-cmp-planta]').classList.toggle('is-vazio', vazio);
+    if (vazio) { $('[data-cmp-svg]').replaceChildren(); $('[data-cmp-leg]').innerHTML = '<span class="cmp-leg__vazio">Escolha até três modelos para ver os contornos na mesma escala.</span>'; }
     $('[data-cmp-add]').hidden = sel.length >= 3;
     gravarUrl();
     if (vazio) return;
@@ -198,7 +210,11 @@
       BBB.anunciar?.(so ? 'Mostrando só as linhas que mudam entre os modelos.' : 'Mostrando todas as linhas.');
     }
   });
-  $('[data-cmp-espaco]')?.addEventListener('input', () => { desenhar(); gravarUrl(); });
+  $('[data-cmp-espaco]')?.addEventListener('input', () => {
+    desenhar(); gravarUrl();
+    const wa = $('[data-cmp-wa]');
+    if (wa && BBB.wa && sel.length) BBB.wa.texto(wa, mensagemWa(sel.map((s) => porSlug.get(s))));
+  });
   $('[data-cmp-espaco]')?.addEventListener('change', guardar);
   $('[data-cmp-espaco]')?.addEventListener('submit', (e) => e.preventDefault());
   w.addEventListener('storage', (e) => { if (e.key === 'bbb:comparar') requestAnimationFrame(sincronizar); });

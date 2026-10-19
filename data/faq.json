@@ -721,7 +721,8 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
-    "resposta_exibida": "Para outras cores, será acrescido no prazo de entrega 20 dias úteis.",
-    "exibir": true
+    "resposta_exibida": "",
+    "exibir": false,
+    "motivo_nao_exibir": "conflito da fonte sobre cor de fabricação (SPEC 15): oculto até a decisão da empresa"
   }
 ]

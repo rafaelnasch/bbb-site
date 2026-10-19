@@ -67,7 +67,9 @@
   },
   "prazo_outras_cores": {
     "literal": "Para outras cores, será acrescido no prazo de entrega 20 dias úteis.",
-    "fonte": "https://www.banheirasbombanho.com.br/banheira-dupla-lyon-completa-com-hidro.html (descrição do produto)"
+    "fonte": "https://www.banheirasbombanho.com.br/banheira-dupla-lyon-completa-com-hidro.html (descrição do produto)",
+    "oculto_ate_decisao": true,
+    "motivo": "conflito da fonte sobre cor de fabricação (SPEC 15): coleções dizem \"Não estamos fabricando Produtos em cor\""
   },
   "entrega": {
     "literal": "Entregas em edifícios e residências são realizadas somente no térreo, não fazemos içamento dos produtos adquiridos. Entregamos para todo Brasil, exceto zona rural e estradas não asfaltadas assim como sítios e chácaras.",

@@ -60,7 +60,7 @@ function ogPadrao() {
  * @param {string} [p.ativo]      caminho do item de menu atual
  * @param {boolean}[p.sobre]      cabeçalho transparente sobre a sala escura do topo
  * @param {string} [p.esperar]    id de elemento que segura a primeira pintura (View Transition)
- * @param {Array}  [p.preload]    [{ href, as, type, fetchpriority, imagesrcset, imagesizes }]
+ * @param {Array}  [p.preload]    [{ href, as, type, fetchpriority, imagesrcset, imagesizes, media }]
  * @param {string} [p.classe]     classe do <body>
  * @param {Array}  [p.critico]    extras de src/css/critico/ inline nesta página (ex.: ['peca'])
  * @param {string} [p.cssCritico] CSS crítico extra do tipo de página (já minificado)
@@ -75,6 +75,8 @@ function ogPadrao() {
  * @param {object} [p.rodapeTardio] alturas reservadas {m,t,d} (px, iguais ou menores que as reais) para pular o
  *                                layout do rodapé até ele chegar perto da tela (templates/parts/tardio.mjs); usado na home
  * @param {boolean}[p.bandeja]   false omite a bandeja do comparador (no próprio comparador ela só cobriria a página)
+ * @param {boolean}[p.jsBaixa]   scripts com fetchpriority="low": a imagem do LCP não disputa banda com o JS (que só
+ *                                age depois do load)
  * @param {boolean}[p.semImagem] Product sem foto publicada (Spa Serena): a validação do JSON-LD aceita Product sem image
  */
 export function layout(p) {
@@ -118,7 +120,7 @@ export function layout(p) {
 <script>${raw(A.inlineJs)}</script>
 ${p.esperar ? html`<link rel="expect" href="#${p.esperar}" blocking="render">` : ''}
 ${preloadFontes.map((h) => html`<link rel="preload" href="${h}" as="font" type="font/woff2" crossorigin${attrs({ fetchpriority: p.fontes ? 'high' : null })}>`)}
-${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, as: l.as, type: l.type, fetchpriority: l.fetchpriority, imagesrcset: l.imagesrcset, imagesizes: l.imagesizes })}>`)}
+${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, as: l.as, type: l.type, fetchpriority: l.fetchpriority, imagesrcset: l.imagesrcset, imagesizes: l.imagesizes, media: l.media })}>`)}
 <style>${raw(critico)}</style>
 ${p.cssAposPintura ? '' : html`<link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>`}
 <noscript><link rel="stylesheet" href="${A.cssSite}"></noscript>
@@ -142,12 +144,12 @@ ${p.cssAposPintura ? '' : html`<link rel="stylesheet" href="${A.cssSite}" media=
 <meta name="twitter:image" content="${ogImg}">
 ${jsonld}
 <script type="application/json" id="bbb-assets"${attrs({ 'data-tardios': p.modulosTardios ? Object.keys(mapaModulos).join(' ') : null, 'data-css': p.cssAposPintura ? A.cssSite : null })}>${raw(JSON.stringify(mapaModulos).replace(/</g, '\\u003c'))}</script>
-<script type="module" src="${A.nucleo}"></script>
-${p.modulosTardios ? '' : Object.values(mapaModulos).map((src) => html`<script type="module" src="${src}"></script>`)}
+<script type="module" src="${A.nucleo}"${attrs({ fetchpriority: p.jsBaixa ? 'low' : null })}></script>
+${p.modulosTardios ? '' : Object.values(mapaModulos).map((src) => html`<script type="module" src="${src}"${attrs({ fetchpriority: p.jsBaixa ? 'low' : null })}></script>`)}
 </head>
 <body${attrs({ class: p.classe || null })}>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-${barraTopo()}
+${barraTopo({ movimento: /<video\b|data-agua|data-vapor/.test(String(p.corpo)) })}
 ${cabecalho({ ativo: p.ativo, sobre: p.sobre })}
 <main id="conteudo" tabindex="-1">
 ${p.corpo}
@@ -158,7 +160,8 @@ ${gavetaWhats()}
 ${p.bandeja === false ? '' : html`<div class="bandeja" data-bandeja hidden role="region" aria-label="Modelos para comparar">
   <div class="wrap bandeja__in">
     <span class="bandeja__rot">Comparar</span>
-    <ol class="bandeja__lista" data-bandeja-lista></ol>
+    <button class="bandeja__abre" type="button" data-bandeja-abre aria-expanded="false" aria-controls="bandeja-lista">${icone('chevron-baixo', { tamanho: 16 })}<span>Escolhidos <span class="num" data-comparar-n>0</span> de 3</span></button>
+    <ol class="bandeja__lista" id="bandeja-lista" data-bandeja-lista></ol>
     <div class="bandeja__acoes">
       <button class="bandeja__limpar" type="button" data-comparar-limpar>Limpar</button>
       <a class="btn btn--claro" href="${url('comparar.html')}" data-bandeja-ir>${icone('comparar', { tamanho: 18 })}Comparar <span class="num" data-comparar-n>0</span></a>

@@ -168,6 +168,7 @@
     }
     if (vazio) vazio.hidden = n > 0;
     chips(s);
+    d.querySelectorAll('[data-col-rapido]').forEach((b) => b.setAttribute('aria-pressed', String((s[b.dataset.colRapido] || []).includes(b.dataset.valor))));
     gravarUrl(s);
     if (anim && n !== ultimo && !BBB.lite) {
       grade.classList.remove('is-filtrando');
@@ -254,6 +255,17 @@
   form?.addEventListener('reset', () => requestAnimationFrame(() => { tamSel = null; ordens.forEach((x) => { x.value = 'posicao'; }); ordenar(); aplicar(true); }));
   form?.addEventListener('submit', (e) => { e.preventDefault(); aplicar(true); });
   d.querySelector('[data-col-limpar]')?.addEventListener('click', limpar);
+  // Filtros rápidos (forma e lugares) marcam o mesmo campo da gaveta de filtros.
+  d.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-col-rapido]');
+    if (!b || !form) return;
+    const cb = [...form.elements].find((el) => el.name === b.dataset.colRapido && el.value === b.dataset.valor);
+    if (!cb) return;
+    cb.checked = !cb.checked;
+    aplicar(true);
+    const n = itens.filter((it) => !it.li.hidden).length;
+    BBB.anunciar?.(`${n} ${n === 1 ? 'peça' : 'peças'}.`);
+  });
   d.addEventListener('click', (e) => {
     const a = e.target.closest('[data-col-tam]');
     if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
@@ -271,8 +283,9 @@
   aplicar(false);
 
   // ---------- Filme da sala (coleções raiz) ----------
+  // Só no desktop: no celular o filme fica como fundo parado (poster), sem baixar vídeo nem disputar o LCP.
   const filme = d.querySelector('video[data-filme]');
-  if (filme && !BBB.lite) {
+  if (filme && !BBB.lite && w.matchMedia('(min-width:1024px)').matches) {
     const ligar = () => {
       if (BBB.lite || filme.dataset.ok) return;
       filme.dataset.ok = '1';

@@ -43,7 +43,9 @@
     BBB.evento('whatsapp_click', {
       contexto: a.dataset.waContexto || 'pagina',
       papel: a.dataset.waPapel || null,
-      sku: a.dataset.sku || a.closest('[data-sku]')?.dataset.sku || null,
+      // Links gerais (cabeçalho, rodapé, gaveta, consultores) na página do produto levam a peça na
+      // mensagem: o SKU vem do formulário "Monte a sua" da página.
+      sku: a.dataset.sku || a.closest('[data-sku]')?.dataset.sku || d.querySelector('form[data-monte]')?.dataset.sku || null,
     });
   });
 })();

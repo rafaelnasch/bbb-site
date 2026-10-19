@@ -10,6 +10,7 @@ import { fmtMetros } from '../build/lib/medidas.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
 import { perguntaLegivel } from './parts/faq-bloco.mjs';
 import { rotuloTam } from './parts/planta.mjs';
+import { semAcento } from '../build/lib/texto.mjs';
 import { campo, tamanhosProduto, faixaMedidas, NOME_TIPO, PLURAL_TIPO } from '../build/lib/catalogo.mjs';
 
 const HOJE = new Date().toISOString().slice(0, 10);
@@ -176,8 +177,12 @@ function guiaLugares(D, produtos) {
 <p class="guia-nota">"A partir de" é o menor preço publicado do grupo, com o tamanho de menor preço, em ${D.dataColeta}. O valor final é confirmado pelo consultor.</p></section>
 <section class="guia-sec guia-sec--sala sala" aria-labelledby="g2-b"><h2 id="g2-b">O espaço de cada grupo, na mesma escala</h2>
 <div class="guia-grupos">${gs.map(([v, ps], i) => {
-      const tams = ps.flatMap((p) => tamanhosProduto(p).map((x) => x.cm)).filter(Boolean);
-      return tams.length ? html`<figure class="guia-grupo"><figcaption id="g2-n${i}"><b>${v}</b> · ${tams.length} ${tams.length === 1 ? 'tamanho' : 'tamanhos'}</figcaption>${nuvem(tams, { S, id: `g2-n${i}` })}</figure>` : '';
+      // Medidas distintas do grupo (versões irmãs repetem a mesma medida): a legenda conta modelos e
+      // medidas, não contornos.
+      const porMedida = new Map();
+      for (const t of ps.flatMap((p) => tamanhosProduto(p).map((x) => x.cm)).filter(Boolean)) porMedida.set(`${t.maior.toFixed(1)}x${t.menor.toFixed(1)}`, t);
+      const tams = [...porMedida.values()];
+      return tams.length ? html`<figure class="guia-grupo"><figcaption id="g2-n${i}"><b>${v}</b> · ${ps.length} ${ps.length === 1 ? 'modelo' : 'modelos'}, ${tams.length} ${tams.length === 1 ? 'medida' : 'medidas'}</figcaption>${nuvem(tams, { S, id: `g2-n${i}` })}</figure>` : '';
     })}</div>
 <p class="guia-nota">Contornos externos pelas medidas publicadas, todos na mesma escala, sobre grade de 10 cm.</p></section>
 ${cats.length ? html`<section class="guia-sec" aria-labelledby="g2-c"><h2 id="g2-c">Coleções de spas por lugares</h2>
@@ -215,17 +220,37 @@ ${ps.length ? html`<section class="guia-sec" aria-labelledby="g3-c"><h2 id="g3-c
   };
 }
 
+/**
+ * Chave de comparação de um item de série entre versões irmãs: minúsculas, sem acento, sem parênteses
+ * soltos e sem pontuação final. Só decide "igual ou diferente"; o texto exibido continua literal
+ * ("4 Jatos cromados)" na Básica e "4 Jatos cromados" na Completa são o mesmo item).
+ */
+export function chaveItem(i) {
+  return semAcento(String(i)).toLowerCase().replace(/[()]/g, ' ').replace(/[\s.;,:]+$/u, '').replace(/^[\s\-–]+/u, '').replace(/\s+/g, ' ').trim();
+}
+
 function guiaConfiguracao(D, produtos) {
   const ps = pares(D, 'Configuracao', 'Material').map((x) => {
     const bas = x.va === 'Básica' ? x.a : x.b, com = x.va === 'Básica' ? x.b : x.a;
     const ib = bas.d_itens_de_serie_exibidos || [], ic = com.d_itens_de_serie_exibidos || [];
     const pb = bas.preco.valores_numericos.finalPrice, pc = com.preco.valores_numericos.finalPrice;
-    return { ...x, bas, com, soCom: ic.filter((i) => !ib.includes(i)), soBas: ib.filter((i) => !ic.includes(i)), dif: Math.round((pc - pb) * 100) / 100 };
+    const kb = new Set(ib.map(chaveItem)), kc = new Set(ic.map(chaveItem));
+    return { ...x, bas, com, soCom: ic.filter((i) => !kb.has(chaveItem(i))), soBas: ib.filter((i) => !kc.has(chaveItem(i))), dif: Math.round((pc - pb) * 100) / 100 };
   }).filter((x) => campo(x.bas, 'Configuracao') === 'Básica' && campo(x.com, 'Configuracao') === 'Completa').sort((a, b) => a.tipo.localeCompare(b.tipo) || a.bas.nome.localeCompare(b.bas.nome, 'pt-BR'));
   const cont = contagemPorTipo(produtos, 'Configuracao');
+  // Contagem pela chave normalizada; exibe o texto literal mais frequente daquela chave.
   const freq = new Map();
-  for (const x of ps) for (const i of x.soCom) freq.set(i, (freq.get(i) || 0) + 1);
-  const top = [...freq.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'pt-BR')).slice(0, 8);
+  for (const x of ps) {
+    for (const k of new Set(x.soCom.map(chaveItem))) {
+      const e = freq.get(k) || { n: 0, textos: new Map() };
+      e.n++;
+      const lit = x.soCom.find((i) => chaveItem(i) === k);
+      e.textos.set(lit, (e.textos.get(lit) || 0) + 1);
+      freq.set(k, e);
+    }
+  }
+  const top = [...freq.values()].map((e) => [[...e.textos.entries()].sort((a, b) => b[1] - a[1])[0][0], e.n])
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'pt-BR')).slice(0, 8);
   const difs = ps.map((x) => x.dif);
   return {
     saida: 'guia/basica-ou-completa.html',

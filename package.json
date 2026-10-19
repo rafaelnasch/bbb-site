@@ -17,7 +17,7 @@
     "test:dados": "node --test tests/data.test.mjs",
     "test:midia": "node --test tests/media.test.mjs",
     "e2e": "playwright test tests/e2e",
-    "lhci": "lhci autorun",
+    "lhci": "INDEXAR=true node build/render.mjs && INDEXAR=true node build/seo.mjs && lhci autorun",
     "all": "npm run normalize && npm run media && npm run films && npm run media:home && npm run og && npm run build && npm run fontes:titulo && npm test",
     "brand": "node build/brand.mjs",
     "fontes": "node build/fontes.mjs",

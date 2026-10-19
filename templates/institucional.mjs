@@ -52,7 +52,7 @@ export function fotosFabrica(D) {
 function galeriaFabrica(D, { max = 8 } = {}) {
   const fotos = fotosFabrica(D).slice(0, max);
   if (!fotos.length) return '';
-  return html`<ul class="inst-fotos" role="list">${fotos.map((f, i) => html`<li class="inst-foto${i === 0 && f.width / f.height > 2 ? ' inst-foto--larga' : ''}" data-reveal style="--i:${i % 4}"><figure>${picture(f, { sizes: '(min-width:1024px) 420px, (min-width:600px) 50vw, 100vw' })}<figcaption class="vh">${f.alt}</figcaption></figure></li>`)}</ul>
+  return html`<ul class="inst-fotos" role="list">${fotos.map((f, i) => html`<li class="inst-foto${i === 0 && f.width / f.height > 2 ? ' inst-foto--larga' : ''}" data-reveal style="--i:${i % 4}"><figure>${picture(f, { sizes: '(min-width:1024px) 420px, (min-width:600px) 50vw, 100vw' })}</figure></li>`)}</ul>
 <p class="inst-legenda">Fotos da galeria da fábrica publicada pela empresa.</p>`;
 }
 
@@ -230,7 +230,7 @@ function siglas(tabela) {
 
 export function tabelasPrazo(tabela) {
   const ufs = siglas(tabela);
-  return html`${ufs.length ? html`<p class="inst-uf" data-so-js hidden><label class="inst-uf__campo"><span>Destacar o seu estado</span><select data-prazo-uf><option value="">Todos</option>${ufs.map((u) => html`<option value="${u}">${u}</option>`)}</select></label></p>` : ''}
+  return html`${ufs.length ? html`<p class="inst-uf" data-so-js><label class="inst-uf__campo"><span>Destacar o seu estado</span><select data-prazo-uf><option value="">Todos</option>${ufs.map((u) => html`<option value="${u}">${u}</option>`)}</select></label></p>` : ''}
   <div class="inst-prazos">${tabela.map((g) => html`<div class="rolagem" tabindex="0" role="region" aria-label="Prazos: ${g.grupo}">
     <table class="inst-tab num" data-prazo>
       <caption>${g.grupo}</caption>
@@ -259,7 +259,7 @@ ${corpoLeitura({
     <h2 class="inst-h2" id="prazos">Prazo por estado</h2>
     ${tabelasPrazo(Array.isArray(pz.tabela) ? pz.tabela : [])}
     ${notas.length ? html`<div class="inst-notas" data-campo="prazo-entrega">${notas.map((n) => html`<p>${n}</p>`)}</div>` : ''}
-    ${pol.prazo_outras_cores?.literal ? html`<p class="inst-notas"><span data-campo="prazo-entrega">${pol.prazo_outras_cores.literal}</span> <span class="inst-legenda">(texto publicado na descrição dos modelos)</span></p>` : ''}
+    ${pol.prazo_outras_cores?.literal && !pol.prazo_outras_cores.oculto_ate_decisao ? html`<p class="inst-notas"><span data-campo="prazo-entrega">${pol.prazo_outras_cores.literal}</span> <span class="inst-legenda">(texto publicado na descrição dos modelos)</span></p>` : ''}
     ${notaFonte(D, p.fonte)}`,
   })}`;
   return pagina(ctx, {
@@ -509,7 +509,7 @@ function atendimento(ctx) {
 <article class="dia inst">
   <div class="wrap inst__largo">
     <div class="inst-colunas inst-colunas--topo">
-      <section class="inst-bloco" aria-labelledby="at-canais"><h2 id="at-canais" class="inst-h2">Canais por assunto</h2>
+      <section class="inst-bloco" aria-labelledby="at-canais"><h2 id="at-canais" class="inst-h2">WhatsApp por assunto</h2>
         <ul class="canais">${linhaCanal('venda_principal', { contexto: 'atendimento', titulo: 'Compra' })}${linhaCanal('ajuda', { contexto: 'atendimento' })}${linhaCanal('rastreio', { contexto: 'atendimento' })}${linhaCanal('sac', { contexto: 'atendimento' })}</ul>
       </section>
       <section class="inst-bloco" aria-labelledby="at-cons"><h2 id="at-cons" class="inst-h2">Consultores de venda</h2>${listaConsultores({ contexto: 'atendimento_consultores' })}<p><a class="link" href="${url('consultores.html')}">Ver os consultores</a></p></section>

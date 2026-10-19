@@ -1,0 +1,23 @@
+/* Escolhedor e comparador: as áreas que dependem do índice ficam no fluxo desde a primeira pintura
+   (escondidas só visualmente enquanto o catálogo carrega), para nada abaixo delas se mover (CLS). */
+html:not(.js) .esc__grade,html:not(.js) .cmp-planta{display:none}
+.esc{position:relative}
+.esc__carregando{position:absolute;top:0}
+.is-carregando .esc__grade{visibility:hidden}
+.cmp-planta{display:grid;gap:20px;margin-top:clamp(20px,3vw,36px)}
+.cmp-fig,.cmp-espaco{display:grid;gap:12px}.campo{display:grid;gap:6px}
+.cmp-fig{padding:clamp(12px,2vw,20px)}
+.cmp-svg{display:block;width:100%;height:clamp(200px,34vw,400px)}
+/* Legenda: um item por linha (até 3 modelos de até 2 linhas, o espaço e a grade): altura reservada. */
+.cmp-leg{display:grid;align-content:start;gap:4px;min-height:calc(8 * 1.5em + 28px);font-size:.8125rem;line-height:1.5}
+@media (min-width:1024px){.cmp-leg{min-height:calc(5 * 1.5em + 16px)}}
+.escala__cab{font-size:.75rem;line-height:1.4}
+.escala__linha{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:10px}
+.campo__in{width:100%;min-height:48px;padding:10px 14px;font-size:1.125rem}
+.escala__txt{font-size:clamp(1.125rem,1rem + .5vw,1.375rem);line-height:1.35}
+.escala__aviso{font-size:.8125rem;line-height:1.5}
+@media (min-width:1024px){.cmp-planta{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);align-items:start}.esc__grade{display:grid;grid-template-columns:minmax(340px,400px) minmax(0,1fr);column-gap:clamp(32px,4vw,64px);align-items:start}}
+.esc__res{display:grid;gap:20px;min-width:0}
+.esc__res-cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 20px}
+.esc__res-acoes{display:flex;gap:8px}
+.esc__res-acoes>*,.col-ordem select{min-height:44px}

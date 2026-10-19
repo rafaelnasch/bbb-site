@@ -11,17 +11,18 @@ import { dirname, join } from 'node:path';
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const CONTORNO = JSON.parse(readFileSync(join(AQUI, 'geo', 'brasil-contorno.json'), 'utf8')).poligonos;
 
-// [longitude, latitude, lado do rótulo: e (direita), w (esquerda), n (acima), s (abaixo)]
+// [longitude, latitude, lado do rótulo: e (direita), w (esquerda), n (acima), s (abaixo), ne (acima, à direita)]. Contagem e Belo
+// Horizonte ficam a 12 km uma da outra: um rótulo abaixo e o outro acima, para não encostarem.
 const CIDADES = Object.freeze({
   'Congonhal/MG': [-46.0425, -22.1488, 'n'],
   'Taubaté/SP': [-45.5553, -23.0264, 'n'],
-  'Caraguatatuba/SP': [-45.4131, -23.6203, 'e'],
-  'Belo Horizonte/MG': [-43.9345, -19.9167, 'e'],
-  'Ribeirão Preto/SP': [-47.8103, -21.1775, 'w'],
+  'Caraguatatuba/SP': [-45.4131, -23.6203, 's'],
+  'Belo Horizonte/MG': [-43.9345, -19.9167, 'n'],
+  'Ribeirão Preto/SP': [-47.8103, -21.1775, 'n'],
   'Campinas/SP': [-47.0608, -22.9056, 'w'],
-  'Rio de Janeiro/RJ': [-43.1729, -22.9068, 'e'],
+  'Rio de Janeiro/RJ': [-43.1729, -22.9068, 'ne'],
   'Goiânia/GO': [-49.2648, -16.6869, 'e'],
-  'Contagem/MG': [-44.0539, -19.932, 'w'],
+  'Contagem/MG': [-44.0539, -19.932, 's'],
 });
 
 // Região ampliada (graus) e escala: 10 unidades por grau, longitude corrigida pelo cosseno de 20° S.

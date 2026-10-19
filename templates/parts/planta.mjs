@@ -112,7 +112,7 @@ export function explorador(p, t, pl, id, { prioridade = false } = {}) {
       ${marcas}
     </div>
   </div>
-  <div class="explorador__ctrl" data-so-js hidden>
+  <div class="explorador__ctrl" data-so-js>
     <button class="explorador__b" type="button" data-zoom="-1" aria-label="Diminuir">${raw('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>')}</button>
     <span class="explorador__nivel num" data-nivel aria-hidden="true">1x</span>
     <button class="explorador__b" type="button" data-zoom="1" aria-label="Ampliar">${raw('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>')}</button>

@@ -139,6 +139,7 @@ gl_FragColor=vec4(c,1.);}`;
       new IntersectionObserver((es) => { vis = es.some((x) => x.isIntersecting); if (vis) ligar(); else desligar(); }).observe(el);
     }
     d.addEventListener('visibilitychange', () => (d.hidden ? desligar() : ligar()));
+    d.addEventListener('bbb:movimento', () => (BBB.lite ? desligar() : ligar()));
     w.matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change', (e) => { if (e.matches) { desligar(); cv.remove(); } });
     cv.addEventListener('webglcontextlost', (e) => { e.preventDefault(); desligar(); cv.remove(); delete el.dataset.aguaOk; });
     medir();
@@ -147,6 +148,8 @@ gl_FragColor=vec4(c,1.);}`;
   }
 
   const iniciar = () => { if (!BBB.lite) alvos.forEach(montar); };
+  // Página aberta com o movimento pausado: monta ao retomar.
+  d.addEventListener('bbb:movimento', () => { if (!BBB.lite) iniciar(); });
   const ocioso = () => requestAnimationFrame(() => requestAnimationFrame(() => (w.requestIdleCallback ? w.requestIdleCallback(iniciar, { timeout: 2500 }) : setTimeout(iniciar, 300))));
   if (d.readyState === 'complete') ocioso(); else w.addEventListener('load', ocioso, { once: true });
 })();

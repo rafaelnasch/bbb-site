@@ -107,7 +107,7 @@ export function paginas(ctx) {
   <div class="esc__res-cab">
     <h2 id="esc-res-h" class="esc__res-h" tabindex="-1"><span class="num" data-esc-res-n>0</span> <span data-esc-res-t>modelos</span></h2>
     <div class="esc__res-acoes">
-      <label class="col-ordem"><span class="vh">Ordenar por</span><select data-esc-ordem><option value="encaixe">Melhor encaixe</option><option value="menor-preco">Menor preço</option><option value="maior-preco">Maior preço</option></select></label>
+      <label class="col-ordem"><span class="vh">Ordenar por</span><select data-esc-ordem><option value="encaixe">Ordem do catálogo</option><option value="menor-preco">Menor preço</option><option value="maior-preco">Maior preço</option></select></label>
       <button class="col-btn" type="button" data-esc-ver-escala aria-expanded="false" aria-controls="esc-escala">${icone('regua', { tamanho: 18 })}Ver em escala</button>
     </div>
   </div>
@@ -166,11 +166,11 @@ export function paginas(ctx) {
 </section>`;
 
   const app = html`<div class="dia esc-app">
-  <div class="wrap esc" data-esc data-passo="1">
+  <div class="wrap esc is-carregando" data-esc data-passo="1">
     <script type="application/json" data-config>${raw(JSON.stringify(config).replace(/</g, '\\u003c'))}</script>
     <div class="esc__carregando" data-esc-carregando data-so-js hidden>Carregando o catálogo...</div>
     <noscript><p class="esc__semjs">O escolhedor precisa de JavaScript. Você pode ver todos os modelos em <a class="link" href="${url('banheiras.html')}">Banheiras</a>, <a class="link" href="${url('spas.html')}">Spas</a> e <a class="link" href="${url('ofuros.html')}">Ofurôs</a>, ou falar com a equipe pelo WhatsApp.</p></noscript>
-    <div class="esc__grade" data-esc-grade data-so-js hidden>${form}${resultado}</div>
+    <div class="esc__grade" data-esc-grade>${form}${resultado}</div>
   </div>
 </div>`;
 
@@ -195,7 +195,7 @@ export function paginas(ctx) {
         ativo: 'escolher.html',
         sobre: true,
         classe: 'pg-escolher',
-        critico: ['ferramenta'],
+        critico: ['ferramenta', 'escolha'],
       }),
     },
     { saida: 'dados/indice.json', html: JSON.stringify(indice) },

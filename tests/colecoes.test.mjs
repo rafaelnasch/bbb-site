@@ -57,7 +57,7 @@ test('cartão: nome, preço por e de literais, link sem JS para a página do pro
     assert.equal(href, `${BASE_PATH}/${slug}.html`);
     assert.ok(existsSync(join(DIST, `${slug}.html`)));
     // botão Comparar só com JS
-    assert.match(li, /data-comparar="[^"]+"[^>]*data-so-js hidden/);
+    assert.match(li, /data-comparar="[^"]+"[^>]*data-so-js/);
   }
   // Selos "Esgotado" e "Planta oficial" só quando o dado sustenta
   for (const c of COLECOES) {

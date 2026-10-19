@@ -36,3 +36,4 @@
   .porta__nome{font-size:1.75rem}
   .porta__seta{display:block}
 }
+.cart__ctn{position:absolute;right:8px;bottom:8px;width:52px;height:68px}

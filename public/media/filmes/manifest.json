@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-19T10:21:18.524Z",
+ "gerado_em": "2026-10-19T19:38:27.458Z",
  "coletado_em": "18/10/2026",
  "ferramenta": "hyperframes@0.8.173",
  "regra": "WebM VP9 + MP4 H.264 1280x720, 30 fps, sem áudio, até 350 KB por arquivo; poster = último quadro (AVIF e WebP). Só imagens e números reais de data/.",
@@ -7087,12 +7087,6 @@
      "n": 1,
      "sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/v/i/vitoriana-1_w_1_1_1.jpg"
-    },
-    {
-     "slug": "banheira-vitoriana-para-criancas-0-58-x-1-21-x-0-40",
-     "n": 1,
-     "sha1": "9a2b81833dfa149bdef26439c21f6cf21069d2d3",
-     "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/v/i/vitoriana-15---pequenaw_2_1.jpg"
     }
    ],
    "largura": 1280,
@@ -7102,24 +7096,24 @@
    "audio": false,
    "webm": {
     "src": "media/filmes/colecao/banheiras.webm",
-    "bytes": 235951,
+    "bytes": 175267,
     "crf": 36,
     "codec": "vp9"
    },
    "mp4": {
     "src": "media/filmes/colecao/banheiras.mp4",
-    "bytes": 215964,
+    "bytes": 168288,
     "crf": 28,
     "codec": "h264"
    },
    "poster": {
     "avif": {
      "src": "media/filmes/colecao/banheiras-poster.avif",
-     "bytes": 7030
+     "bytes": 7530
     },
     "webp": {
      "src": "media/filmes/colecao/banheiras-poster.webp",
-     "bytes": 9866
+     "bytes": 10818
     },
     "quadro": "último"
    },
@@ -7161,12 +7155,6 @@
      "n": 1,
      "sha1": "9179a58d6adde3375fe29ac84fc44d4e6eab9999",
      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/a/savana_22032024_080905.jpg"
-    },
-    {
-     "slug": "spa-quadrado-chicago-completo-com-hidro-em-acrilico",
-     "n": 1,
-     "sha1": "ac80f0c731186703abd4c5fec92f6c44cfdc5989",
-     "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/p/spa-chicago-bbb.png"
     }
    ],
    "largura": 1280,
@@ -7176,24 +7164,24 @@
    "audio": false,
    "webm": {
     "src": "media/filmes/colecao/spas.webm",
-    "bytes": 319624,
+    "bytes": 227180,
     "crf": 36,
     "codec": "vp9"
    },
    "mp4": {
     "src": "media/filmes/colecao/spas.mp4",
-    "bytes": 249698,
+    "bytes": 188948,
     "crf": 28,
     "codec": "h264"
    },
    "poster": {
     "avif": {
      "src": "media/filmes/colecao/spas-poster.avif",
-     "bytes": 10345
+     "bytes": 9014
     },
     "webp": {
      "src": "media/filmes/colecao/spas-poster.webp",
-     "bytes": 13210
+     "bytes": 12394
     },
     "quadro": "último"
    },
@@ -7235,12 +7223,6 @@
      "n": 1,
      "sha1": "0690b45c02da0074005d613d17aa005fb4fdd185",
      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/o/f/ofuro-acqua_vip-individual-bbb1.png"
-    },
-    {
-     "slug": "ofuro-quadrado-osaka-completo-individual-com-hidro-em-acrilico",
-     "n": 1,
-     "sha1": "7d29b0e8939bd4cdc084051ea3463c1bcb1fb090",
-     "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/o/f/ofuro-individual-osaka-bbb_1.png"
     }
    ],
    "largura": 1280,
@@ -7250,24 +7232,24 @@
    "audio": false,
    "webm": {
     "src": "media/filmes/colecao/ofuros.webm",
-    "bytes": 263605,
+    "bytes": 187963,
     "crf": 36,
     "codec": "vp9"
    },
    "mp4": {
     "src": "media/filmes/colecao/ofuros.mp4",
-    "bytes": 225446,
+    "bytes": 165063,
     "crf": 28,
     "codec": "h264"
    },
    "poster": {
     "avif": {
      "src": "media/filmes/colecao/ofuros-poster.avif",
-     "bytes": 9304
+     "bytes": 9147
     },
     "webp": {
      "src": "media/filmes/colecao/ofuros-poster.webp",
-     "bytes": 12888
+     "bytes": 12150
     },
     "quadro": "último"
    },
@@ -7306,24 +7288,24 @@
    "audio": false,
    "webm": {
     "src": "media/filmes/colecao/sauna.webm",
-    "bytes": 259548,
+    "bytes": 201093,
     "crf": 36,
     "codec": "vp9"
    },
    "mp4": {
     "src": "media/filmes/colecao/sauna.mp4",
-    "bytes": 189360,
+    "bytes": 138422,
     "crf": 28,
     "codec": "h264"
    },
    "poster": {
     "avif": {
      "src": "media/filmes/colecao/sauna-poster.avif",
-     "bytes": 12870
+     "bytes": 12830
     },
     "webp": {
      "src": "media/filmes/colecao/sauna-poster.webp",
-     "bytes": 18490
+     "bytes": 18520
     },
     "quadro": "último"
    },
@@ -7380,24 +7362,24 @@
    "audio": false,
    "webm": {
     "src": "media/filmes/colecao/lancamentos.webm",
-    "bytes": 290104,
+    "bytes": 211735,
     "crf": 36,
     "codec": "vp9"
    },
    "mp4": {
     "src": "media/filmes/colecao/lancamentos.mp4",
-    "bytes": 225872,
+    "bytes": 183442,
     "crf": 28,
     "codec": "h264"
    },
    "poster": {
     "avif": {
      "src": "media/filmes/colecao/lancamentos-poster.avif",
-     "bytes": 11324
+     "bytes": 11263
     },
     "webp": {
      "src": "media/filmes/colecao/lancamentos-poster.webp",
-     "bytes": 14398
+     "bytes": 14514
     },
     "quadro": "último"
    },
@@ -11343,6 +11325,6 @@
   "plantas_sem_filme": 41,
   "tamanhos_sem_filme": 159,
   "acima_do_teto": [],
-  "bytes_total": 50895908
+  "bytes_total": 50266592
  }
 }

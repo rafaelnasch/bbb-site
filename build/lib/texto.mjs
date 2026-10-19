@@ -236,6 +236,37 @@ export function detectorDeClaims(claims) {
 }
 
 /**
+ * Conflito da fonte sobre cor de fabricação (SPEC 0.3 e 15): seis coleções dizem "Não estamos
+ * fabricando Produtos em cor", coleções antigas oferecem "184 cores diferentes" e a descrição dos
+ * modelos diz que "outras cores" acrescentam 20 dias úteis ao prazo. Nenhum lado é escolhido: as
+ * frases sobre cores disponíveis saem de todas as páginas até a empresa decidir (editorial-log).
+ * "4 cores básicas" e "seleção de cores" (luz da cromoterapia) não falam da cor da peça.
+ */
+export const DETECTOR_COR_FABRICACAO = {
+  regra: 'conflito_cor_de_fabricacao',
+  fn: (f) => {
+    const s = semAcento(String(f)).toLowerCase().replace(/\s+/g, ' ');
+    const t = [];
+    if (/nao estamos fabricando produtos em cor/.test(s)) t.push('não estamos fabricando produtos em cor');
+    if (/\boutras cores\b/.test(s)) t.push('outras cores');
+    if (/\b\d{2,} cores (diferentes|disponiveis)\b/.test(s)) t.push((s.match(/\b\d{2,} cores (diferentes|disponiveis)\b/) || [])[0]);
+    return t;
+  },
+};
+
+/**
+ * Frases da descrição de produto que ensinam a usar o carrinho do site atual (SPEC 10: no site novo o
+ * pedido é com o consultor pelo WhatsApp), mesma decisão da faq-01 e dos passos de como-comprar.
+ */
+export const DETECTOR_CARRINHO = {
+  regra: 'carrinho_do_site_atual',
+  fn: (f) => {
+    const s = semAcento(String(f)).toLowerCase();
+    return [/carrinho de compras/, /produtos relacionados/].filter((re) => re.test(s)).map((re) => re.source);
+  },
+};
+
+/**
  * Detectores editoriais na ordem de prioridade. Cada um devolve a lista de termos achados.
  * `claims` (opcional) liga o detector de autodeclarações.
  */

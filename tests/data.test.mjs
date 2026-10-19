@@ -527,6 +527,27 @@ describe('filtro editorial e texto oculto (SPEC 0.3, 0.4, 0.5)', () => {
     assert.ok(!/em (gel coat|acrílico)/.test(spaco.d_resumo.split(' é ')[1]));
   });
 
+  test('conflito nome x ficha em Material: madeira e vidro no nome contra Gel Coat na ficha (sauna)', () => {
+    const sauna = porSlug.get('sauna-compacta-bbb');
+    assert.deepEqual(sauna.d_conflito_nome_ficha, [{ campo: 'Material', nome_diz: 'Madeira & Vidro', ficha_diz: 'Gel Coat' }]);
+    assert.ok(!/gel coat/i.test(sauna.d_resumo), sauna.d_resumo);
+  });
+
+  test('conflito de cor de fabricação e carrinho do site atual: fora das descrições, coleções e FAQ, com registro', () => {
+    const reCor = /outras cores|fabricando produtos em cor|\d{2,} cores diferentes/i;
+    for (const p of produtos) {
+      assert.ok(!reCor.test(`${p.d_descricao_exibida}\n${p.d_descricao_curta_exibida}`), `${p.slug}: frase de cor`);
+      assert.ok(!/carrinho de compras|produtos relacionados/i.test(`${p.d_descricao_exibida}\n${p.d_descricao_curta_exibida}`), `${p.slug}: carrinho`);
+    }
+    for (const c of ler('categorias.json')) assert.ok(!reCor.test(c.d_descricao_exibida || ''), `${c.d_path}: frase de cor`);
+    const faq46 = ler('faq.json').find((f) => /outra cor/i.test(f.pergunta));
+    assert.equal(faq46.exibir, false);
+    const log = ler('editorial-log.json').itens;
+    assert.ok(log.filter((x) => x.regra === 'conflito_cor_de_fabricacao').length >= 270);
+    assert.ok(log.filter((x) => x.regra === 'carrinho_do_site_atual').length >= 270);
+    assert.equal(ler('politicas.json').prazo_outras_cores.oculto_ate_decisao, true);
+  });
+
   test('conflito nome x ficha em Lugares e Forma: os 14 produtos, sem escolher lado', () => {
     const LUGARES = [
       'banheira-dupla-paris-com-hidro', 'banheira-dupla-paris-com-hidro-em-acrilico',

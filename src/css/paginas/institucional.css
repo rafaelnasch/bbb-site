@@ -34,7 +34,9 @@
 .inst-legenda{font-size:.8125rem;line-height:1.5;color:var(--fg-2);max-width:68ch}
 .inst-fonte{display:flex;gap:8px;align-items:flex-start;font-size:.8125rem;line-height:1.5;color:var(--fg-2);max-width:72ch}
 .inst-fonte .ic{margin-top:3px;flex:none}
-.inst-fonte a{display:inline-flex;align-items:center;min-height:24px}
+.inst-fonte a{display:inline-flex;align-items:center;min-height:24px;position:relative}
+/* Alvo de toque de 44 x 44 px para o link curto ("fonte", "página de origem") sem mudar a linha de texto. */
+.inst-fonte a::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
 .inst-acoes{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .inst-bloco{display:grid;gap:16px;align-content:start}
 .inst-bloco>p{max-width:68ch}
@@ -241,3 +243,5 @@
 .p404__busca .btn{min-height:52px}
 .p404__lista{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .p404__col{padding-top:clamp(32px,4vw,56px)}
+.inst-nums figcaption a{position:relative}
+.inst-nums figcaption a::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}

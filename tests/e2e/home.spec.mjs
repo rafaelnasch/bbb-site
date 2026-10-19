@@ -105,10 +105,13 @@ test('celular: sem GSAP, com água depois do load, e nenhuma rolagem horizontal 
   await page.waitForTimeout(1500);
   expect(pedidos.some((u) => /vendor\/(gsap|ScrollTrigger)/.test(u))).toBe(false);
   // Alvos de toque das portas e do escolhedor >= 44 px
-  for (const sel of ['.porta__a', '.home-esc__ir', '.mapa__item a']) {
+  for (const sel of ['.porta__a', '.home-esc__ir']) {
     const box = await page.locator(sel).first().boundingBox();
-    expect(box.height, sel).toBeGreaterThanOrEqual(sel === '.mapa__item a' ? 32 : 44);
+    expect(box.height, sel).toBeGreaterThanOrEqual(44);
   }
+  // Celular: os nomes do mapa são legenda (sem link, os alvos se sobreporiam); os links ficam na página de lojas.
+  await expect(page.locator('.mapa__lista')).toBeHidden();
+  expect(await page.locator('.mapa__rotulos .mapa__item').count()).toBeGreaterThan(0);
 });
 
 test('sem JavaScript: portas, salas, preços e WhatsApp presentes; escolhedor vira link', async ({ browser }) => {
@@ -194,6 +197,7 @@ async function contrasteMinimo(page, seletor) {
 }
 
 test('celular: título sem foto por trás (contraste medido depois de tudo aceso), portas com foto real e LCP no H1', async ({ page }) => {
+  test.setTimeout(90_000); // 4 larguras com 7 s de espera cada
   for (const [w, h] of [[360, 780], [390, 844], [430, 932], [768, 1024]]) {
     await page.setViewportSize({ width: w, height: h });
     await page.addInitScript(() => {

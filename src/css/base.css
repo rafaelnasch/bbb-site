@@ -37,21 +37,19 @@ p,li,dd,figcaption{text-wrap:pretty}
 }
 
 /* Tipografia */
-h1,h2,h3,.t-h1,.t-h2,.t-h3,.t-display{font-family:var(--f-display);font-optical-sizing:auto;font-weight:350;line-height:1.06;letter-spacing:-.018em;text-wrap:balance}
-h1,.t-h1{font-size:var(--fs-h1);font-weight:300}
-h2,.t-h2{font-size:var(--fs-h2);line-height:1.12}
+h1,h2,h3,.t-h3,.t-display{font-family:var(--f-display);font-optical-sizing:auto;font-weight:350;line-height:1.06;letter-spacing:-.018em;text-wrap:balance}
+h1{font-size:var(--fs-h1);font-weight:300}
+h2{font-size:var(--fs-h2);line-height:1.12}
 h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
-.t-display{font-size:var(--fs-display);font-weight:300;line-height:.98;letter-spacing:-.03em}
 .etiqueta{display:inline-flex;align-items:center;gap:.6em;font:600 var(--fs-label)/1.35 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
 .etiqueta--linha::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
 .lead{font-size:clamp(1.125rem,1.02rem + .5vw,1.3125rem);line-height:1.55;color:var(--fg-2);max-width:62ch}
 .pequeno{font-size:var(--fs-small);line-height:1.5}
-.num,.tabular{font-variant-numeric:tabular-nums lining-nums}
+.num{font-variant-numeric:tabular-nums lining-nums}
 
 /* Layout (SPEC 5.4). A grade de 12/6/4 colunas está em utilitarios.css. */
 .wrap{width:min(100% - 2*var(--pad-x), var(--maxw));margin-inline:auto}
 .secao{padding-block:clamp(56px,6vw + 24px,128px)}
-.fio{height:1px;border:0;background:var(--rule)}
 .vh{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important}
 
 /* Botões (SPEC 10.3): alvo mínimo 48 px, texto quebra linha, nunca sai da tela. */

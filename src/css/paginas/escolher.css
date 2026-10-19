@@ -1,7 +1,7 @@
 /* Escolhedor (SPEC 9.4): uma pergunta por tela no celular, painel lateral no desktop. */
 .esc__grade{display:grid;gap:32px;align-items:start}
 .esc__form{display:grid;gap:20px;min-width:0}
-.esc__prog{display:flex;gap:4px;list-style:none;padding:0}
+.esc__prog{display:flex;gap:2px;list-style:none;padding:0}
 .esc__prog li{flex:1}
 .esc__prog-b{display:grid;gap:6px;width:100%;min-height:44px;padding:8px 0 0;text-align:left;font-size:0;color:var(--fg-2)}
 .esc__prog-b::before{content:"";height:3px;border-radius:2px;background:var(--rule);transition:background-color var(--t-in) var(--ease-out)}
@@ -27,7 +27,7 @@
 .esc-op input:disabled+span{opacity:.45;cursor:not-allowed}
 @media (hover:hover){.esc-op:hover>span{border-color:var(--fg)}}
 .esc-check{display:inline-flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;font-size:.9375rem}
-.esc-check input{width:20px;height:20px;accent-color:var(--brand)}
+.esc-check{position:relative}.esc-check input{width:24px;height:24px;accent-color:var(--brand)}
 .esc__nav{position:sticky;bottom:calc(var(--bandeja-h,0px) + 8px);z-index:5;display:flex;gap:10px;padding:10px;border-radius:calc(var(--radius) + 10px);background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--sombra-1)}
 .esc__nav .btn{flex:1 1 auto}
 .esc__avancar{--b-bg:var(--ink);flex-grow:2!important;flex-wrap:wrap;gap:4px 10px}
@@ -58,7 +58,7 @@ html[data-lite] .esc-c{animation:none}
 @media (prefers-color-scheme:dark){.esc-c__folga.is-quase{color:#FFAA9C}}
 .esc-c__preco{font-weight:600;font-size:.9375rem}
 .esc-c__acoes{grid-column:2;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-.esc-c .cart__cmp{position:relative;z-index:1;min-height:40px;margin-top:2px;font-size:.8125rem}
+.esc-c .cart__cmp{position:relative;z-index:1;min-height:44px;margin-top:2px;font-size:.8125rem}
 .esc-c .selo{position:relative;z-index:1}
 @media (hover:hover){.esc-c:hover{border-color:color-mix(in srgb,var(--fg) 40%,transparent)}.esc-c:hover .esc-c__nome a{text-decoration:underline;text-underline-offset:.2em}}
 .esc__quase{display:grid;gap:10px;padding-top:12px;border-top:1px dashed var(--rule)}

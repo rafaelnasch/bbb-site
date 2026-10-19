@@ -29,15 +29,17 @@ function contagemTexto(n) {
   return n == null ? null : `${n} ${n === 1 ? 'item' : 'itens'} no catálogo`;
 }
 
-export function barraTopo() {
+/** movimento: a página tem vídeo em loop, água ou vapor; só então o botão de pausar existe (WCAG 2.2.2). */
+export function barraTopo({ movimento = false } = {}) {
   const D = dados();
   const fabrica = D.lojas.find((l) => l.n === 1) || D.lojas[0];
   const fixo = D.empresa.telefone_fixo;
-  return html`<div class="topo">
+  return html`<div class="topo" role="region" aria-label="Contato rápido">
   <div class="wrap topo__in">
     <p class="topo__local">${icone('local', { tamanho: 16 })}<span>Fábrica em ${fabrica.cidade}, ${fabrica.uf}</span></p>
     <div class="topo__acoes">
       <a class="topo__fixo num" href="${fixo.tel}" data-campo="empresa-telefone">${icone('telefone', { tamanho: 15 })}${fixo.display}</a>
+      ${movimento ? html`<button class="topo__mov" type="button" data-movimento aria-pressed="false" aria-label="Pausar movimento"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="topo__mov-p" d="M9 5v14M15 5v14"/><path class="topo__mov-r" d="m8 5 11 7-11 7z"/></svg><span class="topo__mov-t">Pausar movimento</span></button>` : ''}
       <a${attrs({ class: 'topo__ajuda', href: D.wa('ajuda'), target: '_blank', rel: 'noopener', 'data-wa-papel': 'ajuda', 'data-wa-contexto': 'barra_superior', 'data-campo': 'contato-numero' })}>${icone('whatsapp', { tamanho: 15 })}Preciso de ajuda</a>
     </div>
   </div>
@@ -55,16 +57,16 @@ export function cabecalho({ ativo = null, sobre = false } = {}) {
   });
   return html`<header class="cab${sobre ? ' cab--sobre' : ''}">
   <div class="wrap cab__in">
-    <a class="cab__logo" href="${url('')}"><img src="${url('brand/logo-bbb-claro-206x99.png')}" width="206" height="99" alt="Banheiras Bom Banho, página inicial"></a>
+    <a class="cab__logo" href="${url('')}"><img src="${url('brand/logo-bbb-claro-h40.png')}" srcset="${url('brand/logo-bbb-claro-h40.png')} 1x, ${url('brand/logo-bbb-claro-206x99.png')} 2x" width="83" height="40" alt="Banheiras Bom Banho, página inicial"></a>
     <nav class="cab__nav" aria-label="Principal"><ul>${itens}</ul></nav>
     <div class="cab__acoes">
       <a class="cab__icone" href="${url('busca.html')}" data-busca-abrir aria-label="Buscar no catálogo">${icone('busca', { tamanho: 22 })}</a>
       <a class="cab__icone cab__comparar" href="${url('comparar.html')}" data-comparar-contador data-n="0" aria-label="Comparar modelos: 0 de 3 escolhidos">${icone('comparar', { tamanho: 22 })}<span class="cab__badge num" data-comparar-n data-n="0" aria-hidden="true">0</span></a>
       <div class="cab__whats">
         <a${attrs({ class: 'btn btn--whats', href: D.wa('venda_principal'), target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'cabecalho', 'data-wa-sync': 'venda', 'data-campo': 'contato-numero', 'aria-label': 'Comprar pelo WhatsApp' })}>${icone('whatsapp', { tamanho: 20 })}<span>WhatsApp</span></a>
-        <button class="cab__whats-mais" type="button" data-gaveta-abrir="gaveta-whats" aria-haspopup="dialog" aria-expanded="false" aria-label="Outros canais de atendimento" data-so-js hidden>${icone('chevron-baixo', { tamanho: 18 })}</button>
+        <button class="cab__whats-mais" type="button" data-gaveta-abrir="gaveta-whats" aria-haspopup="dialog" aria-expanded="false" aria-label="Outros canais de atendimento" data-so-js>${icone('chevron-baixo', { tamanho: 18 })}</button>
       </div>
-      <button class="cab__menu" type="button" data-gaveta-abrir="menu" aria-haspopup="dialog" aria-expanded="false" aria-label="Abrir menu" data-so-js hidden>${icone('menu', { tamanho: 24 })}</button>
+      <button class="cab__menu" type="button" data-gaveta-abrir="menu" aria-haspopup="dialog" aria-expanded="false" aria-label="Abrir menu" data-so-js>${icone('menu', { tamanho: 24 })}</button>
     </div>
   </div>
 </header>`;

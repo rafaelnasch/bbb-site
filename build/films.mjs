@@ -195,11 +195,12 @@ async function prepararPlantas() {
 }
 
 // ---------------------------------------------------------------- coleções
+// Coleções: 5 fotos em 6 s (cada peça fica parada mais tempo); lançamentos: os 6 spas reais.
 const COLECOES = [
-  { id: 'banheiras', path: '/banheiras.html', max: 6 },
-  { id: 'spas', path: '/spas.html', max: 6 },
-  { id: 'ofuros', path: '/ofuros.html', max: 6 },
-  { id: 'sauna', path: '/sauna.html', max: 6 },
+  { id: 'banheiras', path: '/banheiras.html', max: 5 },
+  { id: 'spas', path: '/spas.html', max: 5 },
+  { id: 'ofuros', path: '/ofuros.html', max: 5 },
+  { id: 'sauna', path: '/sauna.html', max: 5 },
   { id: 'lancamentos', path: '/lancamentos.html', max: 6 },
 ];
 

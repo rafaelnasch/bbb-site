@@ -69,12 +69,16 @@
         tl.fromTo("#moldura", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0);
         tl.fromTo("#piso", { scaleX: 0.2, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 1.0, ease: "power2.out" }, 0.2);
         tl.fromTo("#etiqueta", { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" }, 0.5);
+        // Troca sem dupla exposição: a foto sai para o fundo opaco da moldura (0,15 s) e só então a
+        // próxima entra (0,15 s). Nada de zoom nem deslocamento: cada peça fica parada no tamanho
+        // natural do quadro até a troca. A legenda não muda depois de entrar.
+        const T = 0.15;
         for (let i = 1; i <= n; i++) {
           const t = 0.15 + (i - 1) * passo;
-          tl.fromTo("#f" + i, { opacity: 0, y: 30, scale: 1.05 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" }, t);
-          tl.fromTo("#halo", { "--wall": i === 1 ? v.w1 : v["w" + (i - 1)] }, { "--wall": v["w" + i], duration: 0.7, ease: "none" }, t);
-          tl.fromTo("#luz", { x: -240 }, { x: 560, duration: 0.9, ease: "power2.inOut" }, t + 0.35);
-          if (i < n) tl.fromTo("#f" + i, { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power1.in" }, t + passo + 0.1);
+          tl.fromTo("#f" + i, { opacity: 0 }, { opacity: 1, duration: i === 1 ? 0.6 : T, ease: "none" }, i === 1 ? t : t + T);
+          tl.fromTo("#halo", { "--wall": i === 1 ? v.w1 : v["w" + (i - 1)] }, { "--wall": v["w" + i], duration: 0.3, ease: "none" }, t);
+          tl.fromTo("#luz", { x: -240 }, { x: 560, duration: 0.9, ease: "power2.inOut" }, t + 0.45);
+          if (i < n) tl.fromTo("#f" + i, { opacity: 1 }, { opacity: 0, duration: T, ease: "none" }, t + passo);
         }
         window.__timelines["main"] = tl;
         tl.seek(0);

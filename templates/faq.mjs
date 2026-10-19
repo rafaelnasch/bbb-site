@@ -70,7 +70,7 @@ export function paginas(ctx) {
   const corpo = html`${topo({
     trilha, etiqueta: 'Dúvidas', h1: 'Perguntas frequentes',
     lead: html`<span class="num">${itens.length}</span> respostas com o texto publicado pela empresa, em <span class="num">${grupos.length}</span> temas.`,
-    extra: html`<div class="faq-busca" data-so-js hidden><label class="vh" for="faq-q">Buscar nas perguntas</label><span class="faq-busca__ic" aria-hidden="true">${icone('busca', { tamanho: 20 })}</span><input id="faq-q" class="faq-busca__in" type="search" data-faq-q placeholder="Buscar nas perguntas: frete, cores, aquecedor..." autocomplete="off" enterkeyhint="search"></div>`,
+    extra: html`<div class="faq-busca" data-so-js><label class="vh" for="faq-q">Buscar nas perguntas</label><span class="faq-busca__ic" aria-hidden="true">${icone('busca', { tamanho: 20 })}</span><input id="faq-q" class="faq-busca__in" type="search" data-faq-q placeholder="Buscar nas perguntas: frete, cores, aquecedor..." autocomplete="off" enterkeyhint="search"></div>`,
   })}
 <article class="dia inst faq">
   <div class="wrap inst__grade">

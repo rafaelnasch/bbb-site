@@ -22,7 +22,11 @@ export function contorno(p, S) {
   const tams = tamanhosProduto(p).map((x) => x.cm).filter(Boolean);
   if (!tams.length || !S) return null;
   const t = tams.reduce((a, b) => (b.maior * b.menor > a.maior * a.menor ? b : a));
-  return raw(`<svg class="cart__ctn" viewBox="0 0 ${S} ${S}" aria-hidden="true" focusable="false"><rect x=".5" y="${(S - t.menor + 0.5).toFixed(1)}" width="${(t.maior - 1).toFixed(1)}" height="${(t.menor - 1).toFixed(1)}" rx="2"/></svg>`);
+  // Selo com microlegenda "escala" (texto dentro do próprio SVG, sem deslocar nada): o contorno da peça vista
+  // de cima, todos os cartões da coleção na mesma escala (a explicação fica acima da grade e na home). Peça
+  // muito pequena perto da maior vira um traço curto: a escala é a real, nunca ampliada.
+  const H = S * 1.3;
+  return raw(`<svg class="cart__ctn" viewBox="0 0 ${S} ${H.toFixed(1)}" aria-hidden="true" focusable="false"><rect x=".5" y="${(S - t.menor + 0.5).toFixed(1)}" width="${Math.max(t.maior - 1, 1).toFixed(1)}" height="${Math.max(t.menor - 1, 1).toFixed(1)}" rx="2"/><text x="${(S / 2).toFixed(1)}" y="${(S * 1.25).toFixed(1)}" text-anchor="middle" font-size="${(S * 0.2).toFixed(1)}" letter-spacing="${(S * 0.015).toFixed(1)}">ESCALA</text></svg>`);
 }
 
 /**
@@ -34,8 +38,11 @@ export function contorno(p, S) {
  * @param o.lqip   borrão inline (só nos primeiros cartões: abaixo da dobra, o fundo --wall da moldura
  *                 faz o papel de espera e o HTML da coleção fica no orçamento de 60 KB gzip)
  */
-export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqip = true } = {}) {
-  const f0 = fotoCartao(p.slug);
+/** Grade das coleções: 2 colunas no celular, 2 no tablet e 3 no desktop (largura real do cartão). */
+export const SIZES_GRADE = '(min-width:1024px) 400px, (min-width:600px) calc(50vw - 44px), calc(50vw - 22px)';
+
+export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqip = true, foto = undefined, versoes = [], sizes = SIZES_CARTAO } = {}) {
+  const f0 = foto === undefined ? fotoCartao(p.slug) : foto;
   const f = f0 && !lqip ? { ...f0, lqip: null } : f0;
   const tams = tamanhosProduto(p);
   const t0 = tams[0];
@@ -60,13 +67,14 @@ export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqi
   const medida = t0 ? rotuloTam(t0.t) : '';
   return html`<li${attrs(dados)}>
 <a class="cart__a" href="${url(`${p.slug}.html`)}">
-<span class="cart__mol"${attrs({ style: f?.wall ? `--wall:${f.wall}` : null })}>${f ? picture(f, { classe: 'cart__img', sizes: SIZES_CARTAO, prioridade, vt: p.slug }) : html`<span class="cart__vazia">Foto sob consulta</span>`}${contorno(p, S) || ''}</span>
+<span class="cart__mol"${attrs({ style: f?.wall ? `--wall:${f.wall}` : null })}>${f ? picture(f, { classe: 'cart__img', sizes, prioridade, vt: p.slug }) : html`<span class="cart__vazia">Foto sob consulta</span>`}${contorno(p, S) || ''}</span>
 ${temPlanta || esgotado ? html`<span class="cart__selos">${temPlanta ? html`<span class="selo">Planta oficial</span>` : ''}${esgotado ? html`<span class="selo selo--esgotado">Esgotado</span>` : ''}</span>` : ''}
 ${eti.length ? html`<span class="cart__eti">${eti.join(' · ')}</span>` : ''}
 <h3 class="cart__nome">${p.nome}</h3>
+${versoes.length ? html`<span class="cart__vers">Também em ${versoes.join(' e ')}</span>` : ''}
 ${medida ? html`<span class="cart__med num">${medida}${tams.length > 1 ? html` <span>+${tams.length - 1} ${tams.length - 1 === 1 ? 'medida' : 'medidas'}</span>` : ''}</span>` : ''}
 <span class="cart__preco num"><span data-campo="preco-por">${p.preco.por}</span>${p.preco.de ? html` <s class="preco-de" data-campo="preco-de">${p.preco.de}</s>` : ''}</span>
 </a>
-<button class="cart__cmp" type="button" data-comparar="${p.slug}" data-nome="${p.nome}" data-sku="${p.sku}" aria-pressed="false" data-so-js hidden>${icone('comparar', { tamanho: 16 })}<span>Comparar</span></button>
+<button class="cart__cmp" type="button" data-comparar="${p.slug}" data-nome="${p.nome}" data-sku="${p.sku}" aria-pressed="false" data-so-js>${icone('comparar', { tamanho: 16 })}<span>Comparar</span></button>
 </li>`;
 }

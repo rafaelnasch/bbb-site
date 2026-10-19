@@ -11,15 +11,12 @@
   --muted-on-dark:#A3B6C3;
   /* luz de estúdio (só traços e brilhos, nunca texto pequeno) */
   --glow:#E9B87C;
-  /* terceiro contorno do comparador (só traço sobre a sala escura, nunca texto) */
-  --cmp-3:#F4A6C0;
   /* botão de compra, contraste AA com texto branco */
   --whats-btn:#1E7F3A; --whats-btn-hover:#176A30;
   --focus:#044E7C; --focus-on-dark:#8DBBD9;
   /* movimento */
-  --ease-out:cubic-bezier(.22,1,.36,1); --ease-io:cubic-bezier(.77,0,.175,1);
-  --ease-sheet:cubic-bezier(.32,.72,0,1);
-  --t-press:140ms; --t-ui:200ms; --t-out:260ms; --t-in:420ms; --t-reveal:700ms; --t-stagger:70ms; --t-swap:800ms;
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --t-out:260ms; --t-in:420ms; --t-reveal:700ms; --t-stagger:70ms;
   /* espaço e forma */
   --gutter:16px; --radius:14px; --radius-chip:999px; --maxw:1320px;
   --pad-x:clamp(16px,3.2vw + 4px,64px);
@@ -31,14 +28,12 @@
   --fs-h1:clamp(2.25rem,1.2rem + 4vw,4.5rem);
   --fs-h2:clamp(1.5rem,1.1rem + 2vw,2.25rem);
   --fs-h3:clamp(1.1875rem,1.05rem + .6vw,1.4375rem);
-  --fs-display:clamp(2.75rem,1.4rem + 6vw,7.5rem);
   --fs-body:1.125rem; --fs-small:.9375rem; --fs-label:.75rem; --lh:1.6;
 
   /* superfícies semânticas (o tema da seção troca estas) */
   --bg:var(--day); --fg:var(--ink); --fg-2:var(--muted); --rule:color-mix(in srgb,var(--ink) 14%,transparent);
   --rule-sala:color-mix(in srgb,var(--line) 22%,transparent);
   --focus-ring:var(--focus);
-  --sombra-1:0 1px 2px rgb(7 28 43 / .06),0 8px 24px -12px rgb(7 28 43 / .18);
   --sombra-2:0 2px 6px rgb(7 28 43 / .08),0 28px 60px -24px rgb(7 28 43 / .35);
 }
 @media (max-width:430px){ :root{ --fs-body:1.0625rem; --cab-h:60px; } }

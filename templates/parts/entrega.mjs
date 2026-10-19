@@ -22,7 +22,7 @@ export function entrega(D) {
   return html`<div class="entrega">
   <div class="entrega__prazo">
     <h3 class="entrega__h">Prazo de entrega por estado</h3>
-    ${ufs.length ? html`<p class="entrega__uf" data-so-js hidden><label class="campo campo--inline"><span class="campo__rot">Seu estado</span><select class="campo__in" data-prazo-uf><option value="">Todos</option>${ufs.map((u) => html`<option value="${u}">${u}</option>`)}</select></label></p>` : ''}
+    ${ufs.length ? html`<p class="entrega__uf" data-so-js><label class="campo campo--inline"><span class="campo__rot">Seu estado</span><select class="campo__in" data-prazo-uf><option value="">Todos</option>${ufs.map((u) => html`<option value="${u}">${u}</option>`)}</select></label></p>` : ''}
     ${tabela.map((g) => html`<div class="rolagem" tabindex="0" role="region" aria-label="Prazos: ${g.grupo}">
       <table class="prazo num" data-prazo>
         <caption class="prazo__cap">${g.grupo}</caption>

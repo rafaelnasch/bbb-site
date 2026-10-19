@@ -4,8 +4,10 @@
 .cmp-fig{display:grid;gap:12px}
 .cmp-svg{max-height:440px}
 .cmp-svg__esp{fill:color-mix(in srgb,var(--line) 8%,transparent);stroke:var(--line);stroke-width:1.2;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}
-.cmp-leg{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.8125rem;color:var(--fg-2)}
-.cmp-leg__i{display:inline-flex;align-items:center;gap:8px}
+.cmp-leg{display:grid;align-content:start;gap:4px;min-height:calc(8 * 1.5em + 28px);font-size:.8125rem;line-height:1.5;color:var(--fg-2)}
+@media (min-width:1024px){.cmp-leg{min-height:calc(5 * 1.5em + 16px)}}
+.cmp-leg__i{display:block;min-width:0}
+.cmp-leg__i svg{display:inline-block;vertical-align:middle;margin-right:8px}
 .cmp-leg__i .num{color:var(--fg)}
 .cmp-espaco{display:grid;gap:12px}
 .cmp{display:grid;gap:20px}
@@ -29,7 +31,7 @@
 .cmp-col__img,.cmp-col__vazia{display:block;width:100%;max-width:200px;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--room-2)}
 .cmp-col__vazia{display:grid;place-items:center;color:var(--muted-on-dark);font-size:.8125rem}
 .cmp-col__nome{display:block;margin-top:10px;font-family:var(--f-display);font-size:1.0625rem;line-height:1.25;color:inherit}
-.cmp-tam select{width:100%;min-height:44px;margin-top:8px;padding:0 12px;border:1px solid var(--rule);border-radius:10px;background:transparent;font-size:.875rem}
+.cmp-tam select{width:100%;min-height:44px;margin-top:8px;padding:0 12px;border:1px solid var(--rule);border-radius:10px;background:transparent;font-size:max(16px,1rem)}
 .cmp-col__tirar{display:inline-flex;align-items:center;min-height:44px;font-size:.8125rem;color:var(--fg-2);text-decoration:underline;text-underline-offset:.2em}
 .cmp-preco{font-weight:600}
 .cmp-sub{display:block;margin-top:4px;font-size:.8125rem;color:var(--fg-2)}
@@ -40,3 +42,7 @@
 .cmp>*,.cmp-corpo{min-width:0}
 .cmp-corpo{display:grid;gap:16px}
 .cmp-rol{position:relative}
+/* Altura fixa da faixa das plantas (sem CLS quando os contornos chegam ou a seleção esvazia). */
+.cmp-fig .cmp-svg{height:clamp(200px,34vw,400px);max-height:none}
+.cmp-planta.is-vazio .cmp-svg{background:linear-gradient(color-mix(in srgb,var(--line) 8%,transparent) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,color-mix(in srgb,var(--line) 8%,transparent) 1px,transparent 1px) 0 0/24px 24px}
+.cmp-leg__vazio{color:var(--fg-2)}

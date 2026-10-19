@@ -21,7 +21,7 @@ import { picture } from './parts/foto.mjs';
 import { faqBloco } from './parts/faq-bloco.mjs';
 import { AVISO_ESCALA } from './parts/escala.mjs';
 import { explorador, tabelaCotas, plantaDoTamanho, rotuloTam, urlPdf } from './parts/planta.mjs';
-import { indiceCatalogo, fotoCartao, produtosDaCategoria, CAT_BANHEIRO, CAT_OFURO_EXTERNO, CAT_SPA_LUGARES } from '../build/lib/catalogo.mjs';
+import { campo, indiceCatalogo, fotoCartao, produtosDaCategoria, CAT_BANHEIRO, CAT_OFURO_EXTERNO, CAT_SPA_LUGARES } from '../build/lib/catalogo.mjs';
 import { QUASE_CM } from '../build/lib/encaixe.mjs';
 import { mapaLojas } from '../build/lib/mapa-lojas.mjs';
 import { tardio } from './parts/tardio.mjs';
@@ -60,7 +60,7 @@ const PESSOAS_GERAL = [['1', 'Individual'], ['2', '2 pessoas'], ['3+', '3 ou mai
 // arredondada para baixo: a página nunca fica mais alta que o conteúdo, e a barra de rolagem e a tecla
 // End levam aonde devem. As demais seções têm altura que varia muito com a largura e não são puladas.
 // Se o conteúdo mudar, o teste e2e "alturas reservadas" acusa a diferença e mostra a medida nova.
-export const ALTURA_SALAS = Object.freeze({ m: 4750, t: 4850, d: 4000 });
+export const ALTURA_SALAS = Object.freeze({ m: 4650, t: 4850, d: 4000 });
 export const ALTURA_RODAPE = Object.freeze({ m: 2950, t: 2150, d: 1600 });
 const pad2 = (n) => String(n).padStart(2, '0');
 const dataBR = (iso) => {
@@ -230,7 +230,7 @@ function escolhedorRapido(D, indice, porSlug) {
       <h2 id="home-esc-h">Comece pelo seu espaço</h2>
       <p class="lead">Diga o que procura, para quantas pessoas e quanto espaço tem. A contagem mostra na hora quantos dos <span class="num">${total}</span> modelos publicados cabem, com a peça podendo girar.</p>
     </div>
-    <form class="home-esc__form" data-home-esc-form data-so-js hidden aria-describedby="home-esc-aviso">
+    <form class="home-esc__form" data-home-esc-form data-so-js aria-describedby="home-esc-aviso">
       <fieldset class="home-esc__fs">
         <legend class="home-esc__q"><span class="num">01</span>O que você procura?</legend>
         <div class="esc-ops">${TIPOS_RAPIDO.map(([v, r]) => op('tipo', v, r, cont[v], false))}${op('tipo', '', 'Tanto faz', total, true)}</div>
@@ -270,7 +270,11 @@ export function paginas(ctx) {
   // GSAP + ScrollTrigger vendorizados (SPEC 1), carregados só no desktop pelo tour da planta.
   const gsap = ['gsap.min.js', 'ScrollTrigger.min.js'].every((f) => existsSync(join(paths.public, 'vendor', f)))
     ? { core: url('vendor/gsap.min.js'), st: url('vendor/ScrollTrigger.min.js') } : null;
-  const comPlanta = produtos.filter((p) => (p.d_planta || []).some((x) => x.pdf_path)).length;
+  // Duas contagens: modelos com PDF de planta publicado na própria página (plantas_pdf) e, entre eles,
+  // os que têm a medida do arquivo igual a um tamanho vendido (d_planta). Os demais oferecem o PDF com nota.
+  const pecas = produtos.filter((p) => p.d_tipo !== 'acessorio');
+  const comPdf = pecas.filter((p) => (p.plantas_pdf || []).length).length;
+  const comPlanta = pecas.filter((p) => (p.d_planta || []).some((x) => x.pdf_path)).length;
   const totalPecas = produtos.filter((p) => p.d_tipo !== 'acessorio').length;
 
   // 1. Abertura ---------------------------------------------------------------
@@ -307,7 +311,7 @@ export function paginas(ctx) {
   <div class="wrap home-abre__in">
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Fábrica em ${local.cidade}, ${local.uf}</p>
     <h1 id="home-h1" class="home-abre__h1">Banheiras, spas e ofurôs de hidromassagem, direto da fábrica em ${local.cidade}, ${local.uf}</h1>
-    <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos com medidas e preços publicados, e planta técnica oficial em <span class="num">${comPlanta}</span> deles. Você escolhe pelo seu espaço e fecha com um consultor pelo WhatsApp.</p>
+    <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos com medidas e preços publicados, e planta técnica oficial publicada em <span class="num">${comPdf}</span> deles (em <span class="num">${comPlanta}</span>, a medida do arquivo bate com o tamanho vendido). Você escolhe pelo seu espaço e fecha com um consultor pelo WhatsApp.</p>
     <p class="home-abre__acoes" data-intro style="--i:3"><a class="btn btn--claro home-abre__cta" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Escolher pelo meu espaço</a><a class="home-abre__rolar" href="#salas">Conhecer as salas${icone('chevron-baixo', { tamanho: 18 })}</a></p>
     ${vitrine}
     <ul class="portas" role="list" aria-label="Coleções">${portas}</ul>
@@ -315,10 +319,47 @@ export function paginas(ctx) {
 </section>`;
 
   // 3. Salas da galeria ------------------------------------------------------
+  // Regras das salas (sem dado novo): na ordem do site atual, só peças com foto, uma peça por família
+  // (as versões irmãs viram a linha "Também em ..."), sem repetir peça de uma sala anterior e sem repetir
+  // a foto de capa. O tipo da sala vem da coleção raiz (um spa listado entre os ofurôs fica de fora).
+  const usados = new Set();
+  const fotosUsadas = new Set();
+  const tipoDaSala = (path) => ({ 'banheiras': 'banheira', 'spas': 'spa', 'ofuros': 'ofuro' })[path.split('/')[0].replace(/\.html$/, '')] || null;
+  // Chave do modelo: a família revisada; sem família, o nome literal sem o material (só para não mostrar
+  // duas vezes a mesma peça lado a lado; nenhum dado novo).
+  const nomeBase = (n) => String(n).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\b(em )?(acrilico|gel coat)\b/g, '').replace(/\s+/g, ' ').trim();
+  const chave = (p) => p.d_familia || nomeBase(p.nome);
+  const escolherDaSala = (cat, path) => {
+    const tipo = tipoDaSala(path);
+    const out = [];
+    const famsDaSala = new Set();
+    for (const p of produtosDaCategoria(cat, porSlug)) {
+      if (out.length >= PECAS_POR_SALA) break;
+      if (p.d_sem_foto || usados.has(p.slug) || (tipo && p.d_tipo !== tipo)) continue;
+      const fam = chave(p);
+      if (famsDaSala.has(fam) || usados.has(`k:${fam}`)) continue;
+      const foto = fotoCartao(p.slug, fotosUsadas);
+      if (!foto || (foto.sha1 && fotosUsadas.has(foto.sha1))) continue;
+      famsDaSala.add(fam);
+      out.push({ p, foto });
+    }
+    for (const { p, foto } of out) {
+      usados.add(p.slug);
+      usados.add(`k:${chave(p)}`);
+      if (foto.sha1) fotosUsadas.add(foto.sha1);
+    }
+    const daSala = produtosDaCategoria(cat, porSlug);
+    return out.map(({ p, foto }) => {
+      const mat = campo(p, 'Material');
+      const irmas = daSala.filter((q) => q.slug !== p.slug && chave(q) === chave(p) && campo(q, 'Material') && campo(q, 'Material') !== mat);
+      return { p, foto, versoes: [...new Set(irmas.map((q) => campo(q, 'Material')))] };
+    });
+  };
   const salas = SALAS.map(([path, nome], i) => {
     const cat = D.catPorPath.get(path);
     if (!cat) return null;
-    const lista = produtosDaCategoria(cat, porSlug).slice(0, PECAS_POR_SALA);
+    const escolhidas = escolherDaSala(cat, path);
+    const lista = escolhidas.map((x) => x.p);
     if (!lista.length) return null;
     const S = escalaDaColecao(lista);
     const id = `sala-${i + 1}`;
@@ -326,10 +367,10 @@ export function paginas(ctx) {
   <header class="sala-faixa__cab" data-reveal>
     <p class="etiqueta"><span class="num">Sala ${pad2(i + 1)}</span></p>
     <h3 id="${id}-h" class="sala-faixa__h">${nome}</h3>
-    <a class="sala-faixa__ver" href="${url(path)}">Ver as <span class="num" data-campo="categoria-total">${cat.total_exibido}</span>${icone('seta-dir', { tamanho: 18 })}<span class="vh"> peças da coleção ${cat.nome}</span></a>
+    <a class="sala-faixa__ver" href="${url(path)}">Ver as <span class="num" data-campo="categoria-total">${cat.total_exibido}</span> peças<span class="vh"> da coleção ${cat.nome}</span>${icone('seta-dir', { tamanho: 18 })}</a>
   </header>
   <div class="rolagem sala-faixa__rol" tabindex="0" role="region" aria-label="${nome}: ${lista.length} peças, role para os lados">
-    <ol class="sala-faixa__lista" role="list">${lista.map((p, j) => cartao(p, { pos: j, S, lqip: false }))}</ol>
+    <ol class="sala-faixa__lista" role="list">${escolhidas.map(({ p, foto, versoes }, j) => cartao(p, { pos: j, S, lqip: false, foto, versoes }))}</ol>
   </div>
 </section>`;
   }).filter(Boolean);
@@ -338,7 +379,7 @@ export function paginas(ctx) {
     <div class="home-salas__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">A galeria</p>
       <h2 id="home-salas-h">Salas da galeria</h2>
-      <p class="lead">Uma sala por formato, com as primeiras peças de cada coleção na ordem do catálogo. O contorno no canto de cada foto é a peça vista de cima, todas da mesma sala na mesma escala.</p>
+      <p class="lead">Uma sala por formato, com peças diferentes de cada coleção na ordem do catálogo. O contorno no canto de cada foto é a peça vista de cima, todas da mesma sala na mesma escala.</p>
     </div>
     ${salas}
   </div>
@@ -470,6 +511,7 @@ export function paginas(ctx) {
       <div class="mapa__quadro" style="aspect-ratio:${M.regiao.w}/${M.regiao.h}">
         <svg class="mapa__svg" viewBox="0 0 ${M.regiao.w} ${M.regiao.h}" aria-hidden="true" focusable="false"><defs><pattern id="mapa-grade" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="currentColor" stroke-opacity=".08" stroke-width=".3"/></pattern></defs><rect width="${M.regiao.w}" height="${M.regiao.h}" fill="url(#mapa-grade)"/><path class="mapa__terra" d="${M.regiao.d}"/>${M.pontos.map((pt) => raw(`<circle class="mapa__onda" cx="${(pt.x * M.regiao.w / 100).toFixed(1)}" cy="${(pt.y * M.regiao.h / 100).toFixed(1)}" r="2.6"/><circle class="mapa__ponto" cx="${(pt.x * M.regiao.w / 100).toFixed(1)}" cy="${(pt.y * M.regiao.h / 100).toFixed(1)}" r="1.1"/>`))}</svg>
         <ol class="mapa__lista" role="list">${M.pontos.map((pt) => html`<li class="mapa__item mapa__item--${pt.lado}${pt.loja.n === 1 ? ' is-fabrica' : ''}" style="left:${pt.x}%;top:${pt.y}%"><a href="${url(`lojas/loja-showrooms.html#${pt.loja.ancora}`)}"><span class="vh">${pt.loja.nome}: </span><span aria-hidden="true">${pt.loja.cidade}</span></a></li>`)}</ol>
+        <ul class="mapa__rotulos" aria-hidden="true">${M.pontos.map((pt) => html`<li class="mapa__item mapa__item--${pt.lado}${pt.loja.n === 1 ? ' is-fabrica' : ''}" style="left:${pt.x}%;top:${pt.y}%"><span>${pt.loja.cidade}</span></li>`)}</ul>
         <svg class="mapa__pais" viewBox="0 0 ${M.pais.w} ${M.pais.h}" aria-hidden="true" focusable="false"><path d="${M.pais.d}"/><rect x="${M.pais.caixa.x}" y="${M.pais.caixa.y}" width="${M.pais.caixa.w}" height="${M.pais.caixa.h}"/></svg>
       </div>
       <figcaption class="mapa__leg">Cidades com loja da Banheiras Bom Banho. O ponto marca a cidade; o endereço está na página de lojas.</figcaption>

@@ -1,0 +1,122 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "node tests/e2e/servidor.mjs 8975",
+      "startServerReadyPattern": "servindo",
+      "numberOfRuns": 3,
+      "url": [
+        "http://127.0.0.1:8975/bbb-site/index.html",
+        "http://127.0.0.1:8975/bbb-site/banheiras.html",
+        "http://127.0.0.1:8975/bbb-site/spas/5-a-6-lugares.html",
+        "http://127.0.0.1:8975/bbb-site/banheira-acqua-linea-completa-com-hidro-em-acrilico.html",
+        "http://127.0.0.1:8975/bbb-site/spa-quadrado-napole-completo-com-hidro.html",
+        "http://127.0.0.1:8975/bbb-site/escolher.html",
+        "http://127.0.0.1:8975/bbb-site/comparar.html?p=banheira-acqua-linea-completa-com-hidro-em-acrilico,spa-quadrado-napole-completo-com-hidro,spa-quadrado-serena-completo-com-hidro-em-acrilico",
+        "http://127.0.0.1:8975/bbb-site/busca.html?q=acqua"
+      ],
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true
+        },
+        "throttlingMethod": "simulate"
+      }
+    },
+    "assert": {
+      "assertMatrix": [
+        {
+          "matchingUrlPattern": ".*",
+          "assertions": {
+            "categories:performance": [
+              "error",
+              {
+                "minScore": 0.9,
+                "aggregationMethod": "median-run"
+              }
+            ],
+            "categories:accessibility": [
+              "error",
+              {
+                "minScore": 0.9,
+                "aggregationMethod": "median-run"
+              }
+            ],
+            "categories:best-practices": [
+              "error",
+              {
+                "minScore": 0.9,
+                "aggregationMethod": "median-run"
+              }
+            ],
+            "cumulative-layout-shift": [
+              "error",
+              {
+                "maxNumericValue": 0.05,
+                "aggregationMethod": "median-run"
+              }
+            ],
+            "total-blocking-time": [
+              "error",
+              {
+                "maxNumericValue": 200,
+                "aggregationMethod": "median-run"
+              }
+            ]
+          }
+        },
+        {
+          "matchingUrlPattern": "^(?!.*(comparar|busca)\\.html).*$",
+          "assertions": {
+            "categories:seo": [
+              "error",
+              {
+                "minScore": 0.9,
+                "aggregationMethod": "median-run"
+              }
+            ]
+          }
+        },
+        {
+          "matchingUrlPattern": "/(index|escolher|comparar|busca)\\.html|/banheiras\\.html|/spas/",
+          "assertions": {
+            "largest-contentful-paint": [
+              "error",
+              {
+                "maxNumericValue": 2000,
+                "aggregationMethod": "median-run"
+              }
+            ],
+            "resource-summary:script:size": [
+              "error",
+              {
+                "maxNumericValue": 25600
+              }
+            ]
+          }
+        },
+        {
+          "matchingUrlPattern": "/(banheira|spa)-[^/]*\\.html",
+          "assertions": {
+            "largest-contentful-paint": [
+              "error",
+              {
+                "maxNumericValue": 2200,
+                "aggregationMethod": "median-run"
+              }
+            ],
+            "resource-summary:script:size": [
+              "error",
+              {
+                "maxNumericValue": 30720
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": ".lighthouseci"
+    }
+  }
+}

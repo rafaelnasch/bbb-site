@@ -57,7 +57,7 @@ export function galeria(p, fotos) {
           'data-wall': f.wall || null,
           hidden: i > 0,
           'aria-label': `Ampliar a foto ${i + 1} de ${total}: ${f.alt}`,
-        })}>${picture(f, { classe: 'moldura__img', sizes: SIZES_PRODUTO, prioridade: false })}</a>`;
+        })}>${picture(f, { classe: 'moldura__img', sizes: SIZES_PRODUTO, prioridade: i === 0, proporcao: true })}</a>`;
       })}
       <span class="galeria__lupa" data-galeria-lupa aria-hidden="true" hidden></span>
     </div>
@@ -73,7 +73,7 @@ export function galeria(p, fotos) {
         'data-galeria-mini': i,
         'aria-current': i === 0 ? 'true' : null,
         'aria-label': `Foto ${i + 1} de ${total}`,
-      })}>${picture(f, { classe: 'galeria__mini-img', alt: '', sizes: '88px' })}</a></li>`)}</ol>`
+      })}>${picture(f, { classe: 'galeria__mini-img', alt: '', sizes: '72px' })}</a></li>`)}</ol>`
     : ''}
 </div>`;
 }

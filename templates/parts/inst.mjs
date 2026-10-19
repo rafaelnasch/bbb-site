@@ -113,7 +113,8 @@ export function prosa(blocos, { campo = 'institucional-texto' } = {}) {
  */
 function tabelaDoManual(t, tituloAntes) {
   // Nome: o rótulo da configuração; senão o título da própria tabela; senão o último título da página.
-  const nome = t.rotulo || null;
+  // A mesma tabela continua por várias páginas do PDF: o nome leva a página, para cada região ser única.
+  const nome = t.rotulo ? `${t.rotulo}, página ${t.pagina} do manual` : null;
   const titulo = nome ? null : (tituloAntes?.id || null);
   const cab = t.linhas.slice(0, t.cabecalho);
   const corpo = t.linhas.slice(t.cabecalho);

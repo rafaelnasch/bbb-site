@@ -185,7 +185,8 @@ ${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicada
     return li;
   }
   const ORD = {
-    encaixe: (a, b) => (a.m && b.m ? (a.m.cabe ? a.m.total - b.m.total : a.m.excesso - b.m.excesso) : 0) || (a.preco ?? Infinity) - (b.preco ?? Infinity),
+    // Sem espaço informado não há encaixe: fica a ordem do catálogo (a do índice, sort estável).
+    encaixe: (a, b) => (a.m && b.m ? (a.m.cabe ? a.m.total - b.m.total : a.m.excesso - b.m.excesso) || (a.preco ?? Infinity) - (b.preco ?? Infinity) : 0),
     'menor-preco': (a, b) => (a.preco ?? Infinity) - (b.preco ?? Infinity),
     'maior-preco': (a, b) => (b.preco ?? -Infinity) - (a.preco ?? -Infinity),
   };
@@ -232,7 +233,8 @@ ${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicada
     svg.setAttribute('aria-label', `${pecas.length} peças desenhadas em escala sobre grade de 10 cm${s.l ? `, sobre o espaço de ${s.l} x ${s.c} cm` : ''}.`);
   }
 
-  function mensagem(s, lista) {
+  /** Mensagem ao consultor. `quase`: a lista é do grupo "quase cabe" (nenhum modelo cabe). */
+  function mensagem(s, lista, quase = false) {
     const r = [
       s.l ? `Meu espaço: ${s.l} x ${s.c} cm${s.folga ? `, com folga de ${s.folga} cm` : ''}.` : s.ns ? 'Meu espaço: ainda não sei.' : '',
       s.pessoas ? `Pessoas: ${ROT_FILTRO.pessoas(s)}.` : '',
@@ -244,9 +246,14 @@ ${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicada
       s.max != null ? `Orçamento: até ${brl(s.max)}.` : '',
     ].filter(Boolean);
     const qs = consulta(s);
+    // Sem nenhuma resposta, a lista seria só o topo da ordenação: vai só a abertura e a URL.
+    const algum = Object.keys(ATIVO).some((k) => ATIVO[k](s)) || s.ns;
+    const modelos = algum ? lista.slice(0, 5) : [];
+    const linhaModelo = (x) => `${x.it.n}${quase && x.m && !x.m.cabe ? ` (passa ${fcm(x.m.excesso)} cm ${x.m.dim === 'largura' ? 'da largura' : 'do comprimento'})` : ''}: ${cfg.pagina.replace(/escolher\.html$/, '')}${x.it.s}.html`;
     const linhas = [
       `Olá! Estou escolhendo ${s.tipo ? ARTIGO[s.tipo] : 'um modelo'}.${r.length ? ` ${r.join(' ')}` : ''}`,
-      ...lista.slice(0, 5).map((x) => `${x.it.n}: ${cfg.pagina.replace(/escolher\.html$/, '')}${x.it.s}.html`),
+      quase && modelos.length ? 'Nenhum modelo cabe; estes quase cabem:' : '',
+      ...modelos.map(linhaModelo),
       `${cfg.pagina}${qs ? `?${qs}` : ''}`,
     ];
     return linhas.filter(Boolean).join('\n');
@@ -256,7 +263,10 @@ ${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicada
   function resultado(s) {
     sAtual = s;
     const { cabem, quase } = filtrar(s);
-    const ordem = $('[data-esc-ordem]')?.value || 'encaixe';
+    const sel = $('[data-esc-ordem]');
+    const ordem = sel?.value || 'encaixe';
+    const opEnc = sel?.querySelector('option[value="encaixe"]');
+    if (opEnc) opEnc.textContent = s.l ? 'Melhor encaixe' : 'Ordem do catálogo';
     cabem.sort(ORD[ordem]);
     quase.sort(ORD.encaixe);
     const n = cabem.length;
@@ -285,7 +295,7 @@ ${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicada
       $('[data-esc-solta-t]').hidden = !ganhos.length;
     }
     const wa = $('[data-esc-wa]');
-    if (wa && BBB.wa) BBB.wa.texto(wa, mensagem(s, cabem.length ? cabem : qLista));
+    if (wa && BBB.wa) BBB.wa.texto(wa, mensagem(s, cabem.length ? cabem : qLista, !cabem.length));
     desenharEscala([...cabem, ...(n ? quase : qLista)], s);
     // Resumo das respostas (celular, passo final)
     const res = $('[data-esc-resumo]');
@@ -393,7 +403,7 @@ ${mc ? '<span class="esc-nota">A ficha técnica e a opção de tamanho publicada
     pendente = lerUrl();
     const p = pendente.passo;
     carregando.hidden = true;
-    $('[data-esc-grade]').hidden = false;
+    raiz.classList.remove('is-carregando');
     irPara(p, false);
     gravarUrl(estado());
   }).catch(() => {

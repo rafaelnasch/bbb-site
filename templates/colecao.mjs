@@ -14,11 +14,11 @@ import { icone } from '../build/lib/icons.mjs';
 import { formatBRL } from '../build/lib/money.mjs';
 import { paths } from '../site.config.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
-import { cartao, escalaDaColecao } from './parts/cartao.mjs';
+import { cartao, escalaDaColecao, SIZES_GRADE } from './parts/cartao.mjs';
 import { faqsDoTipo, faqBloco } from './parts/faq-bloco.mjs';
 import { rotuloTam } from './parts/planta.mjs';
 import {
-  campo, CAMPOS_FACETA, ROTULO_CAMPO, CATEGORIAS_PONTE, RAIZ_TIPO, PLURAL_TIPO, fraseColecao, produtosDaCategoria,
+  campo, CAMPOS_FACETA, ROTULO_CAMPO, CATEGORIAS_PONTE, RAIZ_TIPO, PLURAL_TIPO, fraseColecao, produtosDaCategoria, fotoCartao,
 } from '../build/lib/catalogo.mjs';
 
 // Coleções cujo texto atual é campanha vencida (SPEC 4: "frete-promocional.html sem o texto da promoção").
@@ -233,9 +233,16 @@ export function paginas(ctx) {
       ? { webm: url(fm.webm.src), mp4: url(fm.mp4.src), avif: fm.poster.avif?.src ? url(fm.poster.avif.src) : null, webp: fm.poster.webp?.src ? url(fm.poster.webp.src) : null, w: fm.largura || 1280, h: fm.altura || 720 }
       : null;
 
-    const fundo = filme ? html`<div class="col-topo__fundo" aria-hidden="true"><div class="col-topo__filme">${filme.avif ? html`<picture><source type="image/avif" srcset="${filme.avif}">` : ''}<img class="col-topo__poster"${attrs({ src: filme.webp || filme.avif, width: filme.w, height: filme.h, alt: '', fetchpriority: 'high' })}>${filme.avif ? html`</picture>` : ''}<video class="col-topo__video" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, width: filme.w, height: filme.h })} muted playsinline loop preload="none"></video></div></div>`
+    const fundo = filme ? html`<div class="col-topo__fundo" aria-hidden="true"><div class="col-topo__filme">${filme.avif ? html`<picture><source type="image/avif" srcset="${filme.avif}">` : ''}<img class="col-topo__poster"${attrs({ src: filme.webp || filme.avif, width: filme.w, height: filme.h, alt: '' })}>${filme.avif ? html`</picture>` : ''}<video class="col-topo__video" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, width: filme.w, height: filme.h })} muted playsinline loop preload="none"></video></div></div>`
       : html`<div class="col-topo__fundo col-topo__fundo--agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>`;
 
+    // Atalhos das subcoleções da mesma raiz, com a contagem real (total_exibido), logo abaixo do título.
+    const raizPath = `${cat.d_path.split('/')[0].replace(/\.html$/, '')}.html`;
+    const subs = D.categorias.filter((c) => !CATEGORIAS_PONTE.includes(c.d_path) && c.d_path.startsWith(raizPath.replace(/\.html$/, '/'))
+      && c.total_exibido > 0 && !/^por tamanho$/i.test(String(c.nome).trim()) && c.d_path.split('/').length === 2).slice(0, 12);
+    const subsRot = `Coleções de ${String(D.catPorPath.get(raizPath)?.nome || cat.nome).toLocaleLowerCase('pt-BR')}`;
+    // Rápidos: forma e lugares, que filtram a grade direto (mesmos campos da gaveta de filtros).
+    const rapidos = ['Forma', 'Lugares'].map((k) => ({ k, vs: valoresFaceta(lista, k) })).filter((g) => g.vs.length > 1);
     const topo = html`<section class="sala col-topo letterbox${filme ? ' col-topo--filme' : ''}" aria-labelledby="col-h1">
   ${fundo}
   <div class="wrap col-topo__in">
@@ -244,6 +251,7 @@ export function paginas(ctx) {
     <h1 id="col-h1" class="col-topo__h1" data-intro="mascara" style="--i:1">${cat.nome}</h1>
     <p class="col-topo__frase" data-intro style="--i:2"><span class="num" data-campo="categoria-total">${frase.split(' ')[0]}</span>${frase.slice(frase.indexOf(' '))}.</p>
     ${chip ? html`<p class="col-topo__chips" data-intro style="--i:3"><span class="vh">Filtro desta página:</span>${chip}</p>` : ''}
+    ${subs.length ? html`<nav class="col-subs" aria-label="${subsRot}" data-intro style="--i:3"><div class="rolagem col-subs__rol" tabindex="-1"><ul class="col-subs__lista" role="list">${subs.map((c) => html`<li><a class="col-chip col-chip--sub" href="${url(c.d_path)}"${attrs({ 'aria-current': c.d_path === cat.d_path ? 'page' : null })}><span>${c.nome}</span><span class="num" data-campo="categoria-total">${c.total_exibido}</span></a></li>`)}</ul></div></nav>` : ''}
     ${texto ? html`<details class="col-sobre" data-intro style="--i:4"><summary>Sobre esta coleção</summary><p class="prosa" data-campo="categoria-descricao">${texto}</p></details>` : ''}
   </div>
 </section>`;
@@ -251,7 +259,7 @@ export function paginas(ctx) {
     const barra = html`<div class="dia col-barra" data-col-barra>
   <div class="wrap col-barra__in">
     <p class="col-barra__n" aria-live="polite"><span class="num" data-col-n>${lista.length}</span> <span data-col-n-txt>${lista.length === 1 ? 'peça' : 'peças'}</span></p>
-    <div class="col-barra__acoes" data-so-js hidden>
+    <div class="col-barra__acoes" data-so-js>
       <button class="col-btn" type="button" data-gaveta-abrir="col-filtros" aria-haspopup="dialog" aria-expanded="false">${icone('menu', { tamanho: 18 })}Filtrar<span class="col-btn__n num" data-col-nf hidden></span></button>
       <label class="col-ordem col-ordem--barra"><span class="vh">Ordenar por</span><select data-col-ordem>${ORDENS.map(([v, t]) => html`<option value="${v}">${t}</option>`)}</select></label>
       ${S ? html`<button class="col-btn" type="button" data-col-escala aria-expanded="false" aria-controls="col-escala">${icone('regua', { tamanho: 18 })}<span><span class="col-btn__x">Ver em </span><span class="col-btn__e">escala</span></span></button>` : ''}
@@ -268,10 +276,20 @@ export function paginas(ctx) {
       <div class="rolagem col-escala__rol" tabindex="0" role="region" aria-label="Peças em escala, role para os lados"><ol class="col-escala__lista" role="list" data-col-escala-lista></ol></div>
       <p class="escala__aviso"><span data-col-escala-aviso>O desenho usa só as medidas externas publicadas, com o maior tamanho de cada peça.</span> Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.</p>
     </div>` : ''}
-    <ol class="col-grade" role="list" data-col-grade>${lista.map((p, i) => {
-      const fx = faixas.map((c, j) => ((p.d_categorias_paths || []).includes(c.d_path) ? j : -1)).filter((j) => j >= 0);
-      return cartao(p, { pos: i, S, faixas: fx, prioridade: i < 2, lqip: i < 6 });
-    })}</ol>
+    ${rapidos.length ? html`<div class="col-rapidos"><div class="rolagem col-rapidos__rol"><ul class="col-rapidos__lista" role="list">${rapidos.flatMap((g) => g.vs.map(([v, n]) => html`<li><button class="col-chip col-chip--rap" type="button" data-col-rapido="${{ Forma: 'fo', Lugares: 'lu' }[g.k]}" data-valor="${v}" aria-pressed="false">${v}<span class="num">${n}</span></button></li>`))}</ul></div></div>` : ''}
+    ${S ? html`<p class="col-legenda"><span class="col-legenda__selo" aria-hidden="true">escala</span>O selo mostra a peça vista de cima, todas na mesma escala.</p>` : ''}
+    <ol class="col-grade" role="list" data-col-grade>${(() => {
+      // Cartões vizinhos não repetem a mesma foto (versões irmãs têm a mesma galeria): cada cartão evita
+      // as fotos dos dois anteriores, quando a própria galeria tiver outra.
+      const recentes = [];
+      return lista.map((p, i) => {
+        const fx = faixas.map((c, j) => ((p.d_categorias_paths || []).includes(c.d_path) ? j : -1)).filter((j) => j >= 0);
+        const foto = fotoCartao(p.slug, new Set(recentes));
+        recentes.push(foto?.sha1 || null);
+        if (recentes.length > 2) recentes.shift();
+        return cartao(p, { pos: i, S, faixas: fx, prioridade: i < 2, lqip: i < 6, foto, sizes: SIZES_GRADE });
+      });
+    })()}</ol>
     <div class="col-vazio" data-col-vazio hidden>
       <p class="col-vazio__t">Nenhuma peça desta coleção atende a todos os filtros.</p>
       <p><button class="btn btn--fantasma" type="button" data-col-limpar>Limpar os filtros</button> <a class="btn" href="${url('escolher.html')}">${icone('regua', { tamanho: 18 })}Escolher pelo meu espaço</a></p>
@@ -312,7 +330,15 @@ export function paginas(ctx) {
         { '@type': 'BreadcrumbList', itemListElement: trilha.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.nome, item: abs(t.path) })) },
       ],
     };
-    const preload = filme?.avif ? [{ href: filme.avif, as: 'image', type: 'image/avif', fetchpriority: 'high' }] : [];
+    // Sem filme, a primeira foto da grade costuma ser o LCP: pré-carregada com o mesmo srcset e sizes do
+    // cartão (SPEC 12: LCP da coleção é o H1 ou a primeira foto).
+    // Com filme, o poster é o LCP só no desktop (no celular ele é fundo esmaecido e a foto do cartão é o LCP).
+    const f0 = lista[0] ? fotoCartao(lista[0].slug) : null;
+    const av0 = f0?.fontes?.find((x) => x.type === 'image/avif');
+    const preCartao = av0 ? { as: 'image', type: 'image/avif', fetchpriority: 'high', imagesrcset: av0.srcset, imagesizes: SIZES_GRADE } : null;
+    const preload = filme?.avif
+      ? [{ href: filme.avif, as: 'image', type: 'image/avif', fetchpriority: 'high', media: '(min-width:1024px)' }, ...(preCartao ? [{ ...preCartao, media: '(max-width:1023px)' }] : [])]
+      : preCartao ? [preCartao] : [];
     out.push({
       saida: cat.d_path,
       html: layout({
@@ -329,6 +355,13 @@ export function paginas(ctx) {
         preload,
         classe: 'pg-colecao',
         critico: ['colecao'],
+        // LCP é a foto (poster ou primeiro cartão): as fontes (90 KB) e o site.css só são pedidos depois
+        // da primeira pintura (o texto usa o fallback com métrica ajustada até lá, sem CLS) e o JS vai em
+        // prioridade baixa, para nada disputar banda com a foto.
+        fontes: [],
+        cssAposPintura: true,
+        fontesAposPintura: true,
+        jsBaixa: true,
       }),
     });
   }

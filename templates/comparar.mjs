@@ -31,10 +31,10 @@ export function paginas(ctx) {
     <h1 id="cmp-h1" class="ferr-topo__h1" data-intro="mascara" style="--i:1">Comparar modelos</h1>
     <p class="ferr-topo__lead" data-intro style="--i:2">Até três peças lado a lado, com as medidas na mesma escala e os dados publicados pela fábrica.</p>
   </div>
-  <div class="wrap cmp-planta" data-cmp-planta data-so-js hidden>
+  <div class="wrap cmp-planta is-vazio" data-cmp-planta>
     <figure class="escala__fig cmp-fig">
       <svg class="escala__svg cmp-svg" data-cmp-svg role="img" aria-label="Contornos em escala"></svg>
-      <figcaption class="cmp-leg" data-cmp-leg></figcaption>
+      <figcaption class="cmp-leg" data-cmp-leg><span class="cmp-leg__vazio">Escolha até três modelos para ver os contornos na mesma escala.</span></figcaption>
     </figure>
     <form class="cmp-espaco" data-cmp-espaco>
       <p class="escala__cab">Meu espaço, em centímetros</p>
@@ -89,7 +89,12 @@ export function paginas(ctx) {
         sobre: true,
         classe: 'pg-comparar',
         bandeja: false,
-        critico: ['ferramenta'],
+        critico: ['ferramenta', 'escolha'],
+        // Primeira tela inteira no CSS crítico: fontes e site.css depois da primeira pintura (LCP é texto).
+        fontes: [],
+        cssAposPintura: true,
+        fontesAposPintura: true,
+        jsBaixa: true,
       }),
     },
     { saida: 'dados/fichas.json', html: JSON.stringify(fichas) },

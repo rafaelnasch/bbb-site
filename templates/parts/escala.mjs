@@ -54,7 +54,7 @@ export function escala({ tamanho, tipo, id = 'escala', segue = false }) {
   if (!e) return html``;
   const sauna = tipo === 'sauna';
   return html`<div class="escala" data-escala${attrs({ ...dadosTamanho(tamanho), 'data-tipo': tipo, 'data-vista': sauna ? 'frontal' : 'lateral', 'data-segue-tamanho': segue })}>
-  <form class="escala__campos" data-escala-form data-so-js hidden>
+  <form class="escala__campos" data-escala-form data-so-js>
     <p class="escala__cab">Medidas do seu espaço, em centímetros</p>
     <div class="escala__linha">
       <label class="campo"><span class="campo__rot">Largura</span><input class="campo__in num" type="number" inputmode="numeric" min="1" max="3000" step="1" name="largura" id="${id}-largura" autocomplete="off" placeholder="ex.: 90"></label>

@@ -25,7 +25,10 @@
   // Modo lite: movimento reduzido, Save-Data ou rede 2G. Flag global em <html data-lite="1">.
   const conn = navigator.connection || {};
   const mqR = w.matchMedia('(prefers-reduced-motion: reduce)');
-  const lite = () => mqR.matches || !!conn.saveData || /2g/.test(conn.effectiveType || '');
+  // "Pausar movimento" (WCAG 2.2.2): preferência da pessoa, guardada só neste navegador.
+  const PARADO = 'bbb:parado';
+  const parado = () => { try { return localStorage.getItem(PARADO) === 'true'; } catch { return false; } };
+  const lite = () => mqR.matches || !!conn.saveData || /2g/.test(conn.effectiveType || '') || parado();
   const aplicarLite = () => {
     BBB.lite = lite();
     if (BBB.lite) H.dataset.lite = '1';
@@ -155,8 +158,30 @@
     }));
     const ir = $('[data-bandeja-ir]', band);
     if (ir) ir.href = destino();
-    H.style.setProperty('--bandeja-h', n ? `${band.offsetHeight}px` : '0px');
+    if (!n) fecharBandeja(band);
+    medirBandeja();
   };
+  // Altura real da bandeja em --bandeja-h (rodapé, navegação do escolhedor e scroll-padding-bottom).
+  const medirBandeja = () => {
+    const band = $('[data-bandeja]');
+    if (band) H.style.setProperty('--bandeja-h', band.hidden ? '0px' : `${band.offsetHeight}px`);
+  };
+  const fecharBandeja = (band) => {
+    band.classList.remove('is-aberta');
+    $('[data-bandeja-abre]', band)?.setAttribute('aria-expanded', 'false');
+  };
+  {
+    const band = $('[data-bandeja]');
+    if (band && 'ResizeObserver' in w) new ResizeObserver(medirBandeja).observe(band);
+    band?.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-bandeja-abre]');
+      if (!b) return;
+      const aberta = band.classList.toggle('is-aberta');
+      b.setAttribute('aria-expanded', String(aberta));
+      medirBandeja();
+    });
+    band?.addEventListener('keydown', (e) => { if (e.key === 'Escape' && band.classList.contains('is-aberta')) { fecharBandeja(band); $('[data-bandeja-abre]', band)?.focus(); medirBandeja(); } });
+  }
   const salvar = () => { BBB.store.set(CHAVE, comp); pintar(); };
   BBB.comparar = {
     lista: () => comp.slice(),
@@ -227,6 +252,33 @@
   const limpar = (img) => { img.style.backgroundImage = ''; img.removeAttribute('data-lqip'); };
   d.addEventListener('load', (e) => { if (e.target.tagName === 'IMG' && e.target.hasAttribute('data-lqip')) limpar(e.target); }, true);
   $$('img[data-lqip]').forEach((i) => i.complete && i.naturalWidth && limpar(i));
+
+  // ---------- Pausar movimento (WCAG 2.2.2): vídeos em loop, água e vapor ----------
+  // Um botão por página, na barra superior, só onde há movimento automático e o sistema não pediu
+  // movimento reduzido. Pausar liga o modo lite (o mesmo do movimento reduzido) e para o que já toca.
+  const mov = $('[data-movimento]');
+  // O botão sai do HTML só nas páginas com movimento; com movimento reduzido no sistema, ele não é preciso.
+  if (mov && mqR.matches) mov.hidden = true;
+  else if (mov) {
+    const pintarMov = () => {
+      const p = parado();
+      mov.setAttribute('aria-pressed', String(p));
+      const t = p ? 'Retomar movimento' : 'Pausar movimento';
+      $('.topo__mov-t', mov).textContent = t;
+      mov.setAttribute('aria-label', t);
+    };
+    pintarMov();
+    mov.addEventListener('click', () => {
+      const p = !parado();
+      try { if (p) localStorage.setItem(PARADO, 'true'); else localStorage.removeItem(PARADO); } catch { /* sem armazenamento */ }
+      aplicarLite();
+      if (p) $$('video').forEach((v) => { if (!v.paused) { v.dataset.retomar = '1'; v.pause(); } });
+      else $$('video[data-retomar]').forEach((v) => { delete v.dataset.retomar; v.play?.().catch(() => {}); });
+      d.dispatchEvent(new CustomEvent('bbb:movimento', { detail: { parado: p } }));
+      pintarMov();
+      BBB.anunciar(p ? 'Movimento pausado.' : 'Movimento retomado.');
+    });
+  }
 
   pintar();
 })();

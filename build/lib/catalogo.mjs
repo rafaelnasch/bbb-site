@@ -39,8 +39,12 @@ export function campo(p, k) {
 }
 
 /** Foto do cartão: a primeira de fundo azul (as de fundo vermelho vão para o fim, SPEC 6.2). */
-export function fotoCartao(slug) {
-  return ordenarFotos(fotosProduto(slug))[0] || null;
+export function fotoCartao(slug, evitar = null) {
+  const fs = ordenarFotos(fotosProduto(slug));
+  // Cartões vizinhos com a mesma foto (versões irmãs repetem a galeria): usa a próxima foto da própria
+  // galeria que não seja a do vizinho, quando existir (mesma ordem: fundo azul antes do vermelho).
+  if (evitar?.size) return fs.find((f) => !f.sha1 || !evitar.has(f.sha1)) || fs[0] || null;
+  return fs[0] || null;
 }
 
 /** Menor arquivo WebP de uma foto (para cartões montados no navegador): { src, w, h }. */
@@ -121,7 +125,11 @@ export function rotuloCategoria(c, D) {
  * Chaves curtas para caber no orçamento (SPEC 12: índice <= 40 KB gzip).
  */
 export function indiceCatalogo(D) {
-  const produtos = D.ler('produtos.json');
+  // Ordem do catálogo: a posição nas listagens das coleções raiz do site atual (banheiras, spas, ofurôs,
+  // sauna, acessórios); o escolhedor usa esta ordem quando não há espaço informado.
+  const pos = new Map();
+  for (const raiz of Object.values(RAIZ_TIPO)) for (const sl of D.catPorPath.get(raiz)?.produtos || []) if (!pos.has(sl)) pos.set(sl, pos.size);
+  const produtos = [...D.ler('produtos.json')].sort((a, b) => (pos.get(a.slug) ?? Infinity) - (pos.get(b.slug) ?? Infinity));
   const cats = D.categorias.filter((c) => !CATEGORIAS_PONTE.includes(c.d_path));
   const idxCat = new Map(cats.map((c, i) => [c.d_path, i]));
   const itens = produtos.map((p) => {

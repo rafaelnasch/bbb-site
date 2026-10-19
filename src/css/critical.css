@@ -3,15 +3,16 @@
 .topo{--focus-ring:var(--focus-on-dark);background:var(--brand-deep);color:var(--porcelain);font-size:.8125rem;line-height:1.3;position:relative;z-index:51}
 .topo__in{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;min-height:var(--topo-h)}
 .topo a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px}
-.topo .ic{opacity:.8}
 .topo__local{display:none;align-items:center;gap:6px;color:var(--muted-on-dark)}
 .topo__acoes{display:flex;align-items:center;gap:4px 18px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
 .topo__ajuda{font-weight:600}
 @media (min-width:768px){.topo__local{display:inline-flex}}
+/* Pausar movimento: o texto só aparece a partir de 768 px (site.css); o nome acessível vem do aria-label. */
+.topo__mov-t,html:not(.js) .topo__mov{display:none}
+.topo__mov{min-width:44px;min-height:44px}
 @media (max-width:360px){.topo__fixo{display:none!important}}
 
 .cab{--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--focus-ring:var(--focus-on-dark);position:sticky;top:0;z-index:50;color:var(--porcelain);background:var(--room);-webkit-backdrop-filter:saturate(150%) blur(14px);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 16%,transparent);view-transition-name:cabecalho}
-.cab.is-rolado{background:color-mix(in srgb,var(--room) 86%,transparent)}
 .js .cab--sobre:not(.is-rolado){background:transparent;border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
 /* A borda de 1 px entra na conta: sem ela sobra uma fresta do fundo da página sob a barra. */
 .cab--sobre{margin-bottom:calc(-1 * var(--cab-h) - 1px)}
@@ -23,19 +24,14 @@
 .cab__nav{display:none}
 .cab__nav ul{display:flex;align-items:center;gap:clamp(14px,1.5vw,30px);list-style:none;padding:0}
 .cab__nav a{position:relative;display:inline-flex;min-width:44px;align-items:baseline;gap:3px;padding:10px 0;color:var(--porcelain);font-size:.9375rem;font-weight:500;text-decoration:none;white-space:nowrap}
-.cab__nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--glow);transform:scaleX(0);transform-origin:right}
-.cab__nav a[aria-current="page"]::after{transform:scaleX(1)}
 .cab__nav sup{font-size:.6875rem;font-weight:600;line-height:1;color:var(--muted-on-dark);top:-.55em;position:relative;vertical-align:baseline}
 .cab__nav .cab__escolher{gap:8px;padding:9px 16px;border-radius:var(--radius-chip);border:1px solid color-mix(in srgb,var(--line) 42%,transparent);background:color-mix(in srgb,var(--line) 8%,transparent)}
-.cab__nav .cab__escolher::after{display:none}
-.cab__nav .cab__escolher .ic{color:var(--glow)}
 
 .cab__acoes{display:flex;align-items:center;gap:4px;margin-left:auto}
 .cab__icone{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--porcelain);text-decoration:none}
 .cab__badge[data-n="0"]{display:none}
 .cab__whats{display:flex;align-items:center;margin-left:6px;border-radius:var(--radius-chip)}
 .cab__whats .btn{min-height:44px;padding:.55em 1.05em;font-size:.9375rem}
-.cab__whats .btn .ic{color:#fff}
 .js .cab__whats .btn{border-top-right-radius:0;border-bottom-right-radius:0;padding-right:.85em}
 .cab__whats-mais{display:inline-grid;place-items:center;width:44px;min-height:44px;border-radius:0 var(--radius-chip) var(--radius-chip) 0;background:var(--whats-btn);color:#fff;border-left:1px solid rgb(255 255 255 / .22)}
 .cab__menu{display:inline-grid;place-items:center;width:44px;height:44px;margin-left:2px;border-radius:50%;color:var(--porcelain)}
@@ -59,3 +55,9 @@
 .trilha li:not(:last-child)::after{content:"";flex:none;width:5px;height:5px;margin-right:2px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);opacity:.6}
 .trilha a,.trilha [aria-current]{display:inline-flex;align-items:center;min-height:44px;min-width:44px;color:inherit;text-decoration:none}
 .trilha [aria-current]{color:var(--fg)}
+/* Celular: a página atual (repetida no H1) sai da trilha visível e fica para o leitor de tela; a trilha cabe
+   numa linha e a troca de fonte não a quebra em duas (CLS). */
+@media (max-width:599px){.trilha__atual{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.trilha li:nth-last-child(2)::after{display:none}}
+/* Controles que só funcionam com JS: escondidos só sem JS (a classe .js vem do script inline, antes da
+   primeira pintura), para não aparecerem depois e deslocarem a página (CLS). */
+html:not(.js) [data-so-js]{display:none!important}

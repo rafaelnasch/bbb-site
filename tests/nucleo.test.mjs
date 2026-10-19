@@ -114,7 +114,9 @@ test('WhatsApp: todo wa.me usa contato ativo e linkável, fora da lista negra', 
       assert.ok(!estaNaListaNegra(n), `${nome}: ${n} na lista negra`);
     }
     const venda = contatos.find((c) => c.papel === 'venda_principal');
-    assert.ok(p.includes(`https://wa.me/${venda.numero}?text=${encodeURIComponent(venda.prefilled_text).replace(/'/g, '&#39;')}`), 'abertura literal de venda');
+    // Página esgotada: todos os links de venda levam a mesma mensagem de estoque (SPEC 10.2).
+    if (/data-esgotado="1"/.test(p)) assert.ok(/https:\/\/wa\.me\/\d+\?text=Ol%C3%A1!%20Quero%20saber%20se%20a%20/.test(p), `${nome}: mensagem de esgotado`);
+    else assert.ok(p.includes(`https://wa.me/${venda.numero}?text=${encodeURIComponent(venda.prefilled_text).replace(/'/g, '&#39;')}`), 'abertura literal de venda');
     assert.ok(p.includes(`https://wa.me/${contatos.find((c) => c.papel === 'sac').numero}"`), 'SAC sem texto');
   }
 });

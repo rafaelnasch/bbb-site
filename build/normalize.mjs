@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { paths } from '../site.config.mjs';
-import { filtrarFrasesEditorial, filtrarFrasesEditorialMultilinha, detectoresEditoriais, violacaoEditorial, termosSaude, termosSaudeBrutos, termosSaudeSpec, EXCECOES_NAO_SAUDE, TERMOS_SAUDE_IMPLICITA, slugify, semAcento } from './lib/texto.mjs';
+import { filtrarFrasesEditorial, filtrarFrasesEditorialMultilinha, detectoresEditoriais, violacaoEditorial, termosSaude, termosSaudeBrutos, termosSaudeSpec, EXCECOES_NAO_SAUDE, TERMOS_SAUDE_IMPLICITA, slugify, semAcento, DETECTOR_COR_FABRICACAO, DETECTOR_CARRINHO } from './lib/texto.mjs';
 
 // Qual lista pegou o trecho: a fechada da SPEC 0.5 ou a ampliada por decisão do dono (texto.mjs).
 const listaSaude = (termos) => (termosSaudeSpec(termos.join(' ')).length ? 'spec_0.5' : 'ampliada_dono');
@@ -58,7 +58,11 @@ const DETECTOR_GARANTIA = {
   regra: 'garantia',
   fn: (f) => (/garantia/i.test(f) ? ['garantia'] : []),
 };
-const DETECTORES_INSTITUCIONAL = [...DETECTORES, DETECTOR_GARANTIA, DETECTOR_NUMERO_EMPRESA];
+const DETECTORES_INSTITUCIONAL = [...DETECTORES, DETECTOR_GARANTIA, DETECTOR_NUMERO_EMPRESA, DETECTOR_COR_FABRICACAO];
+// Descrição de produto: também o conflito de cor (SPEC 15) e as instruções do carrinho do site atual.
+const DETECTORES_PRODUTO = [...DETECTORES, DETECTOR_COR_FABRICACAO, DETECTOR_CARRINHO];
+// Coleções e FAQ: o conflito de cor sai das duas (nenhuma versão é escolhida).
+const DETECTORES_COR = [...DETECTORES, DETECTOR_COR_FABRICACAO];
 // Entrada de log com a regra que pegou a frase (e a lista, quando é saúde).
 const comRegra = (base, v) => ({ ...base, regra: v.regra, termos: v.termos, ...(v.regra === 'termo_de_saude' ? { lista: listaSaude(v.termos) } : {}) });
 
@@ -291,7 +295,9 @@ function conflitosNomeFicha(p, tipo) {
   // Acessório: "completo" no nome ("Kit filtragem completo") não fala de configuração e a ficha
   // herda lugares do cadastro; ali só material e forma do nome contam.
   const acessorio = tipo === 'acessorio';
-  const nomeMat = /acrilico/.test(n) ? 'Acrílico' : /gel coat/.test(n) ? 'Gel Coat' : null;
+  // Madeira e vidro (saunas): "MADEIRA & VIDRO" no nome contra "Gel Coat" na ficha também é conflito.
+  const nomeMat = /acrilico/.test(n) ? 'Acrílico' : /gel coat/.test(n) ? 'Gel Coat'
+    : /madeira\s*(&|e)\s*vidro/.test(n) ? 'Madeira & Vidro' : /\bmadeira\b/.test(n) ? 'Madeira' : /\bvidro\b/.test(n) ? 'Vidro' : null;
   const nomeCfg = /\bcomplet[ao]\b/.test(n) ? 'Completa' : /\bbasic[ao]\b/.test(n) ? 'Básica' : null;
   if (nomeMat && e.Material && nomeMat !== e.Material) out.push({ campo: 'Material', nome_diz: nomeMat, ficha_diz: e.Material });
   if (!acessorio && nomeCfg && e.Configuracao && nomeCfg !== e.Configuracao) out.push({ campo: 'Configuracao', nome_diz: nomeCfg, ficha_diz: e.Configuracao });
@@ -416,7 +422,7 @@ function filtroEditorialProduto(p) {
     }
     longaOk.push(linha);
   }
-  const desc = filtrarFrasesEditorial(p.descricao_texto == null ? null : longaOk.join('\n'), DETECTORES);
+  const desc = filtrarFrasesEditorial(p.descricao_texto == null ? null : longaOk.join('\n'), DETECTORES_PRODUTO);
   for (const r of desc.removidos) {
     editorialLog.push(comRegra({ slug: p.slug, campo: 'descricao_texto', removido: r.frase }, r));
   }
@@ -452,7 +458,7 @@ function filtroEditorialProduto(p) {
     }
     return true;
   });
-  const curta = filtrarFrasesEditorial(curtaLinhas.join('\n'), DETECTORES);
+  const curta = filtrarFrasesEditorial(curtaLinhas.join('\n'), DETECTORES_PRODUTO);
   for (const r of curta.removidos) {
     editorialLog.push(comRegra({ slug: p.slug, campo: 'descricao_curta_texto', removido: r.frase }, r));
   }
@@ -736,7 +742,7 @@ function atendeFiltro(f, s) {
 }
 
 function descricaoCategoriaExibida(c, path) {
-  const r = filtrarFrasesEditorialMultilinha(c.descricao_texto ?? null, DETECTORES);
+  const r = filtrarFrasesEditorialMultilinha(c.descricao_texto ?? null, DETECTORES_COR);
   for (const x of r.removidos) {
     editorialLog.push(comRegra({ categoria: path, campo: 'descricao_texto', removido: x.frase }, x));
   }
@@ -1046,7 +1052,7 @@ const faq = faqSrc.faq.map((x, i) => {
   // as regras editoriais (frase inteira, com registro). Pergunta com violação, resposta vazia ou item
   // de garantia oculto até a decisão: exibir=false.
   const conferida = FAQ_AUTODECLARACAO_CONFERIDA[item.id]?.() ?? null;
-  const detFaq = conferida ? DETECTORES.filter((d) => d.regra !== 'autodeclaracao_nao_publicar') : DETECTORES;
+  const detFaq = conferida ? DETECTORES_COR.filter((d) => d.regra !== 'autodeclaracao_nao_publicar') : DETECTORES_COR;
   if (conferida) item.revisao_autodeclaracao = { decisao: 'publicar literal: frase da lista de autodeclarações confirmada pelo dado', motivo: conferida };
   const r = filtrarFrasesEditorial(x.resposta_literal, detFaq);
   for (const f of r.removidos) {
@@ -1058,7 +1064,10 @@ const faq = faqSrc.faq.map((x, i) => {
   item.exibir = !(naPergunta || vazia || garantia);
   if (naPergunta || vazia) {
     const v = naPergunta ?? r.removidos[0];
-    item.motivo_nao_exibir = naPergunta ? 'pergunta com trecho fora das regras editoriais' : 'nada sobra da resposta depois do filtro editorial';
+    const v0 = naPergunta ?? r.removidos[0];
+    item.motivo_nao_exibir = v0?.regra === 'conflito_cor_de_fabricacao'
+      ? 'conflito da fonte sobre cor de fabricação (SPEC 15): oculto até a decisão da empresa'
+      : naPergunta ? 'pergunta com trecho fora das regras editoriais' : 'nada sobra da resposta depois do filtro editorial';
     editorialLog.push(comRegra({ faq: item.id, campo: 'item', removido: x.pergunta, decisao: `${item.motivo_nao_exibir}: item fora da exibição` }, v));
   } else if (garantia) {
     item.motivo_nao_exibir = 'garantia: oculto até a decisão da empresa (SPEC 15)';
@@ -1280,7 +1289,12 @@ const politicas = {
     ressalva: pz.tabela.ressalva,
     fonte: pz.source_url,
   },
-  prazo_outras_cores: { literal: inst.comercial.prazo_outras_cores.literal, fonte: inst.comercial.prazo_outras_cores.source_url },
+  // Conflito da fonte sobre cor (SPEC 15): o literal fica no dado e sai da exibição até a decisão.
+  prazo_outras_cores: {
+    literal: inst.comercial.prazo_outras_cores.literal,
+    fonte: inst.comercial.prazo_outras_cores.source_url,
+    ...(violacaoEditorial(inst.comercial.prazo_outras_cores.literal, [DETECTOR_COR_FABRICACAO]) ? { oculto_ate_decisao: true, motivo: 'conflito da fonte sobre cor de fabricação (SPEC 15): coleções dizem "Não estamos fabricando Produtos em cor"' } : {}),
+  },
   entrega: { literal: inst.comercial.restricoes_entrega.literal, fonte: inst.comercial.restricoes_entrega.source_url },
   itens_avulsos_suspensos: { literal: inst.comercial.itens_avulsos_suspensos.literal, fonte: inst.comercial.itens_avulsos_suspensos.source_url },
   instalacao: { literal: inst.comercial.instalacao.literal, fonte: inst.comercial.instalacao.source_url },

@@ -288,8 +288,16 @@ function jsonLd(p, c) {
       name: sub.nome,
       productGroupID: sub.id,
       brand: org,
+      // Variantes em várias páginas (padrão do Google para ProductGroup multipágina): o grupo tem a URL
+      // da primeira versão (a mesma em todas as páginas do grupo); a variante desta página vai pelo @id
+      // do Product completo e cada irmã de outra página pelo @id com a URL da página dela (um @id de
+      // outro documento sozinho não é resolvido; com @type Product sem oferta, o validador acusaria
+      // campos obrigatórios).
+      url: abs(`${sub.membros[0].slug}.html`),
       variesBy: ['https://schema.org/material'],
-      hasVariant: sub.membros.map((m) => ({ '@id': `${abs(`${m.slug}.html`)}#produto` })),
+      hasVariant: sub.membros.map((m) => (m.slug === p.slug
+        ? { '@id': `${abs(`${m.slug}.html`)}#produto` }
+        : { '@id': `${abs(`${m.slug}.html`)}#produto`, url: abs(`${m.slug}.html`) })),
     });
   }
   grafo.push({
@@ -362,7 +370,7 @@ function descricao(p) {
   if (!t) return html``;
   const linhas = t.split('\n').map((l) => l.trim()).filter(Boolean);
   return html`<details class="descricao">
-  <summary class="descricao__s">Descrição completa da página atual</summary>
+  <summary class="descricao__s">Descrição completa</summary>
   <div class="prosa descricao__t">${linhas.map((l) => html`<p>${l}</p>`)}</div>
 </details>`;
 }
@@ -389,8 +397,8 @@ function notaPrecosComoOpcao(p, produtos) {
 /**
  * Links de venda e dos 8 consultores (data-wa-sync="venda": cabeçalho, gaveta, rodapé, doca) já saem do
  * build com a mensagem da peça no estado inicial (SPEC 10.1: mesma abertura + contexto do produto), e
- * não só pelo JS. Na página esgotada, os consultores levam a mensagem de estoque (SPEC 10.2) e os
- * botões gerais de compra ficam com a abertura literal. O número de cada link nunca muda.
+ * não só pelo JS. Na página esgotada, todos esses links (compra e consultores) levam a mesma mensagem de
+ * estoque (SPEC 10.2): a peça gera uma mensagem só, qualquer que seja o botão. O número nunca muda.
  */
 export function comContextoDeVenda(pagina, texto, { soConsultores = false } = {}) {
   const q = `?text=${encodeURIComponent(texto).replace(/'/g, '&#39;')}`;
@@ -435,7 +443,9 @@ export function paginas(ctx) {
     const msgEsgotado = [`Olá! Quero saber se a ${p.nome} volta a ter estoque.`, urlAbs].join('\n');
     const waCompra = D.wa('venda_principal', msgCompra);
     const waEsgotado = D.wa('venda_principal', msgEsgotado);
-    const waPlanta = (t) => D.wa('venda_principal', [abertura, '', [`Quero receber a planta técnica deste modelo.`, `Modelo: ${p.nome} (SKU ${p.sku})`, rotuloTam(t) ? `Tamanho: ${rotuloTam(t)}` : null, urlAbs].filter(Boolean).join('\n')].join('\n'));
+    // Linha "Tamanho:" só com o rótulo literal da opção (SPEC 10.2); sem opção de tamanho, a medida da
+    // ficha não entra na mensagem (nome, SKU e link já identificam a peça).
+    const waPlanta = (t) => D.wa('venda_principal', [abertura, '', [`Quero receber a planta técnica deste modelo.`, `Modelo: ${p.nome} (SKU ${p.sku})`, t.origem === 'opcao' && rotuloTam(t) ? `Tamanho: ${rotuloTam(t)}` : null, urlAbs].filter(Boolean).join('\n')].join('\n'));
     const cx = { D, produtos, tamanhos, esgotado, waCompra, waEsgotado, abertura, urlAbs };
 
     // Planta do tamanho inicial: fundo da etiqueta (poster) e, se o bloco 8 já gerou, o filme.
@@ -491,7 +501,7 @@ export function paginas(ctx) {
   ${!arte && numeroGrande ? html`<div class="prod-topo__fundo" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;overflow:hidden"><p class="prod-topo__num" style="position:absolute;right:0;top:calc(var(--cab-h) + 8px);margin:0;font:300 clamp(9rem,58vw,24rem)/.8 var(--f-display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 40%,transparent);white-space:nowrap">${p.sku}</p></div>` : ''}
   ${arte ? html`<div class="prod-topo__fundo" aria-hidden="true">
     <div class="prod-topo__arte" style="aspect-ratio:${arte.w}/${arte.h}${arte.tipo === 'filme' ? ';opacity:.7' : arte.tipo === 'desenho' ? ';color:var(--line);opacity:.75;--arte-w:36%;--arte-d:5%' : ''}">
-      ${arte.svg || ''}${arte.svg ? '' : html`${arte.avif ? html`<picture><source type="image/avif" srcset="${arte.avif}">` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', fetchpriority: 'high', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1);mix-blend-mode:screen' : null })}>${arte.avif ? html`</picture>` : ''}
+      ${arte.svg || ''}${arte.svg ? '' : html`${arte.avif ? html`<picture><source type="image/avif" srcset="${arte.avif}">` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1);mix-blend-mode:screen' : null })}>${arte.avif ? html`</picture>` : ''}
       ${filme ? html`<video class="prod-topo__filme" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, 'aria-label': filme.aria, width: arte.w, height: arte.h })} muted playsinline loop preload="none"></video>` : ''}`}
     </div>
   </div>` : ''}
@@ -501,7 +511,6 @@ export function paginas(ctx) {
     <h1 id="prod-h1" class="prod-topo__h1" data-intro="mascara" style="--i:1"><span data-campo="nome">${p.nome}</span></h1>
     ${eti.length ? html`<ul class="etiqueta prod-eti" role="list" data-intro style="--i:2">${eti.map((x) => html`<li><span data-campo="ficha-valor" data-ficha="${x.k}">${x.v}</span></li>`)}</ul>` : ''}
     <p class="prod-disp${esgotado ? ' prod-disp--esgotado' : ''}" data-intro style="--i:3"><span class="prod-disp__ponto" aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:${esgotado ? 'var(--glow)' : '#5fd38a'}"></span><span data-campo="disponibilidade">${p.disponibilidade}</span></p>
-    <p class="prod-resumo" data-intro style="--i:4"><span class="etiqueta">Ficha em uma frase</span><span data-campo="resumo">${p.d_resumo}</span></p>
   </div>
 </section>`;
 
@@ -512,6 +521,7 @@ export function paginas(ctx) {
       <h2 class="vh" id="dec-h">Preço e opções</h2>
       ${decisao(p, { ...cx, aposPreco: html`${notaPrecosComoOpcao(p, produtos)}${versoes(p, fam)}` })}
     </section>
+    <section class="prod__bloco prod__resumo" aria-label="Ficha em uma frase"><p class="prod-resumo"><span class="etiqueta">Ficha em uma frase</span><span data-campo="resumo">${p.d_resumo}</span></p></section>
     ${planta ? html`<section class="prod__bloco prod__planta" id="planta" style="${CV}" aria-labelledby="planta-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">${planta.temOficial ? 'Planta técnica oficial' : 'Desenho em escala'}</p>
       <h2 id="planta-h">${planta.temOficial ? 'O desenho é a obra' : 'As medidas, em escala'}</h2>
@@ -555,7 +565,7 @@ ${pareci.length || relacionados.length ? html`<section class="dia secao secao--c
     <p class="etiqueta etiqueta--linha">Mesma forma, medida próxima</p>
     <h2 id="parec-h" class="prod-parec__h">Peças parecidas</h2>
     ${pareci.length ? html`<ul class="minis" role="list" data-reveal-grupo>${pareci.map(cartaoMini)}</ul>` : ''}
-    ${relacionados.length ? html`<div class="relac"><p class="monte__rot">Relacionados na página atual</p><ul class="relac__lista" role="list">${relacionados.map((q) => html`<li><a class="chip" href="${url(`${q.slug}.html`)}">${q.nome}<span class="num">${q.preco.por}</span></a></li>`)}</ul></div>` : ''}
+    ${relacionados.length ? html`<div class="relac"><p class="monte__rot">Peças relacionadas</p><ul class="relac__lista" role="list">${relacionados.map((q) => html`<li><a class="chip" href="${url(`${q.slug}.html`)}">${q.nome}<span class="num">${q.preco.por}</span></a></li>`)}</ul></div>` : ''}
   </div>
 </section>` : ''}
 ${avaliacao(p)}`;
@@ -564,7 +574,9 @@ ${avaliacao(p)}`;
     // og:title e twitter:title com o nome literal completo (sem o limite de 60 do <title>).
     const og = { tipo: 'product', titulo: p.nome, ...(existsSync(join(paths.public, 'media', 'og', `${p.slug}.jpg`)) ? { imagem: `media/og/${p.slug}.jpg` } : {}) };
     const modulos = acessorio ? ['galeria', 'monte'] : ['produto'];
-    const preload = arte?.preload ? [{ as: 'image', fetchpriority: 'high', ...arte.preload }] : [];
+    // A arte da etiqueta é fundo (celular e desktop); o LCP é a foto da peça, pedida com prioridade alta
+    // pelo próprio <img>. A arte só é pré-carregada no desktop, sem disputar banda no celular.
+    const preload = arte?.preload ? [{ as: 'image', ...arte.preload, media: '(min-width:1024px)' }] : [];
     out.push({
       saida,
       html: comContextoDeVenda(layout({
@@ -582,7 +594,13 @@ ${avaliacao(p)}`;
         preload,
         classe: 'pg-produto',
         critico: ['peca', 'produto'],
-      }), esgotado ? msgEsgotado : msgCompra, { soConsultores: esgotado }),
+        // A foto da peça é o LCP: fontes (90 KB) e site.css depois da primeira pintura (a primeira tela está
+        // inteira no CSS crítico; o texto usa o fallback com métrica ajustada) e o JS em prioridade baixa.
+        fontes: [],
+        cssAposPintura: true,
+        fontesAposPintura: true,
+        jsBaixa: true,
+      }), esgotado ? msgEsgotado : msgCompra),
     });
   }
   return out;

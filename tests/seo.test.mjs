@@ -141,6 +141,12 @@ test('sitemaps: índice com 4 filhos, produtos com image:image, só canônicas i
   const idx = pg('sitemap.xml');
   for (const s of ['sitemap-produtos.xml', 'sitemap-colecoes.xml', 'sitemap-paginas.xml', 'sitemap-plantas.xml']) assert.ok(idx.includes(`<loc>${SITE_URL}/${s}</loc>`), s);
   const sp = pg('sitemap-produtos.xml');
+  if (!INDEXAR) {
+    // Prévia: todas as páginas são noindex, os quatro sitemaps saem vazios (SPEC 14).
+    for (const s of ['sitemap-produtos.xml', 'sitemap-colecoes.xml', 'sitemap-paginas.xml', 'sitemap-plantas.xml']) assert.equal((pg(s).match(/<url>/g) || []).length, 0, s);
+    assert.equal(resumo.produtos, produtos.length);
+    return;
+  }
   assert.equal((sp.match(/<url>/g) || []).length, resumo.produtos);
   assert.equal(resumo.produtos, produtos.length);
   assert.ok((sp.match(/<image:image>/g) || []).length >= produtos.length - 1);

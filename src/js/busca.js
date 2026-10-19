@@ -101,7 +101,7 @@
     const t0 = it.ts[0];
     li.innerHTML = `${it.f ? `<img class="esc-c__img" src="${esc(it.f[0])}" width="${it.f[1]}" height="${it.f[2]}" alt="" loading="lazy" decoding="async">` : '<span class="esc-c__vazia">Foto sob consulta</span>'}
 <span class="esc-c__eti">${esc(eti)}</span>
-<h3 class="esc-c__nome"><a href="${esc(cfg.base + it.s)}.html">${esc(it.n)}</a></h3>
+<h2 class="esc-c__nome"><a href="${esc(cfg.base + it.s)}.html">${esc(it.n)}</a></h2>
 ${t0 ? `<span class="esc-c__tam num">${esc(t0[0])}${it.ts.length > 1 ? ` <span class="esc-c__folga">+${it.ts.length - 1} ${it.ts.length === 2 ? 'medida' : 'medidas'}</span>` : ''}</span>` : ''}
 <span class="esc-c__folga num">Nº de catálogo ${esc(it.k)}</span>
 <span class="esc-c__preco num">${esc(it.po || '')}</span>

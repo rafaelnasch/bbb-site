@@ -16,3 +16,4 @@ dist/
 # Saídas dos testes de navegador
 test-results/
 playwright-report/
+.lighthouseci/

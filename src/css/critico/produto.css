@@ -2,7 +2,7 @@
    base da galeria, para o site.css tardio não deslocar a primeira tela (CLS). O fundo da etiqueta
    fica preso ao topo e, no celular, a etiqueta ocupa a tela toda: se o texto mudar de altura com a
    troca de fonte, nada abaixo se move. */
-.prod-topo{position:relative;isolation:isolate;overflow:clip;padding:calc(var(--cab-h) + 12px) 0 48px}
+.prod-topo{position:relative;isolation:isolate;overflow:clip;padding:calc(var(--cab-h) + 12px) 0 28px}
 /* Arte da etiqueta: uma camada só (poster estático do filme, a planta ou o contorno em escala), num
    quadro com a proporção da própria imagem; o vídeo, quando há, ocupa o mesmo quadro e só aparece
    depois de tocar. Celular: faixa no alto, inteira e legível, com o texto logo abaixo (nada atrás do
@@ -10,17 +10,32 @@
    etiqueta ocupa a tela do celular sobre o papel técnico, para a troca de fonte não deslocar a coluna
    de compra (CLS). Opacidade, filtro, a largura do desenho (--arte-w) e o ponto de disponibilidade vão
    inline (templates/produto.mjs) e a máscara no site.css, para caber no teto do CSS crítico. */
-.prod-topo__arte{position:relative}
 .prod-topo__arte>*,.prod-topo__img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .prod-topo__in{display:grid;gap:14px}
-.prod-topo__h1{max-width:18ch}
+.prod-topo__h1{max-width:22ch}
+/* Celular: a arte da etiqueta fica atrás do texto (fundo), para a foto da peça entrar na primeira tela. */
+.prod-topo__fundo{position:absolute;inset:0;z-index:-1}
+.prod-topo__arte{position:absolute;right:-28%;top:calc(var(--cab-h) + 8px);width:min(88%,560px)}
 .prod-eti{flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0}
+/* Celular: a etiqueta em caixa alta pode quebrar em 2 linhas com a fonte de reserva e caber em 1 com a
+   Open Sans; a altura das 2 linhas fica reservada para a troca de fonte não deslocar a página (CLS). */
+@media (max-width:599px){.prod-eti{min-height:37px;align-content:flex-start}}
 .prod-disp{display:inline-flex;align-items:center;gap:8px;font-size:.9375rem}
-.prod-resumo{max-width:64ch;color:var(--fg-2);font-size:1rem}
-.prod-resumo .etiqueta{display:flex}
 .prod{padding-top:8px}
-.prod__grade{display:grid;gap:40px;align-items:start}
+.prod__grade{display:grid;gap:40px;align-items:start}.prod__grade>*{min-width:0}
 .moldura--peca .moldura__img{aspect-ratio:auto;object-fit:contain}
 .galeria__base{display:flex;align-items:center;justify-content:space-between;min-height:44px}
-@media (max-width:1023px){.prod-topo--sem-arte{display:grid;align-content:end;min-height:calc(100svh - var(--topo-h))}}
-@media (min-width:1024px){.prod-topo__fundo{position:absolute;inset:0;z-index:-1}.prod-topo__arte{position:absolute;right:var(--arte-d,-6%);top:calc(var(--cab-h) + 8px);width:var(--arte-w,min(1080px,62%))}.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 4}}
+@media (min-width:1024px){.prod-topo__h1{max-width:28ch}.prod-topo__arte{right:var(--arte-d,-6%);top:calc(var(--cab-h) + 8px);width:var(--arte-w,min(1080px,62%))}.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 5}}
+/* Coluna de decisão e miniaturas da galeria: com a foto na primeira tela, o topo da coluna também está nela. */
+.prod__decisao{padding:clamp(20px,2.4vw,32px);border-radius:22px}
+.decisao__in{display:grid;gap:22px}
+.preco{display:flex;flex-wrap:wrap;gap:4px 14px}
+.preco__por{font:300 clamp(2.125rem,1.6rem + 2vw,2.875rem)/1 var(--f-display)}
+.seletor__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,168px),1fr));gap:8px}
+.seletor__cartao{display:grid;gap:8px;min-height:72px;padding:12px 14px}
+.galeria__mini{display:flex;gap:10px;margin-top:10px;overflow-x:auto}
+.galeria__mini-img{width:72px;height:72px}
+.versoes__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:8px}
+.versoes__chip{display:grid;min-height:56px;padding:10px 14px}
+/* Celular: o desenho em escala (com textos) não fica atrás do título; ele aparece inteiro na seção 6. */
+@media (max-width:1023px){.prod-topo--desenho .prod-topo__fundo{display:none}}
