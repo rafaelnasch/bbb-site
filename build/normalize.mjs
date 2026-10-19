@@ -4,7 +4,10 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { paths } from '../site.config.mjs';
-import { filtrarFrasesSaude, filtrarFrasesSaudeMultilinha, termosSaude, termosSaudeBrutos, EXCECOES_NAO_SAUDE, slugify, semAcento } from './lib/texto.mjs';
+import { filtrarFrasesSaude, filtrarFrasesSaudeMultilinha, termosSaude, termosSaudeBrutos, termosSaudeSpec, EXCECOES_NAO_SAUDE, TERMOS_SAUDE_IMPLICITA, TERMOS_PROIBIDOS_LITERAIS, slugify, semAcento } from './lib/texto.mjs';
+
+// Qual lista pegou o trecho: a fechada da SPEC 0.5 ou a ampliada por decisão do dono (texto.mjs).
+const listaSaude = (termos) => (termosSaudeSpec(termos.join(' ')).length ? 'spec_0.5' : 'ampliada_dono');
 import { somaReais } from './lib/money.mjs';
 import { parseRotuloTamanho, valorUnicoFicha, numerosNoNome, mesmasMedidas } from './lib/medidas.mjs';
 
@@ -286,7 +289,7 @@ function formaConcordada(forma, art) {
   return f.replace(/^redonda$/, 'redondo').replace(/^quadrada$/, 'quadrado');
 }
 
-function resumo(p, tipo, tamanhos, itensExibidos, conflitos) {
+function resumo(p, tipo, tamanhos, itensExibidos, conflitos, medidaConfirmada) {
   // Modelo fixo (SPEC 11.4). Campo ausente ou em conflito: o trecho correspondente é omitido.
   const e = p.especificacoes;
   const emConflito = new Set(conflitos.map((c) => c.campo));
@@ -303,15 +306,30 @@ function resumo(p, tipo, tamanhos, itensExibidos, conflitos) {
     if (e.Material && !emConflito.has('Material')) qual.push(`em ${e.Material.toLowerCase()}`);
     if (e.Configuracao && !emConflito.has('Configuracao')) qual.push(`configuração ${e.Configuracao.toLowerCase()}`);
   }
-  let frase1 = `${art} ${p.nome.trim()}`;
-  if (qual.length) frase1 += ` é ${qual.join(', ')}`;
+  // Acessório: o artigo seguiria o tipo (masculino) e não o nome ("O Tampa de inspeção"); a forma
+  // neutra é "Nome: acessório, ...", sem artigo.
+  let frase1;
+  let gen = art === 'A' ? 'a' : 'o';
+  if (tipo === 'acessorio') {
+    frase1 = `${p.nome.trim()}: ${qual.map((q, i) => (i === 0 ? q.replace(/^um /, '') : q)).join(' ')}`;
+    gen = 'o';
+  } else {
+    frase1 = `${art} ${p.nome.trim()}`;
+    if (qual.length) frase1 += ` é ${qual.join(', ')}`;
+  }
   const rotulos = tamanhos.map((t) => t.rotulo).filter(Boolean);
   if (rotulos.length) {
-    frase1 += `${qual.length ? ',' : ''} vendid${art === 'A' ? 'a' : 'o'} em ${rotulos.length} ${rotulos.length === 1 ? 'tamanho' : 'tamanhos'} (${rotulos.join('; ')})`;
+    const n = `${rotulos.length} ${rotulos.length === 1 ? 'tamanho' : 'tamanhos'}`;
+    // Opção de tamanho e ficha divergem (alerta ficha_x_opcao_tamanho, SPEC 0.3 e 15): o resumo
+    // não adota nenhuma das duas medidas; a ficha mostra as duas com nota.
+    frase1 += medidaConfirmada
+      ? `, vendid${gen} em ${n} (${rotulos.join('; ')})`
+      : `, vendid${gen} em ${n}, com medida a confirmar (a opção de tamanho e a ficha técnica publicadas divergem)`;
   }
   partes.push(`${frase1}.`);
+  // Ponto e vírgula entre os itens: alguns itens literais já têm vírgula no texto.
   const tres = itensExibidos.slice(0, 3).map((i) => i.replace(/[.;]\s*$/, ''));
-  if (tres.length) partes.push(`Itens de série incluem ${tres.join(', ')}.`);
+  if (tres.length) partes.push(`Itens de série incluem ${tres.join('; ')}.`);
   if (p.preco?.por) partes.push(`Preço publicado em ${DATA_COLETA}: a partir de ${p.preco.por}.`);
   return partes.join(' ');
 }
@@ -325,7 +343,7 @@ function filtroEditorialProduto(p) {
     }
     const t = termosSaude(item);
     if (t.length) {
-      editorialLog.push({ slug: p.slug, campo: 'itens_de_serie', regra: 'termo_de_saude', termos: t, removido: item });
+      editorialLog.push({ slug: p.slug, campo: 'itens_de_serie', regra: 'termo_de_saude', termos: t, lista: listaSaude(t), removido: item });
       continue;
     }
     itens.push(item);
@@ -348,7 +366,28 @@ function filtroEditorialProduto(p) {
   }
   const desc = filtrarFrasesSaude(p.descricao_texto == null ? null : longaOk.join('\n'));
   for (const r of desc.removidos) {
-    editorialLog.push({ slug: p.slug, campo: 'descricao_texto', regra: 'termo_de_saude', termos: r.termos, removido: r.frase });
+    editorialLog.push({ slug: p.slug, campo: 'descricao_texto', regra: 'termo_de_saude', termos: r.termos, lista: listaSaude(r.termos), removido: r.frase });
+  }
+  // Título de uma palavra (ex.: "Função") cujo conteúdo saiu inteiro pelo filtro de saúde: sai
+  // junto, para não ficar um título solto antes do separador ">" ou do próximo título.
+  if (desc.texto != null && desc.removidos.length) {
+    const linhas = desc.texto.split('\n');
+    const orig = longaOk;
+    const ficam = [];
+    for (let i = 0; i < linhas.length; i++) {
+      const l = linhas[i].trim();
+      const prox = (linhas[i + 1] ?? '').trim();
+      const ehTitulo = /^\p{L}+$/u.test(l);
+      const proxFecha = prox === '' || prox === '>' || /^\p{L}+$/u.test(prox);
+      const iOrig = orig.findIndex((x) => x.trim() === l);
+      const tinhaConteudo = iOrig >= 0 && orig[iOrig + 1] != null && orig[iOrig + 1].trim() !== prox;
+      if (ehTitulo && proxFecha && tinhaConteudo) {
+        editorialLog.push({ slug: p.slug, campo: 'descricao_texto', regra: 'titulo_sem_conteudo_apos_saude', removido: linhas[i] });
+        continue;
+      }
+      ficam.push(linhas[i]);
+    }
+    desc.texto = ficam.join('\n');
   }
   // Descrição curta: tira as linhas que não são publicadas (SPEC 0.4), o "(VERIFICAR)" e frases de saúde.
   const naoItem = new Set((p.linhas_nao_item_na_descricao_curta || []).map((l) => l.texto.trim()));
@@ -363,7 +402,7 @@ function filtroEditorialProduto(p) {
   });
   const curta = filtrarFrasesSaude(curtaLinhas.join('\n'));
   for (const r of curta.removidos) {
-    editorialLog.push({ slug: p.slug, campo: 'descricao_curta_texto', regra: 'termo_de_saude', termos: r.termos, removido: r.frase });
+    editorialLog.push({ slug: p.slug, campo: 'descricao_curta_texto', regra: 'termo_de_saude', termos: r.termos, lista: listaSaude(r.termos), removido: r.frase });
   }
   return { itens, descricao: desc.texto, curta: curta.texto };
 }
@@ -383,11 +422,16 @@ for (const p of catalog.products) {
   const plantas = plantasPorTamanho(p, tamanhos);
   const ed = filtroEditorialProduto(p);
 
-  // Todos os valores de opção cujo rótulo cita aquecedor. Mais de um preço distinto (ex.: Madrid
-  // com + R$1.180,00 e + R$990,00) é conflito da fonte: d_aquecedor fica null e os valores vão juntos.
-  const aquecedores = p.opcoes_personalizaveis
+  // Valores de opção cujo rótulo cita aquecedor E mostra um valor em R$. "Comprar aquecedor ou
+  // acionador" (R$ 0, sem valor no rótulo) é um convite, não um preço: fica registrado à parte em
+  // d_aquecedor_outras_opcoes e não gera conflito. Mais de um preço distinto (ex.: Madrid com
+  // + R$1.180,00 e + R$990,00) é conflito da fonte: d_aquecedor fica null e os valores vão juntos.
+  const opcoesAquecedor = p.opcoes_personalizaveis
     .flatMap((o) => o.valores.map((v) => ({ titulo: o.titulo, rotulo: v.rotulo_exibido, preco_adicional: v.preco_adicional, value_id: v.value_id })))
     .filter((x) => /aquecedor/i.test(x.rotulo));
+  const comValor = (x) => /R\$\s*\d/.test(x.rotulo);
+  const aquecedores = opcoesAquecedor.filter(comValor);
+  const aquecedoresSemValor = opcoesAquecedor.filter((x) => !comValor(x));
   const precosAquecedor = [...new Set(aquecedores.map((x) => x.preco_adicional))];
 
   const lados = tamanhos.flatMap((t) => [t.a, t.b]).filter((n) => n != null);
@@ -406,6 +450,7 @@ for (const p of catalog.products) {
   out.d_hidro = /com hidro/i.test(p.nome) || p.itens_de_serie.some((i) => /motobomba/i.test(i));
   out.d_aquecedor = precosAquecedor.length === 1 ? precosAquecedor[0] : null;
   out.d_aquecedor_rotulo = precosAquecedor.length === 1 ? aquecedores[0].rotulo : null;
+  if (aquecedoresSemValor.length) out.d_aquecedor_outras_opcoes = aquecedoresSemValor;
   if (precosAquecedor.length > 1) {
     out.d_aquecedor_conflito = true;
     out.d_aquecedor_opcoes = aquecedores;
@@ -425,7 +470,7 @@ for (const p of catalog.products) {
   out.d_itens_de_serie_exibidos = ed.itens;
   out.d_descricao_exibida = ed.descricao;
   out.d_descricao_curta_exibida = ed.curta;
-  out.d_resumo = resumo(p, tipo, tamanhos, ed.itens, out.d_conflito_nome_ficha);
+  out.d_resumo = resumo(p, tipo, tamanhos, ed.itens, out.d_conflito_nome_ficha, !alertaMedida);
   out.d_sem_foto = out.galeria.length === 0;
   out.d_versao_sufixo_1 = /-1$/.test(p.slug);
   out.d_categorias_paths = p.categorias.map((c) => pathDoSite(c.url));
@@ -638,7 +683,7 @@ function atendeFiltro(f, s) {
 function descricaoCategoriaExibida(c, path) {
   const r = filtrarFrasesSaudeMultilinha(c.descricao_texto ?? null);
   for (const x of r.removidos) {
-    editorialLog.push({ categoria: path, campo: 'descricao_texto', regra: 'termo_de_saude', termos: x.termos, removido: x.frase });
+    editorialLog.push({ categoria: path, campo: 'descricao_texto', regra: 'termo_de_saude', termos: x.termos, lista: listaSaude(x.termos), removido: x.frase });
   }
   return r.texto;
 }
@@ -845,6 +890,47 @@ const empresa = {
 };
 if (!empresa.inmetro.certificado) throw new Error('empresa: número do certificado INMETRO não encontrado no texto literal');
 
+// Organismo certificador em duas versões na fonte: a página /inmetro diz ACERT e o rodapé diz
+// Instituto Brasileiro de Certificação. Conflito da fonte (SPEC 0.3): as duas ficam, com nota;
+// nenhuma é escolhida. O número do certificado é o mesmo nas duas.
+{
+  const pagina = (empresa.inmetro.pagina_literal.match(/Organismo Acreditado:\s*([^\n]+)/i) || [])[1]?.trim() ?? null;
+  const rodape = (empresa.inmetro.rodape_literal.match(/emitido pelo\s+(.+?)\.?\s*$/i) || [])[1]?.trim() ?? null;
+  if (!pagina || !rodape) throw new Error('empresa: organismo certificador não encontrado num dos literais do INMETRO');
+  if (semAcento(pagina).toLowerCase().replace(/\W+/g, '') !== semAcento(rodape).toLowerCase().replace(/\W+/g, '')) {
+    empresa.inmetro.organismo_certificador_conflito = {
+      pagina_inmetro: pagina,
+      rodape: rodape,
+      tratamento: 'mostrar as duas versões com a nota "a fonte cita dois organismos; confirmar com a empresa" ou omitir o organismo; nunca escolher uma (SPEC 0.3)',
+      pendente_com_a_empresa: true,
+    };
+    editorialLog.push({ empresa: 'inmetro', campo: 'organismo_certificador', regra: 'conflito_da_fonte', versoes: [{ texto: pagina, fonte: empresa.inmetro.fonte }, { texto: rodape, fonte: 'rodapé global' }], decisao: 'nenhuma escolhida; exibir as duas com nota ou omitir' });
+  }
+}
+
+// Textos integrais das páginas institucionais: o literal fica no dado; o que pode ir ao HTML fica em
+// texto_exibido, sem as frases com afirmação de saúde (lista da SPEC e lista ampliada) e sem as
+// frases com termo proibido literal ("a maior loja"), com registro no editorial-log.
+for (const [chave, t] of Object.entries(empresa.textos_integrais)) {
+  if (!t || typeof t.texto !== 'string') continue;
+  const r = filtrarFrasesSaudeMultilinha(t.texto);
+  for (const x of r.removidos) {
+    editorialLog.push({ empresa: `textos_integrais.${chave}`, campo: 'texto', regra: 'termo_de_saude', termos: x.termos, lista: listaSaude(x.termos), removido: x.frase });
+  }
+  const partes = String(r.texto).split(/(?<=[.!?])(\s+)(?=\S)/u);
+  let out = '';
+  for (let i = 0; i < partes.length; i += 2) {
+    const frase = partes[i];
+    const lit = TERMOS_PROIBIDOS_LITERAIS.filter((p) => frase.toLowerCase().includes(p.toLowerCase()));
+    if (lit.length) {
+      editorialLog.push({ empresa: `textos_integrais.${chave}`, campo: 'texto', regra: 'termo_proibido_literal', termos: lit, removido: frase });
+      continue;
+    }
+    out += frase + (partes[i + 1] ?? '');
+  }
+  empresa.textos_integrais[chave] = { ...t, texto_exibido: out.replace(/\s+$/u, '') };
+}
+
 // ---------------------------------------------------------------------------
 // FAQ (SPEC 3.3, 9.6)
 // ---------------------------------------------------------------------------
@@ -877,7 +963,21 @@ const faq = faqSrc.faq.map((x, i) => {
   };
   if (x.obs) item.obs_fonte = x.obs;
   if (x.link_manual) item.link_manual = x.link_manual;
-  if (termos.length) item.termos_sensiveis = termos;
+  if (termos.length) {
+    item.termos_sensiveis = termos;
+    // Resposta exibível: sem as frases com afirmação de saúde (frase inteira, com registro). Se a
+    // pergunta tiver o termo ou nada sobrar da resposta, o item não é exibido.
+    const r = filtrarFrasesSaude(x.resposta_literal);
+    for (const f of r.removidos) {
+      editorialLog.push({ faq: item.id, campo: 'resposta', regra: 'termo_de_saude', termos: f.termos, lista: listaSaude(f.termos), removido: f.frase });
+    }
+    item.resposta_exibida = r.texto;
+    const naPergunta = termosSaude(x.pergunta);
+    if (naPergunta.length || !String(r.texto ?? '').trim()) {
+      item.exibir = false;
+      editorialLog.push({ faq: item.id, campo: 'item', regra: 'termo_de_saude', termos, lista: listaSaude(termos), removido: x.pergunta, decisao: naPergunta.length ? 'pergunta com afirmação de saúde: item fora da exibição' : 'nada sobra da resposta sem as frases de saúde: item fora da exibição' });
+    }
+  }
   // Palavra da lista usada fora de sentido de saúde (ICMS, tratamento da água): publica literal,
   // com a decisão registrada no próprio item (exceções fixas em build/lib/texto.mjs).
   const brutos = termosSaudeBrutos(`${x.pergunta}\n${x.resposta_literal}`);
@@ -931,7 +1031,7 @@ function filtrarManual(paginas) {
       else if (termosSaude(limpa).length) motivo = 'termo_de_saude';
       if (motivo) {
         ocultos.push({ motivo, texto: linha, ...(motivo === 'garantia' ? { oculto_ate_decisao: true } : {}) });
-        editorialLog.push({ manual_pagina: pg.pagina, campo: 'politicas.manual.paginas[].texto', regra: motivo, ...(motivo === 'termo_de_saude' ? { termos: termosSaude(limpa) } : {}), removido: linha });
+        editorialLog.push({ manual_pagina: pg.pagina, campo: 'politicas.manual.paginas[].texto', regra: motivo, ...(motivo === 'termo_de_saude' ? { termos: termosSaude(limpa), lista: listaSaude(termosSaude(limpa)) } : {}), removido: linha });
         return;
       }
       ficam.push(linha);
@@ -1033,13 +1133,26 @@ const resumoPost = (p) => ({
   modificado_em: p.date_modified,
   categorias: p.categories,
   resumo: p.seo_description || null,
-  // Título ou resumo do post com termo de saúde: o bloco do blog não exibe o post (SPEC 0.5).
-  ...(termosSaude(`${p.title}\n${p.seo_description || ''}`).length ? { termos_sensiveis: termosSaude(`${p.title}\n${p.seo_description || ''}`) } : {}),
+  // Título ou resumo do post com afirmação de saúde (lista da SPEC 0.5 e lista ampliada por decisão
+  // do dono): o post não é exibido (exibir=false). Os demais só são exibidos depois da revisão
+  // manual do índice (revisao_manual_pendente no topo do arquivo).
+  ...(termosSaude(`${p.title}\n${p.seo_description || ''}`).length
+    ? { termos_sensiveis: termosSaude(`${p.title}\n${p.seo_description || ''}`), exibir: false }
+    : { exibir: true }),
 });
+for (const p of posts) {
+  const t = termosSaude(`${p.title}\n${p.seo_description || ''}`);
+  if (t.length) editorialLog.push({ blog_post: p.id, campo: 'titulo/resumo', regra: 'termo_de_saude', termos: t, lista: listaSaude(t), removido: p.title });
+}
 const porCategoria = {};
 for (const p of posts) for (const c of p.categories || []) (porCategoria[c] ||= []).push(resumoPost(p));
 const blogRecentes = {
-  recentes: posts.slice(0, 3).map(resumoPost),
+  // Os 3 mais recentes entre os exibíveis (o post com afirmação de saúde não entra no bloco).
+  recentes: posts.map(resumoPost).filter((x) => x.exibir).slice(0, 3),
+  // A marca automática pega palavras, não sentido: o índice por categoria só vai ao HTML depois
+  // de uma revisão manual título a título (decisão registrada no editorial-log).
+  revisao_manual_pendente: true,
+  regra_exibicao: 'exibir só posts com exibir=true; o índice por_categoria só depois da revisão manual (revisao_manual_pendente=false)',
   por_categoria: porCategoria,
   total_posts: blog._meta.total_posts,
   fonte: blog._meta.fonte,
@@ -1130,7 +1243,12 @@ gravar('exibidos.map.json', exibidos);
 gravar('editorial-log.json', {
   coletado_em: COLETADO_EM,
   regras: {
-    termo_de_saude: 'frase inteira com palavra da lista da SPEC 0.5 sai do texto exibido; o literal fica no dado',
+    termo_de_saude: 'frase inteira com palavra da lista da SPEC 0.5 (lista "spec_0.5") ou da lista ampliada de afirmação de saúde implícita (lista "ampliada_dono") sai do texto exibido; o literal fica no dado',
+    lista_ampliada_dono: { decisao: 'decisão do dono do projeto (18/10/2026): sem claims de saúde, inclusive implícitos (insônia, dor, muscular, estresse, alívio, terapia, alergia, pele, bactérias, benefícios etc.)', termos: TERMOS_SAUDE_IMPLICITA },
+    blog: 'post com termo de saúde no título ou resumo: exibir=false; o índice por categoria fica fora da exibição até revisão manual (revisao_manual_pendente em blog-recentes.json)',
+    faq: 'resposta_exibida sem as frases de saúde; pergunta com termo ou resposta vazia: exibir=false',
+    termo_proibido_literal: 'frase com termo proibido literal ("a maior loja" etc.) sai do texto_exibido dos textos institucionais',
+    conflito_da_fonte: 'duas versões do mesmo dado na fonte: ambas registradas, nenhuma escolhida (SPEC 0.3)',
     excecoes_nao_saude: EXCECOES_NAO_SAUDE.map((e) => ({ expressao: e.re.source, motivo: e.motivo })),
     anotacao_interna_VERIFICAR: 'item ou linha com "(VERIFICAR)" sai até a empresa confirmar',
     garantia: 'capítulos de garantia do manual e linhas do índice que apontam para eles ficam ocultos até a decisão (SPEC 15)',

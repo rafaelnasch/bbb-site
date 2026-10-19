@@ -78,6 +78,17 @@ describe('lista negra', () => {
     for (const c of contatos.contatos) assert.equal(estaNaListaNegra(c.numero), false, c.numero);
   });
 
+  test('faixa da SPEC 55359918200XX continua bloqueada, menos o SAC', () => {
+    for (const n of ['5535991820000', '5535991820061', '5535991820063', '5535991820099', '35991820071']) {
+      assert.equal(estaNaListaNegra(n), true, n);
+    }
+    assert.equal(estaNaListaNegra('5535991820062'), false);
+    assert.deepEqual(numerosProibidosEm('wa.me/5535991820071'), ['5535991820071']);
+    assert.deepEqual(numerosProibidosEm('ligue (35) 99182-0071'), ['5535991820071']);
+    // Fora da faixa: não é bloqueado por ela.
+    assert.equal(estaNaListaNegra('5535991820162'), false);
+  });
+
   test('detecta número proibido cru, com DDI e formatado', () => {
     assert.deepEqual(numerosProibidosEm('https://wa.me/5535997392842?text=x'), ['5535997392842']);
     assert.deepEqual(numerosProibidosEm('ligue (35) 99739-2842'), ['5535997392842']);

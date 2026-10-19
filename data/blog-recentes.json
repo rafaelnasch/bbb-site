@@ -11,7 +11,8 @@
         "Inspirações",
         "Tendências"
       ],
-      "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto."
+      "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto.",
+      "exibir": true
     },
     {
       "id": 1303,
@@ -24,7 +25,8 @@
         "Dicas",
         "Tendências"
       ],
-      "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho."
+      "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho.",
+      "exibir": true
     },
     {
       "id": 1299,
@@ -35,9 +37,12 @@
       "categorias": [
         "Curiosidades"
       ],
-      "resumo": "Descubra quantos litros cabem em uma banheira e entenda o consumo de água, tempo de enchimento e estrutura ideal antes da compra."
+      "resumo": "Descubra quantos litros cabem em uma banheira e entenda o consumo de água, tempo de enchimento e estrutura ideal antes da compra.",
+      "exibir": true
     }
   ],
+  "revisao_manual_pendente": true,
+  "regra_exibicao": "exibir só posts com exibir=true; o índice por_categoria só depois da revisão manual (revisao_manual_pendente=false)",
   "por_categoria": {
     "Dicas": [
       {
@@ -51,7 +56,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto."
+        "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto.",
+        "exibir": true
       },
       {
         "id": 1303,
@@ -64,7 +70,8 @@
           "Dicas",
           "Tendências"
         ],
-        "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho."
+        "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho.",
+        "exibir": true
       },
       {
         "id": 1252,
@@ -78,8 +85,11 @@
         ],
         "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa.",
         "termos_sensiveis": [
-          "circulacao"
-        ]
+          "circulacao",
+          "muscular",
+          "alivie"
+        ],
+        "exibir": false
       },
       {
         "id": 1237,
@@ -92,7 +102,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Planeje sua banheira em varanda com segurança. Descubra os cuidados com a estrutura, hidráulica e decoração para criar o seu spa residencial."
+        "resumo": "Planeje sua banheira em varanda com segurança. Descubra os cuidados com a estrutura, hidráulica e decoração para criar o seu spa residencial.",
+        "exibir": true
       },
       {
         "id": 1215,
@@ -104,7 +115,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Confira o guia completo para escolher a banheira para casal ideal. Descubra modelos, tamanhos e dicas de instalação para criar seu spa residencial."
+        "resumo": "Confira o guia completo para escolher a banheira para casal ideal. Descubra modelos, tamanhos e dicas de instalação para criar seu spa residencial.",
+        "exibir": true
       },
       {
         "id": 1162,
@@ -117,7 +129,8 @@
           "Dicas",
           "Spas"
         ],
-        "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar."
+        "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar.",
+        "exibir": true
       },
       {
         "id": 1146,
@@ -129,7 +142,8 @@
           "Dicas",
           "Spas"
         ],
-        "resumo": "Descubra como criar uma área de lazer com spa perfeita. Veja dicas de planejamento, decks, iluminação e revestimentos para o seu refúgio."
+        "resumo": "Descubra como criar uma área de lazer com spa perfeita. Veja dicas de planejamento, decks, iluminação e revestimentos para o seu refúgio.",
+        "exibir": true
       },
       {
         "id": 1118,
@@ -140,7 +154,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Banheira ou spa? Descubra diferenças, vantagens e espaços ideais para instalação e escolha a melhor opção de relaxamento para sua casa."
+        "resumo": "Banheira ou spa? Descubra diferenças, vantagens e espaços ideais para instalação e escolha a melhor opção de relaxamento para sua casa.",
+        "exibir": true
       },
       {
         "id": 1114,
@@ -152,7 +167,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra como a banheira para suíte transforma o ambiente em um espaço sofisticado, confortável e valorizado, com modelos e dicas exclusivas."
+        "resumo": "Descubra como a banheira para suíte transforma o ambiente em um espaço sofisticado, confortável e valorizado, com modelos e dicas exclusivas.",
+        "exibir": true
       },
       {
         "id": 1110,
@@ -169,7 +185,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto."
+        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto.",
+        "exibir": true
       },
       {
         "id": 1105,
@@ -180,7 +197,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Banheira freestanding: tendência moderna que une design sofisticado, conforto e valorização para transformar seu banheiro em um refúgio elegante."
+        "resumo": "Banheira freestanding: tendência moderna que une design sofisticado, conforto e valorização para transformar seu banheiro em um refúgio elegante.",
+        "exibir": true
       },
       {
         "id": 1018,
@@ -191,7 +209,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Transforme seu banheiro com banheiras relaxantes e confortáveis. Veja modelos e dicas para escolher a ideal."
+        "resumo": "Transforme seu banheiro com banheiras relaxantes e confortáveis. Veja modelos e dicas para escolher a ideal.",
+        "exibir": true
       },
       {
         "id": 1012,
@@ -202,7 +221,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Banheira com aquecedor: descubra conforto, uso prolongado e relaxamento em família com tecnologia moderna."
+        "resumo": "Banheira com aquecedor: descubra conforto, uso prolongado e relaxamento em família com tecnologia moderna.",
+        "exibir": true
       },
       {
         "id": 1037,
@@ -213,7 +233,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Descubra as vantagens de ter banheira e como ela pode melhorar seu bem-estar, conforto e valorizar sua casa."
+        "resumo": "Descubra as vantagens de ter banheira e como ela pode melhorar seu bem-estar, conforto e valorizar sua casa.",
+        "exibir": true
       },
       {
         "id": 960,
@@ -224,7 +245,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Descubra os principais modelos de banheiras, suas características e indicações para transformar seu banheiro em um espaço de bem-estar."
+        "resumo": "Descubra os principais modelos de banheiras, suas características e indicações para transformar seu banheiro em um espaço de bem-estar.",
+        "exibir": true
       },
       {
         "id": 952,
@@ -235,7 +257,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Guia prático sobre tamanho de banheira: descubra medidas ideais, formatos e dicas para escolher o modelo perfeito para seu espaço."
+        "resumo": "Guia prático sobre tamanho de banheira: descubra medidas ideais, formatos e dicas para escolher o modelo perfeito para seu espaço.",
+        "exibir": true
       },
       {
         "id": 947,
@@ -246,7 +269,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Banheiras pequenas: modelos, formatos e dicas para escolher a ideal e transformar espaços compactos em áreas de relaxamento e conforto."
+        "resumo": "Banheiras pequenas: modelos, formatos e dicas para escolher a ideal e transformar espaços compactos em áreas de relaxamento e conforto.",
+        "exibir": true
       },
       {
         "id": 1024,
@@ -257,7 +281,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Confira dicas práticas sobre o que avaliar antes de comprar banheira e acerte na escolha do modelo perfeito para sua casa."
+        "resumo": "Confira dicas práticas sobre o que avaliar antes de comprar banheira e acerte na escolha do modelo perfeito para sua casa.",
+        "exibir": true
       },
       {
         "id": 1040,
@@ -268,7 +293,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Veja como as banheiras serão tendência nos banheiros em 2026 e transforme seu espaço com estilo, conforto e bem-estar."
+        "resumo": "Veja como as banheiras serão tendência nos banheiros em 2026 e transforme seu espaço com estilo, conforto e bem-estar.",
+        "exibir": true
       },
       {
         "id": 826,
@@ -279,7 +305,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Banheira em apartamento: descubra como instalar com segurança, modelos ideais e soluções para espaços pequenos."
+        "resumo": "Banheira em apartamento: descubra como instalar com segurança, modelos ideais e soluções para espaços pequenos.",
+        "exibir": true
       },
       {
         "id": 822,
@@ -290,7 +317,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Descubra como colocar banheira em banheiro pequeno com dicas de modelos, instalação e design funcional para aproveitar melhor seu espaço."
+        "resumo": "Descubra como colocar banheira em banheiro pequeno com dicas de modelos, instalação e design funcional para aproveitar melhor seu espaço.",
+        "exibir": true
       },
       {
         "id": 773,
@@ -302,7 +330,13 @@
           "Cromoterapia",
           "Dicas"
         ],
-        "resumo": "Conheça o ritual japonês do Yu, uma técnica ancestral de banho que promove relaxamento profundo, alívio do estresse e reconexão com o corpo e a mente."
+        "resumo": "Conheça o ritual japonês do Yu, uma técnica ancestral de banho que promove relaxamento profundo, alívio do estresse e reconexão com o corpo e a mente.",
+        "termos_sensiveis": [
+          "terapia",
+          "alivio",
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 771,
@@ -313,7 +347,11 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Descubra como o banho de banheira reduz o estresse, ativa seu cérebro e melhora sua produtividade com base na neurociência moderna."
+        "resumo": "Descubra como o banho de banheira reduz o estresse, ativa seu cérebro e melhora sua produtividade com base na neurociência moderna.",
+        "termos_sensiveis": [
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 764,
@@ -324,7 +362,12 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Imagine chegar em casa após um dia estressante e encontrar um espaço que oferece conforto, tranquilidade e bem-estar."
+        "resumo": "Imagine chegar em casa após um dia estressante e encontrar um espaço que oferece conforto, tranquilidade e bem-estar.",
+        "termos_sensiveis": [
+          "beneficios",
+          "estressante"
+        ],
+        "exibir": false
       },
       {
         "id": 750,
@@ -336,7 +379,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Banheira em seu projeto residencial: descubra como integrar conforto e funcionalidade no seu espaço. Dicas para transformar seu lar."
+        "resumo": "Banheira em seu projeto residencial: descubra como integrar conforto e funcionalidade no seu espaço. Dicas para transformar seu lar.",
+        "exibir": true
       },
       {
         "id": 734,
@@ -347,7 +391,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Descubra como garantir a segurança ao desfrutar de um banho relaxante em uma banheira com nossas oito dicas essenciais."
+        "resumo": "Descubra como garantir a segurança ao desfrutar de um banho relaxante em uma banheira com nossas oito dicas essenciais.",
+        "exibir": true
       },
       {
         "id": 726,
@@ -358,7 +403,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Descubra como tornar os banhos em banheiras infantis seguros, divertidas e agradáveis em sete etapas essenciais."
+        "resumo": "Descubra como tornar os banhos em banheiras infantis seguros, divertidas e agradáveis em sete etapas essenciais.",
+        "exibir": true
       },
       {
         "id": 700,
@@ -369,7 +415,11 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "explore os benefícios do banho de banheira para criança que promovem bem-estar físico e mental"
+        "resumo": "explore os benefícios do banho de banheira para criança que promovem bem-estar físico e mental",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 687,
@@ -381,7 +431,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Com algumas mudanças estratégicas e a escolha dos elementos certos, você pode criar um spa de luxo em seu próprio banheiro."
+        "resumo": "Com algumas mudanças estratégicas e a escolha dos elementos certos, você pode criar um spa de luxo em seu próprio banheiro.",
+        "exibir": true
       },
       {
         "id": 684,
@@ -393,7 +444,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Descubra como uma banheira pode transformar seu banheiro em um refúgio de luxo e valorizar sua casa. Saiba mais aqui!"
+        "resumo": "Descubra como uma banheira pode transformar seu banheiro em um refúgio de luxo e valorizar sua casa. Saiba mais aqui!",
+        "exibir": true
       },
       {
         "id": 680,
@@ -404,7 +456,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Talvez você já tenha pensando se vale realmente a pena colocar uma banheira de canto em seu banheiro, não é mesmo? Confira!"
+        "resumo": "Talvez você já tenha pensando se vale realmente a pena colocar uma banheira de canto em seu banheiro, não é mesmo? Confira!",
+        "exibir": true
       },
       {
         "id": 620,
@@ -415,7 +468,11 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Leia o texto a seguir e descubra por que é interessante contar com uma banheira na sua casa e os benefícios que isso pode trazer"
+        "resumo": "Leia o texto a seguir e descubra por que é interessante contar com uma banheira na sua casa e os benefícios que isso pode trazer",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 639,
@@ -426,7 +483,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Descubra como escolher a melhor banheira para quintal, conheça modelos ideais para áreas externas e veja o que considerar antes da instalação."
+        "resumo": "Descubra como escolher a melhor banheira para quintal, conheça modelos ideais para áreas externas e veja o que considerar antes da instalação.",
+        "exibir": true
       },
       {
         "id": 636,
@@ -437,7 +495,11 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Confira as principais vantagens de contratar o kit instalação motobomba, kit base e kit pé para a sua banheira. Saiba mais."
+        "resumo": "Confira as principais vantagens de contratar o kit instalação motobomba, kit base e kit pé para a sua banheira. Saiba mais.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 630,
@@ -448,7 +510,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Confira dicas para um banho de banheira relaxante e extremamente romântico."
+        "resumo": "Confira dicas para um banho de banheira relaxante e extremamente romântico.",
+        "exibir": true
       },
       {
         "id": 614,
@@ -459,7 +522,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Confira incríveis dicas de como retirar manchas de sua banheira sem danificá-la. Saiba mais."
+        "resumo": "Confira incríveis dicas de como retirar manchas de sua banheira sem danificá-la. Saiba mais.",
+        "exibir": true
       },
       {
         "id": 600,
@@ -470,7 +534,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Saiba como dar banho em pet e garanta um momento mais agradável para você e para seus amigos de quatro patas. Confira!"
+        "resumo": "Saiba como dar banho em pet e garanta um momento mais agradável para você e para seus amigos de quatro patas. Confira!",
+        "exibir": true
       },
       {
         "id": 597,
@@ -481,7 +546,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Aprenda como tornar seu banho de banheira ainda mais relaxante e saiba tudo o que será necessário para transformar esse momento. Confira!"
+        "resumo": "Aprenda como tornar seu banho de banheira ainda mais relaxante e saiba tudo o que será necessário para transformar esse momento. Confira!",
+        "exibir": true
       },
       {
         "id": 581,
@@ -492,7 +558,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Garantir a segurança dos idosos, até mesmo na hora do banho, é essencial. Existem truques que conseguem garantir a segurança dos mais velhos. Confira!"
+        "resumo": "Garantir a segurança dos idosos, até mesmo na hora do banho, é essencial. Existem truques que conseguem garantir a segurança dos mais velhos. Confira!",
+        "exibir": true
       },
       {
         "id": 578,
@@ -503,7 +570,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "A aromaterapia pode ser uma ótima forma de relaxar após dias cansativos. Confira dicas de como relaxar com a aromaterapia em uma banheira."
+        "resumo": "A aromaterapia pode ser uma ótima forma de relaxar após dias cansativos. Confira dicas de como relaxar com a aromaterapia em uma banheira.",
+        "exibir": true
       },
       {
         "id": 574,
@@ -516,7 +584,8 @@
           "Banhos por imersão",
           "Dicas"
         ],
-        "resumo": "Veja dicas de modelos de banheiras mais econômicas."
+        "resumo": "Veja dicas de modelos de banheiras mais econômicas.",
+        "exibir": true
       },
       {
         "id": 567,
@@ -527,7 +596,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "As banheiras, por mais que hoje em dia estejam mais comuns nas casas dos brasileiros do que em anos atrás, onde só se via esse tipo de material em novelas, comerciais ou em casas de americanos. Ainda são itens considerados de luxo, pois trazem um ar de sofisticação a mais. Além de combinarem com diferentes [&hellip;]"
+        "resumo": "As banheiras, por mais que hoje em dia estejam mais comuns nas casas dos brasileiros do que em anos atrás, onde só se via esse tipo de material em novelas, comerciais ou em casas de americanos. Ainda são itens considerados de luxo, pois trazem um ar de sofisticação a mais. Além de combinarem com diferentes [&hellip;]",
+        "exibir": true
       },
       {
         "id": 564,
@@ -539,7 +609,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "O banho em animais de estimação é super importante para manter a boa aparência e saúde do seu pet, é claro, que contar com banheiras de qualidade faz toda a diferença. No site da BBB Banheiras, você garante os melhores modelos de banheiras disponíveis, tanto para pessoas como para pets Assim como os seres humanos, [&hellip;]"
+        "resumo": "O banho em animais de estimação é super importante para manter a boa aparência e saúde do seu pet, é claro, que contar com banheiras de qualidade faz toda a diferença. No site da BBB Banheiras, você garante os melhores modelos de banheiras disponíveis, tanto para pessoas como para pets Assim como os seres humanos, [&hellip;]",
+        "termos_sensiveis": [
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 560,
@@ -552,7 +626,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Não é segredo para ninguém o investimento em adquirir uma banheira, mas vale a pena para garantir banhos relaxantes e inesquecíveis. Os modelos disponíveis no site da Banheiras Bom Banho são de ótima qualidade e possuem preço justo de acordo com a tecnologia diferente de cada uma. Aproveite para adquirir a sua banheira de hidromassagem [&hellip;]"
+        "resumo": "Não é segredo para ninguém o investimento em adquirir uma banheira, mas vale a pena para garantir banhos relaxantes e inesquecíveis. Os modelos disponíveis no site da Banheiras Bom Banho são de ótima qualidade e possuem preço justo de acordo com a tecnologia diferente de cada uma. Aproveite para adquirir a sua banheira de hidromassagem [&hellip;]",
+        "exibir": true
       },
       {
         "id": 552,
@@ -565,7 +640,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "As banheiras para pet da Banheiras Bom Banho são materiais de extrema qualidade. A seguir separamos algumas vantagens de adquirir tal objeto para seu animal de estimação."
+        "resumo": "As banheiras para pet da Banheiras Bom Banho são materiais de extrema qualidade. A seguir separamos algumas vantagens de adquirir tal objeto para seu animal de estimação.",
+        "exibir": true
       },
       {
         "id": 547,
@@ -576,7 +652,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Veja a seguir algumas características importantes, saber a respeito das banheiras vitorianas para bebês."
+        "resumo": "Veja a seguir algumas características importantes, saber a respeito das banheiras vitorianas para bebês.",
+        "exibir": true
       },
       {
         "id": 538,
@@ -588,7 +665,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Entenda as principais vantagens da banheira de canto e saiba se essa é a banheira ideal para o banheiro de sua casa. Confira!"
+        "resumo": "Entenda as principais vantagens da banheira de canto e saiba se essa é a banheira ideal para o banheiro de sua casa. Confira!",
+        "exibir": true
       },
       {
         "id": 651,
@@ -599,7 +677,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Confira as principais dicas para escolher o tamanho, formato e estilo da banheira ideal para a sua casa e para o seu banheiro."
+        "resumo": "Confira as principais dicas para escolher o tamanho, formato e estilo da banheira ideal para a sua casa e para o seu banheiro.",
+        "exibir": true
       },
       {
         "id": 512,
@@ -612,7 +691,8 @@
           "Dicas",
           "Tendências"
         ],
-        "resumo": "Um quarto de hotel com banheira de hidromassagem já ganha muitos pontos, não é? Entenda a importâcia de ter uma boa banheira em seu hotel."
+        "resumo": "Um quarto de hotel com banheira de hidromassagem já ganha muitos pontos, não é? Entenda a importâcia de ter uma boa banheira em seu hotel.",
+        "exibir": true
       },
       {
         "id": 506,
@@ -624,7 +704,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Não existe nada melhor do que chegar em casa depois de um dia cansativo. Para relaxar, muitas pessoas optam pelos sais de banho."
+        "resumo": "Não existe nada melhor do que chegar em casa depois de um dia cansativo. Para relaxar, muitas pessoas optam pelos sais de banho.",
+        "exibir": true
       },
       {
         "id": 503,
@@ -636,7 +717,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Para uma criança é possível adicionar mais uma característica para um banho na banheira hidro: diversão em dobro. Confira dicas."
+        "resumo": "Para uma criança é possível adicionar mais uma característica para um banho na banheira hidro: diversão em dobro. Confira dicas.",
+        "exibir": true
       },
       {
         "id": 498,
@@ -648,7 +730,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Seja por motivos de estética ou problemas técnicos, a reforma do banheiro pode deixa-lo mais confortável e elegante. Saiba porque colocar uma banheira."
+        "resumo": "Seja por motivos de estética ou problemas técnicos, a reforma do banheiro pode deixa-lo mais confortável e elegante. Saiba porque colocar uma banheira.",
+        "exibir": true
       },
       {
         "id": 497,
@@ -660,7 +743,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Se você quer renovar as energias e ficar revigorado, precisa conhecer o banho de banheira. Saiba mais aqui e conte com a BBB!"
+        "resumo": "Se você quer renovar as energias e ficar revigorado, precisa conhecer o banho de banheira. Saiba mais aqui e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 491,
@@ -672,7 +756,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Que tal aproveitar aquele dia de folga para entrar na banheira de hidro e fazer um spa day? Confira dicas para aproveitar o máximo."
+        "resumo": "Que tal aproveitar aquele dia de folga para entrar na banheira de hidro e fazer um spa day? Confira dicas para aproveitar o máximo.",
+        "exibir": true
       },
       {
         "id": 486,
@@ -684,7 +769,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "A banheira proporciona momentos tão incríveis e únicos que é até difícil descrever. O local da casa onde ela está instalada vira o nosso canto preferido."
+        "resumo": "A banheira proporciona momentos tão incríveis e únicos que é até difícil descrever. O local da casa onde ela está instalada vira o nosso canto preferido.",
+        "exibir": true
       },
       {
         "id": 477,
@@ -696,7 +782,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Escolher qual tipo de banheira instalar em um local pode ser motivo de diversas dúvidas. Confira as principais diferenças entre os tipos."
+        "resumo": "Escolher qual tipo de banheira instalar em um local pode ser motivo de diversas dúvidas. Confira as principais diferenças entre os tipos.",
+        "exibir": true
       },
       {
         "id": 479,
@@ -707,7 +794,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Confira algumas dicas de limpeza de banheira que hotéis e motéis precisam adotar neste momento. Conte com a Banheiras Bom Banho!"
+        "resumo": "Confira algumas dicas de limpeza de banheira que hotéis e motéis precisam adotar neste momento. Conte com a Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 474,
@@ -719,7 +807,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Confira algumas dicas para fazer a instalação perfeita de uma banheira Spa na sua casa. Esse e outros modelos você encontra aqui, na BBB!"
+        "resumo": "Confira algumas dicas para fazer a instalação perfeita de uma banheira Spa na sua casa. Esse e outros modelos você encontra aqui, na BBB!",
+        "exibir": true
       },
       {
         "id": 469,
@@ -731,7 +820,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra as vantagens que a banheira proporciona aos clientes e aos hotéis. Conheça nossos modelos de hidromassagem e conte com a BBB!"
+        "resumo": "Descubra as vantagens que a banheira proporciona aos clientes e aos hotéis. Conheça nossos modelos de hidromassagem e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 459,
@@ -743,7 +833,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "A instalação de uma banheira requer uma série de cuidados, mas isso não significa que não possa fazer parte da estrutura de casas e apartamentos."
+        "resumo": "A instalação de uma banheira requer uma série de cuidados, mas isso não significa que não possa fazer parte da estrutura de casas e apartamentos.",
+        "exibir": true
       },
       {
         "id": 458,
@@ -755,7 +846,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Confira aqui 3 motivos para incluir a banheira de hidromassagem no banheiro da sua casa. Conheça nossos modelos de banheira e conte com a BBB!"
+        "resumo": "Confira aqui 3 motivos para incluir a banheira de hidromassagem no banheiro da sua casa. Conheça nossos modelos de banheira e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 454,
@@ -767,7 +859,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra vários modelos de banheira de hidromassagem da Banheiras Bom Banho e escolha o melhor para o seu banheiro. Conte com a gente!"
+        "resumo": "Descubra vários modelos de banheira de hidromassagem da Banheiras Bom Banho e escolha o melhor para o seu banheiro. Conte com a gente!",
+        "exibir": true
       },
       {
         "id": 447,
@@ -779,7 +872,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Imagina o quão gratificante é poder relaxar dentro de casa com uma banheira de hidro. A missão de relaxar fica bem mais fácil!"
+        "resumo": "Imagina o quão gratificante é poder relaxar dentro de casa com uma banheira de hidro. A missão de relaxar fica bem mais fácil!",
+        "termos_sensiveis": [
+          "estressante"
+        ],
+        "exibir": false
       },
       {
         "id": 448,
@@ -791,7 +888,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Você tem uma banheira de hidromassagem e quer saber mais sobre a vida útil do produto? Descubra aqui se já está na hora de trocar! Conte com a BBB!"
+        "resumo": "Você tem uma banheira de hidromassagem e quer saber mais sobre a vida útil do produto? Descubra aqui se já está na hora de trocar! Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 442,
@@ -802,7 +900,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Saiba o que fazer para deixar o espaço com banheira ainda mais sofisticado. Confira algumas dicas de acabamento e conte com a BBB!"
+        "resumo": "Saiba o que fazer para deixar o espaço com banheira ainda mais sofisticado. Confira algumas dicas de acabamento e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 441,
@@ -814,7 +913,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Uma banheira de hidromassagem é sinônimo de relaxamento, e a suíte também deve proporcionar momentos únicos e especiais. Confira dicas."
+        "resumo": "Uma banheira de hidromassagem é sinônimo de relaxamento, e a suíte também deve proporcionar momentos únicos e especiais. Confira dicas.",
+        "exibir": true
       },
       {
         "id": 435,
@@ -826,7 +926,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Passar alguns minutos na banheira hidro é bom em qualquer época do ano, mas fica ainda melhor nos dias frios do inverno, não acha? Confira dicas."
+        "resumo": "Passar alguns minutos na banheira hidro é bom em qualquer época do ano, mas fica ainda melhor nos dias frios do inverno, não acha? Confira dicas.",
+        "termos_sensiveis": [
+          "pele"
+        ],
+        "exibir": false
       },
       {
         "id": 426,
@@ -837,7 +941,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Confira aqui como criar brincadeiras na banheira para as crianças. Conheça os modelos da Banheiras Bom Banho e conte com a gente!"
+        "resumo": "Confira aqui como criar brincadeiras na banheira para as crianças. Conheça os modelos da Banheiras Bom Banho e conte com a gente!",
+        "exibir": true
       },
       {
         "id": 422,
@@ -849,7 +954,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "A limpeza do banheiro de casa pode ser considerada uma tarefa trabalhosa por muitos, mas é extremamente necessária. Confira dicas."
+        "resumo": "A limpeza do banheiro de casa pode ser considerada uma tarefa trabalhosa por muitos, mas é extremamente necessária. Confira dicas.",
+        "exibir": true
       },
       {
         "id": 416,
@@ -861,7 +967,12 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Com tantas preocupações e problemas diários, o momento do banho se torna ainda mais importante e necessário para o relaxamento."
+        "resumo": "Com tantas preocupações e problemas diários, o momento do banho se torna ainda mais importante e necessário para o relaxamento.",
+        "termos_sensiveis": [
+          "alivio",
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 412,
@@ -873,7 +984,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "O banheiro, deve ser funcional e elegante. A escolha dos objetos, acessórios e a disposição no ambiente é fundamental para garantir o conforto de todos."
+        "resumo": "O banheiro, deve ser funcional e elegante. A escolha dos objetos, acessórios e a disposição no ambiente é fundamental para garantir o conforto de todos.",
+        "exibir": true
       },
       {
         "id": 406,
@@ -885,7 +997,8 @@
           "Dicas",
           "Ofurôs"
         ],
-        "resumo": "Saiba quais itens usar no seu banho de ofurô para torná-lo muito mais relaxante e prazeroso. Confira nossos modelos e conte com a BBB!"
+        "resumo": "Saiba quais itens usar no seu banho de ofurô para torná-lo muito mais relaxante e prazeroso. Confira nossos modelos e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 399,
@@ -897,7 +1010,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Os banheiros deixaram de ser espaços exclusivos de instalação da banheira. O acessório também pode fazer parte dos quartos, deixando os locais confortáveis e luxuosos! Você tem dúvidas sobre a instalação de uma hidromassagem no quarto? Continue lendo o blog da Banheiras Bom Banho! Contrate um arquiteto Ter uma banheira de hidromassagem em casa, ou [&hellip;]"
+        "resumo": "Os banheiros deixaram de ser espaços exclusivos de instalação da banheira. O acessório também pode fazer parte dos quartos, deixando os locais confortáveis e luxuosos! Você tem dúvidas sobre a instalação de uma hidromassagem no quarto? Continue lendo o blog da Banheiras Bom Banho! Contrate um arquiteto Ter uma banheira de hidromassagem em casa, ou [&hellip;]",
+        "exibir": true
       },
       {
         "id": 393,
@@ -909,7 +1023,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Uma incrível banheira de hidromassagem só cabe em banheiros grandes, certo? Errado! Se você tem um espaço pequeno, fique tranquilo!"
+        "resumo": "Uma incrível banheira de hidromassagem só cabe em banheiros grandes, certo? Errado! Se você tem um espaço pequeno, fique tranquilo!",
+        "exibir": true
       },
       {
         "id": 388,
@@ -920,7 +1035,11 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Entenda para que serve sais de banho, seus principais benefícios e como usar o produto corretamente para potencializar o relaxamento e o bem-estar."
+        "resumo": "Entenda para que serve sais de banho, seus principais benefícios e como usar o produto corretamente para potencializar o relaxamento e o bem-estar.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 379,
@@ -931,7 +1050,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Você sempre sonhou com um banheiro com banheira? A BBB te ensina a tirar esse sonho do papel! Confira nossas dicas e conte com a gente!"
+        "resumo": "Você sempre sonhou com um banheiro com banheira? A BBB te ensina a tirar esse sonho do papel! Confira nossas dicas e conte com a gente!",
+        "exibir": true
       },
       {
         "id": 380,
@@ -944,7 +1064,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Todo mundo quer curtir uma banheira. Para que tudo dê certo e você não tenha problemas, é importante tomar cuidados na instalação"
+        "resumo": "Todo mundo quer curtir uma banheira. Para que tudo dê certo e você não tenha problemas, é importante tomar cuidados na instalação",
+        "exibir": true
       },
       {
         "id": 368,
@@ -956,7 +1077,8 @@
           "Dicas",
           "Spas"
         ],
-        "resumo": "Confira aqui no blog da BBB o que fazer para cuidar da sua banheira Spa. Conheça nossos modelos e conte com a Banheiras Bom Banho!"
+        "resumo": "Confira aqui no blog da BBB o que fazer para cuidar da sua banheira Spa. Conheça nossos modelos e conte com a Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 348,
@@ -968,7 +1090,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Conheça as vantagens de relaxar na banheira de hidromassagem. A Banheiras Bom Banho tem o modelo certo de banheira para você."
+        "resumo": "Conheça as vantagens de relaxar na banheira de hidromassagem. A Banheiras Bom Banho tem o modelo certo de banheira para você.",
+        "exibir": true
       },
       {
         "id": 342,
@@ -980,7 +1103,12 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Confira algumas dicas para aproveitar o momento do banho na banheira de hidromassagem para relaxar e aliviar o estresse."
+        "resumo": "Confira algumas dicas para aproveitar o momento do banho na banheira de hidromassagem para relaxar e aliviar o estresse.",
+        "termos_sensiveis": [
+          "aliviar",
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 339,
@@ -992,7 +1120,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Saiba como a meditação pode tornar o seu banho de banheira ainda mais relaxante! Aprenda como meditar e confira os modelos da Banheiras Bom Banho."
+        "resumo": "Saiba como a meditação pode tornar o seu banho de banheira ainda mais relaxante! Aprenda como meditar e confira os modelos da Banheiras Bom Banho.",
+        "exibir": true
       },
       {
         "id": 336,
@@ -1004,7 +1133,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Conheça a importância da limpeza de banheira, e saiba quais os produtos necessários para limpar sem danificar o material."
+        "resumo": "Conheça a importância da limpeza de banheira, e saiba quais os produtos necessários para limpar sem danificar o material.",
+        "exibir": true
       },
       {
         "id": 333,
@@ -1016,7 +1146,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "As banheiras são ótimas aliadas para o frio, no momento de escolher uma banheira é extremamente importante estar atento a algumas dicas para não errar."
+        "resumo": "As banheiras são ótimas aliadas para o frio, no momento de escolher uma banheira é extremamente importante estar atento a algumas dicas para não errar.",
+        "exibir": true
       },
       {
         "id": 330,
@@ -1028,7 +1159,12 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Os dias estressantes necessitam de uma dose de autocuidado. Saiba como aproveitar a sua banheira em casa para relaxar e cuidar da saúde."
+        "resumo": "Os dias estressantes necessitam de uma dose de autocuidado. Saiba como aproveitar a sua banheira em casa para relaxar e cuidar da saúde.",
+        "termos_sensiveis": [
+          "estressantes",
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 327,
@@ -1039,7 +1175,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Quem nunca sonhou em ter uma banheira em casa, né? As banheiras são verdadeiros sonhos de consumo, isso porque esse artigo é responsável por tornar a hora do banho, um momento único de relaxamento, de tranquilidade e de merecido descanso. As banheiras possuem diferentes modelos, tamanhos e funcionalidades, por isso grande parte das pessoas que [&hellip;]"
+        "resumo": "Quem nunca sonhou em ter uma banheira em casa, né? As banheiras são verdadeiros sonhos de consumo, isso porque esse artigo é responsável por tornar a hora do banho, um momento único de relaxamento, de tranquilidade e de merecido descanso. As banheiras possuem diferentes modelos, tamanhos e funcionalidades, por isso grande parte das pessoas que [&hellip;]",
+        "exibir": true
       },
       {
         "id": 324,
@@ -1050,7 +1187,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Para deixar o seu banheiro ainda mais bonito, por que não investir na decoração com a banheira? Não se preocupe, a Banheiras Bom Banho te ajuda!"
+        "resumo": "Para deixar o seu banheiro ainda mais bonito, por que não investir na decoração com a banheira? Não se preocupe, a Banheiras Bom Banho te ajuda!",
+        "exibir": true
       },
       {
         "id": 321,
@@ -1061,7 +1199,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Neste faça você mesmo, aprenda a decorar o seu banheiro com banheira gastando quase nada. Acompanhe o blog da Banheiras Bom Banho para mais dicas como essa!"
+        "resumo": "Neste faça você mesmo, aprenda a decorar o seu banheiro com banheira gastando quase nada. Acompanhe o blog da Banheiras Bom Banho para mais dicas como essa!",
+        "exibir": true
       },
       {
         "id": 314,
@@ -1072,7 +1211,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Para ter um ambiente confortável com banheira, é preciso ter atenção às medidas e formato na hora de comprar a hidromassagem. Acesse para saber mais!"
+        "resumo": "Para ter um ambiente confortável com banheira, é preciso ter atenção às medidas e formato na hora de comprar a hidromassagem. Acesse para saber mais!",
+        "exibir": true
       },
       {
         "id": 167,
@@ -1083,7 +1223,8 @@
         "categorias": [
           "Dicas"
         ],
-        "resumo": "Quer começar 2020 com boas virações? Que tal fazer uma banho na banheira de hidromassagem especial? Confira nossas dicas."
+        "resumo": "Quer começar 2020 com boas virações? Que tal fazer uma banho na banheira de hidromassagem especial? Confira nossas dicas.",
+        "exibir": true
       },
       {
         "id": 132,
@@ -1095,7 +1236,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Para que você não tenha dor de cabeça com o funcionamento da sua banheira de hidro, siga nossas dicas. Acesse o blog da Banheiras Bom Banho!"
+        "resumo": "Para que você não tenha dor de cabeça com o funcionamento da sua banheira de hidro, siga nossas dicas. Acesse o blog da Banheiras Bom Banho!",
+        "termos_sensiveis": [
+          "dor"
+        ],
+        "exibir": false
       },
       {
         "id": 130,
@@ -1107,7 +1252,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como limpar? Confira as dicas do blog da BBB para não errar! Não deixe de ler!"
+        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como limpar? Confira as dicas do blog da BBB para não errar! Não deixe de ler!",
+        "exibir": true
       },
       {
         "id": 126,
@@ -1119,7 +1265,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Aprenda como instalar banheira de hidro de forma segura e correta. Veja cuidados elétricos, hidráulicos e estruturais para garantir funcionamento perfeito."
+        "resumo": "Aprenda como instalar banheira de hidro de forma segura e correta. Veja cuidados elétricos, hidráulicos e estruturais para garantir funcionamento perfeito.",
+        "exibir": true
       },
       {
         "id": 121,
@@ -1131,7 +1278,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como decorar seu banheiro pequeno? O blog da Banheiras Bom Banho te ajuda! Acesse!"
+        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como decorar seu banheiro pequeno? O blog da Banheiras Bom Banho te ajuda! Acesse!",
+        "exibir": true
       },
       {
         "id": 112,
@@ -1143,7 +1291,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Escolher a melhor banheira para sua casa não é fácil. Confira nossas dicas para escolher a sua hidromassagem. Acesse aqui para ler!"
+        "resumo": "Escolher a melhor banheira para sua casa não é fácil. Confira nossas dicas para escolher a sua hidromassagem. Acesse aqui para ler!",
+        "exibir": true
       },
       {
         "id": 104,
@@ -1155,7 +1304,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Quer comprar uma banheira mas não sabe se a banheira spa é melhor que hidromassagem? Confira nossas dicas para não errar! Leia!"
+        "resumo": "Quer comprar uma banheira mas não sabe se a banheira spa é melhor que hidromassagem? Confira nossas dicas para não errar! Leia!",
+        "exibir": true
       },
       {
         "id": 62,
@@ -1168,7 +1318,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Tem uma área externa com banheira spa na sua casa, mas não tem ideia de como decorar? Acesse o blog da BBB para ter ideias de decoração!"
+        "resumo": "Tem uma área externa com banheira spa na sua casa, mas não tem ideia de como decorar? Acesse o blog da BBB para ter ideias de decoração!",
+        "exibir": true
       },
       {
         "id": 56,
@@ -1181,7 +1332,8 @@
           "Inspirações",
           "Spas"
         ],
-        "resumo": "A parte externa da casa é voltada para o lazer. Que tal colocar uma spa para relaxar e divertir? Acesse nosso blog para saber mais!"
+        "resumo": "A parte externa da casa é voltada para o lazer. Que tal colocar uma spa para relaxar e divertir? Acesse nosso blog para saber mais!",
+        "exibir": true
       }
     ],
     "Inspirações": [
@@ -1196,7 +1348,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto."
+        "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto.",
+        "exibir": true
       },
       {
         "id": 1245,
@@ -1208,7 +1361,8 @@
           "Curiosidades",
           "Inspirações"
         ],
-        "resumo": "Descubra como escolher a banheira para casa de campo ideal. Veja dicas de modelos, instalação e paisagismo para criar seu spa de descanso na natureza."
+        "resumo": "Descubra como escolher a banheira para casa de campo ideal. Veja dicas de modelos, instalação e paisagismo para criar seu spa de descanso na natureza.",
+        "exibir": true
       },
       {
         "id": 1237,
@@ -1221,7 +1375,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Planeje sua banheira em varanda com segurança. Descubra os cuidados com a estrutura, hidráulica e decoração para criar o seu spa residencial."
+        "resumo": "Planeje sua banheira em varanda com segurança. Descubra os cuidados com a estrutura, hidráulica e decoração para criar o seu spa residencial.",
+        "exibir": true
       },
       {
         "id": 1110,
@@ -1238,7 +1393,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto."
+        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto.",
+        "exibir": true
       },
       {
         "id": 1021,
@@ -1249,7 +1405,8 @@
         "categorias": [
           "Inspirações"
         ],
-        "resumo": "Veja 5 inspirações de banheiros com banheiras e transforme seu ambiente com estilo, conforto e bom gosto. Saiba mais."
+        "resumo": "Veja 5 inspirações de banheiros com banheiras e transforme seu ambiente com estilo, conforto e bom gosto. Saiba mais.",
+        "exibir": true
       },
       {
         "id": 929,
@@ -1261,7 +1418,8 @@
           "Inspirações",
           "Spas"
         ],
-        "resumo": "Monte um SPA em casa com banheiras, spas e ofurôs. Relaxe, cuide do corpo e valorize seu lar com bem-estar e sofisticação."
+        "resumo": "Monte um SPA em casa com banheiras, spas e ofurôs. Relaxe, cuide do corpo e valorize seu lar com bem-estar e sofisticação.",
+        "exibir": true
       },
       {
         "id": 750,
@@ -1273,7 +1431,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Banheira em seu projeto residencial: descubra como integrar conforto e funcionalidade no seu espaço. Dicas para transformar seu lar."
+        "resumo": "Banheira em seu projeto residencial: descubra como integrar conforto e funcionalidade no seu espaço. Dicas para transformar seu lar.",
+        "exibir": true
       },
       {
         "id": 687,
@@ -1285,7 +1444,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Com algumas mudanças estratégicas e a escolha dos elementos certos, você pode criar um spa de luxo em seu próprio banheiro."
+        "resumo": "Com algumas mudanças estratégicas e a escolha dos elementos certos, você pode criar um spa de luxo em seu próprio banheiro.",
+        "exibir": true
       },
       {
         "id": 684,
@@ -1297,7 +1457,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Descubra como uma banheira pode transformar seu banheiro em um refúgio de luxo e valorizar sua casa. Saiba mais aqui!"
+        "resumo": "Descubra como uma banheira pode transformar seu banheiro em um refúgio de luxo e valorizar sua casa. Saiba mais aqui!",
+        "exibir": true
       },
       {
         "id": 633,
@@ -1308,7 +1469,11 @@
         "categorias": [
           "Inspirações"
         ],
-        "resumo": "Confira as vantagens e benefícios de investir em acessórios para banheira, como cascata cromada e jatos. Saiba mais sobre o assunto."
+        "resumo": "Confira as vantagens e benefícios de investir em acessórios para banheira, como cascata cromada e jatos. Saiba mais sobre o assunto.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 552,
@@ -1321,7 +1486,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "As banheiras para pet da Banheiras Bom Banho são materiais de extrema qualidade. A seguir separamos algumas vantagens de adquirir tal objeto para seu animal de estimação."
+        "resumo": "As banheiras para pet da Banheiras Bom Banho são materiais de extrema qualidade. A seguir separamos algumas vantagens de adquirir tal objeto para seu animal de estimação.",
+        "exibir": true
       },
       {
         "id": 483,
@@ -1333,7 +1499,8 @@
           "Banheiras de hidromassagem",
           "Inspirações"
         ],
-        "resumo": "Confira por que instalar uma banheira de hidromassagem no seu hotel pode ser muito vantajoso para o seu negócio. Conte com a BBB!"
+        "resumo": "Confira por que instalar uma banheira de hidromassagem no seu hotel pode ser muito vantajoso para o seu negócio. Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 474,
@@ -1345,7 +1512,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Confira algumas dicas para fazer a instalação perfeita de uma banheira Spa na sua casa. Esse e outros modelos você encontra aqui, na BBB!"
+        "resumo": "Confira algumas dicas para fazer a instalação perfeita de uma banheira Spa na sua casa. Esse e outros modelos você encontra aqui, na BBB!",
+        "exibir": true
       },
       {
         "id": 463,
@@ -1357,7 +1525,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Descubra como as banheiras redondas são capazes de transformar o seu banheiro em um espaço muito mais aconchegante. Conte com a BBB!"
+        "resumo": "Descubra como as banheiras redondas são capazes de transformar o seu banheiro em um espaço muito mais aconchegante. Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 412,
@@ -1369,7 +1538,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "O banheiro, deve ser funcional e elegante. A escolha dos objetos, acessórios e a disposição no ambiente é fundamental para garantir o conforto de todos."
+        "resumo": "O banheiro, deve ser funcional e elegante. A escolha dos objetos, acessórios e a disposição no ambiente é fundamental para garantir o conforto de todos.",
+        "exibir": true
       },
       {
         "id": 124,
@@ -1381,7 +1551,8 @@
           "Banheiras de hidromassagem",
           "Inspirações"
         ],
-        "resumo": "Quer ter um banheiro estilo retrô? Confira nossas dicas de como escolher uma banheira de hidro e ideias de decoração. Acesse!"
+        "resumo": "Quer ter um banheiro estilo retrô? Confira nossas dicas de como escolher uma banheira de hidro e ideias de decoração. Acesse!",
+        "exibir": true
       },
       {
         "id": 121,
@@ -1393,7 +1564,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como decorar seu banheiro pequeno? O blog da Banheiras Bom Banho te ajuda! Acesse!"
+        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como decorar seu banheiro pequeno? O blog da Banheiras Bom Banho te ajuda! Acesse!",
+        "exibir": true
       },
       {
         "id": 108,
@@ -1406,7 +1578,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Pensando em comprar uma banheira de hidro, mas não sabe como colocar no seu banheiro? Confira algumas ideias no nosso site!"
+        "resumo": "Pensando em comprar uma banheira de hidro, mas não sabe como colocar no seu banheiro? Confira algumas ideias no nosso site!",
+        "exibir": true
       },
       {
         "id": 62,
@@ -1419,7 +1592,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Tem uma área externa com banheira spa na sua casa, mas não tem ideia de como decorar? Acesse o blog da BBB para ter ideias de decoração!"
+        "resumo": "Tem uma área externa com banheira spa na sua casa, mas não tem ideia de como decorar? Acesse o blog da BBB para ter ideias de decoração!",
+        "exibir": true
       },
       {
         "id": 56,
@@ -1432,7 +1606,8 @@
           "Inspirações",
           "Spas"
         ],
-        "resumo": "A parte externa da casa é voltada para o lazer. Que tal colocar uma spa para relaxar e divertir? Acesse nosso blog para saber mais!"
+        "resumo": "A parte externa da casa é voltada para o lazer. Que tal colocar uma spa para relaxar e divertir? Acesse nosso blog para saber mais!",
+        "exibir": true
       }
     ],
     "Tendências": [
@@ -1447,7 +1622,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto."
+        "resumo": "Quer instalar uma banheira embutida? Veja o que considerar sobre alvenaria, espaço, hidráulica e manutenção antes de definir seu projeto.",
+        "exibir": true
       },
       {
         "id": 1303,
@@ -1460,7 +1636,8 @@
           "Dicas",
           "Tendências"
         ],
-        "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho."
+        "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho.",
+        "exibir": true
       },
       {
         "id": 1237,
@@ -1473,7 +1650,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Planeje sua banheira em varanda com segurança. Descubra os cuidados com a estrutura, hidráulica e decoração para criar o seu spa residencial."
+        "resumo": "Planeje sua banheira em varanda com segurança. Descubra os cuidados com a estrutura, hidráulica e decoração para criar o seu spa residencial.",
+        "exibir": true
       },
       {
         "id": 1110,
@@ -1490,7 +1668,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto."
+        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto.",
+        "exibir": true
       },
       {
         "id": 677,
@@ -1501,7 +1680,8 @@
         "categorias": [
           "Tendências"
         ],
-        "resumo": "Separamos as principais características de cada modelo para você não errar na hora de escolher. Confira e se surpreenda!"
+        "resumo": "Separamos as principais características de cada modelo para você não errar na hora de escolher. Confira e se surpreenda!",
+        "exibir": true
       },
       {
         "id": 674,
@@ -1512,7 +1692,8 @@
         "categorias": [
           "Tendências"
         ],
-        "resumo": "Descubra o que define uma banheira moderna e conheça as principais tendências de design e tecnologia para transformar seu banheiro em um espaço sofisticado."
+        "resumo": "Descubra o que define uma banheira moderna e conheça as principais tendências de design e tecnologia para transformar seu banheiro em um espaço sofisticado.",
+        "exibir": true
       },
       {
         "id": 512,
@@ -1525,7 +1706,8 @@
           "Dicas",
           "Tendências"
         ],
-        "resumo": "Um quarto de hotel com banheira de hidromassagem já ganha muitos pontos, não é? Entenda a importâcia de ter uma boa banheira em seu hotel."
+        "resumo": "Um quarto de hotel com banheira de hidromassagem já ganha muitos pontos, não é? Entenda a importâcia de ter uma boa banheira em seu hotel.",
+        "exibir": true
       },
       {
         "id": 471,
@@ -1537,7 +1719,8 @@
           "Ofurôs",
           "Tendências"
         ],
-        "resumo": "Conheça os principais modelos de ofurô e entenda por que essa tendência tem ganhado destaque em projetos de arquitetura modernos e espaços de bem-estar."
+        "resumo": "Conheça os principais modelos de ofurô e entenda por que essa tendência tem ganhado destaque em projetos de arquitetura modernos e espaços de bem-estar.",
+        "exibir": true
       },
       {
         "id": 463,
@@ -1549,7 +1732,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Descubra como as banheiras redondas são capazes de transformar o seu banheiro em um espaço muito mais aconchegante. Conte com a BBB!"
+        "resumo": "Descubra como as banheiras redondas são capazes de transformar o seu banheiro em um espaço muito mais aconchegante. Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 147,
@@ -1561,7 +1745,8 @@
           "Banheiras de hidromassagem",
           "Tendências"
         ],
-        "resumo": "Comprou uma banheira de hidromassagem, mas não sabe como decorar o banheiro de forma minimalista? O blog da BBB te ajuda! Acesse."
+        "resumo": "Comprou uma banheira de hidromassagem, mas não sabe como decorar o banheiro de forma minimalista? O blog da BBB te ajuda! Acesse.",
+        "exibir": true
       },
       {
         "id": 108,
@@ -1574,7 +1759,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Pensando em comprar uma banheira de hidro, mas não sabe como colocar no seu banheiro? Confira algumas ideias no nosso site!"
+        "resumo": "Pensando em comprar uma banheira de hidro, mas não sabe como colocar no seu banheiro? Confira algumas ideias no nosso site!",
+        "exibir": true
       }
     ],
     "Banheiras de hidromassagem": [
@@ -1589,7 +1775,8 @@
           "Dicas",
           "Tendências"
         ],
-        "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho."
+        "resumo": "Descubra quantos jatos de hidromassagem uma banheira deve ter e aprenda a escolher o posicionamento e a potência ideal para um bom banho.",
+        "exibir": true
       },
       {
         "id": 1295,
@@ -1601,7 +1788,8 @@
           "Banheiras de hidromassagem",
           "Banhos por imersão"
         ],
-        "resumo": "Banheira de imersão ou hidromassagem? Entenda as diferenças, custos e qual modelo é ideal para seu projeto residencial de luxo."
+        "resumo": "Banheira de imersão ou hidromassagem? Entenda as diferenças, custos e qual modelo é ideal para seu projeto residencial de luxo.",
+        "exibir": true
       },
       {
         "id": 1252,
@@ -1615,8 +1803,11 @@
         ],
         "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa.",
         "termos_sensiveis": [
-          "circulacao"
-        ]
+          "circulacao",
+          "muscular",
+          "alivie"
+        ],
+        "exibir": false
       },
       {
         "id": 1215,
@@ -1628,7 +1819,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Confira o guia completo para escolher a banheira para casal ideal. Descubra modelos, tamanhos e dicas de instalação para criar seu spa residencial."
+        "resumo": "Confira o guia completo para escolher a banheira para casal ideal. Descubra modelos, tamanhos e dicas de instalação para criar seu spa residencial.",
+        "exibir": true
       },
       {
         "id": 1141,
@@ -1640,7 +1832,8 @@
           "Banheiras de hidromassagem",
           "Banhos por imersão"
         ],
-        "resumo": "Veja como uma banheira para momentos em família pode transformar sua casa em um centro de lazer, convivência e bem-estar para todas as idades."
+        "resumo": "Veja como uma banheira para momentos em família pode transformar sua casa em um centro de lazer, convivência e bem-estar para todas as idades.",
+        "exibir": true
       },
       {
         "id": 1138,
@@ -1651,7 +1844,11 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Saiba como uma banheira para rotina de autocuidado pode transformar seu banheiro em um refúgio de desaceleração, trazendo conforto e saúde mental."
+        "resumo": "Saiba como uma banheira para rotina de autocuidado pode transformar seu banheiro em um refúgio de desaceleração, trazendo conforto e saúde mental.",
+        "termos_sensiveis": [
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 1135,
@@ -1662,7 +1859,13 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Com a chegada dos dias mais frios do ano, nossa rotina em casa pede mais aconchego e momentos de aquecimento. A queda na temperatura muitas vezes provoca contrações musculares involuntárias e aumento do estresse físico. É nesse período que surge a dúvida sobre quais as melhores alternativas para manter o bem-estar diário. Muitas pessoas se [&hellip;]"
+        "resumo": "Com a chegada dos dias mais frios do ano, nossa rotina em casa pede mais aconchego e momentos de aquecimento. A queda na temperatura muitas vezes provoca contrações musculares involuntárias e aumento do estresse físico. É nesse período que surge a dúvida sobre quais as melhores alternativas para manter o bem-estar diário. Muitas pessoas se [&hellip;]",
+        "termos_sensiveis": [
+          "beneficios",
+          "musculares",
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 1132,
@@ -1673,7 +1876,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Veja como a decoração com banheira pode transformar seu banheiro em um espaço sofisticado e aconchegante com dicas práticas de design."
+        "resumo": "Veja como a decoração com banheira pode transformar seu banheiro em um espaço sofisticado e aconchegante com dicas práticas de design.",
+        "exibir": true
       },
       {
         "id": 1114,
@@ -1685,7 +1889,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra como a banheira para suíte transforma o ambiente em um espaço sofisticado, confortável e valorizado, com modelos e dicas exclusivas."
+        "resumo": "Descubra como a banheira para suíte transforma o ambiente em um espaço sofisticado, confortável e valorizado, com modelos e dicas exclusivas.",
+        "exibir": true
       },
       {
         "id": 1110,
@@ -1702,7 +1907,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto."
+        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto.",
+        "exibir": true
       },
       {
         "id": 1095,
@@ -1713,7 +1919,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Banheira dupla Harmonia une conforto, design moderno e hidromassagem premium para casais. Conheça o lançamento da Banheiras Bom Banho 2026."
+        "resumo": "Banheira dupla Harmonia une conforto, design moderno e hidromassagem premium para casais. Conheça o lançamento da Banheiras Bom Banho 2026.",
+        "exibir": true
       },
       {
         "id": 1084,
@@ -1724,7 +1931,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Banheira dupla Capri é o lançamento premium da Banheiras Bom Banho 2026, com design moderno e hidromassagem para casais que buscam bem-estar."
+        "resumo": "Banheira dupla Capri é o lançamento premium da Banheiras Bom Banho 2026, com design moderno e hidromassagem para casais que buscam bem-estar.",
+        "exibir": true
       },
       {
         "id": 1078,
@@ -1735,7 +1943,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Saiba qual o peso de uma banheira cheia e os cuidados com a estrutura para garantir segurança, durabilidade e conforto na instalação."
+        "resumo": "Saiba qual o peso de uma banheira cheia e os cuidados com a estrutura para garantir segurança, durabilidade e conforto na instalação.",
+        "exibir": true
       },
       {
         "id": 1074,
@@ -1746,7 +1955,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Instalação de banheira de hidromassagem: requisitos, cuidados e dicas práticas para garantir conforto, segurança e durabilidade em seu projeto."
+        "resumo": "Instalação de banheira de hidromassagem: requisitos, cuidados e dicas práticas para garantir conforto, segurança e durabilidade em seu projeto.",
+        "exibir": true
       },
       {
         "id": 1069,
@@ -1757,7 +1967,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Descubra os tipos de banheira de hidromassagem, seus modelos, usos e exigências de instalação para escolher a opção ideal com a Banheiras Bom Banho."
+        "resumo": "Descubra os tipos de banheira de hidromassagem, seus modelos, usos e exigências de instalação para escolher a opção ideal com a Banheiras Bom Banho.",
+        "exibir": true
       },
       {
         "id": 1034,
@@ -1768,7 +1979,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Transforme seu banheiro em um spa em casa com banheira. Conforto, relaxamento e autocuidado ao seu alcance."
+        "resumo": "Transforme seu banheiro em um spa em casa com banheira. Conforto, relaxamento e autocuidado ao seu alcance.",
+        "exibir": true
       },
       {
         "id": 1027,
@@ -1779,7 +1991,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Descubra como as banheiras elevam o design dos banheiros de luxo e veja ideias para transformar seu ambiente com sofisticação."
+        "resumo": "Descubra como as banheiras elevam o design dos banheiros de luxo e veja ideias para transformar seu ambiente com sofisticação.",
+        "exibir": true
       },
       {
         "id": 809,
@@ -1790,7 +2003,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Banheira de hidromassagem ou imersão: saiba as diferenças e escolha a ideal para conforto e bem-estar em casa."
+        "resumo": "Banheira de hidromassagem ou imersão: saiba as diferenças e escolha a ideal para conforto e bem-estar em casa.",
+        "exibir": true
       },
       {
         "id": 806,
@@ -1801,7 +2015,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Aprenda como escolher a banheira ideal para seu banheiro e transforme sua reforma em conforto, estilo e bem-estar."
+        "resumo": "Aprenda como escolher a banheira ideal para seu banheiro e transforme sua reforma em conforto, estilo e bem-estar.",
+        "exibir": true
       },
       {
         "id": 796,
@@ -1812,7 +2027,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Descubra as diferenças entre banheira redonda ou retangular e saiba qual modelo escolher para seu espaço com conforto, estilo e funcionalidade."
+        "resumo": "Descubra as diferenças entre banheira redonda ou retangular e saiba qual modelo escolher para seu espaço com conforto, estilo e funcionalidade.",
+        "exibir": true
       },
       {
         "id": 785,
@@ -1823,7 +2039,14 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Descubra os benefícios da hidromassagem para corpo e mente: alívio do estresse, relaxamento muscular e bem-estar no conforto da sua casa."
+        "resumo": "Descubra os benefícios da hidromassagem para corpo e mente: alívio do estresse, relaxamento muscular e bem-estar no conforto da sua casa.",
+        "termos_sensiveis": [
+          "beneficios",
+          "alivio",
+          "estresse",
+          "muscular"
+        ],
+        "exibir": false
       },
       {
         "id": 782,
@@ -1836,7 +2059,8 @@
           "Ofurôs",
           "Spas"
         ],
-        "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa."
+        "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa.",
+        "exibir": true
       },
       {
         "id": 738,
@@ -1849,8 +2073,12 @@
         ],
         "resumo": "Desvende os segredos do banho de banheira como terapia para o corpo e mente. Descubra os benefícios terapêuticos e como incorporá-lo à sua rotina de auto cuidado.",
         "termos_sensiveis": [
-          "terapeutic"
-        ]
+          "terapeutic",
+          "terapia",
+          "beneficios",
+          "terapeuticos"
+        ],
+        "exibir": false
       },
       {
         "id": 708,
@@ -1862,7 +2090,11 @@
           "Banheiras de hidromassagem",
           "Spas"
         ],
-        "resumo": "Explore alguns potenciais benefícios das banheiras spa para reabilitação"
+        "resumo": "Explore alguns potenciais benefícios das banheiras spa para reabilitação",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 704,
@@ -1873,7 +2105,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Explore algumas etapas gerais que você pode seguir para a manutenção e limpeza regular da sua banheira de hidro"
+        "resumo": "Explore algumas etapas gerais que você pode seguir para a manutenção e limpeza regular da sua banheira de hidro",
+        "exibir": true
       },
       {
         "id": 623,
@@ -1884,7 +2117,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Leia o texto a seguir e descubra mais sobre 3 modelos de banheiras ideias que podem ser bem úteis quandi utilizados em pousadas"
+        "resumo": "Leia o texto a seguir e descubra mais sobre 3 modelos de banheiras ideias que podem ser bem úteis quandi utilizados em pousadas",
+        "exibir": true
       },
       {
         "id": 645,
@@ -1895,7 +2129,12 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Conheça os principais benefícios da hidromassagem e entenda como esse tipo de banho pode melhorar sua saúde física, emocional e qualidade de vida."
+        "resumo": "Conheça os principais benefícios da hidromassagem e entenda como esse tipo de banho pode melhorar sua saúde física, emocional e qualidade de vida.",
+        "termos_sensiveis": [
+          "beneficios",
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 642,
@@ -1906,7 +2145,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Saiba qual é a banheira hidro ideal para dar banho em bebês e garanta mais qualidade, segurança e um banho ainda mais relaxando para seu filho ou sua filha."
+        "resumo": "Saiba qual é a banheira hidro ideal para dar banho em bebês e garanta mais qualidade, segurança e um banho ainda mais relaxando para seu filho ou sua filha.",
+        "exibir": true
       },
       {
         "id": 607,
@@ -1917,7 +2157,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Veja a seguir como saber realizar o nivelamento correto de sua banheira de hidromassagem."
+        "resumo": "Veja a seguir como saber realizar o nivelamento correto de sua banheira de hidromassagem.",
+        "exibir": true
       },
       {
         "id": 593,
@@ -1928,7 +2169,11 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Saber o tempo correto de ficar em um banho de imersão faz toda a diferença para a saúde do seu corpo. Confira."
+        "resumo": "Saber o tempo correto de ficar em um banho de imersão faz toda a diferença para a saúde do seu corpo. Confira.",
+        "termos_sensiveis": [
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 589,
@@ -1939,7 +2184,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Aquecedores são ótimos para um bom banho na banheira. Saiba com quais os acessórios e aquecedores a empresa Banheiras Bom Banho trabalha."
+        "resumo": "Aquecedores são ótimos para um bom banho na banheira. Saiba com quais os acessórios e aquecedores a empresa Banheiras Bom Banho trabalha.",
+        "exibir": true
       },
       {
         "id": 574,
@@ -1952,7 +2198,8 @@
           "Banhos por imersão",
           "Dicas"
         ],
-        "resumo": "Veja dicas de modelos de banheiras mais econômicas."
+        "resumo": "Veja dicas de modelos de banheiras mais econômicas.",
+        "exibir": true
       },
       {
         "id": 571,
@@ -1963,7 +2210,12 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Banheiras ou modelos de spas criam diferenciais em qualquer imóvel, levam mais beleza e sofisticação aos espaços e dão um toque a mais de refinamento. No entanto, nada se compara ao conforto oferecido aos usuários, que contam com um sistema de relaxamento da Banheiras Bom Banho que traz diversos benefícios à saúde do corpo e [&hellip;]"
+        "resumo": "Banheiras ou modelos de spas criam diferenciais em qualquer imóvel, levam mais beleza e sofisticação aos espaços e dão um toque a mais de refinamento. No entanto, nada se compara ao conforto oferecido aos usuários, que contam com um sistema de relaxamento da Banheiras Bom Banho que traz diversos benefícios à saúde do corpo e [&hellip;]",
+        "termos_sensiveis": [
+          "beneficios",
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 564,
@@ -1975,7 +2227,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "O banho em animais de estimação é super importante para manter a boa aparência e saúde do seu pet, é claro, que contar com banheiras de qualidade faz toda a diferença. No site da BBB Banheiras, você garante os melhores modelos de banheiras disponíveis, tanto para pessoas como para pets Assim como os seres humanos, [&hellip;]"
+        "resumo": "O banho em animais de estimação é super importante para manter a boa aparência e saúde do seu pet, é claro, que contar com banheiras de qualidade faz toda a diferença. No site da BBB Banheiras, você garante os melhores modelos de banheiras disponíveis, tanto para pessoas como para pets Assim como os seres humanos, [&hellip;]",
+        "termos_sensiveis": [
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 560,
@@ -1988,7 +2244,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Não é segredo para ninguém o investimento em adquirir uma banheira, mas vale a pena para garantir banhos relaxantes e inesquecíveis. Os modelos disponíveis no site da Banheiras Bom Banho são de ótima qualidade e possuem preço justo de acordo com a tecnologia diferente de cada uma. Aproveite para adquirir a sua banheira de hidromassagem [&hellip;]"
+        "resumo": "Não é segredo para ninguém o investimento em adquirir uma banheira, mas vale a pena para garantir banhos relaxantes e inesquecíveis. Os modelos disponíveis no site da Banheiras Bom Banho são de ótima qualidade e possuem preço justo de acordo com a tecnologia diferente de cada uma. Aproveite para adquirir a sua banheira de hidromassagem [&hellip;]",
+        "exibir": true
       },
       {
         "id": 557,
@@ -1999,7 +2256,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Existem alguns cuidados necessários na hora de realizar a instalação de uma banheira de hidromassagem. Acesse nosso post e fique por dentro de todos eles."
+        "resumo": "Existem alguns cuidados necessários na hora de realizar a instalação de uma banheira de hidromassagem. Acesse nosso post e fique por dentro de todos eles.",
+        "exibir": true
       },
       {
         "id": 542,
@@ -2010,7 +2268,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Com o objetivo de trazer maior conforto, bem-estar e relaxamento para dentro de casa, a instalação de uma piscina ou hidromassagem na área externa de sua residência é quase sempre uma opção. No entanto, diante de tantas possibilidades, é natural não saber escolher a melhor alternativa para melhorar o visual da casa e para trazer [&hellip;]"
+        "resumo": "Com o objetivo de trazer maior conforto, bem-estar e relaxamento para dentro de casa, a instalação de uma piscina ou hidromassagem na área externa de sua residência é quase sempre uma opção. No entanto, diante de tantas possibilidades, é natural não saber escolher a melhor alternativa para melhorar o visual da casa e para trazer [&hellip;]",
+        "exibir": true
       },
       {
         "id": 538,
@@ -2022,7 +2281,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Entenda as principais vantagens da banheira de canto e saiba se essa é a banheira ideal para o banheiro de sua casa. Confira!"
+        "resumo": "Entenda as principais vantagens da banheira de canto e saiba se essa é a banheira ideal para o banheiro de sua casa. Confira!",
+        "exibir": true
       },
       {
         "id": 512,
@@ -2035,7 +2295,8 @@
           "Dicas",
           "Tendências"
         ],
-        "resumo": "Um quarto de hotel com banheira de hidromassagem já ganha muitos pontos, não é? Entenda a importâcia de ter uma boa banheira em seu hotel."
+        "resumo": "Um quarto de hotel com banheira de hidromassagem já ganha muitos pontos, não é? Entenda a importâcia de ter uma boa banheira em seu hotel.",
+        "exibir": true
       },
       {
         "id": 509,
@@ -2047,7 +2308,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Depois daquele jantar delicioso ou daquele almoço caprichado, você só quer relaxar, né? Por isso, surge a dúvida: posso entrar na banheira após comer?"
+        "resumo": "Depois daquele jantar delicioso ou daquele almoço caprichado, você só quer relaxar, né? Por isso, surge a dúvida: posso entrar na banheira após comer?",
+        "exibir": true
       },
       {
         "id": 506,
@@ -2059,7 +2321,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Não existe nada melhor do que chegar em casa depois de um dia cansativo. Para relaxar, muitas pessoas optam pelos sais de banho."
+        "resumo": "Não existe nada melhor do que chegar em casa depois de um dia cansativo. Para relaxar, muitas pessoas optam pelos sais de banho.",
+        "exibir": true
       },
       {
         "id": 503,
@@ -2071,7 +2334,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Para uma criança é possível adicionar mais uma característica para um banho na banheira hidro: diversão em dobro. Confira dicas."
+        "resumo": "Para uma criança é possível adicionar mais uma característica para um banho na banheira hidro: diversão em dobro. Confira dicas.",
+        "exibir": true
       },
       {
         "id": 498,
@@ -2083,7 +2347,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Seja por motivos de estética ou problemas técnicos, a reforma do banheiro pode deixa-lo mais confortável e elegante. Saiba porque colocar uma banheira."
+        "resumo": "Seja por motivos de estética ou problemas técnicos, a reforma do banheiro pode deixa-lo mais confortável e elegante. Saiba porque colocar uma banheira.",
+        "exibir": true
       },
       {
         "id": 491,
@@ -2095,7 +2360,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Que tal aproveitar aquele dia de folga para entrar na banheira de hidro e fazer um spa day? Confira dicas para aproveitar o máximo."
+        "resumo": "Que tal aproveitar aquele dia de folga para entrar na banheira de hidro e fazer um spa day? Confira dicas para aproveitar o máximo.",
+        "exibir": true
       },
       {
         "id": 483,
@@ -2107,7 +2373,8 @@
           "Banheiras de hidromassagem",
           "Inspirações"
         ],
-        "resumo": "Confira por que instalar uma banheira de hidromassagem no seu hotel pode ser muito vantajoso para o seu negócio. Conte com a BBB!"
+        "resumo": "Confira por que instalar uma banheira de hidromassagem no seu hotel pode ser muito vantajoso para o seu negócio. Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 486,
@@ -2119,7 +2386,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "A banheira proporciona momentos tão incríveis e únicos que é até difícil descrever. O local da casa onde ela está instalada vira o nosso canto preferido."
+        "resumo": "A banheira proporciona momentos tão incríveis e únicos que é até difícil descrever. O local da casa onde ela está instalada vira o nosso canto preferido.",
+        "exibir": true
       },
       {
         "id": 477,
@@ -2131,7 +2399,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Escolher qual tipo de banheira instalar em um local pode ser motivo de diversas dúvidas. Confira as principais diferenças entre os tipos."
+        "resumo": "Escolher qual tipo de banheira instalar em um local pode ser motivo de diversas dúvidas. Confira as principais diferenças entre os tipos.",
+        "exibir": true
       },
       {
         "id": 469,
@@ -2143,7 +2412,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra as vantagens que a banheira proporciona aos clientes e aos hotéis. Conheça nossos modelos de hidromassagem e conte com a BBB!"
+        "resumo": "Descubra as vantagens que a banheira proporciona aos clientes e aos hotéis. Conheça nossos modelos de hidromassagem e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 459,
@@ -2155,7 +2425,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "A instalação de uma banheira requer uma série de cuidados, mas isso não significa que não possa fazer parte da estrutura de casas e apartamentos."
+        "resumo": "A instalação de uma banheira requer uma série de cuidados, mas isso não significa que não possa fazer parte da estrutura de casas e apartamentos.",
+        "exibir": true
       },
       {
         "id": 458,
@@ -2167,7 +2438,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Confira aqui 3 motivos para incluir a banheira de hidromassagem no banheiro da sua casa. Conheça nossos modelos de banheira e conte com a BBB!"
+        "resumo": "Confira aqui 3 motivos para incluir a banheira de hidromassagem no banheiro da sua casa. Conheça nossos modelos de banheira e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 454,
@@ -2179,7 +2451,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra vários modelos de banheira de hidromassagem da Banheiras Bom Banho e escolha o melhor para o seu banheiro. Conte com a gente!"
+        "resumo": "Descubra vários modelos de banheira de hidromassagem da Banheiras Bom Banho e escolha o melhor para o seu banheiro. Conte com a gente!",
+        "exibir": true
       },
       {
         "id": 447,
@@ -2191,7 +2464,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Imagina o quão gratificante é poder relaxar dentro de casa com uma banheira de hidro. A missão de relaxar fica bem mais fácil!"
+        "resumo": "Imagina o quão gratificante é poder relaxar dentro de casa com uma banheira de hidro. A missão de relaxar fica bem mais fácil!",
+        "termos_sensiveis": [
+          "estressante"
+        ],
+        "exibir": false
       },
       {
         "id": 448,
@@ -2203,7 +2480,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Você tem uma banheira de hidromassagem e quer saber mais sobre a vida útil do produto? Descubra aqui se já está na hora de trocar! Conte com a BBB!"
+        "resumo": "Você tem uma banheira de hidromassagem e quer saber mais sobre a vida útil do produto? Descubra aqui se já está na hora de trocar! Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 441,
@@ -2215,7 +2493,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Uma banheira de hidromassagem é sinônimo de relaxamento, e a suíte também deve proporcionar momentos únicos e especiais. Confira dicas."
+        "resumo": "Uma banheira de hidromassagem é sinônimo de relaxamento, e a suíte também deve proporcionar momentos únicos e especiais. Confira dicas.",
+        "exibir": true
       },
       {
         "id": 435,
@@ -2227,7 +2506,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Passar alguns minutos na banheira hidro é bom em qualquer época do ano, mas fica ainda melhor nos dias frios do inverno, não acha? Confira dicas."
+        "resumo": "Passar alguns minutos na banheira hidro é bom em qualquer época do ano, mas fica ainda melhor nos dias frios do inverno, não acha? Confira dicas.",
+        "termos_sensiveis": [
+          "pele"
+        ],
+        "exibir": false
       },
       {
         "id": 416,
@@ -2239,7 +2522,12 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Com tantas preocupações e problemas diários, o momento do banho se torna ainda mais importante e necessário para o relaxamento."
+        "resumo": "Com tantas preocupações e problemas diários, o momento do banho se torna ainda mais importante e necessário para o relaxamento.",
+        "termos_sensiveis": [
+          "alivio",
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 414,
@@ -2251,7 +2539,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Tudo o que você precisa saber sobre banheiras de hidromassagem está aqui. Conheça nossos modelos e conte com a Banheiras Bom Banho!"
+        "resumo": "Tudo o que você precisa saber sobre banheiras de hidromassagem está aqui. Conheça nossos modelos e conte com a Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 399,
@@ -2263,7 +2552,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Os banheiros deixaram de ser espaços exclusivos de instalação da banheira. O acessório também pode fazer parte dos quartos, deixando os locais confortáveis e luxuosos! Você tem dúvidas sobre a instalação de uma hidromassagem no quarto? Continue lendo o blog da Banheiras Bom Banho! Contrate um arquiteto Ter uma banheira de hidromassagem em casa, ou [&hellip;]"
+        "resumo": "Os banheiros deixaram de ser espaços exclusivos de instalação da banheira. O acessório também pode fazer parte dos quartos, deixando os locais confortáveis e luxuosos! Você tem dúvidas sobre a instalação de uma hidromassagem no quarto? Continue lendo o blog da Banheiras Bom Banho! Contrate um arquiteto Ter uma banheira de hidromassagem em casa, ou [&hellip;]",
+        "exibir": true
       },
       {
         "id": 393,
@@ -2275,7 +2565,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Uma incrível banheira de hidromassagem só cabe em banheiros grandes, certo? Errado! Se você tem um espaço pequeno, fique tranquilo!"
+        "resumo": "Uma incrível banheira de hidromassagem só cabe em banheiros grandes, certo? Errado! Se você tem um espaço pequeno, fique tranquilo!",
+        "exibir": true
       },
       {
         "id": 380,
@@ -2288,7 +2579,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Todo mundo quer curtir uma banheira. Para que tudo dê certo e você não tenha problemas, é importante tomar cuidados na instalação"
+        "resumo": "Todo mundo quer curtir uma banheira. Para que tudo dê certo e você não tenha problemas, é importante tomar cuidados na instalação",
+        "exibir": true
       },
       {
         "id": 354,
@@ -2300,7 +2592,11 @@
           "Banheiras de hidromassagem",
           "Banhos por imersão"
         ],
-        "resumo": "As banheiras de hidromassagem e de imersão trazem muitos benefícios para o corpo e mente das pessoas. Mas você sabe a diferença entre elas?"
+        "resumo": "As banheiras de hidromassagem e de imersão trazem muitos benefícios para o corpo e mente das pessoas. Mas você sabe a diferença entre elas?",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 348,
@@ -2312,7 +2608,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Conheça as vantagens de relaxar na banheira de hidromassagem. A Banheiras Bom Banho tem o modelo certo de banheira para você."
+        "resumo": "Conheça as vantagens de relaxar na banheira de hidromassagem. A Banheiras Bom Banho tem o modelo certo de banheira para você.",
+        "exibir": true
       },
       {
         "id": 345,
@@ -2324,7 +2621,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "O banho de banheira possui inúmeras vantagens comparado ao banho de ducha. Conheça os principais motivos para escolher a banheira."
+        "resumo": "O banho de banheira possui inúmeras vantagens comparado ao banho de ducha. Conheça os principais motivos para escolher a banheira.",
+        "exibir": true
       },
       {
         "id": 342,
@@ -2336,7 +2634,12 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Confira algumas dicas para aproveitar o momento do banho na banheira de hidromassagem para relaxar e aliviar o estresse."
+        "resumo": "Confira algumas dicas para aproveitar o momento do banho na banheira de hidromassagem para relaxar e aliviar o estresse.",
+        "termos_sensiveis": [
+          "aliviar",
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 339,
@@ -2348,7 +2651,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Saiba como a meditação pode tornar o seu banho de banheira ainda mais relaxante! Aprenda como meditar e confira os modelos da Banheiras Bom Banho."
+        "resumo": "Saiba como a meditação pode tornar o seu banho de banheira ainda mais relaxante! Aprenda como meditar e confira os modelos da Banheiras Bom Banho.",
+        "exibir": true
       },
       {
         "id": 336,
@@ -2360,7 +2664,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Conheça a importância da limpeza de banheira, e saiba quais os produtos necessários para limpar sem danificar o material."
+        "resumo": "Conheça a importância da limpeza de banheira, e saiba quais os produtos necessários para limpar sem danificar o material.",
+        "exibir": true
       },
       {
         "id": 333,
@@ -2372,7 +2677,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "As banheiras são ótimas aliadas para o frio, no momento de escolher uma banheira é extremamente importante estar atento a algumas dicas para não errar."
+        "resumo": "As banheiras são ótimas aliadas para o frio, no momento de escolher uma banheira é extremamente importante estar atento a algumas dicas para não errar.",
+        "exibir": true
       },
       {
         "id": 330,
@@ -2384,7 +2690,12 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Os dias estressantes necessitam de uma dose de autocuidado. Saiba como aproveitar a sua banheira em casa para relaxar e cuidar da saúde."
+        "resumo": "Os dias estressantes necessitam de uma dose de autocuidado. Saiba como aproveitar a sua banheira em casa para relaxar e cuidar da saúde.",
+        "termos_sensiveis": [
+          "estressantes",
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 156,
@@ -2395,7 +2706,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Tomar um banho de hidromassagem é muito relaxante e especial. Entretanto, é muito importante ter alguns cuidados para garantir a segurança. Acesse para ler!"
+        "resumo": "Tomar um banho de hidromassagem é muito relaxante e especial. Entretanto, é muito importante ter alguns cuidados para garantir a segurança. Acesse para ler!",
+        "exibir": true
       },
       {
         "id": 154,
@@ -2406,7 +2718,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Turbojato, jato bolha, mini jato são alguns tipos de jatos para hidromassagem. Saiba as características de cada um. Acesse para ler mais!"
+        "resumo": "Turbojato, jato bolha, mini jato são alguns tipos de jatos para hidromassagem. Saiba as características de cada um. Acesse para ler mais!",
+        "exibir": true
       },
       {
         "id": 151,
@@ -2418,7 +2731,11 @@
           "Banheiras de hidromassagem",
           "Cromoterapia"
         ],
-        "resumo": "Você sabe o que ozonioterapia? É uma técnica que pode ser utilizada em banhos de banheiras de hidromassagem! Saiba quais são os benefícios acessando!"
+        "resumo": "Você sabe o que ozonioterapia? É uma técnica que pode ser utilizada em banhos de banheiras de hidromassagem! Saiba quais são os benefícios acessando!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 147,
@@ -2430,7 +2747,8 @@
           "Banheiras de hidromassagem",
           "Tendências"
         ],
-        "resumo": "Comprou uma banheira de hidromassagem, mas não sabe como decorar o banheiro de forma minimalista? O blog da BBB te ajuda! Acesse."
+        "resumo": "Comprou uma banheira de hidromassagem, mas não sabe como decorar o banheiro de forma minimalista? O blog da BBB te ajuda! Acesse.",
+        "exibir": true
       },
       {
         "id": 141,
@@ -2441,7 +2759,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Tomar um banho na banheira de hidromassagem é muito relaxante. Aguns produtos podem deixar esse momento na banheira ainda mais especial. Acesse!"
+        "resumo": "Tomar um banho na banheira de hidromassagem é muito relaxante. Aguns produtos podem deixar esse momento na banheira ainda mais especial. Acesse!",
+        "exibir": true
       },
       {
         "id": 137,
@@ -2453,7 +2772,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Ter uma área de lazer em casa é um sonho. Hidromassagem, spa e piscina são algumas opções. Mas qual escolher? Acesse para saber mais."
+        "resumo": "Ter uma área de lazer em casa é um sonho. Hidromassagem, spa e piscina são algumas opções. Mas qual escolher? Acesse para saber mais.",
+        "exibir": true
       },
       {
         "id": 132,
@@ -2465,7 +2785,11 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Para que você não tenha dor de cabeça com o funcionamento da sua banheira de hidro, siga nossas dicas. Acesse o blog da Banheiras Bom Banho!"
+        "resumo": "Para que você não tenha dor de cabeça com o funcionamento da sua banheira de hidro, siga nossas dicas. Acesse o blog da Banheiras Bom Banho!",
+        "termos_sensiveis": [
+          "dor"
+        ],
+        "exibir": false
       },
       {
         "id": 130,
@@ -2477,7 +2801,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como limpar? Confira as dicas do blog da BBB para não errar! Não deixe de ler!"
+        "resumo": "Tem uma banheira de hidromassagem, mas não sabe como limpar? Confira as dicas do blog da BBB para não errar! Não deixe de ler!",
+        "exibir": true
       },
       {
         "id": 128,
@@ -2489,7 +2814,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Uma banheira proprociona incríveis momentos relaxantes, deixando seu banheiro ainda mais aconchegante. Saiba mais no nosso blog!"
+        "resumo": "Uma banheira proprociona incríveis momentos relaxantes, deixando seu banheiro ainda mais aconchegante. Saiba mais no nosso blog!",
+        "exibir": true
       },
       {
         "id": 126,
@@ -2501,7 +2827,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Aprenda como instalar banheira de hidro de forma segura e correta. Veja cuidados elétricos, hidráulicos e estruturais para garantir funcionamento perfeito."
+        "resumo": "Aprenda como instalar banheira de hidro de forma segura e correta. Veja cuidados elétricos, hidráulicos e estruturais para garantir funcionamento perfeito.",
+        "exibir": true
       },
       {
         "id": 124,
@@ -2513,7 +2840,8 @@
           "Banheiras de hidromassagem",
           "Inspirações"
         ],
-        "resumo": "Quer ter um banheiro estilo retrô? Confira nossas dicas de como escolher uma banheira de hidro e ideias de decoração. Acesse!"
+        "resumo": "Quer ter um banheiro estilo retrô? Confira nossas dicas de como escolher uma banheira de hidro e ideias de decoração. Acesse!",
+        "exibir": true
       },
       {
         "id": 118,
@@ -2525,7 +2853,11 @@
           "Banheiras de hidromassagem",
           "Spas"
         ],
-        "resumo": "Banheiras spas e hidromassagem trazem benefícios para o corpo e mente. Qual é melhor para sua casa? Acesse para saber mais!"
+        "resumo": "Banheiras spas e hidromassagem trazem benefícios para o corpo e mente. Qual é melhor para sua casa? Acesse para saber mais!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 112,
@@ -2537,7 +2869,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Escolher a melhor banheira para sua casa não é fácil. Confira nossas dicas para escolher a sua hidromassagem. Acesse aqui para ler!"
+        "resumo": "Escolher a melhor banheira para sua casa não é fácil. Confira nossas dicas para escolher a sua hidromassagem. Acesse aqui para ler!",
+        "exibir": true
       },
       {
         "id": 104,
@@ -2549,7 +2882,8 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Quer comprar uma banheira mas não sabe se a banheira spa é melhor que hidromassagem? Confira nossas dicas para não errar! Leia!"
+        "resumo": "Quer comprar uma banheira mas não sabe se a banheira spa é melhor que hidromassagem? Confira nossas dicas para não errar! Leia!",
+        "exibir": true
       },
       {
         "id": 101,
@@ -2560,7 +2894,8 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "As banheiras de hidromassagem proporcionam um banho muito relaxante. Você sabe como a banheira hidro surgiu? Acesse o blog para saber!"
+        "resumo": "As banheiras de hidromassagem proporcionam um banho muito relaxante. Você sabe como a banheira hidro surgiu? Acesse o blog para saber!",
+        "exibir": true
       },
       {
         "id": 95,
@@ -2572,7 +2907,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Você sabe como as banheiras surgiram? O blog da Banheiras Bom banho explica a história delas para você! Acesse para ler mais."
+        "resumo": "Você sabe como as banheiras surgiram? O blog da Banheiras Bom banho explica a história delas para você! Acesse para ler mais.",
+        "exibir": true
       },
       {
         "id": 62,
@@ -2585,7 +2921,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "Tem uma área externa com banheira spa na sua casa, mas não tem ideia de como decorar? Acesse o blog da BBB para ter ideias de decoração!"
+        "resumo": "Tem uma área externa com banheira spa na sua casa, mas não tem ideia de como decorar? Acesse o blog da BBB para ter ideias de decoração!",
+        "exibir": true
       },
       {
         "id": 50,
@@ -2597,7 +2934,12 @@
           "Banheiras de hidromassagem",
           "Cromoterapia"
         ],
-        "resumo": "Descubra como a banheira cromoterapia transforma seu banho com estímulos de cores que equilibram mente e corpo. Veja benefícios e como a técnica funciona."
+        "resumo": "Descubra como a banheira cromoterapia transforma seu banho com estímulos de cores que equilibram mente e corpo. Veja benefícios e como a técnica funciona.",
+        "termos_sensiveis": [
+          "beneficios",
+          "mente e corpo"
+        ],
+        "exibir": false
       },
       {
         "id": 16,
@@ -2610,7 +2952,11 @@
           "Banhos por imersão",
           "Curiosidades"
         ],
-        "resumo": "As banheiras de hidromassagem proporcionam muitos benefícios para o corpo e mente. Saiba mais sobre isso no nosso blog. Acesse!"
+        "resumo": "As banheiras de hidromassagem proporcionam muitos benefícios para o corpo e mente. Saiba mais sobre isso no nosso blog. Acesse!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 12,
@@ -2624,7 +2970,11 @@
           "Ofurôs",
           "Spas"
         ],
-        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!"
+        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       }
     ],
     "Curiosidades": [
@@ -2637,7 +2987,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra quantos litros cabem em uma banheira e entenda o consumo de água, tempo de enchimento e estrutura ideal antes da compra."
+        "resumo": "Descubra quantos litros cabem em uma banheira e entenda o consumo de água, tempo de enchimento e estrutura ideal antes da compra.",
+        "exibir": true
       },
       {
         "id": 1245,
@@ -2649,7 +3000,8 @@
           "Curiosidades",
           "Inspirações"
         ],
-        "resumo": "Descubra como escolher a banheira para casa de campo ideal. Veja dicas de modelos, instalação e paisagismo para criar seu spa de descanso na natureza."
+        "resumo": "Descubra como escolher a banheira para casa de campo ideal. Veja dicas de modelos, instalação e paisagismo para criar seu spa de descanso na natureza.",
+        "exibir": true
       },
       {
         "id": 1200,
@@ -2660,7 +3012,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra o conceito de home resort. Veja ideias práticas para transformar sua casa em um refúgio de luxo com spas, banheiras e bem-estar."
+        "resumo": "Descubra o conceito de home resort. Veja ideias práticas para transformar sua casa em um refúgio de luxo com spas, banheiras e bem-estar.",
+        "exibir": true
       },
       {
         "id": 1171,
@@ -2672,7 +3025,8 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "Saiba o que avaliar antes de instalar spa em casa. Veja dicas essenciais de espaço, estrutura, infraestrutura elétrica, hidráulica e manutenção."
+        "resumo": "Saiba o que avaliar antes de instalar spa em casa. Veja dicas essenciais de espaço, estrutura, infraestrutura elétrica, hidráulica e manutenção.",
+        "exibir": true
       },
       {
         "id": 1162,
@@ -2685,7 +3039,8 @@
           "Dicas",
           "Spas"
         ],
-        "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar."
+        "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar.",
+        "exibir": true
       },
       {
         "id": 1110,
@@ -2702,7 +3057,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto."
+        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto.",
+        "exibir": true
       },
       {
         "id": 940,
@@ -2713,7 +3069,11 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Banheira para relaxar: descubra modelos ideais, benefícios e dicas para transformar seu banho em autocuidado."
+        "resumo": "Banheira para relaxar: descubra modelos ideais, benefícios e dicas para transformar seu banho em autocuidado.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 926,
@@ -2724,7 +3084,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Conheça modelos de banheiras para casas de praia e saiba como manter beleza e durabilidade à beira-mar. Confira nosso artigo!"
+        "resumo": "Conheça modelos de banheiras para casas de praia e saiba como manter beleza e durabilidade à beira-mar. Confira nosso artigo!",
+        "exibir": true
       },
       {
         "id": 923,
@@ -2735,7 +3096,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra como instalar banheiras em apartamentos com segurança e praticidade. Veja modelos ideais e cuidados essenciais."
+        "resumo": "Descubra como instalar banheiras em apartamentos com segurança e praticidade. Veja modelos ideais e cuidados essenciais.",
+        "exibir": true
       },
       {
         "id": 920,
@@ -2748,8 +3110,12 @@
         ],
         "resumo": "Descubra como ter banheira em casa promove bem-estar e saúde com efeitos terapêuticos incríveis. Confira nosso artigo!",
         "termos_sensiveis": [
-          "terapeutic"
-        ]
+          "terapeutic",
+          "beneficios",
+          "terapeuticos",
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 916,
@@ -2760,7 +3126,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra como instalar banheiras em banheiros pequenos com charme, funcionalidade e ótimo custo-benefício. Confira em nosso artigo!"
+        "resumo": "Descubra como instalar banheiras em banheiros pequenos com charme, funcionalidade e ótimo custo-benefício. Confira em nosso artigo!",
+        "exibir": true
       },
       {
         "id": 913,
@@ -2771,7 +3138,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba o que muda entre banheira convencional e de hidromassagem e descubra qual combina mais com seu banheiro e seu estilo de vida."
+        "resumo": "Saiba o que muda entre banheira convencional e de hidromassagem e descubra qual combina mais com seu banheiro e seu estilo de vida.",
+        "exibir": true
       },
       {
         "id": 910,
@@ -2782,7 +3150,11 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra os benefícios de ter banheira com hidro em casa e transforme seu banheiro em um espaço de relaxamento diário."
+        "resumo": "Descubra os benefícios de ter banheira com hidro em casa e transforme seu banheiro em um espaço de relaxamento diário.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 907,
@@ -2793,7 +3165,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra como integrar banheiras ao banheiro com estilo, conforto e harmonia na decoração do ambiente. Confira!"
+        "resumo": "Descubra como integrar banheiras ao banheiro com estilo, conforto e harmonia na decoração do ambiente. Confira!",
+        "exibir": true
       },
       {
         "id": 904,
@@ -2804,7 +3177,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Aprenda como escolher a banheira ideal com dicas sobre modelos, materiais e espaço para um banho perfeito. Confira!"
+        "resumo": "Aprenda como escolher a banheira ideal com dicas sobre modelos, materiais e espaço para um banho perfeito. Confira!",
+        "exibir": true
       },
       {
         "id": 901,
@@ -2815,7 +3189,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba o que considerar antes de instalar uma banheira em casa. Planejamento, espaço e infraestrutura fazem toda a diferença!"
+        "resumo": "Saiba o que considerar antes de instalar uma banheira em casa. Planejamento, espaço e infraestrutura fazem toda a diferença!",
+        "exibir": true
       },
       {
         "id": 898,
@@ -2826,7 +3201,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba como investir em uma banheira pode aumentar o valor do seu imóvel e atrair compradores. Dicas e modelos para seu projeto!"
+        "resumo": "Saiba como investir em uma banheira pode aumentar o valor do seu imóvel e atrair compradores. Dicas e modelos para seu projeto!",
+        "exibir": true
       },
       {
         "id": 819,
@@ -2837,7 +3213,11 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Em meio à correria do dia a dia, encontrar momentos de pausa e cuidado pessoal é essencial. E poucas experiências são tão revigorantes quanto mergulhar em uma banheira com água morna, aromas suaves e silêncio ao redor. Mas além do prazer imediato, será que o banho de banheira faz bem para a saúde? Se busca [&hellip;]"
+        "resumo": "Em meio à correria do dia a dia, encontrar momentos de pausa e cuidado pessoal é essencial. E poucas experiências são tão revigorantes quanto mergulhar em uma banheira com água morna, aromas suaves e silêncio ao redor. Mas além do prazer imediato, será que o banho de banheira faz bem para a saúde? Se busca [&hellip;]",
+        "termos_sensiveis": [
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 791,
@@ -2849,7 +3229,11 @@
           "Cromoterapia",
           "Curiosidades"
         ],
-        "resumo": "Descubra os benefícios da cromoterapia para banheira e transforme seu banho em um momento de relaxamento, equilíbrio e bem-estar emocional."
+        "resumo": "Descubra os benefícios da cromoterapia para banheira e transforme seu banho em um momento de relaxamento, equilíbrio e bem-estar emocional.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 768,
@@ -2860,7 +3244,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Ter uma banheira em casa é sinônimo de conforto e relaxamento, mas, para garantir sua durabilidade e funcionamento perfeito, é essencial cuidar bem dela. Neste guia, reunimos as melhores práticas de limpeza de banheiras, cuidados com banheiras, e as melhores dicas de conservação para você aproveitar ao máximo sua experiência. Por que a manutenção regular [&hellip;]"
+        "resumo": "Ter uma banheira em casa é sinônimo de conforto e relaxamento, mas, para garantir sua durabilidade e funcionamento perfeito, é essencial cuidar bem dela. Neste guia, reunimos as melhores práticas de limpeza de banheiras, cuidados com banheiras, e as melhores dicas de conservação para você aproveitar ao máximo sua experiência. Por que a manutenção regular [&hellip;]",
+        "exibir": true
       },
       {
         "id": 766,
@@ -2871,7 +3256,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra como criar um banheiro estilo spa, com decoração com banheira, elementos de relaxamento e o toque de sofisticação que você merece."
+        "resumo": "Descubra como criar um banheiro estilo spa, com decoração com banheira, elementos de relaxamento e o toque de sofisticação que você merece.",
+        "exibir": true
       },
       {
         "id": 762,
@@ -2882,7 +3268,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Escolher a banheira ideal para sua casa pode ser desafiador, mas com as dicas e informações certas, você tomará a melhor decisão."
+        "resumo": "Escolher a banheira ideal para sua casa pode ser desafiador, mas com as dicas e informações certas, você tomará a melhor decisão.",
+        "exibir": true
       },
       {
         "id": 758,
@@ -2893,7 +3280,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Uma banheira com cascata para hotel é ideal para diferenciar o seu empreendimento do setor hoteleiro dos concorrentes; saiba tudo a respeito!"
+        "resumo": "Uma banheira com cascata para hotel é ideal para diferenciar o seu empreendimento do setor hoteleiro dos concorrentes; saiba tudo a respeito!",
+        "exibir": true
       },
       {
         "id": 748,
@@ -2904,7 +3292,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Veja como transformar espaços pequenos em áreas de relaxamento com nossas banheiras projetadas para ambientes compactos. Conheça opções inteligentes que combinam funcionalidade e estilo para proporcionar conforto em qualquer banheiro."
+        "resumo": "Veja como transformar espaços pequenos em áreas de relaxamento com nossas banheiras projetadas para ambientes compactos. Conheça opções inteligentes que combinam funcionalidade e estilo para proporcionar conforto em qualquer banheiro.",
+        "exibir": true
       },
       {
         "id": 746,
@@ -2917,8 +3306,11 @@
         ],
         "resumo": "Desfrute de momentos relaxantes e revigorantes com as banheiras que promovem o bem-estar da BBB. Veja os benefícios terapêuticos, dicas para aproveitar ao máximo e como investir em qualidade de vida.",
         "termos_sensiveis": [
-          "terapeutic"
-        ]
+          "terapeutic",
+          "beneficios",
+          "terapeuticos"
+        ],
+        "exibir": false
       },
       {
         "id": 744,
@@ -2929,7 +3321,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Ter uma banheira em casa oferece inúmeras vantagens. Imagine chegar em casa após um longo dia de trabalho e poder mergulhar em água quente, relaxando com tranquilidade. Investir em uma banheira é investir em qualidade de vida, proporcionando momentos para recarregar suas energias e descansar a mente. Continue lendo e descubra os tipos de banheiras [&hellip;]"
+        "resumo": "Ter uma banheira em casa oferece inúmeras vantagens. Imagine chegar em casa após um longo dia de trabalho e poder mergulhar em água quente, relaxando com tranquilidade. Investir em uma banheira é investir em qualidade de vida, proporcionando momentos para recarregar suas energias e descansar a mente. Continue lendo e descubra os tipos de banheiras [&hellip;]",
+        "exibir": true
       },
       {
         "id": 742,
@@ -2940,7 +3333,12 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Após um dia cansativo, é comum chegarmos em casa exaustos, com dores musculares e mentalmente esgotados. Nesses momentos, tudo o que queremos é encontrar uma maneira de recuperar nossas energias. Relaxar na banheira é uma solução quase infalível para obter o relaxamento e revitalização que buscamos no final de nossa rotina. A imersão na água [&hellip;]"
+        "resumo": "Após um dia cansativo, é comum chegarmos em casa exaustos, com dores musculares e mentalmente esgotados. Nesses momentos, tudo o que queremos é encontrar uma maneira de recuperar nossas energias. Relaxar na banheira é uma solução quase infalível para obter o relaxamento e revitalização que buscamos no final de nossa rotina. A imersão na água [&hellip;]",
+        "termos_sensiveis": [
+          "dores",
+          "musculares"
+        ],
+        "exibir": false
       },
       {
         "id": 714,
@@ -2951,7 +3349,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra como escolher a banheira pequena para apartamento ideal, mesmo em banheiros compactos. Veja modelos, materiais e soluções para otimizar seu espaço."
+        "resumo": "Descubra como escolher a banheira pequena para apartamento ideal, mesmo em banheiros compactos. Veja modelos, materiais e soluções para otimizar seu espaço.",
+        "exibir": true
       },
       {
         "id": 711,
@@ -2962,7 +3361,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Transforme seu banheiro em um santuário de relaxamento com nosso guia"
+        "resumo": "Transforme seu banheiro em um santuário de relaxamento com nosso guia",
+        "exibir": true
       },
       {
         "id": 697,
@@ -2973,7 +3373,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Explore diversas medidas de segurança ao utilizar um ofurô, desde a instalação adequada até dicas essenciais para desfrutar de um banho tranquilo"
+        "resumo": "Explore diversas medidas de segurança ao utilizar um ofurô, desde a instalação adequada até dicas essenciais para desfrutar de um banho tranquilo",
+        "exibir": true
       },
       {
         "id": 693,
@@ -2984,7 +3385,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Confira como integrar uma banheira vitoriana em um banheiro com estilo vitoriano ou vintage."
+        "resumo": "Confira como integrar uma banheira vitoriana em um banheiro com estilo vitoriano ou vintage.",
+        "exibir": true
       },
       {
         "id": 690,
@@ -2995,7 +3397,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Nesse artigo, a Banheiras Bom Banho compara essas duas opções populares e ajudá-lo a entender melhor as diferenças entre elas."
+        "resumo": "Nesse artigo, a Banheiras Bom Banho compara essas duas opções populares e ajudá-lo a entender melhor as diferenças entre elas.",
+        "exibir": true
       },
       {
         "id": 668,
@@ -3006,7 +3409,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Existem alguns pontos importantes a serem levados em conta na hora de escolher uma banheira para seu bebe. Saiba mais!"
+        "resumo": "Existem alguns pontos importantes a serem levados em conta na hora de escolher uma banheira para seu bebe. Saiba mais!",
+        "exibir": true
       },
       {
         "id": 664,
@@ -3017,7 +3421,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra a maneira correta de dar banho no seu pet em casa! A banheira para pets da Banheiras Bom Banho, pode te ajudar nessa tarefa!"
+        "resumo": "Descubra a maneira correta de dar banho no seu pet em casa! A banheira para pets da Banheiras Bom Banho, pode te ajudar nessa tarefa!",
+        "exibir": true
       },
       {
         "id": 611,
@@ -3028,7 +3433,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Veja a seguir as principais funções de um aquecedor de banheiras."
+        "resumo": "Veja a seguir as principais funções de um aquecedor de banheiras.",
+        "exibir": true
       },
       {
         "id": 603,
@@ -3039,7 +3445,11 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba todos os cuidados que você deve ter com a pele do seu bebê durante o banho de banheira do pequeno e torne esse momento mais relaxante. Confira!"
+        "resumo": "Saiba todos os cuidados que você deve ter com a pele do seu bebê durante o banho de banheira do pequeno e torne esse momento mais relaxante. Confira!",
+        "termos_sensiveis": [
+          "pele"
+        ],
+        "exibir": false
       },
       {
         "id": 560,
@@ -3052,7 +3462,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Não é segredo para ninguém o investimento em adquirir uma banheira, mas vale a pena para garantir banhos relaxantes e inesquecíveis. Os modelos disponíveis no site da Banheiras Bom Banho são de ótima qualidade e possuem preço justo de acordo com a tecnologia diferente de cada uma. Aproveite para adquirir a sua banheira de hidromassagem [&hellip;]"
+        "resumo": "Não é segredo para ninguém o investimento em adquirir uma banheira, mas vale a pena para garantir banhos relaxantes e inesquecíveis. Os modelos disponíveis no site da Banheiras Bom Banho são de ótima qualidade e possuem preço justo de acordo com a tecnologia diferente de cada uma. Aproveite para adquirir a sua banheira de hidromassagem [&hellip;]",
+        "exibir": true
       },
       {
         "id": 552,
@@ -3065,7 +3476,8 @@
           "Dicas",
           "Inspirações"
         ],
-        "resumo": "As banheiras para pet da Banheiras Bom Banho são materiais de extrema qualidade. A seguir separamos algumas vantagens de adquirir tal objeto para seu animal de estimação."
+        "resumo": "As banheiras para pet da Banheiras Bom Banho são materiais de extrema qualidade. A seguir separamos algumas vantagens de adquirir tal objeto para seu animal de estimação.",
+        "exibir": true
       },
       {
         "id": 530,
@@ -3076,7 +3488,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Confira aqui o que fazer para escolher a melhor banheira para os aposentos da sua pousada. Conheça os modelos de hidromassagem da Banheiras Bom Banho!"
+        "resumo": "Confira aqui o que fazer para escolher a melhor banheira para os aposentos da sua pousada. Conheça os modelos de hidromassagem da Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 527,
@@ -3087,7 +3500,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Entenda porque um quarto de hotel com banheira se torna muito mais atrativo para os turistas e pode alavancar as reservas. Conte com a BBB!"
+        "resumo": "Entenda porque um quarto de hotel com banheira se torna muito mais atrativo para os turistas e pode alavancar as reservas. Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 524,
@@ -3098,7 +3512,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba quais são as dicas para utilizar uma banheira de hidromassagem corretamente, causando uma sensação de relaxamento ainda maior."
+        "resumo": "Saiba quais são as dicas para utilizar uma banheira de hidromassagem corretamente, causando uma sensação de relaxamento ainda maior.",
+        "exibir": true
       },
       {
         "id": 521,
@@ -3109,7 +3524,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Veja como o banho de banheira pode ser um grande aliado para eliminar a tensão do seu filho em casa. Conte com a Banheiras Bom Banho!"
+        "resumo": "Veja como o banho de banheira pode ser um grande aliado para eliminar a tensão do seu filho em casa. Conte com a Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 517,
@@ -3120,7 +3536,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba mais sobre as diferenças entre banheira de hidromassagem e ofurô com a Banheiras Bom Banho. Conheça nossos modelos!"
+        "resumo": "Saiba mais sobre as diferenças entre banheira de hidromassagem e ofurô com a Banheiras Bom Banho. Conheça nossos modelos!",
+        "exibir": true
       },
       {
         "id": 509,
@@ -3132,7 +3549,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Depois daquele jantar delicioso ou daquele almoço caprichado, você só quer relaxar, né? Por isso, surge a dúvida: posso entrar na banheira após comer?"
+        "resumo": "Depois daquele jantar delicioso ou daquele almoço caprichado, você só quer relaxar, né? Por isso, surge a dúvida: posso entrar na banheira após comer?",
+        "exibir": true
       },
       {
         "id": 497,
@@ -3144,7 +3562,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Se você quer renovar as energias e ficar revigorado, precisa conhecer o banho de banheira. Saiba mais aqui e conte com a BBB!"
+        "resumo": "Se você quer renovar as energias e ficar revigorado, precisa conhecer o banho de banheira. Saiba mais aqui e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 492,
@@ -3155,7 +3574,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Não se assuste com o preço banheira! É possível incluir um modelo no seu projeto. Saiba mais e conte com a Banheiras Bom Banho."
+        "resumo": "Não se assuste com o preço banheira! É possível incluir um modelo no seu projeto. Saiba mais e conte com a Banheiras Bom Banho.",
+        "exibir": true
       },
       {
         "id": 434,
@@ -3168,8 +3588,10 @@
         ],
         "resumo": "Saiba mais sobre os banhos terapêuticos e como utilizar a sua banheira para adotar esta prática. Conte com a Banheiras Bom Banho!",
         "termos_sensiveis": [
-          "terapeutic"
-        ]
+          "terapeutic",
+          "terapeuticos"
+        ],
+        "exibir": false
       },
       {
         "id": 428,
@@ -3181,7 +3603,8 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "Uma spa proporciona momentos relaxantes e especiais, podendo ser colocada em ambientes diferentes. Quer ter uma banheira spa em casa? Confira dicas."
+        "resumo": "Uma spa proporciona momentos relaxantes e especiais, podendo ser colocada em ambientes diferentes. Quer ter uma banheira spa em casa? Confira dicas.",
+        "exibir": true
       },
       {
         "id": 422,
@@ -3193,7 +3616,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "A limpeza do banheiro de casa pode ser considerada uma tarefa trabalhosa por muitos, mas é extremamente necessária. Confira dicas."
+        "resumo": "A limpeza do banheiro de casa pode ser considerada uma tarefa trabalhosa por muitos, mas é extremamente necessária. Confira dicas.",
+        "exibir": true
       },
       {
         "id": 420,
@@ -3204,7 +3628,11 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Você tem essa dúvida? Confira aqui se o banho quente na banheira ajuda a queimar calorias! Conheça nossos modelos e conte com a BBB!"
+        "resumo": "Você tem essa dúvida? Confira aqui se o banho quente na banheira ajuda a queimar calorias! Conheça nossos modelos e conte com a BBB!",
+        "termos_sensiveis": [
+          "calorias"
+        ],
+        "exibir": false
       },
       {
         "id": 414,
@@ -3216,7 +3644,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Tudo o que você precisa saber sobre banheiras de hidromassagem está aqui. Conheça nossos modelos e conte com a Banheiras Bom Banho!"
+        "resumo": "Tudo o que você precisa saber sobre banheiras de hidromassagem está aqui. Conheça nossos modelos e conte com a Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 407,
@@ -3227,7 +3656,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Você pertence ao grupo de pessoas que não conseguem desgrudar do celular e levam o aparelho até para o banheiro? Tome cuidado!"
+        "resumo": "Você pertence ao grupo de pessoas que não conseguem desgrudar do celular e levam o aparelho até para o banheiro? Tome cuidado!",
+        "exibir": true
       },
       {
         "id": 398,
@@ -3238,7 +3668,12 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Você sabia que as suas cólicas podem acabar com um banho de banheira? Saiba mais e conte com a gente! Conheça os modelos de banheira da Banheiras Bom Banho!"
+        "resumo": "Você sabia que as suas cólicas podem acabar com um banho de banheira? Saiba mais e conte com a gente! Conheça os modelos de banheira da Banheiras Bom Banho!",
+        "termos_sensiveis": [
+          "aliviar",
+          "menstruais"
+        ],
+        "exibir": false
       },
       {
         "id": 389,
@@ -3249,7 +3684,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba como você pode deixar o seu banheiro muito mais moderno e sofisticado com uma banheira de hidro. Conte com a Banheiras Bom Banho!"
+        "resumo": "Saiba como você pode deixar o seu banheiro muito mais moderno e sofisticado com uma banheira de hidro. Conte com a Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 380,
@@ -3262,7 +3698,8 @@
           "Curiosidades",
           "Dicas"
         ],
-        "resumo": "Todo mundo quer curtir uma banheira. Para que tudo dê certo e você não tenha problemas, é importante tomar cuidados na instalação"
+        "resumo": "Todo mundo quer curtir uma banheira. Para que tudo dê certo e você não tenha problemas, é importante tomar cuidados na instalação",
+        "exibir": true
       },
       {
         "id": 372,
@@ -3274,7 +3711,8 @@
           "Curiosidades",
           "Ofurôs"
         ],
-        "resumo": "Saiba como a banheira e ofurô em quartos de hotéis e resorts pode tornar a viagem ainda mais inesquecível. Conte com a BBB!"
+        "resumo": "Saiba como a banheira e ofurô em quartos de hotéis e resorts pode tornar a viagem ainda mais inesquecível. Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 365,
@@ -3285,7 +3723,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "A água é um elemento que alegra as crianças e elas ficam encantadas com um banho de banheira. Confira os modelos da Banheiras Bom Banho!"
+        "resumo": "A água é um elemento que alegra as crianças e elas ficam encantadas com um banho de banheira. Confira os modelos da Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 361,
@@ -3296,7 +3735,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Conheça como a banheira pode ser uma grande aliada para as mamães que optam pelo parto humanizado. Conheça os modelos da Banheiras Bom Banho!"
+        "resumo": "Conheça como a banheira pode ser uma grande aliada para as mamães que optam pelo parto humanizado. Conheça os modelos da Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 358,
@@ -3307,7 +3747,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Entende como a arquitetura dos banheiros vem evoluindo com a adição das banheiras neste espaço tão importante da casa. Confira o blog da BBB!"
+        "resumo": "Entende como a arquitetura dos banheiros vem evoluindo com a adição das banheiras neste espaço tão importante da casa. Confira o blog da BBB!",
+        "exibir": true
       },
       {
         "id": 351,
@@ -3319,7 +3760,8 @@
           "Curiosidades",
           "Ofurôs"
         ],
-        "resumo": "Banho em ofurô só serve para ter um momento de relaxamento: mito ou verdade? Confira os principais mitos sobre esse tipo de banheira."
+        "resumo": "Banho em ofurô só serve para ter um momento de relaxamento: mito ou verdade? Confira os principais mitos sobre esse tipo de banheira.",
+        "exibir": true
       },
       {
         "id": 345,
@@ -3331,7 +3773,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "O banho de banheira possui inúmeras vantagens comparado ao banho de ducha. Conheça os principais motivos para escolher a banheira."
+        "resumo": "O banho de banheira possui inúmeras vantagens comparado ao banho de ducha. Conheça os principais motivos para escolher a banheira.",
+        "exibir": true
       },
       {
         "id": 317,
@@ -3342,7 +3785,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Entre tantos mitos, a verdade é que todos querem uma banheira de hidromassagem! Acesse para saber mitos e verdade sobre banheiras!"
+        "resumo": "Entre tantos mitos, a verdade é que todos querem uma banheira de hidromassagem! Acesse para saber mitos e verdade sobre banheiras!",
+        "exibir": true
       },
       {
         "id": 311,
@@ -3353,7 +3797,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "O consumo de água consciente deve ser um hábito. Saiba como economizar água no relaxante banho de banheira! Acesse o blog da Banheiras Bom Banho!"
+        "resumo": "O consumo de água consciente deve ser um hábito. Saiba como economizar água no relaxante banho de banheira! Acesse o blog da Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 303,
@@ -3364,7 +3809,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Todos nós precisamos ter momentos relaxantes para distrair a mente. Tenha uma spa em casa para relaxar quando quiser! Acesse para saber mais!"
+        "resumo": "Todos nós precisamos ter momentos relaxantes para distrair a mente. Tenha uma spa em casa para relaxar quando quiser! Acesse para saber mais!",
+        "exibir": true
       },
       {
         "id": 294,
@@ -3375,7 +3821,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "O momento na banheira já é relaxante, mas ele pode se tornar ainda mais! Siga as nossas dicas para ter um banho mais especial! Acesse o nosso blog!"
+        "resumo": "O momento na banheira já é relaxante, mas ele pode se tornar ainda mais! Siga as nossas dicas para ter um banho mais especial! Acesse o nosso blog!",
+        "exibir": true
       },
       {
         "id": 291,
@@ -3386,7 +3833,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "As mulheres grávidas devem ter alguns cuidados ao tomar um banho relaxante na banheira. Saiba quais são eles! Acesse o nosso blog!"
+        "resumo": "As mulheres grávidas devem ter alguns cuidados ao tomar um banho relaxante na banheira. Saiba quais são eles! Acesse o nosso blog!",
+        "exibir": true
       },
       {
         "id": 288,
@@ -3397,7 +3845,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Entrar na banheira é um momento muito esperado. Saiba quais são os cuidados que você deve tomar na instalação de banheiras em apartamentos! Acesse!"
+        "resumo": "Entrar na banheira é um momento muito esperado. Saiba quais são os cuidados que você deve tomar na instalação de banheiras em apartamentos! Acesse!",
+        "exibir": true
       },
       {
         "id": 285,
@@ -3408,7 +3857,12 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Todos os atletas sabem das dores do pós treino. Você sabia que a banheira de hidromassagem também traz benefícios para essas pessoas? Acesse para sabe ler!"
+        "resumo": "Todos os atletas sabem das dores do pós treino. Você sabia que a banheira de hidromassagem também traz benefícios para essas pessoas? Acesse para sabe ler!",
+        "termos_sensiveis": [
+          "beneficios",
+          "dores"
+        ],
+        "exibir": false
       },
       {
         "id": 282,
@@ -3419,7 +3873,11 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "A insônia é um problema que afeta muitos brasileiros. Você sabia que passar alguns minutos no ofurô à noite ajuda a dormir melhor? Acesse para saber mais!"
+        "resumo": "A insônia é um problema que afeta muitos brasileiros. Você sabia que passar alguns minutos no ofurô à noite ajuda a dormir melhor? Acesse para saber mais!",
+        "termos_sensiveis": [
+          "insonia"
+        ],
+        "exibir": false
       },
       {
         "id": 279,
@@ -3430,7 +3888,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Entrar na água quente da banheira spa ou da banheira de hidromassagem é entrar em um momento especial. Mas você sabe como aquecer? Acesse para saber!"
+        "resumo": "Entrar na água quente da banheira spa ou da banheira de hidromassagem é entrar em um momento especial. Mas você sabe como aquecer? Acesse para saber!",
+        "exibir": true
       },
       {
         "id": 276,
@@ -3441,7 +3900,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Existem diversos modelos de banheiras, todas proporcionam um momento especial e relaxante. Em relação ao formato, qual banheira escolher? Acesse para saber!"
+        "resumo": "Existem diversos modelos de banheiras, todas proporcionam um momento especial e relaxante. Em relação ao formato, qual banheira escolher? Acesse para saber!",
+        "exibir": true
       },
       {
         "id": 272,
@@ -3452,7 +3912,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Um momento para pensar, descansar e renovar as energias pode ser dentro de uma banheira de imersão! Acesse o nosso blog para saber mais!"
+        "resumo": "Um momento para pensar, descansar e renovar as energias pode ser dentro de uma banheira de imersão! Acesse o nosso blog para saber mais!",
+        "exibir": true
       },
       {
         "id": 268,
@@ -3463,7 +3924,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Já pensou no luxo que seria se você tivesse uma banheira da corte inglesa no seu banheiro? Acesse para saber mais sobre as banheiras vitorianas!"
+        "resumo": "Já pensou no luxo que seria se você tivesse uma banheira da corte inglesa no seu banheiro? Acesse para saber mais sobre as banheiras vitorianas!",
+        "exibir": true
       },
       {
         "id": 265,
@@ -3474,7 +3936,11 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "A hidromassagem proporciona diversos benefícios para o corpo e mente das pessoas. No entanto, é preciso tomar alguns cuidados. Acesse para saber!"
+        "resumo": "A hidromassagem proporciona diversos benefícios para o corpo e mente das pessoas. No entanto, é preciso tomar alguns cuidados. Acesse para saber!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 165,
@@ -3487,8 +3953,13 @@
         ],
         "resumo": "A hidromassagem tem muitos benefícios, como ajudar no tratamento de artrite reumatoide, doença é autoimune. Saiba mais sobre o assunto no site!",
         "termos_sensiveis": [
-          "trata"
-        ]
+          "trata",
+          "artrite",
+          "reumatoide",
+          "beneficios",
+          "doenca"
+        ],
+        "exibir": false
       },
       {
         "id": 160,
@@ -3499,7 +3970,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "A bomba de banheira é muito importante para o funcionamento das banheiras de hidromassagem. Saiba mais sobre o assunto no nosso blog!"
+        "resumo": "A bomba de banheira é muito importante para o funcionamento das banheiras de hidromassagem. Saiba mais sobre o assunto no nosso blog!",
+        "exibir": true
       },
       {
         "id": 136,
@@ -3510,7 +3982,8 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba quais são as características dos aquecedores de banheiras de hidromassagem, além de dicas de instalação desses equipamentos e das banheiras. Leia!"
+        "resumo": "Saiba quais são as características dos aquecedores de banheiras de hidromassagem, além de dicas de instalação desses equipamentos e das banheiras. Leia!",
+        "exibir": true
       },
       {
         "id": 137,
@@ -3522,7 +3995,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Ter uma área de lazer em casa é um sonho. Hidromassagem, spa e piscina são algumas opções. Mas qual escolher? Acesse para saber mais."
+        "resumo": "Ter uma área de lazer em casa é um sonho. Hidromassagem, spa e piscina são algumas opções. Mas qual escolher? Acesse para saber mais.",
+        "exibir": true
       },
       {
         "id": 128,
@@ -3534,7 +4008,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Uma banheira proprociona incríveis momentos relaxantes, deixando seu banheiro ainda mais aconchegante. Saiba mais no nosso blog!"
+        "resumo": "Uma banheira proprociona incríveis momentos relaxantes, deixando seu banheiro ainda mais aconchegante. Saiba mais no nosso blog!",
+        "exibir": true
       },
       {
         "id": 115,
@@ -3545,7 +4020,14 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra qual é o melhor banho para tirar dores no corpo: água quente ou fria. Entenda como cada temperatura age nos músculos e quando utilizar cada uma."
+        "resumo": "Descubra qual é o melhor banho para tirar dores no corpo: água quente ou fria. Entenda como cada temperatura age nos músculos e quando utilizar cada uma.",
+        "termos_sensiveis": [
+          "dor",
+          "muscular",
+          "dores",
+          "musculos"
+        ],
+        "exibir": false
       },
       {
         "id": 108,
@@ -3558,7 +4040,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Pensando em comprar uma banheira de hidro, mas não sabe como colocar no seu banheiro? Confira algumas ideias no nosso site!"
+        "resumo": "Pensando em comprar uma banheira de hidro, mas não sabe como colocar no seu banheiro? Confira algumas ideias no nosso site!",
+        "exibir": true
       },
       {
         "id": 95,
@@ -3570,7 +4053,8 @@
           "Banheiras de hidromassagem",
           "Curiosidades"
         ],
-        "resumo": "Você sabe como as banheiras surgiram? O blog da Banheiras Bom banho explica a história delas para você! Acesse para ler mais."
+        "resumo": "Você sabe como as banheiras surgiram? O blog da Banheiras Bom banho explica a história delas para você! Acesse para ler mais.",
+        "exibir": true
       },
       {
         "id": 86,
@@ -3582,7 +4066,11 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "As banheiras spas são amadas pelos brasileiros. Saiba mais sobre a história dessas banheiras, além dos benefícios. Acesse nosso blog!"
+        "resumo": "As banheiras spas são amadas pelos brasileiros. Saiba mais sobre a história dessas banheiras, além dos benefícios. Acesse nosso blog!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 16,
@@ -3595,7 +4083,11 @@
           "Banhos por imersão",
           "Curiosidades"
         ],
-        "resumo": "As banheiras de hidromassagem proporcionam muitos benefícios para o corpo e mente. Saiba mais sobre isso no nosso blog. Acesse!"
+        "resumo": "As banheiras de hidromassagem proporcionam muitos benefícios para o corpo e mente. Saiba mais sobre isso no nosso blog. Acesse!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 12,
@@ -3609,7 +4101,11 @@
           "Ofurôs",
           "Spas"
         ],
-        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!"
+        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 5,
@@ -3621,7 +4117,11 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "Você sabe a história do banho? E os benefícios dos spas? Para saber sobre o assunto, acesse o blog da Banheiras Bom Banho!"
+        "resumo": "Você sabe a história do banho? E os benefícios dos spas? Para saber sobre o assunto, acesse o blog da Banheiras Bom Banho!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       }
     ],
     "Banhos por imersão": [
@@ -3635,7 +4135,8 @@
           "Banheiras de hidromassagem",
           "Banhos por imersão"
         ],
-        "resumo": "Banheira de imersão ou hidromassagem? Entenda as diferenças, custos e qual modelo é ideal para seu projeto residencial de luxo."
+        "resumo": "Banheira de imersão ou hidromassagem? Entenda as diferenças, custos e qual modelo é ideal para seu projeto residencial de luxo.",
+        "exibir": true
       },
       {
         "id": 1141,
@@ -3647,7 +4148,8 @@
           "Banheiras de hidromassagem",
           "Banhos por imersão"
         ],
-        "resumo": "Veja como uma banheira para momentos em família pode transformar sua casa em um centro de lazer, convivência e bem-estar para todas as idades."
+        "resumo": "Veja como uma banheira para momentos em família pode transformar sua casa em um centro de lazer, convivência e bem-estar para todas as idades.",
+        "exibir": true
       },
       {
         "id": 1110,
@@ -3664,7 +4166,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto."
+        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto.",
+        "exibir": true
       },
       {
         "id": 992,
@@ -3675,7 +4178,8 @@
         "categorias": [
           "Banhos por imersão"
         ],
-        "resumo": "Banheira ou piscina: descubra qual faz mais sentido para sua casa, considerando espaço, conforto e bem-estar."
+        "resumo": "Banheira ou piscina: descubra qual faz mais sentido para sua casa, considerando espaço, conforto e bem-estar.",
+        "exibir": true
       },
       {
         "id": 933,
@@ -3686,7 +4190,8 @@
         "categorias": [
           "Banhos por imersão"
         ],
-        "resumo": "Descubra o que é banheira de imersão, como funciona e por que é ideal para famílias que buscam conforto, profundidade e relaxamento no banho."
+        "resumo": "Descubra o que é banheira de imersão, como funciona e por que é ideal para famílias que buscam conforto, profundidade e relaxamento no banho.",
+        "exibir": true
       },
       {
         "id": 833,
@@ -3697,7 +4202,12 @@
         "categorias": [
           "Banhos por imersão"
         ],
-        "resumo": "Banho de imersão: descubra benefícios para corpo e mente, com relaxamento, bem-estar e qualidade de vida."
+        "resumo": "Banho de imersão: descubra benefícios para corpo e mente, com relaxamento, bem-estar e qualidade de vida.",
+        "termos_sensiveis": [
+          "beneficios",
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 574,
@@ -3710,7 +4220,8 @@
           "Banhos por imersão",
           "Dicas"
         ],
-        "resumo": "Veja dicas de modelos de banheiras mais econômicas."
+        "resumo": "Veja dicas de modelos de banheiras mais econômicas.",
+        "exibir": true
       },
       {
         "id": 354,
@@ -3722,7 +4233,11 @@
           "Banheiras de hidromassagem",
           "Banhos por imersão"
         ],
-        "resumo": "As banheiras de hidromassagem e de imersão trazem muitos benefícios para o corpo e mente das pessoas. Mas você sabe a diferença entre elas?"
+        "resumo": "As banheiras de hidromassagem e de imersão trazem muitos benefícios para o corpo e mente das pessoas. Mas você sabe a diferença entre elas?",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 65,
@@ -3733,7 +4248,11 @@
         "categorias": [
           "Banhos por imersão"
         ],
-        "resumo": "Você sabe o que é banho de imersão? Saiba o que é e quais são os principais benefícios do banho de imersão em banheiras. Acesse nosso blog!"
+        "resumo": "Você sabe o que é banho de imersão? Saiba o que é e quais são os principais benefícios do banho de imersão em banheiras. Acesse nosso blog!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 16,
@@ -3746,7 +4265,11 @@
           "Banhos por imersão",
           "Curiosidades"
         ],
-        "resumo": "As banheiras de hidromassagem proporcionam muitos benefícios para o corpo e mente. Saiba mais sobre isso no nosso blog. Acesse!"
+        "resumo": "As banheiras de hidromassagem proporcionam muitos benefícios para o corpo e mente. Saiba mais sobre isso no nosso blog. Acesse!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       }
     ],
     "Spas": [
@@ -3760,7 +4283,8 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "Saiba o que avaliar antes de instalar spa em casa. Veja dicas essenciais de espaço, estrutura, infraestrutura elétrica, hidráulica e manutenção."
+        "resumo": "Saiba o que avaliar antes de instalar spa em casa. Veja dicas essenciais de espaço, estrutura, infraestrutura elétrica, hidráulica e manutenção.",
+        "exibir": true
       },
       {
         "id": 1162,
@@ -3773,7 +4297,8 @@
           "Dicas",
           "Spas"
         ],
-        "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar."
+        "resumo": "Veja como montar um espaço de relaxamento em casa perfeito. Ideias de decoração, paisagismo, spas e banheiras para criar seu refúgio de bem-estar.",
+        "exibir": true
       },
       {
         "id": 1146,
@@ -3785,7 +4310,8 @@
           "Dicas",
           "Spas"
         ],
-        "resumo": "Descubra como criar uma área de lazer com spa perfeita. Veja dicas de planejamento, decks, iluminação e revestimentos para o seu refúgio."
+        "resumo": "Descubra como criar uma área de lazer com spa perfeita. Veja dicas de planejamento, decks, iluminação e revestimentos para o seu refúgio.",
+        "exibir": true
       },
       {
         "id": 1099,
@@ -3796,7 +4322,8 @@
         "categorias": [
           "Spas"
         ],
-        "resumo": "Spa Santorini, lançamento premium da Banheiras Bom Banho 2026, une design moderno, hidro relaxante e conforto para transformar seu ambiente."
+        "resumo": "Spa Santorini, lançamento premium da Banheiras Bom Banho 2026, une design moderno, hidro relaxante e conforto para transformar seu ambiente.",
+        "exibir": true
       },
       {
         "id": 1090,
@@ -3807,7 +4334,8 @@
         "categorias": [
           "Spas"
         ],
-        "resumo": "Spa Oásis é o lançamento premium da Banheiras Bom Banho 2026, com hidro, design moderno e 7 lugares para criar um oásis de relaxamento em casa."
+        "resumo": "Spa Oásis é o lançamento premium da Banheiras Bom Banho 2026, com hidro, design moderno e 7 lugares para criar um oásis de relaxamento em casa.",
+        "exibir": true
       },
       {
         "id": 1044,
@@ -3818,7 +4346,11 @@
         "categorias": [
           "Spas"
         ],
-        "resumo": "Descubra os benefícios do spa externo e transforme sua área de lazer em um espaço de relaxamento, convivência e valorização do imóvel."
+        "resumo": "Descubra os benefícios do spa externo e transforme sua área de lazer em um espaço de relaxamento, convivência e valorização do imóvel.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 929,
@@ -3830,7 +4362,8 @@
           "Inspirações",
           "Spas"
         ],
-        "resumo": "Monte um SPA em casa com banheiras, spas e ofurôs. Relaxe, cuide do corpo e valorize seu lar com bem-estar e sofisticação."
+        "resumo": "Monte um SPA em casa com banheiras, spas e ofurôs. Relaxe, cuide do corpo e valorize seu lar com bem-estar e sofisticação.",
+        "exibir": true
       },
       {
         "id": 782,
@@ -3843,7 +4376,8 @@
           "Ofurôs",
           "Spas"
         ],
-        "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa."
+        "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa.",
+        "exibir": true
       },
       {
         "id": 708,
@@ -3855,7 +4389,11 @@
           "Banheiras de hidromassagem",
           "Spas"
         ],
-        "resumo": "Explore alguns potenciais benefícios das banheiras spa para reabilitação"
+        "resumo": "Explore alguns potenciais benefícios das banheiras spa para reabilitação",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 671,
@@ -3866,7 +4404,8 @@
         "categorias": [
           "Spas"
         ],
-        "resumo": "Confira algumas das melhores dicas para deixar o seu banheiro completo como se fosse um Spa sofisticado"
+        "resumo": "Confira algumas das melhores dicas para deixar o seu banheiro completo como se fosse um Spa sofisticado",
+        "exibir": true
       },
       {
         "id": 428,
@@ -3878,7 +4417,8 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "Uma spa proporciona momentos relaxantes e especiais, podendo ser colocada em ambientes diferentes. Quer ter uma banheira spa em casa? Confira dicas."
+        "resumo": "Uma spa proporciona momentos relaxantes e especiais, podendo ser colocada em ambientes diferentes. Quer ter uma banheira spa em casa? Confira dicas.",
+        "exibir": true
       },
       {
         "id": 368,
@@ -3890,7 +4430,8 @@
           "Dicas",
           "Spas"
         ],
-        "resumo": "Confira aqui no blog da BBB o que fazer para cuidar da sua banheira Spa. Conheça nossos modelos e conte com a Banheiras Bom Banho!"
+        "resumo": "Confira aqui no blog da BBB o que fazer para cuidar da sua banheira Spa. Conheça nossos modelos e conte com a Banheiras Bom Banho!",
+        "exibir": true
       },
       {
         "id": 306,
@@ -3901,7 +4442,8 @@
         "categorias": [
           "Spas"
         ],
-        "resumo": "Se você tem uma spa ou está pensando em comprar, precisa saber como cuidar da banheira. Acesse o nosso blog para anotar dicas!"
+        "resumo": "Se você tem uma spa ou está pensando em comprar, precisa saber como cuidar da banheira. Acesse o nosso blog para anotar dicas!",
+        "exibir": true
       },
       {
         "id": 300,
@@ -3912,7 +4454,8 @@
         "categorias": [
           "Spas"
         ],
-        "resumo": "Já imaginou uma spa na área externa da sua casa proporcionando incríveis momentos de lazer com a sua família e amigos? Acesse e saiba as vantagens!"
+        "resumo": "Já imaginou uma spa na área externa da sua casa proporcionando incríveis momentos de lazer com a sua família e amigos? Acesse e saiba as vantagens!",
+        "exibir": true
       },
       {
         "id": 118,
@@ -3924,7 +4467,11 @@
           "Banheiras de hidromassagem",
           "Spas"
         ],
-        "resumo": "Banheiras spas e hidromassagem trazem benefícios para o corpo e mente. Qual é melhor para sua casa? Acesse para saber mais!"
+        "resumo": "Banheiras spas e hidromassagem trazem benefícios para o corpo e mente. Qual é melhor para sua casa? Acesse para saber mais!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 86,
@@ -3936,7 +4483,11 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "As banheiras spas são amadas pelos brasileiros. Saiba mais sobre a história dessas banheiras, além dos benefícios. Acesse nosso blog!"
+        "resumo": "As banheiras spas são amadas pelos brasileiros. Saiba mais sobre a história dessas banheiras, além dos benefícios. Acesse nosso blog!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 56,
@@ -3949,7 +4500,8 @@
           "Inspirações",
           "Spas"
         ],
-        "resumo": "A parte externa da casa é voltada para o lazer. Que tal colocar uma spa para relaxar e divertir? Acesse nosso blog para saber mais!"
+        "resumo": "A parte externa da casa é voltada para o lazer. Que tal colocar uma spa para relaxar e divertir? Acesse nosso blog para saber mais!",
+        "exibir": true
       },
       {
         "id": 12,
@@ -3963,7 +4515,11 @@
           "Ofurôs",
           "Spas"
         ],
-        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!"
+        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 5,
@@ -3975,7 +4531,11 @@
           "Curiosidades",
           "Spas"
         ],
-        "resumo": "Você sabe a história do banho? E os benefícios dos spas? Para saber sobre o assunto, acesse o blog da Banheiras Bom Banho!"
+        "resumo": "Você sabe a história do banho? E os benefícios dos spas? Para saber sobre o assunto, acesse o blog da Banheiras Bom Banho!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       }
     ],
     "Cromoterapia": [
@@ -3994,7 +4554,8 @@
           "Inspirações",
           "Tendências"
         ],
-        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto."
+        "resumo": "Saiba quanto custa instalar uma banheira e descubra os gastos extras com infraestrutura, mão de obra e acabamentos para seu projeto.",
+        "exibir": true
       },
       {
         "id": 1030,
@@ -4005,7 +4566,8 @@
         "categorias": [
           "Cromoterapia"
         ],
-        "resumo": "Descubra como a banheira com cromoterapia une luz, relaxamento e bem-estar para transformar seu banho em um momento de paz."
+        "resumo": "Descubra como a banheira com cromoterapia une luz, relaxamento e bem-estar para transformar seu banho em um momento de paz.",
+        "exibir": true
       },
       {
         "id": 791,
@@ -4017,7 +4579,11 @@
           "Cromoterapia",
           "Curiosidades"
         ],
-        "resumo": "Descubra os benefícios da cromoterapia para banheira e transforme seu banho em um momento de relaxamento, equilíbrio e bem-estar emocional."
+        "resumo": "Descubra os benefícios da cromoterapia para banheira e transforme seu banho em um momento de relaxamento, equilíbrio e bem-estar emocional.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 773,
@@ -4029,7 +4595,13 @@
           "Cromoterapia",
           "Dicas"
         ],
-        "resumo": "Conheça o ritual japonês do Yu, uma técnica ancestral de banho que promove relaxamento profundo, alívio do estresse e reconexão com o corpo e a mente."
+        "resumo": "Conheça o ritual japonês do Yu, uma técnica ancestral de banho que promove relaxamento profundo, alívio do estresse e reconexão com o corpo e a mente.",
+        "termos_sensiveis": [
+          "terapia",
+          "alivio",
+          "estresse"
+        ],
+        "exibir": false
       },
       {
         "id": 627,
@@ -4040,7 +4612,8 @@
         "categorias": [
           "Cromoterapia"
         ],
-        "resumo": "Saiba quais as vantagens do banho de banheira com a técnica de cromoterapia."
+        "resumo": "Saiba quais as vantagens do banho de banheira com a técnica de cromoterapia.",
+        "exibir": true
       },
       {
         "id": 151,
@@ -4052,7 +4625,11 @@
           "Banheiras de hidromassagem",
           "Cromoterapia"
         ],
-        "resumo": "Você sabe o que ozonioterapia? É uma técnica que pode ser utilizada em banhos de banheiras de hidromassagem! Saiba quais são os benefícios acessando!"
+        "resumo": "Você sabe o que ozonioterapia? É uma técnica que pode ser utilizada em banhos de banheiras de hidromassagem! Saiba quais são os benefícios acessando!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 50,
@@ -4064,7 +4641,12 @@
           "Banheiras de hidromassagem",
           "Cromoterapia"
         ],
-        "resumo": "Descubra como a banheira cromoterapia transforma seu banho com estímulos de cores que equilibram mente e corpo. Veja benefícios e como a técnica funciona."
+        "resumo": "Descubra como a banheira cromoterapia transforma seu banho com estímulos de cores que equilibram mente e corpo. Veja benefícios e como a técnica funciona.",
+        "termos_sensiveis": [
+          "beneficios",
+          "mente e corpo"
+        ],
+        "exibir": false
       }
     ],
     "Ofurôs": [
@@ -4077,7 +4659,11 @@
         "categorias": [
           "Ofurôs"
         ],
-        "resumo": "Ofurô ou banheira: descubra diferenças, benefícios e estilos de vida para transformar seu momento de relaxamento."
+        "resumo": "Ofurô ou banheira: descubra diferenças, benefícios e estilos de vida para transformar seu momento de relaxamento.",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       },
       {
         "id": 829,
@@ -4088,7 +4674,12 @@
         "categorias": [
           "Ofurôs"
         ],
-        "resumo": "Descubra o que é ofurô, tradição japonesa que une relaxamento e saúde, ideal para transformar sua casa em um espaço de bem-estar."
+        "resumo": "Descubra o que é ofurô, tradição japonesa que une relaxamento e saúde, ideal para transformar sua casa em um espaço de bem-estar.",
+        "termos_sensiveis": [
+          "beneficios",
+          "saude"
+        ],
+        "exibir": false
       },
       {
         "id": 782,
@@ -4101,7 +4692,8 @@
           "Ofurôs",
           "Spas"
         ],
-        "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa."
+        "resumo": "Descubra qual combina mais com você: SPA, Banheira ou Ofurô. Compare experiências, custos e escolha seu refúgio de bem-estar em casa.",
+        "exibir": true
       },
       {
         "id": 722,
@@ -4112,7 +4704,8 @@
         "categorias": [
           "Ofurôs"
         ],
-        "resumo": "Descubra como integrar luxo e natureza em seus projetos externos com ofurôs ao ar livre."
+        "resumo": "Descubra como integrar luxo e natureza em seus projetos externos com ofurôs ao ar livre.",
+        "exibir": true
       },
       {
         "id": 648,
@@ -4123,7 +4716,13 @@
         "categorias": [
           "Ofurôs"
         ],
-        "resumo": "Após um longo e estressante dia, o banho de ofurô é uma ótima opção de relaxamento. No entanto, essa prática traz vários outros benefícios. Veja!"
+        "resumo": "Após um longo e estressante dia, o banho de ofurô é uma ótima opção de relaxamento. No entanto, essa prática traz vários outros benefícios. Veja!",
+        "termos_sensiveis": [
+          "beneficios",
+          "saude",
+          "estressante"
+        ],
+        "exibir": false
       },
       {
         "id": 471,
@@ -4135,7 +4734,8 @@
           "Ofurôs",
           "Tendências"
         ],
-        "resumo": "Conheça os principais modelos de ofurô e entenda por que essa tendência tem ganhado destaque em projetos de arquitetura modernos e espaços de bem-estar."
+        "resumo": "Conheça os principais modelos de ofurô e entenda por que essa tendência tem ganhado destaque em projetos de arquitetura modernos e espaços de bem-estar.",
+        "exibir": true
       },
       {
         "id": 406,
@@ -4147,7 +4747,8 @@
           "Dicas",
           "Ofurôs"
         ],
-        "resumo": "Saiba quais itens usar no seu banho de ofurô para torná-lo muito mais relaxante e prazeroso. Confira nossos modelos e conte com a BBB!"
+        "resumo": "Saiba quais itens usar no seu banho de ofurô para torná-lo muito mais relaxante e prazeroso. Confira nossos modelos e conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 372,
@@ -4159,7 +4760,8 @@
           "Curiosidades",
           "Ofurôs"
         ],
-        "resumo": "Saiba como a banheira e ofurô em quartos de hotéis e resorts pode tornar a viagem ainda mais inesquecível. Conte com a BBB!"
+        "resumo": "Saiba como a banheira e ofurô em quartos de hotéis e resorts pode tornar a viagem ainda mais inesquecível. Conte com a BBB!",
+        "exibir": true
       },
       {
         "id": 351,
@@ -4171,7 +4773,8 @@
           "Curiosidades",
           "Ofurôs"
         ],
-        "resumo": "Banho em ofurô só serve para ter um momento de relaxamento: mito ou verdade? Confira os principais mitos sobre esse tipo de banheira."
+        "resumo": "Banho em ofurô só serve para ter um momento de relaxamento: mito ou verdade? Confira os principais mitos sobre esse tipo de banheira.",
+        "exibir": true
       },
       {
         "id": 12,
@@ -4185,7 +4788,11 @@
           "Ofurôs",
           "Spas"
         ],
-        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!"
+        "resumo": "Você sabe qual a diferença entre spa, banheira e ofuro? Todos essas banheiras trazem benefícios para o corpo e mente! Saiba mais!",
+        "termos_sensiveis": [
+          "beneficios"
+        ],
+        "exibir": false
       }
     ]
   },

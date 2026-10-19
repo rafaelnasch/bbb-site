@@ -33,6 +33,19 @@ export const LISTA_NEGRA = Object.freeze([
   '55991240959',
 ]);
 
+/**
+ * Faixa da SPEC 10.1 ("55359918200\\d\\d"), mantida além dos números exatos acima, com a única
+ * exceção do SAC ativo 5535991820062 (contatos.json). Assim um número da mesma faixa que não
+ * esteja na lista exata, e não seja o SAC, continua bloqueado. Vale com e sem o DDI 55.
+ */
+export const LISTA_NEGRA_FAIXA = Object.freeze({ re: /^(?:55)?359918200\d\d$/, excecoes: Object.freeze(['5535991820062']) });
+
+function naFaixa(d) {
+  if (!LISTA_NEGRA_FAIXA.re.test(d)) return false;
+  const com55 = d.startsWith('55') ? d : `55${d}`;
+  return !LISTA_NEGRA_FAIXA.excecoes.includes(com55);
+}
+
 /** Só dígitos. */
 export function digitos(s) {
   return String(s ?? '').replace(/\D+/g, '');
@@ -58,6 +71,7 @@ export function numerosProibidosEm(texto) {
   for (const m of s.matchAll(/\d+/g)) candidatos.add(m[0]);
   for (const m of s.matchAll(reTelefone)) candidatos.add(digitos(m[0]));
   for (const c of candidatos) {
+    if (naFaixa(c)) achados.add(c.startsWith('55') ? c : `55${c}`);
     for (const proibido of LISTA_NEGRA) {
       for (const v of variantes(proibido)) {
         if (c === v || c === `55${v}`) achados.add(proibido);
@@ -69,6 +83,7 @@ export function numerosProibidosEm(texto) {
 
 export function estaNaListaNegra(numero) {
   const d = digitos(numero);
+  if (naFaixa(d)) return true;
   return LISTA_NEGRA.some((p) => variantes(p).includes(d) || variantes(p).some((v) => `55${v}` === d));
 }
 

@@ -28,7 +28,31 @@ export const EXCECOES_NAO_SAUDE = [
   { re: /(?<![\p{L}\p{N}])trat\p{L}*\s+(?:(?:d[aeo]s?|a|o)\s+)?agua(?![\p{L}\p{N}])/gu, motivo: 'tratamento da água do spa' },
   { re: /(?<![\p{L}\p{N}])tratando de materiais/gu, motivo: 'texto do manual sobre materiais' },
   { re: /(?<![\p{L}\p{N}])trat\p{L}*\s+(?:(?:de|dos)\s+)?(?:seus\s+)?dados(?![\p{L}\p{N}])/gu, motivo: 'tratamento de dados pessoais (LGPD)' },
+  // Lista ampliada: instrução de instalação e ventilação do manual, sem afirmação de saúde.
+  { re: /mau cheiro e bacterias/g, motivo: 'instrução de instalação do manual (água parada)' },
+  { re: /adequadas de saude e conforto/g, motivo: 'instrução de ventilação do manual' },
 ];
+
+// Afirmação de saúde implícita (decisão do dono do projeto, 18/10/2026: "sem claims de saúde").
+// A lista da SPEC 0.5 é fechada e deixa passar afirmações como "ajuda a combater a insônia",
+// "relaxamento muscular" ou "sem alergias, sem irritação de pele". Estes padrões ampliam a
+// checagem para o vocabulário de efeito no corpo. Casamento por palavra inteira (sem acento,
+// minúsculas); "\\p{L}*" marca as formas com sufixo. "tensão" no singular fica de fora (é
+// elétrica no manual e nas fichas); "cromoterapia" não casa "terapia" (o nome do acessório fica).
+export const TERMOS_SAUDE_IMPLICITA = [
+  'saude', 'insoni\\p{L}*', 'sono', 'dor', 'dores', 'muscul\\p{L}*', 'estress\\p{L}*', 'stress',
+  'ansiedad\\p{L}*', 'alivi\\p{L}*', 'terapias?', 'terapeut\\p{L}*', 'fisioterap\\p{L}*',
+  'alergi\\p{L}*', 'alergic\\p{L}*', 'pele', 'bacteri\\p{L}*', 'inflama\\p{L}*', 'otite',
+  'respirat\\p{L}*', 'respiracao', 'vias aereas', 'articulac\\p{L}*', 'artrit\\p{L}*', 'reumat\\p{L}*',
+  'fibromialg\\p{L}*', 'sanguine\\p{L}*', 'pressao arterial', 'hipertens\\p{L}*', 'endorfina',
+  'imunidade', 'imunolog\\p{L}*', 'doen\\p{L}*', 'calorias', 'desintox\\p{L}*', 'toxinas?',
+  'menstrua\\p{L}*', 'enxaquec\\p{L}*', 'tensoes', 'mente e (?:do )?corpo', 'beneficios',
+];
+
+const reSaudeImplicita = new RegExp(
+  `(?<![\\p{L}\\p{N}])(${TERMOS_SAUDE_IMPLICITA.join('|')})(?![\\p{L}\\p{N}])`,
+  'giu',
+);
 
 function semExcecoes(alvo) {
   let s = alvo;
@@ -41,15 +65,26 @@ export function termosSaudeBrutos(texto) {
   const alvo = semAcento(texto).toLowerCase();
   const achados = new Set();
   for (const m of alvo.matchAll(reSaude)) achados.add(m[1]);
+  for (const m of alvo.matchAll(reSaudeImplicita)) achados.add(m[1]);
   return [...achados];
 }
 
-/** Lista os termos de saúde encontrados (forma original do trecho), fora das exceções fixas. */
+/**
+ * Lista os termos de saúde encontrados (sem acento, minúsculas), fora das exceções fixas:
+ * a lista da SPEC 0.5 (por início de palavra) e a lista ampliada de afirmação implícita.
+ */
 export function termosSaude(texto) {
   const alvo = semExcecoes(semAcento(texto).toLowerCase());
   const achados = new Set();
   for (const m of alvo.matchAll(reSaude)) achados.add(m[1]);
+  for (const m of alvo.matchAll(reSaudeImplicita)) achados.add(m[1]);
   return [...achados];
+}
+
+/** Só os termos da lista fechada da SPEC 0.5 (para separar no log o que é da lista ampliada). */
+export function termosSaudeSpec(texto) {
+  const alvo = semExcecoes(semAcento(texto).toLowerCase());
+  return [...new Set([...alvo.matchAll(reSaude)].map((m) => m[1]))];
 }
 
 export function temTermoSaude(texto) {

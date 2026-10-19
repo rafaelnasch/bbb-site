@@ -194,7 +194,9 @@ describe('derivados d_', () => {
     for (const p of produtos) {
       const esperado = /com hidro/i.test(p.nome) || p.itens_de_serie.some((i) => /motobomba/i.test(i));
       assert.equal(p.d_hidro, esperado, p.slug);
-      const aqs = p.opcoes_personalizaveis.flatMap((o) => o.valores).filter((v) => /aquecedor/i.test(v.rotulo_exibido));
+      // Só rótulos com aquecedor E valor em R$ contam como preço; "Comprar aquecedor ou acionador"
+      // (R$ 0, sem valor no rótulo) fica em d_aquecedor_outras_opcoes.
+      const aqs = p.opcoes_personalizaveis.flatMap((o) => o.valores).filter((v) => /aquecedor/i.test(v.rotulo_exibido) && /R\$\s*\d/.test(v.rotulo_exibido));
       const precos = [...new Set(aqs.map((v) => v.preco_adicional))];
       if (precos.length > 1) {
         // Preços distintos para o aquecedor: nenhum é escolhido, todos ficam registrados.
@@ -208,6 +210,15 @@ describe('derivados d_', () => {
       const lugConflito = p.d_conflito_nome_ficha.some((c) => c.campo === 'Lugares');
       if (lugConflito) assert.equal(p.d_lugares_num, null, p.slug);
       else if (/^individual$/i.test(p.especificacoes.Lugares)) assert.equal(p.d_lugares_num, 1);
+    }
+  });
+
+  test('Jordânia e Sensuale: o convite sem preço não gera falso conflito', () => {
+    for (const s of ['banheira-individual-jordania-com-hidro', 'banheira-retangular-sensuale-completa-com-hidro']) {
+      const p = porSlug.get(s);
+      assert.equal(p.d_aquecedor, 1180, s);
+      assert.ok(!p.d_aquecedor_conflito, s);
+      assert.deepEqual(p.d_aquecedor_outras_opcoes.map((x) => x.rotulo), ['Comprar aquecedor ou acionador'], s);
     }
   });
 
@@ -310,6 +321,75 @@ describe('filtro editorial e texto oculto (SPEC 0.3, 0.4, 0.5)', () => {
       assert.ok(!f.termos_sensiveis, id);
       assert.ok(f.revisao_termos && f.revisao_termos.expressoes.length, id);
     }
+  });
+
+  test('afirmação de saúde implícita (decisão do dono) também sai do texto exibido', () => {
+    for (const t of ['Banho de Ofurô ajuda a combater a insônia', 'Confira os 7 benefícios da hidromassagem para a sua saúde',
+      'Dor muscular: Devo tomar um banho de hidro', 'relaxamento muscular', 'melhorar sua saúde física',
+      'luzes coloridas de terapia alternativa', 'Sem alergias, sem irritação de pele', 'eliminando, também, as bactérias',
+      'Inflamação nos ouvidos (otite)', 'problemas alérgicos e respiratórios', 'diminui o stress e a ansiedade']) {
+      assert.ok(termosSaude(t).length, t);
+    }
+    // Sem sentido de saúde: continuam.
+    for (const t of ['Cromoterapia', 'o melhor custo-benefício', 'tensão (V) 220 volts', 'queda de tensão na rede', 'sonolência']) {
+      assert.deepEqual(termosSaude(t), [], t);
+    }
+    const oz = porSlug.get('ozonio-para-spa');
+    assert.ok(!/alergia|bactéria|irritação/i.test(oz.d_descricao_exibida));
+    assert.ok(/Sem alergias/.test(oz.descricao_texto), 'o literal continua no dado');
+    assert.ok(!/^Função$/m.test(oz.d_descricao_exibida), 'título sem conteúdo sai junto');
+    assert.ok(!/terapia alternativa/.test(porSlug.get('cromoterapia').d_descricao_exibida));
+    const f17 = faq.find((x) => x.id === 'faq-17');
+    assert.equal(f17.exibir, false);
+    assert.ok(log.itens.some((l) => l.faq === 'faq-17'));
+    const p38 = politicas.manual.paginas.find((x) => x.pagina === 38).texto_exibido;
+    assert.ok(!/otite|alérgicos|respiratórios/i.test(p38), p38);
+    for (const f of faq) {
+      if (f.exibir === false) continue;
+      assert.deepEqual(termosSaude(`${f.pergunta}\n${f.resposta_exibida ?? f.resposta}`), [], f.id);
+    }
+  });
+
+  test('blog: nenhum post exibível com afirmação de saúde; índice fora até revisão manual', () => {
+    const blog = JSON.parse(readFileSync(join(DATA, 'blog-recentes.json'), 'utf8'));
+    assert.equal(blog.revisao_manual_pendente, true);
+    const todos = [...blog.recentes, ...Object.values(blog.por_categoria).flat()];
+    for (const p of todos) {
+      assert.equal(typeof p.exibir, 'boolean', p.id);
+      if (p.exibir) assert.deepEqual(termosSaude(`${p.titulo}\n${p.resumo ?? ''}`), [], `${p.id}: ${p.titulo}`);
+      else assert.ok(log.itens.some((l) => l.blog_post === p.id), p.id);
+    }
+    assert.ok(blog.recentes.every((p) => p.exibir));
+    for (const t of ['Banho de Ofurô ajuda a combater a insônia', 'Confira os 7 benefícios da hidromassagem para a sua saúde',
+      'Quais são os benefícios do banho de ofurô para a saúde?']) {
+      const p = todos.find((x) => x.titulo.trim() === t);
+      assert.ok(p && p.exibir === false, t);
+    }
+  });
+
+  test('empresa: textos integrais exibidos sem saúde nem superlativo; certificador em conflito registrado', () => {
+    const empresa = JSON.parse(readFileSync(join(DATA, 'empresa.json'), 'utf8'));
+    for (const [k, t] of Object.entries(empresa.textos_integrais)) {
+      assert.equal(typeof t.texto_exibido, 'string', k);
+      assert.deepEqual(termosSaude(t.texto_exibido), [], k);
+      for (const lit of TERMOS_PROIBIDOS_LITERAIS) assert.ok(!t.texto_exibido.toLowerCase().includes(lit.toLowerCase()), `${k}: ${lit}`);
+    }
+    assert.ok(!/varizes|celulite/i.test(empresa.textos_integrais.preco_de_banheira_seo.texto_exibido));
+    const c = empresa.inmetro.organismo_certificador_conflito;
+    assert.ok(c && /ACERT/.test(c.pagina_inmetro) && /Instituto Brasileiro de Certificação/.test(c.rodape));
+    assert.ok(log.itens.some((l) => l.regra === 'conflito_da_fonte' && l.campo === 'organismo_certificador'));
+  });
+
+  test('d_resumo: medida a confirmar sem lista, acessório sem artigo, itens por ponto e vírgula', () => {
+    for (const p of produtos.filter((x) => !x.d_medida_confirmada)) {
+      assert.ok(/com medida a confirmar/.test(p.d_resumo), p.slug);
+      for (const t of p.d_tamanhos) assert.ok(!p.d_resumo.includes(t.rotulo), `${p.slug}: ${t.rotulo}`);
+    }
+    for (const p of produtos.filter((x) => x.d_tipo === 'acessorio')) {
+      assert.ok(p.d_resumo.startsWith(`${p.nome.trim()}: acessório`), p.d_resumo);
+    }
+    const crom = porSlug.get('cromoterapia');
+    assert.ok(crom.d_resumo.includes('Sistema de iluminação para banheiras; Fonte com dupla isolação, evita a possibilidade de choque; 1, 2 e 4 pontos de iluminação.'), crom.d_resumo);
   });
 
   test('"BANHEIRA COLORIDA" e as linhas que não são item ficam fora de data/', () => {

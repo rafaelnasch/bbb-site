@@ -1,7 +1,57 @@
 {
   "coletado_em": "2026-10-19T02:07:38.043334Z",
   "regras": {
-    "termo_de_saude": "frase inteira com palavra da lista da SPEC 0.5 sai do texto exibido; o literal fica no dado",
+    "termo_de_saude": "frase inteira com palavra da lista da SPEC 0.5 (lista \"spec_0.5\") ou da lista ampliada de afirmação de saúde implícita (lista \"ampliada_dono\") sai do texto exibido; o literal fica no dado",
+    "lista_ampliada_dono": {
+      "decisao": "decisão do dono do projeto (18/10/2026): sem claims de saúde, inclusive implícitos (insônia, dor, muscular, estresse, alívio, terapia, alergia, pele, bactérias, benefícios etc.)",
+      "termos": [
+        "saude",
+        "insoni\\p{L}*",
+        "sono",
+        "dor",
+        "dores",
+        "muscul\\p{L}*",
+        "estress\\p{L}*",
+        "stress",
+        "ansiedad\\p{L}*",
+        "alivi\\p{L}*",
+        "terapias?",
+        "terapeut\\p{L}*",
+        "fisioterap\\p{L}*",
+        "alergi\\p{L}*",
+        "alergic\\p{L}*",
+        "pele",
+        "bacteri\\p{L}*",
+        "inflama\\p{L}*",
+        "otite",
+        "respirat\\p{L}*",
+        "respiracao",
+        "vias aereas",
+        "articulac\\p{L}*",
+        "artrit\\p{L}*",
+        "reumat\\p{L}*",
+        "fibromialg\\p{L}*",
+        "sanguine\\p{L}*",
+        "pressao arterial",
+        "hipertens\\p{L}*",
+        "endorfina",
+        "imunidade",
+        "imunolog\\p{L}*",
+        "doen\\p{L}*",
+        "calorias",
+        "desintox\\p{L}*",
+        "toxinas?",
+        "menstrua\\p{L}*",
+        "enxaquec\\p{L}*",
+        "tensoes",
+        "mente e (?:do )?corpo",
+        "beneficios"
+      ]
+    },
+    "blog": "post com termo de saúde no título ou resumo: exibir=false; o índice por categoria fica fora da exibição até revisão manual (revisao_manual_pendente em blog-recentes.json)",
+    "faq": "resposta_exibida sem as frases de saúde; pergunta com termo ou resposta vazia: exibir=false",
+    "termo_proibido_literal": "frase com termo proibido literal (\"a maior loja\" etc.) sai do texto_exibido dos textos institucionais",
+    "conflito_da_fonte": "duas versões do mesmo dado na fonte: ambas registradas, nenhuma escolhida (SPEC 0.3)",
     "excecoes_nao_saude": [
       {
         "expressao": "imposto sobre circulacao de mercadorias",
@@ -22,6 +72,14 @@
       {
         "expressao": "(?<![\\p{L}\\p{N}])trat\\p{L}*\\s+(?:(?:de|dos)\\s+)?(?:seus\\s+)?dados(?![\\p{L}\\p{N}])",
         "motivo": "tratamento de dados pessoais (LGPD)"
+      },
+      {
+        "expressao": "mau cheiro e bacterias",
+        "motivo": "instrução de instalação do manual (água parada)"
+      },
+      {
+        "expressao": "adequadas de saude e conforto",
+        "motivo": "instrução de ventilação do manual"
       }
     ],
     "anotacao_interna_VERIFICAR": "item ou linha com \"(VERIFICAR)\" sai até a empresa confirmar",
@@ -29,7 +87,7 @@
     "afirmacao_de_saude": "capítulo \"Benefícios da cromoterapia\" do manual sai inteiro",
     "espaco_apos_virgula_decimal_ignorado": "medida \"0, 84\" é lida como 0,84 porque a vírgula decimal está escrita; token sem vírgula (\"051\", \"89\") fica null (não se adivinha)"
   },
-  "total": 123,
+  "total": 201,
   "itens": [
     {
       "slug": "apoio-de-cabeca-oval",
@@ -92,13 +150,51 @@
       "removido": "- Couro Sintético (VERIFICAR)"
     },
     {
+      "slug": "cromoterapia",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapia"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "A cromoterapia são luzes coloridas de terapia alternativa que, acopladas a sua banheira, SPA ou Ofurô, proporcionam um maior relaxamento e bem estar durante todo o banho, além de possuir um lindo design."
+    },
+    {
+      "slug": "ozonio-para-spa",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "bacterias"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "O Ozônio é utilizado em SPAs e possui a função de retirar qualquer odor da água, eliminando, também, as bactérias ali presentes."
+    },
+    {
+      "slug": "ozonio-para-spa",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "alergias",
+        "pele"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Sem alergias, sem irritação de pele, sem mau cheiro, sem descoloração em cabelos."
+    },
+    {
       "slug": "ozonio-para-spa",
       "campo": "descricao_texto",
       "regra": "termo_de_saude",
       "termos": [
         "trata"
       ],
+      "lista": "spec_0.5",
       "removido": "De fácil instalação, garante maior durabilidade do equipamento, o tratamento mais usado na Europa e EUA."
+    },
+    {
+      "slug": "ozonio-para-spa",
+      "campo": "descricao_texto",
+      "regra": "titulo_sem_conteudo_apos_saude",
+      "removido": "Função"
     },
     {
       "slug": "spa-retangular-malbec-completo-com-hidro-em-acrilico",
@@ -115,16 +211,200 @@
       "termos": [
         "circulacao"
       ],
+      "lista": "spec_0.5",
       "removido": "Com jatos de água massageadores que estimulam a circulação promovendo bem-estar, o modelo ideal de banheira ou de acordo com a metragem do seu espaço está aqui na BBB."
+    },
+    {
+      "categoria": "catalog/category/view/id/131",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "mente e do corpo"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "As\nbanheiras de hidro\ncontam com jatos cromados e arejadores que provocam a pressão adequada da água para efeito relaxante da mente e do corpo."
     },
     {
       "categoria": "spas/redondos.html",
       "campo": "descricao_texto",
       "regra": "termo_de_saude",
       "termos": [
-        "terapeutic"
+        "terapeutic",
+        "terapeuticos"
       ],
+      "lista": "spec_0.5",
       "removido": "Os banhos de\nspas\nsão considerados terapêuticos uma vez que promovem o relaxamento e renovação das energias."
+    },
+    {
+      "categoria": "spas/retangulares.html",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Confira mais sobre os benefícios de spas retangulares."
+    },
+    {
+      "empresa": "inmetro",
+      "campo": "organismo_certificador",
+      "regra": "conflito_da_fonte",
+      "versoes": [
+        {
+          "texto": "ACERT ORGANISMO DE CERTIFICACAO DE PRODUTOS EM SISTEMAS LTDA.",
+          "fonte": "https://www.banheirasbombanho.com.br/inmetro"
+        },
+        {
+          "texto": "Instituto Brasileiro de Certificação - OCP 0019/ODV-0004",
+          "fonte": "rodapé global"
+        }
+      ],
+      "decisao": "nenhuma escolhida; exibir as duas com nota ou omitir"
+    },
+    {
+      "empresa": "textos_integrais.sobre_nos",
+      "campo": "texto",
+      "regra": "termo_proibido_literal",
+      "termos": [
+        "a maior loja"
+      ],
+      "removido": "Início\nInstitucional\nSobre Nós\nSobre Nós\nSOBRE NÓS\nBANHEIRAS BOM\n BANHO,\nA MAIOR LOJA DE FÁBRICA DE BANHEIRAS, SPAS E OFURÔS DO BRASIL\nFabricamos as banheiras em acrílico e gel coat, temos mais de\n 200 modelos de banheiras com hidromassagem com um processo de melhoria contínua em nossa fábrica."
+    },
+    {
+      "empresa": "textos_integrais.manual_nossa_empresa",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Seguimos as tendências de vários países e atendemos as necessidades e expectativas de cada cliente, inovando sempre, garantindo conforto, saúde e bem-estar."
+    },
+    {
+      "empresa": "textos_integrais.home_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "dores",
+        "musculares",
+        "menstruais",
+        "insonia"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Quem sofre com dores musculares, menstruais ou possui problemas com insônia, a\nbanheira de hidro\npode ser uma grande aliada para resolver esses questionamentos."
+    },
+    {
+      "empresa": "textos_integrais.preco_de_banheira_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "dores",
+        "musculares",
+        "menstruais",
+        "insonia"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Se você frequentemente sofre com dores musculares, menstruais ou tem problemas com insônia, a\nbanheira de hidro\né a melhor opção e pode ser uma grande aliada para resolver esses questionamentos;\nPara aqueles que conseguem fazer um bom planejamento sobre a disposição da banheira na sua casa e tem espaço suficiente para não perder área de circulação, é possível optar por escolher qualquer tamanho e estilo de banheira, como por exemplo a\nbanheira dupla\n."
+    },
+    {
+      "empresa": "textos_integrais.preco_de_banheira_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "mente e do corpo"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "As\nbanheiras de hidromassagem\npromovem o bem estar e relaxamento da mente e do corpo."
+    },
+    {
+      "empresa": "textos_integrais.preco_de_banheira_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "stress",
+        "ansiedade",
+        "endorfina"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "A água quente da\nbanheira de hidro\ndiminui o stress e a ansiedade, pois promove a produção de endorfina."
+    },
+    {
+      "empresa": "textos_integrais.preco_de_banheira_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "vias aereas",
+        "respiracao"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Além disso, o vapor do banho desobstrui as vias aéreas melhorando a respiração."
+    },
+    {
+      "empresa": "textos_integrais.preco_de_banheira_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "dores",
+        "articulacoes",
+        "musculares"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "As dores nas articulações e musculares também são amenizadas com as\nbanheiras hidro\n."
+    },
+    {
+      "empresa": "textos_integrais.preco_de_banheira_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "tensoes",
+        "sanguineos"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Isso acontece em razão, da água quente que ameniza as tensões e dilata os vasos sanguíneos."
+    },
+    {
+      "empresa": "textos_integrais.preco_de_banheira_seo",
+      "campo": "texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "circulacao",
+        "varizes",
+        "celulite",
+        "sanguineos"
+      ],
+      "lista": "spec_0.5",
+      "removido": "Com a dilatação dos vasos sanguíneos e a melhoria na circulação, os banhos em\nbanheira para banheiro\ntambém agem na diminuição das varizes e celulite."
+    },
+    {
+      "faq": "faq-17",
+      "campo": "resposta",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapia"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "A cromoterapia são luzes coloridas de terapia alternativa que, acopladas a sua banheira, SPA ou Ofurô, proporcionam um maior relaxamento e bem estar durante todo o banho, além de possuir um lindo design."
+    },
+    {
+      "faq": "faq-17",
+      "campo": "item",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapia"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "O que é CROMOTERAPIA?",
+      "decisao": "nada sobra da resposta sem as frases de saúde: item fora da exibição"
+    },
+    {
+      "manual_pagina": 2,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "inovando sempre, garanti ndo conforto, saúde e bem -estar. Nossos produtos são"
     },
     {
       "manual_pagina": 3,
@@ -679,6 +959,48 @@
       "removido": "de efeito sereno, alivia a excitação, relaxante a mente e levando a circulação a nível ótimo."
     },
     {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "inflamacao",
+        "otite"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "• Inflamação nos ouvidos (conhecida como otite);"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "pele"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "• Ressecamento da pele e cabelos;"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "alergicos",
+        "respiratorios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "• Agravamento dos problemas alérgicos e respiratórios;"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "bactericida"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "dos raios solares malignos. Ele é um poderoso bactericida, algicida, fungicida e viricida, além de serem"
+    },
+    {
       "manual_pagina": 43,
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
@@ -779,6 +1101,585 @@
       "campo": "politicas.manual.paginas[].texto",
       "regra": "garantia",
       "removido": "padrões estabelecidos no mesmo, com risco de perder a garantia."
+    },
+    {
+      "blog_post": 1252,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "circulacao",
+        "muscular",
+        "alivie"
+      ],
+      "lista": "spec_0.5",
+      "removido": "Banheira para recuperação muscular: como a hidromassagem auxilia no pós-treino"
+    },
+    {
+      "blog_post": 1138,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banheira para rotina de autocuidado: conforto e bem-estar em casa"
+    },
+    {
+      "blog_post": 1135,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "musculares",
+        "estresse"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Hidromassagem no inverno vale a pena? Veja os benefícios"
+    },
+    {
+      "blog_post": 1044,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Spa externo: benefícios, ideias e como escolher o modelo ideal"
+    },
+    {
+      "blog_post": 940,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banheira para relaxar: modelos ideais para renovar suas energias"
+    },
+    {
+      "blog_post": 920,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapeutic",
+        "beneficios",
+        "terapeuticos",
+        "saude"
+      ],
+      "lista": "spec_0.5",
+      "removido": "Benefícios terapêuticos de ter uma banheira em casa"
+    },
+    {
+      "blog_post": 910,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Spa em casa: como as banheiras transformam seu dia a dia?"
+    },
+    {
+      "blog_post": 893,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Ofurô ou banheira: qual combina mais com o seu estilo de vida"
+    },
+    {
+      "blog_post": 833,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho de imersão: benefícios para saúde e bem-estar"
+    },
+    {
+      "blog_post": 829,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "O que é ofurô: conheça a tradição japonesa e seus benefícios para o corpo e a mente"
+    },
+    {
+      "blog_post": 819,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho de banheira faz bem para saúde? Confira"
+    },
+    {
+      "blog_post": 791,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Cromoterapia para banheira: confira seus benefícios"
+    },
+    {
+      "blog_post": 785,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "alivio",
+        "estresse",
+        "muscular"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Benefícios da hidromassagem para o corpo e mente"
+    },
+    {
+      "blog_post": 773,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapia",
+        "alivio",
+        "estresse"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Terapia do Banho: A Técnica Japonesa do Yu que Ensina a Relaxar de Verdade"
+    },
+    {
+      "blog_post": 771,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "estresse"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho de Banheira e Neurociência: Como o Relaxamento Impacta Seu Cérebro e Produtividade"
+    },
+    {
+      "blog_post": 764,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "estressante"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Benefícios de Ter uma Banheira em Casa"
+    },
+    {
+      "blog_post": 746,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapeutic",
+        "beneficios",
+        "terapeuticos"
+      ],
+      "lista": "spec_0.5",
+      "removido": "Como as Banheiras Promovem Bem-Estar, Envolvendo Corpo e Mente"
+    },
+    {
+      "blog_post": 742,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "dores",
+        "musculares"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Dicas para relaxar na banheira "
+    },
+    {
+      "blog_post": 738,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapeutic",
+        "terapia",
+        "beneficios",
+        "terapeuticos"
+      ],
+      "lista": "spec_0.5",
+      "removido": "Como o banho de banheira pode se tornar uma terapia"
+    },
+    {
+      "blog_post": 708,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Benefícios das banheiras spa para reabilitação"
+    },
+    {
+      "blog_post": 700,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho de banheira para crianças: benefícios"
+    },
+    {
+      "blog_post": 620,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Os principais motivos para ter uma banheira na sua casa"
+    },
+    {
+      "blog_post": 648,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "saude",
+        "estressante"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Quais são os benefícios do banho de ofurô para a saúde?"
+    },
+    {
+      "blog_post": 645,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Confira os 7 benefícios da hidromassagem para a sua saúde"
+    },
+    {
+      "blog_post": 636,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Benefícios de contratar o kit instalação motobomba, kit base e kit pé"
+    },
+    {
+      "blog_post": 633,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Deixe sua banheira ainda mais relaxante com a cascata cromada e jatos"
+    },
+    {
+      "blog_post": 603,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "pele"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Pontos de atenção com a pele do seu bebê na hora do banho"
+    },
+    {
+      "blog_post": 593,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Saiba o tempo máximo para ficar em uma banheira"
+    },
+    {
+      "blog_post": 571,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Conheça os diferenciais de uma hidromassagem"
+    },
+    {
+      "blog_post": 564,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Dicas de banhos relaxantes em pets"
+    },
+    {
+      "blog_post": 447,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "estressante"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "5 dicas para relaxar após um dia estressante"
+    },
+    {
+      "blog_post": 434,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapeutic",
+        "terapeuticos"
+      ],
+      "lista": "spec_0.5",
+      "removido": "Banhos terapêuticos na banheira: o que são?"
+    },
+    {
+      "blog_post": 435,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "pele"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho na banheira hidro no inverno: dicas para evitar ressecamento da pele"
+    },
+    {
+      "blog_post": 420,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "calorias"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho quente na banheira queima muitas calorias?"
+    },
+    {
+      "blog_post": 416,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "alivio",
+        "estresse"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Saiba como a hidromassagem pode ajudar no alívio de estresse"
+    },
+    {
+      "blog_post": 398,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "aliviar",
+        "menstruais"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho na banheira ajuda a aliviar cólicas menstruais"
+    },
+    {
+      "blog_post": 388,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Saiba como fazer sais de banho"
+    },
+    {
+      "blog_post": 354,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Diferenças entre banheira de hidromassagem e imersão"
+    },
+    {
+      "blog_post": 342,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "aliviar",
+        "estresse"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "5 formas de aliviar o estresse na banheira de hidromassagem"
+    },
+    {
+      "blog_post": 330,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "estressantes",
+        "saude"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banheira em casa: como utilizar para autocuidado?"
+    },
+    {
+      "blog_post": 285,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "dores"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Benefícios da banheira de hidromassagem para atletas"
+    },
+    {
+      "blog_post": 282,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "insonia"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Banho de Ofurô ajuda a combater a insônia"
+    },
+    {
+      "blog_post": 265,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Saiba o que você não deve fazer na hidromassagem"
+    },
+    {
+      "blog_post": 165,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "trata",
+        "artrite",
+        "reumatoide",
+        "beneficios",
+        "doenca"
+      ],
+      "lista": "spec_0.5",
+      "removido": "Artrite Reumatoide: Saiba o que é e como hidromassagem pode ajudar"
+    },
+    {
+      "blog_post": 151,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Como funciona o ozonizador e quais seus benefícios"
+    },
+    {
+      "blog_post": 132,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "dor"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Dicas para não ter problemas com o funcionamento da sua banheira"
+    },
+    {
+      "blog_post": 118,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Qual a melhor opção para sua casa: banheira ou spa?"
+    },
+    {
+      "blog_post": 115,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "dor",
+        "muscular",
+        "dores",
+        "musculos"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Dor muscular: Devo tomar um banho de hidro com água quente ou fria?"
+    },
+    {
+      "blog_post": 86,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "História das banheiras spas"
+    },
+    {
+      "blog_post": 65,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "O que é banho de imersão?"
+    },
+    {
+      "blog_post": 50,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios",
+        "mente e corpo"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Saiba quais são os benefícios da Cromoterapia"
+    },
+    {
+      "blog_post": 16,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Conheça os benefícios das banheiras de hidromassagem"
+    },
+    {
+      "blog_post": 12,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "Qual a diferença entre spa, banheira e ofurô?"
+    },
+    {
+      "blog_post": 5,
+      "campo": "titulo/resumo",
+      "regra": "termo_de_saude",
+      "termos": [
+        "beneficios"
+      ],
+      "lista": "ampliada_dono",
+      "removido": "História do banho e benefícios dos Spas"
     }
   ]
 }

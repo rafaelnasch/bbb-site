@@ -205,7 +205,12 @@
     "resposta": "A cromoterapia são luzes coloridas de terapia alternativa que, acopladas a sua banheira, SPA ou Ofurô, proporcionam um maior relaxamento e bem estar durante todo o banho, além de possuir um lindo design.",
     "fonte": "https://www.banheirasbombanho.com.br/perguntas-frequentes",
     "coletado_em": "2026-10-18",
-    "oculto_ate_decisao": false
+    "oculto_ate_decisao": false,
+    "termos_sensiveis": [
+      "terapia"
+    ],
+    "resposta_exibida": "",
+    "exibir": false
   },
   {
     "id": "faq-18",
