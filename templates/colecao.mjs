@@ -15,7 +15,7 @@ import { formatBRL } from '../build/lib/money.mjs';
 import { paths } from '../site.config.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
 import { cartao, escalaDaColecao } from './parts/cartao.mjs';
-import { faqsDoTipo, faqBloco, faqJsonLd } from './parts/faq-bloco.mjs';
+import { faqsDoTipo, faqBloco } from './parts/faq-bloco.mjs';
 import { rotuloTam } from './parts/planta.mjs';
 import {
   campo, CAMPOS_FACETA, ROTULO_CAMPO, CATEGORIAS_PONTE, RAIZ_TIPO, PLURAL_TIPO, fraseColecao, produtosDaCategoria,
@@ -310,7 +310,6 @@ export function paginas(ctx) {
           },
         },
         { '@type': 'BreadcrumbList', itemListElement: trilha.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.nome, item: abs(t.path) })) },
-        ...(faqJsonLd(faqs) ? [faqJsonLd(faqs)] : []),
       ],
     };
     const preload = filme?.avif ? [{ href: filme.avif, as: 'image', type: 'image/avif', fetchpriority: 'high' }] : [];

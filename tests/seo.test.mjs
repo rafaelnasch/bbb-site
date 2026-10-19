@@ -107,11 +107,21 @@ test('Product, Offer/AggregateOffer, ProductGroup, ItemList, FAQPage, Store e Ar
 test('títulos de produto: nome literal, até 60, únicos entre as versões gel coat e acrílico', () => {
   assert.equal(tituloProduto('Spa Quadrado Napole COMPLETO com hidro'), 'Spa Quadrado Napole COMPLETO com hidro | Banheiras Bom Banho');
   assert.equal(tituloProduto('Banheira Acqua Línea COMPLETA com hidro em Acrílico'), 'Banheira Acqua Línea COMPLETA com hidro em Acrílico | BBB');
-  assert.equal(tituloProduto('Banheira Redonda Sensuale com abas COMPLETA com hidro em acrílico'), 'Banheira Redonda Sensuale com abas COMPLETA em acrílico');
+  // Acima de 60: corte só no fim, por palavra, com reticências; nunca some um trecho do meio do nome.
+  const longo = tituloProduto('Banheira Dupla Fortaleza Excellence COMPLETA C/ Hidro Em Acrílico');
+  assert.ok(longo.length <= 60 && longo.endsWith('…'), longo);
+  assert.ok('Banheira Dupla Fortaleza Excellence COMPLETA C/ Hidro Em Acrílico'.startsWith(longo.slice(0, -1)), longo);
+  assert.match(longo, /C\/ Hidro/);
+  assert.ok('Banheira Redonda Sensuale com abas COMPLETA com hidro em acrílico'.startsWith(tituloProduto('Banheira Redonda Sensuale com abas COMPLETA com hidro em acrílico').slice(0, -1)));
   assert.ok(!/\| BBB$/.test(tituloProduto('Aquecedor Digital com Sensor de Nível - BBB')));
   const t = titulosUnicos(produtos);
   assert.equal(new Set(t.values()).size, produtos.length);
-  for (const v of t.values()) assert.ok(v.length <= 60 && !/\s(com|em|de)$/.test(v), v);
+  for (const v of t.values()) assert.ok(v.length <= 60 && !/\s(com|em|de)…?$/.test(v), v);
+  for (const p of produtos) {
+    const base = t.get(p.slug).replace(/ \| (Banheiras Bom Banho|BBB)$/, '').replace(` (${p.sku})`, '');
+    const nome = p.nome.replace(/\s+/g, ' ').trim();
+    assert.ok(base === nome || (base.endsWith('…') && nome.startsWith(base.slice(0, -1))), `${p.slug}: "${t.get(p.slug)}"`);
+  }
 });
 
 test('títulos de coleção: mantém o título atual forte e gera o fraco a partir do nome e da trilha', () => {
@@ -181,7 +191,52 @@ test('llms.txt, llms-full.txt e dados/catalogo.json: completos, com fonte e data
     assert.equal(x.nome, p.nome);
     assert.equal(x.preco.valor, p.preco.valores_numericos.finalPrice);
     assert.ok(x.fonte && x.coletado_em, x.slug);
+    // Horário de Brasília com offset; o mesmo instante da fonte em UTC ao lado.
+    if (/Z$/.test(p.coletado_em)) {
+      assert.match(x.coletado_em, /-03:00$/);
+      assert.equal(new Date(x.coletado_em).getTime(), new Date(p.coletado_em).getTime());
+      assert.equal(x.coletado_em_utc, p.coletado_em);
+    }
   }
+  // Air Blower: a nota de preço por contexto da página também no llms-full
+  const ab = produtos.find((p) => /air blower/i.test(p.nome));
+  if (ab) {
+    const bloco = f.slice(f.indexOf(`### ${ab.nome}\n`)).split('\n### ')[0];
+    assert.match(bloco, /Preço como opcional: Como opcional dos spas, este item aparece por R\$\s?[\d.]+,\d{2} \(em \d+ modelos?\)/);
+  }
+});
+
+test('meta e dados estruturados de produto: medida a confirmar fora da description, concordância, sem manufacturer, FAQPage única, ProductGroup por material', () => {
+  const grupos = new Map();
+  const material = new Map();
+  for (const p of produtos) {
+    const h = pg(`${p.slug}.html`);
+    const d = /<meta name="description" content="([^"]+)">/.exec(h)[1];
+    if (p.d_medida_confirmada === false) {
+      assert.doesNotMatch(d, /\d+,\d+\s*x\s*\d+,\d+/, `${p.slug}: ${d}`);
+      assert.match(d, /medida a confirmar/i, p.slug);
+    }
+    assert.doesNotMatch(d, /\b(Spa|Ofurô) (quadrada|redonda)\b/, `${p.slug}: ${d}`);
+    assert.doesNotMatch(d, /Fábrica Banheiras Bom Banho/, p.slug);
+    assert.equal(/<meta property="og:title" content="([^"]+)">/.exec(h)[1].replace(/&amp;/g, '&'), p.nome);
+    const n = ld(h).nos;
+    const prod = n.find((x) => x['@type'] === 'Product');
+    assert.ok(!('manufacturer' in prod), p.slug);
+    assert.ok(!n.some((x) => x['@type'] === 'FAQPage'), `${p.slug} com FAQPage`);
+    material.set(prod['@id'], prod.material);
+    const g = n.find((x) => x['@type'] === 'ProductGroup');
+    if (g) {
+      assert.deepEqual(g.variesBy, ['https://schema.org/material']);
+      grupos.set(g['@id'], g.hasVariant.map((v) => v['@id']));
+    }
+  }
+  for (const [gid, ids] of grupos) {
+    const mats = ids.map((i) => material.get(i));
+    assert.ok(mats.every(Boolean) && new Set(mats).size === mats.length, `${gid}: ${mats}`);
+  }
+  for (const c of ler('categorias.json').filter((x) => /\.html$/.test(x.d_path || '') && existsSync(join(DIST, x.d_path)))) assert.ok(!ld(pg(c.d_path)).nos.some((x) => x['@type'] === 'FAQPage'), c.d_path);
+  assert.ok(!ld(pg('index.html')).nos.some((x) => x['@type'] === 'FAQPage'));
+  for (const s of ['contacts.html', 'escolher.html', 'vendas-corporativas.html']) assert.ok(/<title>([^<]+)/.exec(pg(s))[1].length <= 60, s);
 });
 
 test('cabeça: OG e Twitter completos, og:url igual ao canonical, CSP por meta e robots conforme INDEXAR', () => {

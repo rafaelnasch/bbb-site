@@ -59,6 +59,8 @@ export function verificarSeo(dist = paths.dist) {
   const regPorSaida = new Map(regs.map((r) => [r.saida, r]));
   const titulos = new Map();
   const descricoes = new Map();
+  const variantesPorGrupo = new Map();
+  const materialPorProduto = new Map();
 
   // ---- páginas ----------------------------------------------------------------------------
   for (const f of htmls(dist)) {
@@ -109,10 +111,23 @@ export function verificarSeo(dist = paths.dist) {
       if (descricoes.has(d)) erro(rel, `descrição repetida de ${descricoes.get(d)}`);
       descricoes.set(d, rel);
     }
-    if (t.length < 15 || t.length > 70) erro(rel, `título com ${t.length} caracteres: "${t}"`);
+    if (t.length < 15 || t.length > 60) erro(rel, `título com ${t.length} caracteres: "${t}"`);
     if (d.length < 70 || d.length > 170) erro(rel, `descrição com ${d.length} caracteres`);
     if (slugProd.has(rel) && t.length > 60) erro(rel, `título de produto acima de 60: "${t}"`);
     if (slugProd.has(rel) && (d.length < 140 || d.length > 160)) erro(rel, `descrição de produto fora de 140 a 160 (${d.length})`);
+    if (slugProd.has(rel)) {
+      const pr = slugProd.get(rel);
+      // Nome literal: o <title> só pode cortar no fim (com reticências), nunca tirar um trecho do meio;
+      // og:title e twitter:title levam o nome completo.
+      const nome = String(pr.nome).replace(/\s+/g, ' ').trim();
+      const base = t.replace(/ \| (Banheiras Bom Banho|BBB)$/, '').replace(/ \([^()]+\)$/, (m) => (m === ` (${pr.sku})` ? '' : m));
+      if (!(base === nome || (base.endsWith('…') && nome.startsWith(base.slice(0, -1))))) erro(rel, `título não é o nome literal nem um corte no fim dele: "${t}"`);
+      if (meta(h, 'property', 'og:title') !== nome || meta(h, 'name', 'twitter:title') !== nome) erro(rel, 'og:title/twitter:title diferente do nome literal');
+      // Ficha x opção de tamanho em conflito (SPEC 15): nenhuma das medidas vai para a description.
+      if (pr.d_medida_confirmada === false && /\d+,\d+\s*x\s*\d+,\d+/.test(d)) erro(rel, 'description com medida em produto de medida a confirmar');
+      // Concordância da forma com o tipo masculino (spa, ofurô)
+      if (/\b(Spa|Ofurô) (quadrada|redonda)\b/.test(d)) erro(rel, 'description com forma no gênero errado');
+    }
 
     // JSON-LD
     if (blocos.length !== 1) { erro(rel, `${blocos.length} blocos JSON-LD (esperado 1)`); continue; }
@@ -139,9 +154,17 @@ export function verificarSeo(dist = paths.dist) {
         if (of && of.price !== p.preco.valores_numericos.finalPrice) erro(rel, 'Product.offers.price diferente de finalPrice');
         const disp = p.disponibilidade === 'Esgotado' ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock';
         if (of && of.availability !== disp) erro(rel, 'Product.offers.availability diferente da disponibilidade');
-        if (p.d_familia && !tem('ProductGroup')) erro(rel, 'produto com família sem ProductGroup');
+        if ('manufacturer' in prod) erro(rel, 'Product com manufacturer (não sai de campo da fonte)');
+        const grupo = tem('ProductGroup');
+        if (grupo) {
+          if (grupo.variesBy.some((v) => !/^https:\/\/schema\.org\//.test(v))) erro(rel, `ProductGroup.variesBy fora do schema.org: ${grupo.variesBy.join(', ')}`);
+          if (!grupo.hasVariant.some((v) => v['@id'] === prod['@id']) || prod.isVariantOf?.['@id'] !== grupo['@id']) erro(rel, 'ProductGroup sem o próprio produto');
+          for (const v of grupo.hasVariant) (variantesPorGrupo.get(grupo['@id']) || variantesPorGrupo.set(grupo['@id'], new Set()).get(grupo['@id'])).add(v['@id']);
+        }
+        materialPorProduto.set(prod['@id'], prod.material ?? null);
       }
     }
+    if (tem('FAQPage') && rel !== 'perguntas-frequentes.html') erro(rel, 'FAQPage fora de perguntas-frequentes.html (marcar uma única instância da FAQ repetida)');
     const cat = catPath.get(rel);
     if (cat) {
       const cp = tem('CollectionPage');
@@ -150,6 +173,12 @@ export function verificarSeo(dist = paths.dist) {
       const esperado = (cat.produtos || []).filter((s) => slugProd.has(`${s}.html`)).map((s) => `${SITE_URL}/${s}.html`);
       if (lista.map((x) => x.url).join('|') !== esperado.join('|')) erro(rel, 'ItemList diferente da lista e da ordem da coleção');
     }
+  }
+
+  // ProductGroup: as versões de um grupo diferem pelo material declarado (variesBy), sem repetir valor.
+  for (const [gid, ids] of variantesPorGrupo) {
+    const mats = [...ids].map((i) => materialPorProduto.get(i));
+    if (mats.some((m) => !m) || new Set(mats).size !== mats.length) erro(gid, `ProductGroup com material ausente ou repetido entre as variantes: ${mats.join(', ')}`);
   }
 
   // ---- sitemaps ---------------------------------------------------------------------------

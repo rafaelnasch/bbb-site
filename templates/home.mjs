@@ -18,7 +18,7 @@ import { icone } from '../build/lib/icons.mjs';
 import { paths } from '../site.config.mjs';
 import { cartao, escalaDaColecao } from './parts/cartao.mjs';
 import { picture } from './parts/foto.mjs';
-import { faqBloco, faqJsonLd } from './parts/faq-bloco.mjs';
+import { faqBloco } from './parts/faq-bloco.mjs';
 import { AVISO_ESCALA } from './parts/escala.mjs';
 import { explorador, tabelaCotas, plantaDoTamanho, rotuloTam, urlPdf } from './parts/planta.mjs';
 import { indiceCatalogo, fotoCartao, produtosDaCategoria, CAT_BANHEIRO, CAT_OFURO_EXTERNO, CAT_SPA_LUGARES } from '../build/lib/catalogo.mjs';
@@ -508,7 +508,6 @@ export function paginas(ctx) {
     '@graph': [
       organizacao(D),
       website(D, { busca: true }),
-      ...(faqJsonLd(faqs) ? [faqJsonLd(faqs)] : []),
     ],
   };
   const modulos = ['home', ...(temAgua ? ['agua'] : []), ...(temVapor ? ['vapor'] : []), ...(plObra?.validada ? ['planta'] : [])];

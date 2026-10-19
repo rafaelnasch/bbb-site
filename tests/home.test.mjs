@@ -142,7 +142,7 @@ test('lojas: 9 cidades no mapa SVG, sem iframe, cada uma com link para a âncora
   for (const p of M.pontos) assert.ok(p.x > 0 && p.x < 100 && p.y > 0 && p.y < 100, p.loja.cidade);
 });
 
-test('perguntas: só publicadas e sem garantia; FAQPage com as mesmas; 3 posts reais do blog', () => {
+test('perguntas: só publicadas e sem garantia, sem FAQPage repetido; 3 posts reais do blog', () => {
   const ids = new Map(faq.map((f) => [f.id, f]));
   const exib = FAQ_HOME.map((id) => ids.get(id)).filter((f) => f.tipo === 'publicada' && f.exibir !== false && !f.oculto_ate_decisao);
   const qs = [...h.matchAll(/<summary class="faq-item__q">([^<]+)</g)].map((m) => m[1]);
@@ -151,8 +151,8 @@ test('perguntas: só publicadas e sem garantia; FAQPage com as mesmas; 3 posts r
   assert.doesNotMatch(qs.join(' '), /garantia/i);
   const blocos = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const nos = blocos.flatMap((o) => o['@graph'] || [o]);
-  const fp = nos.find((n) => n['@type'] === 'FAQPage');
-  assert.equal(fp.mainEntity.length, exib.length);
+  // FAQPage só em perguntas-frequentes.html (instância única da FAQ repetida); aqui a FAQ fica só visível.
+  assert.ok(!nos.some((n) => n['@type'] === 'FAQPage'));
   const blog = ler('blog-recentes.json').recentes.filter((b) => b.exibir).slice(0, 3);
   for (const b of blog) assert.ok(h.includes(`href="${b.url}"`), b.titulo);
   assert.ok(nos.find((n) => n['@type'] === 'WebSite')?.potentialAction?.target?.urlTemplate.endsWith('/busca.html?q={search_term_string}'));

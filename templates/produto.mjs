@@ -17,6 +17,7 @@ import { fotosProduto, fotoProduto } from '../build/lib/midia.mjs';
 import { formatBRL } from '../build/lib/money.mjs';
 import { mensagemCompra } from '../build/lib/wa.mjs';
 import { paths } from '../site.config.mjs';
+import { notaPrecosComoOpcaoTexto } from '../build/lib/catalogo.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
 import { picture, SIZES_CARTAO } from './parts/foto.mjs';
 import { galeria, ordenarFotos } from './parts/galeria.mjs';
@@ -26,7 +27,7 @@ import { fmtMetros } from '../build/lib/medidas.mjs';
 import { decisao, doca } from './parts/monte.mjs';
 import { ficha, rotuloFicha } from './parts/ficha.mjs';
 import { entrega } from './parts/entrega.mjs';
-import { faqsDoTipo, faqBloco, faqJsonLd } from './parts/faq-bloco.mjs';
+import { faqsDoTipo, faqBloco } from './parts/faq-bloco.mjs';
 
 // Coleção raiz de cada tipo (SPEC 3.1, d_tipo pela categoria raiz da listagem).
 export const RAIZ_DO_TIPO = Object.freeze({ banheira: 'banheiras.html', spa: 'spas.html', ofuro: 'ofuros.html', sauna: 'sauna.html', acessorio: 'acessorios.html' });
@@ -72,28 +73,31 @@ function camposEtiqueta(p) {
   return ETIQUETA.filter((k) => e[k] && !conf.has(k)).map((k) => ({ k, v: e[k] }));
 }
 
-/** <title> com no máximo 60 caracteres, cortado por palavra no nome (SPEC 11.1). */
 /**
- * <title> de produto até 60 caracteres (SPEC 11.1), sempre com o nome literal completo quando cabe:
- * "{nome} | Banheiras Bom Banho"; se não couber, "{nome} | BBB" (sigla da marca que o site atual já usa
- * nos títulos de produto); depois só o nome. Nomes acima de 60 perdem primeiro o trecho "com hidro"
- * (que o tipo já diz) e só então são cortados por palavra, sem terminar em preposição. Assim as versões
- * em gel coat e em acrílico não ficam com o mesmo título.
+ * <title> de produto até 60 caracteres (SPEC 11.1). O nome literal nunca é alterado no meio: cabe com
+ * " | Banheiras Bom Banho", ou com " | BBB" (sigla que o site atual já usa), ou sozinho; se passar de 60,
+ * é cortado só no fim, por palavra, sem terminar em preposição, e leva reticências para mostrar o corte.
+ * O og:title leva o nome literal completo (não tem o limite de 60).
  */
 export function tituloProduto(nome) {
   const n = String(nome).replace(/\s+/g, ' ').trim();
   const sufixos = /\bBBB\b/.test(n) ? [' | Banheiras Bom Banho'] : [' | Banheiras Bom Banho', ' | BBB'];
   for (const suf of sufixos) if ((n + suf).length <= 60) return n + suf;
   if (n.length <= 60) return n;
-  const sem = n.replace(/\s+(com|c\/)\s+hidro\b/i, '');
-  if (sem.length <= 60) return sem;
-  const palavras = sem.split(' ');
+  return cortarNoFim(n, 59) + '…';
+}
+
+/** Corta por palavra até `max` caracteres, sem terminar em preposição ou conjunção. */
+function cortarNoFim(s, max) {
+  const palavras = s.split(' ');
   let t = '';
   for (const w of palavras) {
-    if (`${t} ${w}`.trim().length > 60) break;
+    if (`${t} ${w}`.trim().length > max) break;
     t = `${t} ${w}`.trim();
   }
-  return (t.replace(/\s+(com|em|de|da|do|e|c\/)$/i, '') || palavras[0]);
+  let antes;
+  do { antes = t; t = t.replace(/\s+(com|em|de|da|do|e|c\/|sem)$/i, ''); } while (t !== antes);
+  return t || palavras[0];
 }
 
 /** Títulos únicos entre os produtos: em colisão, o nº de catálogo (SKU literal) desempata. */
@@ -104,9 +108,8 @@ export function titulosUnicos(produtos) {
   for (const p of produtos) {
     if (conta.get(t.get(p.slug)) < 2) continue;
     const suf = ` (${p.sku})`;
-    let base = t.get(p.slug).replace(/ \| (Banheiras Bom Banho|BBB)$/, '');
-    while (base.length + suf.length > 60 && base.includes(' ')) base = base.replace(/\s+\S+$/, '');
-    t.set(p.slug, base + suf);
+    const nome = String(p.nome).replace(/\s+/g, ' ').trim();
+    t.set(p.slug, nome.length + suf.length <= 60 ? nome + suf : `${cortarNoFim(nome, 60 - suf.length - 1)}…${suf}`);
   }
   return t;
 }
@@ -117,13 +120,19 @@ export function descricaoProduto(p, tamanhos, itens) {
   const conf = new Set((p.d_conflito_nome_ficha || []).map((c) => c.campo));
   const usa = (k) => (e[k] && !conf.has(k) ? String(e[k]).toLocaleLowerCase('pt-BR') : null);
   const tipo = { banheira: 'Banheira', spa: 'Spa', ofuro: 'Ofurô', sauna: 'Sauna', acessorio: 'Acessório' }[p.d_tipo] || '';
-  const desc = [usa('Forma'), usa('Lugares') && (/^\d/.test(e.Lugares) ? `para ${usa('Lugares')}` : usa('Lugares')), usa('Material') && `em ${usa('Material')}`].filter(Boolean);
+  // Concordância da forma literal da ficha com o gênero do tipo (spa e ofurô são masculinos), como no d_resumo.
+  const masc = p.d_tipo === 'spa' || p.d_tipo === 'ofuro';
+  const forma = usa('Forma') && (masc ? usa('Forma').replace(/^redonda$/, 'redondo').replace(/^quadrada$/, 'quadrado') : usa('Forma'));
+  const desc = [forma, usa('Lugares') && (/^\d/.test(e.Lugares) ? `para ${usa('Lugares')}` : usa('Lugares')), usa('Material') && `em ${usa('Material')}`].filter(Boolean);
   const rot = tamanhos.map(rotuloTam).filter(Boolean);
   const temPlanta = (p.d_planta || []).some((x) => x.pdf_path);
   const partes = [
     `${p.nome}.`,
     desc.length && p.d_tipo !== 'acessorio' ? `${tipo} ${desc.join(', ')}.` : null,
-    rot.length === 1 ? `Medidas: ${rot[0].replace(/\s*\+\s*R\$.*$/, '')}.` : rot.length > 1 ? `${rot.length} tamanhos, de ${rot[0].replace(/\s*\+\s*R\$.*$/, '')}.` : null,
+    // Ficha e opção de tamanho divergem (SPEC 15): nenhuma das duas medidas vai para o resultado de busca.
+    p.d_medida_confirmada === false
+      ? (rot.length > 1 ? `${rot.length} tamanhos, medida a confirmar com o consultor.` : 'Medida a confirmar com o consultor.')
+      : rot.length === 1 ? `Medidas: ${rot[0].replace(/\s*\+\s*R\$.*$/, '')}.` : rot.length > 1 ? `${rot.length} tamanhos, de ${rot[0].replace(/\s*\+\s*R\$.*$/, '')}.` : null,
     itens.length >= 2 ? `Com ${itens[0]} e ${itens[1]}.` : itens.length === 1 ? `Com ${itens[0]}.` : null,
     temPlanta ? 'Planta oficial, preço e compra pelo WhatsApp com consultor.' : 'Preço publicado e compra pelo WhatsApp com consultor.',
   ].filter(Boolean);
@@ -135,7 +144,7 @@ export function descricaoProduto(p, tamanhos, itens) {
   }
   // Complementos genéricos (sem dado da empresa) até a faixa de 140 a 160 caracteres.
   const extras = [
-    'Fábrica Banheiras Bom Banho.',
+    'Banheiras Bom Banho.',
     p.d_tipo === 'acessorio' ? 'Veja a descrição e as opções.' : 'Veja a ficha técnica e as opções.',
     'Tire dúvidas com a equipe.',
     'Fale com o consultor.',
@@ -230,7 +239,7 @@ function filmes() {
 }
 
 function jsonLd(p, c) {
-  const { D, fotos, tamanhos, trilha, faqs } = c;
+  const { D, fotos, tamanhos, trilha } = c;
   const org = { '@id': abs('#org') };
   const imgs = fotos.map((f) => {
     const jpg = `media/p/${p.slug}/${p.slug}-${f.n}-800.jpg`;
@@ -261,34 +270,34 @@ function jsonLd(p, c) {
     ...(imgs.length ? { image: imgs } : {}),
     description: p.d_resumo,
     brand: org,
-    manufacturer: org,
     ...(e.Material && !conf.has('Material') ? { material: e.Material } : {}),
     category: D.catPorPath.get(RAIZ_DO_TIPO[p.d_tipo])?.nome || undefined,
     additionalProperty: Object.entries(e).filter(([k]) => !conf.has(k)).map(([k, v]) => ({ '@type': 'PropertyValue', name: rotuloFicha(k), value: v })),
     offers,
   };
-  // A marca e o fabricante apontam para a Organization (SPEC 11.2); o nó mínimo vai no próprio grafo para a
+  // A marca aponta para a Organization (sem manufacturer: a fonte não diz quem fabrica cada item) (SPEC 11.2); o nó mínimo vai no próprio grafo para a
   // referência resolver nesta página (o bloco de SEO completa os demais campos pelo mesmo @id).
   const grafo = [produto, { '@type': 'Organization', '@id': org['@id'], name: D.empresa.nome, url: abs('') }];
-  if (c.familia) {
-    const gid = abs(`#grupo-${p.d_familia}`);
+  const sub = c.grupo;
+  if (sub) {
+    const gid = abs(`#grupo-${sub.id}`);
     produto.isVariantOf = { '@id': gid };
     grafo.push({
       '@type': 'ProductGroup',
       '@id': gid,
-      name: c.familia.nomeGrupo,
-      productGroupID: p.d_familia,
+      name: sub.nome,
+      productGroupID: sub.id,
       brand: org,
-      variesBy: (c.familia.variam_por || []).map((v) => (v === 'Material' ? 'https://schema.org/material' : rotuloFicha(v))),
-      hasVariant: c.familia.membros.map((m) => ({ '@id': `${abs(`${m.slug}.html`)}#produto` })),
+      variesBy: ['https://schema.org/material'],
+      hasVariant: sub.membros.map((m) => ({ '@id': `${abs(`${m.slug}.html`)}#produto` })),
     });
   }
   grafo.push({
     '@type': 'BreadcrumbList',
     itemListElement: trilha.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.nome, ...(t.abs ? { item: t.abs } : {}) })),
   });
-  const fq = faqJsonLd(faqs);
-  if (fq) grafo.push(fq);
+  // Sem FAQPage aqui: as mesmas perguntas se repetem em centenas de produtos, e a diretriz do Google pede
+  // marcar uma única instância (perguntas-frequentes.html). A FAQ segue visível na página.
   return { '@context': 'https://schema.org', '@graph': grafo };
 }
 
@@ -302,6 +311,29 @@ function prefixoComum(nomes) {
     else break;
   }
   return out.join(' ') || nomes[0];
+}
+
+/**
+ * ProductGroup do dado estruturado (SPEC 11.2): o schema.org só reconhece variação por propriedades como
+ * material, e não por "configuração". Por isso o grupo marcado reúne as versões irmãs da MESMA
+ * configuração (Básica ou Completa) que diferem só no material, cada uma com material próprio na ficha.
+ * Família que só varia por configuração, ou com material repetido ou em conflito, fica sem ProductGroup
+ * (as irmãs continuam ligadas na página por "Outras versões desta peça").
+ */
+export function grupoSchema(p, fam, porSlug) {
+  if (!fam || fam.membros.length < 2 || !(fam.variam_por || []).includes('Material')) return null;
+  const semConflito = (m) => {
+    const q = porSlug.get(m.slug);
+    return q && m.Material && !(q.d_conflito_nome_ficha || []).some((c) => c.campo === 'Material');
+  };
+  const eu = fam.membros.find((m) => m.slug === p.slug);
+  if (!eu || !semConflito(eu)) return null;
+  const porConfig = (fam.variam_por || []).includes('Configuracao');
+  const membros = fam.membros.filter((m) => semConflito(m) && (!porConfig || m.Configuracao === eu.Configuracao));
+  if (membros.length < 2 || new Set(membros.map((m) => m.Material)).size !== membros.length) return null;
+  const sufixo = porConfig && eu.Configuracao ? `-${eu.Configuracao.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}` : '';
+  const nome = prefixoComum(membros.map((m) => m.nome));
+  return { id: `${fam.familia || p.d_familia}${sufixo}`, nome: porConfig && eu.Configuracao ? `${nome} (${eu.Configuracao})` : nome, membros };
 }
 
 function versoes(p, fam) {
@@ -350,20 +382,8 @@ function avaliacao(p) {
 
 /** Nota da página avulsa do Air Blower: os preços com que ele aparece como opção (SPEC 15). */
 function notaPrecosComoOpcao(p, produtos) {
-  if (!/air blower/i.test(p.nome)) return html``;
-  const cont = new Map();
-  for (const q of produtos) {
-    for (const o of q.opcoes_personalizaveis || []) {
-      for (const v of o.valores || []) {
-        if (!/air blower/i.test(v.nome || v.rotulo_exibido)) continue;
-        const m = /R\$\s?[\d.]+,\d{2}/.exec(v.rotulo_exibido);
-        if (m) cont.set(m[0], (cont.get(m[0]) || 0) + 1);
-      }
-    }
-  }
-  if (!cont.size) return html``;
-  const lista = [...cont.entries()].sort((a, b) => b[1] - a[1]).map(([v, n]) => `${v} (em ${n} ${n === 1 ? 'modelo' : 'modelos'})`);
-  return html`<p class="monte__nota monte__nota--bloco">Como opcional dos spas, este item aparece por ${lista.join(' e ')}. Cada preço vale onde está publicado. Confirme o valor com o consultor.</p>`;
+  const t = notaPrecosComoOpcaoTexto(p, produtos);
+  return t ? html`<p class="monte__nota monte__nota--bloco">${t}</p>` : html``;
 }
 
 /**
@@ -389,6 +409,7 @@ export function paginas(ctx) {
   const BASE = ctx.BASE_PATH;
   const out = [];
   const titulos = titulosUnicos(produtos);
+  const porSlug = new Map(produtos.map((q) => [q.slug, q]));
 
   for (const p of produtos) {
     const saida = `${p.slug}.html`;
@@ -540,7 +561,8 @@ ${pareci.length || relacionados.length ? html`<section class="dia secao secao--c
 ${avaliacao(p)}`;
 
     const corpo = html`${topo}${peca}${leitura}${doca(p, cx)}`;
-    const og = existsSync(join(paths.public, 'media', 'og', `${p.slug}.jpg`)) ? { imagem: `media/og/${p.slug}.jpg`, tipo: 'product' } : { tipo: 'product' };
+    // og:title e twitter:title com o nome literal completo (sem o limite de 60 do <title>).
+    const og = { tipo: 'product', titulo: p.nome, ...(existsSync(join(paths.public, 'media', 'og', `${p.slug}.jpg`)) ? { imagem: `media/og/${p.slug}.jpg` } : {}) };
     const modulos = acessorio ? ['galeria', 'monte'] : ['produto'];
     const preload = arte?.preload ? [{ as: 'image', fetchpriority: 'high', ...arte.preload }] : [];
     out.push({
@@ -551,7 +573,7 @@ ${avaliacao(p)}`;
         descricao: descricaoProduto(p, tamanhos, itens),
         corpo,
         og,
-        jsonld: [jsonLd(p, { D, fotos, tamanhos, trilha, faqs, familia: fam, BASE })],
+        jsonld: [jsonLd(p, { D, fotos, tamanhos, trilha, grupo: grupoSchema(p, fam, porSlug), BASE })],
         semImagem: !fotos.length,
         modulos,
         ativo: raiz,

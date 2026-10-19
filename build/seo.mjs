@@ -21,7 +21,7 @@ import { paths, SITE_URL, BASE_PATH, INDEXAR, DATA_COLETA } from '../site.config
 import { abs } from './lib/url.mjs';
 import { dados } from './lib/dados.mjs';
 import { cidadeDaFabrica } from './lib/jsonld.mjs';
-import { NOME_TIPO, PLURAL_TIPO, RAIZ_TIPO, CATEGORIAS_PONTE, rotuloCategoria } from './lib/catalogo.mjs';
+import { NOME_TIPO, PLURAL_TIPO, RAIZ_TIPO, CATEGORIAS_PONTE, rotuloCategoria, notaPrecosComoOpcaoTexto } from './lib/catalogo.mjs';
 import { perguntaLegivel } from '../templates/parts/faq-bloco.mjs';
 import { faqsVisiveis } from '../templates/faq.mjs';
 import { rotuloFicha } from '../templates/parts/ficha.mjs';
@@ -156,7 +156,7 @@ function tamanhosDe(p) {
   }).filter((t) => t.rotulo);
 }
 
-function linhasProduto(p, imagens) {
+function linhasProduto(p, imagens, produtos = []) {
   const L = [];
   L.push(`### ${p.nome}`);
   L.push('');
@@ -170,6 +170,8 @@ function linhasProduto(p, imagens) {
   if (itens.length) L.push(`- Itens de série: ${itens.join('; ')}`);
   L.push(`- Disponibilidade: ${p.disponibilidade}`);
   L.push(`- Preço publicado em ${DATA_COLETA}: ${precoTexto(p)}. O valor final é confirmado pelo consultor.`);
+  const notaOpcao = notaPrecosComoOpcaoTexto(p, produtos);
+  if (notaOpcao) L.push(`- Preço como opcional: ${notaOpcao}`);
   const pdfs = (p.d_planta || []).filter((x) => x.pdf_path).map((x) => `${x.rotulo}: ${urlCodificada(abs(x.pdf_path))}`);
   if (pdfs.length) L.push(`- Planta oficial (PDF): ${pdfs.join('; ')}`);
   if (imagens.length) L.push(`- Fotos: ${imagens.length} (imagens ilustrativas)`);
@@ -336,7 +338,7 @@ export function gerarLlms(D, { imagensPorSlug = new Map(), colecoesIndexaveis = 
     if (!lista.length) continue;
     F.push(`## ${PLURAL_TIPO[tipo][0].toUpperCase()}${PLURAL_TIPO[tipo].slice(1)} (${lista.length})`);
     F.push('');
-    for (const p of lista) F.push(...linhasProduto(p, imagensPorSlug.get(p.slug) || []));
+    for (const p of lista) F.push(...linhasProduto(p, imagensPorSlug.get(p.slug) || [], produtos));
   }
   F.push('## Perguntas frequentes (respostas publicadas pela empresa)');
   F.push('');
@@ -350,6 +352,24 @@ export function gerarLlms(D, { imagensPorSlug = new Map(), colecoesIndexaveis = 
   }
   const full = F.join('\n');
   return { llms, full };
+}
+
+/**
+ * Instante ISO em UTC ("2026-10-19T02:07:38Z") no horário de Brasília com o offset explícito
+ * ("2026-10-18T23:07:38-03:00"): o mesmo instante, para a leitura direta bater com "coletado em 18/10/2026".
+ * Valor que não é instante ISO volta como está.
+ */
+export function horaDeBrasilia(iso) {
+  const d = new Date(iso);
+  if (!/^\d{4}-\d{2}-\d{2}T/.test(String(iso || '')) || Number.isNaN(d.getTime())) return iso;
+  const partes = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' }).formatToParts(d).map((x) => [x.type, x.value]));
+  const local = Date.UTC(+partes.year, +partes.month - 1, +partes.day, +partes.hour, +partes.minute, +partes.second);
+  const off = Math.round((local - Math.floor(d.getTime() / 1000) * 1000) / 60000);
+  const sinal = off < 0 ? '-' : '+';
+  const hh = String(Math.floor(Math.abs(off) / 60)).padStart(2, '0');
+  const mm = String(Math.abs(off) % 60).padStart(2, '0');
+  const frac = /T\d{2}:\d{2}:\d{2}(\.\d+)/.exec(String(iso))?.[1] || '';
+  return `${partes.year}-${partes.month}-${partes.day}T${partes.hour}:${partes.minute}:${partes.second}${frac}${sinal}${hh}:${mm}`;
 }
 
 export function catalogoAberto(D, { imagensPorSlug = new Map() } = {}) {
@@ -378,7 +398,9 @@ export function catalogoAberto(D, { imagensPorSlug = new Map() } = {}) {
       categorias: (p.d_categorias_paths || []).filter((c) => !CATEGORIAS_PONTE.includes(c)).map((c) => urlCodificada(abs(c))),
       d_resumo: p.d_resumo || null,
       fonte: p.fonte || p.url,
-      coletado_em: p.coletado_em || DATA_COLETA,
+      // Horário de Brasília com offset (o mesmo instante da fonte); o original em UTC fica ao lado.
+      coletado_em: horaDeBrasilia(p.coletado_em) || DATA_COLETA,
+      ...(p.coletado_em && horaDeBrasilia(p.coletado_em) !== p.coletado_em ? { coletado_em_utc: p.coletado_em } : {}),
     })),
   };
 }

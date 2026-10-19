@@ -409,7 +409,7 @@ function vendasCorporativas(ctx) {
     ${notaFonte(D, p.fonte)}
   </div>
 </article>`;
-  return pagina(ctx, { saida: 'vendas-corporativas.html', titulo: 'Vendas corporativas: construtoras e hotéis | Banheiras Bom Banho', descricao: 'Vendas corporativas da Banheiras Bom Banho para construtoras, incorporadoras e hotéis: banheiras, spas e ofurôs com condições especiais, pelo WhatsApp.', corpo, trilha });
+  return pagina(ctx, { saida: 'vendas-corporativas.html', titulo: 'Vendas corporativas: construtoras e hotéis | BBB', descricao: 'Vendas corporativas da Banheiras Bom Banho para construtoras, incorporadoras e hotéis: banheiras, spas e ofurôs com condições especiais, pelo WhatsApp.', corpo, trilha });
 }
 
 // ------------------------------------------------------------------ Manual
@@ -525,7 +525,7 @@ function atendimento(ctx) {
     <p class="inst-acoes"><a class="btn" href="${url('lojas/loja-showrooms.html')}">${icone('loja', { tamanho: 18 })}Lojas e showrooms</a><a class="btn btn--fantasma" href="${url('perguntas-frequentes.html')}">Perguntas frequentes</a></p>
   </div>
 </article>`;
-  return pagina(ctx, { saida: 'contacts.html', titulo: 'Atendimento: WhatsApp, telefone e e-mail | Banheiras Bom Banho', descricao: 'Canais de atendimento da Banheiras Bom Banho: WhatsApp para compra, ajuda, rastreio e SAC, consultores de venda, telefone fixo, e-mails e horário.', corpo, trilha, tipo: 'ContactPage' });
+  return pagina(ctx, { saida: 'contacts.html', titulo: 'Atendimento: WhatsApp, telefone e e-mail | BBB', descricao: 'Canais de atendimento da Banheiras Bom Banho: WhatsApp para compra, ajuda, rastreio e SAC, consultores de venda, telefone fixo, e-mails e horário.', corpo, trilha, tipo: 'ContactPage' });
 }
 
 function tutoriais(ctx) {

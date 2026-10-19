@@ -187,7 +187,7 @@ export function paginas(ctx) {
       saida: 'escolher.html',
       html: layout({
         saida: 'escolher.html',
-        titulo: 'Escolher banheira, spa ou ofurô pelo espaço | Banheiras Bom Banho',
+        titulo: 'Escolher banheira, spa ou ofurô pelo espaço | BBB',
         descricao: `Informe largura e comprimento do local e veja quais dos ${totalEsc} modelos publicados cabem, com folga, quase cabe, preço e planta oficial. Envie a escolha ao consultor.`,
         corpo: html`${topo}${app}${explica}`,
         jsonld: [jsonld],

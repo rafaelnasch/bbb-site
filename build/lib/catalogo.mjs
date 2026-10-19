@@ -194,3 +194,31 @@ export function fichasComparador(D) {
   }
   return out;
 }
+
+/**
+ * Preços com que um item vendido avulso (Air Blower) aparece como opcional em outros modelos (SPEC 15:
+ * cada preço onde aparece, com nota). Devolve [{ preco: 'R$ 2.035,20', modelos: 54 }, ...] em ordem de
+ * frequência, lidos dos rótulos literais das opções; vazio para os demais produtos.
+ */
+export function precosComoOpcao(p, produtos) {
+  if (!/air blower/i.test(p.nome)) return [];
+  const cont = new Map();
+  for (const q of produtos) {
+    for (const o of q.opcoes_personalizaveis || []) {
+      for (const v of o.valores || []) {
+        if (!/air blower/i.test(v.nome || v.rotulo_exibido)) continue;
+        const m = /R\$\s?[\d.]+,\d{2}/.exec(v.rotulo_exibido);
+        if (m) cont.set(m[0], (cont.get(m[0]) || 0) + 1);
+      }
+    }
+  }
+  return [...cont.entries()].sort((a, b) => b[1] - a[1]).map(([preco, modelos]) => ({ preco, modelos }));
+}
+
+/** Texto da nota de preço por contexto (página do produto e llms-full.txt dizem a mesma coisa). */
+export function notaPrecosComoOpcaoTexto(p, produtos) {
+  const lista = precosComoOpcao(p, produtos);
+  if (!lista.length) return null;
+  const partes = lista.map(({ preco, modelos }) => `${preco} (em ${modelos} ${modelos === 1 ? 'modelo' : 'modelos'})`);
+  return `Como opcional dos spas, este item aparece por ${partes.join(' e ')}. Cada preço vale onde está publicado. Confirme o valor com o consultor.`;
+}
