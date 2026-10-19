@@ -27,13 +27,18 @@ before(async () => {
   await renderizar({ dist: DIST });
 });
 
-test('58 coleções no mesmo caminho, com a mesma lista e ordem de categorias.json', () => {
+test('58 coleções no mesmo caminho, com a mesma lista e ordem de categorias.json (peças sem foto no fim)', () => {
   assert.equal(categorias.length, 60);
   assert.equal(COLECOES.length, 58);
   for (const c of COLECOES) {
     const h = pagina(c.d_path);
     const slugs = [...h.matchAll(/<li class="cart" data-slug="([^"]+)"/g)].map((m) => m[1]);
-    assert.deepEqual(slugs, c.produtos, `${c.d_path}: ordem dos cartões`);
+    // Ordem do catálogo, com os modelos sem foto publicada no fim (QA: a primeira impressão da coleção é
+    // uma peça). A posição do catálogo continua em data-pos e no ItemList do JSON-LD.
+    const semFoto = new Set(slugs.filter((s) => new RegExp(`data-slug="${s}"[^>]*data-sf="1"`).test(h)));
+    assert.deepEqual(slugs, [...c.produtos.filter((s) => !semFoto.has(s)), ...c.produtos.filter((s) => semFoto.has(s))], `${c.d_path}: ordem dos cartões`);
+    for (const s of slugs) assert.equal(Number(new RegExp(`data-slug="${s}" data-pos="(\\d+)"`).exec(h)?.[1]), c.produtos.indexOf(s), `${c.d_path}: data-pos de ${s}`);
+    if (semFoto.size) assert.match(h, /sem foto publicada aparece/, `${c.d_path}: nota das peças sem foto`);
     assert.equal(slugs.length, c.total_exibido, `${c.d_path}: total`);
     const tot = /data-campo="categoria-total">(\d+)</.exec(h);
     assert.equal(Number(tot?.[1]), c.total_exibido, `${c.d_path}: contagem do topo`);
@@ -65,6 +70,31 @@ test('cartão: nome, preço por e de literais, link sem JS para a página do pro
       const p = porSlug.get(/data-slug="([^"]+)"/.exec(li)[1]);
       assert.equal(/selo--esgotado/.test(li), p.disponibilidade === 'Esgotado', `${p.slug}: selo esgotado`);
       assert.equal(/>Planta oficial</.test(li), (p.d_planta || []).some((x) => x.pdf_path), `${p.slug}: selo planta`);
+    }
+  }
+});
+
+test('versões irmãs: um cartão por família com chips de versão e preço literal; as demais ficam no HTML', () => {
+  const h = pagina('banheiras.html');
+  const lis = [...h.matchAll(/<li class="cart"[\s\S]*?<\/li>/g)].map((m) => m[0]);
+  const porFam = new Map();
+  for (const li of lis) {
+    const gr = /data-gr="([^"]+)"/.exec(li)?.[1];
+    if (!gr) { assert.doesNotMatch(li, /data-agrupada/); continue; }
+    porFam.set(gr, [...(porFam.get(gr) || []), li]);
+  }
+  assert.ok(porFam.size > 20, 'famílias agrupadas');
+  for (const [gr, membros] of porFam) {
+    assert.ok(membros.length >= 2, gr);
+    // só a primeira da grade aparece; as outras levam data-agrupada (sem JS, todas aparecem)
+    assert.equal(membros.filter((li) => !/data-agrupada/.test(li)).length, 1, gr);
+    assert.doesNotMatch(membros[0], /data-agrupada/, `${gr}: a primeira da grade é a visível`);
+    for (const li of membros) {
+      for (const m of membros) {
+        const q = porSlug.get(/data-slug="([^"]+)"/.exec(m)[1]);
+        assert.equal(q.d_familia, gr);
+        assert.match(li, new RegExp(`data-v="${q.slug}"[\\s\\S]*?data-campo="preco-por">${q.preco.por.replace(/[$.]/g, '\\$&')}<`), `${gr}: chip de ${q.slug}`);
+      }
     }
   }
 });

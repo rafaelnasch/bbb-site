@@ -36,6 +36,25 @@ test('Acqua Línea: trocar o tamanho troca planta, medidas, total e o texto do W
   expect(cab).toBe(m);
 });
 
+test('voltar sem bfcache: total, doca e WhatsApp seguem o formulário restaurado pelo navegador', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(pg(ACQUA));
+  // Um "unload" tira a página do bfcache: a volta recarrega e o navegador restaura os campos.
+  await page.evaluate(() => window.addEventListener('unload', () => {}));
+  await page.locator('label.seletor__op', { hasText: '0,79 x 1,69 x 0,37' }).click();
+  await page.locator('label.adic', { hasText: 'Acionador digital' }).click();
+  await expect(page.locator('output[data-total]')).toHaveText('R$ 5.891,18');
+  await page.goto(`${BASE}/lojas/loja-showrooms.html`);
+  await page.goBack();
+  await expect(page.locator('input[name="tamanho"]:checked')).toHaveAttribute('data-rotulo', '0,79 x 1,69 x 0,37');
+  await expect(page.locator('output[data-total]')).toHaveText('R$ 5.891,18');
+  await expect(page.locator('[data-doca-tam]')).toHaveText('0,79 x 1,69 x 0,37');
+  const m = await msgCompra(page);
+  expect(m).toContain('Tamanho: 0,79 x 1,69 x 0,37');
+  expect(m).toContain('Adicionais: Acionador digital + R$490,00');
+  expect(m).toContain('R$ 5.891,18');
+});
+
 test('cota B: realça a linha, marca a letra no desenho e anuncia', async ({ page }) => {
   await page.goto(pg(ACQUA));
   const painel = page.locator('[data-tam-painel]:not([hidden])');

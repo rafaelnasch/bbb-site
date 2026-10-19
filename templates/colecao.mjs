@@ -14,7 +14,8 @@ import { icone } from '../build/lib/icons.mjs';
 import { formatBRL } from '../build/lib/money.mjs';
 import { paths } from '../site.config.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
-import { cartao, escalaDaColecao, SIZES_GRADE } from './parts/cartao.mjs';
+import { cartao, escalaDaColecao, gruposDeVersoes, SIZES_GRADE } from './parts/cartao.mjs';
+import { picture } from './parts/foto.mjs';
 import { faqsDoTipo, faqBloco } from './parts/faq-bloco.mjs';
 import { rotuloTam } from './parts/planta.mjs';
 import {
@@ -200,6 +201,29 @@ function descricaoGerada(cat, frase, nome = cat.nome) {
   return d;
 }
 
+/**
+ * Peça de destaque do topo das coleções raiz: uma foto real (fundo azul) de uma peça que não está entre
+ * os primeiros cartões da grade nem é versão de um deles, para o topo acrescentar e não repetir a vitrine.
+ * Sem peça assim (coleção curta, como Lançamentos), o topo fica só com a água.
+ */
+const PRIMEIROS = 12;
+// Nome do modelo para não repetir o mesmo desenho de peça (ex.: "Vitoriana" adulto, Kids e Pets): o nome
+// literal sem o tipo, a forma, a configuração e o material; fica a primeira palavra que sobra.
+const GENERICAS = new Set('banheira banheiras spa spas ofuro ofuros sauna dupla duplo retangular redonda redondo quadrada quadrado de do da canto individual completa completo basica basico com sem hidro em acrilico gel coat para contemporanea luxo'.split(' '));
+const modeloDoNome = (n) => String(n).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().split(/[^a-z]+/).find((w) => w.length > 2 && !GENERICAS.has(w)) || n;
+function destaqueDoTopo(grade, evitar = new Set()) {
+  const famsIniciais = new Set(grade.slice(0, PRIMEIROS).map((p) => p.d_familia || p.slug));
+  const modelosIniciais = new Set(grade.slice(0, PRIMEIROS).map((p) => modeloDoNome(p.nome)));
+  for (const p of grade.slice(PRIMEIROS)) {
+    if (famsIniciais.has(p.d_familia || p.slug) || modelosIniciais.has(modeloDoNome(p.nome)) || evitar.has(p.slug)) continue;
+    const foto = fotoCartao(p.slug);
+    if (foto && !foto.vermelho && foto.fontes?.length) return { p, foto };
+  }
+  return null;
+}
+
+export const SIZES_DESTAQUE = '(min-width:1024px) min(30vw, 440px), calc(100vw - 32px)';
+
 export function paginas(ctx) {
   const { dados: D, layout } = ctx;
   const produtos = D.ler('produtos.json');
@@ -230,22 +254,31 @@ export function paginas(ctx) {
     const idFilme = FILME_RAIZ[cat.d_path];
     // Variante quadrada do filme (sem moldura e sem legenda gravadas): a legenda é o próprio H1 e a
     // frase da página. Sem ela, o topo fica com a água (o filme 16:9 com moldura não serve neste encaixe).
-    const fm = idFilme && filmes?.colecao?.[idFilme]?.quadro;
-    const filme = fm?.webm?.src && fm?.mp4?.src && fm?.poster && [fm.webm.src, fm.mp4.src].every((s) => existsSync(join(paths.public, s)))
-      ? { webm: url(fm.webm.src), mp4: url(fm.mp4.src), avif: fm.poster.avif?.src ? url(fm.poster.avif.src) : null, webp: fm.poster.webp?.src ? url(fm.poster.webp.src) : null, w: fm.largura || 720, h: fm.altura || 720 }
-      : null;
+    // Ordem da grade: a do catálogo (data-pos e o ItemList do JSON-LD continuam nela), com as peças sem foto
+    // publicada no fim, para a primeira impressão da coleção ser uma peça e não um quadro vazio.
+    const semFoto = (p) => !fotoCartao(p.slug);
+    const grade0 = [...lista.filter((p) => !semFoto(p)), ...lista.filter(semFoto)];
+    const nSemFoto = grade0.filter(semFoto).length;
+    const grupos = gruposDeVersoes(lista);
+    // Destaque do topo (só nas coleções raiz): uma peça real fora dos primeiros cartões. O filme da sala
+    // mostrava as mesmas primeiras peças da grade logo abaixo e saiu do topo (segue na home).
+    // Evita também as peças do filme da coleção, que a home mostra na porta (o poster é a última delas).
+    const evitarDestaque = new Set((filmes?.colecao?.[idFilme]?.fotos || []).map((f) => f.slug));
+    const dest = idFilme ? destaqueDoTopo(grade0, evitarDestaque) : null;
+    const filme = dest ? { foto: dest.foto, p: dest.p } : null;
 
-    const fundo = filme ? html`<div class="col-topo__fundo" aria-hidden="true"></div>`
-      : html`<div class="col-topo__fundo col-topo__fundo--agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>`;
-    const quadro = filme ? html`<div class="col-topo__filme" aria-hidden="true">${filme.avif ? html`<picture><source type="image/avif" srcset="${filme.avif}">` : ''}<img class="col-topo__poster"${attrs({ src: filme.webp || filme.avif, width: filme.w, height: filme.h, alt: '', fetchpriority: 'high' })}>${filme.avif ? html`</picture>` : ''}<video class="col-topo__video" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, width: filme.w, height: filme.h })} muted playsinline loop preload="none"></video></div>` : '';
+    const fundo = html`<div class="col-topo__fundo col-topo__fundo--agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>`;
+    const quadro = filme ? html`<div class="col-topo__filme col-topo__dest"><a href="${url(`${filme.p.slug}.html`)}" aria-label="Na foto: ${filme.p.nome}">${picture({ ...filme.foto, lqip: null }, { classe: 'col-topo__poster', sizes: SIZES_DESTAQUE, prioridade: true, alt: '' })}</a></div>` : '';
 
     // Atalhos das subcoleções da mesma raiz, com a contagem real (total_exibido), logo abaixo do título.
     const raizPath = `${cat.d_path.split('/')[0].replace(/\.html$/, '')}.html`;
     const subs = D.categorias.filter((c) => !CATEGORIAS_PONTE.includes(c.d_path) && c.d_path.startsWith(raizPath.replace(/\.html$/, '/'))
       && c.total_exibido > 0 && !/^por tamanho$/i.test(String(c.nome).trim()) && c.d_path.split('/').length === 2).slice(0, 12);
     const subsRot = `Coleções de ${String(D.catPorPath.get(raizPath)?.nome || cat.nome).toLocaleLowerCase('pt-BR')}`;
-    // Rápidos: forma e lugares, que filtram a grade direto (mesmos campos da gaveta de filtros).
-    const rapidos = ['Forma', 'Lugares'].map((k) => ({ k, vs: valoresFaceta(lista, k) })).filter((g) => g.vs.length > 1);
+    // Rápidos: forma, lugares, material e configuração, abertos na página e filtrando a grade direto (os
+    // mesmos campos da gaveta de filtros). As categorias do site acima ficam sem contagem: a contagem de
+    // cada uma está na própria página, e duas contagens diferentes para o mesmo nome só confundiam.
+    const rapidos = ['Forma', 'Lugares', 'Material', 'Configuracao'].map((k) => ({ k, vs: valoresFaceta(lista, k) })).filter((g) => g.vs.length > 1);
     const topo = html`<section class="sala col-topo letterbox${filme ? ' col-topo--filme' : ''}" aria-labelledby="col-h1">
   ${fundo}
   <div class="wrap col-topo__in">
@@ -255,7 +288,7 @@ export function paginas(ctx) {
     <p class="col-topo__frase" data-intro style="--i:2"><span class="num" data-campo="categoria-total">${frase.split(' ')[0]}</span>${frase.slice(frase.indexOf(' '))}.</p>
     ${quadro}
     ${chip ? html`<p class="col-topo__chips" data-intro style="--i:3"><span class="vh">Filtro desta página:</span>${chip}</p>` : ''}
-    ${subs.length ? html`<nav class="col-subs" aria-label="${subsRot}" data-intro style="--i:3"><p class="etiqueta col-subs__rot">Categorias do site</p><div class="rolagem col-subs__rol" tabindex="-1"><ul class="col-subs__lista" role="list">${subs.map((c) => html`<li><a class="col-chip col-chip--sub" href="${url(c.d_path)}"${attrs({ 'aria-current': c.d_path === cat.d_path ? 'page' : null })}><span>${c.nome}</span><span class="num" data-campo="categoria-total">${c.total_exibido}</span></a></li>`)}</ul></div></nav>` : ''}
+    ${subs.length ? html`<nav class="col-subs" aria-label="${subsRot}" data-intro style="--i:3"><p class="etiqueta col-subs__rot">Categorias do site</p><div class="rolagem col-subs__rol" tabindex="-1"><ul class="col-subs__lista" role="list">${subs.map((c) => html`<li><a class="col-chip col-chip--sub" href="${url(c.d_path)}"${attrs({ 'aria-current': c.d_path === cat.d_path ? 'page' : null })}><span>${c.nome}</span></a></li>`)}</ul></div></nav>` : ''}
     ${texto ? html`<details class="col-sobre" data-intro style="--i:4"><summary>Sobre esta coleção</summary><p class="prosa" data-campo="categoria-descricao">${texto}</p></details>` : ''}
   </div>
 </section>`;
@@ -266,7 +299,8 @@ export function paginas(ctx) {
     <div class="col-barra__acoes" data-so-js>
       <button class="col-btn" type="button" data-gaveta-abrir="col-filtros" aria-haspopup="dialog" aria-expanded="false">${icone('menu', { tamanho: 18 })}Filtrar<span class="col-btn__n num" data-col-nf hidden></span></button>
       <label class="col-ordem col-ordem--barra"><span class="vh">Ordenar por</span><select data-col-ordem>${ORDENS.map(([v, t]) => html`<option value="${v}">${t}</option>`)}</select></label>
-      ${S ? html`<button class="col-btn" type="button" data-col-escala aria-expanded="false" aria-controls="col-escala">${icone('regua', { tamanho: 18 })}<span><span class="col-btn__x">Ver em </span><span class="col-btn__e">escala</span></span></button>` : ''}
+      ${grupos.size ? html`<button class="col-btn col-btn--vs" type="button" data-col-agrupar aria-pressed="true" aria-label="Versões juntas">${icone('camadas', { tamanho: 18 })}<span class="col-btn__t">Versões juntas</span></button>` : ''}
+      ${S ? html`<button class="col-btn" type="button" data-col-escala aria-expanded="false" aria-controls="col-escala" aria-label="Ver em escala">${icone('regua', { tamanho: 18 })}<span><span class="col-btn__x">Ver em </span><span class="col-btn__e">escala</span></span></button>` : ''}
     </div>
   </div>
   <div class="wrap col-ativos" data-col-ativos hidden></div>
@@ -280,20 +314,29 @@ export function paginas(ctx) {
       <div class="rolagem col-escala__rol" tabindex="0" role="region" aria-label="Peças em escala, role para os lados"><ol class="col-escala__lista" role="list" data-col-escala-lista></ol></div>
       <p class="escala__aviso"><span data-col-escala-aviso>O desenho usa só as medidas externas publicadas, com o maior tamanho de cada peça.</span> Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.</p>
     </div>` : ''}
-    ${rapidos.length ? html`<div class="col-rapidos"><p class="etiqueta col-rapidos__rot">Pela ficha técnica</p>${subs.length ? html`<p class="pequeno col-rapidos__nota">Forma e lugares como informados na ficha de cada modelo; por isso a contagem pode diferir das categorias do site.</p>` : ''}<div class="rolagem col-rapidos__rol"><ul class="col-rapidos__lista" role="list">${rapidos.flatMap((g) => g.vs.map(([v, n]) => html`<li><button class="col-chip col-chip--rap" type="button" data-col-rapido="${{ Forma: 'fo', Lugares: 'lu' }[g.k]}" data-valor="${v}" aria-pressed="false">${v}<span class="num">${n}</span></button></li>`))}</ul></div></div>` : ''}
-    ${S ? html`<p class="col-legenda"><svg class="cart__ctn" viewBox="0 0 100 80" aria-hidden="true" focusable="false"><rect x=".5" y="22" width="70" height="52" rx="3"/><path class="cart__ctn-regua" d="M0 77H100M0 72V80M100 72V80"/></svg>O pequeno desenho ao lado da medida é a peça vista de cima sobre a régua da maior peça, todas na mesma escala.</p>` : ''}
+    ${rapidos.length ? html`<div class="col-rapidos"><p class="etiqueta col-rapidos__rot">Filtrar pela ficha técnica</p><div class="rolagem col-rapidos__rol"><ul class="col-rapidos__lista" role="list">${rapidos.flatMap((g, gi) => g.vs.map(([v, n], vi) => html`<li${attrs({ class: gi && !vi ? 'col-rapidos__novo' : null })}><button class="col-chip col-chip--rap" type="button" data-col-rapido="${{ Forma: 'fo', Lugares: 'lu', Material: 'ma', Configuracao: 'co' }[g.k]}" data-valor="${v}" aria-pressed="false">${v}<span class="num">${n}</span></button></li>`))}</ul></div></div>` : ''}
+    ${S ? html`<p class="col-legenda"><svg class="cart__ctn" viewBox="-1 -1 102 72" aria-hidden="true" focusable="false"><rect x="0" y="12" width="70" height="46" rx="3"/><path class="cart__ctn-regua" d="M0 67H100M0 63.4V70M100 63.4V70"/></svg>O desenho ao lado da medida é a peça vista de cima, sobre uma régua do comprimento da maior peça desta página. Todas estão na mesma escala.</p>` : ''}
     <ol class="col-grade" role="list" data-col-grade>${(() => {
       // Cartões vizinhos não repetem a mesma foto (versões irmãs têm a mesma galeria): cada cartão evita
       // as fotos dos dois anteriores, quando a própria galeria tiver outra.
+      // Versões irmãs: a primeira da grade aparece com as outras em chips; as demais ficam no HTML (sem JS,
+      // todas aparecem) e o colecao.js refaz o agrupamento a cada filtro e ordenação.
       const recentes = [];
-      return lista.map((p, i) => {
+      const vistos = new Set();
+      let k = 0;
+      return grade0.map((p) => {
         const fx = faixas.map((c, j) => ((p.d_categorias_paths || []).includes(c.d_path) ? j : -1)).filter((j) => j >= 0);
         const foto = fotoCartao(p.slug, new Set(recentes));
-        recentes.push(foto?.sha1 || null);
-        if (recentes.length > 2) recentes.shift();
-        return cartao(p, { pos: i, S, faixas: fx, prioridade: i < 2, lqip: i < 6, foto, sizes: SIZES_GRADE });
+        const grupo = grupos.get(p.slug) || null;
+        const agrupada = Boolean(grupo && vistos.has(grupo.id));
+        if (grupo) vistos.add(grupo.id);
+        // Lazy, LQIP e prioridade contam só os cartões que aparecem na primeira tela.
+        const i = agrupada ? Infinity : k++;
+        if (!agrupada) { recentes.push(foto?.sha1 || null); if (recentes.length > 2) recentes.shift(); }
+        return cartao(p, { pos: lista.indexOf(p), S, faixas: fx, prioridade: i < 2, lqip: i < 6, foto, sizes: SIZES_GRADE, grupo, agrupada });
       });
     })()}</ol>
+    ${nSemFoto ? html`<p class="col-legenda col-nota-sf">${nSemFoto === 1 ? 'O modelo sem foto publicada aparece' : `Os ${nSemFoto} modelos sem foto publicada aparecem`} no fim da lista, com o desenho em escala a partir das medidas do site.</p>` : ''}
     <div class="col-vazio" data-col-vazio hidden>
       <p class="col-vazio__t">Nenhuma peça desta coleção atende a todos os filtros.</p>
       <p><button class="btn btn--fantasma" type="button" data-col-limpar>Limpar os filtros</button> <a class="btn" href="${url('escolher.html')}">${icone('regua', { tamanho: 18 })}Escolher pelo meu espaço</a></p>
@@ -337,11 +380,12 @@ export function paginas(ctx) {
     // Sem filme, a primeira foto da grade costuma ser o LCP: pré-carregada com o mesmo srcset e sizes do
     // cartão (SPEC 12: LCP da coleção é o H1 ou a primeira foto).
     // Com filme, o poster quadrado (cerca de 13 KB) fica na primeira tela em todas as larguras.
-    const f0 = lista[0] ? fotoCartao(lista[0].slug) : null;
+    const f0 = grade0[0] ? fotoCartao(grade0[0].slug) : null;
     const av0 = f0?.fontes?.find((x) => x.type === 'image/avif');
     const preCartao = av0 ? { as: 'image', type: 'image/avif', fetchpriority: 'high', imagesrcset: av0.srcset, imagesizes: SIZES_GRADE } : null;
-    const preload = filme?.avif
-      ? [{ href: filme.avif, as: 'image', type: 'image/avif', fetchpriority: 'high' }, ...(preCartao ? [{ ...preCartao, media: '(max-width:1023px)' }] : [])]
+    const avD = filme?.foto?.fontes?.find((x) => x.type === 'image/avif');
+    const preload = avD
+      ? [{ as: 'image', type: 'image/avif', fetchpriority: 'high', imagesrcset: avD.srcset, imagesizes: SIZES_DESTAQUE }]
       : preCartao ? [preCartao] : [];
     out.push({
       saida: cat.d_path,
@@ -353,7 +397,7 @@ export function paginas(ctx) {
         og: existsSync(join(paths.public, 'media', 'og', `${cat.d_path.replace(/\.html$/, '').replace(/\//g, '--')}.jpg`))
           ? { imagem: `media/og/${cat.d_path.replace(/\.html$/, '').replace(/\//g, '--')}.jpg` } : {},
         jsonld: [jsonld],
-        modulos: temAgua && !filme ? ['colecao', 'agua'] : ['colecao'],
+        modulos: temAgua ? ['colecao', 'agua'] : ['colecao'],
         ativo: trilha[1]?.path || cat.d_path,
         sobre: true,
         preload,

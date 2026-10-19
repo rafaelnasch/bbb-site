@@ -176,6 +176,7 @@ export function doca(p, c) {
         ? html`<a${attrs({ class: 'btn btn--whats doca__btn', href: c.waEsgotado, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'doca_esgotado', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}Perguntar</a>`
         : html`<a${attrs({ class: 'btn btn--whats doca__btn', href: c.waCompra, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'doca', 'data-wa-sync': 'venda', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}<span>Comprar<span class="doca__longo"> pelo WhatsApp</span></span></a>`}
       <a class="doca__cons" href="${url('consultores.html')}" data-gaveta-abrir="gaveta-whats" data-gaveta-foco="consultores" aria-label="Escolher meu consultor">${icone('pessoas', { tamanho: 18 })}<span class="doca__cons-t" aria-hidden="true">Consultor</span></a>
+      <a class="doca__cons doca__cmp" href="${url('comparar.html')}" data-comparar-contador data-n="0" aria-label="Comparar modelos: 0 de 3 escolhidos">${icone('comparar', { tamanho: 18 })}<span class="num" data-comparar-n data-n="0" aria-hidden="true">0</span></a>
     </div>
   </div>
 </div>`;

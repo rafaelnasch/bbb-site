@@ -26,6 +26,9 @@
     return {
       li,
       pos: Number(li.dataset.pos),
+      sf: li.dataset.sf ? 1 : 0,
+      gr: li.dataset.gr || null,
+      slug: li.dataset.slug,
       fo: li.dataset.fo, lu: li.dataset.lu, ma: li.dataset.ma, co: li.dataset.co,
       fx: new Set((li.dataset.fx || '').split(',').filter(Boolean)),
       tr: (li.dataset.tr || '').split('|'),
@@ -134,7 +137,8 @@
   }
 
   const ORD = {
-    posicao: (a, b) => a.pos - b.pos,
+    // Ordem do catálogo, com as peças sem foto publicada no fim (como no HTML).
+    posicao: (a, b) => a.sf - b.sf || a.pos - b.pos,
     'menor-medida': (a, b) => a.menorMedida - b.menorMedida || a.pos - b.pos,
     'maior-medida': (a, b) => b.maiorMedida - a.maiorMedida || a.pos - b.pos,
     'menor-preco': (a, b) => (a.p ?? Infinity) - (b.p ?? Infinity) || a.pos - b.pos,
@@ -146,6 +150,32 @@
     grade.append(...[...itens].sort(f).map((x) => x.li));
   }
 
+  // ---------- Versões irmãs juntas ----------
+  // Na ordem atual da grade, só a primeira versão de cada família que passa nos filtros aparece; os chips
+  // dela mostram as versões que também passam. "Versões juntas" desligado: cada versão no seu cartão.
+  const btnAgrupar = $('[data-col-agrupar]');
+  let agrupar = Boolean(btnAgrupar);
+  const porSlug = new Map(itens.map((it) => [it.slug, it]));
+  function agrupa() {
+    const vistos = new Set();
+    for (const li of grade.children) {
+      const it = porSlug.get(li.dataset.slug);
+      if (!it?.gr) continue;
+      const vis = !li.hidden;
+      li.toggleAttribute('data-agrupada', agrupar && vis && vistos.has(it.gr));
+      if (vis) vistos.add(it.gr);
+      li.querySelectorAll('.cart__vs > [data-v]').forEach((v) => { v.hidden = Boolean(porSlug.get(v.dataset.v)?.li.hidden); });
+      const vs = li.querySelector('.cart__vs');
+      if (vs) vs.hidden = !agrupar;
+    }
+  }
+  btnAgrupar?.addEventListener('click', () => {
+    agrupar = !agrupar;
+    btnAgrupar.setAttribute('aria-pressed', String(agrupar));
+    agrupa();
+    BBB.anunciar?.(agrupar ? 'Versões de cada peça juntas num cartão.' : 'Cada versão no seu cartão.');
+  });
+
   let ultimo = itens.length;
   function aplicar(anim) {
     const s = estado();
@@ -155,6 +185,7 @@
       it.li.hidden = !ok;
       if (ok) n++;
     }
+    agrupa();
     const txt = n === 1 ? 'peça' : 'peças';
     const nEl = $('[data-col-n]');
     if (nEl) nEl.textContent = n;
@@ -289,7 +320,7 @@
     const ligar = () => {
       if (BBB.lite || filme.dataset.ok) return;
       filme.dataset.ok = '1';
-      for (const [k, tp] of [['webm', 'video/webm'], ['mp4', 'video/mp4']]) {
+      for (const [k, tp] of (filme.dataset.ordem || 'webm,mp4').split(',').map((x) => [x, x === 'webm' ? 'video/webm' : 'video/mp4'])) {
         const s = d.createElement('source');
         s.src = filme.dataset[k];
         s.type = tp;

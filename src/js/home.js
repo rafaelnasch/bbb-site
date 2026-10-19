@@ -119,7 +119,7 @@
   const ligarFilme = (v, alvo) => {
     if (BBB.lite || v.dataset.ok) return;
     v.dataset.ok = '1';
-    for (const [k, tp] of [['webm', 'video/webm'], ['mp4', 'video/mp4']]) {
+    for (const [k, tp] of (v.dataset.ordem || 'webm,mp4').split(',').map((x) => [x, x === 'webm' ? 'video/webm' : 'video/mp4'])) {
       const s = d.createElement('source');
       s.src = v.dataset[k];
       s.type = tp;

@@ -301,5 +301,17 @@
     });
   }
 
+  // ---------- Faixas que rolam na sala: máscara nas pontas só quando há o que rolar ----------
+  const rolas = $$('.sala .rolagem');
+  if (rolas.length) {
+    const marcar = (el) => {
+      const max = el.scrollWidth - el.clientWidth;
+      const x = Math.abs(el.scrollLeft);
+      el.dataset.rola = max < 2 ? '' : x < 2 ? 'dir' : x > max - 2 ? 'esq' : 'ambos';
+    };
+    rolas.forEach((el) => { marcar(el); el.addEventListener('scroll', () => marcar(el), { passive: true }); });
+    if ('ResizeObserver' in w) { const ro = new ResizeObserver((es) => es.forEach((e) => marcar(e.target))); rolas.forEach((el) => ro.observe(el)); }
+  }
+
   pintar();
 })();

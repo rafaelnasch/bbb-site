@@ -243,7 +243,11 @@
     const ligar = () => {
       if (BBB.lite || filme.dataset.ok) return;
       filme.dataset.ok = '1';
-      for (const [k, t] of [['webm', 'video/webm'], ['mp4', 'video/mp4']]) {
+      // Tela estreita: só a versão de 640 px (a área do filme tem cerca de 360 px). Senão, o formato menor primeiro.
+      const leve = filme.dataset.mp4Leve && w.matchMedia('(max-width:599px)').matches;
+      const fontes = leve ? [['mp4Leve', 'video/mp4']] : (filme.dataset.ordem || 'webm,mp4').split(',').map((k) => [k, k === 'webm' ? 'video/webm' : 'video/mp4']);
+      for (const [k, t] of fontes) {
+        if (!filme.dataset[k]) continue;
         const s = d.createElement('source');
         s.src = filme.dataset[k];
         s.type = t;

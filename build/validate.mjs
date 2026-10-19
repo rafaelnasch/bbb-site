@@ -267,7 +267,9 @@ export async function validar(dist = paths.dist) {
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const dist = process.argv[2] || paths.dist;
+  // `npm run build -- --skip-media` acrescenta a flag só ao fim do script (aqui): argumento com "--" não é
+  // pasta. A mídia já vem pré-gerada e versionada em public/media; o render nunca gera mídia.
+  const dist = process.argv.slice(2).find((a) => !a.startsWith('--')) || paths.dist;
   validar(dist).then(({ erros, pendentes, paginas }) => {
     for (const p of pendentes) console.log(`validate: pendente · ${p}`);
     if (erros.length) {

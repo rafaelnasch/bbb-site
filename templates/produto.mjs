@@ -217,6 +217,21 @@ ${rotulos ? `<path d="M${x.toFixed(1)} ${(y - 9).toFixed(1)}h${w.toFixed(1)}M${(
 </svg>`);
 }
 
+/** Arte estática do topo para planta sem filme (build/plantas-topo.mjs): só a folha do desenho. */
+let _topo;
+function topoPlanta(sha1) {
+  if (_topo === undefined) {
+    const f = join(paths.public, 'media', 'plantas', 'topo.json');
+    try { _topo = existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')).plantas || {} : {}; } catch { _topo = {}; }
+  }
+  const t = _topo[sha1];
+  if (!t) return null;
+  const rel = (w, e) => `media/plantas/${sha1}/topo-${w}.${e}`;
+  if (![600, 1200].every((w) => ['avif', 'webp'].every((e) => existsSync(join(paths.public, rel(w, e)))))) return null;
+  const ss = (e) => `${url(rel(600, e))} 600w, ${url(rel(1200, e))} 1200w`;
+  return { webp: url(rel(1200, 'webp')), avif: url(rel(1200, 'avif')), srcsetAvif: ss('avif'), srcsetWebp: ss('webp'), w: t.largura, h: t.altura };
+}
+
 /** Filme da planta (bloco 8), quando já gerado para esta planta; senão, só o poster estático. */
 function filmeDaPlanta(sha1) {
   const man = filmes();
@@ -227,7 +242,10 @@ function filmeDaPlanta(sha1) {
   if (!ok || !poster || !existsSync(join(paths.public, poster))) return null;
   const webp = f.poster.webp?.src && existsSync(join(paths.public, f.poster.webp.src)) ? url(f.poster.webp.src) : null;
   const avif = f.poster.avif?.src && existsSync(join(paths.public, f.poster.avif.src)) ? url(f.poster.avif.src) : null;
-  return { webm: url(f.webm.src), mp4: url(f.mp4.src), poster: url(poster), posterWebp: webp, posterAvif: avif, w: f.largura || 1280, h: f.altura || 720, aria: f.aria_label || null };
+  // Primeiro o formato menor deste filme (o WebM costuma sair maior que o MP4) e, em tela estreita, a versão de 640 px.
+  const ordem = (f.mp4.bytes || 0) <= (f.webm.bytes || Infinity) ? 'mp4,webm' : 'webm,mp4';
+  const leve = f.mp4_640?.src && existsSync(join(paths.public, f.mp4_640.src)) ? url(f.mp4_640.src) : null;
+  return { webm: url(f.webm.src), mp4: url(f.mp4.src), leve, ordem, poster: url(poster), posterWebp: webp, posterAvif: avif, w: f.largura || 1280, h: f.altura || 720, aria: f.aria_label || null };
 }
 let _filmes;
 function filmes() {
@@ -462,7 +480,20 @@ export function paginas(ctx) {
       w: filme.w,
       h: filme.h,
       preload: filme.posterAvif ? { href: filme.posterAvif, type: 'image/avif' } : { href: filme.posterWebp || filme.poster, type: 'image/webp' },
-    } : plIni?.media ? (() => {
+    } : plIni?.media && topoPlanta(plIni.sha1) ? (() => {
+      // Plano B sem filme: só a folha do desenho, com o tratamento do poster dos filmes (build/plantas-topo.mjs).
+      const t = topoPlanta(plIni.sha1);
+      return {
+        tipo: 'planta-folha',
+        src: t.webp,
+        avif: t.avif,
+        srcsetAvif: t.srcsetAvif,
+        srcset: t.srcsetWebp,
+        w: t.w,
+        h: t.h,
+        preload: { type: 'image/avif', imagesrcset: t.srcsetAvif, imagesizes: POSTER_SIZES },
+      };
+    })() : plIni?.media ? (() => {
       const base = `media/plantas/${plIni.sha1}`;
       const z0 = plIni.media.niveis?.find((n) => n.z === 0 && n.colunas === 1 && n.linhas === 1);
       const temZ0 = z0 && existsSync(join(paths.public, base, 'z0', '0_0.webp'));
@@ -500,9 +531,9 @@ export function paginas(ctx) {
     const topo = html`<section class="sala prod-topo letterbox${arte ? ` prod-topo--${arte.tipo}` : ' prod-topo--sem-arte'}" aria-labelledby="prod-h1">
   ${!arte && numeroGrande ? html`<div class="prod-topo__fundo" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;overflow:hidden"><p class="prod-topo__num" style="position:absolute;right:0;top:calc(var(--cab-h) + 8px);margin:0;font:300 clamp(9rem,58vw,24rem)/.8 var(--f-display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 40%,transparent);white-space:nowrap">${p.sku}</p></div>` : ''}
   ${arte ? html`<div class="prod-topo__fundo" aria-hidden="true">
-    <div class="prod-topo__arte" style="aspect-ratio:${arte.w}/${arte.h}${arte.tipo === 'filme' ? ';opacity:.7' : arte.tipo === 'desenho' ? ';color:var(--line);opacity:.75;--arte-w:36%;--arte-d:5%' : ''}">
-      ${arte.svg || ''}${arte.svg ? '' : html`${arte.avif ? html`<picture><source type="image/avif" srcset="${arte.avif}">` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1);mix-blend-mode:screen' : null })}>${arte.avif ? html`</picture>` : ''}
-      ${filme ? html`<video class="prod-topo__filme" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, 'aria-label': filme.aria, width: arte.w, height: arte.h })} muted playsinline loop preload="none"></video>` : ''}`}
+    <div class="prod-topo__arte" style="aspect-ratio:${arte.w}/${arte.h}${arte.tipo === 'filme' || arte.tipo === 'planta-folha' ? ';opacity:.7' : arte.tipo === 'desenho' ? ';color:var(--line);opacity:.75;--arte-w:36%;--arte-d:5%' : ''}">
+      ${arte.svg || ''}${arte.svg ? '' : html`${arte.avif ? html`<picture><source type="image/avif"${attrs({ srcset: arte.srcsetAvif || arte.avif, sizes: arte.srcsetAvif ? POSTER_SIZES : null })}>` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1) hue-rotate(180deg);mix-blend-mode:screen' : null })}>${arte.avif ? html`</picture>` : ''}
+      ${filme ? html`<video class="prod-topo__filme" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, 'data-mp4-leve': filme.leve, 'data-ordem': filme.ordem, 'aria-label': filme.aria, width: arte.w, height: arte.h })} muted playsinline loop preload="none"></video>` : ''}`}
     </div>
   </div>` : ''}
   <div class="wrap prod-topo__in">

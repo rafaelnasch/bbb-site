@@ -4,7 +4,9 @@
 .moldura__img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background-size:cover}
 .moldura__leg{margin-top:10px;font-size:.75rem;letter-spacing:.06em;color:var(--muted-on-dark);text-align:center}
 .moldura--vazia{display:grid;place-items:center;aspect-ratio:1;color:var(--muted-on-dark);text-align:center;font-size:.9375rem}
-.moldura--vazia p{max-width:24ch;padding:16px}
+/* Moldura vazia (Spa Serena): o texto é o LCP da página, por isso fica aqui, sem letterbox. */
+.moldura__vazia{display:grid;justify-items:center;gap:12px}
+.moldura--vazia p{max-width:24ch;padding:16px;font:300 1.375rem/1.25 var(--f-display);color:var(--porcelain)}
 /* Letterbox de abertura (SPEC 6.2, P1): inset(10% 0) até 0 em 1,6 s. */
 .letterbox{animation:letterbox 1.6s var(--ease-out) both}
 @keyframes letterbox{from{clip-path:inset(10% 0)}to{clip-path:inset(0)}}

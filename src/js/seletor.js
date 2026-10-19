@@ -41,10 +41,21 @@
     d.dispatchEvent(new CustomEvent('bbb:tamanho', { detail: det }));
   });
 
-  // Estado restaurado pelo navegador (voltar): alinha o painel ao rádio marcado.
-  const marcado = form.querySelector('input[name="tamanho"]:checked');
-  if (marcado && Number(marcado.dataset.i) !== 0) {
-    mostrar(Number(marcado.dataset.i));
-    d.dispatchEvent(new CustomEvent('bbb:tamanho', { detail: detalhe(marcado) }));
-  }
+  // Estado restaurado pelo navegador (voltar, com ou sem bfcache): o navegador pode devolver o rádio
+  // marcado depois deste script rodar. Alinha painel e ferramentas ao rádio marcado na carga, no load,
+  // no pageshow e no quadro seguinte a cada um deles.
+  let atual = 0;
+  const sincronizar = () => {
+    const m = form.querySelector('input[name="tamanho"]:checked');
+    const i = m ? Number(m.dataset.i) || 0 : 0;
+    if (i === atual) return;
+    atual = i;
+    mostrar(i);
+    if (m) d.dispatchEvent(new CustomEvent('bbb:tamanho', { detail: detalhe(m) }));
+  };
+  form.addEventListener('change', (e) => { if (e.target.name === 'tamanho' && e.target.checked) atual = Number(e.target.dataset.i) || 0; });
+  const depois = () => { sincronizar(); requestAnimationFrame(sincronizar); setTimeout(sincronizar, 0); };
+  sincronizar();
+  window.addEventListener('load', depois);
+  window.addEventListener('pageshow', depois);
 })();

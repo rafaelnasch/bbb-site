@@ -24,8 +24,8 @@
 .prod{padding-top:8px}
 .prod__grade{display:grid;gap:40px;align-items:start}.prod__grade>*{min-width:0}
 .moldura--peca .moldura__img{aspect-ratio:auto;object-fit:contain}
-.galeria__base{display:flex;align-items:center;justify-content:space-between;min-height:44px}
-@media (min-width:1024px){.prod-topo__h1{max-width:min(28ch,56vw - var(--pad-x))}.prod-topo--desenho .prod-topo__h1{max-width:min(28ch,52vw - var(--pad-x) - 24px)}.prod-topo--sem-arte .prod-topo__h1{max-width:28ch}.prod-topo__arte{right:var(--arte-d,-6%);top:calc(var(--cab-h) + 8px);width:var(--arte-w,min(1080px,62%))}.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 5}}
+/* Desktop: título mais baixo e moldura no limite da altura da tela, para a peça inteira caber na primeira tela. */
+@media (min-width:1024px){.prod-topo__h1{max-width:min(28ch,56vw - var(--pad-x));font-size:clamp(2.25rem,1rem + 2.4vw,3.5rem)}.prod__peca{width:min(100%,max(400px,100svh - 470px));justify-self:center}.prod-topo--desenho .prod-topo__h1{max-width:min(28ch,52vw - var(--pad-x) - 24px)}.prod-topo--sem-arte .prod-topo__h1{max-width:28ch}.prod-topo__arte{right:var(--arte-d,-6%);top:calc(var(--cab-h) + 8px);width:var(--arte-w,min(1080px,62%))}.prod__grade{grid-template-columns:7fr 5fr;column-gap:56px}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 5}}
 /* Coluna de decisão e miniaturas da galeria: com a foto na primeira tela, o topo da coluna também está nela. */
 .prod__decisao{padding:clamp(20px,2.4vw,32px);border-radius:22px}
 .decisao__in{display:grid;gap:22px}
@@ -33,8 +33,6 @@
 .preco__por{font:300 clamp(2.125rem,1.6rem + 2vw,2.875rem)/1 var(--f-display)}
 .seletor__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,168px),1fr));gap:8px}
 .seletor__cartao{display:grid;gap:8px;min-height:72px;padding:12px 14px}
-.galeria__mini{display:flex;gap:10px;margin-top:10px;overflow-x:auto}
-.galeria__mini-img{width:72px;height:72px}
 .versoes__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:8px}
 .versoes__chip{display:grid;min-height:56px;padding:10px 14px}
 /* Celular: o desenho em escala (com textos) não fica atrás do título; ele aparece inteiro na seção 6. */

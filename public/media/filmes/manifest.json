@@ -77,7 +77,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/b0e12533a00c6459ef3c65d945fa631de888b8fd-640.mp4",
+    "bytes": 66065,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948": {
    "sha1": "2a5b222ab15a3f2222776b8c68ded8a2a5ac4948",
@@ -151,7 +159,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/2a5b222ab15a3f2222776b8c68ded8a2a5ac4948-640.mp4",
+    "bytes": 64316,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "e2a1e5dcf9de6dc151174da7fd4a3eab35215763": {
    "sha1": "e2a1e5dcf9de6dc151174da7fd4a3eab35215763",
@@ -225,7 +241,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/e2a1e5dcf9de6dc151174da7fd4a3eab35215763-640.mp4",
+    "bytes": 63320,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "def36ce9953ccd82a0287455bbe3e52f44ec6b45": {
    "sha1": "def36ce9953ccd82a0287455bbe3e52f44ec6b45",
@@ -295,7 +319,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/def36ce9953ccd82a0287455bbe3e52f44ec6b45-640.mp4",
+    "bytes": 65439,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa": {
    "sha1": "18c355878e7247e4e1c3cd5dca7b528d54dfb4aa",
@@ -373,7 +405,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/18c355878e7247e4e1c3cd5dca7b528d54dfb4aa-640.mp4",
+    "bytes": 64194,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "2b7888d7c5536e763ae9febdbec02852ee5ed770": {
    "sha1": "2b7888d7c5536e763ae9febdbec02852ee5ed770",
@@ -451,7 +491,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/2b7888d7c5536e763ae9febdbec02852ee5ed770-640.mp4",
+    "bytes": 64986,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "f92fe93f38680b0a646460c4beaf418d8e9e6dd6": {
    "sha1": "f92fe93f38680b0a646460c4beaf418d8e9e6dd6",
@@ -525,7 +573,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/f92fe93f38680b0a646460c4beaf418d8e9e6dd6-640.mp4",
+    "bytes": 64975,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de": {
    "sha1": "dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de",
@@ -595,7 +651,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/dca63190a5dd4d08e80b8ce3f9fcbd2d42ea60de-640.mp4",
+    "bytes": 61918,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "2f7bff2ff06d1f862ff22104d20f1e8dd368e621": {
    "sha1": "2f7bff2ff06d1f862ff22104d20f1e8dd368e621",
@@ -661,7 +725,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/2f7bff2ff06d1f862ff22104d20f1e8dd368e621-640.mp4",
+    "bytes": 67461,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "7821d87845f46eadddcd42b195cd974566f07ba7": {
    "sha1": "7821d87845f46eadddcd42b195cd974566f07ba7",
@@ -731,7 +803,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/7821d87845f46eadddcd42b195cd974566f07ba7-640.mp4",
+    "bytes": 68071,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2": {
    "sha1": "94f181d2c8aabd4339cefe5ce8af9a0fa235baf2",
@@ -809,7 +889,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/94f181d2c8aabd4339cefe5ce8af9a0fa235baf2-640.mp4",
+    "bytes": 71194,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "a3b134fb38e709e8f9e58e132d945ff817391aa4": {
    "sha1": "a3b134fb38e709e8f9e58e132d945ff817391aa4",
@@ -875,7 +963,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/a3b134fb38e709e8f9e58e132d945ff817391aa4-640.mp4",
+    "bytes": 64304,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7": {
    "sha1": "d9ea90ea112acb9417a1701b80aa42fa6ffe73d7",
@@ -949,7 +1045,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/d9ea90ea112acb9417a1701b80aa42fa6ffe73d7-640.mp4",
+    "bytes": 64979,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "f613861013988bf8cc0465cf725352ed950c4cf4": {
    "sha1": "f613861013988bf8cc0465cf725352ed950c4cf4",
@@ -1015,7 +1119,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/f613861013988bf8cc0465cf725352ed950c4cf4-640.mp4",
+    "bytes": 66822,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "a1c2f6faa8bc36a5751cf514762bfd35388e07a0": {
    "sha1": "a1c2f6faa8bc36a5751cf514762bfd35388e07a0",
@@ -1081,7 +1193,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/a1c2f6faa8bc36a5751cf514762bfd35388e07a0-640.mp4",
+    "bytes": 63624,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "926dee707b0d55c211203de0207e0d1c07ff2b3d": {
    "sha1": "926dee707b0d55c211203de0207e0d1c07ff2b3d",
@@ -1147,7 +1267,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/926dee707b0d55c211203de0207e0d1c07ff2b3d-640.mp4",
+    "bytes": 66883,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "c5188ae8dbeb870443aab3fa3a1e365d587972b0": {
    "sha1": "c5188ae8dbeb870443aab3fa3a1e365d587972b0",
@@ -1213,7 +1341,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/c5188ae8dbeb870443aab3fa3a1e365d587972b0-640.mp4",
+    "bytes": 63315,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "35dd55c5f3fd308af20709e881e7003f631c085c": {
    "sha1": "35dd55c5f3fd308af20709e881e7003f631c085c",
@@ -1279,7 +1415,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/35dd55c5f3fd308af20709e881e7003f631c085c-640.mp4",
+    "bytes": 61198,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "64d07c6a24ac1c68cfa9b6efba133babc9cd6169": {
    "sha1": "64d07c6a24ac1c68cfa9b6efba133babc9cd6169",
@@ -1357,7 +1501,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/64d07c6a24ac1c68cfa9b6efba133babc9cd6169-640.mp4",
+    "bytes": 64839,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7": {
    "sha1": "49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7",
@@ -1435,7 +1587,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/49eec9fe0e49cda24c96e52ae2bb5bb9a3c85db7-640.mp4",
+    "bytes": 66098,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "a1a7715851daa411970ff2a412c691d8230772f2": {
    "sha1": "a1a7715851daa411970ff2a412c691d8230772f2",
@@ -1505,7 +1665,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/a1a7715851daa411970ff2a412c691d8230772f2-640.mp4",
+    "bytes": 66055,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "556eb4d6147d98571ded2133767941fbd8a9ba0f": {
    "sha1": "556eb4d6147d98571ded2133767941fbd8a9ba0f",
@@ -1575,7 +1743,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/556eb4d6147d98571ded2133767941fbd8a9ba0f-640.mp4",
+    "bytes": 67428,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "7fd5339ed299785b5e7805412980a556274d45dc": {
    "sha1": "7fd5339ed299785b5e7805412980a556274d45dc",
@@ -1645,7 +1821,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/7fd5339ed299785b5e7805412980a556274d45dc-640.mp4",
+    "bytes": 66761,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667": {
    "sha1": "c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667",
@@ -1719,7 +1903,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/c63b66d88ad47a379f9f00a6b0c7b1ff09e0d667-640.mp4",
+    "bytes": 64541,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "f5e1c50d831639980e6ebd428274d3c8ca78166c": {
    "sha1": "f5e1c50d831639980e6ebd428274d3c8ca78166c",
@@ -1781,7 +1973,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/f5e1c50d831639980e6ebd428274d3c8ca78166c-640.mp4",
+    "bytes": 64571,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "abd44c6659463bdbfb775d37efdaf9c63dc7b8f9": {
    "sha1": "abd44c6659463bdbfb775d37efdaf9c63dc7b8f9",
@@ -1851,7 +2051,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/abd44c6659463bdbfb775d37efdaf9c63dc7b8f9-640.mp4",
+    "bytes": 64200,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "12f5ed700428073bb6caaa40231020d589fdabfb": {
    "sha1": "12f5ed700428073bb6caaa40231020d589fdabfb",
@@ -1921,7 +2129,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/12f5ed700428073bb6caaa40231020d589fdabfb-640.mp4",
+    "bytes": 67090,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "e9c26dfc3290225e8e996201d24f49d8a8b301e4": {
    "sha1": "e9c26dfc3290225e8e996201d24f49d8a8b301e4",
@@ -1995,7 +2211,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/e9c26dfc3290225e8e996201d24f49d8a8b301e4-640.mp4",
+    "bytes": 62729,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "d8ac367b4d99e7e69f53f823618caa367a1829da": {
    "sha1": "d8ac367b4d99e7e69f53f823618caa367a1829da",
@@ -2069,7 +2293,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/d8ac367b4d99e7e69f53f823618caa367a1829da-640.mp4",
+    "bytes": 62588,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "886217edc4018851a658a5be77f7c224960b62f0": {
    "sha1": "886217edc4018851a658a5be77f7c224960b62f0",
@@ -2143,7 +2375,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/886217edc4018851a658a5be77f7c224960b62f0-640.mp4",
+    "bytes": 66697,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "59f09ba69f10aea74c31e45a852c41d90b926cd8": {
    "sha1": "59f09ba69f10aea74c31e45a852c41d90b926cd8",
@@ -2217,7 +2457,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/59f09ba69f10aea74c31e45a852c41d90b926cd8-640.mp4",
+    "bytes": 63431,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac": {
    "sha1": "527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac",
@@ -2291,7 +2539,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/527b96f8a8c7c9ae6e467419ab4bd8ef14fc81ac-640.mp4",
+    "bytes": 64168,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1": {
    "sha1": "bb537bb93e422b1266d7e51c7a40fdc7f51eeba1",
@@ -2369,7 +2625,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/bb537bb93e422b1266d7e51c7a40fdc7f51eeba1-640.mp4",
+    "bytes": 67366,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b": {
    "sha1": "21fe4e39d1dc06a1d3661f8aa97e7e69479b491b",
@@ -2443,7 +2707,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/21fe4e39d1dc06a1d3661f8aa97e7e69479b491b-640.mp4",
+    "bytes": 64782,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "045afa71db34a2c697c5f487eac51c399694a7c0": {
    "sha1": "045afa71db34a2c697c5f487eac51c399694a7c0",
@@ -2517,7 +2789,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/045afa71db34a2c697c5f487eac51c399694a7c0-640.mp4",
+    "bytes": 66758,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "cdec52b5de727a9b07db3dad5edafedd0bac6070": {
    "sha1": "cdec52b5de727a9b07db3dad5edafedd0bac6070",
@@ -2587,7 +2867,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/cdec52b5de727a9b07db3dad5edafedd0bac6070-640.mp4",
+    "bytes": 64810,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed": {
    "sha1": "8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed",
@@ -2661,7 +2949,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/8eea27c792d761bc3d1fdfb3248b613b6d2cf3ed-640.mp4",
+    "bytes": 65720,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "0231cc09abc1515351d5a4c90bd9fcad41104fc6": {
    "sha1": "0231cc09abc1515351d5a4c90bd9fcad41104fc6",
@@ -2739,7 +3035,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/0231cc09abc1515351d5a4c90bd9fcad41104fc6-640.mp4",
+    "bytes": 64623,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "ebcc35fa35c11a3aa61b59a5398906422a3e17b9": {
    "sha1": "ebcc35fa35c11a3aa61b59a5398906422a3e17b9",
@@ -2813,7 +3117,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/ebcc35fa35c11a3aa61b59a5398906422a3e17b9-640.mp4",
+    "bytes": 63197,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "7d9ae0d309fc6217c58bf4496e163b04d3205495": {
    "sha1": "7d9ae0d309fc6217c58bf4496e163b04d3205495",
@@ -2883,7 +3195,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/7d9ae0d309fc6217c58bf4496e163b04d3205495-640.mp4",
+    "bytes": 66192,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "e335c3714e5ab105af39ea471b5a51f0907a6395": {
    "sha1": "e335c3714e5ab105af39ea471b5a51f0907a6395",
@@ -2957,7 +3277,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/e335c3714e5ab105af39ea471b5a51f0907a6395-640.mp4",
+    "bytes": 71247,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "37c5b627e3f5b623b2bde93508786fa399aef10c": {
    "sha1": "37c5b627e3f5b623b2bde93508786fa399aef10c",
@@ -3031,7 +3359,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/37c5b627e3f5b623b2bde93508786fa399aef10c-640.mp4",
+    "bytes": 67187,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "870534e943f93a69e2c569831db4a7f1e82f76f4": {
    "sha1": "870534e943f93a69e2c569831db4a7f1e82f76f4",
@@ -3105,7 +3441,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/870534e943f93a69e2c569831db4a7f1e82f76f4-640.mp4",
+    "bytes": 67367,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "16f26697b4c035267fd0fcab27562391cc8f8261": {
    "sha1": "16f26697b4c035267fd0fcab27562391cc8f8261",
@@ -3179,7 +3523,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/16f26697b4c035267fd0fcab27562391cc8f8261-640.mp4",
+    "bytes": 65886,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "4ade3fbc0ff840928670780a2e1ca09474e22cb5": {
    "sha1": "4ade3fbc0ff840928670780a2e1ca09474e22cb5",
@@ -3249,7 +3601,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/4ade3fbc0ff840928670780a2e1ca09474e22cb5-640.mp4",
+    "bytes": 66831,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "ad3b56e7bdac42d874f2f7e60dd36d010acdc577": {
    "sha1": "ad3b56e7bdac42d874f2f7e60dd36d010acdc577",
@@ -3323,7 +3683,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/ad3b56e7bdac42d874f2f7e60dd36d010acdc577-640.mp4",
+    "bytes": 62522,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "21bc5e68de73fa1b850617f898c7350b2ca73a8d": {
    "sha1": "21bc5e68de73fa1b850617f898c7350b2ca73a8d",
@@ -3401,7 +3769,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/21bc5e68de73fa1b850617f898c7350b2ca73a8d-640.mp4",
+    "bytes": 64355,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "a676f5483de0d538366133b9d4e35340f5625dec": {
    "sha1": "a676f5483de0d538366133b9d4e35340f5625dec",
@@ -3475,7 +3851,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/a676f5483de0d538366133b9d4e35340f5625dec-640.mp4",
+    "bytes": 62108,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "7d386434779346c6b24257aaaa953a2b538953c8": {
    "sha1": "7d386434779346c6b24257aaaa953a2b538953c8",
@@ -3537,7 +3921,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/7d386434779346c6b24257aaaa953a2b538953c8-640.mp4",
+    "bytes": 66491,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "47ccaade016e846ee4f1c106c3e2794e270b79a4": {
    "sha1": "47ccaade016e846ee4f1c106c3e2794e270b79a4",
@@ -3599,7 +3991,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/47ccaade016e846ee4f1c106c3e2794e270b79a4-640.mp4",
+    "bytes": 69146,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "9848385008665582cbe3824837726f1a7d49984c": {
    "sha1": "9848385008665582cbe3824837726f1a7d49984c",
@@ -3673,7 +4073,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/9848385008665582cbe3824837726f1a7d49984c-640.mp4",
+    "bytes": 65909,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "b961cd3067367b7e2cce4c3f8888fd46b3520d00": {
    "sha1": "b961cd3067367b7e2cce4c3f8888fd46b3520d00",
@@ -3747,7 +4155,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/b961cd3067367b7e2cce4c3f8888fd46b3520d00-640.mp4",
+    "bytes": 65982,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "0b50d0f36604f4f43e0c1d038e784082deb96b76": {
    "sha1": "0b50d0f36604f4f43e0c1d038e784082deb96b76",
@@ -3821,7 +4237,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/0b50d0f36604f4f43e0c1d038e784082deb96b76-640.mp4",
+    "bytes": 63986,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "d0ba82515c4cf0e0980e139f4f840e7c146bae46": {
    "sha1": "d0ba82515c4cf0e0980e139f4f840e7c146bae46",
@@ -3895,7 +4319,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/d0ba82515c4cf0e0980e139f4f840e7c146bae46-640.mp4",
+    "bytes": 68744,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "9661d218bb8617683d6d75d354c0e5fdb7f1f251": {
    "sha1": "9661d218bb8617683d6d75d354c0e5fdb7f1f251",
@@ -3969,7 +4401,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/9661d218bb8617683d6d75d354c0e5fdb7f1f251-640.mp4",
+    "bytes": 69315,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "fedda4bbdfb18617ab477029b312cdeb1a3818b9": {
    "sha1": "fedda4bbdfb18617ab477029b312cdeb1a3818b9",
@@ -4043,7 +4483,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/fedda4bbdfb18617ab477029b312cdeb1a3818b9-640.mp4",
+    "bytes": 67515,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "f74c5ad9176df7640a71fbf3781ba8f91f785880": {
    "sha1": "f74c5ad9176df7640a71fbf3781ba8f91f785880",
@@ -4117,7 +4565,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/f74c5ad9176df7640a71fbf3781ba8f91f785880-640.mp4",
+    "bytes": 62575,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "f97e1453710bca840bf3ee3fdf2511e8686957b0": {
    "sha1": "f97e1453710bca840bf3ee3fdf2511e8686957b0",
@@ -4195,7 +4651,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/f97e1453710bca840bf3ee3fdf2511e8686957b0-640.mp4",
+    "bytes": 67956,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "54929a556c2f03a066073d151bb5e71d4ee52c23": {
    "sha1": "54929a556c2f03a066073d151bb5e71d4ee52c23",
@@ -4273,7 +4737,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/54929a556c2f03a066073d151bb5e71d4ee52c23-640.mp4",
+    "bytes": 71461,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334": {
    "sha1": "9e0bf10d4b497b5aaed0118e30cc75a6f37dd334",
@@ -4351,7 +4823,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/9e0bf10d4b497b5aaed0118e30cc75a6f37dd334-640.mp4",
+    "bytes": 70992,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "b10aabe1e49b4798ac5767768e8e935d4f277cb0": {
    "sha1": "b10aabe1e49b4798ac5767768e8e935d4f277cb0",
@@ -4421,7 +4901,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/b10aabe1e49b4798ac5767768e8e935d4f277cb0-640.mp4",
+    "bytes": 68492,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "086cf1509972a791636dcaa016f2d63ee73aa5db": {
    "sha1": "086cf1509972a791636dcaa016f2d63ee73aa5db",
@@ -4499,7 +4987,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/086cf1509972a791636dcaa016f2d63ee73aa5db-640.mp4",
+    "bytes": 68359,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9": {
    "sha1": "6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9",
@@ -4577,7 +5073,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/6b1b8b4c77726b4b3c3c8e2b1b91112c7bab5ec9-640.mp4",
+    "bytes": 67771,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "9d887ddf20dbb13fca423048a085319f32b859c7": {
    "sha1": "9d887ddf20dbb13fca423048a085319f32b859c7",
@@ -4651,7 +5155,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/9d887ddf20dbb13fca423048a085319f32b859c7-640.mp4",
+    "bytes": 64813,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "a4aba49302cf98b1dc62949450052aabe51cb0a4": {
    "sha1": "a4aba49302cf98b1dc62949450052aabe51cb0a4",
@@ -4725,7 +5237,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/a4aba49302cf98b1dc62949450052aabe51cb0a4-640.mp4",
+    "bytes": 63858,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "d03d552049e0919534978c2336a3bdec678c3658": {
    "sha1": "d03d552049e0919534978c2336a3bdec678c3658",
@@ -4795,7 +5315,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/d03d552049e0919534978c2336a3bdec678c3658-640.mp4",
+    "bytes": 66988,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "555a2e2d4ff25502b9fa4c186f7ad55acbd3855d": {
    "sha1": "555a2e2d4ff25502b9fa4c186f7ad55acbd3855d",
@@ -4861,7 +5389,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/555a2e2d4ff25502b9fa4c186f7ad55acbd3855d-640.mp4",
+    "bytes": 66323,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "1b80c946e37a92bc71f41d552892dd5ebf8d3299": {
    "sha1": "1b80c946e37a92bc71f41d552892dd5ebf8d3299",
@@ -4927,7 +5463,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/1b80c946e37a92bc71f41d552892dd5ebf8d3299-640.mp4",
+    "bytes": 63818,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "755183833003f8bdc461a48f95b80de7a8000341": {
    "sha1": "755183833003f8bdc461a48f95b80de7a8000341",
@@ -4993,7 +5537,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/755183833003f8bdc461a48f95b80de7a8000341-640.mp4",
+    "bytes": 66743,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "082fbce11715a25aa6475ff5d592551f6b5a0ee0": {
    "sha1": "082fbce11715a25aa6475ff5d592551f6b5a0ee0",
@@ -5059,7 +5611,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/082fbce11715a25aa6475ff5d592551f6b5a0ee0-640.mp4",
+    "bytes": 63280,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "5209f66f5ce0658331b9c506af6aee8952f44bc1": {
    "sha1": "5209f66f5ce0658331b9c506af6aee8952f44bc1",
@@ -5125,7 +5685,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/5209f66f5ce0658331b9c506af6aee8952f44bc1-640.mp4",
+    "bytes": 65613,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "c6193ba0cce824ec05a016b05dc1a14f20c52674": {
    "sha1": "c6193ba0cce824ec05a016b05dc1a14f20c52674",
@@ -5191,7 +5759,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/c6193ba0cce824ec05a016b05dc1a14f20c52674-640.mp4",
+    "bytes": 65979,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "81525c5620582151c10a9895f9d72b1a3a30f3db": {
    "sha1": "81525c5620582151c10a9895f9d72b1a3a30f3db",
@@ -5257,7 +5833,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/81525c5620582151c10a9895f9d72b1a3a30f3db-640.mp4",
+    "bytes": 65386,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "c46a8cf02ba78b8631b671571593ccc9dd57956c": {
    "sha1": "c46a8cf02ba78b8631b671571593ccc9dd57956c",
@@ -5323,7 +5907,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/c46a8cf02ba78b8631b671571593ccc9dd57956c-640.mp4",
+    "bytes": 64881,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "311a6f9cb811db365f7426d29c7010547848be2a": {
    "sha1": "311a6f9cb811db365f7426d29c7010547848be2a",
@@ -5389,7 +5981,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/311a6f9cb811db365f7426d29c7010547848be2a-640.mp4",
+    "bytes": 66685,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "295b0a6dafd478579ae13b906b0029d214e3666a": {
    "sha1": "295b0a6dafd478579ae13b906b0029d214e3666a",
@@ -5455,7 +6055,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/295b0a6dafd478579ae13b906b0029d214e3666a-640.mp4",
+    "bytes": 68028,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "562dfda879cb813a973368975a5bc01ab1ab2036": {
    "sha1": "562dfda879cb813a973368975a5bc01ab1ab2036",
@@ -5529,7 +6137,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/562dfda879cb813a973368975a5bc01ab1ab2036-640.mp4",
+    "bytes": 63367,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5": {
    "sha1": "99ee8c5773a98d40968f8a9d3b7efa6c09f498d5",
@@ -5603,7 +6219,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/99ee8c5773a98d40968f8a9d3b7efa6c09f498d5-640.mp4",
+    "bytes": 64814,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "a0ae194013f7148890b31a486c55841116de9334": {
    "sha1": "a0ae194013f7148890b31a486c55841116de9334",
@@ -5669,7 +6293,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/a0ae194013f7148890b31a486c55841116de9334-640.mp4",
+    "bytes": 61306,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "c7a9e63a16c405f9285cfcf98dfac149f54a57f6": {
    "sha1": "c7a9e63a16c405f9285cfcf98dfac149f54a57f6",
@@ -5735,7 +6367,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/c7a9e63a16c405f9285cfcf98dfac149f54a57f6-640.mp4",
+    "bytes": 66208,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "99dfd97f24e228e5d49117b25c8a8a3958ea9551": {
    "sha1": "99dfd97f24e228e5d49117b25c8a8a3958ea9551",
@@ -5801,7 +6441,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/99dfd97f24e228e5d49117b25c8a8a3958ea9551-640.mp4",
+    "bytes": 66957,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "798bbf86f9e359d9e510a00c8431ae705004194b": {
    "sha1": "798bbf86f9e359d9e510a00c8431ae705004194b",
@@ -5867,7 +6515,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/798bbf86f9e359d9e510a00c8431ae705004194b-640.mp4",
+    "bytes": 66000,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "e579ee9f079d786192f7315b112e5f8c28a589c6": {
    "sha1": "e579ee9f079d786192f7315b112e5f8c28a589c6",
@@ -5933,7 +6589,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/e579ee9f079d786192f7315b112e5f8c28a589c6-640.mp4",
+    "bytes": 66924,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "cbed836840b19d5bdafc85421d30418c6a5c156b": {
    "sha1": "cbed836840b19d5bdafc85421d30418c6a5c156b",
@@ -5995,7 +6659,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/cbed836840b19d5bdafc85421d30418c6a5c156b-640.mp4",
+    "bytes": 70077,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "329ca78748ba738bb1e2eb7e038189ce9840fde4": {
    "sha1": "329ca78748ba738bb1e2eb7e038189ce9840fde4",
@@ -6061,7 +6733,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/329ca78748ba738bb1e2eb7e038189ce9840fde4-640.mp4",
+    "bytes": 65765,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0": {
    "sha1": "1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0",
@@ -6127,7 +6807,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/1ecf51dd1f8a11036f4e5a002128667e0b8e9ff0-640.mp4",
+    "bytes": 65641,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "4adc81f0e58089b2485191813068fb99e4c688ea": {
    "sha1": "4adc81f0e58089b2485191813068fb99e4c688ea",
@@ -6193,7 +6881,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/4adc81f0e58089b2485191813068fb99e4c688ea-640.mp4",
+    "bytes": 58645,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "aa1bc815e99f4242469fb27c25c65e3b0d35851d": {
    "sha1": "aa1bc815e99f4242469fb27c25c65e3b0d35851d",
@@ -6259,7 +6955,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/aa1bc815e99f4242469fb27c25c65e3b0d35851d-640.mp4",
+    "bytes": 66471,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "9e99439fa6a056b61c7244fa33b6c3df21d2811f": {
    "sha1": "9e99439fa6a056b61c7244fa33b6c3df21d2811f",
@@ -6321,7 +7025,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/9e99439fa6a056b61c7244fa33b6c3df21d2811f-640.mp4",
+    "bytes": 62265,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "411ecabc2264dba5d35959ee054e8e92d8f53370": {
    "sha1": "411ecabc2264dba5d35959ee054e8e92d8f53370",
@@ -6383,7 +7095,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/411ecabc2264dba5d35959ee054e8e92d8f53370-640.mp4",
+    "bytes": 61344,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "d362b795871147ac1ad7ba3c62275002ad66bbb8": {
    "sha1": "d362b795871147ac1ad7ba3c62275002ad66bbb8",
@@ -6445,7 +7165,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/d362b795871147ac1ad7ba3c62275002ad66bbb8-640.mp4",
+    "bytes": 63593,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "ec93c554a7997b5837bc7db031b87bdc9cbdff87": {
    "sha1": "ec93c554a7997b5837bc7db031b87bdc9cbdff87",
@@ -6511,7 +7239,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/ec93c554a7997b5837bc7db031b87bdc9cbdff87-640.mp4",
+    "bytes": 65672,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "e8d23f3baaee8d1ba29649568179b3a79e36584d": {
    "sha1": "e8d23f3baaee8d1ba29649568179b3a79e36584d",
@@ -6577,7 +7313,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/e8d23f3baaee8d1ba29649568179b3a79e36584d-640.mp4",
+    "bytes": 65543,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "15988b8642ad233c9592ee2637bde4856ee67c46": {
    "sha1": "15988b8642ad233c9592ee2637bde4856ee67c46",
@@ -6639,7 +7383,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/15988b8642ad233c9592ee2637bde4856ee67c46-640.mp4",
+    "bytes": 66725,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "75989809d5b14a699935be18472fd837ca8a067d": {
    "sha1": "75989809d5b14a699935be18472fd837ca8a067d",
@@ -6705,7 +7457,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/75989809d5b14a699935be18472fd837ca8a067d-640.mp4",
+    "bytes": 64558,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "329abcf342447ae508199271832bca7294601bab": {
    "sha1": "329abcf342447ae508199271832bca7294601bab",
@@ -6771,7 +7531,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/329abcf342447ae508199271832bca7294601bab-640.mp4",
+    "bytes": 61345,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "a4942b37d6970f397e6bf89e4135cf15a2a8c66b": {
    "sha1": "a4942b37d6970f397e6bf89e4135cf15a2a8c66b",
@@ -6837,7 +7605,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/a4942b37d6970f397e6bf89e4135cf15a2a8c66b-640.mp4",
+    "bytes": 63624,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "7c2a0e118ba0574e30fbeb41341ce625fc43968d": {
    "sha1": "7c2a0e118ba0574e30fbeb41341ce625fc43968d",
@@ -6903,7 +7679,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/7c2a0e118ba0574e30fbeb41341ce625fc43968d-640.mp4",
+    "bytes": 67622,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "6f3b6a75d0a137663ca918416060e7d41e678199": {
    "sha1": "6f3b6a75d0a137663ca918416060e7d41e678199",
@@ -6981,7 +7765,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/6f3b6a75d0a137663ca918416060e7d41e678199-640.mp4",
+    "bytes": 70982,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   },
   "7ea54835e81495a8c212f21e2fdce09a6e887c44": {
    "sha1": "7ea54835e81495a8c212f21e2fdce09a6e887c44",
@@ -7047,7 +7839,15 @@
     },
     "quadro": "último"
    },
-   "dentro_do_teto": true
+   "dentro_do_teto": true,
+   "mp4_640": {
+    "src": "media/filmes/planta/7ea54835e81495a8c212f21e2fdce09a6e887c44-640.mp4",
+    "bytes": 70245,
+    "largura": 640,
+    "altura": 360,
+    "codec": "h264",
+    "origem": "render bruto"
+   }
   }
  },
  "colecao": {
@@ -11481,5 +12281,6 @@
   "tamanhos_sem_filme": 159,
   "acima_do_teto": [],
   "bytes_total": 50266592
- }
+ },
+ "regra_leve": "Telas com menos de 600 px recebem a versão 640x360 em MP4 (mp4_640); nas demais, vai primeiro o formato menor entre WebM e MP4 de cada filme."
 }

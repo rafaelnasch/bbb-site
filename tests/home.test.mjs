@@ -95,6 +95,10 @@ test('o desenho é a obra: planta validada da Acqua Línea 0,79 x 1,41 x 0,37 co
   const nPdf = naoAcess.filter((x) => (x.plantas_pdf || []).length).length;
   assert.ok(sec.includes(`<span class="num">${nPdf}</span> dos <span class="num">${naoAcess.length}</span> modelos têm planta técnica oficial`), 'contagem real de modelos com planta, sem generalizar');
   assert.doesNotMatch(sec, /Cada peça tem planta/);
+  // A segunda contagem é a de plantas com a tabela de cotas lida e conferida (cotas_validadas), não a de
+  // PDFs só ligados ao tamanho pelo nome do arquivo (QA).
+  const nCotas = naoAcess.filter((x) => (x.d_planta || []).some((d) => d.pdf_path && d.cotas_validadas)).length;
+  assert.ok(sec.includes(`Em <span class="num">${nCotas}</span> deles, a tabela de cotas do arquivo foi conferida com o tamanho vendido.`), 'contagem de cotas validadas');
   const p = produtos.find((x) => x.slug === 'banheira-acqua-linea-completa-com-hidro-em-acrilico');
   const dp = p.d_planta.find((x) => x.rotulo === '0,79 x 1,41 x 0,37');
   assert.equal(dp.cotas_validadas, true);
@@ -341,6 +345,8 @@ test('lançamentos: texto derivado, sem afirmar a origem das fotos além de "pub
   const c = cat('lancamentos.html');
   assert.match(texto(sec), new RegExp(`${c.total_exibido} modelos na coleção ${c.nome}, com fotos publicadas pela empresa\\.`));
   assert.doesNotMatch(texto(sec), /reais da fábrica|fotos reais/);
+  // Sem imagem de destaque: o filme repetia as mesmas peças dos cartões logo abaixo (QA).
+  assert.doesNotMatch(sec, /home-lanc__filme|home-lanc__video/);
 });
 
 // Filmes (public/media/filmes, gerados por build/films.mjs): no build de publicação (CI), a home precisa
@@ -355,5 +361,4 @@ test('publicação: filmes das portas e dos lançamentos presentes no build de C
     for (const src of [f.webm?.src, f.mp4?.src, f.poster?.avif?.src]) assert.ok(src && existsSync(join(paths.public, src)), `${id}: ${src} ausente`);
   }
   assert.match(h, /data-vitrine/);
-  assert.match(h, /home-lanc__video/);
 });

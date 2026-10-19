@@ -75,6 +75,11 @@
   form.addEventListener('change', () => atualizar(true));
   form.addEventListener('submit', (e) => e.preventDefault());
   atualizar(false);
+  // Voltar sem bfcache: o navegador restaura os campos do formulário depois deste script. Recalcula
+  // total, doca e mensagens no load, no pageshow (persisted ou não) e no quadro seguinte.
+  const recalcular = () => { atualizar(false); requestAnimationFrame(() => atualizar(false)); setTimeout(() => atualizar(false), 0); };
+  w.addEventListener('load', recalcular);
+  w.addEventListener('pageshow', recalcular);
 
   // ---------- Prazo por estado (sem geolocalização) ----------
   const uf = d.querySelector('[data-prazo-uf]');
@@ -128,6 +133,7 @@
     const ver = mq.matches && passou;
     if (ver === !doca.hidden) return;
     doca.hidden = !ver;
+    H.classList.toggle('com-doca', ver);
     H.style.setProperty('--doca-h', ver ? `${doca.offsetHeight}px` : '0px');
   };
   // Rolagem com rAF (e não IntersectionObserver): um salto direto para baixo, por âncora ou tecla End,

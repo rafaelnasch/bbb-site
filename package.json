@@ -9,8 +9,10 @@
   },
   "scripts": {
     "normalize": "node build/normalize.mjs",
-    "media": "node build/media-photos.mjs && node build/media-plantas.mjs && node build/cotas.mjs && node build/normalize.mjs",
-    "films": "node build/films.mjs",
+    "media": "node build/media-photos.mjs && node build/media-plantas.mjs && node build/cotas.mjs && node build/normalize.mjs && node build/plantas-topo.mjs",
+    "films": "node build/films.mjs && node build/filmes-leves.mjs",
+    "films:leves": "node build/filmes-leves.mjs",
+    "plantas:topo": "node build/plantas-topo.mjs",
     "og": "node build/og.mjs",
     "build": "node build/render.mjs && node build/seo.mjs && node build/validate.mjs",
     "test": "node --test \"tests/*.test.mjs\"",

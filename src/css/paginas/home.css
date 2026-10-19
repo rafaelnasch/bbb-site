@@ -110,7 +110,7 @@
 .pg-home .cart__img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px}
 .pg-home .cart__vazia{display:grid;place-items:center;aspect-ratio:1;color:var(--muted-on-dark)}
 .pg-home .cart__nome{font-size:var(--fs-h3)}
-.pg-home .cart__ctn{flex:none;width:30px;height:24px}
+.pg-home .cart__ctn{flex:none;width:48px;height:auto}
 .home-salas .cart__nome,.home-lanc .cart__nome{font-size:1.1875rem}
 
 /* ---------- O desenho é a obra ---------- */
@@ -148,7 +148,7 @@ html:not([data-lite]) .home-obra:not(.is-tour) .cota-marca span{animation:home-c
 .home-lanc__video{opacity:0;transition:opacity 1s var(--ease-out)}
 .home-lanc__filme.is-tocando .home-lanc__video{opacity:1}
 @media (min-width:600px) and (max-width:1023px){.home-lanc__filme{max-width:520px}}
-@media (min-width:1024px){.home-lanc__cab{grid-template-columns:minmax(0,6fr) minmax(0,6fr);column-gap:clamp(32px,5vw,88px)}.home-lanc__filme{width:min(100%,520px);justify-self:end;padding:16px}}
+@media (min-width:1024px){.home-lanc__cab{max-width:72ch}.home-lanc__filme{width:min(100%,520px);justify-self:end;padding:16px}}
 
 /* ---------- A fábrica ---------- */
 .home-fab__in{display:grid;gap:36px}

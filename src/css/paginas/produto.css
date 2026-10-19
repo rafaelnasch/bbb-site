@@ -11,7 +11,7 @@
 .prod{padding-bottom:clamp(48px,6vw,104px);overflow-y:clip}
 .prod-disp--esgotado{color:var(--glow)}
 html[data-lite] .prod-topo__filme{display:none}
-@media (min-width:1024px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte{-webkit-mask:radial-gradient(closest-side,#000 55%,#0000);mask:radial-gradient(closest-side,#000 55%,#0000)}}
+@media (min-width:1024px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte,.prod-topo--planta-folha .prod-topo__arte{-webkit-mask:radial-gradient(closest-side,#000 55%,#0000);mask:radial-gradient(closest-side,#000 55%,#0000)}}
 .prod-topo__filme{opacity:0;transition:opacity .6s linear}
 .prod-topo__arte.is-tocando .prod-topo__filme{opacity:1}
 /* Sem planta nem filme: papel técnico (grade de 24 px) e luz de estúdio, sem altura vazia. */
@@ -69,7 +69,7 @@ html[data-lite] .prod-topo__filme{display:none}
 .seletor__in:focus-visible+.seletor__cartao,.chip-op input:focus-visible+span,.adic input:focus-visible~.adic__caixa{outline:2px solid var(--focus-ring);outline-offset:2px}
 @media (hover:hover){.seletor__op:hover .seletor__cartao{border-color:color-mix(in srgb,var(--fg) 40%,transparent)}}
 .seletor--fixo .seletor__fixo{font-weight:600}
-@media (prefers-color-scheme:dark){.seletor__cartao{background:color-mix(in srgb,var(--bg) 85%,#fff)}.seletor__in:checked+.seletor__cartao{border-color:var(--line);box-shadow:inset 0 0 0 1px var(--line)}}
+@media (prefers-color-scheme:dark){.seletor__cartao{background:#1F3B4C}.seletor__in:checked+.seletor__cartao{border-color:var(--line);box-shadow:inset 0 0 0 1px var(--line)}}
 
 .monte__chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip-op{position:relative;display:inline-flex;cursor:pointer}
@@ -116,7 +116,7 @@ html[data-lite] .prod-topo__filme{display:none}
 .galeria__palco{position:relative}
 .galeria__foto{display:block;cursor:zoom-in;border-radius:6px}
 .galeria__lupa{position:absolute;left:0;top:0;z-index:2;width:clamp(150px,16vw,220px);aspect-ratio:1;border-radius:50%;background-repeat:no-repeat;background-color:var(--room);box-shadow:0 0 0 1px rgb(255 255 255/.5),0 20px 50px -10px rgb(0 0 0/.7);pointer-events:none}
-.galeria__base{gap:12px;margin-top:4px}
+.galeria__base{display:flex;align-items:center;justify-content:space-between;min-height:44px;gap:12px;margin-top:4px}
 .galeria__base .moldura__leg{margin-top:0;text-align:left}
 .galeria__cheia{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 6px;font-size:.8125rem;color:var(--muted-on-dark);text-decoration:none}
 @media (hover:hover){.galeria__cheia:hover{color:var(--porcelain)}}
@@ -125,8 +125,6 @@ html[data-lite] .prod-topo__filme{display:none}
 .galeria__mini-item[aria-current]{opacity:1;box-shadow:0 0 0 1.5px var(--glow)}
 .galeria__mini-img{width:72px;height:72px;object-fit:cover;border-radius:10px}
 @media (hover:hover){.galeria__mini-item:hover{opacity:.9}}
-.moldura__vazia{display:grid;justify-items:center;gap:12px;padding:24px;color:var(--muted-on-dark)}
-.moldura__vazia p{font-family:var(--f-display);font-weight:300;font-size:1.375rem;line-height:1.25;color:var(--porcelain)}
 
 /* Tela cheia */
 .tela{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgb(3 12 19/.97);color:var(--porcelain);overflow:hidden}
@@ -330,13 +328,17 @@ details[open]>.descricao__s::after,details[open]>.faq-item__q::after{transform:r
 /* Consultor ao lado do botão de compra: alvo de 44 x 44 px (SPEC 13) e a doca numa linha só (~64 px). */
 .doca__cons{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:0 10px;border:1px solid color-mix(in srgb,currentColor 28%,transparent);border-radius:var(--radius-chip);font-size:.8125rem;font-weight:600;color:var(--ink)}
 @media (max-width:400px){.doca__cons{padding:0}.doca__cons-t{display:none}}
+/* Celular deitado (altura baixa): a bandeja do comparador recolhe num botão dentro da doca, para as barras
+   fixas não tomarem mais da metade da tela. Fora disso o botão não aparece (a bandeja cumpre o papel). */
+.doca__cmp{display:none}
+@media (max-height:480px){html.com-doca .bandeja{display:none}.doca__cmp:not([data-n="0"]){display:inline-flex}}
 .doca{padding-bottom:calc(6px + env(safe-area-inset-bottom))}
 /* Telas estreitas: o botão vira "Comprar" (o nome acessível continua "Comprar pelo WhatsApp"). */
 @media (max-width:440px){.doca__btn{padding:.5em .9em}.doca__nome{-webkit-line-clamp:1}.doca__longo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 @media (min-width:1024px){.doca{display:none!important}}
 @media (prefers-color-scheme:dark){.doca{background:color-mix(in srgb,var(--room-2) 94%,transparent);color:var(--porcelain);--focus-ring:var(--focus-on-dark)}.doca__det{color:var(--muted-on-dark)}.doca__cons{color:var(--porcelain)}}
 /* Celular: a arte da etiqueta é fundo, atrás do texto; esmaece para a esquerda para não disputar com o título. */
-@media (max-width:1023px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte,.prod-topo--desenho .prod-topo__arte{-webkit-mask:linear-gradient(100deg,#0000 8%,#000 62%);mask:linear-gradient(100deg,#0000 8%,#000 62%)}}
+@media (max-width:1023px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte,.prod-topo--planta-folha .prod-topo__arte,.prod-topo--desenho .prod-topo__arte{-webkit-mask:linear-gradient(100deg,#0000 8%,#000 62%);mask:linear-gradient(100deg,#0000 8%,#000 62%)}}
 .prod-resumo{max-width:64ch;color:var(--fg-2);font-size:1rem}
 .prod-resumo .etiqueta{display:flex}
 .prod__resumo{padding-top:4px;border-top:1px solid color-mix(in srgb,var(--line) 22%,transparent)}

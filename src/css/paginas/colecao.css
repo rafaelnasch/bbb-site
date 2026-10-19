@@ -53,6 +53,9 @@
 /* ---------- Cartão ---------- */
 .cart__mol{background:radial-gradient(120% 85% at 50% -10%,color-mix(in srgb,var(--wall) 80%,#fff 12%) 0%,var(--wall) 60%,color-mix(in srgb,var(--wall) 82%,#000) 100%);box-shadow:inset 0 0 0 1px rgb(255 255 255/.07),var(--sombra-1);transition:box-shadow var(--t-in) var(--ease-out),transform var(--t-in) var(--ease-out)}
 .cart__img{transition:transform var(--t-swap) var(--ease-out)}
+/* A mesma luz de estúdio por cima de todas as fotos da grade (a foto não muda): brilho suave no alto,
+   sombra leve embaixo e o filete do passe-partout, para a galeria ler como uma série e não como colagem. */
+.cart__mol::after{content:"";position:absolute;inset:clamp(6px,4%,20px);border-radius:6px;pointer-events:none;background:linear-gradient(180deg,rgb(233 184 124/.07),transparent 38%,transparent 62%,rgb(7 28 43/.22));box-shadow:inset 0 0 0 1px rgb(243 246 248/.08),inset 0 0 40px rgb(7 28 43/.28)}
 .cart__vers{font-size:.8125rem;color:var(--fg-2)}
 /* Contorno em escala na linha das medidas (fora da foto): a peça vista de cima, mesma escala na coleção. */
 .cart__ctn{fill:color-mix(in srgb,var(--brand) 22%,transparent);stroke:var(--brand);stroke-width:1.2px;overflow:visible}
@@ -87,9 +90,9 @@
 }
 /* Altura reservada perto da real (cartão de 2 colunas no celular, ~330 px; 3 colunas no desktop, ~700 px
    por fileira), para a barra de rolagem não pular numa rolagem longa. */
-.col-grade>li:nth-child(n+13){content-visibility:auto;contain-intrinsic-size:auto 330px}
-@media (min-width:600px){.col-grade>li:nth-child(n+13){contain-intrinsic-size:auto 560px}}
-@media (min-width:1024px){.col-grade>li:nth-child(n+13){contain-intrinsic-size:auto 640px}}
+.col-grade>li:nth-child(n+13){content-visibility:auto;contain-intrinsic-size:auto 460px}
+@media (min-width:600px){.col-grade>li:nth-child(n+13){contain-intrinsic-size:auto 750px}}
+@media (min-width:1024px){.col-grade>li:nth-child(n+13){contain-intrinsic-size:auto 800px}}
 .col-grade.is-filtrando>li{animation:col-entra var(--t-in) var(--ease-out) both}
 @keyframes col-entra{from{opacity:0;transform:translate3d(0,10px,0)}}
 html[data-lite] .col-grade.is-filtrando>li{animation:none}
@@ -169,7 +172,7 @@ html[data-lite] .col-grade.is-filtrando>li{animation:none}
   .cart__preco{font-size:.9375rem;gap:0 8px}
   .cart__selos .selo{min-height:20px;padding:1px 6px;font-size:.625rem}
   .cart__cmp{align-self:flex-start;padding:0 12px 0 10px;font-size:.8125rem;gap:6px}
-  .cart__med{align-items:flex-start}
+  .cart__med{align-items:flex-end}
   .cart__vers{font-size:.75rem}
 }
 @media (min-width:1024px){.col-subs__rol{-webkit-mask:none;mask:none}}
@@ -179,3 +182,22 @@ html[data-lite] .col-grade.is-filtrando>li{animation:none}
 .col-topo__filme>.col-topo__video{inset:2px;width:calc(100% - 4px);height:calc(100% - 4px)}
 .col-topo__filme{background:var(--room-2);box-shadow:0 40px 80px -40px rgba(0,0,0,.7),inset 0 0 0 1px color-mix(in srgb,var(--line) 18%,transparent)}
 @media (max-width:1023px){.col-topo__video{display:none}}
+/* Celular deitado: o cabeçalho não é fixo (components.css), a barra de filtros cola no topo. */
+@media (max-height:480px){.col-barra{top:0}}
+/* Celular: cartões compactos (a grade começa abaixo da primeira tela, por isso fora do crítico). */
+@media (max-width:599px){.cart__nome{font-size:1rem}.cart__eti{display:none}.cart__selos{min-height:24px}}
+/* Versões irmãs em chips, com o preço "por" literal de cada uma; a versão do cartão fica marcada. */
+.cart__vs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;padding:0;list-style:none}
+.cart__v{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:4px 12px;border:1px solid var(--rule);border-radius:var(--radius-chip);font-size:.8125rem;line-height:1.25;color:var(--fg);text-decoration:none}
+.cart__v .num{color:var(--fg-2)}
+.cart__v[aria-current]{background:var(--ink);border-color:var(--ink);color:var(--porcelain)}
+.cart__v[aria-current] .num{color:var(--muted-on-dark)}
+@media (prefers-color-scheme:dark){.cart__v[aria-current]{background:var(--porcelain);border-color:var(--porcelain);color:var(--ink)}.cart__v[aria-current] .num{color:var(--muted)}}
+@media (hover:hover){a.cart__v:hover{border-color:var(--fg)}}
+@media (max-width:599px){.cart__vs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-2px;padding-inline:2px}.cart__v{flex:none;padding:4px 10px;font-size:.75rem;white-space:nowrap}}
+.col-btn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--porcelain)}
+@media (prefers-color-scheme:dark){.col-btn[aria-pressed="true"]{background:var(--porcelain);border-color:var(--porcelain);color:var(--ink)}}
+@media (max-width:599px){.col-btn--vs{padding:0;width:44px;justify-content:center}}
+/* Filtros rápidos: um respiro entre os grupos (forma, lugares, material, configuração). */
+.col-rapidos__novo{margin-left:10px;padding-left:10px;border-left:1px solid var(--rule)}
+.col-nota-sf{color:var(--fg-2)}

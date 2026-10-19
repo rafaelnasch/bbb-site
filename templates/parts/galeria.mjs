@@ -33,7 +33,7 @@ export function galeria(p, fotos) {
   const lista = ordenarFotos(fotos);
   if (!lista.length) {
     return html`<div class="galeria galeria--vazia">
-  <figure class="moldura moldura--peca moldura--vazia letterbox" data-vt-chegada="${p.slug}">
+  <figure class="moldura moldura--peca moldura--vazia" data-vt-chegada="${p.slug}">
     <div class="moldura__vazia">${icone('ponto', { tamanho: 22 })}<p>Foto e planta deste modelo sob consulta</p></div>
   </figure>
 </div>`;

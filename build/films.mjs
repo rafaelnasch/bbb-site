@@ -24,6 +24,7 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync, statS
 import { join, dirname } from 'node:path';
 import sharp from 'sharp';
 import { paths } from '../site.config.mjs';
+import { caixaDaFolha, recorteValido } from './lib/folha.mjs';
 
 const HF = 'hyperframes@0.8.173';
 const ENV = { ...process.env, HYPERFRAMES_SKIP_SKILLS: '1', DO_NOT_TRACK: '1' };
@@ -89,47 +90,6 @@ function lerPlanta(sha1) {
   return existsSync(f) ? lerJSON(f) : null;
 }
 
-/** Caixa da folha branca do desenho dentro do raster (linhas e colunas com maioria de pixels brancos). */
-async function caixaDaFolha(png) {
-  const RED = 5;
-  const { data, info } = await sharp(png).flatten({ background: '#ffffff' }).resize({ width: Math.round(3400 / RED) })
-    .removeAlpha().raw().toBuffer({ resolveWithObject: true });
-  const { width: w, height: h, channels: ch } = info;
-  // Azul escuro da moldura (ex.: 28,71,107). A marca d'água clara da folha não conta como azul.
-  const azul = (x, y) => { const i = (y * w + x) * ch; return data[i] < 120 && data[i + 2] - data[i] > 40; };
-  // Maior sequência contígua de índices em [a, b] que satisfazem f.
-  const maiorFaixa = (a, b, f) => {
-    let melhor = [a, b], ini = -1, tam = 0;
-    for (let k = a; k <= b + 1; k++) {
-      if (k <= b && f(k)) { if (ini < 0) ini = k; }
-      else if (ini >= 0) { if (k - ini > tam) { tam = k - ini; melhor = [ini, k - 1]; } ini = -1; }
-    }
-    return tam ? melhor : null;
-  };
-  const fracao = (n, d) => n / Math.max(1, d);
-  // 1) Moldura azul da prancha (alguns rasters têm margem branca em volta dela).
-  // Extensão (primeiro e último) das linhas e colunas com muito azul: cabeçalho, rodapé e laterais.
-  const extensao = (a, b, f) => { let i0 = -1, i1 = -1; for (let k = a; k <= b; k++) if (f(k)) { if (i0 < 0) i0 = k; i1 = k; } return i0 < 0 ? null : [i0, i1]; };
-  const faixaY = extensao(0, h - 1, (y) => { let n = 0; for (let x = 0; x < w; x++) if (azul(x, y)) n++; return fracao(n, w) > 0.3; });
-  let [bx0, bx1, by0, by1] = [0, w - 1, 0, h - 1];
-  if (faixaY) {
-    [by0, by1] = faixaY;
-    const fx = extensao(0, w - 1, (x) => { let n = 0; for (let y = by0; y <= by1; y++) if (azul(x, y)) n++; return fracao(n, by1 - by0 + 1) > 0.3; });
-    if (fx) [bx0, bx1] = fx;
-  }
-  // 2) Folha do desenho dentro da moldura: a região que não é azul (branco, traço, cinza e vermelho).
-  const ly = maiorFaixa(by0, by1, (y) => { let n = 0; for (let x = bx0; x <= bx1; x++) if (!azul(x, y)) n++; return fracao(n, bx1 - bx0 + 1) > 0.55; });
-  if (!ly) throw new Error(`Folha branca não encontrada em ${png}`);
-  const [y0, y1] = ly;
-  const lx = maiorFaixa(bx0, bx1, (x) => { let n = 0; for (let y = y0; y <= y1; y++) if (!azul(x, y)) n++; return fracao(n, y1 - y0 + 1) > 0.55; });
-  if (!lx) throw new Error(`Folha branca não encontrada em ${png}`);
-  const [x0, x1] = lx;
-  const meta = await sharp(png).metadata();
-  const k = meta.width / w;
-  const left = Math.max(0, Math.round(x0 * k)), top = Math.max(0, Math.round(y0 * k));
-  return { left, top, width: Math.min(meta.width - left, Math.round((x1 - x0 + 1) * k)), height: Math.min(meta.height - top, Math.round((y1 - y0 + 1) * k)) };
-}
-
 async function prepararPlantas() {
   const ordem = ordemDosProdutos();
   const lista = [];
@@ -158,7 +118,7 @@ async function prepararPlantas() {
     const png = join(paths.cache, 'plantas', `${d.sha1}.png`);
     if (!existsSync(png)) { semFilme.push({ sha1: d.sha1, pdf_path: d.pdf_path, motivo: 'raster da planta ausente em .cache/plantas' }); continue; }
     const cx = await caixaDaFolha(png);
-    if (cx.width < 0.5 * 3400 || cx.width > 0.95 * 3400 || cx.height / cx.width < 0.55 || cx.height / cx.width > 0.85) throw new Error(`Recorte suspeito na planta ${d.sha1}: ${JSON.stringify(cx)}`);
+    if (!recorteValido(cx)) throw new Error(`Recorte suspeito na planta ${d.sha1}: ${JSON.stringify(cx)}`);
     const s = Math.min((LARG - 48) / cx.width, 620 / cx.height);
     const W = Math.round(cx.width * s), H = Math.round(cx.height * s);
     const img = join(dir, 'assets', 'plantas', `${d.sha1}.png`);

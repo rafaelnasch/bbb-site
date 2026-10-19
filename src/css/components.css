@@ -83,6 +83,9 @@ html:has(.gaveta[open]){overflow:hidden}
 /* Foco pelo teclado nunca fica atrás da doca de compra nem da bandeja (WCAG 2.4.11): as duas alturas
    vêm de monte.js (--doca-h) e core.js (--bandeja-h). Fora do crítico: as barras só existem com JS. */
 html{scroll-padding-bottom:calc(var(--doca-h,0px) + var(--bandeja-h,0px) + 16px)}
+/* Celular deitado (altura até 480 px): o cabeçalho rola com a página; com as barras fixas de baixo, a
+   peça e a planta ficariam numa faixa estreita. */
+@media (max-height:480px){.cab{position:relative}html{scroll-padding-top:16px}}
 /* Celular: a bandeja fica recolhida numa linha (contagem + Comparar) e abre a lista ao tocar, para não
    tomar a tela nem esconder o foco (SPEC 13; WCAG 2.4.11). */
 .bandeja__abre{display:none}

@@ -28,13 +28,14 @@
 .cmp-canto{position:sticky;left:0;z-index:1;background:var(--bg);box-shadow:1px 0 0 var(--rule)}
 /* A rolagem do foco para a coluna de um modelo nunca deixa o conteúdo debaixo da coluna fixa dos rótulos. */
 .cmp-rol{scroll-padding-inline-start:160px}
-@media (max-width:599px){.cmp-tab th[scope="row"],.cmp-canto{width:104px;min-width:96px;max-width:110px;padding:12px 10px;font-size:.6875rem;letter-spacing:.05em;overflow-wrap:anywhere;hyphens:auto}.cmp-rol{scroll-padding-inline-start:114px}.cmp-tab{min-width:520px}.cmp-col{min-width:150px}}
-.cmp-col{display:table-cell;min-width:170px;font-weight:400}
+@media (max-width:599px){.cmp-tab th[scope="row"],.cmp-canto{width:104px;min-width:96px;max-width:110px;padding:12px 10px;font-size:.6875rem;letter-spacing:.05em;overflow-wrap:anywhere;hyphens:auto}.cmp-rol{scroll-padding-inline-start:114px}.cmp-tab{min-width:560px}}
+.cmp-col{display:table-cell;min-width:184px;font-weight:400}
+@media (max-width:599px){.cmp-tab .cmp-col{min-width:196px;padding-inline:12px}}
 .cmp-col__fio{display:block;height:3px;margin-bottom:10px;border-radius:2px;background:var(--cor)}
 .cmp-col__img,.cmp-col__vazia{display:block;width:100%;max-width:200px;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--room-2)}
 .cmp-col__vazia{display:grid;place-items:center;color:var(--muted-on-dark);font-size:.8125rem}
 .cmp-col__nome{display:block;margin-top:10px;font-family:var(--f-display);font-size:1.0625rem;line-height:1.25;color:inherit}
-.cmp-tam select{width:100%;min-height:44px;margin-top:8px;padding:0 12px;border:1px solid var(--rule);border-radius:10px;background:transparent;font-size:max(16px,1rem)}
+.cmp-tam select{width:100%;min-width:0;min-height:44px;margin-top:8px;padding:0 4px 0 8px;font-variant-numeric:tabular-nums;border:1px solid var(--rule);border-radius:10px;background:transparent;font-size:max(16px,1rem)}
 .cmp-col__tirar{display:inline-flex;align-items:center;min-height:44px;font-size:.8125rem;color:var(--fg-2);text-decoration:underline;text-underline-offset:.2em}
 .cmp-preco{font-weight:600}
 .cmp-sub{display:block;margin-top:4px;font-size:.8125rem;color:var(--fg-2)}

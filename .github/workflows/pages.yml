@@ -1,0 +1,57 @@
+# Publicação da prévia no GitHub Pages (SPEC 1, 2 e 17.10).
+# A mídia (fotos, plantas, filmes, OG) é pré-gerada no Mac e versionada em public/media; o job só
+# renderiza, gera os arquivos de SEO e valida. _recon/ nunca está no repositório.
+#
+# Decisão do dono do projeto: a prévia sai com INDEXAR=false (noindex,nofollow + Disallow: /) para não
+# competir com o domínio atual da empresa. Na virada de domínio: INDEXAR=true, SITE_URL, BASE_PATH vazio
+# e CNAME (ver SPEC 15, "Virada de domínio").
+name: Publicar no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://rafaelnasch.github.io/bbb-site
+      BASE_PATH: /bbb-site
+      INDEXAR: 'false'
+      SKIP_MEDIA: '1'
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Build (render, SEO e validação), sem gerar mídia
+        run: npm run build -- --skip-media
+      - name: Testes de dados e de HTML
+        run: npm test
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

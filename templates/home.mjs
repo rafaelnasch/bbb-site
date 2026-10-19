@@ -106,7 +106,7 @@ function filmeColecao(D, id) {
   const avif = fm.poster.avif?.src && existsSync(join(paths.public, fm.poster.avif.src)) ? url(fm.poster.avif.src) : null;
   const webp = fm.poster.webp?.src && existsSync(join(paths.public, fm.poster.webp.src)) ? url(fm.poster.webp.src) : null;
   if (!avif && !webp) return null;
-  return { webm: url(fm.webm.src), mp4: url(fm.mp4.src), avif, webp, w: fm.largura || 720, h: fm.altura || 720 };
+  return { webm: url(fm.webm.src), mp4: url(fm.mp4.src), ordem: (fm.mp4.bytes || 0) <= (fm.webm.bytes || Infinity) ? 'mp4,webm' : 'webm,mp4', avif, webp, w: fm.largura || 720, h: fm.altura || 720 };
 }
 
 function posterFilme(f, { classe, prioridade = false, alta = false }) {
@@ -114,7 +114,7 @@ function posterFilme(f, { classe, prioridade = false, alta = false }) {
 }
 
 function videoFilme(f, classe, rotulo = null) {
-  return html`<video class="${classe}" data-home-filme${attrs({ 'data-webm': f.webm, 'data-mp4': f.mp4, width: f.w, height: f.h, 'aria-hidden': rotulo ? null : 'true', 'aria-label': rotulo })} muted playsinline loop preload="none"></video>`;
+  return html`<video class="${classe}" data-home-filme${attrs({ 'data-webm': f.webm, 'data-mp4': f.mp4, 'data-ordem': f.ordem, width: f.w, height: f.h, 'aria-hidden': rotulo ? null : 'true', 'aria-label': rotulo })} muted playsinline loop preload="none"></video>`;
 }
 
 /** Recortes da foto de cada coleção (build/media-home.mjs, versionados): miniatura de 240 px e área de 484 px. */
@@ -269,10 +269,11 @@ export function paginas(ctx) {
   const temAgua = Boolean(ctx.assets?.modulos?.agua);
   const temVapor = Boolean(ctx.assets?.modulos?.vapor);
   // Duas contagens: modelos com PDF de planta publicado na própria página (plantas_pdf) e, entre eles,
-  // os que têm a medida do arquivo igual a um tamanho vendido (d_planta). Os demais oferecem o PDF com nota.
+  // os que têm ao menos uma planta com a tabela de cotas lida e conferida contra o tamanho vendido
+  // (d_planta[].cotas_validadas). PDF só ligado pelo nome do arquivo não conta como cota conferida.
   const pecas = produtos.filter((p) => p.d_tipo !== 'acessorio');
   const comPdf = pecas.filter((p) => (p.plantas_pdf || []).length).length;
-  const comPlanta = pecas.filter((p) => (p.d_planta || []).some((x) => x.pdf_path)).length;
+  const comCotas = pecas.filter((p) => (p.d_planta || []).some((x) => x.pdf_path && x.cotas_validadas)).length;
   const totalPecas = produtos.filter((p) => p.d_tipo !== 'acessorio').length;
 
   // 1. Abertura ---------------------------------------------------------------
@@ -398,7 +399,7 @@ export function paginas(ctx) {
       <div data-reveal>
         <p class="etiqueta etiqueta--linha">A planta oficial</p>
         <h2 id="home-obra-h">O desenho é a obra</h2>
-        <p class="lead"><span class="num">${comPdf}</span> dos <span class="num">${totalPecas}</span> modelos têm planta técnica oficial com as cotas, e você baixa o PDF. Em <span class="num">${comPlanta}</span> deles, as cotas do arquivo batem com o tamanho vendido.</p>
+        <p class="lead"><span class="num">${comPdf}</span> dos <span class="num">${totalPecas}</span> modelos têm planta técnica oficial publicada, e você baixa o PDF. Em <span class="num">${comCotas}</span> deles, a tabela de cotas do arquivo foi conferida com o tamanho vendido.</p>
         <p class="home-obra__peca">Na tela: <a class="link" href="${url(`${pObra.slug}.html`)}">${pObra.nome}</a>, tamanho <span class="num">${rot}</span>.</p>
       </div>
       ${passos.length ? html`<ol class="home-obra__passos" role="list" aria-hidden="true" data-obra-passos>
@@ -418,7 +419,7 @@ export function paginas(ctx) {
   const catL = D.catPorPath.get(LANCAMENTOS);
   if (catL) {
     const lista = produtosDaCategoria(catL, porSlug);
-    const filme = filmeColecao(D, 'lancamentos');
+    // Sem imagem de destaque: o filme repetia as mesmas seis peças dos cartões logo abaixo.
     const S = escalaDaColecao(lista);
     lancamentos = html`<section class="sala sala--2 secao home-lanc" aria-labelledby="home-lanc-h">
   <div class="wrap">
@@ -429,7 +430,6 @@ export function paginas(ctx) {
         <p class="lead"><span class="num" data-campo="categoria-total">${catL.total_exibido}</span> modelos na coleção ${catL.nome}, com fotos publicadas pela empresa.</p>
         <p><a class="link" href="${url(LANCAMENTOS)}">Ver a coleção ${catL.nome}</a></p>
       </div>
-      ${filme ? html`<div class="home-lanc__filme" data-reveal aria-hidden="true"><div class="quadro">${posterFilme(filme, { classe: 'home-lanc__poster' })}${videoFilme(filme, 'home-lanc__video')}</div></div>` : ''}
     </div>
     <ol class="col-grade home-lanc__grade" role="list">${lista.map((p, i) => cartao(p, { pos: i, S, lqip: false }))}</ol>
   </div>

@@ -12,6 +12,12 @@ table{border-collapse:collapse}
 /* Rolagem local de tabelas largas (SPEC 5.4): sombra indica que há mais conteúdo ao lado. */
 .rolagem{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;background:linear-gradient(to right,var(--bg) 30%,transparent) left/40px 100% no-repeat local,linear-gradient(to left,var(--bg) 30%,transparent) right/40px 100% no-repeat local,radial-gradient(farthest-side at 0 50%,rgb(0 0 0/.22),transparent) left/14px 100% no-repeat scroll,radial-gradient(farthest-side at 100% 50%,rgb(0 0 0/.22),transparent) right/14px 100% no-repeat scroll}
 .rolagem:focus-visible{outline-offset:-2px}
+/* Na sala (água WebGL ou filme atrás), as camadas de cor sólida viram tarjas: lá o indício de rolagem é uma
+   máscara nas pontas, ligada só quando a faixa rola de fato (data-rola, posto por core.js). */
+.sala .rolagem{background:none}
+.sala .rolagem[data-rola="dir"]{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent)}
+.sala .rolagem[data-rola="esq"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px);mask-image:linear-gradient(90deg,transparent,#000 40px)}
+.sala .rolagem[data-rola="ambos"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent)}
 @media print{[data-reveal],[data-intro]{opacity:1!important;transform:none!important;animation:none!important;clip-path:none!important}}
 /* Preço antigo (SPEC 9.2): o vermelho da marca fica no risco; o texto usa --fg-2 para passar AA
    (--price-old sobre --day dá 4,24:1, abaixo de 4,5). */
