@@ -18,9 +18,35 @@ const reSaude = new RegExp(
   'giu',
 );
 
-/** Lista os termos de saúde encontrados (forma original do trecho). */
-export function termosSaude(texto) {
+// Expressões fixas em que uma palavra da lista não faz afirmação de saúde: o nome do imposto
+// (ICMS), a área de circulação de um cômodo, o tratamento da água do spa e o tratamento de dados
+// pessoais (LGPD). Só estas formas exatas saem da checagem; qualquer outro uso continua proibido
+// ("melhorando a circulação do sangue", "tratamento natural para curar").
+export const EXCECOES_NAO_SAUDE = [
+  { re: /imposto sobre circulacao de mercadorias/g, motivo: 'nome do imposto (ICMS)' },
+  { re: /area de circulacao/g, motivo: 'espaço livre do cômodo' },
+  { re: /(?<![\p{L}\p{N}])trat\p{L}*\s+(?:(?:d[aeo]s?|a|o)\s+)?agua(?![\p{L}\p{N}])/gu, motivo: 'tratamento da água do spa' },
+  { re: /(?<![\p{L}\p{N}])tratando de materiais/gu, motivo: 'texto do manual sobre materiais' },
+  { re: /(?<![\p{L}\p{N}])trat\p{L}*\s+(?:(?:de|dos)\s+)?(?:seus\s+)?dados(?![\p{L}\p{N}])/gu, motivo: 'tratamento de dados pessoais (LGPD)' },
+];
+
+function semExcecoes(alvo) {
+  let s = alvo;
+  for (const { re } of EXCECOES_NAO_SAUDE) s = s.replace(re, (m) => ' '.repeat(m.length));
+  return s;
+}
+
+/** Termos da lista sem descontar as exceções (para auditoria). */
+export function termosSaudeBrutos(texto) {
   const alvo = semAcento(texto).toLowerCase();
+  const achados = new Set();
+  for (const m of alvo.matchAll(reSaude)) achados.add(m[1]);
+  return [...achados];
+}
+
+/** Lista os termos de saúde encontrados (forma original do trecho), fora das exceções fixas. */
+export function termosSaude(texto) {
+  const alvo = semExcecoes(semAcento(texto).toLowerCase());
   const achados = new Set();
   for (const m of alvo.matchAll(reSaude)) achados.add(m[1]);
   return [...achados];
@@ -73,4 +99,28 @@ export function slugify(s) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Como filtrarFrasesSaude, mas a frase pode atravessar quebras de linha (texto de categoria,
+ * em que cada link vira uma linha). A frase com termo de saúde sai inteira, de ponto a ponto;
+ * o resto do texto, com as quebras originais, fica igual.
+ */
+export function filtrarFrasesSaudeMultilinha(texto) {
+  if (texto == null) return { texto: texto ?? null, removidos: [] };
+  const partes = String(texto).split(/(?<=[.!?])(\s+)(?=\S)/u);
+  // partes alterna [frase, separador, frase, separador, ...]
+  const removidos = [];
+  let out = '';
+  for (let i = 0; i < partes.length; i += 2) {
+    const frase = partes[i];
+    const sep = partes[i + 1] ?? '';
+    const t = termosSaude(frase);
+    if (t.length) {
+      removidos.push({ frase, termos: t });
+      continue;
+    }
+    out += frase + sep;
+  }
+  return { texto: out.replace(/\s+$/u, ''), removidos };
 }

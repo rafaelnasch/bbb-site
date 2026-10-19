@@ -131,6 +131,16 @@
       "data": "politicas.json:pagamento.literal",
       "origem": "institucional.json:comercial.formas_pagamento.literal"
     },
+    "categoria-descricao": {
+      "data": "categorias.json[].d_descricao_exibida",
+      "origem": "catalog.json:categories[].descricao_texto",
+      "obs": "menos o filtro editorial de data/editorial-log.json"
+    },
+    "manual-texto": {
+      "data": "politicas.json:manual.paginas[].texto_exibido",
+      "origem": "_recon/html/pdf/manual-do-usuario.txt",
+      "obs": "menos garantia e afirmações de saúde (editorial-log)"
+    },
     "faq-resposta": {
       "data": "faq.json[].resposta",
       "origem": "faq-source.json:faq[].resposta_literal"

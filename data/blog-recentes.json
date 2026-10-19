@@ -76,7 +76,10 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa."
+        "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa.",
+        "termos_sensiveis": [
+          "circulacao"
+        ]
       },
       {
         "id": 1237,
@@ -1610,7 +1613,10 @@
           "Banheiras de hidromassagem",
           "Dicas"
         ],
-        "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa."
+        "resumo": "Descubra como a banheira para recuperação muscular otimiza seu pós-treino. Alivie a fadiga e melhore a circulação com a hidromassagem em casa.",
+        "termos_sensiveis": [
+          "circulacao"
+        ]
       },
       {
         "id": 1215,
@@ -1841,7 +1847,10 @@
         "categorias": [
           "Banheiras de hidromassagem"
         ],
-        "resumo": "Desvende os segredos do banho de banheira como terapia para o corpo e mente. Descubra os benefícios terapêuticos e como incorporá-lo à sua rotina de auto cuidado."
+        "resumo": "Desvende os segredos do banho de banheira como terapia para o corpo e mente. Descubra os benefícios terapêuticos e como incorporá-lo à sua rotina de auto cuidado.",
+        "termos_sensiveis": [
+          "terapeutic"
+        ]
       },
       {
         "id": 708,
@@ -2737,7 +2746,10 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Descubra como ter banheira em casa promove bem-estar e saúde com efeitos terapêuticos incríveis. Confira nosso artigo!"
+        "resumo": "Descubra como ter banheira em casa promove bem-estar e saúde com efeitos terapêuticos incríveis. Confira nosso artigo!",
+        "termos_sensiveis": [
+          "terapeutic"
+        ]
       },
       {
         "id": 916,
@@ -2903,7 +2915,10 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Desfrute de momentos relaxantes e revigorantes com as banheiras que promovem o bem-estar da BBB. Veja os benefícios terapêuticos, dicas para aproveitar ao máximo e como investir em qualidade de vida."
+        "resumo": "Desfrute de momentos relaxantes e revigorantes com as banheiras que promovem o bem-estar da BBB. Veja os benefícios terapêuticos, dicas para aproveitar ao máximo e como investir em qualidade de vida.",
+        "termos_sensiveis": [
+          "terapeutic"
+        ]
       },
       {
         "id": 744,
@@ -3151,7 +3166,10 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "Saiba mais sobre os banhos terapêuticos e como utilizar a sua banheira para adotar esta prática. Conte com a Banheiras Bom Banho!"
+        "resumo": "Saiba mais sobre os banhos terapêuticos e como utilizar a sua banheira para adotar esta prática. Conte com a Banheiras Bom Banho!",
+        "termos_sensiveis": [
+          "terapeutic"
+        ]
       },
       {
         "id": 428,
@@ -3467,7 +3485,10 @@
         "categorias": [
           "Curiosidades"
         ],
-        "resumo": "A hidromassagem tem muitos benefícios, como ajudar no tratamento de artrite reumatoide, doença é autoimune. Saiba mais sobre o assunto no site!"
+        "resumo": "A hidromassagem tem muitos benefícios, como ajudar no tratamento de artrite reumatoide, doença é autoimune. Saiba mais sobre o assunto no site!",
+        "termos_sensiveis": [
+          "trata"
+        ]
       },
       {
         "id": 160,

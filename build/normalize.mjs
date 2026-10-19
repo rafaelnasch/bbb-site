@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { paths } from '../site.config.mjs';
-import { filtrarFrasesSaude, termosSaude, slugify, semAcento } from './lib/texto.mjs';
+import { filtrarFrasesSaude, filtrarFrasesSaudeMultilinha, termosSaude, termosSaudeBrutos, EXCECOES_NAO_SAUDE, slugify, semAcento } from './lib/texto.mjs';
 import { somaReais } from './lib/money.mjs';
 import { parseRotuloTamanho, valorUnicoFicha, numerosNoNome, mesmasMedidas } from './lib/medidas.mjs';
 
@@ -148,6 +148,12 @@ function tamanhosDoProduto(p, tipo, medidaConfirmada) {
         origem: 'opcao',
       };
       if (parsed.formato_irregular) t.formato_irregular = true;
+      if (parsed.leituras.length) {
+        t.leituras = parsed.leituras;
+        for (const l of parsed.leituras) {
+          editorialLog.push({ slug: p.slug, campo: 'd_tamanhos[].c', regra: l.regra, rotulo: v.rotulo_exibido, token: l.token, lido: l.lido });
+        }
+      }
       if (!medidaConfirmada) {
         t.ficha = ficha;
         // Encaixe pela maior das duas medidas (SPEC 9.4), dimensão a dimensão depois de ordenar.
@@ -190,7 +196,9 @@ function tamanhosDoProduto(p, tipo, medidaConfirmada) {
 }
 
 function plantasPorTamanho(p, tamanhos) {
-  if (!p.plantas_pdf.length) return { porTamanho: [], sobras: [] };
+  // A página linka a planta de outro modelo (Spa Serena -> Imola): nenhuma planta é anexada (SPEC 3.1).
+  if (p.alertas_da_fonte.some((a) => a.tipo === 'planta_de_outro_produto')) return { porTamanho: [], sobras: [] };
+  // Sem PDF publicado: uma entrada por tamanho com pdf_path null (SPEC 3.1), mesmo formato dos demais.
   const pdfs = p.plantas_pdf.map(infoPdf);
   const usados = new Set();
   const porTamanho = tamanhos.map((t) => {
@@ -224,8 +232,9 @@ function plantasPorTamanho(p, tamanhos) {
   return { porTamanho, sobras, todas: pdfs };
 }
 
-function lugaresNum(l) {
+function lugaresNum(l, conflitos = []) {
   if (l == null) return null;
+  if (conflitos.some((c) => c.campo === 'Lugares')) return null; // nome e ficha divergem: não escolhe
   if (/^individual$/i.test(String(l).trim())) return 1;
   const m = String(l).match(/^\s*(\d+)\b/);
   return m ? Number(m[1]) : null;
@@ -233,16 +242,40 @@ function lugaresNum(l) {
 
 const ARTIGO = { banheira: ['A', 'uma banheira'], sauna: ['A', 'uma sauna'], spa: ['O', 'um spa'], ofuro: ['O', 'um ofurô'], acessorio: ['O', 'um acessório'] };
 
-// Nome x ficha: quando o nome literal diz o material ou a configuração e a ficha diz outro,
-// é conflito da fonte (SPEC 0.3). O resumo omite o campo; a ficha mostra os dois com nota.
-function conflitosNomeFicha(p) {
+// Nome x ficha: quando o nome literal diz o material, a configuração, a forma ou os lugares e a
+// ficha diz outro, é conflito da fonte (SPEC 0.3). O resumo omite o campo, d_lugares_num fica null
+// e a ficha mostra os dois com nota. Nunca se escolhe um lado.
+const FORMA_NO_NOME = [
+  [/\bredond[ao]s?\b/, 'Redonda'],
+  [/\bquadrad[ao]s?\b/, 'Quadrada'],
+  [/\bretangular(es)?\b/, 'Retangular'],
+  [/\bde canto\b/, 'De Canto'],
+  [/\bova(l|is)\b/, 'Oval'],
+];
+function conflitosNomeFicha(p, tipo) {
   const n = semAcento(p.nome).toLowerCase();
   const e = p.especificacoes;
   const out = [];
+  // Acessório: "completo" no nome ("Kit filtragem completo") não fala de configuração e a ficha
+  // herda lugares do cadastro; ali só material e forma do nome contam.
+  const acessorio = tipo === 'acessorio';
   const nomeMat = /acrilico/.test(n) ? 'Acrílico' : /gel coat/.test(n) ? 'Gel Coat' : null;
   const nomeCfg = /\bcomplet[ao]\b/.test(n) ? 'Completa' : /\bbasic[ao]\b/.test(n) ? 'Básica' : null;
   if (nomeMat && e.Material && nomeMat !== e.Material) out.push({ campo: 'Material', nome_diz: nomeMat, ficha_diz: e.Material });
-  if (nomeCfg && e.Configuracao && nomeCfg !== e.Configuracao) out.push({ campo: 'Configuracao', nome_diz: nomeCfg, ficha_diz: e.Configuracao });
+  if (!acessorio && nomeCfg && e.Configuracao && nomeCfg !== e.Configuracao) out.push({ campo: 'Configuracao', nome_diz: nomeCfg, ficha_diz: e.Configuracao });
+  const formasNome = FORMA_NO_NOME.filter(([re]) => re.test(n)).map(([, f]) => f);
+  if (formasNome.length && e.Forma && !formasNome.includes(e.Forma)) {
+    out.push({ campo: 'Forma', nome_diz: formasNome.join(' / '), ficha_diz: e.Forma });
+  }
+  if (e.Lugares && !acessorio) {
+    const fichaInd = /^individual$/i.test(String(e.Lugares).trim());
+    const fichaNum = (String(e.Lugares).match(/^\s*(\d+)\b/) || [])[1];
+    if (/\bdupl[ao]s?\b/.test(n) && (fichaInd || (fichaNum && Number(fichaNum) !== 2))) {
+      out.push({ campo: 'Lugares', nome_diz: 'Duplo/Dupla', ficha_diz: e.Lugares });
+    } else if (/\bindividua(l|is)\b/.test(n) && !fichaInd) {
+      out.push({ campo: 'Lugares', nome_diz: 'Individual', ficha_diz: e.Lugares });
+    }
+  }
   return out;
 }
 
@@ -265,8 +298,8 @@ function resumo(p, tipo, tamanhos, itensExibidos, conflitos) {
     qual.push(tipoTxt);
     if (e.Material && !emConflito.has('Material')) qual.push(`em ${e.Material.toLowerCase()}`);
   } else {
-    if (tipoTxt) qual.push(`${tipoTxt}${e.Forma ? ` ${formaConcordada(e.Forma, art)}` : ''}`);
-    if (e.Lugares) qual.push(/^individual$/i.test(e.Lugares) ? 'individual' : `para ${e.Lugares.toLowerCase()}`);
+    if (tipoTxt) qual.push(`${tipoTxt}${e.Forma && !emConflito.has('Forma') ? ` ${formaConcordada(e.Forma, art)}` : ''}`);
+    if (e.Lugares && !emConflito.has('Lugares')) qual.push(/^individual$/i.test(e.Lugares) ? 'individual' : `para ${e.Lugares.toLowerCase()}`);
     if (e.Material && !emConflito.has('Material')) qual.push(`em ${e.Material.toLowerCase()}`);
     if (e.Configuracao && !emConflito.has('Configuracao')) qual.push(`configuração ${e.Configuracao.toLowerCase()}`);
   }
@@ -350,9 +383,12 @@ for (const p of catalog.products) {
   const plantas = plantasPorTamanho(p, tamanhos);
   const ed = filtroEditorialProduto(p);
 
-  const aquecedor = p.opcoes_personalizaveis
-    .flatMap((o) => o.valores.map((v) => ({ o, v })))
-    .find(({ v }) => /aquecedor/i.test(v.rotulo_exibido));
+  // Todos os valores de opção cujo rótulo cita aquecedor. Mais de um preço distinto (ex.: Madrid
+  // com + R$1.180,00 e + R$990,00) é conflito da fonte: d_aquecedor fica null e os valores vão juntos.
+  const aquecedores = p.opcoes_personalizaveis
+    .flatMap((o) => o.valores.map((v) => ({ titulo: o.titulo, rotulo: v.rotulo_exibido, preco_adicional: v.preco_adicional, value_id: v.value_id })))
+    .filter((x) => /aquecedor/i.test(x.rotulo));
+  const precosAquecedor = [...new Set(aquecedores.map((x) => x.preco_adicional))];
 
   const lados = tamanhos.flatMap((t) => [t.a, t.b]).filter((n) => n != null);
   const adicionaisTam = tamanhos.filter((t) => t.origem === 'opcao').map((t) => t.preco_adicional ?? 0);
@@ -362,19 +398,26 @@ for (const p of catalog.products) {
   out.d_tipo = tipo;
   if (conflito) {
     out.d_tipo_conflito = conflito;
+    out.d_tipo_pendente = `Listado nas coleções raiz ${conflito.join(' e ')}; d_tipo = ${tipo} pelo início do nome literal. Confirmar com a empresa. As coleções continuam listando o produto na ordem literal.`;
     avisos.push(`${p.slug}: listado em duas coleções raiz (${conflito.join(', ')}); d_tipo = ${tipo} pelo nome literal`);
   }
   out.d_tamanhos = tamanhos;
   out.d_medida_confirmada = !alertaMedida;
   out.d_hidro = /com hidro/i.test(p.nome) || p.itens_de_serie.some((i) => /motobomba/i.test(i));
-  out.d_aquecedor = aquecedor ? aquecedor.v.preco_adicional : null;
-  out.d_aquecedor_rotulo = aquecedor ? aquecedor.v.rotulo_exibido : null;
+  out.d_aquecedor = precosAquecedor.length === 1 ? precosAquecedor[0] : null;
+  out.d_aquecedor_rotulo = precosAquecedor.length === 1 ? aquecedores[0].rotulo : null;
+  if (precosAquecedor.length > 1) {
+    out.d_aquecedor_conflito = true;
+    out.d_aquecedor_opcoes = aquecedores;
+    avisos.push(`${p.slug}: ${aquecedores.length} opções com "aquecedor" e preços distintos (${precosAquecedor.join(', ')}); d_aquecedor = null, nenhum escolhido`);
+  }
   out.d_familia = null; // preenchido depois, a partir de data/familias.csv revisado
   out.d_planta = plantas.porTamanho;
   if (plantas.sobras?.length) {
     out.d_plantas_sem_tamanho = plantas.sobras.map((f) => ({ pdf_path: f.pdf_path, sha1: f.sha1, nome_arquivo: f.nome_arquivo }));
   }
-  out.d_lugares_num = lugaresNum(p.especificacoes.Lugares);
+  out.d_conflito_nome_ficha = conflitosNomeFicha(p, tipo);
+  out.d_lugares_num = lugaresNum(p.especificacoes.Lugares, out.d_conflito_nome_ficha);
   out.d_maior = lados.length ? Math.max(...lados) : null;
   out.d_menor = lados.length ? Math.min(...lados) : null;
   out.d_preco_min = fp == null ? null : somaReais(fp, adicionaisTam.length ? Math.min(...adicionaisTam) : 0);
@@ -382,7 +425,6 @@ for (const p of catalog.products) {
   out.d_itens_de_serie_exibidos = ed.itens;
   out.d_descricao_exibida = ed.descricao;
   out.d_descricao_curta_exibida = ed.curta;
-  out.d_conflito_nome_ficha = tipo === 'acessorio' ? [] : conflitosNomeFicha(p);
   out.d_resumo = resumo(p, tipo, tamanhos, ed.itens, out.d_conflito_nome_ficha);
   out.d_sem_foto = out.galeria.length === 0;
   out.d_versao_sufixo_1 = /-1$/.test(p.slug);
@@ -450,14 +492,69 @@ for (const [k, slugs] of grupos) {
   for (const s of slugs) sugestao.set(s, slugify(`${tipo} ${resto}`));
 }
 
+// Medida em comum (SPEC 3.2: versões irmãs diferem só em material e configuração). Duas versões
+// são a mesma peça quando têm um rótulo de tamanho idêntico (sem diferença de caixa e espaços) ou a
+// mesma medida numérica nas 3 dimensões (em qualquer ordem). Sem isso, não agrupam.
+const rotuloCanon = (r) => String(r ?? '').toLowerCase().replace(/\s+/g, '');
+const tresDims = (t) => ([t.a, t.b, t.c].every((n) => n != null) ? [t.a, t.b, t.c].map((n) => n.toFixed(3)).sort().join('x') : null);
+function mesmaMedida(p, q) {
+  const rp = new Set(p.d_tamanhos.map((t) => rotuloCanon(t.rotulo ?? t.rotulo_ficha)).filter(Boolean));
+  if (q.d_tamanhos.some((t) => rp.has(rotuloCanon(t.rotulo ?? t.rotulo_ficha)))) return true;
+  const np = new Set(p.d_tamanhos.map(tresDims).filter(Boolean));
+  return q.d_tamanhos.some((t) => np.has(tresDims(t)));
+}
+
+const familiaFinal = new Map(); // slug -> { familia, nota }
+for (const p of produtos) {
+  const rev = revisadas.get(p.slug);
+  familiaFinal.set(p.slug, { familia: rev ? rev.familia_final || '' : '', nota: rev?.nota ?? '' });
+}
+const porFamilia = new Map();
+for (const p of produtos) {
+  const f = familiaFinal.get(p.slug).familia;
+  if (!f) continue;
+  if (!porFamilia.has(f)) porFamilia.set(f, []);
+  porFamilia.get(f).push(p);
+}
+for (const [fam, membros] of porFamilia) {
+  // Componentes ligados pela relação "mesma medida"; cada componente só fica se todos os pares baterem.
+  const resto = [...membros];
+  const comps = [];
+  while (resto.length) {
+    const comp = [resto.shift()];
+    for (let i = 0; i < comp.length; i++) {
+      for (let j = resto.length - 1; j >= 0; j--) if (mesmaMedida(comp[i], resto[j])) comp.push(...resto.splice(j, 1));
+    }
+    comps.push(comp);
+  }
+  if (comps.length === 1 && comps[0].length === membros.length) {
+    const pares = membros.every((a) => membros.every((b) => a === b || mesmaMedida(a, b)));
+    if (pares) continue;
+  }
+  const validos = comps.filter((c) => c.length >= 2 && c.every((a) => c.every((b) => a === b || mesmaMedida(a, b))));
+  for (const c of comps) {
+    const ok = validos.includes(c);
+    const rot = c[0].d_tamanhos[0] ? (c[0].d_tamanhos[0].rotulo ?? c[0].d_tamanhos[0].rotulo_ficha) : '';
+    const nova = ok ? (validos.length === 1 ? fam : `${fam}-${slugify(rot)}`) : '';
+    for (const p of c) {
+      const nota = ok
+        ? `família ${fam} separada por medida: este grupo tem ${rot}`
+        : `fora da família ${fam}: nenhuma medida em comum com as outras versões`;
+      familiaFinal.set(p.slug, { familia: nova, nota });
+      avisos.push(`familias: ${p.slug} ${ok ? `-> ${nova}` : 'sem família'} (medida diferente das versões de ${fam})`);
+    }
+  }
+}
+
 const linhasCsv = ['slug,familia_sugerida,familia_final,revisado,nota'];
 for (const p of produtos) {
   const rev = revisadas.get(p.slug);
   const sug = sugestao.get(p.slug) ?? '';
   if (rev) {
     if (rev.familia_sugerida !== sug) avisos.push(`familias.csv: sugestão mudou para ${p.slug} (${rev.familia_sugerida} -> ${sug}); revisão mantida, conferir`);
-    linhasCsv.push([p.slug, sug, rev.familia_final, 'sim', rev.nota ?? ''].map(csvCampo).join(','));
-    p.d_familia = rev.familia_final || null;
+    const fin = familiaFinal.get(p.slug);
+    linhasCsv.push([p.slug, sug, fin.familia, 'sim', fin.nota].map(csvCampo).join(','));
+    p.d_familia = fin.familia || null;
   } else {
     linhasCsv.push([p.slug, sug, '', 'nao', ''].map(csvCampo).join(','));
     p.d_familia = null; // linha não revisada não agrupa
@@ -538,6 +635,14 @@ function atendeFiltro(f, s) {
   return true;
 }
 
+function descricaoCategoriaExibida(c, path) {
+  const r = filtrarFrasesSaudeMultilinha(c.descricao_texto ?? null);
+  for (const x of r.removidos) {
+    editorialLog.push({ categoria: path, campo: 'descricao_texto', regra: 'termo_de_saude', termos: x.termos, removido: x.frase });
+  }
+  return r.texto;
+}
+
 const categorias = catalog.categories.map((c) => {
   const slugs = c.produtos.map((x) => {
     const s = prodPorUrl.get(x.url);
@@ -557,6 +662,8 @@ const categorias = catalog.categories.map((c) => {
     produtos: slugs,
     meta: c.meta,
     descricao_texto: c.descricao_texto,
+    // O que vai ao HTML: descricao_texto sem as frases com termo de saúde (SPEC 0.5; log editorial).
+    d_descricao_exibida: descricaoCategoriaExibida(c, path),
     breadcrumbs: c.breadcrumbs,
     subcategorias_listadas: c.subcategorias_listadas,
     em_sitemap: c.em_sitemap,
@@ -577,13 +684,17 @@ const numeros = new Map(whatsapp.numbers.map((n) => [n.phone, n]));
 const contatos = [];
 function addContato(papel, numero, extra = {}) {
   const n = numeros.get(numero);
+  // Papel de loja: link sem texto pré-preenchido (whatsapp.json, contexto da loja; SPEC 10.1),
+  // mesmo quando o número é o mesmo do papel de ajuda.
+  const semTexto = papel.startsWith('loja_');
   if (!n) throw new Error(`contatos: número ${numero} (${papel}) não está em whatsapp.json`);
   if (!['ativo', 'ativo_formato_suspeito'].includes(n.status)) throw new Error(`contatos: ${numero} (${papel}) tem status ${n.status}`);
   contatos.push({
     papel,
     numero,
     display: n.display,
-    prefilled_text: n.prefilled_text,
+    prefilled_text: semTexto ? '' : n.prefilled_text,
+    ...(semTexto && n.prefilled_text ? { prefilled_text_de_outro_contexto: 'o número também atende o papel de ajuda, que tem texto próprio' } : {}),
     status: n.status === 'ativo' ? 'ativo' : n.status,
     link_ativo: n.status === 'ativo',
     fonte: n.source_urls,
@@ -767,6 +878,17 @@ const faq = faqSrc.faq.map((x, i) => {
   if (x.obs) item.obs_fonte = x.obs;
   if (x.link_manual) item.link_manual = x.link_manual;
   if (termos.length) item.termos_sensiveis = termos;
+  // Palavra da lista usada fora de sentido de saúde (ICMS, tratamento da água): publica literal,
+  // com a decisão registrada no próprio item (exceções fixas em build/lib/texto.mjs).
+  const brutos = termosSaudeBrutos(`${x.pergunta}\n${x.resposta_literal}`);
+  if (brutos.length && !termos.length) {
+    const texto = semAcento(`${x.pergunta}\n${x.resposta_literal}`).toLowerCase();
+    item.revisao_termos = {
+      termos_da_lista: brutos,
+      decisao: 'publicar literal: a palavra aparece numa expressão fixa sem sentido de saúde',
+      expressoes: EXCECOES_NAO_SAUDE.filter((e) => { e.re.lastIndex = 0; return e.re.test(texto); }).map((e) => e.motivo),
+    };
+  }
   if (/carrinho/i.test(x.resposta_literal)) item.alerta = 'a resposta descreve o carrinho do site atual, que não existe no site novo';
   return item;
 });
@@ -774,6 +896,59 @@ const faq = faqSrc.faq.map((x, i) => {
 // ---------------------------------------------------------------------------
 // Políticas (SPEC 3.3)
 // ---------------------------------------------------------------------------
+
+// Filtro editorial do manual (SPEC 0.5 e 15). O texto literal de cada página fica em `texto`;
+// o que vai ao HTML fica em `texto_exibido`. Saem, com registro no log:
+// - o capítulo de garantia e o certificado de garantia (prazos de garantia: oculto_ate_decisao);
+// - as linhas do índice que apontam para esses dois capítulos;
+// - o capítulo "Benefícios da cromoterapia" inteiro (afirmações de saúde do começo ao fim);
+// - qualquer outra linha com termo de saúde da lista (fora das exceções fixas de texto.mjs).
+const MANUAL_CAPITULOS_OCULTOS = [
+  { inicio: /^GARANTIA E CONTRATO DE GARANTIA$/, fim: /^MODO DE LIMPEZA$/, motivo: 'garantia', oculto_ate_decisao: true },
+  { inicio: /^CERTIFICADO DE GARANTIA$/, fim: /^“?DIREITOS AUTORAIS/, motivo: 'garantia', oculto_ate_decisao: true },
+  { inicio: /^BENEF[IÍ]CIOS DA CROMOTERAPIA$/, fim: /^A FUN[CÇ][AÃ]O DO OZ[OÔ]NIO$/, motivo: 'afirmacao_de_saude', oculto_ate_decisao: false },
+];
+const reIndiceGarantia = /^(garantia e contrato de garantia|certificado de garantia)\s*\.{3,}/i;
+
+function filtrarManual(paginas) {
+  let aberto = null;
+  for (const pg of paginas) {
+    const linhas = pg.texto.split('\n');
+    const ficam = [];
+    const ocultos = [];
+    linhas.forEach((linha, idx) => {
+      const limpa = linha.trim();
+      if (aberto && aberto.fim.test(limpa)) aberto = null;
+      if (!aberto) {
+        const cap = MANUAL_CAPITULOS_OCULTOS.find((c) => c.inicio.test(limpa));
+        if (cap) aberto = cap;
+      }
+      // O número da página (primeira linha) fica sempre.
+      if (idx === 0 && /^\d+$/.test(limpa)) { ficam.push(linha); return; }
+      let motivo = null;
+      if (aberto && limpa) motivo = aberto.motivo;
+      else if (reIndiceGarantia.test(limpa)) motivo = 'garantia';
+      else if (termosSaude(limpa).length) motivo = 'termo_de_saude';
+      if (motivo) {
+        ocultos.push({ motivo, texto: linha, ...(motivo === 'garantia' ? { oculto_ate_decisao: true } : {}) });
+        editorialLog.push({ manual_pagina: pg.pagina, campo: 'politicas.manual.paginas[].texto', regra: motivo, ...(motivo === 'termo_de_saude' ? { termos: termosSaude(limpa) } : {}), removido: linha });
+        return;
+      }
+      ficam.push(linha);
+    });
+    pg.texto_exibido = ficam.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    pg.trechos_ocultos = ocultos;
+    // Página que fica só com o número (só imagem no PDF, ou tudo oculto): nenhum texto no HTML.
+    const conteudo = ficam.filter((l) => l.trim() && !/^\d+$/.test(l.trim()));
+    pg.sem_texto_exibido = conteudo.length === 0;
+    if (ocultos.some((o) => o.motivo === 'garantia')) {
+      if (pg.sem_texto_exibido) pg.oculto_ate_decisao = true;
+      else pg.tem_trecho_oculto_ate_decisao = true;
+    }
+  }
+  if (aberto) throw new Error('manual: capítulo oculto sem fim encontrado');
+  return paginas;
+}
 
 function paginasDoManual() {
   const f = join(R, 'html', 'pdf', 'manual-do-usuario.txt');
@@ -837,7 +1012,7 @@ const politicas = {
     pdf_path: 'manual/manual-do-usuario.pdf',
     paginas_total: inst.suporte_pos_venda.manual_usuario_pdf.paginas,
     descricao_literal: inst.suporte_pos_venda.manual_usuario_pdf.descricao_literal,
-    paginas: paginasDoManual(),
+    paginas: filtrarManual(paginasDoManual()),
     fonte: inst.suporte_pos_venda.manual_usuario_pdf.source_url,
   },
   rastreio: { campos: inst.suporte_pos_venda.rastreio.campos, cnpjs_aceitos_literal: inst.empresa.cnpjs_aceitos_no_rastreio.literal, fonte: inst.suporte_pos_venda.rastreio.source_url },
@@ -858,6 +1033,8 @@ const resumoPost = (p) => ({
   modificado_em: p.date_modified,
   categorias: p.categories,
   resumo: p.seo_description || null,
+  // Título ou resumo do post com termo de saúde: o bloco do blog não exibe o post (SPEC 0.5).
+  ...(termosSaude(`${p.title}\n${p.seo_description || ''}`).length ? { termos_sensiveis: termosSaude(`${p.title}\n${p.seo_description || ''}`) } : {}),
 });
 const porCategoria = {};
 for (const p of posts) for (const c of p.categories || []) (porCategoria[c] ||= []).push(resumoPost(p));
@@ -908,6 +1085,8 @@ const exibidos = {
     'loja-telefone': { data: 'lojas.json[].atendimento_literal', origem: 'institucional.json:lojas_showrooms.lojas[].atendimento' },
     'prazo-entrega': { data: 'politicas.json:prazo_de_entrega.tabela[].linhas[].prazo', origem: 'institucional.json:comercial.prazo_de_entrega.tabela' },
     pagamento: { data: 'politicas.json:pagamento.literal', origem: 'institucional.json:comercial.formas_pagamento.literal' },
+    'categoria-descricao': { data: 'categorias.json[].d_descricao_exibida', origem: 'catalog.json:categories[].descricao_texto', obs: 'menos o filtro editorial de data/editorial-log.json' },
+    'manual-texto': { data: 'politicas.json:manual.paginas[].texto_exibido', origem: '_recon/html/pdf/manual-do-usuario.txt', obs: 'menos garantia e afirmações de saúde (editorial-log)' },
     'faq-resposta': { data: 'faq.json[].resposta', origem: 'faq-source.json:faq[].resposta_literal' },
     'data-coleta': { data: 'meta.json:data_coleta', origem: 'catalog.json:generated_at_source.coletado_em' },
   },
@@ -948,7 +1127,19 @@ gravar('faq.json', faq);
 gravar('politicas.json', politicas);
 gravar('blog-recentes.json', blogRecentes);
 gravar('exibidos.map.json', exibidos);
-gravar('editorial-log.json', { coletado_em: COLETADO_EM, total: editorialLog.length, itens: editorialLog });
+gravar('editorial-log.json', {
+  coletado_em: COLETADO_EM,
+  regras: {
+    termo_de_saude: 'frase inteira com palavra da lista da SPEC 0.5 sai do texto exibido; o literal fica no dado',
+    excecoes_nao_saude: EXCECOES_NAO_SAUDE.map((e) => ({ expressao: e.re.source, motivo: e.motivo })),
+    anotacao_interna_VERIFICAR: 'item ou linha com "(VERIFICAR)" sai até a empresa confirmar',
+    garantia: 'capítulos de garantia do manual e linhas do índice que apontam para eles ficam ocultos até a decisão (SPEC 15)',
+    afirmacao_de_saude: 'capítulo "Benefícios da cromoterapia" do manual sai inteiro',
+    espaco_apos_virgula_decimal_ignorado: 'medida "0, 84" é lida como 0,84 porque a vírgula decimal está escrita; token sem vírgula ("051", "89") fica null (não se adivinha)',
+  },
+  total: editorialLog.length,
+  itens: editorialLog,
+});
 
-console.log(`normalize: ${produtos.length} produtos, ${categorias.length} categorias, ${Object.keys(familias).length} famílias, ${contatos.length} contatos, ${lojasOut.length} lojas, ${faq.length} FAQ; coleta ${DATA_COLETA}; ${editorialLog.length} remoções editoriais`);
+console.log(`normalize: ${produtos.length} produtos, ${categorias.length} categorias, ${Object.keys(familias).length} famílias, ${contatos.length} contatos, ${lojasOut.length} lojas, ${faq.length} FAQ; coleta ${DATA_COLETA}; ${editorialLog.length} registros editoriais`);
 for (const a of avisos) console.log(`aviso: ${a}`);

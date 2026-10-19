@@ -28,12 +28,20 @@ export function parseRotuloTamanho(rotulo) {
   const base = String(rotulo ?? '').split(/\+\s*R\$/)[0];
   const tokens = base.match(reDecimal) || [];
   const nums = tokens.map(numeroMedida);
+  // Regra de leitura (registrada em data/editorial-log.json): um token com vírgula decimal e espaço
+  // depois dela ("0, 84") é lido como o mesmo número sem o espaço, porque o separador decimal está
+  // escrito. Token sem separador ("051", "89") fica null: aí seria preciso adivinhar onde vai a vírgula.
+  const leituras = tokens
+    .map((tk, i) => ({ token: tk, lido: nums[i] }))
+    .filter((x) => /\s/.test(x.token) && x.lido != null)
+    .map((x) => ({ ...x, regra: 'espaco_apos_virgula_decimal_ignorado' }));
   const canon = /^\s*\d+,\d+\s*[xX]\s*\d+,\d+\s*[xX]\s*\d+,\d+\s*$/.test(base);
   return {
     a: nums[0] ?? null,
     b: nums[1] ?? null,
     c: nums[2] ?? null,
     tokens,
+    leituras,
     formato_irregular: !canon || tokens.length !== 3 || nums.some((n) => n == null),
   };
 }

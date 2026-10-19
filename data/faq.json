@@ -385,9 +385,15 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
-    "termos_sensiveis": [
-      "circulacao"
-    ]
+    "revisao_termos": {
+      "termos_da_lista": [
+        "circulacao"
+      ],
+      "decisao": "publicar literal: a palavra aparece numa expressão fixa sem sentido de saúde",
+      "expressoes": [
+        "nome do imposto (ICMS)"
+      ]
+    }
   },
   {
     "id": "faq-32",
@@ -557,9 +563,15 @@
     "coletado_em": "2026-10-18",
     "oculto_ate_decisao": false,
     "obs_fonte": "a pergunta foi redigida por nós; a resposta é texto literal da fonte",
-    "termos_sensiveis": [
-      "trata"
-    ]
+    "revisao_termos": {
+      "termos_da_lista": [
+        "trata"
+      ],
+      "decisao": "publicar literal: a palavra aparece numa expressão fixa sem sentido de saúde",
+      "expressoes": [
+        "tratamento da água do spa"
+      ]
+    }
   },
   {
     "id": "faq-45",

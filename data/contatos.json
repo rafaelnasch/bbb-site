@@ -172,7 +172,8 @@
       "papel": "loja_congonhal",
       "numero": "5535992192256",
       "display": "(35) 9 9219-2256",
-      "prefilled_text": "Olá, estava navegando no site Banheiras Bom Banho e preciso de ajuda!",
+      "prefilled_text": "",
+      "prefilled_text_de_outro_contexto": "o número também atende o papel de ajuda, que tem texto próprio",
       "status": "ativo",
       "link_ativo": true,
       "fonte": [

@@ -553,31 +553,6 @@
       "Configuracao"
     ]
   },
-  "banheira-dupla-essenciale": {
-    "familia": "banheira-dupla-essenciale",
-    "tipo": "banheira",
-    "membros": [
-      {
-        "slug": "banheira-dupla-essenciale-completa-com-hidro-em-acrilico",
-        "nome": "Banheira Dupla Essenciale COMPLETA com hidro em acrílico",
-        "Material": "Acrílico",
-        "Configuracao": "Completa",
-        "preco_por": "R$6.274,70",
-        "finalPrice": 6274.7
-      },
-      {
-        "slug": "banheira-dupla-essenciale-completa-com-hidro",
-        "nome": "Banheira Dupla Essenciale COMPLETA com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Completa",
-        "preco_por": "R$5.293,91",
-        "finalPrice": 5293.91
-      }
-    ],
-    "variam_por": [
-      "Material"
-    ]
-  },
   "banheira-dupla-firenze": {
     "familia": "banheira-dupla-firenze",
     "tipo": "banheira",
@@ -764,14 +739,6 @@
         "Configuracao": "Completa",
         "preco_por": "R$9.160,08",
         "finalPrice": 9160.08
-      },
-      {
-        "slug": "banheira-dupla-lyon-completa-com-hidro",
-        "nome": "Banheira Dupla Lyon COMPLETA com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Completa",
-        "preco_por": "R$8.335,78",
-        "finalPrice": 8335.78
       }
     ],
     "variam_por": [
@@ -1345,14 +1312,6 @@
         "finalPrice": 3902.7
       },
       {
-        "slug": "banheira-individual-tailandia-completa-com-hidro-em-acrilico",
-        "nome": "Banheira individual Tailândia COMPLETA com hidro em acrílico",
-        "Material": "Acrílico",
-        "Configuracao": "Completa",
-        "preco_por": "R$5.237,03",
-        "finalPrice": 5237.03
-      },
-      {
         "slug": "banheira-individual-tailandia-completa-com-hidro",
         "nome": "Banheira individual Tailândia COMPLETA com hidro",
         "Material": "Gel Coat",
@@ -1362,7 +1321,6 @@
       }
     ],
     "variam_por": [
-      "Material",
       "Configuracao"
     ]
   },
@@ -1735,31 +1693,6 @@
       "Configuracao"
     ]
   },
-  "banheira-conforto": {
-    "familia": "banheira-conforto",
-    "tipo": "banheira",
-    "membros": [
-      {
-        "slug": "banheira-retangular-conforto-completa-com-hidro-em-acrilico",
-        "nome": "Banheira Retangular Conforto COMPLETA com hidro em acrílico",
-        "Material": "Acrílico",
-        "Configuracao": "Completa",
-        "preco_por": "R$5.179,54",
-        "finalPrice": 5179.54
-      },
-      {
-        "slug": "banheira-retangular-conforto-completa-com-hidro",
-        "nome": "Banheira Retangular Conforto COMPLETA com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Completa",
-        "preco_por": "R$4.297,38",
-        "finalPrice": 4297.38
-      }
-    ],
-    "variam_por": [
-      "Material"
-    ]
-  },
   "banheira-denizard": {
     "familia": "banheira-denizard",
     "tipo": "banheira",
@@ -1945,8 +1878,8 @@
       "Configuracao"
     ]
   },
-  "banheira-marcelle": {
-    "familia": "banheira-marcelle",
+  "banheira-marcelle-1-65-x-0-91-x-0-37": {
+    "familia": "banheira-marcelle-1-65-x-0-91-x-0-37",
     "tipo": "banheira",
     "membros": [
       {
@@ -1958,20 +1891,29 @@
         "finalPrice": 4784.92
       },
       {
-        "slug": "banheira-retangular-marcelle-com-hidro",
-        "nome": "Banheira Retangular Marcelle com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Básica",
-        "preco_por": "R$4.669,21",
-        "finalPrice": 4669.21
-      },
-      {
         "slug": "banheira-retangular-marcelle-completa-com-hidro-em-acrilico",
         "nome": "Banheira Retangular Marcelle COMPLETA com hidro em acrílico",
         "Material": "Acrílico",
         "Configuracao": "Completa",
         "preco_por": "R$5.042,56",
         "finalPrice": 5042.56
+      }
+    ],
+    "variam_por": [
+      "Configuracao"
+    ]
+  },
+  "banheira-marcelle-0-91-x-1-64-x-0-37": {
+    "familia": "banheira-marcelle-0-91-x-1-64-x-0-37",
+    "tipo": "banheira",
+    "membros": [
+      {
+        "slug": "banheira-retangular-marcelle-com-hidro",
+        "nome": "Banheira Retangular Marcelle com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$4.669,21",
+        "finalPrice": 4669.21
       },
       {
         "slug": "banheira-retangular-marcelle-completa-com-hidro",
@@ -1983,7 +1925,6 @@
       }
     ],
     "variam_por": [
-      "Material",
       "Configuracao"
     ]
   },
@@ -2031,31 +1972,6 @@
         "Configuracao": "Completa",
         "preco_por": "R$6.964,04",
         "finalPrice": 6964.04
-      }
-    ],
-    "variam_por": [
-      "Material"
-    ]
-  },
-  "ofuro-duplo-solene": {
-    "familia": "ofuro-duplo-solene",
-    "tipo": "ofuro",
-    "membros": [
-      {
-        "slug": "ofuro-duplo-solene-completo-com-hidro-em-acrilico",
-        "nome": "Ofurô Duplo Solene COMPLETO com hidro em acrílico",
-        "Material": "Acrílico",
-        "Configuracao": "Completa",
-        "preco_por": "R$9.367,66",
-        "finalPrice": 9367.66
-      },
-      {
-        "slug": "ofuro-duplo-solene-completo-com-hidro",
-        "nome": "Ofurô Duplo Solene COMPLETO com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Completa",
-        "preco_por": "R$8.145,55",
-        "finalPrice": 8145.55
       }
     ],
     "variam_por": [
@@ -2171,31 +2087,6 @@
       "Material"
     ]
   },
-  "spa-cancun": {
-    "familia": "spa-cancun",
-    "tipo": "spa",
-    "membros": [
-      {
-        "slug": "spa-quadrado-cancun-completo-com-hidro-em-acrilico",
-        "nome": "Spa Quadrado Cancun COMPLETO com hidro em acrílico",
-        "Material": "Acrílico",
-        "Configuracao": "Completa",
-        "preco_por": "R$14.267,96",
-        "finalPrice": 14267.96
-      },
-      {
-        "slug": "spa-quadrado-cancun-completo-com-hidro",
-        "nome": "Spa Quadrado Cancun COMPLETO com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Completa",
-        "preco_por": "R$10.315,19",
-        "finalPrice": 10315.19
-      }
-    ],
-    "variam_por": [
-      "Material"
-    ]
-  },
   "spa-copacabana": {
     "familia": "spa-copacabana",
     "tipo": "spa",
@@ -2246,31 +2137,6 @@
       "Material"
     ]
   },
-  "spa-napole": {
-    "familia": "spa-napole",
-    "tipo": "spa",
-    "membros": [
-      {
-        "slug": "spa-quadrado-napole-completo-com-hidro-em-acrilico",
-        "nome": "Spa Quadrado Napole COMPLETO com hidro em Acrílico",
-        "Material": "Acrílico",
-        "Configuracao": "Completa",
-        "preco_por": "R$12.631,17",
-        "finalPrice": 12631.17
-      },
-      {
-        "slug": "spa-quadrado-napole-completo-com-hidro",
-        "nome": "Spa Quadrado Napole COMPLETO com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Completa",
-        "preco_por": "R$12.129,56",
-        "finalPrice": 12129.56
-      }
-    ],
-    "variam_por": [
-      "Material"
-    ]
-  },
   "spa-perola": {
     "familia": "spa-perola",
     "tipo": "spa",
@@ -2296,8 +2162,8 @@
       "Material"
     ]
   },
-  "spa-san-marino": {
-    "familia": "spa-san-marino",
+  "spa-san-marino-2-20-x-2-20-x-0-85": {
+    "familia": "spa-san-marino-2-20-x-2-20-x-0-85",
     "tipo": "spa",
     "membros": [
       {
@@ -2309,20 +2175,29 @@
         "finalPrice": 9415.51
       },
       {
-        "slug": "spa-quadrado-san-marino-com-hidro",
-        "nome": "Spa Quadrado San Marino com hidro",
-        "Material": "Gel Coat",
-        "Configuracao": "Básica",
-        "preco_por": "R$9.013,68",
-        "finalPrice": 9013.68
-      },
-      {
         "slug": "spa-quadrado-san-marino-completo-com-hidro-em-acrilico",
         "nome": "Spa Quadrado San Marino COMPLETO com hidro em acrílico",
         "Material": "Acrílico",
         "Configuracao": "Completa",
         "preco_por": "R$11.344,28",
         "finalPrice": 11344.28
+      }
+    ],
+    "variam_por": [
+      "Configuracao"
+    ]
+  },
+  "spa-san-marino-2-19-x-2-20-x-0-79": {
+    "familia": "spa-san-marino-2-19-x-2-20-x-0-79",
+    "tipo": "spa",
+    "membros": [
+      {
+        "slug": "spa-quadrado-san-marino-com-hidro",
+        "nome": "Spa Quadrado San Marino com hidro",
+        "Material": "Gel Coat",
+        "Configuracao": "Básica",
+        "preco_por": "R$9.013,68",
+        "finalPrice": 9013.68
       },
       {
         "slug": "spa-quadrado-san-marino-completo-com-hidro",
@@ -2334,7 +2209,6 @@
       }
     ],
     "variam_por": [
-      "Material",
       "Configuracao"
     ]
   },

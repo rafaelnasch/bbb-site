@@ -32,6 +32,13 @@ describe('contatos.json', () => {
     assert.equal(porPapel.get('sac').prefilled_text, '');
   });
 
+  test('lojas sem texto pré-preenchido, inclusive a Loja 1 que usa o número de ajuda (SPEC 10.1)', () => {
+    const lojas = contatos.contatos.filter((c) => c.papel.startsWith('loja_'));
+    for (const c of lojas) assert.equal(c.prefilled_text, '', c.papel);
+    assert.equal(porPapel.get('loja_congonhal').numero, porPapel.get('ajuda').numero);
+    assert.notEqual(porPapel.get('ajuda').prefilled_text, '');
+  });
+
   test('só ativos; os dois números de 8 dígitos das lojas ficam sem link', () => {
     for (const c of contatos.contatos) {
       if (c.link_ativo) assert.equal(c.status, 'ativo', c.papel);

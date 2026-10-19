@@ -140,12 +140,28 @@ describe('derivados d_', () => {
     }
   });
 
-  test('d_planta vazio quando a página não publica planta (Spa Serena)', () => {
+  test('d_planta vazio só quando a página linka planta de outro modelo (Spa Serena)', () => {
     const s = porSlug.get('spa-quadrado-serena-completo-com-hidro-em-acrilico');
     assert.deepEqual(s.d_planta, []);
     assert.deepEqual(s.galeria, []);
     assert.equal(s.d_sem_foto, true);
-    for (const p of produtos) if (p.plantas_pdf.length === 0) assert.deepEqual(p.d_planta, [], p.slug);
+    for (const p of produtos) {
+      if (p.alertas_da_fonte.some((a) => a.tipo === 'planta_de_outro_produto')) {
+        assert.deepEqual(p.d_planta, [], p.slug);
+        continue;
+      }
+      // Uma entrada por tamanho, com pdf_path null quando não há PDF (SPEC 3.1), mesmo sem nenhum PDF.
+      assert.equal(p.d_planta.length, p.d_tamanhos.length, p.slug);
+      p.d_planta.forEach((x, i) => {
+        assert.equal(x.rotulo, p.d_tamanhos[i].rotulo ?? p.d_tamanhos[i].rotulo_ficha ?? null, p.slug);
+        assert.ok('pdf_path' in x && 'sha1' in x && 'cotas_validadas' in x, p.slug);
+        if (p.plantas_pdf.length === 0) {
+          assert.equal(x.pdf_path, null, p.slug);
+          assert.equal(x.sha1, null, p.slug);
+          assert.equal(x.cotas_validadas, false, p.slug);
+        }
+      });
+    }
   });
 
   test('d_medida_confirmada=false exatamente nos 12 com alerta ficha_x_opcao_tamanho', () => {
@@ -178,10 +194,27 @@ describe('derivados d_', () => {
     for (const p of produtos) {
       const esperado = /com hidro/i.test(p.nome) || p.itens_de_serie.some((i) => /motobomba/i.test(i));
       assert.equal(p.d_hidro, esperado, p.slug);
-      const aq = p.opcoes_personalizaveis.flatMap((o) => o.valores).find((v) => /aquecedor/i.test(v.rotulo_exibido));
-      assert.equal(p.d_aquecedor, aq ? aq.preco_adicional : null, p.slug);
-      if (/^individual$/i.test(p.especificacoes.Lugares)) assert.equal(p.d_lugares_num, 1);
+      const aqs = p.opcoes_personalizaveis.flatMap((o) => o.valores).filter((v) => /aquecedor/i.test(v.rotulo_exibido));
+      const precos = [...new Set(aqs.map((v) => v.preco_adicional))];
+      if (precos.length > 1) {
+        // Preços distintos para o aquecedor: nenhum é escolhido, todos ficam registrados.
+        assert.equal(p.d_aquecedor, null, p.slug);
+        assert.equal(p.d_aquecedor_conflito, true, p.slug);
+        assert.deepEqual(p.d_aquecedor_opcoes.map((x) => x.preco_adicional), aqs.map((v) => v.preco_adicional), p.slug);
+      } else {
+        assert.equal(p.d_aquecedor, precos.length ? precos[0] : null, p.slug);
+        assert.ok(!p.d_aquecedor_conflito, p.slug);
+      }
+      const lugConflito = p.d_conflito_nome_ficha.some((c) => c.campo === 'Lugares');
+      if (lugConflito) assert.equal(p.d_lugares_num, null, p.slug);
+      else if (/^individual$/i.test(p.especificacoes.Lugares)) assert.equal(p.d_lugares_num, 1);
     }
+  });
+
+  test('Madrid: os dois preços do aquecedor ficam, sem escolha', () => {
+    const p = porSlug.get('banheira-dupla-madrid-completa-com-hidro');
+    assert.equal(p.d_aquecedor, null);
+    assert.deepEqual(p.d_aquecedor_opcoes.map((x) => x.preco_adicional).sort((a, b) => a - b), [990, 1180]);
   });
 
   test('saunas: medida da ficha com a altura, para a vista frontal', () => {
@@ -225,6 +258,60 @@ describe('filtro editorial e texto oculto (SPEC 0.3, 0.4, 0.5)', () => {
     assert.equal(log.total, log.itens.length);
   });
 
+  test('categorias: descrição exibida sem termo de saúde, com o corte no log', () => {
+    for (const c of categorias) {
+      assert.deepEqual(termosSaude(c.d_descricao_exibida ?? ''), [], c.d_path);
+      if ((c.d_descricao_exibida ?? null) !== (c.descricao_texto ?? null)) {
+        assert.ok(log.itens.some((l) => l.categoria === c.d_path && l.campo === 'descricao_texto'), c.d_path);
+      }
+    }
+    const b = categorias.find((c) => c.d_path === 'banheiras.html');
+    assert.ok(/circulação/.test(b.descricao_texto), 'o literal continua no dado');
+    assert.ok(!/circulação/.test(b.d_descricao_exibida));
+    // A frase que atravessa a quebra de linha do link sai inteira, sem deixar o começo solto.
+    const r = categorias.find((c) => c.d_path === 'spas/redondos.html');
+    assert.ok(r.d_descricao_exibida.startsWith('A Banheiras Bom Banho trabalha com'), r.d_descricao_exibida);
+  });
+
+  test('manual: garantia e afirmações de saúde fora do texto exibido, com registro', () => {
+    const pags = politicas.manual.paginas;
+    for (const pg of pags) {
+      assert.equal(typeof pg.texto_exibido, 'string', `p${pg.pagina}`);
+      assert.deepEqual(termosSaude(pg.texto_exibido), [], `p${pg.pagina}`);
+      // Nenhum prazo de garantia no texto exibido (SPEC 15).
+      for (const l of pg.texto_exibido.split('\n')) {
+        assert.ok(!(/garantia/i.test(l) && /\d+\s*(\([^)]*\)\s*)?(anos?|m[eê]s(es)?)\b/i.test(l)), `p${pg.pagina}: ${l}`);
+      }
+      for (const o of pg.trechos_ocultos) {
+        assert.ok(log.itens.some((l) => l.manual_pagina === pg.pagina && l.removido === o.texto), `p${pg.pagina}: ${o.texto}`);
+      }
+    }
+    const p9 = pags.find((x) => x.pagina === 9);
+    assert.ok(/2 \(doi s\) ano s/.test(p9.texto), 'o literal continua no dado');
+    assert.equal(p9.sem_texto_exibido, true);
+    assert.equal(p9.oculto_ate_decisao, true);
+    assert.equal(pags.find((x) => x.pagina === 43).oculto_ate_decisao, true);
+    assert.ok(!/CROMOTERAPIA|anticelulite|Emagrecedor/i.test(pags.find((x) => x.pagina === 37).texto_exibido));
+    assert.ok(/A FUNÇÃO DO OZÔNIO/.test(pags.find((x) => x.pagina === 38).texto_exibido));
+    assert.ok(/MODO DE LIMPEZA/.test(pags.find((x) => x.pagina === 11).texto_exibido));
+    assert.ok(/Tratamento da água/.test(pags.find((x) => x.pagina === 3).texto_exibido));
+    assert.ok(!/Garantia e contrato de garantia/.test(pags.find((x) => x.pagina === 3).texto_exibido));
+  });
+
+  test('exceções fixas: palavra da lista sem sentido de saúde passa; afirmação de saúde não', () => {
+    assert.deepEqual(termosSaude('ICMS (Imposto sobre Circulação de Mercadorias e Serviços)'), []);
+    assert.deepEqual(termosSaude('Como tratar a água do spa?'), []);
+    assert.deepEqual(termosSaude('relacionada ao tratamento de seus dados pessoais'), []);
+    assert.ok(termosSaude('melhorando a circulação do sangue').length);
+    assert.ok(termosSaude('tratamento natural para curar').length);
+    assert.ok(termosSaude('jatos que estimulam a circulação').length);
+    for (const id of ['faq-31', 'faq-44']) {
+      const f = faq.find((x) => x.id === id);
+      assert.ok(!f.termos_sensiveis, id);
+      assert.ok(f.revisao_termos && f.revisao_termos.expressoes.length, id);
+    }
+  });
+
   test('"BANHEIRA COLORIDA" e as linhas que não são item ficam fora de data/', () => {
     for (const f of ['produtos.json', 'categorias.json', 'empresa.json', 'faq.json', 'politicas.json', 'lojas.json', 'contatos.json']) {
       assert.ok(!readFileSync(join(DATA, f), 'utf8').includes('BANHEIRA COLORIDA'), f);
@@ -247,6 +334,37 @@ describe('filtro editorial e texto oculto (SPEC 0.3, 0.4, 0.5)', () => {
     const spaco = porSlug.get('banheira-acqua-spaco-completa-com-hidro-em-acrilico');
     assert.equal(spaco.d_conflito_nome_ficha[0].campo, 'Material');
     assert.ok(!/em (gel coat|acrílico)/.test(spaco.d_resumo.split(' é ')[1]));
+  });
+
+  test('conflito nome x ficha em Lugares e Forma: os 14 produtos, sem escolher lado', () => {
+    const LUGARES = [
+      'banheira-dupla-paris-com-hidro', 'banheira-dupla-paris-com-hidro-em-acrilico',
+      'banheira-dupla-paris-completa-com-hidro', 'banheira-dupla-paris-completa-com-hidro-em-acrilico',
+      'ofuro-duplo-toquio-com-hidro', 'ofuro-duplo-toquio-com-hidro-em-acrilico',
+      'ofuro-duplo-toquio-completo-com-hidro', 'ofuro-duplo-toquio-completo-com-hidro-em-acrilico',
+    ];
+    const FORMA = [
+      'ofuro-quadrado-osaka-individual-com-hidro', 'ofuro-quadrado-osaka-individual-com-hidro-em-acrilico',
+      'ofuro-quadrado-osaka-completo-individual-com-hidro', 'ofuro-quadrado-osaka-completo-individual-com-hidro-em-acrilico',
+      'spa-quadrado-chicago-completo-com-hidro-em-acrilico', 'apoio-de-cabeca-oval',
+    ];
+    const comLugares = produtos.filter((p) => p.d_conflito_nome_ficha.some((c) => c.campo === 'Lugares')).map((p) => p.slug).sort();
+    const comForma = produtos.filter((p) => p.d_conflito_nome_ficha.some((c) => c.campo === 'Forma')).map((p) => p.slug).sort();
+    assert.deepEqual(comLugares, [...LUGARES].sort());
+    assert.deepEqual(comForma, [...FORMA].sort());
+    for (const s of LUGARES) {
+      const p = porSlug.get(s);
+      assert.equal(p.d_lugares_num, null, s);
+      const depoisDoNome = p.d_resumo.slice(p.nome.trim().length + 2);
+      assert.ok(!/individual|lugares/i.test(depoisDoNome.split('.')[0]), `${s}: ${p.d_resumo}`);
+    }
+    for (const s of FORMA) {
+      const p = porSlug.get(s);
+      const depoisDoNome = p.d_resumo.slice(p.nome.trim().length + 2).split(' vendid')[0];
+      assert.ok(!/redond|quadrad|retangular|de canto|oval/i.test(depoisDoNome), `${s}: ${p.d_resumo}`);
+    }
+    // Nenhum outro produto chamado Duplo/Dupla tem d_lugares_num 1.
+    for (const p of produtos) if (/\bdupl[ao]s?\b/i.test(p.nome)) assert.notEqual(p.d_lugares_num, 1, p.slug);
   });
 
   test('d_resumo segue o modelo fixo e a data da coleta', () => {
@@ -276,6 +394,20 @@ describe('famílias (SPEC 3.2)', () => {
       const pares = ps.map((p) => `${p.especificacoes.Material}|${p.especificacoes.Configuracao}`);
       assert.equal(new Set(pares).size, pares.length, `${f.familia}: material e configuração repetidos`);
       for (const p of ps) assert.equal(p.d_familia, f.familia);
+    }
+  });
+
+  test('versões irmãs têm um rótulo de tamanho idêntico ou a mesma medida nas 3 dimensões', () => {
+    const canon = (r) => String(r ?? '').toLowerCase().replace(/\s+/g, '');
+    const dims = (t) => ([t.a, t.b, t.c].every((n) => n != null) ? [t.a, t.b, t.c].map((n) => n.toFixed(3)).sort().join('x') : null);
+    const mesma = (p, q) => p.d_tamanhos.some((t) => q.d_tamanhos.some((u) => canon(t.rotulo ?? t.rotulo_ficha) === canon(u.rotulo ?? u.rotulo_ficha) || (dims(t) && dims(t) === dims(u))));
+    for (const f of Object.values(familias)) {
+      const ps = f.membros.map((m) => porSlug.get(m.slug));
+      for (const a of ps) for (const b of ps) if (a !== b) assert.ok(mesma(a, b), `${f.familia}: ${a.slug} x ${b.slug}`);
+    }
+    for (const s of ['spa-quadrado-cancun-completo-com-hidro', 'spa-quadrado-cancun-completo-com-hidro-em-acrilico',
+      'ofuro-duplo-solene-completo-com-hidro', 'ofuro-duplo-solene-completo-com-hidro-em-acrilico']) {
+      assert.equal(porSlug.get(s).d_familia, null, s);
     }
   });
 

@@ -1,6 +1,35 @@
 {
   "coletado_em": "2026-10-19T02:07:38.043334Z",
-  "total": 11,
+  "regras": {
+    "termo_de_saude": "frase inteira com palavra da lista da SPEC 0.5 sai do texto exibido; o literal fica no dado",
+    "excecoes_nao_saude": [
+      {
+        "expressao": "imposto sobre circulacao de mercadorias",
+        "motivo": "nome do imposto (ICMS)"
+      },
+      {
+        "expressao": "area de circulacao",
+        "motivo": "espaço livre do cômodo"
+      },
+      {
+        "expressao": "(?<![\\p{L}\\p{N}])trat\\p{L}*\\s+(?:(?:d[aeo]s?|a|o)\\s+)?agua(?![\\p{L}\\p{N}])",
+        "motivo": "tratamento da água do spa"
+      },
+      {
+        "expressao": "(?<![\\p{L}\\p{N}])tratando de materiais",
+        "motivo": "texto do manual sobre materiais"
+      },
+      {
+        "expressao": "(?<![\\p{L}\\p{N}])trat\\p{L}*\\s+(?:(?:de|dos)\\s+)?(?:seus\\s+)?dados(?![\\p{L}\\p{N}])",
+        "motivo": "tratamento de dados pessoais (LGPD)"
+      }
+    ],
+    "anotacao_interna_VERIFICAR": "item ou linha com \"(VERIFICAR)\" sai até a empresa confirmar",
+    "garantia": "capítulos de garantia do manual e linhas do índice que apontam para eles ficam ocultos até a decisão (SPEC 15)",
+    "afirmacao_de_saude": "capítulo \"Benefícios da cromoterapia\" do manual sai inteiro",
+    "espaco_apos_virgula_decimal_ignorado": "medida \"0, 84\" é lida como 0,84 porque a vírgula decimal está escrita; token sem vírgula (\"051\", \"89\") fica null (não se adivinha)"
+  },
+  "total": 123,
   "itens": [
     {
       "slug": "apoio-de-cabeca-oval",
@@ -70,6 +99,686 @@
         "trata"
       ],
       "removido": "De fácil instalação, garante maior durabilidade do equipamento, o tratamento mais usado na Europa e EUA."
+    },
+    {
+      "slug": "spa-retangular-malbec-completo-com-hidro-em-acrilico",
+      "campo": "d_tamanhos[].c",
+      "regra": "espaco_apos_virgula_decimal_ignorado",
+      "rotulo": "1,59 x 1,90 x 0, 84",
+      "token": "0, 84",
+      "lido": 0.84
+    },
+    {
+      "categoria": "banheiras.html",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "circulacao"
+      ],
+      "removido": "Com jatos de água massageadores que estimulam a circulação promovendo bem-estar, o modelo ideal de banheira ou de acordo com a metragem do seu espaço está aqui na BBB."
+    },
+    {
+      "categoria": "spas/redondos.html",
+      "campo": "descricao_texto",
+      "regra": "termo_de_saude",
+      "termos": [
+        "terapeutic"
+      ],
+      "removido": "Os banhos de\nspas\nsão considerados terapêuticos uma vez que promovem o relaxamento e renovação das energias."
+    },
+    {
+      "manual_pagina": 3,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Garantia e contrato de garantia .............................................................................................. 09"
+    },
+    {
+      "manual_pagina": 3,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Certificado de garantia ........................................................................................................... 40"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "GARANTIA E CONTRATO DE GARANTIA"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "A Banheira s Bom Banho, garante este produto contra qualquer defeito de fabricação pelo prazo"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "descritos abaixo contados da data da emissão da nota fiscal de compra, desde que obedecidos os critérios"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "técnicos e recomendados para instalações observadas às regras e princípios de hidráulica e elétrica . As"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "banheiras e spas têm garantia concedida de 2 (doi s) ano s para casco e tubulação e 1 (ano) para motor,"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "aquecedor, acionador, cromoterapia e filtro de areia, a contar da emissão da Nota Fiscal (Exceto encosto de"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "cabeça que possui garantia de 3 meses). A garantia abrange componentes que comprovadamente apresenta"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "defeito de fabricação."
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Qualquer defeito de fabricação deve ser comunicado à fábrica antes da instalação da banheira sob"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "pena dos custos de retirada e reinstalação por conta do cliente."
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Estarão fora da garantia, danos de transporte, danos decorrentes de instalação ou uso em desacordo"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "ao manual, danos por uso de produtos de limpeza impróprios (ver modo de limpeza), de manipulação ou"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "fornecimento indevido de tensão."
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Garantia Legal (3 meses): para todo o produto, conforme previsto no Código de Defesa do Consumidor,"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "inclusos dentro do prazo concedido de garantia."
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Garantia Concedida (2 anos): para banheiras e Spas nos itens de fábrica (casco e tubulação), desde que"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "obedecidas às instruções de limpeza, instalação e manutenção."
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "O produto perde a garantia quando:"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Houver vazamento no selo mecânico ocasionado por agentes corrosivos: areia, cloro e/ou outros;"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ A tampa da moto bomba e seus engates racharem por excessivo esforço do encanamento;"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ O motor tiver seu relê térmico acionado devido á insuficiência de energia elétrica, por dimensionamento"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "dos fios abaixo do diâmetro recomendado quando for acionado respectivamente por causa da oscilação"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "na tensão da rede elétrica, fora da normalização (variação de 10%);"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Houver alterações nas características técnicas da motobomba ou instalação irregular fora do"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "especificado pela fábrica;"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ For aberto por um assistente técnico não autorizado pela empresa Banheiras Bom Banho;"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ A fábrica não se responsabiliza pelo desempenho da motobomba quando houver mau"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "dimensionamento da instalação hidráulica;"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ A motobomba ser danificada por má utilização."
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "As garantias legal e/ou concedida perderão suas validades totalmente no caso de:"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ A instalação ou uso não forem observados as especificações e recomendações deste manual;"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ O aparelho tiver recebido maus tratos, mau uso, descuidos ou desobediência ao que determina este"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "manual, ou tiver sofrido quaisquer alterações, inclusive as que provoquem perda de pressão, ou se"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "qualquer peça ou parte não for original, ou ainda se houver adaptação de partes e peças adicionais;"
+    },
+    {
+      "manual_pagina": 9,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ O produto for ligado em rede hidráulica imprópria;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ O produto for ligado em rede elétrica imprópria ou submetido a uma variação acima de 5% da frequência"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "padrão Brasil e acima de 10% da tensão nominal, ou não for devidamente aterrado como recomendado"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "neste manual. Sobrecargas elétricas ou mecânicas. Surtos e/ou picos de tensão na rede elétrica;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Danos decorrentes de ação de furto ou roubo;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Violação do produto, ajustes ou conserto por pessoa não habilitada ou autorizada dentro do prazo de"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "garantia."
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Problemas decorrentes com choque térmico."
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Não cobrem as garantias legais e garantia concedida em danos provocados por:"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Agentes da natureza como raios, excesso de umidade e calor;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Instalação inadequada e/ou pelo não aterramento elétrico do produto;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Equipamentos que não forem adequados junto com banheira como a instalação de seus acessórios,"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "preparação e adaptação do local para ligação do produto."
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Não cobrem as garantias ou despesas de:"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Transporte e armazenamento da banheira até o local definitivo de instalação;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Despesas decorrentes da instalação da banheira;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Danos por maus tratos, provocando mal -uso e negligência na conservação, descuidos ou"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "desobediência ao que determina este manual;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Qualquer problema ou anormalidade verificada nos produtos garantidos devem ser encaminhados"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "imediatamente para exame de constatação através de técnicos autorizados;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Defeitos de fabricação constatado por técnico autorizado dentro do prazo de garantia será de"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "responsabilidade da Banheiras Bom Banho;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Nenhuma pessoa não autorizada poderá alterar as condições e características originais do produto"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "e/ou instalação, sob pena da perda da garantia concedida;"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "▪ Conserto ou substituição de partes e peças não interrompe, suspende ou prorroga os prazos de"
+    },
+    {
+      "manual_pagina": 10,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "garantia."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "BENEFÍCIOS DA CROMOTERAPIA"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "A cromoterapia, terapia das cores, é a ciência que usa diferentes cores para mudar e manter as"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "vibrações do corpo na “frequência” da saúde, do bem-estar e da energia."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Desde sempre fora e é utilizada como tratamento natural para curar, por conservar o organismo em"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "equilíbrio e harmonia. Existe uma extraordinária capacidade nas cores de orientarem a mente e agilizarem"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "funções fisiológicas."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Há tempos conhecida, e hoje explicada pela cromoterapia, que está encontrando aplicações sempre"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "mais abrangentes. É fato provado que as cores da natureza tem um valor próprio expressivo, o qual"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "influencia profundamente a nível psicológico e fisiológico."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "O amarelo, o vermelho, o verde e o azul, as quatro cores fundamentais, são por excelência os"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "símbolos da totalidade e harmonia."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "a) Amarelo"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Induz a alegria e á luminosidade irradia o metabolismo Emagrecedor e anticelulite, corresponde"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "simbolicamente ao agradável calor do sol, ao espírito alegre e a luz da esperança. Age estimulando a"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "digestão evitando assim o acúmulo de substâncias gordas não metabolizadas e a formação de celulite."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Melhora também a função renal impedindo o excesso de acúmulo de líquido."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "b) Vermelho"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Transmite uma forte carga de energia, age sobre a capacidade de tomar decisões, contrastando a"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "tendência a meditação (divagação). Drenagem linfática, a expressão da força vital, do desejo e do calor."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Age sobre o sistema cardiovascular, melhorando a circulação do sangue a nível capilar."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "c) Verde"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Tonificante, conduz ao equilíbrio emocional, ao pensamento positivo, a uma respiração mais regular."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Significa o florir da esperança. Significa o florir da esperança, perseverança, firmeza e resistência às"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "transformações. Provoca uma sensação de particular frescor e bem-estar no organismo. Produz"
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "estabilidade emotiva tonifica os músculos e fornece energia."
+    },
+    {
+      "manual_pagina": 37,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "d) Azul"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Predispõe, renova a harmonia consigo mesmo e com o mundo, fornecendo o repouso e a"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "serenidade. Relaxante, representa a tranquilidade, a calma e a satisfação de se sentir em paz."
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "Particularmente preferido à noite, ajuda a afastar o stress, o empenho do dia de trabalho. Calmante e"
+    },
+    {
+      "manual_pagina": 38,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "afirmacao_de_saude",
+      "removido": "de efeito sereno, alivia a excitação, relaxante a mente e levando a circulação a nível ótimo."
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "CERTIFICADO DE GARANTIA"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "A BANHEIRAS BOM BANHO garante este produto nas condições expressas no Termo de Garantia"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "abaixo."
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "No caso de garantia, este Certificado deve ser entregue junto com a nota fiscal e seu produto na"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "assistência técnica."
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "PRODUTO:"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "N° DA NOTA FISCAL DE COMPRA:"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "CLIENTE/USUÁRIO:"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "TELEFONE DE CONTATO E-MAIL:"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "ENDEREÇO:"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "CEP:"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Declaro que recebi este produto completo e que efetuei a leitura do manual de instruções antes de"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "operá-lo."
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "ASSINATURA DO CLIENTE: ____________________"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "DATA:"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "Obs.: ao receber este manual, o cliente declara estar ciente da importância da leitura e seguir os"
+    },
+    {
+      "manual_pagina": 43,
+      "campo": "politicas.manual.paginas[].texto",
+      "regra": "garantia",
+      "removido": "padrões estabelecidos no mesmo, com risco de perder a garantia."
     }
   ]
 }
