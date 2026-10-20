@@ -3,10 +3,10 @@
 //     "Escolher pelo meu espaço". Água WebGL e vapor atrás do texto; o LCP é o texto (ou o poster),
 //     nunca o canvas, que só nasce depois do load.
 //  2. Comece pelo seu espaço (dia): escolhedor rápido com contagem ao vivo, mesma regra do escolher.html.
-//  3. Salas da galeria (sala): uma faixa por coleção, 4 peças na ordem do site atual, contorno em escala.
+//  3. Salas da galeria (sala): uma faixa por coleção, 3 peças na ordem do site atual, contorno em escala.
 //  4. O desenho é a obra (planta): planta oficial da Acqua Línea 0,79 x 1,41 x 0,37 com o explorador.
 //     No desktop, a planta fica fixa e as cotas acendem ao rolar (JS próprio, sem GSAP), só sem modo lite.
-//  5. Lançamentos 2026 (sala): os 6 spas reais da categoria, com o filme da coleção.
+//  5. Lançamentos 2026 (sala): os 3 primeiros spas da categoria (menos fotos lado a lado) e o link da coleção.
 //  6. A fábrica (dia), 7. Prova (dia), 8. Como comprar (dia), 9. Lojas (sala, mapa SVG sem iframe),
 //  10. Perguntas frequentes e Do blog (dia).
 // Todo número e texto da empresa vem de data/ (SPEC 0.1); o que é derivado leva a regra no comentário.
@@ -44,11 +44,13 @@ export const SALAS = Object.freeze([
   ['spas/redondos.html', 'Spas redondos'],
   ['ofuros.html', 'Ofurôs'],
 ]);
-export const PECAS_POR_SALA = 4;
+export const PECAS_POR_SALA = 3;
 export const OBRA = Object.freeze({ slug: 'banheira-acqua-linea-completa-com-hidro-em-acrilico', tamanho: 0 });
 // Passos do tour da planta no desktop: letras de cota (os valores vêm da planta validada).
 const OBRA_PASSOS = Object.freeze(['A', 'B', 'H']);
 export const LANCAMENTOS = 'lancamentos.html';
+// Redesenho (20/10/2026): três peças lado a lado, não seis; o resto fica no link da coleção.
+export const LANC_NA_HOME = 3;
 // Perguntas da home: só tipo=publicada e sem garantia (o filtro roda de novo abaixo).
 export const FAQ_HOME = Object.freeze(['faq-03', 'faq-02', 'faq-05', 'faq-14', 'faq-11', 'faq-06']);
 const TIPOS_RAPIDO = [['banheira', 'Banheira'], ['spa', 'Spa'], ['ofuro', 'Ofurô'], ['sauna', 'Sauna']];
@@ -237,7 +239,7 @@ function escolhedorRapido(D, indice, porSlug) {
       <fieldset class="home-esc__fs">
         <legend class="home-esc__q"><span class="num">01</span>O que você procura?</legend>
         <div class="esc-ops">${TIPOS_RAPIDO.map(([v, r]) => op('tipo', v, r, cont[v], false))}${op('tipo', '', 'Tanto faz', total, true)}</div>
-        ${notas.length ? html`<p class="home-esc__nota">A contagem aqui é por tipo de peça. ${notas.map((n) => html`A coleção ${n.nome} exibe <span class="num">${n.total}</span> modelos porque também lista ${n.outros.map((o, i) => html`${i ? ', ' : ''}${o.nome} (${o.tipo})`)}. `)}</p>` : ''}
+        ${notas.length ? html`<details class="home-esc__det"><summary>Sobre a contagem</summary><p class="home-esc__nota">A contagem aqui é por tipo de peça. ${notas.map((n) => html`A coleção ${n.nome} exibe <span class="num">${n.total}</span> modelos porque também lista ${n.outros.map((o, i) => html`${i ? ', ' : ''}${o.nome} (${o.tipo})`)}. `)}</p></details>` : ''}
       </fieldset>
       <fieldset class="home-esc__fs">
         <legend class="home-esc__q"><span class="num">02</span>Quantas pessoas?</legend>
@@ -250,7 +252,7 @@ function escolhedorRapido(D, indice, porSlug) {
       <div class="home-esc__fim">
         <a class="btn home-esc__ir" href="${url('escolher.html')}" data-home-esc-ir>${icone('regua', { tamanho: 20 })}<span><span data-home-esc-t>Ver os</span> <span class="num" data-home-esc-n>${total}</span> <span data-home-esc-u>modelos</span></span>${icone('seta-dir', { tamanho: 18 })}</a>
         <p class="home-esc__vivo vh" aria-live="polite" data-home-esc-vivo></p>
-        <p class="home-esc__mais"><a class="link" href="${url('escolher.html')}">Mais perguntas no escolhedor completo: onde instalar, formato, versão e orçamento</a></p>
+        <p class="home-esc__mais"><a class="link" href="${url('escolher.html')}">Escolhedor completo</a></p>
       </div>
     </form>
     <noscript><p class="home-esc__semjs"><a class="btn" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Abrir o escolhedor</a></p></noscript>
@@ -381,7 +383,7 @@ export function paginas(ctx) {
     <div class="home-salas__cab" data-reveal>
       <p class="etiqueta etiqueta--linha">A galeria</p>
       <h2 id="home-salas-h">Salas da galeria</h2>
-      <p class="lead">Uma sala por formato, com peças diferentes de cada coleção na ordem do catálogo. O pequeno desenho ao lado da medida é a peça vista de cima, todas da mesma sala na mesma escala.</p>
+      <p class="lead">Uma sala por formato, com peças diferentes de cada coleção na ordem do catálogo.</p>
     </div>
     ${salas}
   </div>
@@ -406,7 +408,7 @@ export function paginas(ctx) {
       </div>
       ${passos.length ? html`<ol class="home-obra__passos" role="list" aria-hidden="true" data-obra-passos>
         <li class="home-obra__passo" data-obra-passo=""><span class="home-obra__pn num">01</span><span class="home-obra__pt">A peça inteira, como a fábrica desenhou</span><span class="home-obra__pd">A mesma planta do PDF, ampliável até seis vezes.</span></li>
-        ${passos.map((c, i) => html`<li class="home-obra__passo" data-obra-passo="${c.letra}"><span class="home-obra__pn num">${pad2(i + 2)}</span><span class="home-obra__pt">Cota ${c.letra} <span class="num">${c.valor_texto} m</span></span><span class="home-obra__pd">${i === 0 ? 'Cada letra do desenho corresponde a uma linha da tabela.' : i === 1 ? 'Toque numa letra para achar a cota no desenho.' : 'Medidas em metros, como impressas na planta.'}</span></li>`)}
+        ${passos.map((c, i) => html`<li class="home-obra__passo" data-obra-passo="${c.letra}"><span class="home-obra__pn num">${pad2(i + 2)}</span><span class="home-obra__pt">Cota ${c.letra} <span class="num">${c.valor_texto} m</span></span><span class="home-obra__pd">${i === 0 ? 'Cada letra do desenho corresponde a uma linha da tabela.' : i === 1 ? 'Na tabela ao lado do desenho, como na planta.' : 'Medidas em metros, como impressas na planta.'}</span></li>`)}
       </ol>` : ''}
       <div class="home-obra__tabela">${tabelaCotas(plObra, 'home-planta')}</div>
       <p class="home-obra__acoes"><a class="btn btn--claro" href="${urlPdf(plObra.pdf)}" download data-planta-pdf>${icone('seta-diag', { tamanho: 18 })}Baixar a planta oficial (PDF)</a><a class="link" href="${url(`${pObra.slug}.html`)}">Ver a peça</a></p>
@@ -433,7 +435,7 @@ export function paginas(ctx) {
         <p><a class="link" href="${url(LANCAMENTOS)}">Ver a coleção ${catL.nome}</a></p>
       </div>
     </div>
-    <ol class="col-grade home-lanc__grade" role="list">${lista.map((p, i) => cartao(p, { pos: i, S, lqip: false }))}</ol>
+    <ol class="col-grade home-lanc__grade" role="list">${lista.slice(0, LANC_NA_HOME).map((p, i) => cartao(p, { pos: i, S, lqip: false }))}</ol>
   </div>
 </section>`;
   }

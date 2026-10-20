@@ -15,7 +15,7 @@
 *,*::before,*::after{box-sizing:border-box}
 *{margin:0}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:calc(var(--cab-h) + 16px);scrollbar-gutter:stable;background:var(--day);color-scheme:light}
-body{min-height:100svh;background:var(--day);color:var(--ink);font:400 var(--fs-body)/var(--lh) var(--f-body);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-wrap:break-word}
+body{--line:var(--trace);min-height:100svh;background:var(--day);color:var(--ink);font:400 var(--fs-body)/var(--lh) var(--f-body);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-wrap:break-word}
 img,picture,video,canvas{display:block;max-width:100%;height:auto}
 svg{flex:none}
 input,button,select,textarea{font:inherit;color:inherit}
@@ -25,13 +25,15 @@ ul[role="list"],ol[role="list"]{list-style:none;padding:0}
 p,li,dd,figcaption{text-wrap:pretty}
 b,strong{font-weight:500}
 [hidden]{display:none!important}
+/* Filtro #pedra das fotos (layout.mjs): o SVG não pode ser display:none, senão o filtro some. */
+.filtros{position:absolute;width:0;height:0;overflow:hidden}
 
 /* Temas (direção "spa de hotel, claro"): .dia e .sala são claros (areia e pedra). A sala escura de verdade
    (.sala-escura, .sala--planta, em components.css: só aparece abaixo da dobra) fica só para a planta técnica. Dentro de .sala clara, os nomes da sala escura
    (--room, --porcelain, --line...) recebem os valores claros: o CSS das páginas que os usa segue legível. */
-.dia{--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:var(--stone);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
+.dia{--line:var(--trace);--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:var(--stone);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
 .dia--areia{--bg:var(--sand)}
-.sala{--room:var(--day);--room-2:var(--sand);--porcelain:var(--ink);--muted-on-dark:var(--muted);--line:var(--brand);--glow:var(--stone);--focus-on-dark:var(--focus);--rule-sala:var(--stone);--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:var(--stone);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
+.sala{--room:var(--day);--room-2:var(--sand);--porcelain:var(--ink);--muted-on-dark:var(--muted);--line:var(--trace);--glow:var(--stone);--focus-on-dark:var(--focus);--rule-sala:var(--stone);--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:var(--stone);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
 .sala--2{--bg:var(--sand)}
 
 /* Tipografia: serifada fina nos títulos, sem serifa leve no corpo, rótulos em versalete espaçado. */

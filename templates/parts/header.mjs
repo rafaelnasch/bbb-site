@@ -49,11 +49,10 @@ export function barraTopo({ movimento = false } = {}) {
 export function cabecalho({ ativo = null, sobre = false } = {}) {
   const D = dados();
   const itens = MENU.map((m) => {
-    const n = m.colecao ? D.contagem(m.colecao) : null;
     if (m.destaque) {
       return html`<li><a class="cab__escolher" href="${url(m.path)}"${attrs({ 'aria-current': atual(m.path, ativo) })}>${icone('regua', { tamanho: 16 })}${m.nome}</a></li>`;
     }
-    return html`<li><a href="${url(m.path)}"${attrs({ 'aria-current': atual(m.path, ativo) })}>${m.nome}${n != null ? html`<sup class="num" aria-hidden="true" data-campo="contagem-por-tipo">${n}</sup><span class="vh">, ${contagemTexto(n)}</span>` : ''}</a></li>`;
+    return html`<li><a href="${url(m.path)}"${attrs({ 'aria-current': atual(m.path, ativo) })}>${m.nome}</a></li>`;
   });
   return html`<header class="cab${sobre ? ' cab--sobre' : ''}">
   <div class="wrap cab__in">

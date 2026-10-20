@@ -56,7 +56,7 @@ test('salas: 7 faixas, 4 peças distintas cada, na ordem da listagem do site atu
   const vistos = new Set();
   SALAS.forEach(([path], i) => {
     const slugs = [...faixas[i].matchAll(/<li class="cart" data-slug="([^"]+)"/g)].map((m) => m[1]);
-    assert.equal(slugs.length, PECAS_POR_SALA, `${path}: 4 peças`);
+    assert.equal(slugs.length, PECAS_POR_SALA, `${path}: ${PECAS_POR_SALA} peças`);
     // Ordem do site atual (subsequência da listagem), com foto e sem repetir peça de outra sala.
     const ordem = cat(path).produtos;
     const pos = slugs.map((s) => ordem.indexOf(s));
@@ -72,11 +72,11 @@ test('salas: 7 faixas, 4 peças distintas cada, na ordem da listagem do site atu
   assert.ok((h.match(/class="cart__ctn"/g) || []).length >= 20, 'contornos em escala nos cartões');
 });
 
-test('lançamentos 2026: os 6 spas reais da categoria, na ordem', () => {
+test('lançamentos 2026: as 3 primeiras peças reais da categoria, na ordem, e o link da coleção', () => {
   const sec = /<section class="sala sala--2 secao home-lanc"[\s\S]*?<\/section>/.exec(h)[0];
   const slugs = [...sec.matchAll(/<li class="cart" data-slug="([^"]+)"/g)].map((m) => m[1]);
-  assert.deepEqual(slugs, cat('lancamentos.html').produtos);
-  assert.equal(slugs.length, 6);
+  assert.deepEqual(slugs, cat('lancamentos.html').produtos.slice(0, 3));
+  assert.match(sec, /href="[^"]*lancamentos\.html"/);
 });
 
 test('cartões: nome e preços literais de produtos.json', () => {

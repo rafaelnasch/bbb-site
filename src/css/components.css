@@ -1,5 +1,5 @@
 /* Tokens usados só fora da primeira tela (fora do CSS crítico; SPEC 5.2). */
-:root{--cmp-3:#F4A6C0;--ease-io:cubic-bezier(.77,0,.175,1);--ease-sheet:cubic-bezier(.32,.72,0,1);--t-press:160ms;--t-ui:280ms;--t-swap:1000ms;--fs-display:clamp(3rem,1.4rem + 6vw,7.5rem);--sombra-1:0 1px 2px rgb(31 28 25 / .04),0 12px 32px -20px rgb(31 28 25 / .18)}
+:root{--ease-io:cubic-bezier(.77,0,.175,1);--ease-sheet:cubic-bezier(.32,.72,0,1);--t-press:160ms;--t-ui:280ms;--t-swap:1000ms;--fs-display:clamp(3rem,1.4rem + 6vw,7.5rem);--sombra-1:0 1px 2px rgb(31 28 25 / .04),0 12px 32px -20px rgb(31 28 25 / .18)}
 /* Sala escura: só a planta técnica, como uma sala de projeto (fora do crítico: fica abaixo da dobra). */
 .sala-escura,.sala--planta{--room:#12171C;--room-2:#1A2026;--porcelain:#EFE9E1;--muted-on-dark:#A9B0B5;--line:#9DB7C9;--glow:#C8B9A3;--focus-on-dark:#9DB7C9;--rule-sala:color-mix(in srgb,#9DB7C9 22%,transparent);--bg:var(--room);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:var(--rule-sala);--focus-ring:var(--focus-on-dark);background:var(--bg);color:var(--fg);color-scheme:dark}
 /* Componentes do núcleo carregados fora do CSS crítico: gavetas, canais de WhatsApp, rodapé,

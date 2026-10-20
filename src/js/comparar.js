@@ -14,7 +14,7 @@
   const brl = (n) => `R$ ${Number(n).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   const fcm = (n) => (Math.round(n * 10) / 10).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
   const norm = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-  const CORES = [['var(--glow)', ''], ['var(--line)', '7 4'], ['var(--cmp-3)', '2 3']];
+  const CORES = [['var(--fg)', ''], ['var(--line)', '7 4'], ['var(--brand)', '2 3']];
   const ROT = { Configuracao: 'Configuração', frete: 'Frete' };
   const ORDEM = ['Forma', 'Lugares', 'Material', 'Configuracao', 'Comprimento', 'Largura', 'Profundidade', 'Altura', 'frete'];
   let porSlug = new Map(), fichas = {}, sel = [], tam = {};

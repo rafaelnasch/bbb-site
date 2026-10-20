@@ -1,6 +1,6 @@
 /* CSS crítico extra das páginas que abrem com a peça (produto e coleção): moldura da foto e
    letterbox de abertura. Entra inline só nessas páginas (layout({ critico: ['peca'] })). */
-.moldura{position:relative;isolation:isolate;background:#A39C92}
+.moldura{position:relative;isolation:isolate;background:var(--foto-fundo)}
 .moldura__img{width:100%;aspect-ratio:1;object-fit:cover;background-size:cover;filter:var(--foto-filtro)}
 .moldura__leg{margin-top:12px;font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-on-dark)}
 .moldura--vazia{display:grid;place-items:center;aspect-ratio:1;background:var(--sand);color:var(--muted-on-dark);text-align:center;font-size:.9375rem}

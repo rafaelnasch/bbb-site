@@ -187,7 +187,7 @@
 .lojas-indice{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:20px 28px}
 .lojas-indice ul{display:grid;margin-top:6px}
 .lojas-indice a{display:inline-flex;align-items:center;min-height:44px;color:var(--porcelain);font-family:var(--f-display);font-size:1.25rem;text-decoration:none}
-@media (hover:hover){.lojas-indice a:hover{color:var(--glow)}}
+@media (hover:hover){.lojas-indice a:hover{color:var(--brand)}}
 .lojas{padding:clamp(40px,5vw,88px) 0 clamp(56px,6vw,112px)}
 .lojas>.wrap{display:grid;gap:32px}
 .lojas__grade{display:grid;gap:14px}
@@ -195,7 +195,7 @@
 @media (min-width:1100px){.lojas__grade{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}}
 .loja{scroll-margin-top:calc(var(--cab-h) + 20px)}
 .loja>article{position:relative;display:grid;gap:12px;align-content:start;height:100%;padding:26px 22px 22px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--bg);overflow:hidden;transition:border-color var(--t-ui),box-shadow var(--t-ui)}
-.loja:target>article{border-color:var(--glow);box-shadow:0 0 0 1px var(--glow)}
+.loja:target>article{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
 .loja__n{position:absolute;top:10px;right:16px;font-family:var(--f-display);font-size:4rem;font-weight:300;line-height:1;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--fg) 22%,transparent)}
 .loja__cidade{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem);font-weight:300;padding-right:72px}
 .loja__nome{font-size:.875rem;color:var(--fg-2)}
@@ -231,9 +231,12 @@
 
 /* ---------- 404 ---------- */
 .p404__in{position:relative}
+@media (max-width:767px){.p404__num{display:none}}
 .p404__num{position:absolute;right:0;top:-.1em;z-index:-1;font-family:var(--f-display);font-size:clamp(7rem,4rem + 18vw,18rem);font-weight:300;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 30%,transparent);pointer-events:none;user-select:none}
 .p404__busca .btn{min-height:52px}
 .p404__lista{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .p404__col{padding-top:clamp(32px,4vw,56px)}
 .inst-nums figcaption a{position:relative}
 .inst-nums figcaption a::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+
+.inst-foto img,.pg-inst main picture img{filter:var(--foto-real)}

@@ -16,7 +16,7 @@
 /* Celular e tablet: as três portas lado a lado, cada uma com a foto real da coleção em cima do nome. */
 .portas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;padding:0}
 .porta__a{display:grid;align-content:start;gap:8px;height:100%;padding:5px 5px 10px;border:1px solid var(--rule);border-radius:var(--radius);color:var(--fg);text-decoration:none}
-.porta__mol{position:relative;display:block;aspect-ratio:1;overflow:hidden;background:#A39C92}.porta__mol img{filter:var(--foto-filtro)}
+.porta__mol{position:relative;display:block;aspect-ratio:1;overflow:hidden;background:var(--foto-fundo)}.porta__mol img{filter:var(--foto-filtro)}
 .porta__txt{display:grid;padding-inline:4px}
 .porta__n{font-size:.8125rem}
 .porta__nome{font:300 clamp(1rem,.4rem + 2.6vw,1.5rem)/1.15 var(--f-display)}

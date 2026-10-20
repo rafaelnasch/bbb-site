@@ -63,7 +63,7 @@ const pct = (v, total) => `${((v / total) * 100).toFixed(3)}%`;
 export function tabelaCotas(pl, id) {
   return html`<div class="cotas" data-cotas>
   <table class="cotas__tabela num">
-    <caption class="cotas__cap">Cotas da planta oficial, em metros. Toque numa letra para achá-la no desenho.</caption>
+    <caption class="cotas__cap">Cotas da planta oficial, em metros.</caption>
     <thead><tr><th scope="col">Cota</th><th scope="col">Medida</th></tr></thead>
     <tbody>${pl.cotas.map((c) => html`<tr data-cota-linha="${c.letra}">
       <th scope="row"><button class="cota-btn" type="button" data-cota="${c.letra}" aria-pressed="false" aria-controls="${id}" aria-label="${falaCota(c)}">${c.letra}</button></th>

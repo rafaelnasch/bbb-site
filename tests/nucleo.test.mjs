@@ -141,15 +141,19 @@ test('rodapé: 8 consultores em ordem, 4 CNPJs literais, horário, e-mails, data
   assert.ok(!/marketing@/i.test(p));
 });
 
-test('cabeçalho: menu da SPEC 6.1, contagens reais, busca, comparador e botão de venda', () => {
+test('cabeçalho: menu da SPEC 6.1 sem contador sobrescrito, contagens reais no menu do celular, busca, comparador e botão de venda', () => {
   const p = paginas['_sistema.html'];
   const cab = p.slice(p.indexOf('<header'), p.indexOf('</header>'));
   const cats = JSON.parse(readFileSync(join(paths.data, 'categorias.json'), 'utf8'));
   for (const nome of ['Escolher minha banheira', 'Banheiras', 'Spas', 'Ofurôs', 'Lojas', 'Atendimento']) assert.ok(cab.includes(`>${nome}`), nome);
   for (const path of ['banheiras.html', 'spas.html', 'ofuros.html']) {
     const n = cats.find((c) => c.d_path === path).total_exibido;
-    assert.ok(cab.includes(`href="${url(path)}"`) && cab.includes(`>${n}</sup>`), path);
+    assert.ok(cab.includes(`href="${url(path)}"`), path);
+    // Redesenho de 20/10/2026: o número sobrescrito saiu do menu do topo; a contagem real fica no menu do celular.
+    const menu = p.slice(p.indexOf('<dialog class="gaveta gaveta--menu'), p.indexOf('</dialog>', p.indexOf('<dialog class="gaveta gaveta--menu')));
+    assert.ok(menu.includes(`href="${url(path)}"`) && menu.includes(`${n} itens no catálogo`), path);
   }
+  assert.doesNotMatch(cab, /<sup\b/);
   assert.ok(cab.includes(`href="${url('busca.html')}"`));
   assert.ok(cab.includes('data-comparar-contador'));
   assert.match(cab, /class="btn btn--whats"[^>]*data-wa-papel="venda_principal"/);

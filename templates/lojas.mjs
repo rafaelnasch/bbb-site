@@ -67,7 +67,7 @@ export function paginas(ctx) {
         <ul class="mapa__rotulos" aria-hidden="true">${M.rotulos.map((r) => html`<li class="mapa__item mapa__item--${r.lado}${r.fabrica ? ' is-fabrica' : ''}" style="left:${r.x}%;top:${r.y}%"><span>${r.lojas.map((l) => l.cidade).join(' e ')}</span></li>`)}</ul>
       <svg class="mapa__pais" viewBox="0 0 ${M.pais.w} ${M.pais.h}" aria-hidden="true" focusable="false"><path d="${M.pais.d}"/><rect x="${M.pais.caixa.x}" y="${M.pais.caixa.y}" width="${M.pais.caixa.w}" height="${M.pais.caixa.h}"/></svg>
     </div>
-    <figcaption class="mapa__leg">O ponto marca a cidade; toque no nome para ir ao endereço.</figcaption>
+    <figcaption class="mapa__leg">O ponto marca a cidade.</figcaption>
   </figure>`;
 
   const corpo = html`${topo({

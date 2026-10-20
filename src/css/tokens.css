@@ -14,8 +14,13 @@
   --muted-on-dark:#A9B0B5;
   /* luz quente (só traços, nunca texto pequeno) */
   --glow:#C8B9A3;
-  /* fotos da fábrica (fundo verde-água): o fundo vira pedra só na apresentação; o arquivo não muda */
-  --foto-filtro:grayscale(.95) sepia(.4) contrast(.56) brightness(1.4);
+  /* fotos da fábrica (fundo verde-água): o fundo vira pedra só na apresentação; o arquivo não muda. O filtro
+     #pedra (templates/layout.mjs) clareia só o que é azul-esverdeado e deixa a banheira e o selo como estão */
+  --foto-filtro:url(#pedra);
+  /* fotos reais (fábrica, lojas, obras): só a saturação baixa, para não brigar com a areia */
+  --foto-real:saturate(.55) sepia(.14) contrast(.94) brightness(1.03); --foto-fundo:#B5ADA3;
+  /* traço de desenho no claro (contornos, régua, mapa, grade): pedra funda, no lugar do azul-claro */
+  --trace:#7A6F63;
   /* botão de compra, contraste AA com texto branco (não mudar) */
   --whats-btn:#1E7F3A; --whats-btn-hover:#176A30;
   --btn-hover:#3A342E;

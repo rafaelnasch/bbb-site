@@ -54,6 +54,8 @@ export const PARES = [
   ['--line', '--room', 4.5, 'etiqueta azul-clara na sala'],
   ['--muted-on-dark', '--blueprint', 4.5, 'texto secundário sobre a planta'],
   ['--ink', '--porcelain', 4.5, 'botão claro'],
+  ['--trace', '--day', 3, 'traço de desenho no claro (contorno, régua, mapa)'],
+  ['--trace', '--sand', 3, 'traço de desenho sobre pedra'],
   ['#FFFFFF', '--whats-btn', 4.5, 'botão de compra'],
   ['#FFFFFF', '--whats-btn-hover', 4.5, 'botão de compra (hover)'],
   ['#FFFFFF', '--brand', 4.5, 'botão azul'],

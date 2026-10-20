@@ -127,7 +127,7 @@ ${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, a
 <style>${raw(critico)}</style>
 ${p.cssAposPintura ? '' : p.cssBloqueante ? html`<link rel="stylesheet" href="${A.cssSite}">` : html`<link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>`}
 <noscript><link rel="stylesheet" href="${A.cssSite}"></noscript>
-<meta name="theme-color" content="#071C2B">
+<meta name="theme-color" content="#EFE9E1">
 <link rel="icon" href="${url('brand/favicon-32.png')}" type="image/png" sizes="32x32">
 <link rel="icon" href="${url('brand/favicon-192.png')}" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="${url('brand/apple-touch-icon.png')}">
@@ -151,6 +151,7 @@ ${jsonld}
 ${p.modulosTardios ? '' : Object.values(mapaModulos).map((src) => html`<script type="module" src="${src}"${attrs({ fetchpriority: p.jsBaixa ? 'low' : null })}></script>`)}
 </head>
 <body${attrs({ class: p.classe || null })}>
+<svg class="filtros" width="0" height="0" aria-hidden="true" focusable="false"><filter id="pedra" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="-2.5 0 2.5 0 0 .3 .59 .11 0 0 0 0 0 0 0 0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues="0 .3 .36"/></feComponentTransfer><feColorMatrix type="matrix" values=".86 .86 0 0 .16 .83 .83 0 0 .15 .78 .78 0 0 .14 0 0 0 1 0"/></filter></svg>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 ${barraTopo({ movimento: /<video\b|data-agua|data-vapor/.test(String(p.corpo)) })}
 ${cabecalho({ ativo: p.ativo, sobre: p.sobre })}

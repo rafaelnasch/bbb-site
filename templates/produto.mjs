@@ -41,7 +41,7 @@ const POSTER_SIZES = '(min-width:1024px) 62vw, 50vw';
 const CV = 'content-visibility:auto;contain-intrinsic-size:auto 900px';
 // Texto da seção 6 por situação da planta (templates/parts/planta.mjs#situacaoPlanta).
 const LEAD_PLANTA = Object.freeze({
-  oficial: 'A planta que a fábrica publica, com as cotas. Amplie, toque numa letra para achá-la no desenho e baixe o PDF.',
+  oficial: 'A planta que a fábrica publica, com as cotas, para baixar em PDF.',
   divergente: 'A página deste modelo publica planta em PDF, mas com medida diferente das opções de tamanho. O desenho abaixo usa só as medidas do site, e os PDFs estão logo depois para conferir.',
   nenhuma: 'O site da fábrica não publica a planta deste modelo. O desenho abaixo usa só as medidas do site.',
 });
@@ -161,7 +161,7 @@ export function descricaoProduto(p, tamanhos, itens) {
 }
 
 /** Peças parecidas (SPEC 9.3, seção 13): mesmo tipo, forma e lugares, medida próxima; sem as irmãs. */
-export function parecidas(p, produtos, n = 4) {
+export function parecidas(p, produtos, n = 3) {
   if (p.d_tipo === 'acessorio' || !p.d_maior) return [];
   const e = p.especificacoes || {};
   const fora = (q) => q.slug === p.slug || (p.d_familia && q.d_familia === p.d_familia);
@@ -564,7 +564,7 @@ export function paginas(ctx) {
     </section>` : ''}
     ${comEscala ? html`<section class="prod__bloco prod__escala" id="cabe" style="${CV}" aria-labelledby="cabe-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">Escala real</p><h2 id="cabe-h">${tituloEscala}</h2>
-      <p class="prod__lead">Digite as medidas do seu espaço. O desenho mostra a peça por cima, na mesma escala, e calcula a folga.</p></div>
+      <p class="prod__lead">A peça vista de cima, na mesma escala do seu espaço.</p></div>
       ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true })}
     </section>` : ''}
     ${itens.length ? html`<section class="prod__bloco prod__itens" id="itens" style="${CV}" aria-labelledby="itens-h">

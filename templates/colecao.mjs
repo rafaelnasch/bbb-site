@@ -316,7 +316,6 @@ export function paginas(ctx) {
       <p class="escala__aviso"><span data-col-escala-aviso>O desenho usa só as medidas externas publicadas, com o maior tamanho de cada peça.</span> Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.</p>
     </div>` : ''}
     ${rapidos.length ? html`<div class="col-rapidos"><p class="etiqueta col-rapidos__rot">Filtrar pela ficha técnica</p><div class="rolagem col-rapidos__rol"><ul class="col-rapidos__lista" role="list">${rapidos.flatMap((g, gi) => g.vs.map(([v, n], vi) => html`<li${attrs({ class: gi && !vi ? 'col-rapidos__novo' : null })}><button class="col-chip col-chip--rap" type="button" data-col-rapido="${{ Forma: 'fo', Lugares: 'lu', Material: 'ma', Configuracao: 'co' }[g.k]}" data-valor="${v}" aria-pressed="false">${v}<span class="num">${n}</span></button></li>`))}</ul></div></div>` : ''}
-    ${S ? html`<p class="col-legenda"><svg class="cart__ctn" viewBox="-1 -1 102 72" aria-hidden="true" focusable="false"><rect x="0" y="12" width="70" height="46" rx="3"/><path class="cart__ctn-regua" d="M0 67H100M0 63.4V70M100 63.4V70"/></svg>O desenho ao lado da medida é a peça vista de cima, sobre uma régua do comprimento da maior peça desta página. Todas estão na mesma escala.</p>` : ''}
     <ol class="col-grade" role="list" data-col-grade>${(() => {
       // Cartões vizinhos não repetem a mesma foto (versões irmãs têm a mesma galeria): cada cartão evita
       // as fotos dos dois anteriores, quando a própria galeria tiver outra.
