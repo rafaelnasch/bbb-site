@@ -44,6 +44,15 @@
   // Estado restaurado pelo navegador (voltar, com ou sem bfcache): o navegador pode devolver o rádio
   // marcado depois deste script rodar. Alinha painel e ferramentas ao rádio marcado na carga, no load,
   // no pageshow e no quadro seguinte a cada um deles.
+  // Tamanho vindo do escolhedor (?t=índice): marca o rádio antes da primeira sincronização.
+  const tPedido = new URLSearchParams(location.search).get('t');
+  if (tPedido != null && /^\d+$/.test(tPedido)) {
+    const r = form.querySelector(`input[name="tamanho"][data-i="${tPedido}"]`);
+    if (r && !r.checked) {
+      r.checked = true;
+      r.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }
   let atual = 0;
   const sincronizar = () => {
     const m = form.querySelector('input[name="tamanho"]:checked');

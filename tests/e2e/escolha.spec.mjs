@@ -111,12 +111,12 @@ test.describe('escolhedor', () => {
   test('medida a confirmar: selo e cálculo pela maior medida', async ({ page }) => {
     // Sevilha: opção 1,36 x 1,36, ficha 1,50 x 1,36. Num espaço de 140 x 140 cm não cabe (usa a maior).
     await page.goto(pg('escolher.html?tipo=banheira&l=140&c=160&passo=8'));
-    const sev = (p) => p.locator('[data-esc-lista] > li:has(a[href$="/banheira-de-canto-sevilha-com-hidro-em-acrilico.html"])');
+    const sev = (p) => p.locator('[data-esc-lista] > li:has(a[href*="/banheira-de-canto-sevilha-com-hidro-em-acrilico.html"])');
     await expect(sev(page).locator('.selo--confirmar')).toHaveText('Medida a confirmar');
     await page.goto(pg('escolher.html?tipo=banheira&l=140&c=140&passo=8'));
     await expect(sev(page)).toHaveCount(0);
     // a versão irmã com medida confirmada (1,36 x 1,36) cabe no mesmo espaço
-    await expect(page.locator('[data-esc-lista] > li:has(a[href$="/banheira-de-canto-sevilha-com-hidro.html"])')).toHaveCount(1);
+    await expect(page.locator('[data-esc-lista] > li:has(a[href*="/banheira-de-canto-sevilha-com-hidro.html"])')).toHaveCount(1);
   });
 
   test('mensagem do WhatsApp com as respostas e estado da URL restaurado no celular', async ({ page }) => {
@@ -314,5 +314,16 @@ test.describe('correções do verificador', () => {
     await expect(page.locator('[data-bandeja]')).toHaveCount(0);
     await expect(page.locator('[data-cmp-espaco] input[name="l"]')).toHaveValue('90');
     await expect(page.locator('[data-cmp-tbody] tr', { hasText: /^Tamanho/ }).first()).toContainText(tam);
+  });
+});
+
+test.describe('teste ao vivo', () => {
+  test('o cartão leva o tamanho que cabe para o produto e para a mensagem', async ({ page }) => {
+    await page.goto(pg('escolher.html?tipo=banheira&l=80&c=170&passo=8'));
+    const a = page.locator('[data-esc-lista] > li a[href*="/banheira-retangular-buzios-com-hidro.html"]');
+    const href = await a.getAttribute('href');
+    expect(href).toMatch(/\?t=\d+$/);
+    await a.click();
+    await expect(page.locator('input[name="tamanho"]:checked')).toHaveAttribute('data-rotulo', '0,80 x 1,70 x 0,41');
   });
 });

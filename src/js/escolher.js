@@ -174,7 +174,8 @@
     const mc = it.mc === 1;
     const ti = m ? m.i : it.ts.length === 1 ? 0 : '';
     const eti = [it.fo, it.lu, it.ma, it.co].filter(Boolean).join(' · ');
-    const href = `${cfg.base}${it.s}.html`;
+    // O tamanho que cabe segue no link (?t=índice), para o produto abrir e mandar a mensagem com ele.
+    const href = `${cfg.base}${it.s}.html${m && it.ts.length > 1 ? `?t=${m.i}` : ''}`;
     const precoTxt = t && t[3] ? `${brl(preco)} com este tamanho` : it.po || (preco != null ? brl(preco) : '');
     // Os primeiros cartões já estão na tela quando o estado vem na URL: foto sem lazy e sem a animação de
     // entrada. O LCP da página é o texto do topo (estático, sem animação), que pinta antes do índice.
