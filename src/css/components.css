@@ -105,7 +105,7 @@ html{scroll-padding-bottom:calc(var(--doca-h,0px) + var(--bandeja-h,0px) + 16px)
 
 /* ---------- Rodapé (SPEC 10.4) ---------- */
 .rodape{--bg:var(--sand);border-top:1px solid var(--stone);position:relative;overflow:clip;padding:clamp(64px,7vw + 24px,136px) 0 calc(28px + var(--doca-h) + var(--bandeja-h,0px))}
-.rodape a{color:inherit}
+.rodape a:not(.btn){color:inherit}
 .rodape__cta{position:relative;display:grid;gap:24px;padding-bottom:clamp(48px,6vw,88px);border-bottom:1px solid var(--rule)}
 .rodape__titulo{max-width:18ch;font-family:var(--f-display);font-weight:400;font-size:clamp(2.25rem,1.3rem + 3.6vw,4.25rem);line-height:1.06;letter-spacing:-.005em;text-wrap:balance}
 .rodape__acoes{display:flex;flex-wrap:wrap;gap:12px}
@@ -139,7 +139,7 @@ html{scroll-padding-bottom:calc(var(--doca-h,0px) + var(--bandeja-h,0px) + 16px)
 @media (hover:hover){.rodape__redes a:hover{border-color:var(--fg)}}
 .rodape__cnpj{list-style:none;padding:0;display:grid;gap:2px;overflow-wrap:anywhere}
 .rodape__coleta{color:var(--fg)}
-.rodape__marca{margin-top:clamp(40px,6vw,88px);font-family:var(--f-display);font-weight:300;font-size:clamp(2.5rem,10.4vw,10.5rem);line-height:.95;letter-spacing:-.01em;color:var(--stone);overflow-wrap:anywhere;user-select:none;text-wrap:balance}
+.rodape__marca{margin-top:clamp(40px,6vw,88px);font-family:var(--f-display);font-weight:300;font-size:clamp(2.5rem,10.4vw,10.5rem);line-height:.95;letter-spacing:-.01em;color:var(--stone);overflow-wrap:anywhere;user-select:none;text-wrap:balance}.rodape__marca::before{content:attr(data-marca)}
 
 /* ---------- Hover e modo sem JavaScript do cabeçalho e dos botões (fora do CSS crítico) ---------- */
 @media (hover:hover){
@@ -175,9 +175,8 @@ html:not(.js) .cab{position:relative}
 .cab__whats .btn:focus-visible,.cab__whats-mais:focus-visible{outline-color:#fff;outline-offset:-5px}
 html[data-lite] *,html[data-lite] *::before,html[data-lite] *::after{scroll-behavior:auto!important}
 .cab__badge{position:absolute;top:5px;right:3px;min-width:18px;height:18px;padding:0 5px;border-radius:var(--radius);background:var(--ink);color:var(--day);font:500 .6875rem/18px var(--f-body);text-align:center;box-shadow:0 0 0 2px var(--day)}
-/* Pausar movimento (barra superior; WCAG 2.2.2). Só texto a partir de 768 px; no celular, ícone de 44 px. */
+/* Pausar movimento (barra superior; WCAG 2.2.2). Só o ícone de 15 px numa área de 44 px, com dica ao passar o mouse. */
 .topo__mov{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:44px;padding:0;border:0;background:none;color:inherit;font:inherit;cursor:pointer}
-@media (min-width:768px){.topo__mov-t{display:inline}}
 .topo__mov[hidden]{display:none}
 .topo__mov-r,.topo__mov[aria-pressed="true"] .topo__mov-p{display:none}
 .topo__mov[aria-pressed="true"] .topo__mov-r{display:inline}

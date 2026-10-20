@@ -40,7 +40,8 @@ export function paginas(ctx) {
       <p class="escala__cab">Meu espaço, em centímetros</p>
       <div class="escala__linha"><label class="campo"><span class="campo__rot">Largura</span><input class="campo__in num" type="number" inputmode="numeric" min="1" max="3000" name="l" placeholder="ex.: 90" autocomplete="off"></label><span class="escala__x" aria-hidden="true">x</span><label class="campo"><span class="campo__rot">Comprimento</span><input class="campo__in num" type="number" inputmode="numeric" min="1" max="3000" name="c" placeholder="ex.: 170" autocomplete="off"></label></div>
       <p class="escala__txt" data-cmp-txt aria-live="polite"></p>
-      <p class="escala__aviso">Os contornos são as medidas externas publicadas, sobrepostas a partir do mesmo canto. A planta oficial de cada modelo está na tabela. ${AVISO_ESCALA}</p>
+      <p class="escala__aviso">${AVISO_ESCALA}</p>
+      <details class="cmp-como"><summary>Como funciona</summary><p>Os contornos são as medidas externas publicadas, sobrepostas a partir do mesmo canto. A planta oficial de cada modelo está na tabela.</p></details>
     </form>
   </div>
 </section>`;
@@ -51,7 +52,7 @@ export function paginas(ctx) {
     <noscript><p class="cmp-vazio__t">O comparador precisa de JavaScript. Veja os modelos em <a class="link" href="${url('banheiras.html')}">Banheiras</a>, <a class="link" href="${url('spas.html')}">Spas</a> e <a class="link" href="${url('ofuros.html')}">Ofurôs</a>.</p></noscript>
     <div class="cmp-vazio" data-cmp-vazio data-so-js hidden>
       <p class="cmp-vazio__t">Nenhum modelo escolhido ainda.</p>
-      <p>Toque em "Comparar" nos cartões das coleções, no escolhedor ou na página de cada peça. Ou procure pelo nome:</p>
+      <p>Procure pelo nome, ou toque em “Comparar” em qualquer peça.</p>
     </div>
     <div class="cmp-add" data-cmp-add data-so-js hidden>
       <label class="campo"><span class="campo__rot">Incluir um modelo</span><input class="campo__in" type="search" data-cmp-busca placeholder="Nome ou nº de catálogo" autocomplete="off" aria-controls="cmp-sug" aria-autocomplete="list"></label>

@@ -49,12 +49,16 @@ test('portas com a contagem real (total_exibido) de cada coleção', () => {
   });
 });
 
-test('salas: 7 faixas, 4 peças distintas cada, na ordem da listagem do site atual, contagem real e contorno', () => {
+test('salas: quatro faixas com fotos (3 peças distintas cada, na ordem da listagem, contagem real) e as outras numa lista de texto', () => {
+  // Redesenho de 20/10/2026, rodada 2: curadoria na home; sem contorno em escala nos cartões.
   const faixas = [...h.matchAll(/<section class="sala-faixa"[\s\S]*?<\/section>/g)].map((m) => m[0]);
-  assert.equal(faixas.length, SALAS.length);
+  const comFoto = SALAS.filter((x) => x[2] !== 'lista');
+  const emLista = SALAS.filter((x) => x[2] === 'lista');
+  assert.equal(faixas.length, comFoto.length);
+  assert.ok(comFoto.length >= 3 && comFoto.length <= 4);
   const porSlug = new Map(produtos.map((p) => [p.slug, p]));
   const vistos = new Set();
-  SALAS.forEach(([path], i) => {
+  comFoto.forEach(([path], i) => {
     const slugs = [...faixas[i].matchAll(/<li class="cart" data-slug="([^"]+)"/g)].map((m) => m[1]);
     assert.equal(slugs.length, PECAS_POR_SALA, `${path}: ${PECAS_POR_SALA} peças`);
     // Ordem do site atual (subsequência da listagem), com foto e sem repetir peça de outra sala.
@@ -68,8 +72,15 @@ test('salas: 7 faixas, 4 peças distintas cada, na ordem da listagem do site atu
     }
     assert.equal(Number(/data-campo="categoria-total">(\d+)</.exec(faixas[i])[1]), cat(path).total_exibido);
     assert.ok(faixas[i].includes(`href="${BASE_PATH}/${path}"`));
+    // Na home o cartão leva só nome, medida e preço: sem a linha de atributos.
+    assert.doesNotMatch(faixas[i], /class="cart__eti"/);
   });
-  assert.ok((h.match(/class="cart__ctn"/g) || []).length >= 20, 'contornos em escala nos cartões');
+  const mais = /<nav class="home-salas__mais"[\s\S]*?<\/nav>/.exec(h)?.[0] || '';
+  for (const [path] of emLista) {
+    const a = new RegExp(`<a class="home-salas__mais-a" href="${BASE_PATH}/${path}">[\\s\\S]*?</a>`).exec(mais)?.[0] || '';
+    assert.equal(Number(/data-campo="categoria-total">(\d+)</.exec(a)?.[1]), cat(path).total_exibido, path);
+  }
+  assert.doesNotMatch(h, /class="cart__ctn"/, 'sem contorno em escala nos cartões');
 });
 
 test('lançamentos 2026: as 3 primeiras peças reais da categoria, na ordem, e o link da coleção', () => {
@@ -295,7 +306,7 @@ test('altura reservada: degraus nos mesmos cortes das media queries (600 e 1024 
   assert.throws(() => alturaReservada({ m: 1, t: 0, d: 1 }));
 });
 
-test('abertura: nenhuma foto atrás do título; as portas trazem a foto real da coleção, versionada', () => {
+test('abertura: nenhuma foto atrás do título; portas só em texto (nome e contagem), recortes da vitrine versionados', () => {
   const ab = /<section class="sala home-abre"[\s\S]*?<\/section>/.exec(h)[0];
   assert.doesNotMatch(ab, /abre-peca/, 'sem peça sobreposta ao H1');
   // Antes do H1 só há água, vapor e textos: nenhuma imagem.
@@ -303,10 +314,10 @@ test('abertura: nenhuma foto atrás do título; as portas trazem a foto real da 
   const versionados = new Set(execSync('git ls-files public/media/home', { cwd: paths.raiz || join(paths.public, '..') }).toString().trim().split('\n'));
   for (const [, id] of PORTAS) {
     const a = new RegExp(`<a class="porta__a"[^>]*data-porta-id="${id}"[\\s\\S]*?</a>`).exec(ab)?.[0] || '';
-    assert.match(a, new RegExp(`src="${BASE_PATH}/media/home/porta-${id}-240\\.webp"`), id);
-    assert.match(a, new RegExp(`srcset="${BASE_PATH}/media/home/porta-${id}-240\\.avif 240w, ${BASE_PATH}/media/home/abertura-${id}-484\\.avif 484w"`), id);
-    assert.doesNotMatch(a, /loading="lazy"/, `${id}: primeira tela, sem lazy`);
-    for (const f of [`porta-${id}-240.avif`, `porta-${id}-240.webp`, `abertura-${id}-484.avif`, `abertura-${id}-484.webp`]) {
+    assert.ok(a, id);
+    // Redesenho (rodada 2): a porta é uma linha tipográfica, sem miniatura; a foto fica na vitrine.
+    assert.doesNotMatch(a, /<img|<picture|<video/, `${id}: porta sem foto`);
+    for (const f of [`abertura-${id}-484.avif`, `abertura-${id}-484.webp`]) {
       assert.ok(versionados.has(`public/media/home/${f}`), `${f} versionado (o build de publicação não tem os filmes)`);
     }
   }

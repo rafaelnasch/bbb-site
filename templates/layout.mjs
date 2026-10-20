@@ -151,7 +151,7 @@ ${jsonld}
 ${p.modulosTardios ? '' : Object.values(mapaModulos).map((src) => html`<script type="module" src="${src}"${attrs({ fetchpriority: p.jsBaixa ? 'low' : null })}></script>`)}
 </head>
 <body${attrs({ class: p.classe || null })}>
-<svg class="filtros" width="0" height="0" aria-hidden="true" focusable="false"><filter id="pedra" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="-2.5 0 2.5 0 0 .3 .59 .11 0 0 0 0 0 0 0 0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues="0 .3 .36"/></feComponentTransfer><feColorMatrix type="matrix" values=".86 .86 0 0 .16 .83 .83 0 0 .15 .78 .78 0 0 .14 0 0 0 1 0"/></filter></svg>
+<svg class="filtros" width="0" height="0" aria-hidden="true" focusable="false"><filter id="pedra" color-interpolation-filters="sRGB" x="0" y="0" width="1" height="1"><feColorMatrix in="SourceGraphic" result="peca" type="matrix" values=".886 .122 .023 0 0 .062 .945 .023 0 0 .062 .122 .847 0 0 0 0 0 1 0"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 -5 -5 0 1.3"/><feGaussianBlur stdDeviation=".8" result="mascara"/><feComposite in="peca" in2="mascara" operator="in" result="recorte"/><feColorMatrix in="SourceGraphic" result="fundo" type="matrix" values=".054 .106 .02 0 .83 .066 .13 .024 0 .79 .087 .171 .032 0 .73 0 0 0 1 0"/><feComposite in="recorte" in2="fundo" operator="over"/></filter></svg>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 ${barraTopo({ movimento: /<video\b|data-agua|data-vapor/.test(String(p.corpo)) })}
 ${cabecalho({ ativo: p.ativo, sobre: p.sobre })}

@@ -16,7 +16,6 @@ html[data-lite] .prod-topo__filme{display:none}
 .prod-topo__filme{opacity:0;transition:opacity 1.2s linear}
 .prod-topo__arte.is-tocando .prod-topo__filme{opacity:1}
 /* Sem planta nem filme: papel técnico (grade de 24 px) e luz de estúdio, sem altura vazia. */
-.prod-topo--sem-arte{background-image:linear-gradient(#0000 35%,var(--bg)),linear-gradient(#0000,#0000),linear-gradient(color-mix(in srgb,var(--line) 9%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--line) 9%,transparent) 1px,transparent 1px);background-size:auto,auto,24px 24px,24px 24px}
 
 /* ---------- Grade da peça ---------- */
 .prod__bloco{min-width:0}
@@ -41,10 +40,12 @@ html[data-lite] .prod-topo__filme{display:none}
 .preco{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
 .preco__por{font-family:var(--f-display);font-weight:300;font-size:clamp(2.125rem,1.6rem + 2vw,2.875rem);line-height:1;letter-spacing:-.01em;color:var(--ink)}
 .preco__de{font-size:1rem;color:var(--fg-2)}
-.selo{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:2px 8px;border-radius:var(--radius);font:500 .625rem/1.3 var(--f-body);letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--rule);color:var(--fg-2)}
-.selo--esgotado{border-color:var(--ink);color:var(--ink)}
-.selo--planta{color:var(--brand);border-color:var(--stone)}
-.selo--confirmar{color:#7A4A1C;border-color:var(--stone)}
+/* Selos em texto pequeno, sem caixa; só "Medida a confirmar" (aviso de dado) leva a linha fina. */
+.selo{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:2px 0;font:400 .75rem/1.3 var(--f-body);letter-spacing:.02em;color:var(--fg-2)}
+.selo--esgotado{color:var(--ink)}
+.selo--planta{color:var(--fg-2)}
+.seletor__todos{margin:-2px 0 10px;font-size:.8125rem;color:var(--fg-2)}
+.selo--confirmar{padding-inline:8px;border:1px solid var(--stone);border-radius:var(--radius);color:#7A4A1C}
 
 /* Monte a sua */
 .monte{display:grid;gap:22px;border:0}
@@ -63,7 +64,7 @@ html[data-lite] .prod-topo__filme{display:none}
 .seletor__cartao{display:grid;gap:8px;height:100%;min-height:72px;padding:12px 14px;border:1px solid var(--rule);border-radius:var(--radius);background:transparent;transition:border-color var(--t-ui),box-shadow var(--t-ui),background-color var(--t-ui)}
 .seletor__rot{font-weight:400;font-size:.9375rem;line-height:1.3}
 .seletor__meta{display:flex;flex-wrap:wrap;gap:4px}
-.seletor__meta .selo{min-height:20px;padding:1px 8px;font-size:.6875rem}
+.seletor__meta .selo{min-height:20px;padding:0;font-size:.75rem}.seletor__meta .selo--confirmar{padding:1px 8px}
 .seletor__in:checked+.seletor__cartao{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .seletor__in:focus-visible+.seletor__cartao,.chip-op input:focus-visible+span,.adic input:focus-visible~.adic__caixa{outline:2px solid var(--focus-ring);outline-offset:2px}
 @media (hover:hover){.seletor__op:hover .seletor__cartao{border-color:color-mix(in srgb,var(--fg) 40%,transparent)}}
@@ -206,9 +207,10 @@ html[data-lite] .cota-marca.is-ativa::after{animation:none;opacity:0}
 .escala__linha{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:10px}
 .escala__x{padding-bottom:12px;color:var(--fg-2)}
 .campo{display:grid;gap:6px}
-.campo__rot{font-size:.8125rem;font-weight:500;color:var(--fg-2)}
-.campo__in{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--rule);border-radius:2px;background:color-mix(in srgb,var(--fg) 5%,transparent);color:var(--fg);font-size:1.125rem}
-.campo__in:focus-visible{outline:2px solid var(--focus-ring);outline-offset:1px}
+/* Campo de medida no estilo de ficha de hotel: fundo transparente, só a linha de baixo; o foco é a linha azul. */
+.campo__rot{font:500 .6875rem/1.3 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--fg-2)}
+.campo__in{width:100%;min-height:48px;padding:10px 2px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--fg);font-size:1.125rem}
+.campo__in:focus-visible{outline:none;border-bottom-color:var(--focus-ring);box-shadow:0 1px 0 0 var(--focus-ring)}
 .campo__in::placeholder{color:color-mix(in srgb,var(--fg-2) 70%,transparent)}
 .campo--inline{grid-template-columns:auto minmax(0,10rem);align-items:center;gap:12px}
 .escala__mais summary{display:inline-flex;align-items:center;min-height:44px;font-size:.875rem;color:var(--fg-2);cursor:pointer;text-decoration:underline;text-underline-offset:.25em}
@@ -334,9 +336,10 @@ details[open]>.descricao__s::after,details[open]>.faq-item__q::after{transform:r
 @media (max-width:440px){.doca__btn{padding:.5em .9em}.doca__nome{-webkit-line-clamp:1}.doca__longo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 @media (min-width:1024px){.doca{display:none!important}}
 /* Celular: a arte da etiqueta é fundo, atrás do texto; esmaece para a esquerda para não disputar com o título. */
-@media (max-width:1023px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte,.prod-topo--planta-folha .prod-topo__arte,.prod-topo--desenho .prod-topo__arte{-webkit-mask:linear-gradient(100deg,#0000 8%,#000 62%);mask:linear-gradient(100deg,#0000 8%,#000 62%)}}
+@media (max-width:1023px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte,.prod-topo--planta-folha .prod-topo__arte{-webkit-mask:linear-gradient(100deg,#0000 8%,#000 62%);mask:linear-gradient(100deg,#0000 8%,#000 62%)}}
 .prod-resumo{max-width:64ch;color:var(--fg-2);font-size:1rem}
 .prod-resumo .etiqueta{display:flex}
 .prod__resumo{padding-top:4px;border-top:1px solid color-mix(in srgb,var(--line) 22%,transparent)}
 .prod__resumo .prod-resumo{display:grid;gap:8px;padding-top:20px;line-height:1.6}
 /* Selos neutros no modo escuro: texto claro (contraste acima de 4,5:1 sobre o cartão escuro). */
+.prod__planta.prod__escala{padding:clamp(24px,3.4vw,48px)}

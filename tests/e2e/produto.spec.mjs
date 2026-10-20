@@ -27,7 +27,7 @@ test('Acqua Línea: trocar o tamanho troca planta, medidas, total e o texto do W
   await expect(page.locator('[data-tam-painel]:not([hidden]) [data-explorador]')).toHaveCount(1);
   // Adicional com preço publicado entra no total e na mensagem.
   await page.locator('label.adic', { hasText: 'Acionador digital' }).click();
-  await expect(page.locator('output[data-total]')).toHaveText('R$ 5.891,18');
+  await expect(page.locator('output[data-total]')).toHaveText('R$5.891,18');
   const m = await msgCompra(page);
   expect(m).toContain('Adicionais: Acionador digital + R$490,00');
   expect(m).toContain('Valor pelos preços do site em 18/10/2026: R$ 5.891,18');
@@ -43,11 +43,11 @@ test('voltar sem bfcache: total, doca e WhatsApp seguem o formulário restaurado
   await page.evaluate(() => window.addEventListener('unload', () => {}));
   await page.locator('label.seletor__op', { hasText: '0,79 x 1,69 x 0,37' }).click();
   await page.locator('label.adic', { hasText: 'Acionador digital' }).click();
-  await expect(page.locator('output[data-total]')).toHaveText('R$ 5.891,18');
+  await expect(page.locator('output[data-total]')).toHaveText('R$5.891,18');
   await page.goto(`${BASE}/lojas/loja-showrooms.html`);
   await page.goBack();
   await expect(page.locator('input[name="tamanho"]:checked')).toHaveAttribute('data-rotulo', '0,79 x 1,69 x 0,37');
-  await expect(page.locator('output[data-total]')).toHaveText('R$ 5.891,18');
+  await expect(page.locator('output[data-total]')).toHaveText('R$5.891,18');
   await expect(page.locator('[data-doca-tam]')).toHaveText('0,79 x 1,69 x 0,37');
   const m = await msgCompra(page);
   expect(m).toContain('Tamanho: 0,79 x 1,69 x 0,37');

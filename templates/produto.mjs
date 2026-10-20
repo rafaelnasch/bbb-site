@@ -21,9 +21,8 @@ import { notaPrecosComoOpcaoTexto, disponibilidadeSchema } from '../build/lib/ca
 import { breadcrumb } from './parts/breadcrumb.mjs';
 import { picture, SIZES_CARTAO } from './parts/foto.mjs';
 import { galeria, ordenarFotos } from './parts/galeria.mjs';
-import { paineisPlanta, plantasAvulsas, rotuloTam, plantaDoTamanho } from './parts/planta.mjs';
-import { escala, medidasEncaixe } from './parts/escala.mjs';
-import { fmtMetros } from '../build/lib/medidas.mjs';
+import { paineisPlanta, plantasAvulsas, rotuloTam, plantaDoTamanho, situacaoPlanta } from './parts/planta.mjs';
+import { escala } from './parts/escala.mjs';
 import { decisao, doca } from './parts/monte.mjs';
 import { ficha, rotuloFicha } from './parts/ficha.mjs';
 import { entrega } from './parts/entrega.mjs';
@@ -195,27 +194,8 @@ function cartaoMini(q) {
 </li>`;
 }
 
-/**
- * Arte da etiqueta para peças sem planta nem filme: o contorno em escala a partir das medidas do site
- * (derivado, SPEC 0.2), com a legenda literal da SPEC 9.3. Com medida a confirmar (ficha x opção), o
- * contorno usa a maior das duas, como o encaixe, e não leva rótulo de medida.
- */
-function desenhoTopo(t) {
-  const e = medidasEncaixe(t);
-  if (!e) return null;
-  const W = 300, H = 170, topoLivre = 30, rodape = 34, lado = 34;
-  const k = Math.min((W - 2 * lado) / e.maior, (H - topoLivre - rodape) / e.menor);
-  const w = e.maior * k, h = e.menor * k, x = (W - w) / 2, y = topoLivre + (H - topoLivre - rodape - h) / 2;
-  const rotulos = !t.ficha;
-  return raw(`<svg viewBox="0 0 ${W} ${H}" fill="none" stroke="currentColor" stroke-width=".8" font-size="9.5">
-<defs><pattern id="topo-grade" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" stroke-opacity=".18" stroke-width=".4"/></pattern></defs>
-<rect width="${W}" height="${H - rodape + 6}" fill="url(#topo-grade)" stroke="none"/>
-<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="3" fill="var(--room)" stroke="var(--porcelain)" stroke-opacity=".8"/>
-${rotulos ? `<path d="M${x.toFixed(1)} ${(y - 9).toFixed(1)}h${w.toFixed(1)}M${(x - 9).toFixed(1)} ${y.toFixed(1)}v${h.toFixed(1)}" stroke-opacity=".6"/>
-<g fill="currentColor" stroke="none"><text x="${(x + w / 2).toFixed(1)}" y="${(y - 13).toFixed(1)}" text-anchor="middle">${fmtMetros(e.maior)} m</text><text x="${(x - 13).toFixed(1)}" y="${(y + h / 2).toFixed(1)}" text-anchor="middle" transform="rotate(-90 ${(x - 13).toFixed(1)} ${(y + h / 2).toFixed(1)})">${fmtMetros(e.menor)} m</text></g>` : ''}
-<g fill="currentColor" stroke="none" fill-opacity=".8" text-anchor="middle"><text x="150" y="${H - 18}">Desenho em escala a partir das medidas do site.</text><text x="150" y="${H - 5}">Não é a planta oficial.</text></g>
-</svg>`);
-}
+// Celular (até 599 px): a arte do topo some (passava por trás do título) e a imagem nem é baixada.
+const VAZIO_TOPO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
 /** Arte estática do topo para planta sem filme (build/plantas-topo.mjs): só a folha do desenho. */
 let _topo;
@@ -508,16 +488,14 @@ export function paginas(ctx) {
         h: Math.round((plIni.h / plIni.w) * 1200),
         preload: { href: src, type: 'image/webp', imagesrcset: srcset, imagesizes: srcset ? POSTER_SIZES : null },
       };
-    })() : (() => {
-      const t = !acessorio && (t0 || tamanhos[0]);
-      const svg = t ? desenhoTopo(t) : null;
-      return svg ? { tipo: 'desenho', svg, w: 300, h: 170 } : null;
-    })();
+    })() : null;
+    // Sem planta nem filme, o topo fica só com título e metadados (o desenho derivado repetia o da seção
+    // "Cabe no meu banheiro?"; redesenho, rodada 2).
 
     // Sem planta, filme nem medidas (acessórios): o nº de catálogo literal, grande e vazado, ocupa o alto
     // da etiqueta como numa plaqueta de museu (só quando é um código curto). A caixa tem a largura da
     // etiqueta e altura fixa (entrelinha em em): a troca de fonte muda só os glifos, não a caixa (CLS).
-    const numeroGrande = !arte && p.sku && String(p.sku).length <= 6;
+    const numeroGrande = !arte && acessorio && p.sku && String(p.sku).length <= 6;
 
     const eti = camposEtiqueta(p);
     const itens = p.d_itens_de_serie_exibidos || [];
@@ -526,15 +504,19 @@ export function paginas(ctx) {
     const relacionados = (p.produtos_relacionados || [])
       .map((r) => produtos.find((q) => q.url === r.url))
       .filter((q) => q && q.slug !== p.slug);
-    const planta = !acessorio && tamanhos.length ? paineisPlanta(p, tamanhos, { waPlanta }) : null;
     const comEscala = !acessorio && tamanhos.length && (t0 || tamanhos[0]).a;
+    // Sem planta oficial publicada, "As medidas, em escala" e "Cabe no meu banheiro?" viram uma seção só
+    // (a sala escura com o campo do espaço): a peça em escala aparece uma vez (redesenho, rodada 2).
+    const semOficial = !acessorio && tamanhos.length && situacaoPlanta(p, tamanhos) !== 'oficial';
+    const fundir = Boolean(semOficial && comEscala);
+    const planta = !acessorio && tamanhos.length ? paineisPlanta(p, tamanhos, { waPlanta, semDesenho: fundir }) : null;
     const tituloEscala = p.d_tipo === 'banheira' ? 'Cabe no meu banheiro?' : 'Cabe no meu espaço?';
 
     const topo = html`<section class="sala prod-topo letterbox${arte ? ` prod-topo--${arte.tipo}` : ' prod-topo--sem-arte'}" aria-labelledby="prod-h1">
   ${!arte && numeroGrande ? html`<div class="prod-topo__fundo" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;overflow:hidden"><p class="prod-topo__num" style="position:absolute;left:0;right:0;top:calc(var(--cab-h) + 8px);margin:0;overflow:hidden;contain:layout paint;text-align:right;font:300 clamp(9rem,58vw,24rem)/.8 var(--f-display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 40%,transparent);white-space:nowrap">${p.sku}</p></div>` : ''}
   ${arte ? html`<div class="prod-topo__fundo" aria-hidden="true">
     <div class="prod-topo__arte" style="aspect-ratio:${arte.w}/${arte.h}${arte.tipo === 'filme' || arte.tipo === 'planta-folha' ? ';opacity:.7' : arte.tipo === 'desenho' ? ';color:var(--line);opacity:.75;--arte-w:36%;--arte-d:5%;bottom:auto' : ''}">
-      ${arte.svg || ''}${arte.svg ? '' : html`${arte.avif ? html`<picture><source type="image/avif"${attrs({ srcset: arte.srcsetAvif || arte.avif, sizes: arte.srcsetAvif ? POSTER_SIZES : null })}>` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1) hue-rotate(180deg);mix-blend-mode:screen' : null })}>${arte.avif ? html`</picture>` : ''}
+      ${arte.svg || ''}${arte.svg ? '' : html`<picture><source media="(max-width:599px)" srcset="${VAZIO_TOPO}">${arte.avif ? html`<source type="image/avif"${attrs({ srcset: arte.srcsetAvif || arte.avif, sizes: arte.srcsetAvif ? POSTER_SIZES : null })}>` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1) hue-rotate(180deg);mix-blend-mode:screen' : null })}></picture>
       ${filme ? html`<video class="prod-topo__filme" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, 'data-mp4-leve': filme.leve, 'data-ordem': filme.ordem, 'aria-label': filme.aria, width: arte.w, height: arte.h })} muted playsinline loop preload="none"></video>` : ''}`}
     </div>
   </div>` : ''}
@@ -555,16 +537,24 @@ export function paginas(ctx) {
       ${decisao(p, { ...cx, aposPreco: html`${notaPrecosComoOpcao(p, produtos)}${versoes(p, fam)}` })}
     </section>
     <section class="prod__bloco prod__resumo" aria-label="Ficha em uma frase"><p class="prod-resumo"><span class="etiqueta">Ficha em uma frase</span><span data-campo="resumo">${p.d_resumo}</span></p></section>
-    ${planta ? html`<section class="prod__bloco prod__planta sala-escura" id="planta" style="${CV}" aria-labelledby="planta-h">
+    ${planta && fundir ? html`<section class="prod__bloco prod__planta prod__escala sala-escura" id="cabe" style="${CV}" aria-labelledby="cabe-h">
+      <div class="prod__cab"><p class="etiqueta etiqueta--linha">Desenho em escala</p><h2 id="cabe-h">${tituloEscala}</h2>
+      <p class="prod__lead">${LEAD_PLANTA[planta.situacao]}</p></div>
+      ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true })}
+      <p class="desenho__leg prod__escala-leg">Desenho em escala a partir das medidas do site. Não é a planta oficial.</p>
+      <div id="planta">${planta.corpo}</div>
+      ${plantasAvulsas(p)}
+    </section>` : ''}
+    ${planta && !fundir ? html`<section class="prod__bloco prod__planta sala-escura" id="planta" style="${CV}" aria-labelledby="planta-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">${planta.temOficial ? 'Planta técnica oficial' : 'Desenho em escala'}</p>
       <h2 id="planta-h">${planta.temOficial ? 'O desenho é a obra' : 'As medidas, em escala'}</h2>
       <p class="prod__lead">${LEAD_PLANTA[planta.situacao]}</p></div>
       ${planta.corpo}
       ${plantasAvulsas(p)}
     </section>` : ''}
-    ${comEscala ? html`<section class="prod__bloco prod__escala" id="cabe" style="${CV}" aria-labelledby="cabe-h">
+    ${comEscala && !fundir ? html`<section class="prod__bloco prod__escala" id="cabe" style="${CV}" aria-labelledby="cabe-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">Escala real</p><h2 id="cabe-h">${tituloEscala}</h2>
-      <p class="prod__lead">A peça vista de cima, na mesma escala do seu espaço.</p></div>
+      <p class="prod__lead">A peça vista de cima, em escala real.</p></div>
       ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true })}
     </section>` : ''}
     ${itens.length ? html`<section class="prod__bloco prod__itens" id="itens" style="${CV}" aria-labelledby="itens-h">

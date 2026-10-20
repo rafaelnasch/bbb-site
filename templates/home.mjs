@@ -35,13 +35,15 @@ export const PORTAS = Object.freeze([
   ['spas.html', 'spas', 'Spas'],
   ['ofuros.html', 'ofuros', 'Ofurôs'],
 ]);
+// Redesenho (20/10/2026, rodada 2): quatro salas com fotos na home (uma curadoria, não o catálogo
+// inteiro); as demais viram uma lista tipográfica com a contagem real e o link da coleção.
 export const SALAS = Object.freeze([
   ['banheiras/banheira-retangular.html', 'Retangulares'],
   ['banheiras/banheira-de-canto.html', 'De canto'],
-  ['banheiras/banheiras-redondas.html', 'Redondas'],
-  ['banheiras/banheira-dupla.html', 'Duplas'],
+  ['banheiras/banheiras-redondas.html', 'Redondas', 'lista'],
+  ['banheiras/banheira-dupla.html', 'Duplas', 'lista'],
   ['spas/quadrados.html', 'Spas quadrados'],
-  ['spas/redondos.html', 'Spas redondos'],
+  ['spas/redondos.html', 'Spas redondos', 'lista'],
   ['ofuros.html', 'Ofurôs'],
 ]);
 export const PECAS_POR_SALA = 3;
@@ -62,7 +64,7 @@ const PESSOAS_GERAL = [['1', 'Individual'], ['2', '2 pessoas'], ['3+', '3 ou mai
 // arredondada para baixo: a página nunca fica mais alta que o conteúdo, e a barra de rolagem e a tecla
 // End levam aonde devem. As demais seções têm altura que varia muito com a largura e não são puladas.
 // Se o conteúdo mudar, o teste e2e "alturas reservadas" acusa a diferença e mostra a medida nova.
-export const ALTURA_SALAS = Object.freeze({ m: 4650, t: 4850, d: 4000 });
+export const ALTURA_SALAS = Object.freeze({ m: 3150, t: 3100, d: 2650 });
 export const ALTURA_RODAPE = Object.freeze({ m: 2950, t: 2150, d: 1600 });
 const pad2 = (n) => String(n).padStart(2, '0');
 const dataBR = (iso) => {
@@ -129,21 +131,6 @@ function recortesHome(D) {
   const filtrar = (o) => Object.fromEntries(Object.entries(o || {}).filter(([, x]) => ok(x)));
   return { portas: filtrar(m.portas), abertura: filtrar(m.abertura) };
 }
-
-/**
- * Foto da porta: o quadro final do filme da coleção recortado na foto (build/media-home.mjs), em 240 px
- * e, quando houver, na área de 484 px (sem ampliar) para telas densas. Versionada em public/media/home:
- * não depende dos filmes no build de publicação (--skip-media).
- */
-function fotoPorta(R, id) {
-  const m = R.portas[id];
-  if (!m) return null;
-  const g = R.abertura[id];
-  const srcset = (k) => (g ? `${url(m[k])} ${m.lado}w, ${url(g[k])} ${g.lado}w` : null);
-  return html`<picture><source type="image/avif"${attrs({ srcset: srcset('avif') || url(m.avif), sizes: g ? SIZES_PORTA : null })}><img${attrs({ class: 'porta__img porta__img--foto', src: url(m.webp), srcset: srcset('webp'), sizes: g ? SIZES_PORTA : null, width: m.lado, height: m.lado, alt: '', decoding: 'async' })}></picture>`;
-}
-// Celular e tablet: três portas lado a lado (um terço da largura); desktop: miniatura de 112 px.
-const SIZES_PORTA = '(min-width:1024px) 112px, 31vw';
 
 /** Cena da vitrine (desktop) sem filme: a mesma área da foto, já recortada em 484 px. */
 function cenaSemFilme(g, prioridade = false) {
@@ -291,20 +278,15 @@ export function paginas(ctx) {
     const filme = filmeColecao(D, id);
     // Vitrine do desktop: o filme da coleção ou, sem ele, a foto recortada (versionada) parada.
     if (filme || R.abertura[id]) filmes.set(id, { filme, foto: R.abertura[id], nome, cat, path });
-    const lista = produtosDaCategoria(cat, porSlug);
-    const mini = fotoPorta(R, id);
-    const foto = mini || filme ? null : lista.map((p) => fotoCartao(p.slug)).find(Boolean);
+    // Redesenho (20/10/2026, rodada 2): a porta é só texto (nome e contagem), numa linha separada por régua
+    // fina; a foto fica na vitrine. Sem miniaturas: o trio de cartões parecia um menu de aplicativo.
     return html`<li class="porta" data-intro style="--i:${4 + i}">
-  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filmes.has(id) ? id : null, 'data-porta-id': id })}>
-    <span class="porta__mol${filme && !mini ? ' quadro' : ''}">${mini || (filme ? posterFilme(filme, { classe: 'porta__img', prioridade: true }) : foto ? picture(foto, { classe: 'porta__img porta__img--foto', sizes: SIZES_PORTA, alt: '' }) : '')}</span>
-    <span class="porta__txt"><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></span>
-    ${icone('seta-dir', { tamanho: 20, classe: 'porta__seta' })}
-  </a>
+  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filmes.has(id) ? id : null, 'data-porta-id': id })}><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span><span class="porta__u"> modelos</span></span></a>
 </li>`;
   }).filter(Boolean);
   // Vitrine (decorativa: as portas já dizem o mesmo): poster grande e filme da coleção. No celular fica logo
   // abaixo do título com a peça da primeira coleção parada; no desktop, à direita, troca com as portas.
-  const vitrine = filmes.size ? html`<div class="vitrine" aria-hidden="true" data-vitrine data-intro style="--i:2">
+  const vitrine = filmes.size ? html`<div class="vitrine" aria-hidden="true" data-vitrine>
     <div class="vitrine__mol">${[...filmes].map(([id, { filme, foto }], i) => html`<div class="vitrine__cena${filme ? ' quadro' : ''}${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${filme ? html`${posterFilme(filme, { classe: 'vitrine__img', prioridade: i === 0, alta: i === 0, soDesktop: true })}${videoFilme(filme, 'vitrine__video')}` : cenaSemFilme(foto, i === 0)}</div>`)}<span class="vitrine__luz"></span></div>
     <div class="vitrine__leg">${[...filmes].map(([id, { nome, cat }], i) => html`<p class="vitrine__item${i === 0 ? ' is-ativa' : ''}" data-cena-leg="${id}"><span class="vitrine__nome">${nome}</span><span class="vitrine__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></p>`)}</div>
   </div>` : '';
@@ -317,8 +299,8 @@ export function paginas(ctx) {
     <h1 id="home-h1" class="home-abre__h1">Banheiras, spas e ofurôs de hidromassagem, direto da fábrica em ${local.cidade}, ${local.uf}</h1>
     <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos, <span class="num">${comPdf}</span> deles com a planta oficial da fábrica para baixar. Escolha pelo tamanho do seu espaço e feche com um consultor pelo WhatsApp.</p>
     <p class="home-abre__acoes" data-intro style="--i:3"><a class="btn btn--claro home-abre__cta" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Escolher pelo meu espaço</a><a class="home-abre__rolar" href="#salas">Conhecer as salas${icone('chevron-baixo', { tamanho: 18 })}</a></p>
-    ${vitrine}
     <ul class="portas" role="list" aria-label="Coleções">${portas}</ul>
+    ${vitrine}
   </div>
 </section>`;
 
@@ -359,7 +341,8 @@ export function paginas(ctx) {
       return { p, foto, versoes: [...new Set(irmas.map((q) => campo(q, 'Material')))] };
     });
   };
-  const salas = SALAS.map(([path, nome], i) => {
+  const comFoto = SALAS.filter((x) => x[2] !== 'lista');
+  const salas = comFoto.map(([path, nome], i) => {
     const cat = D.catPorPath.get(path);
     if (!cat) return null;
     const escolhidas = escolherDaSala(cat, path);
@@ -371,12 +354,16 @@ export function paginas(ctx) {
   <header class="sala-faixa__cab" data-reveal>
     <p class="etiqueta"><span class="num">Sala ${pad2(i + 1)}</span></p>
     <h3 id="${id}-h" class="sala-faixa__h">${nome}</h3>
-    <a class="sala-faixa__ver" href="${url(path)}">Ver as <span class="num" data-campo="categoria-total">${cat.total_exibido}</span> peças<span class="vh"> da coleção ${cat.nome}</span>${icone('seta-dir', { tamanho: 18 })}</a>
+    <a class="sala-faixa__ver" href="${url(path)}"><span>Ver as <span class="num" data-campo="categoria-total">${cat.total_exibido}</span> peças<span class="vh"> da coleção ${cat.nome}</span></span>${icone('seta-dir', { tamanho: 18 })}</a>
   </header>
   <div class="rolagem sala-faixa__rol" tabindex="0" role="region" aria-label="${nome}: ${lista.length} peças, role para os lados">
-    <ol class="sala-faixa__lista" role="list">${escolhidas.map(({ p, foto, versoes }, j) => cartao(p, { pos: j, S, lqip: false, foto, versoes }))}</ol>
+    <ol class="sala-faixa__lista" role="list">${escolhidas.map(({ p, foto, versoes }, j) => cartao(p, { pos: j, S, lqip: false, foto, versoes, meta: false }))}</ol>
   </div>
 </section>`;
+  }).filter(Boolean);
+  const maisSalas = SALAS.filter((x) => x[2] === 'lista').map(([path, nome]) => {
+    const cat = D.catPorPath.get(path);
+    return cat ? html`<li><a class="home-salas__mais-a" href="${url(path)}"><span class="home-salas__mais-n">${nome}</span><span class="home-salas__mais-c"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> peças</span>${icone('seta-dir', { tamanho: 18 })}</a></li>` : null;
   }).filter(Boolean);
   const galeria = html`<section class="sala secao home-salas" id="salas"${attrs(tardio(ALTURA_SALAS))} aria-labelledby="home-salas-h">
   <div class="wrap">
@@ -386,6 +373,7 @@ export function paginas(ctx) {
       <p class="lead">Uma sala por formato, com peças diferentes de cada coleção na ordem do catálogo.</p>
     </div>
     ${salas}
+    ${maisSalas.length ? html`<nav class="home-salas__mais" aria-labelledby="home-salas-mais-h"><h3 class="etiqueta" id="home-salas-mais-h">Outras salas</h3><ul role="list">${maisSalas}</ul></nav>` : ''}
   </div>
 </section>`;
 
@@ -408,7 +396,7 @@ export function paginas(ctx) {
       </div>
       ${passos.length ? html`<ol class="home-obra__passos" role="list" aria-hidden="true" data-obra-passos>
         <li class="home-obra__passo" data-obra-passo=""><span class="home-obra__pn num">01</span><span class="home-obra__pt">A peça inteira, como a fábrica desenhou</span><span class="home-obra__pd">A mesma planta do PDF, ampliável até seis vezes.</span></li>
-        ${passos.map((c, i) => html`<li class="home-obra__passo" data-obra-passo="${c.letra}"><span class="home-obra__pn num">${pad2(i + 2)}</span><span class="home-obra__pt">Cota ${c.letra} <span class="num">${c.valor_texto} m</span></span><span class="home-obra__pd">${i === 0 ? 'Cada letra do desenho corresponde a uma linha da tabela.' : i === 1 ? 'Na tabela ao lado do desenho, como na planta.' : 'Medidas em metros, como impressas na planta.'}</span></li>`)}
+        ${passos.map((c, i) => html`<li class="home-obra__passo" data-obra-passo="${c.letra}"><span class="home-obra__pn num">${pad2(i + 2)}</span><span class="home-obra__pt">Cota ${c.letra} <span class="num">${c.valor_texto} m</span></span><span class="home-obra__pd">${i === 0 ? 'Cada letra do desenho corresponde a uma linha da tabela.' : i === 1 ? 'Medida impressa na planta oficial.' : 'Medidas em metros, como impressas na planta.'}</span></li>`)}
       </ol>` : ''}
       <div class="home-obra__tabela">${tabelaCotas(plObra, 'home-planta')}</div>
       <p class="home-obra__acoes"><a class="btn btn--claro" href="${urlPdf(plObra.pdf)}" download data-planta-pdf>${icone('seta-diag', { tamanho: 18 })}Baixar a planta oficial (PDF)</a><a class="link" href="${url(`${pObra.slug}.html`)}">Ver a peça</a></p>
@@ -435,7 +423,7 @@ export function paginas(ctx) {
         <p><a class="link" href="${url(LANCAMENTOS)}">Ver a coleção ${catL.nome}</a></p>
       </div>
     </div>
-    <ol class="col-grade home-lanc__grade" role="list">${lista.slice(0, LANC_NA_HOME).map((p, i) => cartao(p, { pos: i, S, lqip: false }))}</ol>
+    <ol class="col-grade home-lanc__grade" role="list">${lista.slice(0, LANC_NA_HOME).map((p, i) => cartao(p, { pos: i, S, lqip: false, meta: false }))}</ol>
   </div>
 </section>`;
   }

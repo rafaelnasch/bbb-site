@@ -287,6 +287,7 @@
       const t = p ? 'Retomar movimento' : 'Pausar movimento';
       $('.topo__mov-t', mov).textContent = t;
       mov.setAttribute('aria-label', t);
+      mov.title = t;
     };
     pintarMov();
     mov.addEventListener('click', () => {

@@ -68,15 +68,18 @@ function seletorTamanho(p, tamanhos) {
 </div>`;
   }
   const semMedida = plantasSemTamanho(p).length ? 'Sem planta desta medida' : 'Sem planta publicada';
+  // Quando todos os tamanhos têm planta, uma linha só diz isso; o selo fica só nas exceções.
+  const todosComPlanta = comOpcao.length > 1 && comOpcao.every((t) => plantaDoTamanho(p, t));
   return html`<fieldset class="seletor" data-seletor>
   <legend class="monte__rot">Tamanho <span class="monte__n num">${comOpcao.length === 1 ? '1 opção' : `${comOpcao.length} opções`}</span></legend>
+  ${todosComPlanta ? html`<p class="seletor__todos">Todos os tamanhos com planta oficial.</p>` : ''}
   <div class="seletor__lista">${comOpcao.map((t, i) => {
     const pl = plantaDoTamanho(p, t);
     return html`<label class="seletor__op">
       <input class="seletor__in" type="radio" name="tamanho"${attrs({ value: t.value_id || String(i), checked: i === 0, 'data-i': i, 'data-preco': t.preco_adicional || 0, 'data-rotulo': t.rotulo, ...dadosTamanho(t) })}>
       <span class="seletor__cartao">
         <span class="seletor__rot num" data-campo="tamanho-rotulo">${t.rotulo}</span>
-        <span class="seletor__meta">${pl ? html`<span class="selo selo--planta">Planta oficial</span>` : html`<span class="selo selo--sem">${semMedida}</span>`}${t.ficha ? html`<span class="selo selo--confirmar">Medida a confirmar</span>` : ''}</span>
+        <span class="seletor__meta">${pl ? (todosComPlanta ? '' : html`<span class="selo selo--planta">Planta oficial</span>`) : html`<span class="selo selo--sem">${semMedida}</span>`}${t.ficha ? html`<span class="selo selo--confirmar">Medida a confirmar</span>` : ''}</span>
       </span>
     </label>`;
   })}</div>
@@ -122,7 +125,7 @@ export function decisao(p, c) {
   const outras = (p.opcoes_personalizaveis || []).filter((o) => !RE_TAMANHO.test(o.titulo));
   const avulso = avulsoDoAlerta(p, produtos);
   const t0 = tamanhos.find((t) => t.origem === 'opcao') || null;
-  const total0 = formatBRL((p.preco.valores_numericos.finalPrice || 0) + (t0?.preco_adicional || 0));
+  const total0 = formatBRL((p.preco.valores_numericos.finalPrice || 0) + (t0?.preco_adicional || 0)).replace('R$ ', 'R$'); // como o preço publicado
   const temEscolha = outras.length > 0 || tamanhos.filter((t) => t.origem === 'opcao').length > 1;
 
   return html`<div class="decisao__in" data-sku="${p.sku}">
@@ -167,7 +170,7 @@ export function decisao(p, c) {
 /** Doca de compra fixa no celular (SPEC 6.2). Escondida até o bloco de preço sair da tela. */
 export function doca(p, c) {
   const t0 = c.tamanhos.find((t) => t.origem === 'opcao') || null;
-  const total0 = formatBRL((p.preco.valores_numericos.finalPrice || 0) + (t0?.preco_adicional || 0));
+  const total0 = formatBRL((p.preco.valores_numericos.finalPrice || 0) + (t0?.preco_adicional || 0)).replace('R$ ', 'R$'); // como o preço publicado
   return html`<div class="doca" data-doca hidden>
   <div class="doca__in">
     <p class="doca__info"><span class="doca__nome">${p.nome}</span><span class="doca__det num">${c.esgotado ? html`<span>${p.disponibilidade}</span>` : html`<b data-doca-total>${total0}</b>`}${t0 ? html`<span class="doca__tam" data-doca-tam>${t0.rotulo}</span>` : ''}</span></p>

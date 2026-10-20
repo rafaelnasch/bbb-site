@@ -66,7 +66,7 @@ function projeto(nome, template) {
   mkdirSync(join(dir, 'assets'), { recursive: true });
   copyFileSync(join(TPL, template), join(dir, 'index.html'));
   copyFileSync(join(paths.root, 'node_modules', 'gsap', 'dist', 'gsap.min.js'), join(dir, 'assets', 'gsap.min.js'));
-  copyFileSync(join(paths.root, 'src', 'fonts', 'opensans-var-latin.woff2'), join(dir, 'assets', 'opensans-var-latin.woff2'));
+  copyFileSync(join(paths.root, 'src', 'fonts', 'jost-var-latin.woff2'), join(dir, 'assets', 'jost-var-latin.woff2'));
   writeFileSync(join(dir, 'hyperframes.json'), JSON.stringify({ paths: { blocks: 'compositions', components: 'compositions/components', assets: 'assets' }, media: { autoProxy: true } }, null, 2));
   writeFileSync(join(dir, 'meta.json'), JSON.stringify({ id: nome, name: nome }, null, 2));
   return dir;

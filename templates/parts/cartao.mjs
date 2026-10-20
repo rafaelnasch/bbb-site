@@ -1,6 +1,6 @@
 // Cartão de peça das coleções (SPEC 9.2): moldura com a foto e o --wall, nome literal, etiqueta
 // "FORMA · LUGARES · MATERIAL · CONFIGURAÇÃO", medida do primeiro tamanho e "+N medidas", preço "por"
-// e "de" riscado, selos "Planta oficial" e "Esgotado", contorno em escala e "Comparar".
+// e "de" riscado, selos "Planta oficial" e "Esgotado" na linha de metadados e "Comparar".
 // Os atributos data-* alimentam filtros, ordenação e "Ver em escala" (src/js/colecao.js); sem JS o
 // cartão continua um link completo.
 import { html, attrs, raw } from '../../build/lib/html.mjs';
@@ -127,7 +127,7 @@ export function gruposDeVersoes(lista) {
   return out;
 }
 
-export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqip = true, foto = undefined, versoes = [], sizes = SIZES_CARTAO, grupo = null, agrupada = false } = {}) {
+export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqip = true, foto = undefined, versoes = [], sizes = SIZES_CARTAO, grupo = null, agrupada = false, meta = true } = {}) {
   const f0 = foto === undefined ? fotoCartao(p.slug) : foto;
   const f = f0 && !lqip ? { ...f0, lqip: null } : f0;
   const tams = tamanhosProduto(p);
@@ -156,18 +156,21 @@ export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqi
     'data-agrupada': agrupada ? '' : null,
   };
   const medida = t0 ? rotuloTam(t0.t) : '';
-  const ctn = contorno(p, S);
-  // Ritmo da grade: selos sempre numa linha reservada logo abaixo da foto (vazia quando não há selo), e
-  // medidas, preço e Comparar presos à base do cartão (colecao.css), alinhados entre vizinhos.
+  // Redesenho (20/10/2026, rodada 2): sem o contorno em escala no cartão (lia como amostra de cor; a escala
+  // fica no produto e em "Ver em escala"). Etiqueta e selos numa linha só de metadados, em texto, logo
+  // abaixo da foto; na home (meta: false) o cartão leva só nome, medida e preço.
+  const selos = [temPlanta ? html`<span class="selo">Planta oficial</span>` : '', esgotado ? html`<span class="selo selo--esgotado">Esgotado</span>` : ''].filter(Boolean);
+  const linhaMeta = (meta && eti.length) || selos.length
+    ? html`<span class="cart__meta">${meta && eti.length ? html`<span class="cart__eti">${eti.join(' · ')}</span>` : ''}${selos.length ? html`<span class="cart__selos">${selos}</span>` : ''}</span>`
+    : '';
   return html`<li${attrs(dados)}>
 <a class="cart__a" href="${url(`${p.slug}.html`)}">
 <span class="cart__mol"${attrs({ style: f?.wall && !f.vermelho && wallNaFaixa(f.wall) ? `--wall:${wallNaFaixa(f.wall)}` : null })}>${f ? picture(f, { classe: 'cart__img', sizes, prioridade, vt: p.slug }) : desenhoSemFoto(p, medida)}</span>
-<span class="cart__selos">${temPlanta ? html`<span class="selo">Planta oficial</span>` : ''}${esgotado ? html`<span class="selo selo--esgotado">Esgotado</span>` : ''}</span>
-${eti.length ? html`<span class="cart__eti">${eti.join(' · ')}</span>` : ''}
+${linhaMeta}
 <h3 class="cart__nome">${p.nome}</h3>
 ${versoes.length ? html`<span class="cart__vers">Também em ${versoes.join(' e ')}</span>` : ''}
 <span class="cart__base">
-${medida ? html`<span class="cart__med num">${ctn || ''}<span class="cart__med-t">${medida}${tams.length > 1 ? html` <span>+${tams.length - 1} ${tams.length - 1 === 1 ? 'medida' : 'medidas'}</span>` : ''}</span></span>` : ''}
+${medida ? html`<span class="cart__med num"><span class="cart__med-t">${medida}${tams.length > 1 ? html` <span>+${tams.length - 1} ${tams.length - 1 === 1 ? 'medida' : 'medidas'}</span>` : ''}</span></span>` : ''}
 <span class="cart__preco num"><span data-campo="preco-por">${p.preco.por}</span>${p.preco.de ? html` <s class="preco-de" data-campo="preco-de">${p.preco.de}</s>` : ''}</span>
 </span>
 </a>

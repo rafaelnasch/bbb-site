@@ -57,7 +57,8 @@
 
   function atualizar(anunciar) {
     const s = estado();
-    const txt = brl(s.total);
+    // Na tela, no mesmo formato do preço publicado ("R$5.223,06"); a mensagem do WhatsApp segue com brl().
+    const txt = brl(s.total).replace('R$ ', 'R$');
     if (totalEl && txt !== ultimo) {
       totalEl.textContent = txt;
       if (!BBB.lite) { totalEl.classList.remove('is-novo'); void totalEl.offsetWidth; totalEl.classList.add('is-novo'); }

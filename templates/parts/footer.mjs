@@ -112,7 +112,7 @@ export function rodape({ tardio: alturas = null } = {}) {
         <ul class="rodape__cnpj" style="margin-top:10px">${E.cnpjs_rodape.map((c) => html`<li data-campo="empresa-cnpj">${c.literal}</li>`)}</ul>
       </div>
     </div>
-    <p class="rodape__marca" aria-hidden="true">${E.nome}</p>
+    <p class="rodape__marca" aria-hidden="true" data-marca="${E.nome}"></p>
   </div>
 </footer>`;
 }

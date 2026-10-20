@@ -39,7 +39,7 @@ export function barraTopo({ movimento = false } = {}) {
     <p class="topo__local">${icone('local', { tamanho: 16 })}<span>Fábrica em ${fabrica.cidade}, ${fabrica.uf}</span></p>
     <div class="topo__acoes">
       <a class="topo__fixo num" href="${fixo.tel}" data-campo="empresa-telefone">${icone('telefone', { tamanho: 15 })}${fixo.display}</a>
-      ${movimento ? html`<button class="topo__mov" type="button" data-movimento aria-pressed="false" aria-label="Pausar movimento"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="topo__mov-p" d="M9 5v14M15 5v14"/><path class="topo__mov-r" d="m8 5 11 7-11 7z"/></svg><span class="topo__mov-t">Pausar movimento</span></button>` : ''}
+      ${movimento ? html`<button class="topo__mov" type="button" data-movimento aria-pressed="false" aria-label="Pausar movimento" title="Pausar movimento"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="topo__mov-p" d="M9 5v14M15 5v14"/><path class="topo__mov-r" d="m8 5 11 7-11 7z"/></svg><span class="topo__mov-t">Pausar movimento</span></button>` : ''}
       <a${attrs({ class: 'topo__ajuda', href: D.wa('ajuda'), target: '_blank', rel: 'noopener', 'data-wa-papel': 'ajuda', 'data-wa-contexto': 'barra_superior', 'data-campo': 'contato-numero' })}>${icone('whatsapp', { tamanho: 15 })}Preciso de ajuda</a>
     </div>
   </div>

@@ -203,3 +203,20 @@ test('produto no desktop: a moldura ocupa a coluna da peça (7 de 12) e a foto u
     expect(g.w, `${slug}: foto sem passar do original`).toBeLessThanOrEqual(800);
   }
 });
+
+// Redesenho (20/10/2026, rodada 2): o botão verde de compra sempre com texto branco, inclusive no rodapé
+// (a regra ".rodape a" chegou a vencer ".btn" e deixou o texto escuro sobre o verde, 3,35:1).
+test('todo botão de WhatsApp verde tem texto branco, em todas as páginas principais', async ({ page }) => {
+  for (const p of ['', 'banheiras.html', `${ACQUA}.html`, 'escolher.html', 'comparar.html']) {
+    await page.goto(`${BASE}/${p}`);
+    await page.addStyleTag({ content: '*{content-visibility:visible!important}' });
+    const cores = await page.evaluate(() => [...document.querySelectorAll('.btn--whats')]
+      .filter((b) => b.getClientRects().length)
+      .map((b) => ({ cor: getComputedStyle(b).color, fundo: getComputedStyle(b).backgroundColor })));
+    expect(cores.length, `${p || 'home'}: botões visíveis`).toBeGreaterThan(0);
+    for (const c of cores) {
+      expect(c.cor, `${p || 'home'}`).toBe('rgb(255, 255, 255)');
+      expect(c.fundo, `${p || 'home'}`).toBe('rgb(30, 127, 58)');
+    }
+  }
+});

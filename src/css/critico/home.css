@@ -13,32 +13,35 @@
 /* Filme quadrado da coleção (sem moldura e sem legenda gravadas). */
 .quadro{position:relative;overflow:hidden;aspect-ratio:1}
 .quadro img,.quadro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--foto-filtro)}
-/* Celular e tablet: as três portas lado a lado, cada uma com a foto real da coleção em cima do nome. */
-.portas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;padding:0}
-.porta__a{display:grid;align-content:start;gap:8px;height:100%;padding:5px 5px 10px;border:1px solid var(--rule);border-radius:var(--radius);color:var(--fg);text-decoration:none}
-.porta__mol{position:relative;display:block;aspect-ratio:1;overflow:hidden;background:var(--foto-fundo)}.porta__mol img{filter:var(--foto-filtro)}
-.porta__txt{display:grid;padding-inline:4px}
+/* Portas (redesenho, rodada 2): uma linha tipográfica, "Banheiras 210 · Spas 55 · Ofurôs 12", sobre régua fina. */
+.portas{display:flex;flex-wrap:wrap;align-items:baseline;gap:0;list-style:none;padding:14px 0 0;border-top:1px solid var(--rule)}
+.porta{display:flex;align-items:baseline}
+.porta+.porta::before{content:"·";padding-inline:14px;color:var(--fg-2)}
+.porta__a{display:inline-flex;align-items:baseline;gap:8px;min-height:44px;padding-block:8px;color:var(--fg);text-decoration:none}
+.porta__nome{font:300 clamp(1.25rem,1rem + .9vw,1.625rem)/1.15 var(--f-display)}
 .porta__n{font-size:.8125rem}
-.porta__nome{font:300 clamp(1rem,.4rem + 2.6vw,1.5rem)/1.15 var(--f-display)}
-.porta__seta{display:none}
-/* Celular e tablet: sem a vitrine (as portas já trazem a foto real de cada coleção); título, portas e o botão
-   de escolha cabem na primeira tela, e o parágrafo vem depois. */
-.vitrine{display:grid;gap:10px;width:min(100%,44svh,520px)}
-.vitrine__mol{display:grid;padding:10px}
+@media (max-width:599px){.porta+.porta::before{padding-inline:10px}.porta__u{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+/* Vitrine: só no desktop (abaixo de 1024 px a abertura é só texto: título, parágrafo, botão e as portas). */
+.vitrine{display:grid;gap:10px}
+.vitrine__mol{display:grid}
 .vitrine__cena,.vitrine__luz,.vitrine__item{grid-area:1/1}
 .vitrine__leg{display:grid}.vitrine__item{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid}.vitrine__nome{font:500 var(--fs-label)/1.3 var(--f-body);letter-spacing:.2em;text-transform:uppercase}.vitrine__n{font-size:.875rem}
 .vitrine__cena:not(.is-ativa),.vitrine__item:not(.is-ativa){opacity:0}
-@media (max-width:1023px){.home-abre__in>*{order:3}.home-abre__in>.etiqueta,.home-abre__h1{order:0}.home-abre__in>.portas{order:1}.home-abre__acoes{order:2}.home-abre__in>.vitrine{display:none}}
+/* O filme só aparece quando toca (home.js); antes disso, nem conta como pintura (LCP fica no H1 ou no poster). */
+.vitrine__video{opacity:0}
+@media (max-width:1023px){.home-abre__in>.vitrine{display:none}}
 @media (min-width:1024px){
-  .home-abre__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto auto auto 1fr;gap:22px 5vw}
-  .home-abre__acoes{align-self:start}
+  .home-abre{align-items:center}
+  .home-abre__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto auto auto auto 1fr;gap:26px 6vw}
   .home-abre__in>*{grid-column:1}
-  .home-abre__in>.vitrine{grid-column:2;grid-row:1/span 4;width:min(100%,calc(100svh - var(--cab-h) - 300px))}
-  .vitrine{gap:16px}.vitrine__mol{padding:14px}
-  .portas{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:22px}
-  .porta__a{grid-template-columns:112px 1fr auto;align-items:center;gap:18px;padding:10px 20px 10px 10px}
-  .porta__txt{padding:0}
-  .porta__n{font-size:.875rem}
-  .porta__nome{font-size:1.75rem}
-  .porta__seta{display:block}
+  .home-abre__h1{font-size:clamp(3rem,1.6rem + 2.2vw,4rem);max-width:21ch;line-height:1.06}
+  .home-abre__acoes{margin-top:8px}
+  .portas{align-self:start;margin-top:22px;max-width:640px}
+  /* a foto sangra até a borda direita da janela, sem moldura, mais alta que larga */
+  .home-abre__in>.vitrine{grid-column:2;grid-row:1/span 5;align-self:stretch;margin-right:calc((min(100vw - 2*var(--pad-x),var(--maxw)) - 100vw)/2)}
+  .vitrine__mol{aspect-ratio:1;max-height:calc(100svh - var(--cab-h) - var(--topo-h) - 96px);min-height:440px}
+  .vitrine__cena{height:100%}
+  .vitrine .quadro{aspect-ratio:auto;height:100%}
 }
+/* A peça inteira na vitrine: quadro quadrado como a foto; 2% de escala escondem o fio da borda do arquivo. */
+@media (min-width:1024px){.vitrine__mol{overflow:hidden}.vitrine .quadro img,.vitrine__cena:not(.quadro) img{transform:scale(1.02)}}

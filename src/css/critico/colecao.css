@@ -23,15 +23,17 @@
 @media (min-width:1200px){.col-grade{--cols:4}}
 .cart{position:relative;min-width:0;display:flex;flex-direction:column}
 .cart__a{flex:1;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none}
-.cart__selos{min-height:28px}.cart__base{margin-top:auto;display:grid;gap:4px}.cart__med{display:flex;align-items:center;gap:8px}
+.cart__meta{display:block;margin-top:6px;line-height:1.5}.cart__eti,.cart__selos{display:inline}.cart__base{margin-top:auto;display:grid;gap:4px}.cart__med{display:block}
 .cart__mol{position:relative;display:block;background:var(--foto-fundo)}
 .cart__img{width:100%;aspect-ratio:1;object-fit:cover;filter:var(--foto-filtro)}
 .cart__vazia{display:grid;aspect-ratio:1}
 /* Versões irmãs: só a primeira aparece, com as outras em chips (sem JS, todas aparecem). */
 .js [data-agrupada]{display:none}
 .cart__nome{font-size:var(--fs-h3)}
-.cart__ctn{flex:none;width:48px;height:auto}
-html:not(.js) .col-rapidos{display:none}
+/* Atalhos da ficha técnica: os mesmos filtros do painel Filtrar; fora da tela para não somar caixas no topo. */
+.col-rapidos{display:none}
+/* Categorias do site: lista de links em texto, sem caixa; a atual sublinhada. */
+.col-chip--sub{border:0;padding:6px 0}.col-subs__lista{gap:0 26px}
 .col-rapidos__rol{margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter)}
 @media (min-width:1024px){.col-subs__rol{overflow:visible}.col-subs__lista{flex-wrap:wrap;width:auto;max-width:760px}}
 @media (max-width:599px){.col-ordem--barra,.col-btn__x,.col-btn__t,.col-btn__e{display:none}.col-barra__in{flex-wrap:nowrap}}

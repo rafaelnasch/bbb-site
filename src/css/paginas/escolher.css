@@ -30,6 +30,8 @@
 .esc-check{position:relative}.esc-check input{width:24px;height:24px;accent-color:var(--brand)}
 .esc__nav{position:sticky;bottom:calc(var(--bandeja-h,0px) + 8px);z-index:5;display:flex;gap:10px;padding:10px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--sombra-1)}
 .esc__nav .btn{flex:1 1 auto}
+/* Passo 1: sem "Voltar" (não há para onde voltar); "Avançar" ocupa a linha toda. */
+.esc__voltar:disabled{display:none}
 /* Foco nunca escondido atrás da barra fixa Voltar/Avançar (WCAG 2.4.11): a rolagem do foco reserva a altura dela. */
 @media (max-width:1023px){html:has(.esc__nav){scroll-padding-bottom:calc(var(--bandeja-h,0px) + 112px)}.esc__form :is(input,button,select,a){scroll-margin-bottom:calc(var(--bandeja-h,0px) + 112px)}}
 .esc__avancar{--b-bg:var(--ink);flex-grow:2!important;flex-wrap:wrap;gap:4px 10px}

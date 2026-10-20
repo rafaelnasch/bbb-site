@@ -28,7 +28,7 @@
 .cmp-canto{position:sticky;left:0;z-index:1;background:var(--bg);box-shadow:1px 0 0 var(--rule)}
 /* A rolagem do foco para a coluna de um modelo nunca deixa o conteúdo debaixo da coluna fixa dos rótulos. */
 .cmp-rol{scroll-padding-inline-start:160px}
-@media (max-width:599px){.cmp-tab th[scope="row"],.cmp-canto{width:104px;min-width:96px;max-width:110px;padding:12px 10px;font-size:.6875rem;letter-spacing:.05em;overflow-wrap:anywhere;hyphens:auto}.cmp-rol{scroll-padding-inline-start:114px}.cmp-tab{min-width:560px}}
+@media (max-width:599px){.cmp-tab th[scope="row"],.cmp-canto{width:120px;min-width:116px;max-width:124px;padding:12px 10px;font-size:.75rem;letter-spacing:0;text-transform:none;overflow-wrap:normal;word-break:normal;hyphens:manual}.cmp-rol{scroll-padding-inline-start:130px}.cmp-tab{min-width:580px}}
 .cmp-col{display:table-cell;min-width:184px;font-weight:400}
 @media (max-width:599px){.cmp-tab .cmp-col{min-width:196px;padding-inline:12px}}
 .cmp-col__fio{display:block;height:3px;margin-bottom:10px;border-radius:2px;background:var(--cor)}
@@ -50,3 +50,8 @@
 .cmp-fig .cmp-svg{height:clamp(200px,34vw,400px);max-height:none}
 .cmp-planta.is-vazio .cmp-svg{background:linear-gradient(color-mix(in srgb,var(--line) 8%,transparent) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,color-mix(in srgb,var(--line) 8%,transparent) 1px,transparent 1px) 0 0/24px 24px}
 .cmp-leg__vazio{color:var(--fg-2)}
+/* Sem modelo escolhido: só a busca e uma frase; o quadro de contornos e o espaço aparecem com 1 modelo. */
+.cmp-planta.is-vazio{display:none}
+.cmp-como>summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-size:.8125rem;color:var(--fg-2);text-decoration:underline;text-decoration-color:var(--stone);text-underline-offset:4px}
+.cmp-como>summary::-webkit-details-marker{display:none}
+.cmp-como p{font-size:.8125rem;line-height:1.5;color:var(--fg-2);max-width:60ch}

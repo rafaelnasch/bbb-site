@@ -15,10 +15,11 @@
   /* luz quente (só traços, nunca texto pequeno) */
   --glow:#C8B9A3;
   /* fotos da fábrica (fundo verde-água): o fundo vira pedra só na apresentação; o arquivo não muda. O filtro
-     #pedra (templates/layout.mjs) clareia só o que é azul-esverdeado e deixa a banheira e o selo como estão */
+     #pedra (templates/layout.mjs) separa por matiz: o que é azul-esverdeado vira pedra clara (~#E1DAD0) mantendo
+     a luz; a banheira, o selo e as peças escuras ficam quase como estão, com o branco neutro */
   --foto-filtro:url(#pedra);
   /* fotos reais (fábrica, lojas, obras): só a saturação baixa, para não brigar com a areia */
-  --foto-real:saturate(.55) sepia(.14) contrast(.94) brightness(1.03); --foto-fundo:#B5ADA3;
+  --foto-real:saturate(.55) sepia(.14) contrast(.94) brightness(1.03); --foto-fundo:#E1DAD0;
   /* traço de desenho no claro (contornos, régua, mapa, grade): pedra funda, no lugar do azul-claro */
   --trace:#7A6F63;
   /* botão de compra, contraste AA com texto branco (não mudar) */

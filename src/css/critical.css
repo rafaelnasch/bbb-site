@@ -1,16 +1,15 @@
 /* Cabeçalho e barra superior: entram no CSS crítico de todas as páginas (SPEC 6.1 e 12). */
 
-.topo{--focus-ring:var(--focus);background:var(--sand);color:var(--ink);font-size:.75rem;letter-spacing:.06em;line-height:1.3;position:relative;z-index:51}
+.topo{--focus-ring:var(--focus);background:var(--day);color:var(--ink);font-size:.75rem;letter-spacing:.06em;line-height:1.3;position:relative;z-index:51}
 .topo__in{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;min-height:var(--topo-h)}
 .topo a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px}
 .topo__local{display:none;align-items:center;gap:6px;color:var(--muted)}
 .topo__acoes{display:flex;align-items:center;gap:4px 18px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
 .topo__ajuda{font-weight:500}
 @media (min-width:768px){.topo__local{display:inline-flex}}
-/* Pausar movimento: o texto só aparece a partir de 768 px (site.css); o nome acessível vem do aria-label. */
+/* Pausar movimento: só o ícone, discreto, com a mesma área dos vizinhos; o nome acessível vem do aria-label. */
 .topo__mov-t,html:not(.js) .topo__mov{display:none}
 .topo__mov{min-width:44px;min-height:44px}
-@media (min-width:768px){.topo__mov-t{display:inline}}
 @media (max-width:360px){.topo__fixo{display:none!important}}
 
 .cab{--fg:var(--ink);--fg-2:var(--muted);--focus-ring:var(--focus);position:sticky;top:0;z-index:50;color:var(--ink);background:var(--day);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--stone);view-transition-name:cabecalho}

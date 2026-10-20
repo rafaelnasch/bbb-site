@@ -125,7 +125,9 @@ test('sem JavaScript: portas, salas, preços e WhatsApp presentes; escolhedor vi
   const page = await ctx.newPage();
   await page.goto(HOME());
   await expect(page.locator('.porta')).toHaveCount(3);
-  await expect(page.locator('.sala-faixa')).toHaveCount(7);
+  // Redesenho (rodada 2): quatro salas com fotos e as outras três numa lista de texto.
+  await expect(page.locator('.sala-faixa')).toHaveCount(4);
+  await expect(page.locator('.home-salas__mais-a')).toHaveCount(3);
   await expect(page.locator('.home-esc__form')).toBeHidden();
   await expect(page.locator('.home-esc__semjs a')).toHaveAttribute('href', /escolher\.html$/);
   await expect(page.locator('a[data-wa-contexto="home_como_comprar"]')).toHaveAttribute('href', /^https:\/\/wa\.me\/5535992194882\?text=/);
@@ -202,7 +204,7 @@ async function contrasteMinimo(page, seletor) {
   return razao(lum(cor), max);
 }
 
-test('celular: título sem foto por trás (contraste medido depois de tudo aceso), portas com foto real e botão de escolha na primeira tela, LCP no H1 ou numa foto', async ({ page }) => {
+test('celular: título sem foto por trás (contraste medido depois de tudo aceso), portas em texto e botão de escolha na primeira tela, LCP no H1 ou numa foto', async ({ page }) => {
   test.setTimeout(90_000); // 4 larguras com 7 s de espera cada
   for (const [w, h] of [[360, 780], [390, 844], [430, 932], [768, 1024]]) {
     await page.setViewportSize({ width: w, height: h });
@@ -226,17 +228,17 @@ test('celular: título sem foto por trás (contraste medido depois de tudo aceso
     expect(sob, `${w}px`).toEqual([]);
     expect(await contrasteMinimo(page, '.home-abre__h1'), `${w}px: H1 (texto grande, mínimo 3:1)`).toBeGreaterThanOrEqual(3);
     expect(await contrasteMinimo(page, '.home-abre__lead'), `${w}px: parágrafo (mínimo 4,5:1)`).toBeGreaterThanOrEqual(4.5);
-    // Abaixo de 1024 px a vitrine não aparece (e o poster dela não é baixado): logo abaixo do título vêm as
-    // três portas com a foto real e o botão "Escolher pelo meu espaço", todos inteiros na primeira tela.
+    // Abaixo de 1024 px a vitrine não aparece (e o poster dela não é baixado): título, parágrafo, o botão
+    // "Escolher pelo meu espaço" e as três portas em texto, todos inteiros na primeira tela.
     expect(await page.locator('.vitrine').isVisible(), `${w}px: vitrine escondida`).toBe(false);
     expect(await page.evaluate(() => [...document.querySelectorAll('.vitrine__img')].every((i) => !i.currentSrc || i.currentSrc.startsWith('data:'))), `${w}px: poster da vitrine baixado`).toBe(true);
     for (const s of ['.portas', '.home-abre__cta']) {
       const b = await page.locator(s).boundingBox();
       expect(b.y + b.height, `${w}px: ${s} inteiro na primeira tela`).toBeLessThanOrEqual(h);
     }
-    const fotos = page.locator('.porta__img--foto');
-    await expect(fotos).toHaveCount(3);
-    for (const f of await fotos.all()) expect(await f.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
+    // Redesenho (rodada 2): as portas são uma linha de texto (nome e contagem), sem miniatura.
+    await expect(page.locator('.porta__a')).toHaveCount(3);
+    await expect(page.locator('.portas img')).toHaveCount(0);
     const lcp = await page.evaluate(() => window.__lcp);
     expect(['H1', 'IMG'], `${w}px: ${JSON.stringify(lcp)}`).toContain(lcp.at(-1)?.tag);
     expect(await page.evaluate(() => document.documentElement.scrollWidth), `${w}px`).toBeLessThanOrEqual(w);

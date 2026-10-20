@@ -173,7 +173,7 @@ export function situacaoPlanta(p, tamanhos) {
  * Seção 6: um painel por tamanho. `waPlanta(t)` devolve o link wa.me para pedir a planta.
  * @returns {{ corpo, temOficial, situacao }}
  */
-export function paineisPlanta(p, tamanhos, { waPlanta, ativo = 0 }) {
+export function paineisPlanta(p, tamanhos, { waPlanta, ativo = 0, semDesenho = false }) {
   const situacao = situacaoPlanta(p, tamanhos);
   const temAvulsas = plantasSemTamanho(p).length > 0;
   // Aviso do painel sem planta: uma frase só, adequada ao caso. Quando nenhum tamanho tem planta, o texto
@@ -192,11 +192,12 @@ export function paineisPlanta(p, tamanhos, { waPlanta, ativo = 0 }) {
       <p class="planta__acoes"><a class="btn btn--claro" href="${urlPdf(pl.pdf)}" download data-planta-pdf>${icone('seta-diag', { tamanho: 18 })}Baixar a planta oficial (PDF)</a></p>`;
     } else if (pl) {
       miolo = html`<p class="planta__aviso">A planta oficial deste tamanho está disponível só em PDF.</p>
-      ${desenhoEscala(t, { titulo: `Desenho em escala do tamanho ${rot}` })}
+      ${semDesenho ? '' : desenhoEscala(t, { titulo: `Desenho em escala do tamanho ${rot}` })}
       <p class="planta__acoes"><a class="btn btn--claro" href="${urlPdf(pl.pdf)}" download data-planta-pdf>${icone('seta-diag', { tamanho: 18 })}Baixar a planta oficial (PDF)</a></p>`;
     } else {
+      // semDesenho: a seção já mostra a peça em escala (bloco "Cabe no meu banheiro?" fundido), sem repetir.
       miolo = html`${avisoSem ? html`<p class="planta__aviso">${avisoSem}</p>` : ''}
-      ${desenhoEscala(t, { titulo: `Desenho em escala do tamanho ${rot}, a partir das medidas do site` })}
+      ${semDesenho ? '' : desenhoEscala(t, { titulo: `Desenho em escala do tamanho ${rot}, a partir das medidas do site` })}
       <p class="planta__acoes"><a${attrs({ class: 'btn btn--fantasma', href: waPlanta(t), target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'pedir_planta', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}Pedir a planta pelo WhatsApp</a></p>`;
     }
     return html`<div class="planta-painel" data-tam-painel="${i}"${attrs({ hidden: i !== ativo, 'data-vt-fixo': i === ativo && p.d_familia ? `planta-${p.d_familia}` : null })}>${miolo}</div>`;

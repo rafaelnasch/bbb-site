@@ -7,7 +7,8 @@
 import { html, attrs } from '../../build/lib/html.mjs';
 import { fmtMetros } from '../../build/lib/medidas.mjs';
 
-export const AVISO_ESCALA = 'O cálculo usa só as medidas externas publicadas. Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.';
+// Aviso de dado: sempre visível, curto (redesenho de 20/10/2026, rodada 2).
+export const AVISO_ESCALA = 'Cálculo pelas medidas externas publicadas. Confirme a instalação com a planta oficial e com a equipe pelo WhatsApp.';
 
 /** Medidas usadas no encaixe de um tamanho: { menor, maior } em metros, já com a regra da maior medida. */
 export function medidasEncaixe(t) {
