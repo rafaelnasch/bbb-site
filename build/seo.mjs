@@ -21,7 +21,7 @@ import { paths, SITE_URL, BASE_PATH, INDEXAR, DATA_COLETA } from '../site.config
 import { abs } from './lib/url.mjs';
 import { dados } from './lib/dados.mjs';
 import { cidadeDaFabrica } from './lib/jsonld.mjs';
-import { NOME_TIPO, PLURAL_TIPO, RAIZ_TIPO, CATEGORIAS_PONTE, rotuloCategoria, notaPrecosComoOpcaoTexto } from './lib/catalogo.mjs';
+import { NOME_TIPO, PLURAL_TIPO, RAIZ_TIPO, CATEGORIAS_PONTE, rotuloCategoria, notaPrecosComoOpcaoTexto, avisoAvulsoSuspensoTexto, avulsoSuspenso } from './lib/catalogo.mjs';
 import { perguntaLegivel } from '../templates/parts/faq-bloco.mjs';
 import { faqsVisiveis } from '../templates/faq.mjs';
 import { rotuloFicha } from '../templates/parts/ficha.mjs';
@@ -156,7 +156,7 @@ function tamanhosDe(p) {
   }).filter((t) => t.rotulo);
 }
 
-function linhasProduto(p, imagens, produtos = []) {
+function linhasProduto(p, imagens, produtos = [], politicas = null) {
   const L = [];
   L.push(`### ${p.nome}`);
   L.push('');
@@ -168,7 +168,9 @@ function linhasProduto(p, imagens, produtos = []) {
   if (tams.length) L.push(`- Tamanhos publicados (${tams.length}): ${tams.map((t) => t.texto).join('; ')}`);
   const itens = p.d_itens_de_serie_exibidos || [];
   if (itens.length) L.push(`- Itens de série: ${itens.join('; ')}`);
-  L.push(`- Disponibilidade: ${p.disponibilidade}`);
+  // Itens avulsos suspensos (SPEC 15): as duas versões da fonte lado a lado, como na coluna de decisão.
+  const aviso = avisoAvulsoSuspensoTexto(p, politicas);
+  L.push(aviso ? `- Disponibilidade: ${aviso}` : `- Disponibilidade: ${p.disponibilidade}`);
   L.push(`- Preço publicado em ${DATA_COLETA}: ${precoTexto(p)}. O valor final é confirmado pelo consultor.`);
   const notaOpcao = notaPrecosComoOpcaoTexto(p, produtos);
   if (notaOpcao) L.push(`- Preço como opcional: ${notaOpcao}`);
@@ -347,7 +349,7 @@ export function gerarLlms(D, { imagensPorSlug = new Map(), colecoesIndexaveis = 
       F.push(`Contagem por tipo de produto: ${lista.length}. A página da coleção [${raizCat.nome}](${link(raizCat.d_path)}) lista ${raizCat.total_exibido}, porque a listagem do site inclui ou deixa de fora modelos de outro tipo (por exemplo, um spa listado entre os ofurôs ou um acessório sem coleção).`);
       F.push('');
     }
-    for (const p of lista) F.push(...linhasProduto(p, imagensPorSlug.get(p.slug) || [], produtos));
+    for (const p of lista) F.push(...linhasProduto(p, imagensPorSlug.get(p.slug) || [], produtos, D.ler('politicas.json')));
   }
   F.push('## Perguntas frequentes (respostas publicadas pela empresa)');
   F.push('');
@@ -383,6 +385,17 @@ export function horaDeBrasilia(iso) {
 
 export function catalogoAberto(D, { imagensPorSlug = new Map() } = {}) {
   const produtos = D.ler('produtos.json') || [];
+  const politicas = D.ler('politicas.json');
+  // Alertas da fonte que mudam a leitura de disponibilidade ou preço (SPEC 15), com o texto literal e a
+  // fonte: as duas versões ficam no dado, nenhuma é escolhida (regra 0.3).
+  const alertas = (p) => {
+    const a = [];
+    const s = avulsoSuspenso(p, politicas);
+    if (s) a.push({ tipo: 'itens_avulsos_suspensos', disponibilidade_no_catalogo: p.disponibilidade, texto_da_pagina_de_prazos: s.literal, fonte: s.fonte, nota: 'As duas informações são publicadas pela empresa. Confirme com o consultor antes de comprar.' });
+    const n = notaPrecosComoOpcaoTexto(p, produtos);
+    if (n) a.push({ tipo: 'preco_como_opcional', nota: n });
+    return a;
+  };
   return {
     titulo: `Catálogo publicado pela ${D.empresa.nome}`,
     descricao: 'Dados do catálogo como publicados no site atual da empresa, sem alteração; campos com prefixo d_ são derivados (contas sobre os dados publicados). Preço e disponibilidade valem para a data de coleta; o valor final é confirmado pelo consultor.',
@@ -396,6 +409,7 @@ export function catalogoAberto(D, { imagensPorSlug = new Map() } = {}) {
       sku: p.sku,
       tipo: p.d_tipo,
       disponibilidade: p.disponibilidade,
+      ...(alertas(p).length ? { alertas: alertas(p) } : {}),
       preco: { por: p.preco?.por ?? null, de: p.preco?.de ?? null, valor: p.preco?.valores_numericos?.finalPrice ?? null, valor_de: p.preco?.valores_numericos?.oldPrice ?? null, moeda: 'BRL' },
       especificacoes: p.especificacoes || {},
       conflitos_nome_ficha: p.d_conflito_nome_ficha || [],

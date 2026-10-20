@@ -111,7 +111,7 @@ function percorrer(v, fn, caminho = '') {
  * Valida um bloco JSON-LD já consolidado ({ @context, @graph }). Devolve a lista de erros (vazia = ok).
  * Cobre os campos obrigatórios e recomendados que a SPEC 11.2 e as diretrizes de resultado rico pedem.
  */
-export function validarJsonLd(bloco, { semImagem = false } = {}) {
+export function validarJsonLd(bloco, { semImagem = false, semDisponibilidade = false } = {}) {
   const erros = [];
   const e = (m) => erros.push(m);
   if (bloco?.['@context'] !== 'https://schema.org') e('@context diferente de https://schema.org');
@@ -152,7 +152,8 @@ export function validarJsonLd(bloco, { semImagem = false } = {}) {
       const ot = tipos(of);
       if (!ot.includes('Offer') && !ot.includes('AggregateOffer')) e('Product.offers sem Offer/AggregateOffer');
       if (of.priceCurrency !== 'BRL') e('offers.priceCurrency diferente de BRL');
-      if (!DISP.has(of.availability)) e(`offers.availability inválida: ${of.availability}`);
+      // semDisponibilidade: item com a venda em conflito na fonte (SPEC 15); o Offer sai sem availability.
+      if (semDisponibilidade ? 'availability' in of : !DISP.has(of.availability)) e(`offers.availability inválida: ${of.availability}`);
       if (ot.includes('AggregateOffer')) {
         for (const k of ['lowPrice', 'highPrice', 'offerCount']) if (!(typeof of[k] === 'number' && of[k] > 0)) e(`AggregateOffer sem ${k} numérico`);
         if (of.lowPrice > of.highPrice) e('AggregateOffer com lowPrice maior que highPrice');
@@ -206,7 +207,7 @@ export function validarJsonLd(bloco, { semImagem = false } = {}) {
  * @param {Array} blocos  objetos JSON-LD do template
  * @param {object} op     { saida, semImagem }
  */
-export function consolidar(blocos, { saida = '?', semImagem = false, D = dados() } = {}) {
+export function consolidar(blocos, { saida = '?', semImagem = false, semDisponibilidade = false, D = dados() } = {}) {
   const nos = [];
   for (const b of blocos || []) {
     if (!b) continue;
@@ -238,7 +239,7 @@ export function consolidar(blocos, { saida = '?', semImagem = false, D = dados()
   const peso = (n) => (n['@id'] === ORG_ID ? 2 : n['@id'] === SITE_ID ? 1 : 0);
   grafo.sort((a, b) => peso(a) - peso(b));
   const bloco = { '@context': 'https://schema.org', '@graph': grafo };
-  const erros = validarJsonLd(bloco, { semImagem });
+  const erros = validarJsonLd(bloco, { semImagem, semDisponibilidade });
   if (erros.length) throw new Error(`JSON-LD de ${saida}: ${erros.join('; ')}`);
   return bloco;
 }

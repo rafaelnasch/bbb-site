@@ -253,3 +253,20 @@ export function avulsoSuspenso(p, politicas) {
     fonte: politicas.itens_avulsos_suspensos.fonte,
   };
 }
+
+/**
+ * availability do Offer no JSON-LD (SPEC 11.2), ou null quando a fonte se contradiz sobre a venda do item
+ * (itens avulsos suspensos, SPEC 15): o catálogo diz "Disponível" e a página de prazos diz que o item está
+ * temporariamente fora de venda. O dado estruturado não escolhe nenhuma das duas versões (regra 0.3).
+ */
+export function disponibilidadeSchema(p, politicas) {
+  if (avulsoSuspenso(p, politicas)) return null;
+  return p.disponibilidade === 'Esgotado' ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock';
+}
+
+/** Texto do aviso dos itens avulsos suspensos para as saídas em texto (llms-full.txt e catalogo.json). */
+export function avisoAvulsoSuspensoTexto(p, politicas) {
+  const n = avulsoSuspenso(p, politicas);
+  if (!n) return null;
+  return `No catálogo: ${n.disponibilidade}. A página de prazos de entrega informa: “${n.literal}” As duas informações são publicadas pela empresa. Confirme com o consultor antes de comprar.`;
+}

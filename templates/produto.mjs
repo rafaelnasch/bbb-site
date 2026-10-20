@@ -17,7 +17,7 @@ import { fotosProduto, fotoProduto } from '../build/lib/midia.mjs';
 import { formatBRL } from '../build/lib/money.mjs';
 import { mensagemCompra } from '../build/lib/wa.mjs';
 import { paths } from '../site.config.mjs';
-import { notaPrecosComoOpcaoTexto } from '../build/lib/catalogo.mjs';
+import { notaPrecosComoOpcaoTexto, disponibilidadeSchema } from '../build/lib/catalogo.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
 import { picture, SIZES_CARTAO } from './parts/foto.mjs';
 import { galeria, ordenarFotos } from './parts/galeria.mjs';
@@ -265,11 +265,12 @@ function jsonLd(p, c) {
   });
   const pol = D.ler('politicas.json') || {};
   const dias = Number((/(\d+)\s*\(/.exec(pol.desistencia?.literal || '') || [])[1]) || null;
-  const disp = p.disponibilidade === 'Esgotado' ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock';
+  // Itens avulsos suspensos: sem availability (o catálogo e a página de prazos divergem; SPEC 15).
+  const disp = disponibilidadeSchema(p, pol);
   const precos = [...new Set(tamanhos.filter((t) => t.origem === 'opcao').map((t) => (p.preco.valores_numericos.finalPrice || 0) + (t.preco_adicional || 0)))];
   const comum = {
     priceCurrency: 'BRL',
-    availability: disp,
+    ...(disp ? { availability: disp } : {}),
     url: abs(`${p.slug}.html`),
     seller: org,
     ...(dias ? { hasMerchantReturnPolicy: { '@type': 'MerchantReturnPolicy', applicableCountry: 'BR', returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow', merchantReturnDays: dias } } : {}),
@@ -618,6 +619,7 @@ ${avaliacao(p)}`;
         og,
         jsonld: [jsonLd(p, { D, fotos, tamanhos, trilha, grupo: grupoSchema(p, fam, porSlug), BASE })],
         semImagem: !fotos.length,
+        semDisponibilidade: !disponibilidadeSchema(p, D.ler('politicas.json')),
         modulos,
         ativo: raiz,
         sobre: true,

@@ -258,3 +258,42 @@ test('cabeça: OG e Twitter completos, og:url igual ao canonical, CSP por meta e
   assert.equal(/<meta property="og:type" content="([^"]+)">/.exec(pg(`${ACQUA}.html`))[1], 'product');
   assert.ok(existsSync(join(DIST, 'site.webmanifest')) && existsSync(join(DIST, '.nojekyll')));
 });
+
+test('itens avulsos suspensos: JSON-LD sem availability; llms-full e catalogo.json com as duas versões (SPEC 15, regra 0.3)', () => {
+  const pol = ler('politicas.json');
+  const lit = pol.itens_avulsos_suspensos.literal.replace(/^\*\s*/, '');
+  const full = readFileSync(join(DIST, 'llms-full.txt'), 'utf8');
+  const cat = JSON.parse(readFileSync(join(DIST, 'dados', 'catalogo.json'), 'utf8'));
+  for (const slug of ['aquecedor-digital-bbb', 'aquecedor-digital-com-sensor-de-nive-bbb', 'cromoterapia']) {
+    const p = produtos.find((x) => x.slug === slug);
+    const prod = ld(pg(`${slug}.html`)).nos.find((n) => n['@type'] === 'Product');
+    assert.ok(!('availability' in prod.offers), `${slug}: availability no Offer`);
+    assert.equal(prod.offers.price, p.preco.valores_numericos.finalPrice);
+    const bloco = full.slice(full.indexOf(`- Nº de catálogo (SKU): ${p.sku}\n`)).split('\n### ')[0];
+    assert.match(bloco, new RegExp(`Disponibilidade: No catálogo: ${p.disponibilidade}\\.`), slug);
+    assert.ok(bloco.includes(lit), `${slug}: texto literal da página de prazos no llms-full`);
+    assert.match(bloco, /Confirme com o consultor/);
+    const reg = cat.produtos.find((x) => x.slug === slug);
+    assert.equal(reg.disponibilidade, p.disponibilidade);
+    const al = reg.alertas.find((a) => a.tipo === 'itens_avulsos_suspensos');
+    assert.equal(al.texto_da_pagina_de_prazos, lit);
+  }
+  // Os demais acessórios seguem com availability e sem o alerta.
+  const jato = ld(pg('jato.html')).nos.find((n) => n['@type'] === 'Product');
+  assert.equal(jato.offers.availability, 'https://schema.org/InStock');
+  assert.ok(!cat.produtos.find((x) => x.slug === 'jato').alertas);
+  // Air Blower: a nota dos preços como opcional também vai para o JSON aberto.
+  const ab = cat.produtos.find((x) => /air blower/i.test(x.nome));
+  assert.match(ab.alertas.find((a) => a.tipo === 'preco_como_opcional').nota, /R\$2\.035,20 \(em \d+ modelos\)/);
+});
+
+test('ItemList da coleção na ordem exibida na grade: peças sem foto no fim (SPEC 11.2)', () => {
+  for (const c of ['spas.html', 'ofuros.html', 'banheira-spa.html']) {
+    const h = pg(c);
+    const grade = /<ol[^>]*data-col-grade[\s\S]*?<\/ol>/.exec(h)[0];
+    const slugs = [...grade.matchAll(/data-slug="([^"]+)"/g)].map((m) => m[1]);
+    const lista = ld(h).nos.find((n) => n['@type'] === 'CollectionPage').mainEntity.itemListElement;
+    assert.deepEqual(lista.map((x) => x.url), [...new Set(slugs)].map((s) => `${SITE_URL}/${s}.html`), c);
+    assert.deepEqual(lista.map((x) => x.position), lista.map((_, i) => i + 1));
+  }
+});

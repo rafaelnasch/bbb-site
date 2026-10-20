@@ -14,6 +14,7 @@ import { join, relative } from 'node:path';
 import { paths, SITE_URL, BASE_PATH, INDEXAR } from '../../site.config.mjs';
 import { validarJsonLd, ORG_ID } from './jsonld.mjs';
 import { termosSaudeSpec } from './texto.mjs';
+import { disponibilidadeSchema } from './catalogo.mjs';
 import { SITEMAPS, ROBOS, registro } from '../seo.mjs';
 
 const PROIBIDOS = [/\(VERIFICAR\)/, /BANHEIRA COLORIDA/i, /a maior loja/i, /a única com selo/i, /\blorem\b/i, /\bgarantia de \d/i];
@@ -54,6 +55,7 @@ export function verificarSeo(dist = paths.dist) {
   const produtos = JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8'));
   const categorias = JSON.parse(readFileSync(join(paths.data, 'categorias.json'), 'utf8'));
   const slugProd = new Map(produtos.map((p) => [`${p.slug}.html`, p]));
+  const politicas = JSON.parse(readFileSync(join(paths.data, 'politicas.json'), 'utf8'));
   const catPath = new Map(categorias.map((c) => [c.d_path, c]));
   const regs = registro(dist);
   const regPorSaida = new Map(regs.map((r) => [r.saida, r]));
@@ -134,7 +136,7 @@ export function verificarSeo(dist = paths.dist) {
     let bloco;
     try { bloco = JSON.parse(blocos[0]); } catch (e) { erro(rel, `JSON-LD inválido: ${e.message}`); continue; }
     const p = slugProd.get(rel);
-    for (const e of validarJsonLd(bloco, { semImagem: Boolean(p?.d_sem_foto) })) erro(rel, `JSON-LD: ${e}`);
+    for (const e of validarJsonLd(bloco, { semImagem: Boolean(p?.d_sem_foto), semDisponibilidade: Boolean(p && !disponibilidadeSchema(p, politicas)) })) erro(rel, `JSON-LD: ${e}`);
     const nos = bloco['@graph'] || [];
     const tem = (t) => nos.find((n) => [].concat(n['@type']).includes(t));
     const org = nos.find((n) => n['@id'] === ORG_ID);
@@ -152,7 +154,7 @@ export function verificarSeo(dist = paths.dist) {
         if (prod.name !== p.nome || prod.sku !== p.sku) erro(rel, 'Product com nome ou SKU diferente dos dados');
         const of = prod.offers;
         if (of && of.price !== p.preco.valores_numericos.finalPrice) erro(rel, 'Product.offers.price diferente de finalPrice');
-        const disp = p.disponibilidade === 'Esgotado' ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock';
+        const disp = disponibilidadeSchema(p, politicas) ?? undefined;
         if (of && of.availability !== disp) erro(rel, 'Product.offers.availability diferente da disponibilidade');
         if ('manufacturer' in prod) erro(rel, 'Product com manufacturer (não sai de campo da fonte)');
         const grupo = tem('ProductGroup');
@@ -170,7 +172,9 @@ export function verificarSeo(dist = paths.dist) {
       const cp = tem('CollectionPage');
       const lista = cp?.mainEntity?.itemListElement || [];
       if (!cp) erro(rel, 'coleção sem CollectionPage');
-      const esperado = (cat.produtos || []).filter((s) => slugProd.has(`${s}.html`)).map((s) => `${SITE_URL}/${s}.html`);
+      // Ordem exibida (SPEC 11.2): a do catálogo, com as peças sem foto publicada no fim, como na grade.
+      const naCat = (cat.produtos || []).filter((s) => slugProd.has(`${s}.html`)).map((s) => slugProd.get(`${s}.html`));
+      const esperado = [...naCat.filter((x) => !x.d_sem_foto), ...naCat.filter((x) => x.d_sem_foto)].map((x) => `${SITE_URL}/${x.slug}.html`);
       if (lista.map((x) => x.url).join('|') !== esperado.join('|')) erro(rel, 'ItemList diferente da lista e da ordem da coleção');
     }
   }

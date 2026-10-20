@@ -107,7 +107,7 @@ export function layout(p) {
     return A.fontes[k];
   }) : A.preload;
   // Um só bloco por página, com a Organization completa em todas (build/lib/jsonld.mjs, SPEC 11.2).
-  const jsonld = raw(`<script type="application/ld+json">${serializar(consolidar(p.jsonld || [], { saida: p.saida, semImagem: p.semImagem }))}</script>`);
+  const jsonld = raw(`<script type="application/ld+json">${serializar(consolidar(p.jsonld || [], { saida: p.saida, semImagem: p.semImagem, semDisponibilidade: p.semDisponibilidade }))}</script>`);
   PAGINAS.push({ saida: p.saida, caminho, canonical, robots: p.robots || 'index,follow', titulo: p.titulo, descricao: p.descricao });
 
   const doc = html`<!doctype html>

@@ -18,7 +18,7 @@ import { numerosProibidosEm } from './lib/wa.mjs';
 import { termosSaudeSpec } from './lib/texto.mjs';
 import { REGISTRO } from './render.mjs';
 import { verificarDiferencaZero, rastreio } from './lib/diferenca-zero.mjs';
-import { CATEGORIAS_PONTE } from './lib/catalogo.mjs';
+import { CATEGORIAS_PONTE, disponibilidadeSchema } from './lib/catalogo.mjs';
 import { verificarSeo } from './lib/seo-checks.mjs';
 import { caminhoDoRegistro } from './seo.mjs';
 
@@ -74,6 +74,11 @@ export async function validar(dist = paths.dist) {
   // Produtos sem foto publicada (d_sem_foto, hoje só o Spa Serena): o Product sai sem image, porque a
   // regra 0.1 (nenhum dado inventado) prevalece sobre o campo recomendado da 13.7.
   const semFoto = new Set(JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8')).filter((p) => p.d_sem_foto).map((p) => `${p.slug}.html`));
+  // Itens avulsos suspensos (SPEC 15): o catálogo diz "Disponível" e a página de prazos diz que estão fora de
+  // venda; o Offer sai sem availability para não escolher uma das versões (regra 0.3 prevalece sobre a 13.7).
+  const polV = JSON.parse(readFileSync(join(paths.data, 'politicas.json'), 'utf8'));
+  const semDisp = new Set(JSON.parse(readFileSync(join(paths.data, 'produtos.json'), 'utf8')).filter((p) => !disponibilidadeSchema(p, polV)).map((p) => `${p.slug}.html`));
+  if (semDisp.size) pendentes.push(`13.7 Product sem offers.availability (catálogo × página de prazos em conflito), aguardando decisão do dono: ${[...semDisp].join(', ')}`);
   // A exceção é registrada (institucionais.json `decisoes`) e aparece como pendente em todo build.
   {
     const instF0 = join(paths.data, 'institucionais.json');
@@ -123,7 +128,8 @@ export async function validar(dist = paths.dist) {
         if (n['@type'] !== 'Product') continue;
         const of = Array.isArray(n.offers) ? n.offers[0] : n.offers;
         for (const k of ['name', 'image']) if (!n[k] && !(k === 'image' && semFoto.has(relative(dist, f)))) erro(f, `Product sem ${k}`);
-        for (const k of ['price', 'priceCurrency', 'availability']) if (!of?.[k] && !(k === 'price' && of?.lowPrice)) erro(f, `Product sem offers.${k}`);
+        for (const k of ['price', 'priceCurrency', 'availability']) if (!of?.[k] && !(k === 'price' && of?.lowPrice) && !(k === 'availability' && semDisp.has(relative(dist, f)))) erro(f, `Product sem offers.${k}`);
+        if (of?.availability && semDisp.has(relative(dist, f))) erro(f, 'Product com offers.availability num item avulso suspenso (SPEC 15)');
       }
     }
 

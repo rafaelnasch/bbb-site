@@ -254,9 +254,10 @@ export function paginas(ctx) {
     const idFilme = FILME_RAIZ[cat.d_path];
     // Variante quadrada do filme (sem moldura e sem legenda gravadas): a legenda é o próprio H1 e a
     // frase da página. Sem ela, o topo fica com a água (o filme 16:9 com moldura não serve neste encaixe).
-    // Ordem da grade: a do catálogo (data-pos e o ItemList do JSON-LD continuam nela), com as peças sem foto
+    // Ordem da grade: a do catálogo (data-pos continua nela), com as peças sem foto
     // publicada no fim, para a primeira impressão da coleção ser uma peça e não um quadro vazio.
     const semFoto = (p) => !fotoCartao(p.slug);
+    // O ItemList do JSON-LD sai desta mesma lista (SPEC 11.2: produtos na ordem exibida).
     const grade0 = [...lista.filter((p) => !semFoto(p)), ...lista.filter(semFoto)];
     const nSemFoto = grade0.filter(semFoto).length;
     const grupos = gruposDeVersoes(lista);
@@ -371,7 +372,7 @@ export function paginas(ctx) {
             '@type': 'ItemList',
             numberOfItems: lista.length,
             itemListOrder: 'https://schema.org/ItemListOrderAscending',
-            itemListElement: lista.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`${p.slug}.html`), name: p.nome })),
+            itemListElement: grade0.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`${p.slug}.html`), name: p.nome })),
           },
         },
         { '@type': 'BreadcrumbList', itemListElement: trilha.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.nome, item: abs(t.path) })) },
