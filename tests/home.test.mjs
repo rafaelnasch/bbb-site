@@ -10,7 +10,7 @@ import { gzipSync } from 'node:zlib';
 import { HtmlValidate } from 'html-validate';
 import { renderizar } from '../build/render.mjs';
 import { paths, BASE_PATH } from '../site.config.mjs';
-import { PORTAS, SALAS, PECAS_POR_SALA, FAQ_HOME, ALTURA_SALAS, ALTURA_RODAPE, numerosDeclarados, reclameAqui, horarioSchema, cidadeDaFabrica, opcoesPessoas } from '../templates/home.mjs';
+import { PORTAS, FOTO_ABERTURA, SALAS, PECAS_POR_SALA, FAQ_HOME, ALTURA_SALAS, ALTURA_RODAPE, numerosDeclarados, reclameAqui, horarioSchema, cidadeDaFabrica, opcoesPessoas } from '../templates/home.mjs';
 import { mapaLojas } from '../build/lib/mapa-lojas.mjs';
 import { alturaReservada } from '../templates/parts/tardio.mjs';
 import { validar } from '../build/validate.mjs';
@@ -257,15 +257,21 @@ test('LCP: H1 com o subconjunto da Newsreader pré-carregado, que cobre todo o t
   assert.match(h, /<noscript><link rel="stylesheet" href="[^"]*site\.[0-9a-f]{10}\.css"><\/noscript>/, 'sem JS, o CSS vem pelo noscript');
 });
 
-test('abertura: vitrine decorativa com os filmes das portas, recortados na foto; contagens reais', () => {
-  const v = /<div class="vitrine"[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/.exec(h)?.[0] || '';
-  assert.match(v, /aria-hidden="true"/);
+test('abertura: uma foto parada da galeria publicada (com legenda e "Imagem ilustrativa"); portas com contagens reais', () => {
+  const ab = /<section class="sala home-abre"[\s\S]*?<\/section>/.exec(h)[0];
+  const fig = /<figure class="abre-foto"[\s\S]*?<\/figure>/.exec(ab)?.[0] || '';
+  assert.ok(fig, 'foto da abertura presente');
+  assert.ok(ab.indexOf('<figure class="abre-foto"') > ab.indexOf('<h1'), 'a foto vem depois do título');
+  assert.match(fig, new RegExp(`media/p/${FOTO_ABERTURA.slug}/${FOTO_ABERTURA.slug}-${FOTO_ABERTURA.n}-`), 'foto da própria galeria publicada');
+  assert.match(fig, /fetchpriority="high"/);
+  const p = produtos.find((x) => x.slug === FOTO_ABERTURA.slug);
+  assert.match(fig, new RegExp(`href="[^"]*${p.slug}\\.html">${p.nome.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</a>`), 'legenda com o nome literal e o link');
+  assert.match(texto(fig), /Imagem ilustrativa/);
+  assert.doesNotMatch(h, /data-vitrine|vitrine__video|data-home-filme/, 'sem a vitrine de filmes');
   for (const [path, id] of PORTAS) {
-    if (!h.includes(`data-porta="${id}"`)) continue;
-    assert.match(v, new RegExp(`data-cena="${id}"`));
-    assert.match(v, new RegExp(`data-cena-leg="${id}"[\\s\\S]*?>${cat(path).total_exibido}<`));
+    const a = new RegExp(`<a class="porta__a"[^>]*data-porta-id="${id}"[\\s\\S]*?</a>`).exec(ab)?.[0] || '';
+    assert.match(a, new RegExp(`>${cat(path).total_exibido}<`), id);
   }
-  assert.doesNotMatch(h, /porta__video/, 'o filme toca na vitrine, não na miniatura');
 });
 
 test('fábrica: o prefixo "+ DE" fica menor, mas o texto do número continua literal', () => {
@@ -340,17 +346,6 @@ test('abertura: fontes inteiras fora do CSS crítico da home, pedidas com o site
   assert.doesNotMatch(/<style>([\s\S]*?)<\/style>/.exec(col)[1], /@font-face\{font-family:"?Newsreader"?;/);
 });
 
-test('vitrine: cena com o filme quadrado (sem moldura e sem legenda gravadas) ou, sem ele, a foto recortada parada', () => {
-  const v = /<div class="vitrine"[\s\S]*?<div class="vitrine__leg">/.exec(h)?.[0] || '';
-  assert.ok(v, 'vitrine presente (os recortes de media/home são versionados)');
-  for (const [, id] of PORTAS) {
-    const cena = new RegExp(`<div class="vitrine__cena([^"]*)"[^>]*data-cena="${id}">([\\s\\S]*?)</div>`).exec(v);
-    assert.ok(cena, id);
-    if (/quadro/.test(cena[1])) { assert.match(cena[2], /<video/); assert.match(cena[2], new RegExp(`${id}-quadro\\.(webm|mp4)`)); }
-    else assert.match(cena[2], new RegExp(`abertura-${id}-484\\.webp`));
-  }
-});
-
 test('lançamentos: texto derivado, sem afirmar a origem das fotos além de "publicadas pela empresa"', () => {
   const sec = /<section class="sala sala--2 secao home-lanc"[\s\S]*?<\/section>/.exec(h)[0];
   const c = cat('lancamentos.html');
@@ -371,5 +366,4 @@ test('publicação: filmes das portas e dos lançamentos presentes no build de C
     assert.ok(f, `filme ${id} no manifest`);
     for (const src of [f.webm?.src, f.mp4?.src, f.poster?.avif?.src]) assert.ok(src && existsSync(join(paths.public, src)), `${id}: ${src} ausente`);
   }
-  assert.match(h, /data-vitrine/);
 });

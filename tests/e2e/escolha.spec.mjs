@@ -178,12 +178,18 @@ test.describe('comparador', () => {
     expect(page.url()).toContain(`p=${tres[0]},${tres[1]}`);
   });
 
-  test('tabela rola localmente em 320 px', async ({ page }) => {
-    await page.setViewportSize({ width: 320, height: 720 });
-    await page.goto(pg(`comparar.html?p=${tres.join(',')}`));
-    await expect(page.locator('[data-cmp-thead] th[scope="col"]')).toHaveCount(3);
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    expect(await page.locator('.cmp-rol').evaluate((e) => e.scrollWidth > e.clientWidth)).toBe(true);
+  test('tabela no celular: rótulo acima da linha e as três peças lado a lado, sem rolagem lateral (320 e 390 px)', async ({ page }) => {
+    for (const w of [320, 390]) {
+      await page.setViewportSize({ width: w, height: 720 });
+      await page.goto(pg(`comparar.html?p=${tres.join(',')}`));
+      await expect(page.locator('[data-cmp-thead] th[scope="col"]')).toHaveCount(3);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${w}px`).toBe(true);
+      // Primeira linha do corpo: as três células visíveis na mesma faixa vertical, dentro da janela.
+      const caixas = await page.locator('[data-cmp-tab] tbody tr').first().locator('td').evaluateAll((tds) => tds.map((td) => { const r = td.getBoundingClientRect(); return [r.left, r.right, r.top]; }));
+      expect(caixas.length, `${w}px`).toBe(3);
+      for (const [l, r] of caixas) { expect(l, `${w}px`).toBeGreaterThanOrEqual(0); expect(r, `${w}px`).toBeLessThanOrEqual(w); }
+      expect(new Set(caixas.map((c) => Math.round(c[2]))).size, `${w}px: mesma linha`).toBe(1);
+    }
   });
 });
 

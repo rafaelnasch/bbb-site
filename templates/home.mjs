@@ -1,7 +1,7 @@
 // Home (SPEC 9.1): a galeria inteira numa página. Ritmo noite e dia (SPEC 5.1):
-//  1. Abertura (sala): H1, três portas com a contagem real e o poster do filme da coleção, botão
-//     "Escolher pelo meu espaço". Água WebGL e vapor atrás do texto; o LCP é o texto (ou o poster),
-//     nunca o canvas, que só nasce depois do load.
+//  1. Abertura (sala): H1, botão "Escolher pelo meu espaço", três portas com a contagem real e uma
+//     foto parada da galeria publicada (FOTO_ABERTURA). Água WebGL e vapor atrás do texto; o LCP é o
+//     texto ou a foto, nunca o canvas, que só nasce depois do load.
 //  2. Comece pelo seu espaço (dia): escolhedor rápido com contagem ao vivo, mesma regra do escolher.html.
 //  3. Salas da galeria (sala): uma faixa por coleção, 3 peças na ordem do site atual, contorno em escala.
 //  4. O desenho é a obra (planta): planta oficial da Acqua Línea 0,79 x 1,41 x 0,37 com o explorador.
@@ -18,6 +18,7 @@ import { icone } from '../build/lib/icons.mjs';
 import { paths } from '../site.config.mjs';
 import { cartao, escalaDaColecao } from './parts/cartao.mjs';
 import { picture } from './parts/foto.mjs';
+import { fotoProduto } from '../build/lib/midia.mjs';
 import { faqBloco } from './parts/faq-bloco.mjs';
 import { AVISO_ESCALA } from './parts/escala.mjs';
 import { explorador, tabelaCotas, plantaDoTamanho, rotuloTam, urlPdf } from './parts/planta.mjs';
@@ -99,43 +100,11 @@ export function reclameAqui(ra) {
   return { url: ra.url, reputacao: ra.reputacao || null, nota, resolve, periodo, consultado };
 }
 
-/** Poster e vídeo do filme de uma coleção (public/media/filmes/manifest.json), se existirem. */
-function filmeColecao(D, id) {
-  let man = null;
-  try { man = existsSync(join(paths.public, 'media', 'filmes', 'manifest.json')) ? D.ler('../public/media/filmes/manifest.json') : null; } catch { man = null; }
-  // Variante quadrada (sem moldura e sem legenda gravadas): a moldura e a legenda são as do site.
-  const fm = man?.colecao?.[id]?.quadro;
-  if (!fm?.poster || !fm.webm?.src || !fm.mp4?.src) return null;
-  if (![fm.webm.src, fm.mp4.src].every((s) => existsSync(join(paths.public, s)))) return null;
-  const avif = fm.poster.avif?.src && existsSync(join(paths.public, fm.poster.avif.src)) ? url(fm.poster.avif.src) : null;
-  const webp = fm.poster.webp?.src && existsSync(join(paths.public, fm.poster.webp.src)) ? url(fm.poster.webp.src) : null;
-  if (!avif && !webp) return null;
-  return { webm: url(fm.webm.src), mp4: url(fm.mp4.src), ordem: (fm.mp4.bytes || 0) <= (fm.webm.bytes || Infinity) ? 'mp4,webm' : 'webm,mp4', avif, webp, w: fm.largura || 720, h: fm.altura || 720 };
-}
-
-// Imagem vazia (GIF 1x1) para a vitrine abaixo de 1024 px, onde ela não aparece: o poster não é baixado.
-const VAZIO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-function posterFilme(f, { classe, prioridade = false, alta = false, soDesktop = false }) {
-  return html`<picture>${soDesktop ? html`<source media="(max-width:1023px)" srcset="${VAZIO}">` : ''}${f.avif ? html`<source type="image/avif" srcset="${f.avif}">` : ''}<img${attrs({ class: classe, src: f.webp || f.avif, width: f.w, height: f.h, alt: '', loading: prioridade ? null : 'lazy', fetchpriority: alta ? 'high' : null, decoding: 'async' })}></picture>`;
-}
-
-function videoFilme(f, classe, rotulo = null) {
-  return html`<video class="${classe}" data-home-filme${attrs({ 'data-webm': f.webm, 'data-mp4': f.mp4, 'data-ordem': f.ordem, width: f.w, height: f.h, 'aria-hidden': rotulo ? null : 'true', 'aria-label': rotulo })} muted playsinline loop preload="none"></video>`;
-}
-
-/** Recortes da foto de cada coleção (build/media-home.mjs, versionados): miniatura de 240 px e área de 484 px. */
-function recortesHome(D) {
-  if (!existsSync(join(paths.public, 'media', 'home', 'manifest.json'))) return { portas: {}, abertura: {} };
-  const m = D.ler('../public/media/home/manifest.json') || {};
-  const ok = (x) => x && [x.avif, x.webp].every((s) => existsSync(join(paths.public, s)));
-  const filtrar = (o) => Object.fromEntries(Object.entries(o || {}).filter(([, x]) => ok(x)));
-  return { portas: filtrar(m.portas), abertura: filtrar(m.abertura) };
-}
-
-/** Cena da vitrine (desktop) sem filme: a mesma área da foto, já recortada em 484 px. */
-function cenaSemFilme(g, prioridade = false) {
-  return html`<picture><source media="(max-width:1023px)" srcset="${VAZIO}"><source type="image/avif" srcset="${url(g.avif)}"><img${attrs({ class: 'vitrine__img', src: url(g.webp), width: g.lado, height: g.lado, alt: '', loading: prioridade ? null : 'lazy', decoding: 'async' })}></picture>`;
-}
+// Foto da abertura (redesenho, rodada 3): uma peça inteira de perto, com volume e luz, parada. Substitui a
+// vitrine de filmes (posters de 720 px comprimidos, com franja do recorte) que derrubava a primeira impressão.
+// Escolha editorial: produto e posição da foto na galeria publicada; nenhum dado novo.
+export const FOTO_ABERTURA = Object.freeze({ slug: 'banheira-retangular-monte-verde-completa-com-hidro-em-acrilico', n: 2 });
+export const SIZES_ABERTURA = '(min-width:1024px) 46vw, 100vw';
 
 /** Fotos da fábrica (build/media-fabrica.mjs). */
 function fotosFabrica(D) {
@@ -226,7 +195,7 @@ function escolhedorRapido(D, indice, porSlug) {
       <fieldset class="home-esc__fs">
         <legend class="home-esc__q"><span class="num">01</span>O que você procura?</legend>
         <div class="esc-ops">${TIPOS_RAPIDO.map(([v, r]) => op('tipo', v, r, cont[v], false))}${op('tipo', '', 'Tanto faz', total, true)}</div>
-        ${notas.length ? html`<details class="home-esc__det"><summary>Sobre a contagem</summary><p class="home-esc__nota">A contagem aqui é por tipo de peça. ${notas.map((n) => html`A coleção ${n.nome} exibe <span class="num">${n.total}</span> modelos porque também lista ${n.outros.map((o, i) => html`${i ? ', ' : ''}${o.nome} (${o.tipo})`)}. `)}</p></details>` : ''}
+        ${notas.length ? html`<p class="home-esc__nota">Contagem por tipo de peça. ${notas.map((n) => html`A coleção ${n.nome} exibe <span class="num">${n.total}</span> modelos porque também lista ${n.outros.map((o, i) => html`${i ? ', ' : ''}${o.nome} (${o.tipo})`)}. `)}</p>` : ''}
       </fieldset>
       <fieldset class="home-esc__fs">
         <legend class="home-esc__q"><span class="num">02</span>Quantas pessoas?</legend>
@@ -268,28 +237,21 @@ export function paginas(ctx) {
   const totalPecas = produtos.filter((p) => p.d_tipo !== 'acessorio').length;
 
   // 1. Abertura ---------------------------------------------------------------
-  // As portas mostram o poster do filme da coleção recortado na foto (sem a moldura e a legenda que o
-  // filme desenha). No desktop, a vitrine grande à direita toca o filme da porta ativa.
-  const filmes = new Map();
-  const R = recortesHome(D);
   const portas = PORTAS.map(([path, id, nome], i) => {
     const cat = D.catPorPath.get(path);
     if (!cat) return null;
-    const filme = filmeColecao(D, id);
-    // Vitrine do desktop: o filme da coleção ou, sem ele, a foto recortada (versionada) parada.
-    if (filme || R.abertura[id]) filmes.set(id, { filme, foto: R.abertura[id], nome, cat, path });
-    // Redesenho (20/10/2026, rodada 2): a porta é só texto (nome e contagem), numa linha separada por régua
-    // fina; a foto fica na vitrine. Sem miniaturas: o trio de cartões parecia um menu de aplicativo.
+    // A porta é só texto (nome e contagem), numa linha separada por régua fina.
     return html`<li class="porta" data-intro style="--i:${4 + i}">
-  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta': filmes.has(id) ? id : null, 'data-porta-id': id })}><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span><span class="porta__u"> modelos</span></span></a>
+  <a class="porta__a" href="${url(path)}"${attrs({ 'data-porta-id': id })}><span class="porta__nome">${nome}</span><span class="porta__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span><span class="porta__u"> modelos</span></span></a>
 </li>`;
   }).filter(Boolean);
-  // Vitrine (decorativa: as portas já dizem o mesmo): poster grande e filme da coleção. No celular fica logo
-  // abaixo do título com a peça da primeira coleção parada; no desktop, à direita, troca com as portas.
-  const vitrine = filmes.size ? html`<div class="vitrine" aria-hidden="true" data-vitrine>
-    <div class="vitrine__mol">${[...filmes].map(([id, { filme, foto }], i) => html`<div class="vitrine__cena${filme ? ' quadro' : ''}${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${filme ? html`${posterFilme(filme, { classe: 'vitrine__img', prioridade: i === 0, alta: i === 0, soDesktop: true })}${videoFilme(filme, 'vitrine__video')}` : cenaSemFilme(foto, i === 0)}</div>`)}<span class="vitrine__luz"></span></div>
-    <div class="vitrine__leg">${[...filmes].map(([id, { nome, cat }], i) => html`<p class="vitrine__item${i === 0 ? ' is-ativa' : ''}" data-cena-leg="${id}"><span class="vitrine__nome">${nome}</span><span class="vitrine__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></p>`)}</div>
-  </div>` : '';
+  // Foto da abertura: no celular logo abaixo das portas (botão e portas seguem na primeira tela), no desktop à direita, sangrando até a borda.
+  const pAbre = porSlug.get(FOTO_ABERTURA.slug);
+  const fAbre = pAbre ? fotoProduto(FOTO_ABERTURA.slug, FOTO_ABERTURA.n) : null;
+  const fotoAbre = fAbre ? html`<figure class="abre-foto">
+    <div class="abre-foto__mol">${picture(fAbre, { sizes: SIZES_ABERTURA, classe: 'abre-foto__img', prioridade: true, alt: '' })}</div>
+    <figcaption class="abre-foto__leg"><a class="abre-foto__a" href="${url(`${pAbre.slug}.html`)}">${pAbre.nome}</a><span class="abre-foto__nota">Imagem ilustrativa</span></figcaption>
+  </figure>` : '';
 
   const abertura = html`<section class="sala home-abre" aria-labelledby="home-h1">
   <div class="home-abre__agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>
@@ -300,7 +262,7 @@ export function paginas(ctx) {
     <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos, <span class="num">${comPdf}</span> deles com a planta oficial da fábrica para baixar. Escolha pelo tamanho do seu espaço e feche com um consultor pelo WhatsApp.</p>
     <p class="home-abre__acoes" data-intro style="--i:3"><a class="btn btn--claro home-abre__cta" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Escolher pelo meu espaço</a><a class="home-abre__rolar" href="#salas">Conhecer as salas${icone('chevron-baixo', { tamanho: 18 })}</a></p>
     <ul class="portas" role="list" aria-label="Coleções">${portas}</ul>
-    ${vitrine}
+    ${fotoAbre}
   </div>
 </section>`;
 
@@ -310,6 +272,7 @@ export function paginas(ctx) {
   // a foto de capa. O tipo da sala vem da coleção raiz (um spa listado entre os ofurôs fica de fora).
   const usados = new Set();
   const fotosUsadas = new Set();
+  if (fAbre?.sha1) fotosUsadas.add(fAbre.sha1); // a foto da abertura não se repete logo abaixo
   const tipoDaSala = (path) => ({ 'banheiras': 'banheira', 'spas': 'spa', 'ofuros': 'ofuro' })[path.split('/')[0].replace(/\.html$/, '')] || null;
   // Chave do modelo: a família revisada; sem família, o nome literal sem o material (só para não mostrar
   // duas vezes a mesma peça lado a lado; nenhum dado novo).

@@ -5,13 +5,8 @@
 .home-abre__vapor{z-index:-1;pointer-events:none}
 .home-abre__rolar{gap:6px;color:var(--fg);text-decoration:none}
 .home-abre__lead{color:var(--fg-2)}
-.vitrine__item:not(.is-ativa){opacity:0}
 .porta__n{color:var(--fg-2)}
-.vitrine__mol{position:relative;background:var(--foto-fundo)}
-.vitrine__cena{position:relative}
 .home-abre::after{content:"";position:absolute;inset:auto 0 0;height:1px;z-index:-1;background:var(--stone)}
-/* Cena da vitrine sem filme (build de publicação sem os filmes): a foto já recortada, cobrindo o quadro. */
-.vitrine__cena:not(.quadro) img{display:block;width:100%;height:100%;object-fit:cover;filter:var(--foto-filtro)}
 .agua__cv{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 3s var(--ease-out)}
 .agua__cv.is-viva{opacity:1}
 .vapor__cv{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 3s var(--ease-out);mix-blend-mode:screen}
@@ -24,22 +19,9 @@
 .porta__a.is-ativa .porta__nome{text-decoration-color:currentColor}
 @media (hover:hover){.porta__a:hover .porta__nome{text-decoration-color:currentColor}}
 
-/* Vitrine da abertura (desktop): a foto da coleção ativa, sem moldura, até a borda da janela. */
-.vitrine{position:relative;gap:14px}
-/* Troca de coleção sem dupla exposição: a cena que sai some e só então a nova entra. */
-.vitrine__cena{transition:opacity .4s linear}
-.vitrine__cena.is-ativa{transition-delay:.4s}
-.vitrine__video{opacity:0;transition:opacity .9s var(--ease-out)}
-.vitrine__cena.is-tocando .vitrine__video{opacity:1}
-.vitrine__luz{position:relative;z-index:1;pointer-events:none}
-.vitrine__leg{display:grid;padding-right:calc(var(--pad-x) + max(0px,(100vw - 2*var(--pad-x) - var(--maxw))/2))}
-.vitrine__item{grid-area:1/1;display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid var(--stone);transition:opacity .4s linear}
-.vitrine__item.is-ativa{transition-delay:.4s}
-.vitrine__nome{font:500 var(--fs-label)/1.3 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--fg)}
-.vitrine__n{font-size:.875rem;color:var(--fg-2)}
-.vitrine__leg::after{content:"";grid-area:1/1;align-self:start;height:1px;background:var(--ink);transform-origin:left;transform:scaleX(0)}
-.vitrine.is-ciclo .vitrine__leg::after{animation:vitrine-ciclo var(--ciclo,8s) linear}
-@keyframes vitrine-ciclo{to{transform:scaleX(1)}}
+.abre-foto__leg{color:var(--fg-2)}
+.abre-foto__a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--stone)}
+@media (hover:hover){.abre-foto__a:hover{text-decoration-color:currentColor}}
 
 /* ---------- Comece pelo seu espaço ---------- */
 .home-esc__in{display:grid;gap:28px}
@@ -56,10 +38,7 @@
 .home-esc__ir.is-mudou .num{animation:home-pulso .42s var(--ease-out)}
 @keyframes home-pulso{from{transform:translateY(-6px);opacity:.2}}
 .home-esc__ir.is-zero{--b-bg:var(--muted)}
-.home-esc__det{margin-top:10px;font-size:var(--fs-small);color:var(--fg-2)}
-.home-esc__det>summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;letter-spacing:.04em;text-decoration:underline;text-decoration-color:var(--stone);text-underline-offset:4px}
-.home-esc__det>summary::-webkit-details-marker{display:none}
-.home-esc__nota{max-width:60ch;font-size:var(--fs-small);color:var(--fg-2)}
+.home-esc__nota{max-width:60ch;margin-top:10px;font-size:var(--fs-small);color:var(--fg-2)}
 .home-esc__mais{font-size:var(--fs-small);color:var(--fg-2)}
 .home-esc__aviso{max-width:70ch}
 @media (min-width:1024px){
@@ -94,8 +73,8 @@
 @media (min-width:1024px){.pg-home .col-grade{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px}}
 @media (min-width:600px){.pg-home .home-lanc__grade{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .pg-home .cart{position:relative;min-width:0;display:flex;flex-direction:column}
-.pg-home .cart__a{flex:1;display:flex;flex-direction:column;gap:8px;color:inherit;text-decoration:none}
-.pg-home .cart__meta{display:block;line-height:1.5}.pg-home .cart__base{margin-top:auto;display:grid;gap:4px}.pg-home .cart__med{display:block}
+.pg-home .cart__a{flex:none;display:flex;flex-direction:column;gap:8px;color:inherit;text-decoration:none}
+.pg-home .cart__meta{display:block;line-height:1.5}.pg-home .cart__base{margin-top:2px;display:grid;gap:4px}.pg-home .cart__med{display:block}
 .pg-home .cart__mol{position:relative;display:block;background:var(--foto-fundo)}
 .pg-home .cart__img{width:100%;aspect-ratio:1;object-fit:cover;filter:var(--foto-filtro)}
 .pg-home .cart__vazia{display:grid;place-items:center;aspect-ratio:1;color:var(--muted-on-dark)}
@@ -134,7 +113,7 @@ html:not([data-lite]) .home-obra:not(.is-tour) .cota-marca span{animation:home-c
   html.js:not([data-lite]) .home-obra__passos{display:grid;gap:0;margin:8px 0 24px;padding:0;list-style:none;position:relative;border-left:1px solid var(--rule)}
   .home-obra__passos::before{content:"";position:absolute;left:-1px;top:0;width:1px;height:100%;background:var(--glow);transform-origin:top;transform:scaleY(var(--prog,0))}
   /* passo inativo: texto mais apagado, sem opacidade (contraste AA mantido); o ativo acende o título */
-  .home-obra__passo{display:grid;gap:6px;min-height:min(40vh,380px);align-content:center;padding:0 0 0 24px}
+  .home-obra__passo{display:grid;gap:6px;min-height:min(28vh,260px);align-content:center;padding:0 0 0 24px}
   .home-obra__passo .home-obra__pt{color:var(--muted-on-dark);transition:color .5s var(--ease-out)}
   .home-obra__passo.is-ativo .home-obra__pt{color:var(--fg)}
   .home-obra__pn{font:500 .75rem/1 var(--f-body);letter-spacing:.12em;color:var(--glow)}
@@ -146,7 +125,6 @@ html:not([data-lite]) .home-obra:not(.is-tour) .cota-marca span{animation:home-c
 .home-lanc__cab{display:grid;gap:28px;align-items:center}
 .home-lanc__cab>div:first-child{display:grid;gap:12px}
 .home-lanc__filme{position:relative;padding:12px;border-radius:var(--radius);background:var(--room-2);border:1px solid color-mix(in srgb,var(--line) 20%,transparent);box-shadow:var(--sombra-2)}
-.home-lanc__filme .quadro{border-radius:2px}
 .home-lanc__video{opacity:0;transition:opacity 1s var(--ease-out)}
 .home-lanc__filme.is-tocando .home-lanc__video{opacity:1}
 @media (min-width:600px) and (max-width:1023px){.home-lanc__filme{max-width:520px}}
@@ -159,7 +137,7 @@ html:not([data-lite]) .home-obra:not(.is-tour) .cota-marca span{animation:home-c
 .home-fab__end .ic,.home-fab__selo .ic{margin-top:3px;color:var(--brand)}
 .home-fab__nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;margin-top:8px}
 .home-fab__num{display:grid;gap:4px;padding-top:14px;border-top:1px solid var(--rule)}
-.home-fab__num dt{display:grid;gap:6px;font:300 clamp(2rem,1.4rem + 2.4vw,3.25rem)/1 var(--f-display);letter-spacing:-.02em}
+.home-fab__num dt{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 6px;font:300 clamp(2rem,1.4rem + 2.4vw,3.25rem)/1 var(--f-display);letter-spacing:-.02em}
 .home-fab__pre{font:500 .75rem/1 var(--f-body);letter-spacing:.12em;color:var(--fg-2)}
 .home-fab__v{white-space:nowrap}
 .home-fab__num dd{margin:0;font:500 var(--fs-label)/1.35 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
@@ -258,10 +236,9 @@ html:not([data-lite]) .mapa__onda{animation:mapa-onda 3.2s var(--ease-out) infin
 @media (min-width:1024px){.home-fim__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(32px,5vw,88px)}}
 
 /* Modo lite e movimento reduzido: nada de vídeo, água, vapor ou pulso. */
-html[data-lite] .agua__cv,html[data-lite] .vapor__cv,html[data-lite] .vitrine__video,html[data-lite] .home-lanc__video{display:none}
-html[data-lite] .vitrine__leg::after{display:none}
+html[data-lite] .agua__cv,html[data-lite] .vapor__cv,html[data-lite] .home-lanc__video{display:none}
 
 .home-fab img{filter:var(--foto-real)}
 .home-salas__mais>h3{align-self:start;padding-top:22px}
-/* O filme da vitrine fica 2 px menor que o poster por lado: nunca supera a área do poster (candidato a LCP). */
-.vitrine .quadro>.vitrine__video{inset:2px;width:calc(100% - 4px);height:calc(100% - 4px)}
+/* Lançamentos no celular: faixa horizontal como as salas (rodada 3), em vez de três peças empilhadas. */
+@media (max-width:599px){.pg-home .home-lanc__grade{grid-auto-flow:column;grid-auto-columns:min(74vw,300px);gap:18px;margin-inline:calc(-1 * var(--pad-x));padding:24px var(--pad-x) 14px;scroll-padding-inline:var(--pad-x);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin}.pg-home .home-lanc__grade>.cart{scroll-snap-align:start}}

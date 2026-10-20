@@ -17,7 +17,7 @@ import { fotosProduto, fotoProduto } from '../build/lib/midia.mjs';
 import { formatBRL } from '../build/lib/money.mjs';
 import { mensagemCompra } from '../build/lib/wa.mjs';
 import { paths } from '../site.config.mjs';
-import { notaPrecosComoOpcaoTexto, disponibilidadeSchema } from '../build/lib/catalogo.mjs';
+import { notaPrecosComoOpcaoTexto, disponibilidadeSchema, campo } from '../build/lib/catalogo.mjs';
 import { breadcrumb } from './parts/breadcrumb.mjs';
 import { picture, SIZES_CARTAO } from './parts/foto.mjs';
 import { galeria, ordenarFotos } from './parts/galeria.mjs';
@@ -160,7 +160,8 @@ export function descricaoProduto(p, tamanhos, itens) {
 }
 
 /** Peças parecidas (SPEC 9.3, seção 13): mesmo tipo, forma e lugares, medida próxima; sem as irmãs. */
-export function parecidas(p, produtos, n = 3) {
+// Quatro peças parecidas: as três primeiras com foto, a quarta numa linha de texto (menos fotos lado a lado).
+export function parecidas(p, produtos, n = 4) {
   if (p.d_tipo === 'acessorio' || !p.d_maior) return [];
   const e = p.especificacoes || {};
   const fora = (q) => q.slug === p.slug || (p.d_familia && q.d_familia === p.d_familia);
@@ -526,6 +527,7 @@ export function paginas(ctx) {
     <h1 id="prod-h1" class="prod-topo__h1" data-intro="mascara" style="--i:1"><span data-campo="nome">${p.nome}</span></h1>
     ${eti.length ? html`<ul class="etiqueta prod-eti" role="list" data-intro style="--i:2">${eti.map((x) => html`<li><span data-campo="ficha-valor" data-ficha="${x.k}">${x.v}</span></li>`)}</ul>` : ''}
     <p class="prod-disp${esgotado ? ' prod-disp--esgotado' : ''}" data-intro style="--i:3"><span class="prod-disp__ponto" aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:${esgotado ? 'var(--glow)' : '#5fd38a'}"></span><span data-campo="disponibilidade">${p.disponibilidade}</span></p>
+    ${!esgotado && p.preco?.por ? html`<p class="prod-atalho" data-intro style="--i:3"><span class="prod-atalho__preco num"><span>${p.preco.por}</span>${p.preco.de ? html` <s class="preco-de">${p.preco.de}</s>` : ''}</span><a${attrs({ class: 'prod-atalho__wa', href: waCompra, target: '_blank', rel: 'noopener', 'data-wa-papel': 'venda_principal', 'data-wa-contexto': 'produto_topo', 'data-wa-sync': 'venda', 'data-sku': p.sku })}>${icone('whatsapp', { tamanho: 18 })}Comprar pelo WhatsApp</a></p>` : ''}
   </div>
 </section>`;
 
@@ -540,7 +542,7 @@ export function paginas(ctx) {
     ${planta && fundir ? html`<section class="prod__bloco prod__planta prod__escala sala-escura" id="cabe" style="${CV}" aria-labelledby="cabe-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">Desenho em escala</p><h2 id="cabe-h">${tituloEscala}</h2>
       <p class="prod__lead">${LEAD_PLANTA[planta.situacao]}</p></div>
-      ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true })}
+      ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true, forma: campo(p, 'Forma') })}
       <p class="desenho__leg prod__escala-leg">Desenho em escala a partir das medidas do site. Não é a planta oficial.</p>
       <div id="planta">${planta.corpo}</div>
       ${plantasAvulsas(p)}
@@ -555,7 +557,7 @@ export function paginas(ctx) {
     ${comEscala && !fundir ? html`<section class="prod__bloco prod__escala" id="cabe" style="${CV}" aria-labelledby="cabe-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">Escala real</p><h2 id="cabe-h">${tituloEscala}</h2>
       <p class="prod__lead">A peça vista de cima, em escala real.</p></div>
-      ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true })}
+      ${escala({ tamanho: t0 || tamanhos[0], tipo: p.d_tipo, segue: true, forma: campo(p, 'Forma') })}
     </section>` : ''}
     ${itens.length ? html`<section class="prod__bloco prod__itens" id="itens" style="${CV}" aria-labelledby="itens-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">Itens de série</p><h2 id="itens-h">O que vem na peça</h2></div>
@@ -587,7 +589,8 @@ ${pareci.length || relacionados.length ? html`<section class="dia secao secao--c
   <div class="wrap">
     <p class="etiqueta etiqueta--linha">Mesma forma, medida próxima</p>
     <h2 id="parec-h" class="prod-parec__h">Peças parecidas</h2>
-    ${pareci.length ? html`<ul class="minis" role="list" data-reveal-grupo>${pareci.map(cartaoMini)}</ul>` : ''}
+    ${pareci.length ? html`<ul class="minis" role="list" data-reveal-grupo>${pareci.slice(0, 3).map(cartaoMini)}</ul>` : ''}
+    ${pareci.length > 3 ? html`<ul class="minis-txt" role="list">${pareci.slice(3).map((q) => html`<li><a class="minis-txt__a" href="${url(`${q.slug}.html`)}">${q.nome}</a>${q.d_tamanhos?.[0] ? html` <span class="num">${rotuloTam(q.d_tamanhos[0])}</span>` : ''} <span class="num">${q.preco.por}</span></li>`)}</ul>` : ''}
     ${relacionados.length ? html`<div class="relac"><p class="monte__rot">Peças relacionadas</p><ul class="relac__lista" role="list">${relacionados.map((q) => html`<li><a class="chip" href="${url(`${q.slug}.html`)}">${q.nome}<span class="num">${q.preco.por}</span></a></li>`)}</ul></div>` : ''}
   </div>
 </section>` : ''}

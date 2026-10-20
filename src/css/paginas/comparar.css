@@ -28,9 +28,7 @@
 .cmp-canto{position:sticky;left:0;z-index:1;background:var(--bg);box-shadow:1px 0 0 var(--rule)}
 /* A rolagem do foco para a coluna de um modelo nunca deixa o conteúdo debaixo da coluna fixa dos rótulos. */
 .cmp-rol{scroll-padding-inline-start:160px}
-@media (max-width:599px){.cmp-tab th[scope="row"],.cmp-canto{width:120px;min-width:116px;max-width:124px;padding:12px 10px;font-size:.75rem;letter-spacing:0;text-transform:none;overflow-wrap:normal;word-break:normal;hyphens:manual}.cmp-rol{scroll-padding-inline-start:130px}.cmp-tab{min-width:580px}}
 .cmp-col{display:table-cell;min-width:184px;font-weight:400}
-@media (max-width:599px){.cmp-tab .cmp-col{min-width:196px;padding-inline:12px}}
 .cmp-col__fio{display:block;height:3px;margin-bottom:10px;border-radius:2px;background:var(--cor)}
 .cmp-col__img,.cmp-col__vazia{display:block;width:100%;max-width:200px;aspect-ratio:1;object-fit:cover;border-radius:2px;background:var(--room-2)}.cmp-col__img{background:var(--foto-fundo);filter:var(--foto-filtro)}
 .cmp-col__vazia{display:grid;place-items:center;color:var(--muted-on-dark);font-size:.8125rem}
@@ -55,3 +53,17 @@
 .cmp-como>summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-size:.8125rem;color:var(--fg-2);text-decoration:underline;text-decoration-color:var(--stone);text-underline-offset:4px}
 .cmp-como>summary::-webkit-details-marker{display:none}
 .cmp-como p{font-size:.8125rem;line-height:1.5;color:var(--fg-2);max-width:60ch}
+/* Celular (rodada 3): o rótulo vai acima de cada linha, na largura toda, e as peças ficam lado a lado em
+   colunas estreitas logo abaixo; dá para comparar sem rolar a tabela para o lado. */
+@media (max-width:599px){
+  .cmp-rol{border:0;overflow:visible}
+  .cmp-tab,.cmp-tab thead,.cmp-tab tbody{display:block;min-width:0;width:100%}
+  .cmp-tab tr{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));column-gap:10px;border-bottom:1px solid var(--rule)}
+  .cmp-tab th,.cmp-tab td{border-bottom:0}
+  .cmp-tab th[scope="row"]{grid-column:1/-1;position:static;width:auto;min-width:0;max-width:none;padding:14px 0 4px;box-shadow:none;font:500 .6875rem/1.4 var(--f-body);letter-spacing:.14em;text-transform:uppercase}
+  .cmp-tab td,.cmp-tab .cmp-col{min-width:0;padding:2px 0 14px;font-size:.8125rem;overflow-wrap:anywhere}
+  .cmp-tab thead th{padding-top:4px}
+  .cmp-canto{display:none}
+  .cmp-col__nome{font-size:.9375rem}
+  .cmp-planta-img{max-width:100%}
+}

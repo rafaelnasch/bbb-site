@@ -21,7 +21,8 @@
 .col-barra__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .col-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--rule);border-radius:var(--radius);font-size:.875rem;font-weight:500;transition:border-color var(--t-ui),background-color var(--t-ui),transform var(--t-press) var(--ease-out)}
 .col-btn:active{transform:scale(.97)}
-.col-btn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--day)}
+.col-btn[aria-expanded="true"]{border-color:var(--ink)}
+.col-btn[aria-expanded="true"]>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
 @media (hover:hover){.col-btn:hover{border-color:var(--fg)}}
 .col-btn__n{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:var(--radius);background:var(--ink);color:var(--day);font-size:.75rem}
 .col-ordem select{min-height:44px;max-width:100%;padding:0 36px 0 16px;border:1px solid var(--rule);border-radius:var(--radius-chip);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23655D55' stroke-width='1.5'%3E%3Cpath d='m2 4 4 4 4-4'/%3E%3C/svg%3E") no-repeat right 14px center;font-size:max(16px,1rem);font-weight:400;-webkit-appearance:none;appearance:none}
@@ -62,12 +63,13 @@
 .cart__vazia-txt{position:absolute;inset:auto 0 8%;display:grid;justify-items:center;gap:2px;padding-inline:8px;text-align:center;color:var(--ink);font:500 .6875rem/1.3 var(--f-body);letter-spacing:.18em;text-transform:uppercase}
 .cart__vazia-txt .num{font-weight:400;letter-spacing:.02em;text-transform:none;color:var(--muted);font-size:.8125rem}
 .cart__selos{display:inline}
-.cart__eti+.cart__selos::before{content:" · ";color:var(--fg-2);font-size:.6875rem}
+.cart__eti-i{white-space:nowrap}
+.cart__eti+.cart__selos{display:block}
 .selo{display:inline;padding:0;font:400 .75rem/1.5 var(--f-body);letter-spacing:.02em;color:var(--fg-2)}
 .cart__selos .selo{white-space:nowrap}
 .selo+.selo::before{content:" · "}
 .selo--esgotado{color:var(--ink)}
-.selo--confirmar{display:inline-flex;align-items:center;min-height:24px;padding-inline:8px;border:1px solid var(--stone);color:var(--ink)}
+.selo--confirmar{font-style:italic;color:var(--fg-2);text-decoration:underline dashed;text-decoration-color:var(--trace);text-decoration-thickness:1px;text-underline-offset:.3em}
 .cart__eti{font:400 .6875rem/1.5 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--fg-2)}
 .cart__nome{font-family:var(--f-display);font-weight:500;line-height:1.15;text-wrap:balance}
 .cart__med{font-size:.9375rem;color:var(--fg)}
@@ -183,18 +185,20 @@ html[data-lite] .col-grade.is-filtrando>li{animation:none}
 /* Celular deitado: o cabeçalho não é fixo (components.css), a barra de filtros cola no topo. */
 @media (max-height:480px){.col-barra{top:0}}
 /* Celular: cartões compactos (a grade começa abaixo da primeira tela, por isso fora do crítico). */
-@media (max-width:599px){.cart__nome{font-size:1rem}.cart__eti{display:none}.cart__eti+.cart__selos::before{display:none}}
-/* Versões irmãs em chips, com o preço "por" literal de cada uma; a versão do cartão fica marcada. */
-.cart__vs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;padding:0;list-style:none}
-.cart__v{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:4px 12px;border:1px solid var(--rule);border-radius:var(--radius-chip);font-size:.8125rem;line-height:1.25;color:var(--fg);text-decoration:none}
-.cart__v .num{color:var(--fg-2)}
-.cart__v[aria-current]{background:var(--ink);border-color:var(--ink);color:var(--day)}
-.cart__v[aria-current] .num{color:var(--muted-on-dark)}
-@media (hover:hover){a.cart__v:hover{border-color:var(--fg)}}
-@media (max-width:599px){.cart__vs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-2px;padding-inline:2px}.cart__v{flex:none;padding:4px 10px;font-size:.75rem;white-space:nowrap}}
-.col-btn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--day)}
-@media (max-width:599px){.col-btn--vs{padding:0;width:44px;justify-content:center}}
+@media (max-width:599px){.cart__nome{font-size:1rem}.cart__eti{display:none}}
+/* Versões irmãs (rodada 3): links de texto sublinhados, sem caixa; a versão do cartão em tinta, sem link.
+   No celular, uma por linha (o preço de cada uma inteiro, sem corte). */
+.cart__vs{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin-top:6px;padding:0;list-style:none}
+.cart__v{display:inline-flex;align-items:baseline;gap:6px;min-height:32px;padding:6px 0;font-size:.8125rem;line-height:1.3;color:var(--fg-2);text-decoration:underline;text-decoration-color:var(--stone);text-decoration-thickness:1px;text-underline-offset:.3em}
+.cart__v .num{color:inherit}
+.cart__v[aria-current]{color:var(--fg);text-decoration:none}
+@media (hover:hover){a.cart__v:hover{color:var(--fg);text-decoration-color:currentColor}}
+@media (max-width:599px){.cart__v{font-size:.75rem;padding:4px 0;flex-wrap:wrap;gap:0 6px}}
+.col-btn[aria-pressed="true"]{border-color:var(--ink)}
+.col-btn[aria-pressed="true"]>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
+@media (max-width:599px){.col-barra .col-btn{padding:0 10px;gap:6px;font-size:.8125rem}.col-barra__acoes{gap:6px}}
 /* Filtros rápidos: um respiro entre os grupos (forma, lugares, material, configuração). */
 .col-rapidos__novo{margin-left:10px;padding-left:10px;border-left:1px solid var(--rule)}
 .col-nota-sf{color:var(--fg-2)}
 .col-legenda{margin-top:12px;font-size:var(--fs-small);color:var(--fg-2)}
+@media (max-width:374px){.col-barra__in{flex-wrap:wrap;row-gap:0}.col-barra__acoes{flex-wrap:wrap}.col-barra .col-btn .ic{display:none}}

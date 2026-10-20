@@ -33,13 +33,13 @@ export function dadosTamanho(t) {
 }
 
 /** SVG inicial da peça (planta baixa) em escala, sobre a grade de 10 cm. */
-function svgInicial(e) {
+function svgInicial(e, caixa = false) {
   const maior = e.maior * 100, menor = e.menor * 100, m = 20;
   const W = maior + 2 * m, H = menor + 2 * m;
   return html`<svg class="escala__svg" data-escala-svg viewBox="0 0 ${W.toFixed(1)} ${H.toFixed(1)}" role="img" aria-label="Peça em escala: ${fmtMetros(e.maior)} m por ${fmtMetros(e.menor)} m, sobre uma grade de 10 cm">
   <defs><pattern id="escala-grade" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="currentColor" stroke-opacity=".16" stroke-width=".35"/></pattern></defs>
   <rect width="${W.toFixed(1)}" height="${H.toFixed(1)}" fill="url(#escala-grade)"/>
-  <rect class="escala__peca" x="${m}" y="${m}" width="${maior.toFixed(1)}" height="${menor.toFixed(1)}" rx="2.5"/>
+  <rect class="escala__peca${caixa ? ' escala__peca--caixa' : ''}" x="${m}" y="${m}" width="${maior.toFixed(1)}" height="${menor.toFixed(1)}" rx="${caixa ? 0 : 2.5}"/>
 </svg>`;
 }
 
@@ -49,12 +49,15 @@ function svgInicial(e) {
  * @param {string} o.tipo      d_tipo (sauna troca a vista lateral pela frontal)
  * @param {string} [o.id]      prefixo dos ids
  * @param {boolean} [o.segue]  acompanha o seletor de tamanho da página (evento bbb:tamanho)
+ * @param {string} [o.forma]   Forma da ficha: fora de Retangular e Quadrada (De Canto, Redonda), o desenho é só a
+ *                             caixa envolvente tracejada (a forma real está só na planta oficial)
  */
-export function escala({ tamanho, tipo, id = 'escala', segue = false }) {
+export function escala({ tamanho, tipo, id = 'escala', segue = false, forma = null }) {
   const e = medidasEncaixe(tamanho);
   if (!e) return html``;
+  const caixa = Boolean(forma) && !['Retangular', 'Quadrada'].includes(forma);
   const sauna = tipo === 'sauna';
-  return html`<div class="escala" data-escala${attrs({ ...dadosTamanho(tamanho), 'data-tipo': tipo, 'data-vista': sauna ? 'frontal' : 'lateral', 'data-segue-tamanho': segue })}>
+  return html`<div class="escala" data-escala${attrs({ ...dadosTamanho(tamanho), 'data-tipo': tipo, 'data-vista': sauna ? 'frontal' : 'lateral', 'data-segue-tamanho': segue, 'data-caixa': caixa ? '1' : null })}>
   <form class="escala__campos" data-escala-form data-so-js>
     <p class="escala__cab">Medidas do seu espaço, em centímetros</p>
     <div class="escala__linha">
@@ -67,8 +70,8 @@ export function escala({ tamanho, tipo, id = 'escala', segue = false }) {
     </details>
   </form>
   <figure class="escala__fig">
-    ${svgInicial(e)}
-    <figcaption class="escala__leg"><span class="escala__chave escala__chave--peca">Peça</span><span class="escala__chave escala__chave--espaco">Seu espaço</span><span>Grade de 10 cm</span></figcaption>
+    ${svgInicial(e, caixa)}
+    <figcaption class="escala__leg"><span class="escala__chave escala__chave--peca${caixa ? ' escala__chave--caixa' : ''}">${caixa ? 'Caixa envolvente da peça' : 'Peça'}</span><span class="escala__chave escala__chave--espaco">Seu espaço</span><span>Grade de 10 cm</span></figcaption>
   </figure>
   <p class="escala__txt" data-escala-txt aria-live="polite">Medidas externas publicadas: <span class="num" data-escala-medida>${fmtMetros(e.maior)} m x ${fmtMetros(e.menor)} m${tamanho.c ? html` x ${fmtMetros(tamanho.c)} m` : ''}${tamanho.altura ? html`, altura ${fmtMetros(tamanho.altura)} m` : ''}</span>.</p>
   <p class="escala__selo" data-escala-selo${attrs({ hidden: !tamanho.ficha })}>Medida a confirmar: a ficha técnica e a opção de tamanho publicadas divergem, e o cálculo usa a maior das duas.</p>

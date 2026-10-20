@@ -31,3 +31,4 @@ table{border-collapse:collapse}
    cresce pelo preenchimento, compensado pela margem, sem mexer na linha do texto. */
 .link--alvo{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
 .link--texto{padding:13px 9px;margin:-13px -9px}
+p>.link:only-child{display:inline-flex;align-items:center;min-height:44px}

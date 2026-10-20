@@ -228,10 +228,11 @@ test('celular: título sem foto por trás (contraste medido depois de tudo aceso
     expect(sob, `${w}px`).toEqual([]);
     expect(await contrasteMinimo(page, '.home-abre__h1'), `${w}px: H1 (texto grande, mínimo 3:1)`).toBeGreaterThanOrEqual(3);
     expect(await contrasteMinimo(page, '.home-abre__lead'), `${w}px: parágrafo (mínimo 4,5:1)`).toBeGreaterThanOrEqual(4.5);
-    // Abaixo de 1024 px a vitrine não aparece (e o poster dela não é baixado): título, parágrafo, o botão
-    // "Escolher pelo meu espaço" e as três portas em texto, todos inteiros na primeira tela.
-    expect(await page.locator('.vitrine').isVisible(), `${w}px: vitrine escondida`).toBe(false);
-    expect(await page.evaluate(() => [...document.querySelectorAll('.vitrine__img')].every((i) => !i.currentSrc || i.currentSrc.startsWith('data:'))), `${w}px: poster da vitrine baixado`).toBe(true);
+    // Rodada 3: título, parágrafo, o botão "Escolher pelo meu espaço" e as três portas inteiros na primeira
+    // tela; a foto parada da abertura começa logo abaixo das portas, ainda na primeira tela.
+    const foto = await page.locator('.abre-foto__mol').boundingBox();
+    expect(foto, `${w}px: foto da abertura`).toBeTruthy();
+    expect(foto.y, `${w}px: a foto começa na primeira tela`).toBeLessThan(h);
     for (const s of ['.portas', '.home-abre__cta']) {
       const b = await page.locator(s).boundingBox();
       expect(b.y + b.height, `${w}px: ${s} inteiro na primeira tela`).toBeLessThanOrEqual(h);

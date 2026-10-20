@@ -8,7 +8,7 @@
 .topo__ajuda{font-weight:500}
 @media (min-width:768px){.topo__local{display:inline-flex}}
 /* Pausar movimento: só o ícone, discreto, com a mesma área dos vizinhos; o nome acessível vem do aria-label. */
-.topo__mov-t,html:not(.js) .topo__mov{display:none}
+html:not(.js) .topo__mov{display:none}
 .topo__mov{min-width:44px;min-height:44px}
 @media (max-width:360px){.topo__fixo{display:none!important}}
 

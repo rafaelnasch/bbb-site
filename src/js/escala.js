@@ -76,7 +76,9 @@
         el('rect', { class: 'escala__espaco', x: fmt2(cx - sMaior / 2), y: fmt2(cy - sMenor / 2), width: sMaior, height: sMenor }, svg);
       }
       // Cantos arredondados proporcionais (a forma real só existe na planta oficial; aqui é o contorno externo).
-      const peca = el('rect', { class: 'escala__peca', x: fmt2(cx - pMaior / 2), y: fmt2(cy - pMenor / 2), width: pMaior, height: pMenor, rx: fmt2(Math.min(pMenor * 0.14, 14)) }, svg);
+      // De canto e redondas: só a caixa envolvente, tracejada (um retângulo arredondado mentiria a forma).
+      const caixa = raiz.dataset.caixa === '1';
+      const peca = el('rect', { class: caixa ? 'escala__peca escala__peca--caixa' : 'escala__peca', x: fmt2(cx - pMaior / 2), y: fmt2(cy - pMenor / 2), width: pMaior, height: pMenor, rx: caixa ? 0 : fmt2(Math.min(pMenor * 0.14, 14)) }, svg);
       const g = el('g', { class: 'escala__rot', 'font-size': fmt2(fs) }, svg);
       texto(g, fmt2(cx), fmt2(cy - pMenor / 2 - fs * 0.5), `${m2(med.maior)} m`, { 'text-anchor': 'middle' });
       texto(g, fmt2(cx - pMaior / 2 - fs * 0.45), fmt2(cy), `${m2(med.menor)} m`, { 'text-anchor': 'middle', transform: `rotate(-90 ${fmt2(cx - pMaior / 2 - fs * 0.45)} ${fmt2(cy)})` });

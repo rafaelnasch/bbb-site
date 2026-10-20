@@ -161,7 +161,7 @@ export function cartao(p, { pos = 0, S = 0, faixas = [], prioridade = false, lqi
   // abaixo da foto; na home (meta: false) o cartão leva só nome, medida e preço.
   const selos = [temPlanta ? html`<span class="selo">Planta oficial</span>` : '', esgotado ? html`<span class="selo selo--esgotado">Esgotado</span>` : ''].filter(Boolean);
   const linhaMeta = (meta && eti.length) || selos.length
-    ? html`<span class="cart__meta">${meta && eti.length ? html`<span class="cart__eti">${eti.join(' · ')}</span>` : ''}${selos.length ? html`<span class="cart__selos">${selos}</span>` : ''}</span>`
+    ? html`<span class="cart__meta">${meta && eti.length ? html`<span class="cart__eti">${eti.map((e, i) => html`<span class="cart__eti-i">${e}${i < eti.length - 1 ? ' ·' : ''}</span>${i < eti.length - 1 ? ' ' : ''}`)}</span>` : ''}${selos.length ? html`<span class="cart__selos">${selos}</span>` : ''}</span>`
     : '';
   return html`<li${attrs(dados)}>
 <a class="cart__a" href="${url(`${p.slug}.html`)}">

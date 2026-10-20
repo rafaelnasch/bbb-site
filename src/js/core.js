@@ -285,7 +285,7 @@
       const p = parado();
       mov.setAttribute('aria-pressed', String(p));
       const t = p ? 'Retomar movimento' : 'Pausar movimento';
-      $('.topo__mov-t', mov).textContent = t;
+      $('.topo__mov-t', mov).textContent = p ? 'Retomar' : 'Pausar';
       mov.setAttribute('aria-label', t);
       mov.title = t;
     };

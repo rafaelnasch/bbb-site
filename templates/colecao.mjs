@@ -300,7 +300,7 @@ export function paginas(ctx) {
     <div class="col-barra__acoes" data-so-js>
       <button class="col-btn" type="button" data-gaveta-abrir="col-filtros" aria-haspopup="dialog" aria-expanded="false">${icone('menu', { tamanho: 18 })}Filtrar<span class="col-btn__n num" data-col-nf hidden></span></button>
       <label class="col-ordem col-ordem--barra"><span class="vh">Ordenar por</span><select data-col-ordem>${ORDENS.map(([v, t]) => html`<option value="${v}">${t}</option>`)}</select></label>
-      ${grupos.size ? html`<button class="col-btn col-btn--vs" type="button" data-col-agrupar aria-pressed="true" aria-label="Versões juntas">${icone('camadas', { tamanho: 18 })}<span class="col-btn__t">Versões juntas</span></button>` : ''}
+      ${grupos.size ? html`<button class="col-btn col-btn--vs" type="button" data-col-agrupar aria-pressed="true" aria-label="Versões juntas">${icone('camadas', { tamanho: 18 })}<span>Versões<span class="col-btn__x"> juntas</span></span></button>` : ''}
       ${S ? html`<button class="col-btn" type="button" data-col-escala aria-expanded="false" aria-controls="col-escala" aria-label="Ver em escala">${icone('regua', { tamanho: 18 })}<span><span class="col-btn__x">Ver em </span><span class="col-btn__e">escala</span></span></button>` : ''}
     </div>
   </div>

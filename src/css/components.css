@@ -68,7 +68,8 @@ html:has(.gaveta[open]){overflow:hidden}
 
 /* ---------- Trilha e moldura: a base está no CSS crítico; aqui só o que pode chegar depois ---------- */
 @media (hover:hover){.trilha a:hover{color:var(--fg);text-decoration:underline}}
-.moldura__img{box-shadow:0 0 0 1px rgb(31 28 25/.06)}
+/* Foto do produto sem moldura (rodada 3): o fundo pedra basta; 1,5% de escala esconde o fio da borda do arquivo. */
+.moldura{overflow:hidden}.moldura__img{transform:scale(1.015)}
 
 /* ---------- Bandeja do comparador (SPEC 6.1) ---------- */
 .bandeja{position:fixed;left:0;right:0;bottom:var(--doca-h);z-index:40;padding:10px 0 calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--paper) 96%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--ink);border-top:1px solid var(--stone);--fg:var(--ink);--fg-2:var(--muted);--focus-ring:var(--focus);view-transition-name:bandeja;transition:transform var(--t-in) var(--ease-sheet),display var(--t-in) allow-discrete}

@@ -136,6 +136,7 @@
   function tabela() {
     const its = sel.map((s) => porSlug.get(s));
     const thead = $('[data-cmp-thead]');
+    $('[data-cmp-tab]')?.style.setProperty('--n', its.length);
     thead.innerHTML = `<tr><td class="cmp-canto"></td>${its.map((it, i) => {
       const opts = it.ts.length > 1 ? `<label class="cmp-tam"><span class="vh">Tamanho de ${esc(it.n)}</span><select data-cmp-tam="${esc(it.s)}">${it.ts.map((t, j) => `<option value="${j}"${j === (tam[it.s] || 0) ? ' selected' : ''}>${esc(t[0])}</option>`).join('')}</select></label>` : '';
       return `<th scope="col" class="cmp-col" style="--cor:${CORES[i][0]}"><span class="cmp-col__fio" aria-hidden="true"></span>${it.f ? `<img class="cmp-col__img" src="${esc(it.f[0])}" width="${it.f[1]}" height="${it.f[2]}" alt="" loading="lazy" decoding="async">` : '<span class="cmp-col__vazia">Foto sob consulta</span>'}<a class="cmp-col__nome" href="${esc(cfg.base + it.s)}.html">${esc(it.n)}</a>${opts}<button class="cmp-col__tirar" type="button" data-cmp-tirar="${esc(it.s)}">Tirar da comparação</button></th>`;

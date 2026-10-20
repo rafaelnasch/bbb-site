@@ -104,7 +104,9 @@ test('etiqueta e filtros omitem campo em conflito entre nome e ficha', () => {
   const li = /<li class="cart" data-slug="ofuro-duplo-toquio-com-hidro"[^>]*>/.exec(h)[0];
   assert.match(li, /data-lu=""/, 'Lugares em conflito fica fora do filtro');
   const corpo = /<li class="cart" data-slug="ofuro-duplo-toquio-com-hidro"[\s\S]*?<\/li>/.exec(h)[0];
-  assert.doesNotMatch(/<span class="cart__eti">([^<]*)</.exec(corpo)[1], /Individual/);
+  const eti = /<span class="cart__eti">([\s\S]*?)<\/span><\/span>/.exec(corpo);
+  assert.ok(eti, 'linha de etiquetas presente');
+  assert.doesNotMatch(eti[1].replace(/<[^>]+>/g, ''), /Individual/);
 });
 
 test('frase factual, texto da categoria, chip implícito e frete promocional sem a campanha vencida', () => {

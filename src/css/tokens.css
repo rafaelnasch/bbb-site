@@ -15,11 +15,12 @@
   /* luz quente (só traços, nunca texto pequeno) */
   --glow:#C8B9A3;
   /* fotos da fábrica (fundo verde-água): o fundo vira pedra só na apresentação; o arquivo não muda. O filtro
-     #pedra (templates/layout.mjs) separa por matiz: o que é azul-esverdeado vira pedra clara (~#E1DAD0) mantendo
-     a luz; a banheira, o selo e as peças escuras ficam quase como estão, com o branco neutro */
+     #pedra (templates/layout.mjs) separa por matiz e por luz: o que é azul-esverdeado e escuro vira pedra clara
+     (~#DAD1C4); o que é claro é sempre peça (a louça não fica lilás). A peça perde metade da saturação e ganha
+     um pouco de luz (branco neutro); a máscara é limiarizada depois do desfoque, sem franja verde-água na borda */
   --foto-filtro:url(#pedra);
   /* fotos reais (fábrica, lojas, obras): só a saturação baixa, para não brigar com a areia */
-  --foto-real:saturate(.55) sepia(.14) contrast(.94) brightness(1.03); --foto-fundo:#E1DAD0;
+  --foto-real:saturate(.55) sepia(.14) contrast(.94) brightness(1.03); --foto-fundo:#DAD1C4;
   /* traço de desenho no claro (contornos, régua, mapa, grade): pedra funda, no lugar do azul-claro */
   --trace:#7A6F63;
   /* botão de compra, contraste AA com texto branco (não mudar) */
