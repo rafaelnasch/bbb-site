@@ -10,9 +10,9 @@
 .esc__prog-b[aria-current="step"]::before{background:var(--brand)}
 .esc-p{display:grid;gap:14px;min-width:0;margin:0;padding:0;border:0}
 .esc-p__q{display:grid;gap:6px;padding:0;margin-bottom:4px;font-family:var(--f-display);font-weight:350;font-size:clamp(1.625rem,1.3rem + 1.4vw,2.25rem);line-height:1.12;letter-spacing:-.015em;text-wrap:balance}
-.esc-p__n{font:600 .75rem/1 var(--f-body);letter-spacing:.12em;color:var(--fg-2)}
+.esc-p__n{font:500 .75rem/1 var(--f-body);letter-spacing:.12em;color:var(--fg-2)}
 .esc-p__ajuda,.esc-nota{font-size:.875rem;line-height:1.5;color:var(--fg-2);max-width:56ch}
-.esc-p__sub{margin-top:6px;font:600 .75rem/1.4 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
+.esc-p__sub{margin-top:6px;font:500 .75rem/1.4 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
 .esc-p__links{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.875rem}
 .esc-p__links a{display:inline-flex;align-items:center;min-height:44px}
 .esc-ops{display:flex;flex-wrap:wrap;gap:8px}
@@ -21,14 +21,14 @@
 .esc-op>span{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:10px 18px;border:1px solid var(--rule);border-radius:var(--radius-chip);font-size:1rem;line-height:1.25;transition:border-color var(--t-ui),background-color var(--t-ui),color var(--t-ui),transform var(--t-press) var(--ease-out)}
 .esc-op:active>span{transform:scale(.97)}
 .esc-op .num{color:var(--fg-2);font-size:.8125rem}
-.esc-op input:checked+span{background:var(--ink);border-color:var(--ink);color:var(--porcelain)}
+.esc-op input:checked+span{background:var(--ink);border-color:var(--ink);color:var(--day)}
 .esc-op input:checked+span .num{color:var(--muted-on-dark)}
 .esc-op input:focus-visible+span{outline:2px solid var(--focus-ring);outline-offset:2px}
 .esc-op input:disabled+span{opacity:.45;cursor:not-allowed}
 @media (hover:hover){.esc-op:hover>span{border-color:var(--fg)}}
 .esc-check{display:inline-flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;font-size:.9375rem}
 .esc-check{position:relative}.esc-check input{width:24px;height:24px;accent-color:var(--brand)}
-.esc__nav{position:sticky;bottom:calc(var(--bandeja-h,0px) + 8px);z-index:5;display:flex;gap:10px;padding:10px;border-radius:calc(var(--radius) + 10px);background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--sombra-1)}
+.esc__nav{position:sticky;bottom:calc(var(--bandeja-h,0px) + 8px);z-index:5;display:flex;gap:10px;padding:10px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--sombra-1)}
 .esc__nav .btn{flex:1 1 auto}
 /* Foco nunca escondido atrás da barra fixa Voltar/Avançar (WCAG 2.4.11): a rolagem do foco reserva a altura dela. */
 @media (max-width:1023px){html:has(.esc__nav){scroll-padding-bottom:calc(var(--bandeja-h,0px) + 112px)}.esc__form :is(input,button,select,a){scroll-margin-bottom:calc(var(--bandeja-h,0px) + 112px)}}
@@ -42,23 +42,22 @@
 .esc__res-h:focus{outline:none}
 .esc__res-acoes{display:flex;flex-wrap:wrap;gap:8px}
 .esc__resumo{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:14px 16px;border-radius:var(--radius);background:color-mix(in srgb,var(--fg) 5%,transparent);font-size:.875rem}
-.esc__resumo b{font-weight:600}
+.esc__resumo b{font-weight:500}
 .esc__resumo button{min-height:44px;padding:0 6px;text-decoration:underline;text-underline-offset:.2em}
 .esc__lista{display:grid;gap:16px;list-style:none;padding:0}
 @media (min-width:600px){.esc__lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .esc-c{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 14px;padding:12px;border:1px solid var(--rule);border-radius:var(--radius);background:color-mix(in srgb,var(--fg) 3%,var(--bg));animation:col-entra var(--t-in) var(--ease-out) both;animation-delay:calc(var(--i,0) * 30ms)}
 html[data-lite] .esc-c{animation:none}
-.esc-c__img{grid-row:1/span 6;width:96px;height:96px;border-radius:10px;object-fit:cover;background:var(--room-2)}
-.esc-c__vazia{grid-row:1/span 6;display:grid;place-items:center;width:96px;height:96px;border-radius:10px;background:var(--room-2);color:var(--muted-on-dark);font-size:.6875rem;text-align:center;padding:6px}
-.esc-c__eti{font:600 .625rem/1.4 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
+.esc-c__img{grid-row:1/span 6;width:96px;height:96px;border-radius:2px;object-fit:cover;background:var(--room-2)}
+.esc-c__vazia{grid-row:1/span 6;display:grid;place-items:center;width:96px;height:96px;border-radius:2px;background:var(--room-2);color:var(--muted-on-dark);font-size:.6875rem;text-align:center;padding:6px}
+.esc-c__eti{font:500 .625rem/1.4 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
 .esc-c__nome{font-family:var(--f-display);font-weight:400;font-size:1.0625rem;line-height:1.2}
 .esc-c__nome a{color:inherit;text-decoration:none}
 .esc-c__nome a::after{content:"";position:absolute;inset:0;border-radius:inherit}
 .esc-c__tam{font-size:.8125rem;color:var(--fg)}
 .esc-c__folga{font-size:.8125rem;color:var(--fg-2)}
 .esc-c__folga.is-quase{color:#9B2C1C}
-@media (prefers-color-scheme:dark){.esc-c__folga.is-quase{color:#FFAA9C}}
-.esc-c__preco{font-weight:600;font-size:.9375rem}
+.esc-c__preco{font-weight:500;font-size:.9375rem}
 .esc-c__acoes{grid-column:2;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .esc-c .cart__cmp{position:relative;z-index:1;min-height:44px;margin-top:2px;font-size:.8125rem}
 .esc-c .selo{position:relative;z-index:1}
@@ -71,7 +70,7 @@ html[data-lite] .esc-c{animation:none}
 .esc__solta button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border:1px dashed var(--fg-2);border-radius:var(--radius-chip);font-size:.875rem;text-align:left}
 .esc__solta button .num{color:var(--fg-2)}
 .esc__fim{display:grid;gap:12px;justify-items:start;padding-top:8px}
-.esc__escala{padding:clamp(14px,2vw,24px);border-radius:20px}
+.esc__escala{padding:clamp(14px,2vw,24px);border-radius:2px}
 .esc__escala .escala__fig{background:none;box-shadow:none;padding:0}
 .esc__escala-svg .p{fill:none;stroke:var(--glow);stroke-width:1;stroke-opacity:.75;vector-effect:non-scaling-stroke}
 .esc__escala-svg .p.is-quase{stroke:#FF6B81;stroke-dasharray:4 3}

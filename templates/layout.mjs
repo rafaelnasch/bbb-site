@@ -64,15 +64,15 @@ function ogPadrao() {
  * @param {string} [p.classe]     classe do <body>
  * @param {Array}  [p.critico]    extras de src/css/critico/ inline nesta página (ex.: ['peca'])
  * @param {string} [p.cssCritico] CSS crítico extra do tipo de página (já minificado)
- * @param {Array}  [p.fontes]     fontes pré-carregadas (chaves de assets.fontes, ex.: 'fonts/fraunces-titulo.woff2');
- *                                padrão: a Fraunces inteira (SPEC 5.3). A home pré-carrega só o subconjunto do H1.
+ * @param {Array}  [p.fontes]     fontes pré-carregadas (chaves de assets.fontes, ex.: 'fonts/newsreader-titulo.woff2');
+ *                                padrão: a Newsreader inteira (SPEC 5.3). A home pré-carrega só o subconjunto do H1.
  * @param {boolean}[p.modulosTardios] módulos da página só pedidos depois do load (core.js), fora do caminho do LCP
  * @param {boolean}[p.cssAposPintura] o CSS do site só é pedido depois da primeira pintura (core.js); a primeira
  *                                tela tem de estar inteira no CSS crítico. Sem JS, o <noscript> carrega o CSS
  * @param {boolean}[p.cssBloqueante] o site.css entra como folha normal (bloqueia a primeira pintura): páginas de
  *                                leitura (institucionais, 404), cuja primeira tela tem muitos componentes; sem isso
  *                                a chegada tardia do site.css desloca o conteúdo (CLS) e o LCP delas é texto
- * @param {boolean}[p.fontesAposPintura] tira do CSS crítico as @font-face da Fraunces e da Open Sans (vêm no
+ * @param {boolean}[p.fontesAposPintura] tira do CSS crítico as @font-face da Newsreader e da Jost (vêm no
  *                                site.css, pedido depois da primeira pintura): na primeira pintura só a fonte do H1
  *                                é baixada; o resto usa o fallback com métricas ajustadas. Exige cssAposPintura
  * @param {object} [p.rodapeTardio] alturas reservadas {m,t,d} (px, iguais ou menores que as reais) para pular o

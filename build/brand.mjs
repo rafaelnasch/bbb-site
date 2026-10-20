@@ -1,5 +1,5 @@
 // Marca (SPEC 5.5): roda no Mac e grava em public/brand/ (versionado). Nada é redesenhado:
-// - logo azul oficial copiado como está;
+// - logo azul oficial copiado como está, e reduzido para 40 px de altura (cabeçalho claro);
 // - logo claro para a sala escura: a mesma forma (canal alfa do PNG oficial) pintada de --porcelain;
 // - favicons reduzidos a partir da gota oficial de 300 px (nunca ampliados);
 // - imagem de compartilhamento padrão 1200 x 630, sala escura com o logo claro no tamanho natural,
@@ -34,6 +34,9 @@ await sharp({ create: { width: meta.width, height: meta.height, channels: 3, bac
 // Logo claro no tamanho exibido no cabeçalho (40 px de altura, telas 1x), PNG com paleta: só redução, nunca
 // ampliação (SPEC 0.8). Telas densas usam o original de 206 x 99 (2x), que pesa menos que um 2x reamostrado.
 await sharp(join(OUT, 'logo-bbb-claro-206x99.png')).resize({ height: 40 }).png({ compressionLevel: 9, palette: true, colors: 32, effort: 10 }).toFile(join(OUT, 'logo-bbb-claro-h40.png'));
+
+// Logo azul oficial no tamanho do cabeçalho claro (40 px de altura, telas 1x): só redução, nunca ampliação.
+await sharp(join(SRC, LOGO)).resize({ height: 40 }).png({ compressionLevel: 9, palette: true, colors: 64, effort: 10 }).toFile(join(OUT, 'logo-bbb-azul-h40.png'));
 
 const gota = join(SRC, GOTA);
 await sharp(gota).resize(32, 32).png({ compressionLevel: 9 }).toFile(join(OUT, 'favicon-32.png'));

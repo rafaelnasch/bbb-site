@@ -28,8 +28,8 @@ const fotos = JSON.parse(readFileSync(join(paths.public, 'media', 'p', 'manifest
 // Tipografia da SPEC 5.3 embutida no template (data URI), sem depender de fonte instalada no Mac:
 // sem isto o Chromium cai em Georgia e Helvetica.
 const fonte = (arq) => `data:font/woff2;base64,${readFileSync(join(paths.root, 'src', 'fonts', arq)).toString('base64')}`;
-const FONTES_CSS = `@font-face{font-family:"Fraunces";src:url(${fonte('fraunces-var-latin.woff2')}) format("woff2");font-weight:300 500;font-style:normal}
-  @font-face{font-family:"Open Sans";src:url(${fonte('opensans-var-latin.woff2')}) format("woff2");font-weight:400 700;font-style:normal}`;
+const FONTES_CSS = `@font-face{font-family:"Newsreader";src:url(${fonte('newsreader-var-latin.woff2')}) format("woff2");font-weight:300 500;font-style:normal}
+  @font-face{font-family:"Jost";src:url(${fonte('jost-var-latin.woff2')}) format("woff2");font-weight:300 600;font-style:normal}`;
 
 // Cache por conteúdo: a chave é o sha1 do HTML completo (texto, foto e fontes em data URI). Se nome,
 // medida, foto ou template mudarem, a chave muda e a imagem é refeita; o manifesto anterior guarda
@@ -84,7 +84,7 @@ function pagina({ foto, etiqueta, titulo, linha, logo, vazio }) {
   *{box-sizing:border-box;margin:0}
   html,body{width:1200px;height:630px;overflow:hidden}
   body{background:radial-gradient(120% 90% at 70% 40%,#0C2A3D 0%,#071C2B 60%,#04121C 100%);color:#F3F6F8;
-    font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;display:flex;align-items:center;padding:56px 64px;gap:56px}
+    font-family:"Jost","Helvetica Neue",Helvetica,Arial,sans-serif;display:flex;align-items:center;padding:56px 64px;gap:56px}
   .moldura{flex:0 0 470px;height:470px;border-radius:14px;padding:22px;background:#F3F6F8;
     box-shadow:0 0 0 1px rgba(141,187,217,.35),0 40px 90px -20px ${foto ? foto.wall : '#0C2A3D'}cc,0 0 120px -10px rgba(233,184,124,.25)}
   .moldura .img{width:100%;height:100%;border-radius:4px;background:${foto ? foto.wall : '#0C2A3D'} center/cover no-repeat;${foto ? `background-image:url(${foto.uri})` : ''}}
@@ -92,7 +92,7 @@ function pagina({ foto, etiqueta, titulo, linha, logo, vazio }) {
     text-align:center;padding:40px;font-size:26px;line-height:1.35;color:#4A5862;background:#E9DFD0}
   .texto{flex:1;display:flex;flex-direction:column;gap:22px;min-width:0}
   .etq{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#8DBBD9}
-  h1{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:400;font-size:${tamTitulo}px;line-height:1.08;letter-spacing:-.01em}
+  h1{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:300;font-size:${tamTitulo}px;line-height:1.08;letter-spacing:-.01em}
   .linha{font-size:26px;color:#F3F6F8;font-variant-numeric:tabular-nums;opacity:.92}
   .traco{width:72px;height:2px;background:#E9B87C}
   .logo{margin-top:18px;align-self:flex-start;width:auto;height:${Math.round(logo.h * 0.62)}px}
@@ -134,14 +134,14 @@ async function render(html, arquivo, src) {
   await page.setContent(html, { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
   // Falha se a fonte embutida não carregou (o fallback silencioso foi o defeito anterior).
-  const ok = await page.evaluate(() => document.fonts.check('400 60px Fraunces') && document.fonts.check('400 26px "Open Sans"') && [...document.fonts].every((f) => f.status === 'loaded'));
+  const ok = await page.evaluate(() => document.fonts.check('300 60px Newsreader') && document.fonts.check('400 26px Jost') && [...document.fonts].every((f) => f.status === 'loaded'));
   if (!ok) throw new Error(`og: fontes da SPEC 5.3 não carregaram em ${arquivo}`);
   await page.screenshot({ path: arquivo, type: 'jpeg', quality: 85, clip: { x: 0, y: 0, width: 1200, height: 630 } });
   refeitas++;
   return chave;
 }
 
-const manifest = { gerado_em: new Date().toISOString(), largura: 1200, altura: 630, fontes: ['Fraunces', 'Open Sans'], produtos: {}, colecoes: {}, padrao: 'media/og/padrao.jpg', padrao_info: null };
+const manifest = { gerado_em: new Date().toISOString(), largura: 1200, altura: 630, fontes: ['Newsreader', 'Jost'], produtos: {}, colecoes: {}, padrao: 'media/og/padrao.jpg', padrao_info: null };
 
 const ROTULO_TIPO = { banheira: 'Banheira', spa: 'Spa', ofuro: 'Ofurô', sauna: 'Sauna', acessorio: 'Acessório' };
 let n = 0;

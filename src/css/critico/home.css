@@ -1,32 +1,32 @@
 /* CSS crítico da home (SPEC 9.1 e 12): só a abertura. O resto está em paginas/home.css. */
-/* Subconjunto da Fraunces só com os glifos do H1 (build/fontes-titulo.mjs), pré-carregado: o H1 pinta
+/* Subconjunto da Newsreader só com os glifos do H1 (build/fontes-titulo.mjs), pré-carregado: o H1 pinta
    com a fonte final logo na primeira pintura e não gera um segundo LCP na troca de fonte. */
-@font-face{font-family:"Fraunces Titulo";src:url("asset:fonts/fraunces-titulo.woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Newsreader Titulo";src:url("asset:fonts/newsreader-titulo.woff2");font-weight:300;font-display:swap}
 .home-abre{position:relative;isolation:isolate;overflow:clip;display:grid;align-items:end;min-height:calc(100svh - var(--topo-h));padding:calc(var(--cab-h) + 28px) 0 clamp(28px,4vw,56px)}
 .home-abre__agua,.home-abre__vapor{position:absolute;inset:0;z-index:-2}
 .home-abre__agua{background:var(--room)}
 .home-abre__in{display:grid;gap:18px}
-.home-abre__h1{max-width:17ch;font-family:"Fraunces Titulo",var(--f-display);font-size:clamp(2.375rem,1.1rem + 3.2vw,4.25rem);line-height:1.02}
+.home-abre__h1{max-width:17ch;font-family:"Newsreader Titulo",var(--f-display);font-size:clamp(2.375rem,1.1rem + 3.2vw,4.25rem);line-height:1.02}
 .home-abre__lead{max-width:52ch;font-size:clamp(1.0625rem,1rem + .45vw,1.3125rem);line-height:1.5}
 .home-abre__rolar{display:inline-flex;align-items:center;min-height:44px;font-size:.9375rem}
 .home-abre__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
 /* Filme quadrado da coleção (sem moldura e sem legenda gravadas). */
 .quadro{position:relative;overflow:hidden;aspect-ratio:1}
-.quadro img,.quadro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.quadro img,.quadro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--foto-filtro)}
 /* Celular e tablet: as três portas lado a lado, cada uma com a foto real da coleção em cima do nome. */
 .portas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;padding:0}
 .porta__a{display:grid;align-content:start;gap:8px;height:100%;padding:5px 5px 10px;border:1px solid var(--rule);border-radius:var(--radius);color:var(--fg);text-decoration:none}
-.porta__mol{position:relative;display:block;aspect-ratio:1;overflow:hidden}
+.porta__mol{position:relative;display:block;aspect-ratio:1;overflow:hidden;background:#A39C92}.porta__mol img{filter:var(--foto-filtro)}
 .porta__txt{display:grid;padding-inline:4px}
 .porta__n{font-size:.8125rem}
-.porta__nome{font:350 clamp(.9375rem,.4rem + 2.6vw,1.375rem)/1.15 var(--f-display)}
+.porta__nome{font:300 clamp(1rem,.4rem + 2.6vw,1.5rem)/1.15 var(--f-display)}
 .porta__seta{display:none}
 /* Celular e tablet: sem a vitrine (as portas já trazem a foto real de cada coleção); título, portas e o botão
    de escolha cabem na primeira tela, e o parágrafo vem depois. */
 .vitrine{display:grid;gap:10px;width:min(100%,44svh,520px)}
 .vitrine__mol{display:grid;padding:10px}
 .vitrine__cena,.vitrine__luz,.vitrine__item{grid-area:1/1}
-.vitrine__leg{display:grid}.vitrine__item{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid}.vitrine__nome{font:600 var(--fs-label)/1.3 var(--f-body);letter-spacing:.12em;text-transform:uppercase}.vitrine__n{font-size:.875rem}
+.vitrine__leg{display:grid}.vitrine__item{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid}.vitrine__nome{font:500 var(--fs-label)/1.3 var(--f-body);letter-spacing:.2em;text-transform:uppercase}.vitrine__n{font-size:.875rem}
 .vitrine__cena:not(.is-ativa),.vitrine__item:not(.is-ativa){opacity:0}
 @media (max-width:1023px){.home-abre__in>*{order:3}.home-abre__in>.etiqueta,.home-abre__h1{order:0}.home-abre__in>.portas{order:1}.home-abre__acoes{order:2}.home-abre__in>.vitrine{display:none}}
 @media (min-width:1024px){

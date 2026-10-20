@@ -24,7 +24,7 @@ const JS_INLINE = ['boot.js', 'vt.js'];
 const PACOTES = { produto: ['galeria.js', 'monte.js', 'seletor.js', 'planta.js', 'escala.js'] };
 
 /** @font-face das fontes inteiras no CSS crítico minificado (não pega os fallbacks nem o subconjunto do H1). */
-export const FONT_FACES_INTEIRAS = /@font-face\{font-family:(?:Fraunces|"?Open Sans"?);[^}]*\}/g;
+export const FONT_FACES_INTEIRAS = /@font-face\{font-family:(?:"?Newsreader"?|"?Jost"?);[^}]*\}/g;
 
 const hash = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 10);
 const gz = (s) => gzipSync(Buffer.from(s), { level: 9 }).length;
@@ -94,12 +94,12 @@ export function construirAssets({ dist = paths.dist } = {}) {
   }
   const dirPaginas = join(paths.src, 'css', 'paginas');
   const extras = existsSync(dirPaginas) ? readdirSync(dirPaginas).filter((n) => n.endsWith('.css')).sort().map((n) => `paginas/${n}`) : [];
-  // As @font-face das fontes inteiras (Fraunces e Open Sans) também vão no site.css: a página com
+  // As @font-face das fontes inteiras (Newsreader e Jost) também vão no site.css: a página com
   // fontesAposPintura (home) as tira do CSS crítico, e o pedido das fontes sai junto com o site.css,
   // depois da primeira pintura; até lá vale o fallback com métricas ajustadas (base.css). Nas demais
   // páginas a regra repetida é inofensiva (mesma família e mesmo arquivo).
   const fontFaces = cssCritico.match(FONT_FACES_INTEIRAS) || [];
-  if (fontFaces.length !== 2) throw new Error(`CSS crítico: esperadas 2 @font-face inteiras (Fraunces e Open Sans), achadas ${fontFaces.length}`);
+  if (fontFaces.length !== 2) throw new Error(`CSS crítico: esperadas 2 @font-face inteiras (Newsreader e Jost), achadas ${fontFaces.length}`);
   const siteMin = fontFaces.join('') + minCss(trocarAssets(lerCss([...CSS_SITE, ...extras])), 'site.css');
   const siteNome = `site.${hash(siteMin)}.css`;
   writeFileSync(join(out, siteNome), siteMin);
@@ -156,7 +156,7 @@ export function construirAssets({ dist = paths.dist } = {}) {
     inlineHash,
     modulos,
     fontes,
-    preload: [fontes['fonts/fraunces-var-latin.woff2']],
+    preload: [fontes['fonts/newsreader-var-latin.woff2']],
     relatorio,
   };
 }

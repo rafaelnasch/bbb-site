@@ -29,29 +29,30 @@ export function razao(a, b) {
   return (l1 + 0.05) / (l2 + 0.05);
 }
 
-// [texto, fundo, mínimo, uso]. '#FFFFFF' = branco literal dos botões; '#1F3B4C' = cartão do seletor de
-// tamanho no modo escuro (paginas/produto.css), fora do crítico para não pesar no orçamento de 14 KB.
+// [texto, fundo, mínimo, uso]. '#FFFFFF' = branco literal dos botões. Direção "spa de hotel, claro"
+// (20/10/2026): sem modo escuro automático; a sala escura só existe na planta técnica.
 export const PARES = [
   ['--ink', '--day', 4.5, 'texto do dia'],
   ['--muted', '--day', 4.5, 'texto secundário do dia'],
   ['--ink', '--sand', 4.5, 'texto sobre areia'],
   ['--muted', '--sand', 4.5, 'texto secundário sobre areia'],
   ['--brand', '--day', 4.5, 'link e destaque azul no dia'],
+  ['--brand', '--sand', 4.5, 'link e destaque azul sobre pedra'],
+  ['--ink', '--paper', 4.5, 'texto sobre a superfície clara'],
+  ['--muted', '--paper', 4.5, 'texto secundário sobre a superfície clara'],
+  ['--ink', '--stone', 4.5, 'texto sobre pedra escura'],
+  ['--day', '--ink', 4.5, 'botão em tinta'],
+  ['--day', '--btn-hover', 4.5, 'botão em tinta (hover)'],
+  ['--porcelain', '--room-2', 4.5, 'texto da sala escura 2'],
+  ['--room', '--porcelain', 4.5, 'botão claro na sala escura'],
   ['--porcelain', '--room', 4.5, 'texto da sala'],
-  ['--porcelain', '--room-2', 4.5, 'texto da sala 2 e dia no modo escuro'],
   ['--porcelain', '--blueprint', 4.5, 'texto sobre a planta'],
   ['--porcelain', '--brand-deep', 4.5, 'barra superior'],
   ['--muted-on-dark', '--room', 4.5, 'texto secundário da sala'],
   ['--muted-on-dark', '--room-2', 4.5, 'texto secundário da sala 2'],
   ['--muted-on-dark', '--brand-deep', 4.5, 'texto secundário da barra superior'],
   ['--line', '--room', 4.5, 'etiqueta azul-clara na sala'],
-  ['--line', '--room-2', 4.5, 'selo azul-claro no modo escuro'],
-  ['--line', '#1F3B4C', 4.5, 'selo Planta oficial no cartão de tamanho (modo escuro)'],
-  ['--glow', '#1F3B4C', 4.5, 'selo Medida a confirmar no cartão de tamanho (modo escuro)'],
-  ['--muted-on-dark', '#1F3B4C', 4.5, 'texto secundário no cartão de tamanho (modo escuro)'],
-  ['--porcelain', '#1F3B4C', 4.5, 'rótulo do cartão de tamanho (modo escuro)'],
   ['--muted-on-dark', '--blueprint', 4.5, 'texto secundário sobre a planta'],
-  ['--muted-on-dark', '#284A60', 4.5, 'texto secundário sobre fundo azul clareado (pior caso medido no comparador escuro)'],
   ['--ink', '--porcelain', 4.5, 'botão claro'],
   ['#FFFFFF', '--whats-btn', 4.5, 'botão de compra'],
   ['#FFFFFF', '--whats-btn-hover', 4.5, 'botão de compra (hover)'],
@@ -59,6 +60,7 @@ export const PARES = [
   ['#FFFFFF', '--brand-deep', 4.5, 'botão azul (hover)'],
   ['--price-old', '#FFFFFF', 4.5, 'preço antigo sobre branco'],
   ['--focus', '--day', 3, 'contorno de foco no dia'],
+  ['--focus', '--sand', 3, 'contorno de foco sobre pedra'],
   ['--focus-on-dark', '--room', 3, 'contorno de foco na sala'],
   ['--focus-on-dark', '--room-2', 3, 'contorno de foco na sala 2'],
   ['--focus-on-dark', '--brand-deep', 3, 'contorno de foco na barra superior'],

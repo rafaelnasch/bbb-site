@@ -5,7 +5,7 @@
 .col-topo__fundo{position:absolute;inset:0;z-index:-1}
 /* Destaque do topo: só a partir de 1024 px; no celular a grade sobe para a primeira tela. */
 .col-topo__filme{display:none;border-radius:var(--radius);overflow:hidden}
-.col-topo__filme *{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.col-topo__filme *{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.col-topo__filme :is(img,video){filter:var(--foto-filtro)}
 .col-topo__in{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 .col-topo__h1{max-width:15ch}
 .col-topo__frase{max-width:46ch;color:var(--fg-2);font-size:clamp(1.0625rem,1rem + .6vw,1.4375rem);line-height:1.45}
@@ -24,8 +24,8 @@
 .cart{position:relative;min-width:0;display:flex;flex-direction:column}
 .cart__a{flex:1;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none}
 .cart__selos{min-height:28px}.cart__base{margin-top:auto;display:grid;gap:4px}.cart__med{display:flex;align-items:center;gap:8px}
-.cart__mol{--wall:var(--room-2);position:relative;display:block;padding:clamp(6px,4%,20px);border-radius:var(--radius);background:var(--wall)}
-.cart__img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px}
+.cart__mol{position:relative;display:block;background:#A39C92}
+.cart__img{width:100%;aspect-ratio:1;object-fit:cover;filter:var(--foto-filtro)}
 .cart__vazia{display:grid;aspect-ratio:1}
 /* Versões irmãs: só a primeira aparece, com as outras em chips (sem JS, todas aparecem). */
 .js [data-agrupada]{display:none}

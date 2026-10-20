@@ -568,7 +568,7 @@ export function paginas(ctx) {
       sobre: true,
       classe: 'pg-home',
       critico: ['home'],
-      fontes: ['fonts/fraunces-titulo.woff2'],
+      fontes: ['fonts/newsreader-titulo.woff2'],
       modulosTardios: true,
       cssAposPintura: true,
       fontesAposPintura: true,

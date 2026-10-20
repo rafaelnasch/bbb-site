@@ -1,16 +1,15 @@
 /* Base: fontes, reset, temas sala/dia, tipografia, grade, botões, foco, reveal, lite, View Transitions. */
 
-/* Fontes auto-hospedadas (SPEC 5.3), já cortadas no subconjunto latino (build/fontes.mjs).
+/* Fontes auto-hospedadas (SPEC 5.3, revista em 20/10/2026), já cortadas no subconjunto latino (build/fontes.mjs).
    "asset:" é trocado pelo caminho com hash no build. */
-@font-face{font-family:"Fraunces";src:url("asset:fonts/fraunces-var-latin.woff2") format("woff2");font-weight:300 500;font-style:normal;font-display:swap}
-@font-face{font-family:"Open Sans";src:url("asset:fonts/opensans-var-latin.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
-/* Reservas com métrica ajustada: a troca de fonte não empurra o layout (CLS). Fraunces × Georgia medidos no
-   Chromium em títulos de 24 a 44 px (pesos 300 e 350): largura de 99% a 103%; ascent 1956 e descent 510 em 2000. */
-@font-face{font-family:"Fraunces Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:100%;ascent-override:98%;descent-override:26%;line-gap-override:0%}
-/* Open Sans × Arial medidos no Chromium com texto pt-BR (largura): 400 = 104,24% da Arial; 600 = 100,65% da
-   Arial Bold. Ascent e descent = métrica da Open Sans (2189 e 600 em 2048) divididos pelo size-adjust. */
-@font-face{font-family:"Open Sans Fallback";src:local("Arial"),local("Helvetica");font-weight:100 549;size-adjust:104.24%;ascent-override:102.54%;descent-override:28.11%;line-gap-override:0%}
-@font-face{font-family:"Open Sans Fallback";src:local("Arial Bold"),local("Arial-BoldMT");font-weight:550 900;size-adjust:100.65%;ascent-override:106.19%;descent-override:29.11%}
+@font-face{font-family:"Newsreader";src:url("asset:fonts/newsreader-var-latin.woff2") format("woff2");font-weight:300 500;font-style:normal;font-display:swap}
+@font-face{font-family:Jost;src:url("asset:fonts/jost-var-latin.woff2") format("woff2");font-weight:300 600;font-style:normal;font-display:swap}
+/* Reservas com métrica ajustada (CLS), medidas no Chromium com texto pt-BR: Newsreader 300 = 98,7% da Georgia;
+   Jost 400 = 103,3% da Arial e Jost 500 = 97,9% da Arial Bold. Ascent e descent = métrica da fonte (em 1000)
+   divididos pelo size-adjust. */
+@font-face{font-family:"Newsreader Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:98.7%;ascent-override:74.5%;descent-override:26.8%;line-gap-override:0%}
+@font-face{font-family:"Jost Fallback";src:local("Arial"),local("Helvetica");font-weight:100 449;size-adjust:103.3%;ascent-override:103.6%;descent-override:36.3%;line-gap-override:0%}
+@font-face{font-family:"Jost Fallback";src:local("Arial Bold"),local("Arial-BoldMT");font-weight:450 900;size-adjust:97.9%;ascent-override:109.3%;descent-override:38.3%}
 
 /* Reset */
 *,*::before,*::after{box-sizing:border-box}
@@ -24,31 +23,26 @@ button{cursor:pointer;background:none;border:0;padding:0}
 a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
 ul[role="list"],ol[role="list"]{list-style:none;padding:0}
 p,li,dd,figcaption{text-wrap:pretty}
+b,strong{font-weight:500}
 [hidden]{display:none!important}
 
-/* Temas: sala escura (imersão) e luz do dia (decisão e leitura longa). SPEC 5.1 */
-.dia{--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:color-mix(in srgb,var(--ink) 14%,transparent);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
+/* Temas (direção "spa de hotel, claro"): .dia e .sala são claros (areia e pedra). A sala escura de verdade
+   (.sala-escura, .sala--planta, em components.css: só aparece abaixo da dobra) fica só para a planta técnica. Dentro de .sala clara, os nomes da sala escura
+   (--room, --porcelain, --line...) recebem os valores claros: o CSS das páginas que os usa segue legível. */
+.dia{--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:var(--stone);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
 .dia--areia{--bg:var(--sand)}
-.sala{--bg:var(--room);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:var(--rule-sala);--focus-ring:var(--focus-on-dark);background:var(--bg);color:var(--fg);color-scheme:dark}
-.sala--2{--bg:var(--room-2)}
-.sala--planta{--bg:var(--blueprint)}
-@media (prefers-color-scheme:dark){
-  /* O :root também troca: conteúdo posto direto no <main>, sem .dia ou .sala, segue legível. */
-  :root,.dia{--bg:var(--room-2);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:var(--rule-sala);--focus-ring:var(--focus-on-dark)}
-  html,body{background:var(--room-2);color:var(--porcelain)}
-  html{color-scheme:dark}
-  .dia--areia{--bg:#10324A}
-}
+.sala{--room:var(--day);--room-2:var(--sand);--porcelain:var(--ink);--muted-on-dark:var(--muted);--line:var(--brand);--glow:var(--stone);--focus-on-dark:var(--focus);--rule-sala:var(--stone);--bg:var(--day);--fg:var(--ink);--fg-2:var(--muted);--rule:var(--stone);--focus-ring:var(--focus);background:var(--bg);color:var(--fg)}
+.sala--2{--bg:var(--sand)}
 
-/* Tipografia */
-h1,h2,h3,.t-h3,.t-display{font-family:var(--f-display);font-optical-sizing:auto;font-weight:350;line-height:1.06;letter-spacing:-.018em;text-wrap:balance}
-h1{font-size:var(--fs-h1);font-weight:300}
+/* Tipografia: serifada fina nos títulos, sem serifa leve no corpo, rótulos em versalete espaçado. */
+h1,h2,h3,.t-h3,.t-display{font-family:var(--f-display);font-weight:300;line-height:1.08;letter-spacing:-.012em;text-wrap:balance}
+h1{font-size:var(--fs-h1)}
 h2{font-size:var(--fs-h2);line-height:1.12}
-h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
-.etiqueta{display:inline-flex;align-items:center;gap:.6em;font:600 var(--fs-label)/1.35 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
-.etiqueta--linha::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
-.lead{font-size:clamp(1.125rem,1.02rem + .5vw,1.3125rem);line-height:1.55;color:var(--fg-2);max-width:62ch}
-.pequeno{font-size:var(--fs-small);line-height:1.5}
+h3,.t-h3{font-size:var(--fs-h3);font-weight:400;line-height:1.22;letter-spacing:-.005em}
+.etiqueta{display:inline-flex;align-items:center;gap:.8em;font:500 var(--fs-label)/1.35 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--fg-2)}
+.etiqueta--linha::before{content:"";width:32px;height:1px;background:currentColor;opacity:.5}
+.lead{font-size:clamp(1.0625rem,1rem + .4vw,1.25rem);font-weight:300;line-height:1.65;color:var(--fg-2);max-width:60ch}
+.pequeno{font-size:var(--fs-small);line-height:1.55}
 .num{font-variant-numeric:tabular-nums lining-nums}
 
 /* Layout (SPEC 5.4). A grade de 12/6/4 colunas está em utilitarios.css. */
@@ -56,36 +50,36 @@ h3,.t-h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.01em}
 .secao{padding-block:clamp(56px,6vw + 24px,128px)}
 .vh{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 
-/* Botões (SPEC 10.3): alvo mínimo 48 px, texto quebra linha, nunca sai da tela. */
-.btn{--b-bg:var(--brand);--b-fg:#fff;--b-bd:transparent;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;max-width:100%;padding:.72em 1.4em;border:1px solid var(--b-bd);border-radius:var(--radius-chip);background:var(--b-bg);color:var(--b-fg);font:600 1rem/1.25 var(--f-body);letter-spacing:.005em;text-align:center;text-decoration:none;white-space:normal;-webkit-tap-highlight-color:transparent}
+/* Botões (SPEC 10.3): retangulares, alvo mínimo 48 px, texto quebra linha, nunca sai da tela. */
+.btn{--b-bg:var(--ink);--b-fg:var(--day);--b-bd:transparent;display:inline-flex;align-items:center;justify-content:center;gap:.7em;min-height:48px;max-width:100%;padding:.8em 1.6em;border:1px solid var(--b-bd);border-radius:var(--radius);background:var(--b-bg);color:var(--b-fg);font:500 .875rem/1.25 var(--f-body);letter-spacing:.1em;text-transform:uppercase;text-align:center;text-decoration:none;white-space:normal;-webkit-tap-highlight-color:transparent}
 .btn .ic{flex:none}
-.btn--whats{--b-bg:var(--whats-btn);box-shadow:0 10px 30px -14px rgb(30 127 58 / .8)}
-.btn--claro{--b-bg:var(--porcelain);--b-fg:var(--ink)}
-.btn--fantasma{--b-bg:transparent;--b-fg:var(--fg);--b-bd:color-mix(in srgb,var(--fg) 38%,transparent)}
+.btn--whats{--b-bg:var(--whats-btn);--b-fg:#fff}
+.btn--claro{--b-bg:var(--porcelain);--b-fg:var(--room)}
+.btn--fantasma{--b-bg:transparent;--b-fg:var(--fg);--b-bd:color-mix(in srgb,var(--fg) 45%,transparent)}
 .btn--bloco{width:100%}
 
 /* Foco visível: 2 px, AA nos dois fundos (SPEC 16). */
-:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px;border-radius:6px}
-.pular{position:absolute;left:12px;top:-100px;z-index:100;padding:12px 18px;border-radius:10px;background:var(--porcelain);color:var(--ink);font-weight:600;text-decoration:none}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px;border-radius:var(--radius)}
+.pular{position:absolute;left:12px;top:-100px;z-index:100;padding:12px 18px;background:var(--paper);color:var(--ink);font-weight:500;text-decoration:none}
 .pular:focus{top:12px}
 
 
 /* Reveal (SPEC 6.1): IntersectionObserver de 700 ms com escalonamento de 70 ms; onde o navegador
    suporta animation-timeline: view(), a própria rolagem conduz a entrada e o JS não observa nada. */
-.js [data-reveal]{opacity:0;transform:translate3d(0,18px,0);transition:opacity var(--t-reveal) var(--ease-out),transform var(--t-reveal) var(--ease-out);transition-delay:calc(var(--i,0) * var(--t-stagger))}
+.js [data-reveal]{opacity:0;transform:translate3d(0,12px,0);transition:opacity var(--t-reveal) var(--ease-out),transform var(--t-reveal) var(--ease-out);transition-delay:calc(var(--i,0) * var(--t-stagger))}
 .js [data-reveal].is-in{opacity:1;transform:none}
 @supports (animation-timeline:view()){
   @media (prefers-reduced-motion:no-preference){
     .js [data-reveal]{opacity:1;transform:none;transition:none;animation:rv-entra linear both;animation-timeline:view();animation-range:entry calc(2% + var(--i,0) * 4%) entry calc(58% + var(--i,0) * 4%)}
   }
 }
-@keyframes rv-entra{from{opacity:0;transform:translate3d(0,26px,0)}to{opacity:1;transform:none}}
+@keyframes rv-entra{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
 .rv-falhou [data-reveal]{opacity:1;transform:none;animation:none}
 
 /* Entrada do topo (tudo visível antes de 0,9 s; sem opacidade no título, que pode ser o LCP). */
-[data-intro]{animation:intro-sobe .62s var(--ease-out) both;animation-delay:calc(var(--i,0) * 80ms)}
+[data-intro]{animation:intro-sobe 1s var(--ease-out) both;animation-delay:calc(var(--i,0) * 110ms)}
 [data-intro="mascara"]{animation-name:intro-mascara}
-@keyframes intro-sobe{from{opacity:0;transform:translate3d(0,14px,0)}}
+@keyframes intro-sobe{from{opacity:0;transform:translate3d(0,10px,0)}}
 @keyframes intro-mascara{from{clip-path:inset(0 0 100% 0);transform:translate3d(0,.35em,0)}to{clip-path:inset(-10% -5% -20% -5%)}}
 
 /* View Transitions entre páginas (SPEC 6.1). Sem suporte: navegação normal. */

@@ -27,7 +27,7 @@
 /* Desktop: título mais baixo e moldura no limite da altura da tela, para a peça inteira caber na primeira tela. */
 @media (min-width:1024px){.prod-topo__h1{max-width:min(28ch,56vw - var(--pad-x));font-size:clamp(2.25rem,1rem + 2.4vw,3.5rem)}.prod__peca{width:min(100%,max(480px,100svh - 96px))}.prod-topo--desenho .prod-topo__h1{max-width:min(28ch,52vw - var(--pad-x) - 24px)}.prod-topo--sem-arte .prod-topo__h1{max-width:28ch}.prod__grade{grid-template-columns:7fr 5fr;column-gap:40px}.prod-topo__arte{top:calc(var(--cab-h) + 4px);bottom:6px;width:var(--arte-w,auto);max-width:60%;right:var(--arte-d,3%)}.prod__grade>*{grid-column:1}.prod__grade>.prod__decisao{grid-column:2;grid-row:1/span 5}}
 /* Coluna de decisão e miniaturas da galeria: com a foto na primeira tela, o topo da coluna também está nela. */
-.prod__decisao{padding:clamp(20px,2.4vw,32px);border-radius:22px}
+.prod__decisao{padding:clamp(20px,2.4vw,32px);border-radius:2px}
 .decisao__in{display:grid;gap:22px}
 .preco{display:flex;flex-wrap:wrap;gap:4px 14px}
 .preco__por{font:300 clamp(2.125rem,1.6rem + 2vw,2.875rem)/1 var(--f-display)}
@@ -37,3 +37,7 @@
 .versoes__chip{display:grid;min-height:56px;padding:10px 14px}
 /* Celular: o desenho em escala (com textos) não fica atrás do título; ele aparece inteiro na seção 6. */
 @media (max-width:1023px){.prod-topo--desenho .prod-topo__fundo{display:none}}
+/* Tom claro: a folha azul da planta (poster e filme) vira desenho escuro sobre a areia; a planta branca
+   perde a inversão da sala escura (o estilo inline do template vale para a sala; aqui prevalece). */
+.prod-topo--planta-folha .prod-topo__arte>*,.prod-topo--filme .prod-topo__arte>*{filter:grayscale(1) invert(1) contrast(.9);mix-blend-mode:multiply}
+.prod-topo--planta .prod-topo__img{filter:none!important;mix-blend-mode:multiply!important}

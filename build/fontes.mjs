@@ -1,7 +1,9 @@
 // Fontes auto-hospedadas (SPEC 5.3). Roda só no Mac, uma vez; a saída (src/fonts/*.woff2) é versionada.
 //
-// - Fraunces variável (eixos opsz 9 a 144 e peso limitado a 300 a 500), subconjunto latino.
-// - Open Sans variável (peso limitado a 400 a 700), subconjunto latino. Open Sans é a fonte real da marca.
+// - Newsreader variável (tamanho óptico fixo em 48, o de títulos; peso limitado a 300 a 500), subconjunto latino:
+//   títulos. A Cormorant Garamond foi testada e descartada: os acentos (ô, á) saem altos e deslocados em pt-BR.
+// - Jost variável (peso limitado a 300 a 600), subconjunto latino: corpo, interface e números.
+// Direção "spa de hotel, claro" (Rafael, 20/10/2026): serifada fina nos títulos e sem serifa leve no corpo.
 //
 // Origem: pacotes @fontsource-variable (SIL Open Font License 1.1, cópia em src/fonts/OFL-*.txt).
 // O corte de eixos usa fontTools (python3 -m fontTools.varLib.instancer), já instalado no Mac.
@@ -13,8 +15,8 @@ import { paths } from '../site.config.mjs';
 
 const VERSAO = '5.3.0';
 const FONTES = [
-  { pacote: '@fontsource-variable/fraunces', arquivo: 'fraunces-latin-opsz-normal.woff2', limites: ['wght=300:500'], saida: 'fraunces-var-latin.woff2', licenca: 'OFL-fraunces.txt' },
-  { pacote: '@fontsource-variable/open-sans', arquivo: 'open-sans-latin-wght-normal.woff2', limites: ['wght=400:700'], saida: 'opensans-var-latin.woff2', licenca: 'OFL-opensans.txt' },
+  { pacote: '@fontsource-variable/newsreader', arquivo: 'newsreader-latin-opsz-normal.woff2', limites: ['opsz=48', 'wght=300:500'], saida: 'newsreader-var-latin.woff2', licenca: 'OFL-newsreader.txt' },
+  { pacote: '@fontsource-variable/jost', arquivo: 'jost-latin-wght-normal.woff2', limites: ['wght=300:600'], saida: 'jost-var-latin.woff2', licenca: 'OFL-jost.txt' },
 ];
 
 const tmp = mkdtempSync(join(tmpdir(), 'bbb-fontes-'));

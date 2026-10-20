@@ -555,7 +555,7 @@ export function paginas(ctx) {
       ${decisao(p, { ...cx, aposPreco: html`${notaPrecosComoOpcao(p, produtos)}${versoes(p, fam)}` })}
     </section>
     <section class="prod__bloco prod__resumo" aria-label="Ficha em uma frase"><p class="prod-resumo"><span class="etiqueta">Ficha em uma frase</span><span data-campo="resumo">${p.d_resumo}</span></p></section>
-    ${planta ? html`<section class="prod__bloco prod__planta" id="planta" style="${CV}" aria-labelledby="planta-h">
+    ${planta ? html`<section class="prod__bloco prod__planta sala-escura" id="planta" style="${CV}" aria-labelledby="planta-h">
       <div class="prod__cab"><p class="etiqueta etiqueta--linha">${planta.temOficial ? 'Planta técnica oficial' : 'Desenho em escala'}</p>
       <h2 id="planta-h">${planta.temOficial ? 'O desenho é a obra' : 'As medidas, em escala'}</h2>
       <p class="prod__lead">${LEAD_PLANTA[planta.situacao]}</p></div>

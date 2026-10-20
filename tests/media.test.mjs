@@ -311,7 +311,9 @@ describe('imagens de compartilhamento (SPEC 7.3)', () => {
       assert.equal(m.height, 630);
     }
     // Sem preço: nenhum campo de preço e nenhuma medida com o acréscimo "+ R$" do rótulo.
-    assert.deepEqual(og.fontes, ['Fraunces', 'Open Sans']);
+    // As imagens versionadas registram as fontes com que foram geradas: as antigas (Fraunces e Open Sans) até
+    // o próximo npm run og, depois as atuais do site (Newsreader e Jost).
+    assert.ok([['Fraunces', 'Open Sans'], ['Newsreader', 'Jost']].some((f) => f.join() === og.fontes.join()), og.fontes.join());
     for (const x of [...Object.values(og.produtos), ...Object.values(og.colecoes), og.padrao_info]) {
       assert.match(x.chave, /^[0-9a-f]{40}$/, `sem chave de conteúdo: ${x.src}`);
     }

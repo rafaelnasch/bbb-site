@@ -63,12 +63,13 @@ test('contraste AA de todos os pares de token usados em texto (SPEC 13.12)', () 
   assert.deepEqual(falhas, []);
 });
 
-test('fontes auto-hospedadas: Fraunces e Open Sans woff2, só Fraunces com preload', () => {
+test('fontes auto-hospedadas: Newsreader e Jost woff2, só Newsreader com preload', () => {
   const p = paginas['_sistema.html'];
   const preloads = [...p.matchAll(/<link rel="preload" href="([^"]+)" as="font"/g)].map((m) => m[1]);
   assert.equal(preloads.length, 1);
-  assert.match(preloads[0], /fraunces-var-latin\.[0-9a-f]+\.woff2$/);
-  assert.match(p, /opensans-var-latin\.[0-9a-f]+\.woff2/);
+  assert.match(preloads[0], /newsreader-var-latin\.[0-9a-f]+\.woff2$/);
+  assert.match(p, /jost-var-latin\.[0-9a-f]+\.woff2/);
+  assert.doesNotMatch(p, /opensans|fraunces/i, 'Open Sans e Fraunces saíram do site');
   for (const m of p.matchAll(/url\("([^"]+\.woff2)"\)/g)) assert.ok(existsSync(join(DIST, m[1].slice(BASE_PATH.length))), m[1]);
 });
 
@@ -164,10 +165,14 @@ test('texto público: sem emoji, sem travessão em títulos, sem termos proibido
   }
 });
 
-test('foco na barra superior usa o anel claro; modo escuro troca as variáveis no :root', () => {
+test('tom claro: barra superior com o anel de foco azul, sem modo escuro automático; .sala clara troca os nomes da sala escura', () => {
+  // Direção "spa de hotel, claro" (20/10/2026): o site é claro em qualquer preferência do sistema; a sala
+  // escura existe só na planta técnica (.sala-escura e .sala--planta, no site.css).
   const css = R.assets.cssCritico;
-  assert.match(css, /\.topo\{--focus-ring:var\(--focus-on-dark\)/);
-  assert.match(css, /@media \(prefers-color-scheme:dark\)\{:root,\.dia\{[^}]*--fg:var\(--porcelain\)[^}]*--focus-ring:var\(--focus-on-dark\)/);
+  assert.match(css, /\.topo\{--focus-ring:var\(--focus\)/);
+  assert.doesNotMatch(css, /prefers-color-scheme/);
+  assert.match(css, /\.sala\{--room:var\(--day\);[^}]*--porcelain:var\(--ink\)/);
+  assert.doesNotMatch(css, /border-radius:(999px|50%|[3-9]px|[1-9]\d+px)/, 'cantos retos (até 2 px) no CSS crítico');
 });
 
 test('validate.mjs (SPEC 13) passa nas páginas geradas', async () => {

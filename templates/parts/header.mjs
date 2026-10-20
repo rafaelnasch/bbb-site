@@ -57,7 +57,7 @@ export function cabecalho({ ativo = null, sobre = false } = {}) {
   });
   return html`<header class="cab${sobre ? ' cab--sobre' : ''}">
   <div class="wrap cab__in">
-    <a class="cab__logo" href="${url('')}"><img src="${url('brand/logo-bbb-claro-h40.png')}" srcset="${url('brand/logo-bbb-claro-h40.png')} 1x, ${url('brand/logo-bbb-claro-206x99.png')} 2x" width="83" height="40" alt="Banheiras Bom Banho, página inicial"></a>
+    <a class="cab__logo" href="${url('')}"><img src="${url('brand/logo-bbb-azul-h40.png')}" srcset="${url('brand/logo-bbb-azul-h40.png')} 1x, ${url('brand/logo-bbb-azul-oficial-206x99.png')} 2x" width="83" height="40" alt="Banheiras Bom Banho, página inicial"></a>
     <nav class="cab__nav" aria-label="Principal"><ul>${itens}</ul></nav>
     <div class="cab__acoes">
       <a class="cab__icone" href="${url('busca.html')}" data-busca-abrir aria-label="Buscar no catálogo">${icone('busca', { tamanho: 22 })}</a>

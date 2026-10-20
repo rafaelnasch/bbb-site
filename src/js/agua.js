@@ -1,6 +1,6 @@
 // Água WebGL (SPEC 6.2, P1): topo da home e das coleções, nunca no produto nem sobre foto de produto.
 // Shader próprio: ondas que refratam uma trama larga e suave de cáusticas (células animadas) com o brilho
-// da luz de estúdio (--glow), apagada atrás do texto para não disputar com o H1, e anéis de ondulação
+// de luz branca sobre areia e pedra (tom claro, lento), apagada atrás do texto para não disputar com o H1, e anéis de ondulação
 // ao toque. Só nasce depois do load, com o navegador ocioso, nunca é o LCP (o canvas aparece por cima
 // de um gradiente estático já pintado). Pausa fora da tela e com a aba oculta;
 // DPR máximo 1,5 e resolução reduzida. Modo lite ou sem WebGL: fica o gradiente.
@@ -77,19 +77,21 @@ gl_FragColor=vec4(c,1.);}`;
     gl.vertexAttribPointer(aP, 2, gl.FLOAT, false, 0, 0);
     const U = (n) => gl.getUniformLocation(pr, n);
     const uR = U('uR'), uT = U('uT'), uP = U('uP');
-    const cs = getComputedStyle(d.documentElement);
-    gl.uniform3fv(U('uA'), hex(cs.getPropertyValue('--room'), '071C2B'));
-    gl.uniform3fv(U('uB'), hex('#123A52', '123A52'));
-    gl.uniform3fv(U('uL'), hex(cs.getPropertyValue('--line'), '8DBBD9'));
-    gl.uniform3fv(U('uG'), hex(cs.getPropertyValue('--glow'), 'E9B87C'));
+    // Tom claro (spa de hotel): a água é só luz lenta sobre areia e pedra, lida do próprio elemento.
+    const cs = getComputedStyle(el);
+    gl.uniform3fv(U('uA'), hex(cs.getPropertyValue('--day'), 'EFE9E1'));
+    gl.uniform3fv(U('uB'), hex(cs.getPropertyValue('--sand'), 'E4DDD3'));
+    gl.uniform3fv(U('uL'), hex('#FFFFFF', 'FFFFFF'));
+    gl.uniform3fv(U('uG'), hex(cs.getPropertyValue('--paper'), 'F6F2EC'));
 
     el.append(cv);
     const area = el.closest('section') || el;
     const ondas = new Float32Array(16);
-    let iOnda = 0, t0 = performance.now(), raf = 0, ativo = false, vis = true, ultimaOnda = 0, quadro = 0;
+    let iOnda = 0, t0 = performance.now(), raf = 0, ativo = false, vis = true, quadro = 0;
     const movel = w.matchMedia('(max-width:700px)').matches;
     const escala = movel ? 0.5 : 0.62;
-    const tempo = () => (performance.now() - t0) / 1000;
+    // Movimento calmo: o tempo do shader corre a pouco mais da metade da velocidade.
+    const tempo = () => (performance.now() - t0) / 1800;
 
     const medir = () => {
       const r = el.getBoundingClientRect();
@@ -127,13 +129,6 @@ gl_FragColor=vec4(c,1.);}`;
     function desligar() { ativo = false; if (raf) cancelAnimationFrame(raf); raf = 0; }
 
     area.addEventListener('pointerdown', (e) => onda(e.clientX, e.clientY, 1), { passive: true });
-    area.addEventListener('pointermove', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      const agora = performance.now();
-      if (agora - ultimaOnda < 140) return;
-      ultimaOnda = agora;
-      onda(e.clientX, e.clientY, 0.35);
-    }, { passive: true });
     if ('ResizeObserver' in w) new ResizeObserver(medir).observe(el); else w.addEventListener('resize', medir);
     if ('IntersectionObserver' in w) {
       new IntersectionObserver((es) => { vis = es.some((x) => x.isIntersecting); if (vis) ligar(); else desligar(); }).observe(el);

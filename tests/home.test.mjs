@@ -227,14 +227,14 @@ test('validador do build sem falhas na saída com a home', async () => {
   assert.deepEqual(erros.filter((e) => e.startsWith('index.html') || !/\.html:/.test(e)), []);
 });
 
-test('LCP: H1 com o subconjunto da Fraunces pré-carregado, que cobre todo o texto do H1; módulos e CSS do site depois da pintura', () => {
-  const cobertos = new Set([...readFileSync(join(paths.src, 'fonts', 'fraunces-titulo.txt'), 'utf8').replace(/\n$/, '')]);
+test('LCP: H1 com o subconjunto da Newsreader pré-carregado, que cobre todo o texto do H1; módulos e CSS do site depois da pintura', () => {
+  const cobertos = new Set([...readFileSync(join(paths.src, 'fonts', 'newsreader-titulo.txt'), 'utf8').replace(/\n$/, '')]);
   const h1 = texto(/<h1[^>]*>([\s\S]*?)<\/h1>/.exec(h)[1]).trim();
   const faltam = [...new Set([...h1])].filter((c) => !cobertos.has(c));
   assert.deepEqual(faltam, [], 'rode node build/fontes-titulo.mjs depois de mudar o H1');
-  assert.match(h, /<link rel="preload" href="[^"]*fraunces-titulo\.[0-9a-f]{10}\.woff2" as="font" type="font\/woff2" crossorigin fetchpriority="high">/);
-  assert.doesNotMatch(h, /rel="preload" href="[^"]*fraunces-var-latin/, 'na home o preload é só o do H1');
-  assert.match(h, /font-family:"Fraunces Titulo"/);
+  assert.match(h, /<link rel="preload" href="[^"]*newsreader-titulo\.[0-9a-f]{10}\.woff2" as="font" type="font\/woff2" crossorigin fetchpriority="high">/);
+  assert.doesNotMatch(h, /rel="preload" href="[^"]*newsreader-var-latin/, 'na home o preload é só o do H1');
+  assert.match(h, /font-family:"Newsreader Titulo"/);
   // Módulos da página e CSS do site só depois da primeira pintura (core.js), fora do caminho do LCP.
   assert.doesNotMatch(h, /<script type="module" src="[^"]*assets\/js\/(?!nucleo)/, 'só o núcleo no <head>');
   const ass = /<script type="application\/json" id="bbb-assets"([^>]*)>([^<]*)</.exec(h);
@@ -314,19 +314,19 @@ test('abertura: nenhuma foto atrás do título; as portas trazem a foto real da 
 
 test('abertura: fontes inteiras fora do CSS crítico da home, pedidas com o site.css', () => {
   const inline = /<style>([\s\S]*?)<\/style>/.exec(h)[1];
-  assert.doesNotMatch(inline, /@font-face\{font-family:(Fraunces|"?Open Sans"?);/);
-  assert.match(inline, /@font-face\{font-family:"?Fraunces Titulo"?;/);
-  assert.match(inline, /Open Sans Fallback/);
+  assert.doesNotMatch(inline, /@font-face\{font-family:("?Newsreader"?|"?Jost"?);/);
+  assert.match(inline, /@font-face\{font-family:"?Newsreader Titulo"?;/);
+  assert.match(inline, /Jost Fallback/);
   const css = /data-css="([^"]+)"/.exec(h)[1].slice(BASE_PATH.length + 1);
   const site = readFileSync(join(paths.dist, css), 'utf8');
-  assert.match(site, /@font-face\{font-family:Fraunces;/);
-  assert.match(site, /@font-face\{font-family:"?Open Sans"?;/);
+  assert.match(site, /@font-face\{font-family:"?Newsreader"?;/);
+  assert.match(site, /@font-face\{font-family:"?Jost"?;/);
   // Páginas sem fontes depois da pintura (institucionais) continuam com as fontes no CSS crítico; coleção,
   // produto e comparador também pedem as fontes só com o site.css (o LCP é a foto ou o texto da ferramenta).
   const outra = readFileSync(join(paths.dist, 'como-comprar.html'), 'utf8');
-  assert.match(/<style>([\s\S]*?)<\/style>/.exec(outra)[1], /@font-face\{font-family:Fraunces;/);
+  assert.match(/<style>([\s\S]*?)<\/style>/.exec(outra)[1], /@font-face\{font-family:"?Newsreader"?;/);
   const col = readFileSync(join(paths.dist, 'banheiras.html'), 'utf8');
-  assert.doesNotMatch(/<style>([\s\S]*?)<\/style>/.exec(col)[1], /@font-face\{font-family:Fraunces;/);
+  assert.doesNotMatch(/<style>([\s\S]*?)<\/style>/.exec(col)[1], /@font-face\{font-family:"?Newsreader"?;/);
 });
 
 test('vitrine: cena com o filme quadrado (sem moldura e sem legenda gravadas) ou, sem ele, a foto recortada parada', () => {
