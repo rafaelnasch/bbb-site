@@ -216,20 +216,71 @@ async function prepararColecoes() {
   return { dir, rows, extras };
 }
 
+// Caixa da peça na foto (frações 0 a 1): pixels claros e pouco saturados (acrílico e gel coat brancos)
+// sobre o fundo da foto. Só mede; a foto não é alterada. Foto de fundo claro (saunas): a caixa ocupa a
+// foto toda e vale como "sem medida".
+async function caixaDaPeca(arq) {
+  const N = 200;
+  const { data } = await sharp(arq).resize(N, N, { fit: 'fill' }).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const col = new Array(N).fill(0), lin = new Array(N).fill(0);
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    const i = (y * N + x) * 3, mx = Math.max(data[i], data[i + 1], data[i + 2]), mn = Math.min(data[i], data[i + 1], data[i + 2]);
+    if (mx > 170 && mx - mn < 60) { col[x]++; lin[y]++; }
+  }
+  const lim = N * 0.03;
+  const ponta = (v) => [v.findIndex((c) => c > lim), N - 1 - [...v].reverse().findIndex((c) => c > lim)];
+  const [x0, x1] = ponta(col), [y0, y1] = ponta(lin);
+  if (x0 < 0 || y0 < 0) return null;
+  const c = { x0: x0 / N, x1: (x1 + 1) / N, y0: y0 / N, y1: (y1 + 1) / N };
+  return c.x1 - c.x0 > 0.97 && c.y1 - c.y0 > 0.97 ? null : c;
+}
+
 // Variante "quadro" (720x720) para os encaixes do site: as mesmas fotos, sem moldura, sem legenda e sem
 // escurecer entre as peças (build/filmes/colecao-quadro.html). A legenda fica no HTML da página.
-function prepararQuadros(C) {
+// Para a vitrine parecer uma sala de galeria e não uma sequência de slides: sai a foto em que a peça
+// encosta na borda (fica cortada pela moldura), as fotos de mesmo ângulo ficam juntas (vista larga e
+// baixa, de perspectiva, separada da vista de cima) e cada peça recebe um zoom só para perto, até 1,11
+// (o arquivo de 800 px cobre o quadro de 720 sem ampliar), na direção de uma escala comum.
+const ZOOM_MAX = 1.11, ALVO = 0.84, MARGEM = 0.03;
+async function prepararQuadros(C) {
   const dir = projeto('hf-colecao-quadro', 'colecao-quadro.html');
   mkdirSync(join(dir, 'assets', 'fotos'), { recursive: true });
-  const rows = C.rows.map((r) => {
-    const row = { name: `${r.name}-quadro`, fonte: r.fonte, total_fotos: r.total_fotos };
+  const rows = [], fotosQuadro = {};
+  for (const r of C.rows) {
+    const itens = [];
     for (let i = 1; i <= 6; i++) {
-      row[`f${i}`] = r[`f${i}`];
-      if (r[`f${i}`]) copyFileSync(join(C.dir, r[`f${i}`]), join(dir, r[`f${i}`]));
+      const f = r[`f${i}`];
+      if (!f) continue;
+      copyFileSync(join(C.dir, f), join(dir, f));
+      const cx = await caixaDaPeca(join(dir, f));
+      itens.push({ f, i, cx, foto: C.extras[r.name].fotos[i - 1] });
     }
-    return row;
-  });
-  return { dir, rows };
+    const encosta = (x) => x.cx && (x.cx.x0 < 0.02 || x.cx.y0 < 0.02 || x.cx.x1 > 0.98 || x.cx.y1 > 0.98);
+    let lista = itens.filter((x) => !encosta(x));
+    if (lista.length < 3) lista = itens;
+    const angulo = (x) => (x.cx && (x.cx.x1 - x.cx.x0) / (x.cx.y1 - x.cx.y0) > 1.6 ? 'perspectiva' : 'cima');
+    const grupos = ['perspectiva', 'cima'].map((g) => lista.filter((x) => angulo(x) === g)).filter((g) => g.length).sort((a, b) => b.length - a.length);
+    lista = grupos.flat();
+    const row = { name: `${r.name}-quadro`, fonte: r.fonte, total_fotos: lista.length };
+    lista.forEach((x, k) => {
+      let z = 1, o = '50% 50%';
+      if (x.cx) {
+        const { x0, x1, y0, y1 } = x.cx;
+        const cxm = (x0 + x1) / 2, cym = (y0 + y1) / 2;
+        // Zoom em torno do centro da peça, sem passar da margem do quadro em nenhum lado.
+        const lado = (a, c, b) => Math.min(c - a > 0 ? (c - MARGEM) / (c - a) : 9, b - c > 0 ? (1 - MARGEM - c) / (b - c) : 9);
+        z = Math.max(1, Math.min(ZOOM_MAX, ALVO / Math.max(x1 - x0, y1 - y0), lado(x0, cxm, x1), lado(y0, cym, y1)));
+        o = `${(cxm * 100).toFixed(1)}% ${(cym * 100).toFixed(1)}%`;
+      }
+      row[`f${k + 1}`] = x.f;
+      row[`z${k + 1}`] = Number(z.toFixed(3));
+      row[`o${k + 1}`] = o;
+    });
+    for (let k = lista.length + 1; k <= 6; k++) { row[`f${k}`] = ''; row[`z${k}`] = 1; row[`o${k}`] = '50% 50%'; }
+    rows.push(row);
+    fotosQuadro[r.name] = lista.map((x) => x.foto);
+  }
+  return { dir, rows, fotosQuadro };
 }
 
 // ---------------------------------------------------------------- render e pós-processo
@@ -360,12 +411,12 @@ if (TIPO === 'colecao' || TIPO === 'todos') {
     else console.warn(`[colecao] ${r.name} sem filme`);
     if (f && !f.dentro_do_teto) console.warn(`[colecao] ${r.name} acima de 350 KB`);
   }
-  const Q = prepararQuadros(C);
+  const Q = await prepararQuadros(C);
   if (!SEM_RENDER) renderizar(Q.dir, Q.rows, 'colecao-quadro');
   for (const r of Q.rows) {
     const id = r.name.replace(/-quadro$/, '');
     const f = SEM_RENDER ? null : await posProcessar(Q.dir, r.name, 'colecao', { largura: 720, altura: 720 });
-    if (f && manifesto.colecao[id]) manifesto.colecao[id].quadro = f;
+    if (f && manifesto.colecao[id]) manifesto.colecao[id].quadro = { ...f, fotos: Q.fotosQuadro[id] };
     else console.warn(`[colecao] ${r.name} sem filme quadrado`);
     if (f && !f.dentro_do_teto) console.warn(`[colecao] ${r.name} acima de 350 KB`);
   }

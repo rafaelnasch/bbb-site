@@ -8,7 +8,19 @@
   {"id":"f3","type":"string","label":"Foto 3","default":""},
   {"id":"f4","type":"string","label":"Foto 4","default":""},
   {"id":"f5","type":"string","label":"Foto 5","default":""},
-  {"id":"f6","type":"string","label":"Foto 6","default":""}
+  {"id":"f6","type":"string","label":"Foto 6","default":""},
+  {"id":"z1","type":"number","label":"Zoom 1","default":1},
+  {"id":"z2","type":"number","label":"Zoom 2","default":1},
+  {"id":"z3","type":"number","label":"Zoom 3","default":1},
+  {"id":"z4","type":"number","label":"Zoom 4","default":1},
+  {"id":"z5","type":"number","label":"Zoom 5","default":1},
+  {"id":"z6","type":"number","label":"Zoom 6","default":1},
+  {"id":"o1","type":"string","label":"Centro 1","default":"50% 50%"},
+  {"id":"o2","type":"string","label":"Centro 2","default":"50% 50%"},
+  {"id":"o3","type":"string","label":"Centro 3","default":"50% 50%"},
+  {"id":"o4","type":"string","label":"Centro 4","default":"50% 50%"},
+  {"id":"o5","type":"string","label":"Centro 5","default":"50% 50%"},
+  {"id":"o6","type":"string","label":"Centro 6","default":"50% 50%"}
 ]'>
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +28,10 @@
     <script src="assets/gsap.min.js"></script>
     <!-- Variante "quadro" do filme de coleção (para os encaixes do site): só as fotos reais, quadradas,
          sem moldura, sem legenda e sem escurecer entre uma peça e outra. A legenda fica no HTML da página.
-         A última troca volta para a foto 1: o laço não salta e o poster (último quadro) é a foto 1. -->
+         Troca em corte seco (nunca duas peças sobrepostas), coberta pela faixa de luz; cada peça assenta
+         com uma aproximação lenta. Zoom (zN, só para perto, até 1,11) e centro (oN) vêm de build/films.mjs,
+         medidos na própria foto, para as peças terem escala parecida na moldura. A última troca volta
+         para a foto 1: o laço não salta e o poster (último quadro) é a foto 1. -->
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: 720px; height: 720px; overflow: hidden; background: #0C2A3D; }
@@ -47,16 +62,24 @@
           cena.insertBefore(img, luz);
           fotos.push(img);
         }
-        const D = 6, X = 0.5, passo = D / n;
+        // A foto 1 volta 0,3 s antes do fim, parada na escala inicial: o último quadro (poster) é a foto 1 e
+        // o laço emenda sem salto.
+        const D = 6, FIM = 0.3, passo = (D - FIM) / n, AP = 0.035;
         window.__timelines = window.__timelines || {};
         const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
-        tl.set("#f1", { opacity: 1 }, 0);
-        // Cada peça fica parada no seu tempo; a próxima entra por cima em 0,5 s (a de baixo continua
-        // inteira: nenhum quadro escuro entre as peças).
+        const k = (i) => (i <= n ? i : 1);
+        fotos.forEach((img, j) => { img.style.transformOrigin = v["o" + k(j + 1)]; });
+        tl.set("#f1", { opacity: 1, scale: v.z1 }, 0);
+        tl.fromTo("#f1", { scale: v.z1 }, { scale: v.z1 * (1 + AP), duration: passo, ease: "none" }, 0);
+        // Corte seco: a peça anterior sai no mesmo instante em que a próxima entra; a faixa de luz passa
+        // por cima do corte.
         for (let i = 2; i <= n + 1; i++) {
-          const t = (i - 1) * passo - X;
-          tl.fromTo("#f" + i, { opacity: 0 }, { opacity: 1, duration: X, ease: "power1.inOut" }, t);
-          tl.fromTo("#luz", { x: -300 }, { x: 760, duration: 1.1, ease: "power2.inOut" }, Math.max(0, t - 0.2));
+          const t = (i - 1) * passo;
+          const z = v["z" + k(i)];
+          tl.set("#f" + (i - 1), { opacity: 0 }, t);
+          tl.set("#f" + i, { opacity: 1, scale: z }, t);
+          if (i <= n) tl.fromTo("#f" + i, { scale: z }, { scale: z * (1 + AP), duration: passo, ease: "none", immediateRender: false }, t);
+          tl.fromTo("#luz", { x: -300 }, { x: 760, duration: 1.1, ease: "power2.inOut" }, Math.max(0, t - 0.55));
         }
         window.__timelines["main"] = tl;
         tl.seek(0);

@@ -62,7 +62,7 @@ export function paginas(ctx) {
     return html`<details class="faq-item" id="${f.id}" data-faq-item>
   <summary class="faq-item__q">${perguntaLegivel(f.pergunta)}</summary>
   <div class="faq-item__r">${resposta(f)}
-    <p class="faq-item__fonte">${f.tipo === 'redigida_resposta_literal' ? html`<span class="faq-item__marca">Pergunta redigida pelo site; resposta com o texto da empresa.</span> ` : ''}${fo ? html`<a${attrs({ class: 'link', href: fo.href, target: '_blank', rel: 'noopener' })}>fonte${fo.extra ? ` (${fo.extra})` : ''}</a>` : ''}${ver.map(([n, p]) => html` · <a class="link" href="${url(p)}">${n}</a>`)}</p>
+    <p class="faq-item__fonte">${f.tipo === 'redigida_resposta_literal' ? html`<span class="faq-item__marca">Pergunta redigida pelo site; resposta com o texto da empresa.</span> ` : ''}${fo ? html`<a${attrs({ class: 'link link--texto', href: fo.href, target: '_blank', rel: 'noopener' })}>fonte${fo.extra ? ` (${fo.extra})` : ''}</a>` : ''}${ver.map(([n, p]) => html` · <a class="link" href="${url(p)}">${n}</a>`)}</p>
   </div>
 </details>`;
   };

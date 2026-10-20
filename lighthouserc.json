@@ -17,7 +17,10 @@
         "http://127.0.0.1:8975/bbb-site/escolher.html?tipo=spa&l=200&c=220&passo=8",
         "http://127.0.0.1:8975/bbb-site/como-comprar.html",
         "http://127.0.0.1:8975/bbb-site/perguntas-frequentes.html",
-        "http://127.0.0.1:8975/bbb-site/prazo-de-entrega.html"
+        "http://127.0.0.1:8975/bbb-site/prazo-de-entrega.html",
+        "http://127.0.0.1:8975/bbb-site/banheira-spa.html",
+        "http://127.0.0.1:8975/bbb-site/aquecedor-digital-com-sensor-de-nive-bbb.html",
+        "http://127.0.0.1:8975/bbb-site/cromoterapia.html"
       ],
       "settings": {
         "formFactor": "mobile",
@@ -82,7 +85,7 @@
           }
         },
         {
-          "matchingUrlPattern": "/(index|escolher|comparar|busca)\\.html|/banheiras\\.html|/spas/",
+          "matchingUrlPattern": "/(index|escolher|comparar|busca)\\.html|/banheiras\\.html|/spas/|/banheira-spa\\.html",
           "assertions": {
             "largest-contentful-paint": [
               "error",
@@ -101,6 +104,24 @@
         },
         {
           "matchingUrlPattern": "/(banheira|spa)-[^/]*\\.html",
+          "assertions": {
+            "largest-contentful-paint": [
+              "error",
+              {
+                "maxNumericValue": 2200,
+                "aggregationMethod": "median-run"
+              }
+            ],
+            "resource-summary:script:size": [
+              "error",
+              {
+                "maxNumericValue": 30720
+              }
+            ]
+          }
+        },
+        {
+          "matchingUrlPattern": "/(aquecedor-digital[^/]*|cromoterapia)\\.html",
           "assertions": {
             "largest-contentful-paint": [
               "error",

@@ -202,7 +202,7 @@ async function contrasteMinimo(page, seletor) {
   return razao(lum(cor), max);
 }
 
-test('celular: título sem foto por trás (contraste medido depois de tudo aceso), peça real logo abaixo do título, portas com foto real e LCP no H1 ou no poster', async ({ page }) => {
+test('celular: título sem foto por trás (contraste medido depois de tudo aceso), portas com foto real e botão de escolha na primeira tela, LCP no H1 ou numa foto', async ({ page }) => {
   test.setTimeout(90_000); // 4 larguras com 7 s de espera cada
   for (const [w, h] of [[360, 780], [390, 844], [430, 932], [768, 1024]]) {
     await page.setViewportSize({ width: w, height: h });
@@ -226,13 +226,14 @@ test('celular: título sem foto por trás (contraste medido depois de tudo aceso
     expect(sob, `${w}px`).toEqual([]);
     expect(await contrasteMinimo(page, '.home-abre__h1'), `${w}px: H1 (texto grande, mínimo 3:1)`).toBeGreaterThanOrEqual(3);
     expect(await contrasteMinimo(page, '.home-abre__lead'), `${w}px: parágrafo (mínimo 4,5:1)`).toBeGreaterThanOrEqual(4.5);
-    // A peça real da primeira coleção (poster da vitrine) logo abaixo do título, carregada e inteira na
-    // primeira tela (imersão no celular); as três portas com a foto real logo depois dela.
-    const peca = page.locator('.vitrine__cena.is-ativa .vitrine__img');
-    expect(await peca.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
-    const bp = await peca.boundingBox();
-    expect(bp.y + bp.height, `${w}px: peça inteira na primeira tela`).toBeLessThanOrEqual(h);
-    expect(bp.width, `${w}px: peça grande`).toBeGreaterThanOrEqual(Math.min(w - 64, 280));
+    // Abaixo de 1024 px a vitrine não aparece (e o poster dela não é baixado): logo abaixo do título vêm as
+    // três portas com a foto real e o botão "Escolher pelo meu espaço", todos inteiros na primeira tela.
+    expect(await page.locator('.vitrine').isVisible(), `${w}px: vitrine escondida`).toBe(false);
+    expect(await page.evaluate(() => [...document.querySelectorAll('.vitrine__img')].every((i) => !i.currentSrc || i.currentSrc.startsWith('data:'))), `${w}px: poster da vitrine baixado`).toBe(true);
+    for (const s of ['.portas', '.home-abre__cta']) {
+      const b = await page.locator(s).boundingBox();
+      expect(b.y + b.height, `${w}px: ${s} inteiro na primeira tela`).toBeLessThanOrEqual(h);
+    }
     const fotos = page.locator('.porta__img--foto');
     await expect(fotos).toHaveCount(3);
     for (const f of await fotos.all()) expect(await f.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);

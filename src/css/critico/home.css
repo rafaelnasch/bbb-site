@@ -21,13 +21,14 @@
 .porta__n{font-size:.8125rem}
 .porta__nome{font:350 clamp(.9375rem,.4rem + 2.6vw,1.375rem)/1.15 var(--f-display)}
 .porta__seta{display:none}
-/* Celular e tablet: a vitrine (a peça real da primeira coleção) logo abaixo do título, antes do texto. */
+/* Celular e tablet: sem a vitrine (as portas já trazem a foto real de cada coleção); título, portas e o botão
+   de escolha cabem na primeira tela, e o parágrafo vem depois. */
 .vitrine{display:grid;gap:10px;width:min(100%,44svh,520px)}
 .vitrine__mol{display:grid;padding:10px}
 .vitrine__cena,.vitrine__luz,.vitrine__item{grid-area:1/1}
 .vitrine__leg{display:grid}.vitrine__item{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid}.vitrine__nome{font:600 var(--fs-label)/1.3 var(--f-body);letter-spacing:.12em;text-transform:uppercase}.vitrine__n{font-size:.875rem}
 .vitrine__cena:not(.is-ativa),.vitrine__item:not(.is-ativa){opacity:0}
-@media (max-width:1023px){.home-abre__in>*{order:2}.home-abre__in>.etiqueta,.home-abre__h1{order:0}.home-abre__in>.vitrine{order:1}}
+@media (max-width:1023px){.home-abre__in>*{order:3}.home-abre__in>.etiqueta,.home-abre__h1{order:0}.home-abre__in>.portas{order:1}.home-abre__acoes{order:2}.home-abre__in>.vitrine{display:none}}
 @media (min-width:1024px){
   .home-abre__in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto auto auto 1fr;gap:22px 5vw}
   .home-abre__acoes{align-self:start}

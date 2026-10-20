@@ -73,7 +73,7 @@ function numerosEmpresa(D, i = 0) {
   if (!nums.length) return '';
   return html`<figure class="inst-nums">
   <dl data-campo="empresa-numeros">${nums.map((x) => html`<div>${x.valor ? html`<dt class="num">${x.valor}</dt><dd>${x.rotulo}</dd>` : html`<dt class="vh">Número declarado</dt><dd>${x.rotulo}</dd>`}</div>`)}</dl>
-  <figcaption>Números segundo a empresa${nd.fonte ? html` (<a${attrs({ class: 'link', href: nd.fonte, target: '_blank', rel: 'noopener' })}>fonte</a>)` : ''}.</figcaption>
+  <figcaption>Números segundo a empresa${nd.fonte ? html` (<a${attrs({ class: 'link link--texto', href: nd.fonte, target: '_blank', rel: 'noopener' })}>fonte</a>)` : ''}.</figcaption>
 </figure>`;
 }
 

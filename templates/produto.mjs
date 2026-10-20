@@ -515,7 +515,8 @@ export function paginas(ctx) {
     })();
 
     // Sem planta, filme nem medidas (acessórios): o nº de catálogo literal, grande e vazado, ocupa o alto
-    // da etiqueta como numa plaqueta de museu (só quando é um código curto).
+    // da etiqueta como numa plaqueta de museu (só quando é um código curto). A caixa tem a largura da
+    // etiqueta e altura fixa (entrelinha em em): a troca de fonte muda só os glifos, não a caixa (CLS).
     const numeroGrande = !arte && p.sku && String(p.sku).length <= 6;
 
     const eti = camposEtiqueta(p);
@@ -530,9 +531,9 @@ export function paginas(ctx) {
     const tituloEscala = p.d_tipo === 'banheira' ? 'Cabe no meu banheiro?' : 'Cabe no meu espaço?';
 
     const topo = html`<section class="sala prod-topo letterbox${arte ? ` prod-topo--${arte.tipo}` : ' prod-topo--sem-arte'}" aria-labelledby="prod-h1">
-  ${!arte && numeroGrande ? html`<div class="prod-topo__fundo" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;overflow:hidden"><p class="prod-topo__num" style="position:absolute;right:0;top:calc(var(--cab-h) + 8px);margin:0;font:300 clamp(9rem,58vw,24rem)/.8 var(--f-display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 40%,transparent);white-space:nowrap">${p.sku}</p></div>` : ''}
+  ${!arte && numeroGrande ? html`<div class="prod-topo__fundo" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;overflow:hidden"><p class="prod-topo__num" style="position:absolute;left:0;right:0;top:calc(var(--cab-h) + 8px);margin:0;overflow:hidden;contain:layout paint;text-align:right;font:300 clamp(9rem,58vw,24rem)/.8 var(--f-display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 40%,transparent);white-space:nowrap">${p.sku}</p></div>` : ''}
   ${arte ? html`<div class="prod-topo__fundo" aria-hidden="true">
-    <div class="prod-topo__arte" style="aspect-ratio:${arte.w}/${arte.h}${arte.tipo === 'filme' || arte.tipo === 'planta-folha' ? ';opacity:.7' : arte.tipo === 'desenho' ? ';color:var(--line);opacity:.75;--arte-w:36%;--arte-d:5%' : ''}">
+    <div class="prod-topo__arte" style="aspect-ratio:${arte.w}/${arte.h}${arte.tipo === 'filme' || arte.tipo === 'planta-folha' ? ';opacity:.7' : arte.tipo === 'desenho' ? ';color:var(--line);opacity:.75;--arte-w:36%;--arte-d:5%;bottom:auto' : ''}">
       ${arte.svg || ''}${arte.svg ? '' : html`${arte.avif ? html`<picture><source type="image/avif"${attrs({ srcset: arte.srcsetAvif || arte.avif, sizes: arte.srcsetAvif ? POSTER_SIZES : null })}>` : ''}<img class="prod-topo__img"${attrs({ src: arte.src, srcset: arte.srcset, sizes: arte.srcset ? POSTER_SIZES : null, width: arte.w, height: arte.h, alt: '', decoding: 'sync', style: arte.tipo === 'planta' ? 'opacity:.45;filter:invert(1) hue-rotate(180deg);mix-blend-mode:screen' : null })}>${arte.avif ? html`</picture>` : ''}
       ${filme ? html`<video class="prod-topo__filme" data-filme${attrs({ 'data-webm': filme.webm, 'data-mp4': filme.mp4, 'data-mp4-leve': filme.leve, 'data-ordem': filme.ordem, 'aria-label': filme.aria, width: arte.w, height: arte.h })} muted playsinline loop preload="none"></video>` : ''}`}
     </div>

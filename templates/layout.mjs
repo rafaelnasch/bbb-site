@@ -155,7 +155,7 @@ ${p.modulosTardios ? '' : Object.values(mapaModulos).map((src) => html`<script t
 ${barraTopo({ movimento: /<video\b|data-agua|data-vapor/.test(String(p.corpo)) })}
 ${cabecalho({ ativo: p.ativo, sobre: p.sobre })}
 <main id="conteudo" tabindex="-1">
-${p.corpo}
+${raw(alvosDeToque(String(p.corpo)))}
 </main>
 ${rodape({ tardio: p.rodapeTardio || null })}
 ${gavetaMenu({ ativo: p.ativo })}
@@ -176,4 +176,14 @@ ${p.bandeja === false ? '' : html`<div class="bandeja" data-bandeja hidden role=
 </html>
 `;
   return render(doc);
+}
+
+/**
+ * Alvo de toque (SPEC 16: 44 x 44 px) dos links de texto soltos: o link que é todo o conteúdo do seu
+ * parágrafo, item de lista ou célula ganha a classe link--alvo (inline-flex com 44 px de altura mínima).
+ * Link no meio de uma frase não muda.
+ */
+export function alvosDeToque(h) {
+  return h.replace(/<(p|li|th|td|dd)\b([^>]*)>(\s*)<a class="link([^"]*)"((?:(?!<\/a>)[\s\S])*?)<\/a>(\s*)<\/\1>/g,
+    (m, tag, at, e1, cls, resto, e2) => (/<a\b/.test(resto) ? m : `<${tag}${at}>${e1}<a class="link link--alvo${cls}"${resto}</a>${e2}</${tag}>`));
 }

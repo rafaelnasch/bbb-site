@@ -149,3 +149,57 @@ test('produto: a foto da peça aparece na primeira tela no celular e no desktop'
     expect(r.y, `${w}px`).toBeLessThan(h - 200);
   }
 });
+
+test('links de texto soltos (todo o conteúdo do parágrafo, item ou célula) com alvo de 44 x 44 px, de 320 a 430 px', async ({ browser }) => {
+  const paginas = ['index.html', 'banheiras.html', `${ACQUA}.html`, 'escolher.html', 'guia/banheira-por-tamanho.html', 'guia/gel-coat-ou-acrilico.html', 'lojas/loja-showrooms.html', 'prazo-de-entrega.html', 'manual-usuario-instalacao.html', 'lojas/sobre-nos.html'];
+  for (const w of [320, 390, 430]) {
+    const ctx = await browser.newContext({ viewport: { width: w, height: 844 }, isMobile: true, hasTouch: true });
+    const page = await ctx.newPage();
+    for (const p of paginas) {
+      await page.goto(`${BASE}/${p}`, { waitUntil: 'networkidle' });
+      // As coleções pedem o site.css depois da primeira pintura: mede com ele aplicado.
+      await page.waitForFunction(() => [...document.styleSheets].some((s) => /site\./.test(s.href || '')));
+      const pequenos = await page.evaluate(() => [...document.querySelectorAll('a.link')].filter((a) => {
+        const r = a.getBoundingClientRect();
+        if (!r.width) return false;
+        const outro = [...a.parentElement.childNodes].filter((n) => n !== a).map((n) => n.textContent).join('').replace(/[\s·,.:;()]/g, '');
+        return (!outro || a.classList.contains('link--texto')) && (r.height < 44 || r.width < 44);
+      }).map((a) => `${a.textContent.trim()} ${Math.round(a.getBoundingClientRect().width)}x${Math.round(a.getBoundingClientRect().height)}`));
+      expect(pequenos, `${w}px ${p}`).toEqual([]);
+    }
+    await ctx.close();
+  }
+});
+
+test('coleção no celular: a primeira peça da grade aparece na primeira tela, sem a foto de destaque do topo', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const p of ['banheiras.html', 'spas.html']) {
+    await page.goto(`${BASE}/${p}`, { waitUntil: 'load' });
+    expect(await page.locator('.col-topo__dest').isVisible()).toBe(false);
+    expect(await page.evaluate(() => [...document.querySelectorAll('.col-topo__poster')].every((i) => !i.currentSrc || i.currentSrc.startsWith('data:'))), `${p}: destaque baixado no celular`).toBe(true);
+    const b = await page.locator('[data-col-grade] > li').first().boundingBox();
+    expect(b.y + 120, `${p}: primeira peça`).toBeLessThanOrEqual(844);
+  }
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(`${BASE}/banheiras.html`, { waitUntil: 'load' });
+  expect(await page.locator('.col-topo__dest').isVisible()).toBe(true);
+});
+
+test('produto no desktop: a moldura ocupa a coluna da peça (7 de 12) e a foto usa o arquivo de 800 px', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  for (const slug of ['banheira-acqua-linea-completa-com-hidro', 'spa-de-canto-florenca-completo-com-hidro']) {
+    await page.goto(`${BASE}/${slug}.html`, { waitUntil: 'load' });
+    const g = await page.evaluate(() => {
+      const peca = document.querySelector('.prod__peca').getBoundingClientRect();
+      const dec = document.querySelector('.prod__decisao').getBoundingClientRect();
+      const wrap = document.querySelector('.prod__grade').getBoundingClientRect();
+      const img = document.querySelector('.prod__peca img');
+      return { peca: peca.width, esq: peca.left - wrap.left, vao: dec.left - peca.right, col: wrap.width * 7 / 12, src: img.currentSrc, w: img.getBoundingClientRect().width };
+    });
+    expect(g.esq, slug).toBeLessThanOrEqual(1);
+    expect(g.peca, slug).toBeGreaterThanOrEqual(g.col - 40);
+    expect(g.vao, slug).toBeLessThanOrEqual(48);
+    expect(g.src, slug).toMatch(/-800\.(avif|webp)$/);
+    expect(g.w, `${slug}: foto sem passar do original`).toBeLessThanOrEqual(800);
+  }
+});

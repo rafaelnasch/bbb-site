@@ -125,7 +125,10 @@ test('HTML de coleção dentro de 60 KB gzip e JSON-LD CollectionPage com ItemLi
     const cp = jsonld(h).find((n) => n['@type'] === 'CollectionPage');
     assert.ok(cp, `${c.d_path}: CollectionPage`);
     assert.equal(cp.mainEntity.numberOfItems, c.total_exibido);
-    assert.deepEqual(cp.mainEntity.itemListElement.map((x) => x.url.split('/').pop()), c.produtos.map((s) => `${s}.html`));
+    // Ordem exibida (SPEC 11.2): a do catálogo, com as peças sem foto publicada no fim, como na grade.
+    const semFoto = new Set(produtos.filter((p) => p.d_sem_foto).map((p) => p.slug));
+    const ordem = [...c.produtos.filter((s) => !semFoto.has(s)), ...c.produtos.filter((s) => semFoto.has(s))];
+    assert.deepEqual(cp.mainEntity.itemListElement.map((x) => x.url.split('/').pop()), ordem.map((s) => `${s}.html`));
     assert.ok(jsonld(h).some((n) => n['@type'] === 'BreadcrumbList'));
   }
 });

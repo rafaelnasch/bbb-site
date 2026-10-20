@@ -80,7 +80,7 @@ function nuvem(tams, { S, destaque = [], id }) {
 function faqLiteral(D, ids) {
   const porId = new Map((D.ler('faq.json') || []).map((f) => [f.id, f]));
   return ids.map((id) => porId.get(id)).filter((f) => f && f.exibir !== false && !f.oculto_ate_decisao && (f.resposta_exibida || '').trim())
-    .map((f) => html`<figure class="guia-faq"><figcaption class="guia-faq__q">${perguntaLegivel(f.pergunta)}</figcaption><blockquote><p data-campo="faq-resposta">${f.resposta_exibida.trim()}</p></blockquote><p class="guia-faq__f">Resposta publicada pela Banheiras Bom Banho${/^https?:/.test(f.fonte || '') ? html` · <a${attrs({ class: 'link', href: f.fonte, target: '_blank', rel: 'noopener' })}>fonte</a>` : ''}</p></figure>`);
+    .map((f) => html`<figure class="guia-faq"><figcaption class="guia-faq__q">${perguntaLegivel(f.pergunta)}</figcaption><blockquote><p data-campo="faq-resposta">${f.resposta_exibida.trim()}</p></blockquote><p class="guia-faq__f">Resposta publicada pela Banheiras Bom Banho${/^https?:/.test(f.fonte || '') ? html` · <a${attrs({ class: 'link link--texto', href: f.fonte, target: '_blank', rel: 'noopener' })}>fonte</a>` : ''}</p></figure>`);
 }
 
 const linkProduto = (p) => html`<a class="link" href="${url(`${p.slug}.html`)}">${p.nome}</a>`;

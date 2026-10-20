@@ -109,8 +109,10 @@ function filmeColecao(D, id) {
   return { webm: url(fm.webm.src), mp4: url(fm.mp4.src), ordem: (fm.mp4.bytes || 0) <= (fm.webm.bytes || Infinity) ? 'mp4,webm' : 'webm,mp4', avif, webp, w: fm.largura || 720, h: fm.altura || 720 };
 }
 
-function posterFilme(f, { classe, prioridade = false, alta = false }) {
-  return html`<picture>${f.avif ? html`<source type="image/avif" srcset="${f.avif}">` : ''}<img${attrs({ class: classe, src: f.webp || f.avif, width: f.w, height: f.h, alt: '', loading: prioridade ? null : 'lazy', fetchpriority: alta ? 'high' : null, decoding: 'async' })}></picture>`;
+// Imagem vazia (GIF 1x1) para a vitrine abaixo de 1024 px, onde ela não aparece: o poster não é baixado.
+const VAZIO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+function posterFilme(f, { classe, prioridade = false, alta = false, soDesktop = false }) {
+  return html`<picture>${soDesktop ? html`<source media="(max-width:1023px)" srcset="${VAZIO}">` : ''}${f.avif ? html`<source type="image/avif" srcset="${f.avif}">` : ''}<img${attrs({ class: classe, src: f.webp || f.avif, width: f.w, height: f.h, alt: '', loading: prioridade ? null : 'lazy', fetchpriority: alta ? 'high' : null, decoding: 'async' })}></picture>`;
 }
 
 function videoFilme(f, classe, rotulo = null) {
@@ -143,7 +145,7 @@ const SIZES_PORTA = '(min-width:1024px) 112px, 31vw';
 
 /** Cena da vitrine (desktop) sem filme: a mesma área da foto, já recortada em 484 px. */
 function cenaSemFilme(g, prioridade = false) {
-  return html`<picture><source type="image/avif" srcset="${url(g.avif)}"><img${attrs({ class: 'vitrine__img', src: url(g.webp), width: g.lado, height: g.lado, alt: '', loading: prioridade ? null : 'lazy', decoding: 'async' })}></picture>`;
+  return html`<picture><source media="(max-width:1023px)" srcset="${VAZIO}"><source type="image/avif" srcset="${url(g.avif)}"><img${attrs({ class: 'vitrine__img', src: url(g.webp), width: g.lado, height: g.lado, alt: '', loading: prioridade ? null : 'lazy', decoding: 'async' })}></picture>`;
 }
 
 /** Fotos da fábrica (build/media-fabrica.mjs). */
@@ -301,7 +303,7 @@ export function paginas(ctx) {
   // Vitrine (decorativa: as portas já dizem o mesmo): poster grande e filme da coleção. No celular fica logo
   // abaixo do título com a peça da primeira coleção parada; no desktop, à direita, troca com as portas.
   const vitrine = filmes.size ? html`<div class="vitrine" aria-hidden="true" data-vitrine data-intro style="--i:2">
-    <div class="vitrine__mol">${[...filmes].map(([id, { filme, foto }], i) => html`<div class="vitrine__cena${filme ? ' quadro' : ''}${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${filme ? html`${posterFilme(filme, { classe: 'vitrine__img', prioridade: i === 0, alta: i === 0 })}${videoFilme(filme, 'vitrine__video')}` : cenaSemFilme(foto, i === 0)}</div>`)}<span class="vitrine__luz"></span></div>
+    <div class="vitrine__mol">${[...filmes].map(([id, { filme, foto }], i) => html`<div class="vitrine__cena${filme ? ' quadro' : ''}${i === 0 ? ' is-ativa' : ''}" data-cena="${id}">${filme ? html`${posterFilme(filme, { classe: 'vitrine__img', prioridade: i === 0, alta: i === 0, soDesktop: true })}${videoFilme(filme, 'vitrine__video')}` : cenaSemFilme(foto, i === 0)}</div>`)}<span class="vitrine__luz"></span></div>
     <div class="vitrine__leg">${[...filmes].map(([id, { nome, cat }], i) => html`<p class="vitrine__item${i === 0 ? ' is-ativa' : ''}" data-cena-leg="${id}"><span class="vitrine__nome">${nome}</span><span class="vitrine__n"><span class="num" data-campo="categoria-total">${cat.total_exibido}</span> modelos</span></p>`)}</div>
   </div>` : '';
 

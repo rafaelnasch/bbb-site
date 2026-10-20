@@ -15,6 +15,9 @@
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const PARADAS = new Set(['de', 'da', 'do', 'das', 'dos', 'com', 'em', 'para', 'e', 'a', 'o', 'x', 'p', 'um', 'uma', 'ate', 'm', 'cm']);
   const TIPO = { banheira: 'banheira banheiras', spa: 'spa spas', ofuro: 'ofuro ofuros', sauna: 'sauna saunas', acessorio: 'acessorio acessorios' };
+  const RAIZ = { banheira: 'banheiras.html', spa: 'spas.html', ofuro: 'ofuros.html', sauna: 'sauna.html', acessorio: 'acessorios.html' };
+  // Categoria com o nome cortado na própria fonte ("Spas de 1", "Banheiras de 1"): fora das sugestões.
+  const CORTADA = /\bde \d+$/i;
   const PASSO = 48;
   const MED = /^\d+,\d+$/;
 
@@ -80,8 +83,12 @@
     return total;
   }
 
-  function facetas(qs) {
+  /** Tipos de produto citados na busca ("spa" -> spa): os modelos desse tipo vêm antes dos demais. */
+  const tiposDe = (qs) => new Set(Object.keys(TIPO).filter((k) => qs.some((q) => TIPO[k].split(' ').some((t) => q === t || (q.length >= 4 && lev1(q, t))))));
+
+  function facetas(qs, tipos) {
     if (!qs.length) return [];
+    const raiz = new Set([...tipos].map((k) => RAIZ[k]));
     const n = qs.find((q) => /^\d+$/.test(q));
     return cats.map((c) => {
       let ok = 0;
@@ -90,7 +97,11 @@
         if (c.toks.some((t) => casa(q, t))) ok++;
       }
       return { c, ok };
-    }).filter((x) => x.ok === qs.length && (qs.length > 1 || !n)).sort((a, b) => a.c.toks.length - b.c.toks.length || b.c.total - a.c.total).slice(0, 4).map((x) => x.c);
+    }).filter((x) => x.ok === qs.length && (qs.length > 1 || !n) && !CORTADA.test(x.c.nome))
+      // A coleção raiz do tipo citado primeiro; depois as que começam pelo termo buscado ("Spas Quadrados"
+      // antes de "Banheira Spa"); depois a mais curta e a maior.
+      .sort((a, b) => raiz.has(b.c.path) - raiz.has(a.c.path) || casa(qs[0], b.c.toks[0] || '') - casa(qs[0], a.c.toks[0] || '') || a.c.toks.length - b.c.toks.length || b.c.total - a.c.total)
+      .slice(0, 4).map((x) => x.c);
   }
 
   function cartao(it) {
@@ -124,8 +135,12 @@ ${t0 ? `<span class="esc-c__tam num">${esc(t0[0])}${it.ts.length > 1 ? ` <span c
       return;
     }
     inicio.hidden = true;
-    const res = docs.map((doc) => ({ doc, s: pontuar(doc, qs) })).filter((x) => x.s > 0).sort((a, b) => b.s - a.s);
-    const fs = facetas(qs);
+    // Ordem: os modelos do tipo citado ("spa") antes dos de outro tipo com o termo no nome ("Banheira Spa"),
+    // os sem foto publicada no fim de cada grupo, e a pontuação.
+    const tipos = tiposDe(qs);
+    const grupo = (it) => (tipos.size && !tipos.has(it.t) ? 2 : 0) + (it.f ? 0 : 1);
+    const res = docs.map((doc) => ({ doc, s: pontuar(doc, qs) })).filter((x) => x.s > 0).sort((a, b) => grupo(a.doc.it) - grupo(b.doc.it) || b.s - a.s);
+    const fs = facetas(qs, tipos);
     fac.hidden = !fs.length;
     fac.innerHTML = fs.length ? `<p class="etiqueta">Coleções que combinam</p><ul class="col-viz__lista" role="list">${fs.map((c) => `<li><a class="chip" href="${esc(cfg.base + c.path)}">${esc(c.nome)} <span class="num">${c.total}</span></a></li>`).join('')}</ul>` : '';
     nEl.hidden = false;

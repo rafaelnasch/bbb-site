@@ -11,7 +11,9 @@
 .prod{padding-bottom:clamp(48px,6vw,104px);overflow-y:clip}
 .prod-disp--esgotado{color:var(--glow)}
 html[data-lite] .prod-topo__filme{display:none}
-@media (min-width:1024px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte,.prod-topo--planta-folha .prod-topo__arte{-webkit-mask:radial-gradient(closest-side,#000 55%,#0000);mask:radial-gradient(closest-side,#000 55%,#0000)}}
+/* Desktop: a planta inteira cabe na faixa (altura da faixa, largura pela proporção); só a borda esquerda
+   se funde ao fundo, sem cortar o desenho nem o cabeçalho do PDF. */
+@media (min-width:1024px){.prod-topo--filme .prod-topo__arte,.prod-topo--planta .prod-topo__arte,.prod-topo--planta-folha .prod-topo__arte{-webkit-mask:linear-gradient(90deg,#0000,#000 9%);mask:linear-gradient(90deg,#0000,#000 9%)}}
 .prod-topo__filme{opacity:0;transition:opacity .6s linear}
 .prod-topo__arte.is-tocando .prod-topo__filme{opacity:1}
 /* Sem planta nem filme: papel técnico (grade de 24 px) e luz de estúdio, sem altura vazia. */

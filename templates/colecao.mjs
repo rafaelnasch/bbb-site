@@ -269,7 +269,7 @@ export function paginas(ctx) {
     const filme = dest ? { foto: dest.foto, p: dest.p } : null;
 
     const fundo = html`<div class="col-topo__fundo col-topo__fundo--agua" aria-hidden="true"${attrs({ 'data-agua': temAgua ? '' : null })}></div>`;
-    const quadro = filme ? html`<div class="col-topo__filme col-topo__dest"><a href="${url(`${filme.p.slug}.html`)}" aria-label="Na foto: ${filme.p.nome}">${picture({ ...filme.foto, lqip: null }, { classe: 'col-topo__poster', sizes: SIZES_DESTAQUE, prioridade: true, alt: '' })}</a></div>` : '';
+    const quadro = filme ? html`<div class="col-topo__filme col-topo__dest"><a href="${url(`${filme.p.slug}.html`)}" aria-label="Na foto: ${filme.p.nome}">${picture({ ...filme.foto, lqip: null }, { classe: 'col-topo__poster', sizes: SIZES_DESTAQUE, prioridade: true, alt: '', soDesktop: true })}</a></div>` : '';
 
     // Atalhos das subcoleções da mesma raiz, com a contagem real (total_exibido), logo abaixo do título.
     const raizPath = `${cat.d_path.split('/')[0].replace(/\.html$/, '')}.html`;
@@ -380,13 +380,15 @@ export function paginas(ctx) {
     };
     // Sem filme, a primeira foto da grade costuma ser o LCP: pré-carregada com o mesmo srcset e sizes do
     // cartão (SPEC 12: LCP da coleção é o H1 ou a primeira foto).
-    // Com filme, o poster quadrado (cerca de 13 KB) fica na primeira tela em todas as larguras.
+    // Com destaque (coleções raiz), o poster fica na primeira tela do desktop.
     const f0 = grade0[0] ? fotoCartao(grade0[0].slug) : null;
     const av0 = f0?.fontes?.find((x) => x.type === 'image/avif');
     const preCartao = av0 ? { as: 'image', type: 'image/avif', fetchpriority: 'high', imagesrcset: av0.srcset, imagesizes: SIZES_GRADE } : null;
     const avD = filme?.foto?.fontes?.find((x) => x.type === 'image/avif');
+    // O destaque só aparece a partir de 1024 px (no celular a grade sobe para a primeira tela): abaixo
+    // disso, o primeiro cartão é o pré-carregado.
     const preload = avD
-      ? [{ as: 'image', type: 'image/avif', fetchpriority: 'high', imagesrcset: avD.srcset, imagesizes: SIZES_DESTAQUE }]
+      ? [{ as: 'image', type: 'image/avif', fetchpriority: 'high', imagesrcset: avD.srcset, imagesizes: SIZES_DESTAQUE, media: '(min-width:1024px)' }, ...(preCartao ? [{ ...preCartao, media: '(max-width:1023px)' }] : [])]
       : preCartao ? [preCartao] : [];
     out.push({
       saida: cat.d_path,

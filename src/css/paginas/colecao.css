@@ -58,12 +58,14 @@
 .cart__mol::after{content:"";position:absolute;inset:clamp(6px,4%,20px);border-radius:6px;pointer-events:none;background:linear-gradient(180deg,rgb(233 184 124/.07),transparent 38%,transparent 62%,rgb(7 28 43/.22));box-shadow:inset 0 0 0 1px rgb(243 246 248/.08),inset 0 0 40px rgb(7 28 43/.28)}
 .cart__vers{font-size:.8125rem;color:var(--fg-2)}
 /* Contorno em escala na linha das medidas (fora da foto): a peça vista de cima, mesma escala na coleção. */
-.cart__ctn{fill:color-mix(in srgb,var(--brand) 22%,transparent);stroke:var(--brand);stroke-width:1.2px;overflow:visible}
-.cart__ctn .cart__ctn-regua{fill:none;stroke-width:1px;opacity:.55}
+/* Contorno em escala: só o traço da peça vista de cima (sem preenchimento, para não parecer uma amostra
+   de cor ou uma imagem quebrada) e a régua com as pontas marcadas, no tom do texto secundário. */
+.cart__ctn{fill:none;stroke:var(--brand);stroke-width:1.5px;overflow:visible}
+.cart__ctn .cart__ctn-regua{fill:none;stroke:var(--fg-2);stroke-width:1px}
 .cart__ctn path{vector-effect:non-scaling-stroke}
-.sala .cart__ctn{fill:color-mix(in srgb,var(--glow) 16%,transparent);stroke:var(--glow)}
+.sala .cart__ctn{stroke:var(--glow)}
 .cart__ctn :is(rect,ellipse){vector-effect:non-scaling-stroke}
-@media (prefers-color-scheme:dark){.dia .cart__ctn{fill:color-mix(in srgb,var(--line) 16%,transparent);stroke:var(--line)}}
+@media (prefers-color-scheme:dark){.dia .cart__ctn{stroke:var(--line)}}
 /* Peça sem foto publicada: desenho pelas medidas do site sobre papel quadriculado (não uma caixa vazia). */
 .cart__vazia--desenho{position:relative;border-radius:6px;background-color:var(--blueprint);background-image:linear-gradient(color-mix(in srgb,var(--line) 14%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--line) 14%,transparent) 1px,transparent 1px);background-size:10% 10%}
 .cart__vazia-svg{position:absolute;inset:0;width:100%;height:100%;fill:color-mix(in srgb,var(--porcelain) 6%,transparent);stroke:var(--porcelain);stroke-width:1.5px;stroke-dasharray:4 3}

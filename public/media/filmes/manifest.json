@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-19T21:01:58.728Z",
+ "gerado_em": "2026-10-20T00:35:41.134Z",
  "coletado_em": "18/10/2026",
  "ferramenta": "hyperframes@0.8.173",
  "regra": "WebM VP9 + MP4 H.264 1280x720 (variante quadro de coleção: 720x720, sem moldura e sem legenda), 30 fps, sem áudio, até 350 KB por arquivo; poster = último quadro (AVIF e WebP). Só imagens e números reais de data/.",
@@ -7926,28 +7926,60 @@
     "audio": false,
     "webm": {
      "src": "media/filmes/colecao/banheiras-quadro.webm",
-     "bytes": 219919,
+     "bytes": 163918,
      "crf": 36,
      "codec": "vp9"
     },
     "mp4": {
      "src": "media/filmes/colecao/banheiras-quadro.mp4",
-     "bytes": 227881,
+     "bytes": 223262,
      "crf": 28,
      "codec": "h264"
     },
     "poster": {
      "avif": {
       "src": "media/filmes/colecao/banheiras-quadro-poster.avif",
-      "bytes": 14810
+      "bytes": 14318
      },
      "webp": {
       "src": "media/filmes/colecao/banheiras-quadro-poster.webp",
-      "bytes": 18218
+      "bytes": 18638
      },
      "quadro": "último"
     },
-    "dentro_do_teto": true
+    "dentro_do_teto": true,
+    "fotos": [
+     {
+      "slug": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
+      "n": 1,
+      "sha1": "5b0ff6b68d651e8b22fb9f5a4a8290f460abb0cf",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/f/u/fundo_azul_banheira_capri_4_13012026_162714.png"
+     },
+     {
+      "slug": "banheira-dupla-harmonia-completa-com-hidro-em-acrilico-1",
+      "n": 1,
+      "sha1": "5aa4a4b86b8516211606618b8590b75abec137ea",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/f/u/fundo_azul_banheira_harmonia_2_13012026_155813.png"
+     },
+     {
+      "slug": "banheira-contemporanea-paraty-sem-hidro",
+      "n": 1,
+      "sha1": "f1efe4443f482b29a7114f05a370401ca0add148",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/1/_/1_1.png"
+     },
+     {
+      "slug": "banheira-retangular-monte-verde-completa-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "2e2017d29672ac1488452ead31d683ab6bba1685",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/b/a/banheira-dupla-monte_verde-bbb.png"
+     },
+     {
+      "slug": "banheira-vitoriana-para-pets-0-58-x-1-21-x-0-40",
+      "n": 1,
+      "sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/v/i/vitoriana-1_w_1_1_1.jpg"
+     }
+    ]
    }
   },
   "spas": {
@@ -8025,28 +8057,54 @@
     "audio": false,
     "webm": {
      "src": "media/filmes/colecao/spas-quadro.webm",
-     "bytes": 309582,
+     "bytes": 193059,
      "crf": 36,
      "codec": "vp9"
     },
     "mp4": {
      "src": "media/filmes/colecao/spas-quadro.mp4",
-     "bytes": 257063,
+     "bytes": 235022,
      "crf": 28,
      "codec": "h264"
     },
     "poster": {
      "avif": {
       "src": "media/filmes/colecao/spas-quadro-poster.avif",
-      "bytes": 13003
+      "bytes": 17643
      },
      "webp": {
       "src": "media/filmes/colecao/spas-quadro-poster.webp",
-      "bytes": 14600
+      "bytes": 22220
      },
      "quadro": "último"
     },
-    "dentro_do_teto": true
+    "dentro_do_teto": true,
+    "fotos": [
+     {
+      "slug": "spa-oasis-completo-com-hidro-em-gel-coat-1",
+      "n": 1,
+      "sha1": "656668e0cf22aab5c890dde09c787d9d5596a9c5",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/_/s/_spa_oasis_completo_com_hidro_em_gel_coat.jpeg"
+     },
+     {
+      "slug": "spa-santorini-completo-com-hidro-em-acrilico-1",
+      "n": 1,
+      "sha1": "5123149fee9883d9ec3057a8d33af846721299d3",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/f/u/fundo_azul_sem_nome_1_13012026_154825.png"
+     },
+     {
+      "slug": "spa-retangular-acquaview-completa-com-hidro-em-gel-coat",
+      "n": 1,
+      "sha1": "4e292501cf0aec2bc12d9398fa39efe4e9672c52",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/0/2/02-acquaview_800x800_2.jpg"
+     },
+     {
+      "slug": "spa-quadrado-savana-completo-com-hidro",
+      "n": 1,
+      "sha1": "9179a58d6adde3375fe29ac84fc44d4e6eab9999",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/a/savana_22032024_080905.jpg"
+     }
+    ]
    }
   },
   "ofuros": {
@@ -8124,28 +8182,54 @@
     "audio": false,
     "webm": {
      "src": "media/filmes/colecao/ofuros-quadro.webm",
-     "bytes": 240823,
+     "bytes": 147971,
      "crf": 36,
      "codec": "vp9"
     },
     "mp4": {
      "src": "media/filmes/colecao/ofuros-quadro.mp4",
-     "bytes": 237833,
+     "bytes": 185989,
      "crf": 28,
      "codec": "h264"
     },
     "poster": {
      "avif": {
       "src": "media/filmes/colecao/ofuros-quadro-poster.avif",
-      "bytes": 10179
+      "bytes": 9629
      },
      "webp": {
       "src": "media/filmes/colecao/ofuros-quadro-poster.webp",
-      "bytes": 10818
+      "bytes": 10466
      },
      "quadro": "último"
     },
-    "dentro_do_teto": true
+    "dentro_do_teto": true,
+    "fotos": [
+     {
+      "slug": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "559ce1cf96dee972032f7094db671d106b45c660",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/o/f/ofur_quadrado_osaka_individual_com_hidro_2498_75_-_1999_00_2_1.jpg"
+     },
+     {
+      "slug": "ofuro-duplo-toquio-completo-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "fd7961933a11e61ff0443cc112259011e6c88fa8",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/o/f/ofuro_-_duplo_-_toquio.jpeg"
+     },
+     {
+      "slug": "ofuro-duplo-solene-completo-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "09ba9a53249d1d544323ba5f739cf4c93902f488",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/o/f/ofuro-solene-2_pessoas-bbb_1__3.png"
+     },
+     {
+      "slug": "ofuro-acqua-vip-completo-com-hidro",
+      "n": 1,
+      "sha1": "0690b45c02da0074005d613d17aa005fb4fdd185",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/o/f/ofuro-acqua_vip-individual-bbb1.png"
+     }
+    ]
    }
   },
   "sauna": {
@@ -8211,28 +8295,48 @@
     "audio": false,
     "webm": {
      "src": "media/filmes/colecao/sauna-quadro.webm",
-     "bytes": 277539,
+     "bytes": 210105,
      "crf": 36,
      "codec": "vp9"
     },
     "mp4": {
      "src": "media/filmes/colecao/sauna-quadro.mp4",
-     "bytes": 190381,
+     "bytes": 203759,
      "crf": 28,
      "codec": "h264"
     },
     "poster": {
      "avif": {
       "src": "media/filmes/colecao/sauna-quadro-poster.avif",
-      "bytes": 19304
+      "bytes": 18964
      },
      "webp": {
       "src": "media/filmes/colecao/sauna-quadro-poster.webp",
-      "bytes": 27130
+      "bytes": 28304
      },
      "quadro": "último"
     },
-    "dentro_do_teto": true
+    "dentro_do_teto": true,
+    "fotos": [
+     {
+      "slug": "sauna-luxo-bbb",
+      "n": 1,
+      "sha1": "7c38531ac026a063c42faeeaaf816bc061f5489c",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/a/sauna_8_2.jpg"
+     },
+     {
+      "slug": "sauna-prime-bbb",
+      "n": 1,
+      "sha1": "1f841913843d7c0fde350a873f1f4ab4d9e7ceec",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/a/sauna_4_1_1.jpg"
+     },
+     {
+      "slug": "sauna-compacta-bbb",
+      "n": 1,
+      "sha1": "89d12470394809c939a85b6bc98afdff9e0cf0cb",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/a/sauna_2_pessoas_2__1_1.jpg"
+     }
+    ]
    }
   },
   "lancamentos": {
@@ -8316,28 +8420,60 @@
     "audio": false,
     "webm": {
      "src": "media/filmes/colecao/lancamentos-quadro.webm",
-     "bytes": 308078,
+     "bytes": 208182,
      "crf": 36,
      "codec": "vp9"
     },
     "mp4": {
      "src": "media/filmes/colecao/lancamentos-quadro.mp4",
-     "bytes": 250018,
+     "bytes": 232826,
      "crf": 28,
      "codec": "h264"
     },
     "poster": {
      "avif": {
       "src": "media/filmes/colecao/lancamentos-quadro-poster.avif",
-      "bytes": 13133
+      "bytes": 13954
      },
      "webp": {
       "src": "media/filmes/colecao/lancamentos-quadro-poster.webp",
-      "bytes": 14630
+      "bytes": 15536
      },
      "quadro": "último"
     },
-    "dentro_do_teto": true
+    "dentro_do_teto": true,
+    "fotos": [
+     {
+      "slug": "spa-quadrado-chicago-completo-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "ac80f0c731186703abd4c5fec92f6c44cfdc5989",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/p/spa-chicago-bbb.png"
+     },
+     {
+      "slug": "spa-quadrado-charlote-completo-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "8a6c9d9ba576100368311c84485b65008ece0773",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/f/u/fundo_azul_charlorte_09052024_154852.jpg"
+     },
+     {
+      "slug": "spa-retangular-siena-completo-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "cfb8c6cecdfe227239aa24010e6e676dce5a54b9",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/i/siena_1.jpeg"
+     },
+     {
+      "slug": "spa-retangular-las-vegas-completo-com-hidro",
+      "n": 1,
+      "sha1": "0ff033847d13a4de03c62fa3cd7138b9ebcb54de",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/p/spa-8_lugares-las_vegas-bbb.png"
+     },
+     {
+      "slug": "spa-retangular-londres-completo-com-hidro-em-acrilico",
+      "n": 1,
+      "sha1": "83e37417bf25261efcdc3e692778f35029d42d21",
+      "fonte": "https://www.banheirasbombanho.com.br/media/catalog/product/s/p/spa_londres_1.png"
+     }
+    ]
    }
   }
  },
@@ -12281,6 +12417,5 @@
   "tamanhos_sem_filme": 159,
   "acima_do_teto": [],
   "bytes_total": 50266592
- },
- "regra_leve": "Telas com menos de 600 px recebem a versão 640x360 em MP4 (mp4_640); nas demais, vai primeiro o formato menor entre WebM e MP4 de cada filme."
+ }
 }

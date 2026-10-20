@@ -94,7 +94,8 @@ test('links internos com BASE_PATH; assets, marca e mídia existem em dist', () 
   for (const [nome, p] of Object.entries(paginas)) {
     for (const m of p.matchAll(/\s(href|src|srcset)="([^"]+)"/g)) {
       // Só srcset é lista separada por vírgula; um href pode ter vírgula (link de mapa "@-23.05,-45.60,17z").
-      for (const v of (m[1] === 'srcset' ? m[2].split(/,\s*/) : [m[2]]).map((x) => x.split(' ')[0])) {
+      // No srcset a vírgula separa candidatos só quando vem seguida de espaço (a de um data: URI não separa).
+      for (const v of (m[1] === 'srcset' ? m[2].split(/,\s+/) : [m[2]]).map((x) => x.split(' ')[0])) {
         if (/^(https?:|mailto:|tel:|#|data:)/.test(v)) continue;
         assert.ok(BASE_PATH === '' || v.startsWith(`${BASE_PATH}/`), `${nome}: link sem BASE_PATH ${v}`);
         const rel = v.slice(BASE_PATH.length).split(/[?#]/)[0];

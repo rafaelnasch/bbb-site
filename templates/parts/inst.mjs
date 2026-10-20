@@ -145,7 +145,7 @@ export function sumario(secoes, { titulo = 'Nesta página', classe = '' } = {}) 
 export function notaFonte(D, fonte, { prefixo = 'Texto publicado pela Banheiras Bom Banho no site atual' } = {}) {
   const f = Array.isArray(fonte) ? fonte[0] : fonte;
   const href = /^https?:/.test(f || '') ? f.split(' ')[0] : null;
-  return html`<p class="inst-fonte">${icone('ponto', { tamanho: 14 })}<span>${prefixo}${href ? html` (<a${attrs({ class: 'link', href, target: '_blank', rel: 'noopener' })}>página de origem</a>)` : ''}, coletado em <span class="num" data-campo="data-coleta">${D.dataColeta}</span>.</span></p>`;
+  return html`<p class="inst-fonte">${icone('ponto', { tamanho: 14 })}<span>${prefixo}${href ? html` (<a${attrs({ class: 'link link--texto', href, target: '_blank', rel: 'noopener' })}>página de origem</a>)` : ''}, coletado em <span class="num" data-campo="data-coleta">${D.dataColeta}</span>.</span></p>`;
 }
 
 /** Topo das páginas institucionais (sala escura, como os guias e as ferramentas). */

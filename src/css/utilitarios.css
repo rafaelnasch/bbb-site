@@ -26,3 +26,8 @@ table{border-collapse:collapse}
 .grade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gutter)}
 @media (min-width:600px){.grade{grid-template-columns:repeat(6,minmax(0,1fr));--gutter:20px}}
 @media (min-width:1024px){.grade{grid-template-columns:repeat(12,minmax(0,1fr));--gutter:24px}}
+/* Alvo de toque de 44 x 44 px (SPEC 16). Link solto (todo o conteúdo do parágrafo, item ou célula):
+   bloco em linha com 44 px de altura. Link curto dentro da frase ("fonte", "página de origem"): a área
+   cresce pelo preenchimento, compensado pela margem, sem mexer na linha do texto. */
+.link--alvo{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+.link--texto{padding:13px 6px;margin:-13px -6px}
