@@ -1,2070 +1,2070 @@
 {
- "gerado_em": "2026-10-19T03:47:32.321Z",
+ "gerado_em": "2026-10-20T05:49:55.276Z",
  "largura": 1200,
  "altura": 630,
  "fontes": [
-  "Fraunces",
-  "Open Sans"
+  "Newsreader",
+  "Jost"
  ],
  "produtos": {
   "air-blower-borbulhamento": {
    "src": "media/og/air-blower-borbulhamento.jpg",
    "medida": null,
    "foto_sha1": "87164648248ae0725038dedc3d351857b06b80df",
-   "chave": "80115cbaef68fa02194878d65185bd047f228fa5"
+   "chave": "a08386f12f37738aa4f1f58a28fd29c2e6bd5eef"
   },
   "apoio-de-cabeca-oval": {
    "src": "media/og/apoio-de-cabeca-oval.jpg",
    "medida": null,
    "foto_sha1": "18de482aeb33501776a2b7a46658b08bda3f077a",
-   "chave": "428586d7ddc936c33fab5815dba6d6a3542fc290"
+   "chave": "fe86e81d212a5f45be9ee216c3dc69a7e4a6b386"
   },
   "apoio-de-cabeca-prime": {
    "src": "media/og/apoio-de-cabeca-prime.jpg",
    "medida": null,
    "foto_sha1": "fb6ad25ec829a1619429c65764bb90a67d4ead84",
-   "chave": "79dbaecad34f8b86c1e9277aad258ad29e028d0a"
+   "chave": "6c7361f4a16d1911ada98856b5faeee8432db6f4"
   },
   "apoio-de-cabeca-retangular": {
    "src": "media/og/apoio-de-cabeca-retangular.jpg",
    "medida": null,
    "foto_sha1": "1a695dde55adfc04c9d70bb735a5bda3242d1819",
-   "chave": "32bb37bfe7ba1115037190a1d3773923d500204c"
+   "chave": "d88cc9b1f3c24be4542764004f407ab2a6db3905"
   },
   "aquecedor-digital-bbb": {
    "src": "media/og/aquecedor-digital-bbb.jpg",
    "medida": null,
    "foto_sha1": "55ca86ef2e77f95196b68a80340973d71cc3e448",
-   "chave": "b059557ab627f966ddc609092f5a747de42a72fc"
+   "chave": "2330cfccb4e3a2f41793f5b67467abb35e3ef232"
   },
   "aquecedor-digital-com-sensor-de-nive-bbb": {
    "src": "media/og/aquecedor-digital-com-sensor-de-nive-bbb.jpg",
    "medida": null,
    "foto_sha1": "1b3199f8923eba1e0f5719f8f0723651063d1942",
-   "chave": "9b0e576041e21d43025c37ef4e56679a18a0a3c9"
+   "chave": "652fac6b3f1c04dc3f9fff52f871d76369a22331"
   },
   "banheira-acqua-linea-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-acqua-linea-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,79 x 1,41 x 0,37",
    "foto_sha1": "26a35c965a49cc01cd531d2afb16ceb8cdb50a0b",
-   "chave": "babc52345af95791a473976dbfcfbaa6db9f701c"
+   "chave": "d784391d12114e21cf7c910001987d5f4ef6cffd"
   },
   "banheira-acqua-linea-completa-com-hidro": {
    "src": "media/og/banheira-acqua-linea-completa-com-hidro.jpg",
    "medida": "0,79 x 1,41 x 0,37",
    "foto_sha1": "26a35c965a49cc01cd531d2afb16ceb8cdb50a0b",
-   "chave": "efbe65c59c2f1812a52e0accf4cc5f038a88a705"
+   "chave": "9136fa455f71dd04813e78902ac581bfb3f381f7"
   },
   "banheira-acqua-spaco-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-acqua-spaco-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,69 x 1,49 x 0,41",
    "foto_sha1": "3c21644260bd0b1dea35e623cb2848a314be60b8",
-   "chave": "720fd45ee97d239b27bf2ff6bf1da8e17d6272d3"
+   "chave": "ec6eb11ff5029d4b8db1875f2574c76f894a6af4"
   },
   "banheira-acqua-spaco-completa-com-hidro": {
    "src": "media/og/banheira-acqua-spaco-completa-com-hidro.jpg",
    "medida": "0,69 x 1,49 x 0,41",
    "foto_sha1": "3c21644260bd0b1dea35e623cb2848a314be60b8",
-   "chave": "271ba2e0698f9d06c24d96014cdcb46ac920542c"
+   "chave": "3992c28e9a8eb4b72f8a1b2ead0a24742b6d1502"
   },
   "banheira-acqua-stylo-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-acqua-stylo-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,90 x 1,70 x 0,36",
    "foto_sha1": "ac159d82b1ce6ad2e49f4295058399e56e228e16",
-   "chave": "dd43f707638fceb379d7410a82a7d1ba7f74c8fb"
+   "chave": "ad00de1877f77cf68422142228ed8640123b5ab5"
   },
   "banheira-acqua-stylo-completa-com-hidro": {
    "src": "media/og/banheira-acqua-stylo-completa-com-hidro.jpg",
    "medida": "0,90 x 1,70 x 0,36",
    "foto_sha1": "ac159d82b1ce6ad2e49f4295058399e56e228e16",
-   "chave": "8d9d2b35200007436defde0e2fd11fc8cc8533e2"
+   "chave": "e9ffb3598c0fbe746da07e65a439705f4d89d021"
   },
   "banheira-acqua-top-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-acqua-top-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,80 x 1,70 X 0,43",
    "foto_sha1": "cbad4e6373dcb3118bb4ed1cb63811f40cab58dd",
-   "chave": "fcdf1f299ccb8d22f6181ee121ded8be35785d9f"
+   "chave": "c62718e821b072bc0548330e7414051a9ff50b00"
   },
   "banheira-acqua-top-completa-com-hidro": {
    "src": "media/og/banheira-acqua-top-completa-com-hidro.jpg",
    "medida": "0,81 x 1,60 x 0,42",
    "foto_sha1": "cbad4e6373dcb3118bb4ed1cb63811f40cab58dd",
-   "chave": "c619ccc2e14fb3f9974294d642ffc83912e3cf37"
+   "chave": "f279870145279d8deeb9d97bf8498702244fe15f"
   },
   "banheira-acqua-vip-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-acqua-vip-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,79 x 0,99 x 0,39",
    "foto_sha1": "649923d600a249373f4c3317bfe3e587968191d4",
-   "chave": "3c49ce23abf4057c72ed866d1d58ab3f89ddba19"
+   "chave": "fd1fcf8f68866edf7b490ede65115cf2b0b95821"
   },
   "banheira-acqua-vip-completa-com-hidro": {
    "src": "media/og/banheira-acqua-vip-completa-com-hidro.jpg",
    "medida": "0,79 x 0,99 x 0,39",
    "foto_sha1": "7c32ddbfb0f9bfbc402b6c25eaa5478951f616d0",
-   "chave": "83782152744eab8fc4243f97348d34073c29a86d"
+   "chave": "4e227f4cca59f8e57a9fffe476ab726d53d87a09"
   },
   "banheira-contemporanea-paraty-sem-hidro": {
    "src": "media/og/banheira-contemporanea-paraty-sem-hidro.jpg",
    "medida": "0,84 x 1,56 x 0,48",
    "foto_sha1": "f1efe4443f482b29a7114f05a370401ca0add148",
-   "chave": "349e2e7d9291bc1349ce60762e721b4671cbd66d"
+   "chave": "043ffb27c97bf009f25e48134793c51ec3013f90"
   },
   "banheira-de-canto-mercury-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-mercury-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,36 x 1,36 x 0,47",
    "foto_sha1": "9428560bab981e43bc995d09c31b344c8eb304fe",
-   "chave": "a78c0edd81133a7d65823ee56705b67144a1bf13"
+   "chave": "2742f84403ae4fd36617c318d3f203cc3b5c6245"
   },
   "banheira-de-canto-mercury-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-mercury-completa-com-hidro.jpg",
    "medida": "1,36 x 1,36 x 0,47",
    "foto_sha1": "9428560bab981e43bc995d09c31b344c8eb304fe",
-   "chave": "a426c0cb8fc8df8a70ecdbb75264405b3f71d596"
+   "chave": "c2b5595e7bf464346b9f300548cc5ab209244968"
   },
   "banheira-de-canto-monaco-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-monaco-com-hidro-em-acrilico.jpg",
    "medida": "1,34 x 1,34 x 0,42",
    "foto_sha1": "39fa97ecae5594d72be4cd598824a5b83df85d90",
-   "chave": "37fa6c14bca55a5d9f0975f4ae92629e13cd3ab6"
+   "chave": "c3da3ebbd3e036726ccd5e37300e0c1775e1ffbb"
   },
   "banheira-de-canto-monaco-com-hidro": {
    "src": "media/og/banheira-de-canto-monaco-com-hidro.jpg",
    "medida": "1,34 x 1,34 x 0,42",
    "foto_sha1": "39fa97ecae5594d72be4cd598824a5b83df85d90",
-   "chave": "d022fe83406923fb33a1fdcf32479fb6d41186ed"
+   "chave": "178414ea501672ba31c554c0702aaa7560f21cc9"
   },
   "banheira-de-canto-monaco-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-monaco-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,34 x 1,34 x 0,42",
    "foto_sha1": "a40d04ac45d286bea9d0d60e493a93659111dcf4",
-   "chave": "77598a3630ebd2d407a20119168b572777b743ed"
+   "chave": "86a8167be361780d66d34c7a60ce35fd3ccb58e6"
   },
   "banheira-de-canto-monaco-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-monaco-completa-com-hidro.jpg",
    "medida": "1,34 x 1,34 x 0,42",
    "foto_sha1": "b10d87c62f8045f81da472a8d659895cbf6cef29",
-   "chave": "d03727c875f62f8edfce742dc3f386467ae92286"
+   "chave": "4f124935d27e641050292fc1fb528de67dd6cfc7"
   },
   "banheira-de-canto-santa-monica-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-santa-monica-com-hidro-em-acrilico.jpg",
    "medida": "1,38 x 1,38 x 0,45",
    "foto_sha1": "175e973de2e600f136fc32ed9ba2fb43f6af28a5",
-   "chave": "f0c810ff91a97af9ef912a26fa646a8f704c9016"
+   "chave": "75d02d1b91e335acc2340a2ef744c2e4f8f0f5fc"
   },
   "banheira-de-canto-santa-monica-com-hidro": {
    "src": "media/og/banheira-de-canto-santa-monica-com-hidro.jpg",
    "medida": "1,38 x 1,38 x 0,45",
    "foto_sha1": "3689d29e143b28688d89b23fb18c3afc6c0f0eff",
-   "chave": "b17dc5a663c3a1b0307981e2b55139fc926df70c"
+   "chave": "6e17fb1b030f1eb2760de8920395bd0acc93c90d"
   },
   "banheira-de-canto-santa-monica-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-santa-monica-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,38 x 1,38 x 0,45",
    "foto_sha1": "0fd31ccdb488b8d1e3c81848d55bc8c1b49be894",
-   "chave": "218ec6e074ada6354b71d0b2192843319c4d5764"
+   "chave": "8cee1214cfd17a970438d4758ab54798d872bd65"
   },
   "banheira-de-canto-santa-monica-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-santa-monica-completa-com-hidro.jpg",
    "medida": "1,38 x 1,38 x 0,45",
    "foto_sha1": "0fd31ccdb488b8d1e3c81848d55bc8c1b49be894",
-   "chave": "f98031986b4198af3f96147738ef62f8f789757f"
+   "chave": "332d838d37098b5741a895288622e31a5624b3e4"
   },
   "banheira-de-canto-sensuale-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-sensuale-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,35 x 1,35 x 0,43",
    "foto_sha1": "cbde823061cd2dba2203f29e4df1d78bef1b383e",
-   "chave": "d990ccdfdf9162e7e4b342802317e414f1d07c33"
+   "chave": "02a2b9a12a18236a48f183adc675d84fa6fefd5a"
   },
   "banheira-de-canto-sensuale-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-sensuale-completa-com-hidro.jpg",
    "medida": "1,35 x 1,35 x 0,43",
    "foto_sha1": "cbde823061cd2dba2203f29e4df1d78bef1b383e",
-   "chave": "789b4a2ca3b3641f8aeff825c03212b85e71fe8f"
+   "chave": "76eb25e43869e05e2f4277040c8bb09682231ec8"
   },
   "banheira-de-canto-sevilha-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-sevilha-com-hidro-em-acrilico.jpg",
    "medida": null,
    "foto_sha1": "17d0c78c23a98928b4a7924bb3a01f8949312994",
-   "chave": "5ac055e695f52e574069d773a70eb8d7a200fd74"
+   "chave": "e6bf0ff3342cd0e4abaee1dc56ed86d2b49c9a0f"
   },
   "banheira-de-canto-sevilha-com-hidro": {
    "src": "media/og/banheira-de-canto-sevilha-com-hidro.jpg",
    "medida": "1,36 x 1,36 x 0,47",
    "foto_sha1": "17d0c78c23a98928b4a7924bb3a01f8949312994",
-   "chave": "8e5b6cc013260cf3f8691d505119c8c6673a0084"
+   "chave": "e84ff69f900ecec6f435c66c6aa794a52a75efdb"
   },
   "banheira-de-canto-sevilha-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-sevilha-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,36 x 1,36 x 0,47",
    "foto_sha1": "54babd85a9348eb918cf6ea8c56dbdc25101387e",
-   "chave": "cd02069d11cc99909e6e4ac341723ca9b7121000"
+   "chave": "8e0facd43978286eac71822e4d92360c3673b965"
   },
   "banheira-de-canto-sevilha-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-sevilha-completa-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "54babd85a9348eb918cf6ea8c56dbdc25101387e",
-   "chave": "3b9b613fc7ebf400181e18b1c51bf5290b663951"
+   "chave": "723f9987c32cf53fcb2b69e1261dacff42f2c7df"
   },
   "banheira-de-canto-simpatia-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-simpatia-completa-com-hidro.jpg",
    "medida": "1,60 x 1,60 x 0,50",
    "foto_sha1": "247897753129fedb5b85204f1df398feb424f51f",
-   "chave": "ec83ac0a36531251df6cd673b2c772d360a71efe"
+   "chave": "797b40566238b301a50a6d4e4ba6c2cb9263f02d"
   },
   "banheira-de-canto-ternura-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-ternura-completa-com-hidro.jpg",
    "medida": "1,50 x 1,50 x 0,54",
    "foto_sha1": "fef5655b560efeb253f35ffe412c979c951100fa",
-   "chave": "4b969912524cfbb60c1a3c12fffe61b49cc64386"
+   "chave": "bc5e7def85de7011714c56c09aea8f54171937fa"
   },
   "banheira-de-canto-veneza-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-veneza-com-hidro-em-acrilico.jpg",
    "medida": "1,57 x 1,57 x 0,51",
    "foto_sha1": "fda6eee7739fecf2c1164e801250ff15006a2995",
-   "chave": "db934ee98ec82166c2fb547710bce21aeac986ed"
+   "chave": "b142332be421405da012124931d7ba480d28ddd3"
   },
   "banheira-de-canto-veneza-com-hidro": {
    "src": "media/og/banheira-de-canto-veneza-com-hidro.jpg",
    "medida": "1,57 x 1,57 x 0,51",
    "foto_sha1": "ad2200cbfb91edc0aa7587b5ae4226113a8ef50a",
-   "chave": "d46ebe8bc6c7abb710a0f65ee3e251556cf8b49e"
+   "chave": "2e94f8a5c0b6bdbf31fb48a2fc87bd5e2670c725"
   },
   "banheira-de-canto-veneza-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-veneza-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,57 x 1,57 x 0,51",
    "foto_sha1": "a52115c8a7033bc62290f93e49a0802a31e71bb9",
-   "chave": "f50987daa15ed7a1f7299eef2e8e6d8095c9677e"
+   "chave": "862e8f66b260af1fdfb9de819912399259b32838"
   },
   "banheira-de-canto-veneza-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-veneza-completa-com-hidro.jpg",
    "medida": "1,57 x 1,57 x 0,51",
    "foto_sha1": "a52115c8a7033bc62290f93e49a0802a31e71bb9",
-   "chave": "c43c6157fc365218059417e531a6e7725aa10042"
+   "chave": "b099a3aa4f09a522ba587c51e355da912049d1f0"
   },
   "banheira-de-canto-viena-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-viena-com-hidro-em-acrilico.jpg",
    "medida": "1,66 x 1,66 x 0,50",
    "foto_sha1": "57a7637f7eae0b570c0f139b54a56d728b799bae",
-   "chave": "c6052a399c53af7e064446b9ea04a3a3fe72c4f6"
+   "chave": "28b422079a3c7b02148b194bad64e9fa32732af8"
   },
   "banheira-de-canto-viena-com-hidro": {
    "src": "media/og/banheira-de-canto-viena-com-hidro.jpg",
    "medida": "1,66 x 1,66 x 0,50",
    "foto_sha1": "5587875968bb09dbf74fa31261bba4acab98c123",
-   "chave": "81cd31b30195e078cd6e4001dc60307925434735"
+   "chave": "1e1801bbc14b6ad8f11bc4f63e517e2665668b72"
   },
   "banheira-de-canto-viena-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-de-canto-viena-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,66 x 1,66 x 0,50",
    "foto_sha1": "85e9a02297944adb16c1b80e271a9b902b7dde5a",
-   "chave": "856fa398e25b1572b57208b0b94307d3842433a7"
+   "chave": "d0c4fe0e2608763c5e2be224aac87c4f2df6dc49"
   },
   "banheira-de-canto-viena-completa-com-hidro": {
    "src": "media/og/banheira-de-canto-viena-completa-com-hidro.jpg",
    "medida": "1,66 x 1,66 x 0,50",
    "foto_sha1": "3a120327ecbb226f7b5c8016f9ed811a625130d2",
-   "chave": "b44aebf6009d819c1ad4033e2d2f6374750a4472"
+   "chave": "b69ab7b2d9bcca3ef7d58775c715a6b68e80aac3"
   },
   "banheira-dupla-amazonia-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-amazonia-com-hidro-em-acrilico.jpg",
    "medida": "1,09 x 1,39 x 0,38",
    "foto_sha1": "4e0a66f3ad98dc262f3a64aaf0a76ca177e7aff2",
-   "chave": "47c380efc4bd435fd3a7ae020bd631e3d89673f3"
+   "chave": "b6d3546e24a4e8ef668743639cf3a049d3caf693"
   },
   "banheira-dupla-amazonia-com-hidro": {
    "src": "media/og/banheira-dupla-amazonia-com-hidro.jpg",
    "medida": "1,09 x 1,39 x 0,38",
    "foto_sha1": "e5b0f6105493e70ba0301c70d14d8bb565ecabdc",
-   "chave": "284cde17692f721f4c564902639d5f7f43d6f699"
+   "chave": "394bcc677f7edf6a50ef9fd0a75dacfbc1bf87d8"
   },
   "banheira-dupla-amazonia-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-amazonia-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,09 x 1,39 x 0,38",
    "foto_sha1": "515358a7acae8088ff17f613e922624648bcdba4",
-   "chave": "34fc17f975314db246082f5f3902cfb4afed2975"
+   "chave": "ff76a53933eb2eadb4082a38e3a443819bd931c7"
   },
   "banheira-dupla-amazonia-completa-com-hidro": {
    "src": "media/og/banheira-dupla-amazonia-completa-com-hidro.jpg",
    "medida": "1,09 x 1,39 x 0,38",
    "foto_sha1": "515358a7acae8088ff17f613e922624648bcdba4",
-   "chave": "3a1f7235d398146737fbd2f1fdbf513eb5960987"
+   "chave": "2e6d8c82e75629c0f63fc0b9fa9e55ec4353c04e"
   },
   "banheira-dupla-austria-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-austria-com-hidro-em-acrilico.jpg",
    "medida": null,
    "foto_sha1": "0eb40b5d4595fb43fedd8197b319f16997d39276",
-   "chave": "733151ed8bc58b7a3a2d020c959e82425673ac2c"
+   "chave": "e6ef722edc911ff790df2bd8da4b7161a693887a"
   },
   "banheira-dupla-austria-com-hidro": {
    "src": "media/og/banheira-dupla-austria-com-hidro.jpg",
    "medida": "1,15 x 1,43 x 0,43",
    "foto_sha1": "0eb40b5d4595fb43fedd8197b319f16997d39276",
-   "chave": "3d0112282194d5e8b48275ad148f1192ffeef4c1"
+   "chave": "4e56fa613ae01920b0e87580369170688a0d695c"
   },
   "banheira-dupla-austria-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-austria-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,15 x 1,43 x 0,43",
    "foto_sha1": "14a0db7b9ffd1a392078e3aba1f3434b537b5c06",
-   "chave": "de751821f8f91aa6c3a64a9130f951ab74c473d7"
+   "chave": "4d5b7ab2124b09cd2dc9aff880ced230fa77e34e"
   },
   "banheira-dupla-austria-completa-com-hidro": {
    "src": "media/og/banheira-dupla-austria-completa-com-hidro.jpg",
    "medida": "1,15 x 1,43 x 0,43",
    "foto_sha1": "14a0db7b9ffd1a392078e3aba1f3434b537b5c06",
-   "chave": "aed45d1e7699e4dcc687960798f3046c4e2ba964"
+   "chave": "e9b2ff37a5384be1de96d2e9784c767773b4c87f"
   },
   "banheira-dupla-bruxelas-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-bruxelas-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,40 x 0,40",
    "foto_sha1": "62ad51671a9eca9190679d28f78293e068ab3eda",
-   "chave": "a0174c10173389b46b998fb7ffcbd6f768f340f4"
+   "chave": "d6d40d3e37ba0420c04c0a0aa5997b15fe58674b"
   },
   "banheira-dupla-bruxelas-com-hidro": {
    "src": "media/og/banheira-dupla-bruxelas-com-hidro.jpg",
    "medida": "1,20 x 1,40 x 0,40",
    "foto_sha1": "62ad51671a9eca9190679d28f78293e068ab3eda",
-   "chave": "77c1a4e056ccbf08f01072dd283a9e04d032427d"
+   "chave": "dad92cf7551b002b49d993d8c58e3585052fd3e7"
   },
   "banheira-dupla-bruxelas-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-bruxelas-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,40 x 0,40",
    "foto_sha1": "49ea47ad3abb987b103bfdc28a80db773d20408e",
-   "chave": "782dc9716de435a94389c55b9fc9eb7f0b53bf2a"
+   "chave": "e9d15363f25dec0bcca3c3782fc3115d56425c16"
   },
   "banheira-dupla-bruxelas-completa-com-hidro": {
    "src": "media/og/banheira-dupla-bruxelas-completa-com-hidro.jpg",
    "medida": "1,20 x 1,40 x 0,40",
    "foto_sha1": "49ea47ad3abb987b103bfdc28a80db773d20408e",
-   "chave": "345c364c3bccda92b9248b349a6ecc643b8c96b8"
+   "chave": "78b433f85d9caf85288b822e6424724a5e58d15c"
   },
   "banheira-dupla-california-com-hidro": {
    "src": "media/og/banheira-dupla-california-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,42",
    "foto_sha1": "14591986f42181f1ded4b7efc79e7865a809f616",
-   "chave": "99db84ae62746c4a2893ee778e84d8a566775bfc"
+   "chave": "87deaae7c8a4876361dd244d77db1941f93951ab"
   },
   "banheira-dupla-california-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-california-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,69 x 0,42",
    "foto_sha1": "14591986f42181f1ded4b7efc79e7865a809f616",
-   "chave": "a98bb85fbf4675e3fe21c04eae31fa146597b73e"
+   "chave": "1add4bc6648af4b64f7d034f05c7945651a13c30"
   },
   "banheira-dupla-california-completa-com-hidro": {
    "src": "media/og/banheira-dupla-california-completa-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,42",
    "foto_sha1": "14591986f42181f1ded4b7efc79e7865a809f616",
-   "chave": "24e68c878315b604a1843d784f5185f01724eac5"
+   "chave": "02cd819633e9786241c853f9aa9e5e1d86f02c55"
   },
   "banheira-dupla-cancun-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-cancun-com-hidro-em-acrilico.jpg",
    "medida": "1,08 x 1,81 x 0,53",
    "foto_sha1": "9bd677cf6728d0131389f31dde6bf20f5efbe86f",
-   "chave": "5deb490ed08e4a4030dd81839a0f7dbc2546ad01"
+   "chave": "f80f774f1d147bb93b2d4ee2e10c3082a0f900d6"
   },
   "banheira-dupla-cancun-com-hidro": {
    "src": "media/og/banheira-dupla-cancun-com-hidro.jpg",
    "medida": "1,08 x 1,81 x 0,53",
    "foto_sha1": "c39af3f6cf28413600bead1a6bff3f05addd34ed",
-   "chave": "9af2ba471bca28c4d80a97ef2834fcaa148cdc1e"
+   "chave": "76345d95c22ccebfc8f0d14152584ead8f2ec7da"
   },
   "banheira-dupla-cancun-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-cancun-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,08 x 1,81 x 0,53",
    "foto_sha1": "d545257ff571406c15cec7ba96fe492557edaf9b",
-   "chave": "697b52e9bf6c4ef67277c058291c8708b1d16e8b"
+   "chave": "bb7f7860a929b9cea3e111d0bda5551aa06bf509"
   },
   "banheira-dupla-cancun-completa-com-hidro": {
    "src": "media/og/banheira-dupla-cancun-completa-com-hidro.jpg",
    "medida": "1,08 x 1,81 x 0,53",
    "foto_sha1": "d545257ff571406c15cec7ba96fe492557edaf9b",
-   "chave": "5d84f0d74049bdd943ec85cd6cbf252bea5bf8fe"
+   "chave": "dc5b3eb04910bac0666e89a8f5a7f69eef198384"
   },
   "banheira-dupla-capri-completa-com-hidro-em-acrilico-1": {
    "src": "media/og/banheira-dupla-capri-completa-com-hidro-em-acrilico-1.jpg",
    "medida": "1,06 x 1,90 x 0,50",
    "foto_sha1": "5b0ff6b68d651e8b22fb9f5a4a8290f460abb0cf",
-   "chave": "102b485db1d17ab6ea5d97b1f9ec7330896bb63b"
+   "chave": "4f76b00a868d976d71ebaf6dcb1783faffe5510e"
   },
   "banheira-dupla-desejo-completa-com-hidro": {
    "src": "media/og/banheira-dupla-desejo-completa-com-hidro.jpg",
    "medida": "1,59 x 1,66 x 0,48",
    "foto_sha1": "908cb6b01e6bd6aa2564e85b34451dab88fa015b",
-   "chave": "a2bf5289d62b13f41705fcb122e9e6cb8bdea110"
+   "chave": "fdf4d8b585e9d97921213107c57ec593c38ac79b"
   },
   "banheira-dupla-essenciale-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-essenciale-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,60 x 1,20 x 0,42",
    "foto_sha1": "88b95ae9a822401a7f6b1289e5c01af85a69f302",
-   "chave": "2ddf61d526de36c3592f8545b93a70b08dd6f1e8"
+   "chave": "a8f6ff5f5140b11e13207b2260fe363fa4b12454"
   },
   "banheira-dupla-essenciale-completa-com-hidro": {
    "src": "media/og/banheira-dupla-essenciale-completa-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "88b95ae9a822401a7f6b1289e5c01af85a69f302",
-   "chave": "d216213a5118543a270082c717a76985a1f0cff3"
+   "chave": "07edfdb856ba76b487c380ea7eb5f15ad3a88701"
   },
   "banheira-dupla-firenze-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-firenze-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,69 x 0,42",
    "foto_sha1": "b09f05391f01b46d33f53131b2774863472e8d63",
-   "chave": "99c14379da1dbb39eb824bfac308cb207c590ccf"
+   "chave": "4413a9195e72998678e52e26eeab95cff2f84e11"
   },
   "banheira-dupla-firenze-com-hidro": {
    "src": "media/og/banheira-dupla-firenze-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,42",
    "foto_sha1": "a57b06d69c5f1fdfd76d83d0555374bca42c9fad",
-   "chave": "75babb1c4f55f6da1b136f90bd7da55d0da9f01f"
+   "chave": "70e672ffac39a89c1cc29081194ba04a6b766c8e"
   },
   "banheira-dupla-firenze-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-firenze-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,69 x 0,42",
    "foto_sha1": "8000e35ec5819bd20bb5275386be849233bafcbe",
-   "chave": "7f8e8561c7cda616cb5051c5a97807d5bc8a09a3"
+   "chave": "9245aa08e4820900db831cd76d7d5feafaf2d175"
   },
   "banheira-dupla-firenze-completa-com-hidro": {
    "src": "media/og/banheira-dupla-firenze-completa-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,42",
    "foto_sha1": "40da7d72b129b45508dab8d6da3dbcd463fe6d69",
-   "chave": "37bcd21679164d414e0300b0b9df46f5bea82a86"
+   "chave": "3b73a1e668dd9a017f95600f1e6a29037cf8daae"
   },
   "banheira-dupla-fortaleza-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-fortaleza-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,80 x 0,48",
    "foto_sha1": "e1a5aa2cab83ab4d6b3722c57c01bfae360b3289",
-   "chave": "87279a8a98bd055e66a54a60e0d1f5e7463d0fe6"
+   "chave": "140b2c13b3dca0086119809199196d0d58161e81"
   },
   "banheira-dupla-fortaleza-completa-com-hidro": {
    "src": "media/og/banheira-dupla-fortaleza-completa-com-hidro.jpg",
    "medida": "1,19 x 1,80 x 0,48",
    "foto_sha1": "e1a5aa2cab83ab4d6b3722c57c01bfae360b3289",
-   "chave": "c5f2c1ffe0df0c00bf14a3befb9e0469d8e934ec"
+   "chave": "538f0fa796148c925de7c3db1e44f3136d4247ef"
   },
   "banheira-dupla-fortaleza-excellence-completa-c-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-fortaleza-excellence-completa-c-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,80 x 0,48",
    "foto_sha1": "8a2de1446032cd0319a2e1500ff28f443d0fd959",
-   "chave": "b7679554fd364fb40dad07063f197a8eb66f7d4b"
+   "chave": "db2e79d9bd391d13bf87fcf5f6aaebb416d64865"
   },
   "banheira-dupla-harmonia-completa-com-hidro-em-acrilico-1": {
    "src": "media/og/banheira-dupla-harmonia-completa-com-hidro-em-acrilico-1.jpg",
    "medida": "1,84 x 1,05 x 0,50",
    "foto_sha1": "5aa4a4b86b8516211606618b8590b75abec137ea",
-   "chave": "3267d850538e7ad078bba7200cf0caf6185b1229"
+   "chave": "18c84704516a749d153f6d2ce59b1ed187a05e51"
   },
   "banheira-dupla-havana-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-havana-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,13 x 1,49 x 0,39",
    "foto_sha1": "4fcc959a02828ffa4b6b24e7736c45aed603ede9",
-   "chave": "c61cbf0a272ce83d75c40319c70a1ba0b04e1d15"
+   "chave": "e5b5647a25db96a846d5cae061be9eb466d69bde"
   },
   "banheira-dupla-havana-completa-com-hidro": {
    "src": "media/og/banheira-dupla-havana-completa-com-hidro.jpg",
    "medida": "1,13 x 1,49 x 0,39",
    "foto_sha1": "1b3c2ea9cb664accb5283efbb0318f251b7b43a0",
-   "chave": "bccb1ea7096b0361a2a71068a793509598fd1441"
+   "chave": "9f7afe96b662da46354957e75f331f8d980bd9c2"
   },
   "banheira-dupla-hippolyte-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-hippolyte-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,69 x 0,49",
    "foto_sha1": "274526a3cee640ba83ed41172c9619c147bda5d0",
-   "chave": "607d8abce1498436cbf4018ed0720e680e205e41"
+   "chave": "e9faf4c588aa259ab1c0b959663a00c16c7b21f3"
   },
   "banheira-dupla-hippolyte-com-hidro": {
    "src": "media/og/banheira-dupla-hippolyte-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,49",
    "foto_sha1": "cd0e15798832010df0f86c9e20257f41debf7d50",
-   "chave": "b9d2f0d2f38a896c00238a7b6a5e608bba06279a"
+   "chave": "4cd1323fefadcc9cb19be43cd0e286058ed739f1"
   },
   "banheira-dupla-hippolyte-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-hippolyte-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,69 x 0,49",
    "foto_sha1": "29cf9612a1e6aa0dc60eacfd749fe4c205ccf267",
-   "chave": "c7062c6971c1b52c0c5fd3ae377b4768ad571e3b"
+   "chave": "4fbab3a4302e3a58d6ac625ef170dda9c8849552"
   },
   "banheira-dupla-hippolyte-completa-com-hidro": {
    "src": "media/og/banheira-dupla-hippolyte-completa-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,49",
    "foto_sha1": "ac76f72033a60960a5096f416c5c76f8b98668ce",
-   "chave": "7e9eafa6ec3a979d72127c8124ea1172baff7d34"
+   "chave": "a3796c7cc9b11d043b78398906479c723a42dfd4"
   },
   "banheira-dupla-lyon-com-abas-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-lyon-com-abas-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,43 x 1,96 x 0,51",
    "foto_sha1": "4186680e13bde0f81a4f961c4c37c85e6d83d1a2",
-   "chave": "8351a7d00a5dd0ac9afa8bc2e1074d96428bbfe4"
+   "chave": "2d2dc70130952c3a4044692560160ef55109ff04"
   },
   "banheira-dupla-lyon-com-abas-completa-com-hidro": {
    "src": "media/og/banheira-dupla-lyon-com-abas-completa-com-hidro.jpg",
    "medida": "1,43 x 1,96 x 0,51",
    "foto_sha1": "4186680e13bde0f81a4f961c4c37c85e6d83d1a2",
-   "chave": "1c6b6d1da12faef3aa1f381108842777f8fcfdf3"
+   "chave": "ebdf402d3f9bc70e06c3626fa7eda24376989461"
   },
   "banheira-dupla-lyon-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-lyon-com-hidro-em-acrilico.jpg",
    "medida": "1,43 x 1,96 x 0,51",
    "foto_sha1": "e8c9473a4d4603c8eedb911b7473265fe956719b",
-   "chave": "7853a812f6bbd979f6bb51288f211b62f6d7f54e"
+   "chave": "81c3372307d4b8d623ba4bffe140971192e88957"
   },
   "banheira-dupla-lyon-com-hidro": {
    "src": "media/og/banheira-dupla-lyon-com-hidro.jpg",
    "medida": "1,43 x 1,96 x 0,51",
    "foto_sha1": "897551e4979dd2dd256bf2bcdd2c8d2cdf7af925",
-   "chave": "07b0f479672463164bb49e8a13a5a13171a4afdd"
+   "chave": "f68baf5066fc050c093fc89c1405a1498a3d3b35"
   },
   "banheira-dupla-lyon-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-lyon-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,43 x 1,96 x 0,51",
    "foto_sha1": "cfc438d3e5e124d9903028fa3f8c347dbd3a37c0",
-   "chave": "55497969680d7ce50724d9f39b0e9ee6e25ef2a3"
+   "chave": "0326ea42e7faaf094ce925849999581afec102f2"
   },
   "banheira-dupla-lyon-completa-com-hidro": {
    "src": "media/og/banheira-dupla-lyon-completa-com-hidro.jpg",
    "medida": "1,43 x 1,96 x 051",
    "foto_sha1": "cfc438d3e5e124d9903028fa3f8c347dbd3a37c0",
-   "chave": "1217cf2ad98216dc7078f371eb9738886cac49a9"
+   "chave": "001b2272a7321fb5de8f6ad216b8eab2a8af4675"
   },
   "banheira-dupla-madrid-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-madrid-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,70 x 0,44",
    "foto_sha1": "a3bb8c2a5dec75dba255017fc0d74c66834e6875",
-   "chave": "af5d15f6cfdc2bac28e7c3a36117c2838d664a98"
+   "chave": "873a05bf0b62db85ced8f1c43f61c53fab9ab7e2"
   },
   "banheira-dupla-madrid-com-hidro": {
    "src": "media/og/banheira-dupla-madrid-com-hidro.jpg",
    "medida": "1,20 x 1,70 x 0,44",
    "foto_sha1": "1670066912445b1841592aaad316eceef928a489",
-   "chave": "4e26f9e90817e8d872449e1119e58037ebc5ed7b"
+   "chave": "f77fd090932c2bcfbfbfc02d92e47132d3185058"
   },
   "banheira-dupla-madrid-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-madrid-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,70 x 0,44",
    "foto_sha1": "462c5e5ff7ee53885d0ccc695e774d4efa831a26",
-   "chave": "8afa2bd9b3324a370379aeb0e84ec93163aa1e09"
+   "chave": "dd176b0516ba589b433055c72614b55d2122286a"
   },
   "banheira-dupla-madrid-completa-com-hidro": {
    "src": "media/og/banheira-dupla-madrid-completa-com-hidro.jpg",
    "medida": "1,20 x 1,70 x 0,44",
    "foto_sha1": "462c5e5ff7ee53885d0ccc695e774d4efa831a26",
-   "chave": "8515c859f99a20b2cad58e589c1db45277d5fa52"
+   "chave": "f614998df72c0087596b88bf58d43c41b50f37ac"
   },
   "banheira-dupla-maresias-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-maresias-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,51 x 0,44",
    "foto_sha1": "0a071d3a6c45f8b5a62f6d9ec8599aeb5461e2b3",
-   "chave": "be594287d720ba91e4208afbc2b7b9c12cb17577"
+   "chave": "cf4b835fa60d92ae0d25e89bebc804bcf2df6c14"
   },
   "banheira-dupla-maresias-completa-com-hidro": {
    "src": "media/og/banheira-dupla-maresias-completa-com-hidro.jpg",
    "medida": "1,20 x 1,51 x 0,44",
    "foto_sha1": "0a071d3a6c45f8b5a62f6d9ec8599aeb5461e2b3",
-   "chave": "215451e4fc9f931aa0a030f512240eb56637f15a"
+   "chave": "432604e97e66437b895d130b74a0ebcfb1b28591"
   },
   "banheira-dupla-paris-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-paris-com-hidro-em-acrilico.jpg",
    "medida": "1,03 x 1,84 x 0,40",
    "foto_sha1": "d4a59fb673fe020184061e9738ea18a3673bc313",
-   "chave": "458dc05fc1643330d627aa35b780017e5114755f"
+   "chave": "12b671861f4ff541b5e250d33de1ff2938cbd20a"
   },
   "banheira-dupla-paris-com-hidro": {
    "src": "media/og/banheira-dupla-paris-com-hidro.jpg",
    "medida": "1,03 x 1,84 x 0,40",
    "foto_sha1": "836ea4768bd92749ed04c56dbb0c5ae5fa426e69",
-   "chave": "0f4f642f108925b25f9d886a82cb07fc11d0295d"
+   "chave": "c2a5a1f9ae21bb5e06f8eda11874d93828f4a950"
   },
   "banheira-dupla-paris-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-paris-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,03 x 1,84 x 0,40",
    "foto_sha1": "c12367c889ff173ea904d81251ff20cd8c35b8fb",
-   "chave": "ba098752b1afceed465ba13d00295ede54866372"
+   "chave": "fe8b1109b4ae60eae5658f6c74e34c2cc1c2b958"
   },
   "banheira-dupla-paris-completa-com-hidro": {
    "src": "media/og/banheira-dupla-paris-completa-com-hidro.jpg",
    "medida": "1,03 x 1,84 x 0,40",
    "foto_sha1": "c12367c889ff173ea904d81251ff20cd8c35b8fb",
-   "chave": "fb7eb0c6484a59f04d5ea0f97494f2e66d806c16"
+   "chave": "115c7203bf21665aa8c773468ec5e8a6a2f97f7d"
   },
   "banheira-dupla-requinte-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-requinte-completa-com-hidro-em-acrilico.jpg",
    "medida": null,
    "foto_sha1": "8ad4937e8cc19faa6577692654123ad81d01ee24",
-   "chave": "aa71a85cd2d512c332ce1a4b3a9b288039631f6b"
+   "chave": "f6745db694950ecb9f12df7e6a47490ce236f879"
   },
   "banheira-dupla-requinte-completa-com-hidro": {
    "src": "media/og/banheira-dupla-requinte-completa-com-hidro.jpg",
    "medida": "1,09 x 1,89 x 0,45",
    "foto_sha1": "8ad4937e8cc19faa6577692654123ad81d01ee24",
-   "chave": "8b09d9e7a426e4146198644b02f0dab716172e16"
+   "chave": "9fededc667c303174d9ae52e7dea46a8e1481454"
   },
   "banheira-dupla-rivail-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-rivail-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,80 x 0,43",
    "foto_sha1": "e4c9159e3f65e442882a91a4925b23ab16567e13",
-   "chave": "4d03c3a8ff106287d46b47e936d1e5a8b86750f4"
+   "chave": "fe5f125a4fd24aad28d9bb33b9213976451e2cbf"
   },
   "banheira-dupla-rivail-com-hidro": {
    "src": "media/og/banheira-dupla-rivail-com-hidro.jpg",
    "medida": "1,20 x 1,80 x 0,43",
    "foto_sha1": "2fc75c29a251d3d92850fcfc9115a8c2aee78931",
-   "chave": "90ba47d42951fca557ff93be8559b57dc86e3497"
+   "chave": "26dcd5db5de13c07c7ba13f84bb69a222f379005"
   },
   "banheira-dupla-rivail-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-rivail-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,80 x 0,43",
    "foto_sha1": "108ac5cac947fc03a39b4a6f1d5159bc84a86589",
-   "chave": "44f383abb4e38765e898fb63ec08a55396f90aa0"
+   "chave": "5c88e0247785d4c3925a40244d63c242757b6091"
   },
   "banheira-dupla-rivail-completa-com-hidro": {
    "src": "media/og/banheira-dupla-rivail-completa-com-hidro.jpg",
    "medida": "1,20 x 1,80 x 0,43",
    "foto_sha1": "108ac5cac947fc03a39b4a6f1d5159bc84a86589",
-   "chave": "15449028cf17295d65db0c7dd2d52203eaf909ea"
+   "chave": "6cc4cae7a4d23e5ef0d8e709d230db0e7a5f927d"
   },
   "banheira-dupla-saara-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-saara-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,80 x 0,42",
    "foto_sha1": "97974adf22072639d8b3f477d092190d48aaba78",
-   "chave": "71e4603c414b66bfa9a3a0c3124abff2309ed2a0"
+   "chave": "2e3ea7a9b846d3a09f462f8f54bf5dec1b8856eb"
   },
   "banheira-dupla-saara-com-hidro": {
    "src": "media/og/banheira-dupla-saara-com-hidro.jpg",
    "medida": "1,19 x 1,80 x 0,42",
    "foto_sha1": "daef17fdf769004bd0680a875974ada2892822c7",
-   "chave": "79d3616116c04c69c0ead6ef713ce822d15425eb"
+   "chave": "57cc8dfcc5321996a889c7dea7f7988750930671"
   },
   "banheira-dupla-saara-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-saara-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,80 x 0,42",
    "foto_sha1": "bcdde6fd5d66f025cc47ba6703e0ed51d10030fc",
-   "chave": "bb02ab7ee42f48ebedb72d4e861e7e334a92dcec"
+   "chave": "b2478df4806c18eace48d72467980424cb7242cf"
   },
   "banheira-dupla-saara-completa-com-hidro": {
    "src": "media/og/banheira-dupla-saara-completa-com-hidro.jpg",
    "medida": "1,19 x 1,80 x 0,42",
    "foto_sha1": "bcdde6fd5d66f025cc47ba6703e0ed51d10030fc",
-   "chave": "8a95f0c8569ddd5d2940a64a1ae71cabddcb8b4a"
+   "chave": "3caea4a20116d32e5d97133bd7488d20fcb1b98f"
   },
   "banheira-dupla-solene-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-solene-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,49 x 1,49 x 0,43",
    "foto_sha1": "f6a586cec3d7fc90518fc65135b28dac0256b3a2",
-   "chave": "f70c84584ee53f007953439c5a0c3a5f50e7c504"
+   "chave": "f9b8dd1c0fde31c1fb614b8d8de0da2aeb3c3ae4"
   },
   "banheira-dupla-solene-completa-com-hidro": {
    "src": "media/og/banheira-dupla-solene-completa-com-hidro.jpg",
    "medida": "1,49 x 1,49 x 0,43",
    "foto_sha1": "f6a586cec3d7fc90518fc65135b28dac0256b3a2",
-   "chave": "a02fc84266299d533860caf04de7a2638bd1cb57"
+   "chave": "737005266dc0cbe961753c250c1e8e4f9b275af5"
   },
   "banheira-dupla-suica-com-hidro": {
    "src": "media/og/banheira-dupla-suica-com-hidro.jpg",
    "medida": "1,40 x 1,41 x 0,49",
    "foto_sha1": "fc8ec68f772b23a6f7773f806690962d0f7d37b8",
-   "chave": "db052d65aa2a33258783b44411b1fed78c5a979a"
+   "chave": "4aab4f98a29e6965b82a13b2a6cc6aa748515d9d"
   },
   "banheira-dupla-suica-completa-com-hidro": {
    "src": "media/og/banheira-dupla-suica-completa-com-hidro.jpg",
    "medida": "1,40 x 1,41 x 0,49",
    "foto_sha1": "0d3dd16fd0ba0144198ea0ffa52e0a8a1b7e8621",
-   "chave": "9fedf91905b8541bab40a8dcfdba649c2bf50893"
+   "chave": "240ccc261d2beee4d007e4bd5c9bdeb6732270fe"
   },
   "banheira-dupla-supreme-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-supreme-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,80 x 0,55",
    "foto_sha1": "3fed717b25e44c5e6620ab743892090da47aa84f",
-   "chave": "b38f62379682eacb8a3217c52e703d4dd163fd0e"
+   "chave": "1901bba1d9dd15a4a81395884100ed31c2885481"
   },
   "banheira-dupla-supreme-completa-com-hidro": {
    "src": "media/og/banheira-dupla-supreme-completa-com-hidro.jpg",
    "medida": "1,20 x 1,80 x 0,55",
    "foto_sha1": "3fed717b25e44c5e6620ab743892090da47aa84f",
-   "chave": "a811c06939bcdb59c4a8c0499c391ca318aec12a"
+   "chave": "5f861be3e8b4906bdd75ef6d2d23aca44da85a84"
   },
   "banheira-dupla-valencia-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-valencia-com-hidro-em-acrilico.jpg",
    "medida": "1,10 x 1,89 x 0,40",
    "foto_sha1": "086b9e9d0afe6e6bfd68eebea5a2ebfdcb0a2508",
-   "chave": "ddf9222b4545ae808252eab0b93596f2645bfd53"
+   "chave": "5365af9d33a20c1d919b32d5493b529c0e245017"
   },
   "banheira-dupla-valencia-com-hidro": {
    "src": "media/og/banheira-dupla-valencia-com-hidro.jpg",
    "medida": "1,10 x 1,89 x 0,40",
    "foto_sha1": "f56e01eec2e9d9acf8d5de03da13f6d89a2e7dd8",
-   "chave": "a5c12162579e7572f4d55e964f46ef2f538f29f7"
+   "chave": "c620c00d713e49fc235083e5465b9ab09fc169a6"
   },
   "banheira-dupla-valencia-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-valencia-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,10 x 1,89 x 0,40",
    "foto_sha1": "9a6dc73f59e588ebc43e65d08e242c8cb2577b23",
-   "chave": "5d2cc4fdd046b1206d773c0e761053f2cc585942"
+   "chave": "9c4b12f203df431156a0d4f6e3a1b01c90f28838"
   },
   "banheira-dupla-valencia-completa-com-hidro": {
    "src": "media/og/banheira-dupla-valencia-completa-com-hidro.jpg",
    "medida": "1,10 x 1,89 x 0,40",
    "foto_sha1": "9a6dc73f59e588ebc43e65d08e242c8cb2577b23",
-   "chave": "153eb459167b83f7cec5692f0dee4afed05cd1e7"
+   "chave": "d8e9adce88baaab6eb568094b34637d4747cb115"
   },
   "banheira-dupla-verona-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-verona-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,69 x 0,43",
    "foto_sha1": "1d4bde63b3ee90872ac3c9b946d40bac1dc2b297",
-   "chave": "8cf8fd891a7bf6f778f7148c2cc236aa1cbd29cd"
+   "chave": "09fe7e368e110d087159a97a158d8b1dbc83f631"
   },
   "banheira-dupla-verona-com-hidro": {
    "src": "media/og/banheira-dupla-verona-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,43",
    "foto_sha1": "095ccae9051642b4b1f682c824038d72c2889075",
-   "chave": "322133122abc6e56ad550338c85a5924a8ed3f3d"
+   "chave": "0db0dbd6ec27097c4736af3fa807c7eef35523da"
   },
   "banheira-dupla-verona-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-verona-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,19 x 1,69 x 0,43",
    "foto_sha1": "aa4cb98f7942d41b03399ceb4cf2538878b98d48",
-   "chave": "0a49307a877ddeec4efe7795665d7c85876fd0d3"
+   "chave": "0735913e0cd1ffa654a1ae479269f8225bea9e91"
   },
   "banheira-dupla-verona-completa-com-hidro": {
    "src": "media/og/banheira-dupla-verona-completa-com-hidro.jpg",
    "medida": "1,19 x 1,69 x 0,43",
    "foto_sha1": "1323d962074a6cde3ba9ec1938b76a3d3ccdb973",
-   "chave": "da7383ef21f9a0d31ead3c5437e4eee8962b68c3"
+   "chave": "8fe8c9999be77ebeeec6eef4153e41e16b7b529c"
   },
   "banheira-dupla-vitoria-com-abas-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-vitoria-com-abas-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,06 x 1,60 x 0,50",
    "foto_sha1": "da1a0e51928b67c63456261f0811403c971cd445",
-   "chave": "1fccf548f209bd04c0673bbf392fbda744e5741d"
+   "chave": "e90d91d576ea3ce257b264a12f37901b83536afd"
   },
   "banheira-dupla-vitoria-com-abas-completa-com-hidro": {
    "src": "media/og/banheira-dupla-vitoria-com-abas-completa-com-hidro.jpg",
    "medida": "1,06 x 1,90 x 0,50",
    "foto_sha1": "da1a0e51928b67c63456261f0811403c971cd445",
-   "chave": "97012fbf2351a1944b209a24929d00bd3b569841"
+   "chave": "3b15ba32d3ca8f5c8deb6a390b197759826be818"
   },
   "banheira-dupla-vitoria-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-vitoria-com-hidro-em-acrilico.jpg",
    "medida": "1,06 x 1,90 x 0,50",
    "foto_sha1": "c174ef68f9e2bb3cfdb5393cf8d5d5f8ab0785de",
-   "chave": "745e10af04add63c451c4831b132918ac5487b2e"
+   "chave": "96173ffee5067b37fe8417e3d79f9d680c5fdb62"
   },
   "banheira-dupla-vitoria-com-hidro": {
    "src": "media/og/banheira-dupla-vitoria-com-hidro.jpg",
    "medida": "1,06 x 1,90 x 0,50",
    "foto_sha1": "c174ef68f9e2bb3cfdb5393cf8d5d5f8ab0785de",
-   "chave": "bf378e593627b61291a83c0770d795609b481270"
+   "chave": "8179e0ba1f62caff25f44f232ddc60dc17284bde"
   },
   "banheira-dupla-vitoria-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-dupla-vitoria-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,06 X 1,60 X 0,50",
    "foto_sha1": "c102ad36513ffb6fdfd393cdc671db2e66490c07",
-   "chave": "7d391a54c2781773a2582dc4130f0c8f23678fa0"
+   "chave": "a577d212dd663f84dfb60cad647b804c21939efc"
   },
   "banheira-dupla-vitoria-completa-com-hidro": {
    "src": "media/og/banheira-dupla-vitoria-completa-com-hidro.jpg",
    "medida": "1,06 x 1,90 x 0,50",
    "foto_sha1": "c102ad36513ffb6fdfd393cdc671db2e66490c07",
-   "chave": "4e32246eb647a1abc39da6b08c35d00d963eb6c4"
+   "chave": "2d95b20921f5e29d04f6e6074b86ae92b173707a"
   },
   "banheira-individual-filipinas-com-hidro": {
    "src": "media/og/banheira-individual-filipinas-com-hidro.jpg",
    "medida": "0,91 x 1,61 x 0,58",
    "foto_sha1": "36f0047283aefc4fea743ad5c1e75ebe9793c5ec",
-   "chave": "a0f0c8c4d9e13f33ea86e4a976bb70d5892c089a"
+   "chave": "dfed599954bf7754ec162655649963d4543afc03"
   },
   "banheira-individual-filipinas-completa-com-hidro": {
    "src": "media/og/banheira-individual-filipinas-completa-com-hidro.jpg",
    "medida": "0,91 x 1,61 x 0,58",
    "foto_sha1": "bda6753f471cfbff1fe5eec010fefa074104e8fe",
-   "chave": "3965a7f163bdd83a98099b1773e645f433c24d54"
+   "chave": "e3621af1f810a9b3ceddbd81736ab165e822f111"
   },
   "banheira-individual-indonesia-com-hidro-em-acrilico": {
    "src": "media/og/banheira-individual-indonesia-com-hidro-em-acrilico.jpg",
    "medida": "0,74 x 1,30 x 0,40",
    "foto_sha1": "fde9ecde138ef36936b58cea3161ca1b281afad0",
-   "chave": "fe8400a508122b537fc357f4a33a756823e35987"
+   "chave": "4202ae07d1cdca6a0962fcc3a5004a9702e18e64"
   },
   "banheira-individual-indonesia-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-individual-indonesia-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,74 x 1,30 x 0,40",
    "foto_sha1": "71a3497522d7a6150d5a84b6eb977826ffc6668b",
-   "chave": "f86640242e9f63c15fb00fc01949200de4b16402"
+   "chave": "07960d5f39cf6c5e8be7eb114e59186e21ccd881"
   },
   "banheira-individual-indonesia-completa-com-hidro": {
    "src": "media/og/banheira-individual-indonesia-completa-com-hidro.jpg",
    "medida": "0,74 x 1,30 x 0,40",
    "foto_sha1": "a67dca5714ca6180f17ae12d25678e3e1a68ccdb",
-   "chave": "722861cd38bcd9ec961c934079b7801ff9e7de53"
+   "chave": "8b107505a0d33c4800fcde3ccd0b2491a672d6e9"
   },
   "banheira-individual-jordania-com-hidro-em-acrilico": {
    "src": "media/og/banheira-individual-jordania-com-hidro-em-acrilico.jpg",
    "medida": "1,00 x 1,50 x 0,49",
    "foto_sha1": "5d12ca223787cea152787031d3407ddca486d331",
-   "chave": "bc207d4306c150c2729ec35ddd7fa6889d159daf"
+   "chave": "70b67adc8db921db6ba3f0c0da40f4c0c9cb8ac6"
   },
   "banheira-individual-jordania-com-hidro": {
    "src": "media/og/banheira-individual-jordania-com-hidro.jpg",
    "medida": "1,00 x 1,50 x 0,49",
    "foto_sha1": "5d12ca223787cea152787031d3407ddca486d331",
-   "chave": "4b10b510592836e44ec457c715372238803cfed4"
+   "chave": "2f46d3fa3b155ca2158ed568a06387be0e02febf"
   },
   "banheira-individual-jordania-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-individual-jordania-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,00 x 1,50 x 0,49",
    "foto_sha1": "1de6820e7ede8ee9887ea3d4f9ec6f27a52ba556",
-   "chave": "cba666b3e75d1ec3d014d82fd76135fcd293a7e7"
+   "chave": "cbeca7910966d76058f83c9b913660804ca5582a"
   },
   "banheira-individual-jordania-completa-com-hidro": {
    "src": "media/og/banheira-individual-jordania-completa-com-hidro.jpg",
    "medida": "1,00 x 1,50 x 0,49",
    "foto_sha1": "1de6820e7ede8ee9887ea3d4f9ec6f27a52ba556",
-   "chave": "4061768d50fd40f9da0ecf54ca8bfb02fc7e3bcf"
+   "chave": "c2a61ef282178be1e093db5e7b8025b042d27628"
   },
   "banheira-individual-maldivas-com-hidro": {
    "src": "media/og/banheira-individual-maldivas-com-hidro.jpg",
    "medida": "1,00 x 1,60 x 0,50",
    "foto_sha1": "4c840e93a0092f33f059c41e88a9d5eaaf34a70a",
-   "chave": "6973447f94d678416a32ffba4feb42866b25a6c3"
+   "chave": "39fa148f84b9472b8888ca5280771f79ff452b0b"
   },
   "banheira-individual-maldivas-completa-com-hidro": {
    "src": "media/og/banheira-individual-maldivas-completa-com-hidro.jpg",
    "medida": "1,00 x 1,60 x 0,50",
    "foto_sha1": "089f94c107df4cdadf0cf04740efb87a7b4d9597",
-   "chave": "f4a561e2ed190db9901619b2874d8fce7a875f76"
+   "chave": "71f28618fd2ea7edb1b1ee22fca33595fc57420a"
   },
   "banheira-individual-riviera-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-individual-riviera-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,00 x 1,81 x 0,48",
    "foto_sha1": "8f2246c22ed9331a9e6d6c0d8bb9e94e460009bc",
-   "chave": "27df96bbac277cc95ae54ac90aa4ea3207a962f2"
+   "chave": "f931d19520355236f283734c51e326e6802d81a7"
   },
   "banheira-individual-riviera-completa-com-hidro": {
    "src": "media/og/banheira-individual-riviera-completa-com-hidro.jpg",
    "medida": "1,00 x 1,81 x 0,48",
    "foto_sha1": "8f2246c22ed9331a9e6d6c0d8bb9e94e460009bc",
-   "chave": "747241fe340029f6707a7f2110e8237e977aecef"
+   "chave": "703ed0fa28ff9724e12198a29bf757cd5da9edb1"
   },
   "banheira-individual-tailandia-com-hidro": {
    "src": "media/og/banheira-individual-tailandia-com-hidro.jpg",
    "medida": "0,70 x 1,09 x 0,48",
    "foto_sha1": "9fd3aef4640a113346b8b2cefbec9d1dc97ff8b6",
-   "chave": "ce1a2ca80ee5fa45b8cb48ae16384b0dbb2f954c"
+   "chave": "23a3b20a9b2f7230ff02eb6a5189062fc6e37c8d"
   },
   "banheira-individual-tailandia-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-individual-tailandia-completa-com-hidro-em-acrilico.jpg",
    "medida": null,
    "foto_sha1": "3cc9a28cc6e837fd2e4432811588c35b9716e7a3",
-   "chave": "4905bbdad23fe21e01f491a1c1ef0536077c950c"
+   "chave": "d0872432c714c8927a706c91cacfcb7375847353"
   },
   "banheira-individual-tailandia-completa-com-hidro": {
    "src": "media/og/banheira-individual-tailandia-completa-com-hidro.jpg",
    "medida": "0,70 x 1,09 x 0,48",
    "foto_sha1": "2b01868041a5957f98e7312dfbfb994f90ba7319",
-   "chave": "690d3c77bdae8ffd9f101f4b8bae37cf2c31979d"
+   "chave": "749c4d16fa5c33370de8b457b823f03cf53fe5f3"
   },
   "banheira-karisma-completa-com-hidro": {
    "src": "media/og/banheira-karisma-completa-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "9abc5cb64aff87864b06ff8b24d514546a42d557",
-   "chave": "81daf4007ca828eeb2110783418c179e060e95ec"
+   "chave": "4774254cc6fc8a7458641589549f96473b23c6b0"
   },
   "banheira-quadrada-roma-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-quadrada-roma-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,59 x 1,59 x 0,49",
    "foto_sha1": "32762aaf9d828d8638a89127052ba208d9798b25",
-   "chave": "f8facfe5cde66e87c6fc21864ae77b6b3ead88f0"
+   "chave": "3b13ce60afd5014df3e2a3ed766e59064265519f"
   },
   "banheira-quadrada-roma-completa-com-hidro": {
    "src": "media/og/banheira-quadrada-roma-completa-com-hidro.jpg",
    "medida": "1,59 x 1,59 x 0,49",
    "foto_sha1": "32762aaf9d828d8638a89127052ba208d9798b25",
-   "chave": "122ab91de3fb251095a7fb2bf690c4d6fce240d1"
+   "chave": "291e393bd2cc7427d547f9c663181813f2df8fc0"
   },
   "banheira-redonda-caribe-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-caribe-com-hidro-em-acrilico.jpg",
    "medida": "1,48 x 1,48 x 0,43",
    "foto_sha1": "48cce61817a4a76b8dd6e94b72ad2a394d5f7aac",
-   "chave": "8673c7c7b54c0de75e41a5554fa01661f30c05bb"
+   "chave": "15e5de57af65b176abeb8271b5a80ff6da0c2fa1"
   },
   "banheira-redonda-caribe-com-hidro": {
    "src": "media/og/banheira-redonda-caribe-com-hidro.jpg",
    "medida": "1,48 x 1,48 x 0,43",
    "foto_sha1": "48cce61817a4a76b8dd6e94b72ad2a394d5f7aac",
-   "chave": "d4e26dfa427ebb187d755d6b6d63243cda232f3f"
+   "chave": "dc385bb76f95b5594d73c43e6c6d2fc67f0182b4"
   },
   "banheira-redonda-caribe-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-caribe-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,48 x 1,48 x 0,43",
    "foto_sha1": "a46ea1203160a35ad37585a201f1b3c61534a16a",
-   "chave": "f2bf038c4aa9bba90fd5fbfaa6d563bf442ed931"
+   "chave": "296a240cc05859057b763133e00ee7522136083d"
   },
   "banheira-redonda-caribe-completa-com-hidro": {
    "src": "media/og/banheira-redonda-caribe-completa-com-hidro.jpg",
    "medida": "1,48 x 1,48 x 0,43",
    "foto_sha1": "a46ea1203160a35ad37585a201f1b3c61534a16a",
-   "chave": "85241197629719767622d6eaf1422802878195d3"
+   "chave": "f861aff489225c493d5a14f9c320d94e297f2732"
   },
   "banheira-redonda-havai-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-havai-com-hidro-em-acrilico.jpg",
    "medida": "1,78 x 1,78 x 0,50",
    "foto_sha1": "eea53ac2cd90cce6e8201963131acdb35fe166be",
-   "chave": "082f3361ccdbf9310908776ae8f2d6afc424be2c"
+   "chave": "41d8de53fe9aa471b1d419804269abb81eee38df"
   },
   "banheira-redonda-havai-com-hidro": {
    "src": "media/og/banheira-redonda-havai-com-hidro.jpg",
    "medida": "1,78 x 1,78 x 0,50",
    "foto_sha1": "eea53ac2cd90cce6e8201963131acdb35fe166be",
-   "chave": "169a939e0dbaebec3c65a8c35a61ef17ae6aa9a3"
+   "chave": "3be3c7eacf20e506530986b0ec104934885fae9f"
   },
   "banheira-redonda-havai-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-havai-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,78 x 1,78 x 0,50",
    "foto_sha1": "d42baa27e41a8d5c511a746f1b651ba239fa73a4",
-   "chave": "677df89447bdd5c785a847726571742e9c83478f"
+   "chave": "b94dd1871ce309ab12f38c8ef10e810e6de42275"
   },
   "banheira-redonda-havai-completa-com-hidro": {
    "src": "media/og/banheira-redonda-havai-completa-com-hidro.jpg",
    "medida": "1,78 x 1,78 x 0,50",
    "foto_sha1": "d42baa27e41a8d5c511a746f1b651ba239fa73a4",
-   "chave": "e5f746834414fd40dd62307280390b0f0656b681"
+   "chave": "f22aac3f2334729a3c14d13e5f2590b41d6f7aa3"
   },
   "banheira-redonda-holanda-completa-com-hidro": {
    "src": "media/og/banheira-redonda-holanda-completa-com-hidro.jpg",
    "medida": "1,68 x 1,68 x 0,53",
    "foto_sha1": "9cc7e532c653c9bf864893ddcccc216d79f1856d",
-   "chave": "e177cb4f8f098c04404299c6fecbca1bddc24ceb"
+   "chave": "6bc0eecc8dd8ad87904d568c9f073e36b9f37860"
   },
   "banheira-redonda-majory-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-majory-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,20 x 0,47",
    "foto_sha1": "3c4ad581cb05019bcdfc65f813a95029a1d09139",
-   "chave": "fe66b693bfbda778c88cde8d4cc0f2317117e20d"
+   "chave": "a26eb76bc38479cf3d0783c6fe4ca6158b1b1c28"
   },
   "banheira-redonda-majory-completa-com-hidro": {
    "src": "media/og/banheira-redonda-majory-completa-com-hidro.jpg",
    "medida": "1,20 x 1,20 x 0,47",
    "foto_sha1": "af65af29add19f637a3ad28bc9e88088987ad94d",
-   "chave": "1e2e1004f977340e2f528f0344cf8c9c61d63eff"
+   "chave": "da6bea1c18c4e54a59890ee26a62c541677091e7"
   },
   "banheira-redonda-malibu-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-malibu-com-hidro-em-acrilico.jpg",
    "medida": "1,70 x 1,70 x 0,50",
    "foto_sha1": "8f3506718da512b025faf37f7c9ea0d11abf14be",
-   "chave": "f070353d55df3b0fbfc45999e18ea423ab054a2b"
+   "chave": "0116328a21a87acbf7c1f48bd0dd606e271f117c"
   },
   "banheira-redonda-malibu-com-hidro": {
    "src": "media/og/banheira-redonda-malibu-com-hidro.jpg",
    "medida": "1,70 x 1,70 x 0,50",
    "foto_sha1": "6272fd7fff34aa0aab5d6121fdd2a3da30630e12",
-   "chave": "2d3efe31df187d7574b90d81addbfa60cdf22251"
+   "chave": "1d634f3cb247bada2f2d1ed2ffb1cea307a9f48c"
   },
   "banheira-redonda-malibu-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-malibu-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,70 x 1,70 x 0,50",
    "foto_sha1": "2d3cdda150eb1593d5a79dd5ee37be4b20355519",
-   "chave": "0737fef16e24bd04e845da2b7a6dc7af9638bac3"
+   "chave": "7176792f12595b74d9e2b0c4c3ae3ad919d59688"
   },
   "banheira-redonda-malibu-completa-com-hidro": {
    "src": "media/og/banheira-redonda-malibu-completa-com-hidro.jpg",
    "medida": "1,70 x 1,70 x 0,50",
    "foto_sha1": "2d3cdda150eb1593d5a79dd5ee37be4b20355519",
-   "chave": "935548b07bf3469eadd34a3c1a6e1c6a8bfa467c"
+   "chave": "1bdb5b0c648415459f8f304bf8d902ec7b5d9cf8"
   },
   "banheira-redonda-monte-carlo-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-monte-carlo-com-hidro-em-acrilico.jpg",
    "medida": "1,50 x 1,50 x 0,49",
    "foto_sha1": "69aff2523d74d8d1c81a96fd3fda9642afd8dd05",
-   "chave": "ade64b94ce9b027175fa9c3f3870cd2be8c07a4a"
+   "chave": "0bfd699364c1a1a0b7748bf9331ba585dd793e04"
   },
   "banheira-redonda-monte-carlo-com-hidro": {
    "src": "media/og/banheira-redonda-monte-carlo-com-hidro.jpg",
    "medida": "1,50 x 1,50 x 0,49",
    "foto_sha1": "69aff2523d74d8d1c81a96fd3fda9642afd8dd05",
-   "chave": "ac46319c100075feac7ecbf0fc15fd332669ed22"
+   "chave": "39c75e02402549361cde0be397edda6699fd0f95"
   },
   "banheira-redonda-monte-carlo-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-monte-carlo-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,50 x 1,50 x 0,49",
    "foto_sha1": "56090ec311405da8facdb76a37338cb18f0d32fb",
-   "chave": "8585b28cda023d3fa16f34794cce459b91eb4913"
+   "chave": "2da5d33603ca9225d2eec5abdfa07643476be273"
   },
   "banheira-redonda-monte-carlo-completa-com-hidro": {
    "src": "media/og/banheira-redonda-monte-carlo-completa-com-hidro.jpg",
    "medida": "1,50 x 1,50 x 0,49",
    "foto_sha1": "56090ec311405da8facdb76a37338cb18f0d32fb",
-   "chave": "2da4cd19e2505d78a142a8a080eea032962ed579"
+   "chave": "6044e41e2dd52a55f5a55f52afc2af05d941b0db"
   },
   "banheira-redonda-sensuale-com-abas-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-sensuale-com-abas-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,60 x 1,60  0,43",
    "foto_sha1": "7340696235d5c75d0b31c2841c272c60cbc00e3a",
-   "chave": "7c6eecc873bc187884e468ab7f032591b84f6ec5"
+   "chave": "3f83487b117e6651b704b3491328ffeb0275a5f8"
   },
   "banheira-redonda-sensuale-com-abas-completa-com-hidro": {
    "src": "media/og/banheira-redonda-sensuale-com-abas-completa-com-hidro.jpg",
    "medida": "1,79 x 1,79 x 0,49",
    "foto_sha1": "7340696235d5c75d0b31c2841c272c60cbc00e3a",
-   "chave": "4e92592e9040e9031a9cdcee6d64cd988755f445"
+   "chave": "32077c9479c20235b2697edbfa8977580ceb5750"
   },
   "banheira-redonda-sensuale-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-redonda-sensuale-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,60 x 1,60 x 0,43",
    "foto_sha1": "402e3d28aacb5b2eac17b2d85126cf2145dc1fa8",
-   "chave": "30486c30d59f440f9be49befd3b05394d82d915e"
+   "chave": "98cf4c5a4c888fb6b6d8a9c3ead6aa4fbcdeef87"
   },
   "banheira-redonda-sensuale-completa-com-hidro": {
    "src": "media/og/banheira-redonda-sensuale-completa-com-hidro.jpg",
    "medida": "1,60 x 1,60 x 0,43",
    "foto_sha1": "402e3d28aacb5b2eac17b2d85126cf2145dc1fa8",
-   "chave": "183c2633358e46af399b657602f8e2f31ccb7f17"
+   "chave": "2288ec7c694744c5414df438fa015b88bd3d0c2c"
   },
   "banheira-retangular-agata-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-agata-com-hidro-em-acrilico.jpg",
    "medida": "0,83 x 1,70 x 0,49",
    "foto_sha1": "9a6528e3678e818d0af8fd5d0352cf3da3210d96",
-   "chave": "815855661aeac076d171303950aa0690b434dc27"
+   "chave": "78f70ce7492ee992310fbceb6e530505174e8bb3"
   },
   "banheira-retangular-agata-com-hidro": {
    "src": "media/og/banheira-retangular-agata-com-hidro.jpg",
    "medida": "0,83 x 1,70 x 0,49",
    "foto_sha1": "9a6528e3678e818d0af8fd5d0352cf3da3210d96",
-   "chave": "c79d983c5fcd763e221c9ab816b39535cc59928a"
+   "chave": "5b8c809ffe220dbecf2e4d9117646d0bdd2239dd"
   },
   "banheira-retangular-agata-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-agata-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,83 x 1,70 x 0,49",
    "foto_sha1": "0bce829df513e984b0ffd5ab59b37aec4a7d5585",
-   "chave": "4b4141b080a0f9068e1bf80b73df7ddb0792136b"
+   "chave": "dd4cf8aefaf107c63992cd546c206e639cabfdfc"
   },
   "banheira-retangular-agata-completa-com-hidro": {
    "src": "media/og/banheira-retangular-agata-completa-com-hidro.jpg",
    "medida": "0,83 x 1,70 x 0,49",
    "foto_sha1": "0bce829df513e984b0ffd5ab59b37aec4a7d5585",
-   "chave": "341cfe082017a2d13c3dd72a563efe2651c5176f"
+   "chave": "f9c080a4c18ed863bfe20def9f36d2f1ed67eed1"
   },
   "banheira-retangular-barcelona-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-barcelona-com-hidro-em-acrilico.jpg",
    "medida": "0,85 x 1,20 x 0,44",
    "foto_sha1": "f29642ffc7cc138a9b3cbf72cc6d073eeb2b269f",
-   "chave": "a300b8d4c9d45ce59e222f64c423ac89f9d1ccca"
+   "chave": "a1c26223d61ebeac5a4b4f4b090ba1334c1884ca"
   },
   "banheira-retangular-barcelona-com-hidro": {
    "src": "media/og/banheira-retangular-barcelona-com-hidro.jpg",
    "medida": "0,85 x 1,20 x 0,44",
    "foto_sha1": "f29642ffc7cc138a9b3cbf72cc6d073eeb2b269f",
-   "chave": "786c9e4ac5f5f237686d2a1bcfd8e631e9896e85"
+   "chave": "86a21c79a12d5e9a430c22081669a1cb71944f75"
   },
   "banheira-retangular-barcelona-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-barcelona-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,85 x 1,20 x 0,44",
    "foto_sha1": "56011c07a89b24d247325de5b8581aeb5171ac85",
-   "chave": "8c371e80b3788e698c92b795cecb448369cc38d6"
+   "chave": "76eb456a0bd9efe2a8270c010ca465aebaa1b114"
   },
   "banheira-retangular-barcelona-completa-com-hidro": {
    "src": "media/og/banheira-retangular-barcelona-completa-com-hidro.jpg",
    "medida": "0,85 x 1,20 x 0,44",
    "foto_sha1": "56011c07a89b24d247325de5b8581aeb5171ac85",
-   "chave": "15be3ff8831a25c2e705be1b9bd489f476f1f25f"
+   "chave": "0827764cba8e6fda8c2cc514a4c810822a840b9b"
   },
   "banheira-retangular-buzios-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-buzios-com-hidro-em-acrilico.jpg",
    "medida": "0,80 x 1,20 x 0,39",
    "foto_sha1": "d92680f37a72f839ae71af29ef5d163ad417702c",
-   "chave": "2266de7408ba9f50fba0cec0d2e145cdf1e876a3"
+   "chave": "4da3bba79529dab8335f76fc99edbd12f802edda"
   },
   "banheira-retangular-buzios-com-hidro": {
    "src": "media/og/banheira-retangular-buzios-com-hidro.jpg",
    "medida": "0,80 x 1,20 x 0,39",
    "foto_sha1": "d92680f37a72f839ae71af29ef5d163ad417702c",
-   "chave": "87c9df3e68abfd6b479a555c2012f5e9802bc5fc"
+   "chave": "742e487612fb333d1b863e20553f072a87e4b3b8"
   },
   "banheira-retangular-buzios-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-buzios-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,80 x 1,20 x 0,39",
    "foto_sha1": "aa050f7eb6b8d178953cf3ebca54bc6ee116a06a",
-   "chave": "971a12af6f7a4fc902bc5662c5f0f72e1c465bcf"
+   "chave": "733fa4e2857e7cb975940c97f2db239d62793549"
   },
   "banheira-retangular-buzios-completa-com-hidro": {
    "src": "media/og/banheira-retangular-buzios-completa-com-hidro.jpg",
    "medida": "0,80 x 1,20 x 0,39",
    "foto_sha1": "aa050f7eb6b8d178953cf3ebca54bc6ee116a06a",
-   "chave": "3815c7c666b52c368cae5195ed89ea34fbb7984c"
+   "chave": "fb95a40728c33c8aa3408f7faeaec2eb39daec5c"
   },
   "banheira-retangular-conforto-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-conforto-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,81 x 1,80 x 0,48",
    "foto_sha1": "6b03a89396ea501667fe1daacfdd6407f6899774",
-   "chave": "060ab85c55ec3571e76d467757cc884f9959429a"
+   "chave": "2a57cb9abcc93c046173c8dc53ab05e9c34371bf"
   },
   "banheira-retangular-conforto-completa-com-hidro": {
    "src": "media/og/banheira-retangular-conforto-completa-com-hidro.jpg",
    "medida": "0,82 x 1,51 x 0,48",
    "foto_sha1": "6b03a89396ea501667fe1daacfdd6407f6899774",
-   "chave": "0071b27e21ed54e10c76ec80408456ddd2581d11"
+   "chave": "2b162470326fdadd32fbdb39675154b10aee431f"
   },
   "banheira-retangular-denizard-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-denizard-com-hidro-em-acrilico.jpg",
    "medida": "1,30 x 1,79 x 0,50",
    "foto_sha1": "89402c8e45878366660fb19ce9543a8f7482ad05",
-   "chave": "dc7953b13a2d7b2ab5cf36ef948fcff6cc702cf4"
+   "chave": "99ef35d86e52272735908c4af9f9abd8ebebe375"
   },
   "banheira-retangular-denizard-com-hidro": {
    "src": "media/og/banheira-retangular-denizard-com-hidro.jpg",
    "medida": "1,30 x 1,79 x 0,50",
    "foto_sha1": "89402c8e45878366660fb19ce9543a8f7482ad05",
-   "chave": "495fbe1924f073bee1b85de14daa1caf294b5b5b"
+   "chave": "479541908388a413003a02fa79f068387211fdfb"
   },
   "banheira-retangular-denizard-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-denizard-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,30 x 1,79 x 0,50",
    "foto_sha1": "99dea14ef7b2d3f146d32da3000d3b3907b80da5",
-   "chave": "ef23eb4e69b945d0b49d4b65e61c7da00541710d"
+   "chave": "49215088d96ba6324d2dc0c1c7115f4477c61dd4"
   },
   "banheira-retangular-denizard-completa-com-hidro": {
    "src": "media/og/banheira-retangular-denizard-completa-com-hidro.jpg",
    "medida": "1,30 x 1,79 x 0,50",
    "foto_sha1": "99dea14ef7b2d3f146d32da3000d3b3907b80da5",
-   "chave": "f66cf3cce84717eeab452a0f8dfdc1420eea0f2d"
+   "chave": "132f90aeafa92429551d1bffb3ee7cab39f7d90f"
   },
   "banheira-retangular-dubai-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-dubai-com-hidro-em-acrilico.jpg",
    "medida": "0,88 x 1,81 x 0,40",
    "foto_sha1": "f8c7c53f649d3b83a16be9fbe077f72c8f9c5e89",
-   "chave": "425ddfd0900e8675f7a2ed1efa2a6fd49f84d11d"
+   "chave": "92e76a397c94d16a2d0d490a7550f52039b8da5f"
   },
   "banheira-retangular-dubai-com-hidro": {
    "src": "media/og/banheira-retangular-dubai-com-hidro.jpg",
    "medida": "0,88 x 1,81 x 0,40",
    "foto_sha1": "f8c7c53f649d3b83a16be9fbe077f72c8f9c5e89",
-   "chave": "b37bdc3bb905e1c96d65ca5893e417f95a66dde5"
+   "chave": "f4f6751e3caea5d5f8b580b68da66d18e7d555c8"
   },
   "banheira-retangular-dubai-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-dubai-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,88 x 1,81 x 0,40",
    "foto_sha1": "61dd6c8ba0c476c46fdab4ea4fefe80cc79a4d6e",
-   "chave": "6677816abf62fedb622fed24bec357c7c5ae7710"
+   "chave": "24e077573f8542ebf91041b9f88cd71402b6ceb2"
   },
   "banheira-retangular-dubai-completa-com-hidro": {
    "src": "media/og/banheira-retangular-dubai-completa-com-hidro.jpg",
    "medida": "0,88 x 1,81 x 0,40",
    "foto_sha1": "61dd6c8ba0c476c46fdab4ea4fefe80cc79a4d6e",
-   "chave": "426e6186e80d0dc544a4b95dc087917d72e57518"
+   "chave": "118ea34fbf25ee50d0b7e4a1eeaec2aeffc5a462"
   },
   "banheira-retangular-genova-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-genova-com-hidro-em-acrilico.jpg",
    "medida": "0,99 x 1,78 x 0,52",
    "foto_sha1": "d075041bddaa0f14f054ebe99e5a0bee0aaf522c",
-   "chave": "b12f297f2e79e8463d1be75790c3f24dc3a99dd5"
+   "chave": "f55d9de47981ab318804414991a1e31b942f7108"
   },
   "banheira-retangular-genova-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-genova-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,99 x 1,78 x 0,52",
    "foto_sha1": "d0a3d97886f21aa0918ff2a0397456fdb5b16a74",
-   "chave": "4d4e820c2d040bbd802398b50a14e163d0397b19"
+   "chave": "ab6af3966c00571548d10d61a3cc3788b8879d7b"
   },
   "banheira-retangular-genova-completa-com-hidro": {
    "src": "media/og/banheira-retangular-genova-completa-com-hidro.jpg",
    "medida": "0,99 x 1,78 x 0,52",
    "foto_sha1": "d0a3d97886f21aa0918ff2a0397456fdb5b16a74",
-   "chave": "d84f60b7885b8c2d77418c68a327f44c6d6a54d1"
+   "chave": "ecfc9498826888e4414c42ced152d164deb58df4"
   },
   "banheira-retangular-ilheus-completa-com-hidro": {
    "src": "media/og/banheira-retangular-ilheus-completa-com-hidro.jpg",
    "medida": "0,83 x 1,49 x 0,43",
    "foto_sha1": "e3545138cc7b05dc71736eac2f485e1414d3426e",
-   "chave": "e0f0bef9506746356b16465fcc86da9a51beeae0"
+   "chave": "222cadd47df33e605bdeeb7ac1be8e66fed63343"
   },
   "banheira-retangular-lisboa-com-hidro": {
    "src": "media/og/banheira-retangular-lisboa-com-hidro.jpg",
    "medida": "0,90 x 1,70 x 0,44",
    "foto_sha1": "2b27aa9d1e556ab6b5f6d970b676ae743f119ee3",
-   "chave": "06b95713f1b2d76e888a60b2fbb5ce91c3fd66df"
+   "chave": "cdf10bd49cbe242c59187140c49fac71afb563e2"
   },
   "banheira-retangular-lisboa-completa-com-hidro": {
    "src": "media/og/banheira-retangular-lisboa-completa-com-hidro.jpg",
    "medida": "0,90 x 1,70 x 0,44",
    "foto_sha1": "39654a292035da2315490e8f5d65af417f600848",
-   "chave": "3350971a33affdca52fc70f166a981310c4bae79"
+   "chave": "043e77c31c240ccf2889e7859a0e76c48e8b1d56"
   },
   "banheira-retangular-manaus-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-manaus-com-hidro-em-acrilico.jpg",
    "medida": "0,80 x 1,39 x 0,38",
    "foto_sha1": "d6f5cb9fcac5c4475194304b5b0cb7fd016e540f",
-   "chave": "d883a114e446cd3357d643d703dd082e5bf7717d"
+   "chave": "b54f621d6b67751ab2937c519261ae04dfe3486e"
   },
   "banheira-retangular-manaus-com-hidro": {
    "src": "media/og/banheira-retangular-manaus-com-hidro.jpg",
    "medida": "0,80 x 1,39 x 0,38",
    "foto_sha1": "d6f5cb9fcac5c4475194304b5b0cb7fd016e540f",
-   "chave": "d77e30b839fe3661b015dc2b7c81b22adfc37f1e"
+   "chave": "ecb7a41dbec706cb777a4180a8df798073904d11"
   },
   "banheira-retangular-manaus-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-manaus-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,80 x 1,39 x 0,38",
    "foto_sha1": "a8a0ae1e29e0ae8089a3218fe93326703f3ad87f",
-   "chave": "6ac00b1d1f6af2af26e84594f698fcaf439b71bf"
+   "chave": "9894d52c8e08c662f4c00eaee89cf5a0e6172d12"
   },
   "banheira-retangular-manaus-completa-com-hidro": {
    "src": "media/og/banheira-retangular-manaus-completa-com-hidro.jpg",
    "medida": "0,80 x 1,39 x 0,38",
    "foto_sha1": "a8a0ae1e29e0ae8089a3218fe93326703f3ad87f",
-   "chave": "f8a7b3a3b80295f0ff8de2b76394aa114368bf37"
+   "chave": "efbdcedf5a98b1d7a286a3056dd90ceb76284dc6"
   },
   "banheira-retangular-marcelle-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-marcelle-com-hidro-em-acrilico.jpg",
    "medida": "1,65 x 0,91 x 0,37",
    "foto_sha1": "c444a301f24e2cd1ba2dab2f3cdbf75879ed0452",
-   "chave": "7292e4c2f6f91bf25c9eda34e5f417f1731564d1"
+   "chave": "81c6ae1fbcb90099eb1c29781df6344ebdbefb4a"
   },
   "banheira-retangular-marcelle-com-hidro": {
    "src": "media/og/banheira-retangular-marcelle-com-hidro.jpg",
    "medida": "0,91 x 1,64 x 0,37",
    "foto_sha1": "c444a301f24e2cd1ba2dab2f3cdbf75879ed0452",
-   "chave": "280737a0a4e5b61c088946ad18ca20a91e866b60"
+   "chave": "4a41ffc3a8b802bffa747821b71aaf03297df9f6"
   },
   "banheira-retangular-marcelle-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-marcelle-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,65x0,91x0,37",
    "foto_sha1": "b25f14639f8ace11df3c55990be26af6274a3761",
-   "chave": "8730def68f240adf99dc880bf83739f58d045cb9"
+   "chave": "64577e5c2fbb31d9c2c12f8737fc939c621961fd"
   },
   "banheira-retangular-marcelle-completa-com-hidro": {
    "src": "media/og/banheira-retangular-marcelle-completa-com-hidro.jpg",
    "medida": "0,91 x 1,64 x 0,37",
    "foto_sha1": "b25f14639f8ace11df3c55990be26af6274a3761",
-   "chave": "ab79b6c5f4e156a54e3adefb879927543f859dbb"
+   "chave": "dbc8c7834ba2ce166ddd1991627f8ae717c302a7"
   },
   "banheira-retangular-maresias-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-maresias-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,90 x 1,40 x 0,44",
    "foto_sha1": "13b2eb64048ee4a70ae78eb10a6e19b1b2a164cf",
-   "chave": "6741cc460443beeb34180f16387fae62cd4de266"
+   "chave": "c4a184fd88d77d6947ce45a4b27382d181f0aa3f"
   },
   "banheira-retangular-maresias-completa-com-hidro": {
    "src": "media/og/banheira-retangular-maresias-completa-com-hidro.jpg",
    "medida": "0,90 x 1,40 x 0,44",
    "foto_sha1": "13b2eb64048ee4a70ae78eb10a6e19b1b2a164cf",
-   "chave": "c84923c4a6206d21177b566804ce7b1b02d093dd"
+   "chave": "e2c956f81cad3bd6c57857450b819bea92189d6d"
   },
   "banheira-retangular-monte-verde-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-monte-verde-completa-com-hidro-em-acrilico.jpg",
    "medida": "0,81 x 1,80 x 0,48",
    "foto_sha1": "2e2017d29672ac1488452ead31d683ab6bba1685",
-   "chave": "45582dfa0d1689d8443ab8b908f0466eee5a5470"
+   "chave": "f9d9698292023989d629061d0549b9be8552a0a9"
   },
   "banheira-retangular-sensuale-completa-com-hidro-em-acrilico": {
    "src": "media/og/banheira-retangular-sensuale-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,20 x 1,80 x 0,43",
    "foto_sha1": "95f1f76a54c5709dfb4e45e2774627df56384617",
-   "chave": "82d8700b60216ddc13ff85314a82bd673a2a7936"
+   "chave": "8dad28278f790771f641e1e280dc11b84786a195"
   },
   "banheira-retangular-sensuale-completa-com-hidro": {
    "src": "media/og/banheira-retangular-sensuale-completa-com-hidro.jpg",
    "medida": "1,10 x 1,80 x 0,43",
    "foto_sha1": "3f706a3766bdcd3b9eba8a0f8464cbd26a5c52a0",
-   "chave": "d0ee8190c0eb01eeb5a2c62c18c4f03259d07b8f"
+   "chave": "b4fc936cc605dd374e15c00046f4b497281b6b8c"
   },
   "banheira-vitoriana-para-criancas-0-32-x-0-60-x-0-20": {
    "src": "media/og/banheira-vitoriana-para-criancas-0-32-x-0-60-x-0-20.jpg",
    "medida": "0,32m x 0,60m x 0,20m",
    "foto_sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
-   "chave": "de1ce06d19f78fd36f379c241968855a7f2435cc"
+   "chave": "6879de152d1f203f7ac2d1cd597d3446dd4228f0"
   },
   "banheira-vitoriana-para-criancas-0-38-x-0-77-x-0-19": {
    "src": "media/og/banheira-vitoriana-para-criancas-0-38-x-0-77-x-0-19.jpg",
    "medida": "0,38m x 0,77m x 0,19m",
    "foto_sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
-   "chave": "7c46cfaef2d87daf56f944287ab76adb7cf3bf5c"
+   "chave": "4214ab2374c7909ecde58e85d3c070800e18bfa5"
   },
   "banheira-vitoriana-para-criancas-0-58-x-1-21-x-0-40": {
    "src": "media/og/banheira-vitoriana-para-criancas-0-58-x-1-21-x-0-40.jpg",
    "medida": "0,58m x 1,21m x 0,40m",
    "foto_sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
-   "chave": "7bbafb7a6c9521c1a489b4f260e18b8507521aad"
+   "chave": "84431c0e5b5b268771bddfe9f8d87577e497bd50"
   },
   "banheira-vitoriana-para-pets-0-32-x-0-60-x-0-20": {
    "src": "media/og/banheira-vitoriana-para-pets-0-32-x-0-60-x-0-20.jpg",
    "medida": "0,32m x 0,60m x 0,20m",
    "foto_sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
-   "chave": "340cdc26a45bab5d01a875dfbd669907d7421a14"
+   "chave": "208542531a0f96730dec2349bbbd621620701bca"
   },
   "banheira-vitoriana-para-pets-0-38-x-0-77-x-0-19": {
    "src": "media/og/banheira-vitoriana-para-pets-0-38-x-0-77-x-0-19.jpg",
    "medida": "0,38m x 0,77m x 0,19m",
    "foto_sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
-   "chave": "c24be4206415dbed8931de358297359f7ab83958"
+   "chave": "491f3bdf34d7bdc11f49b27b1b8f7663247156f0"
   },
   "banheira-vitoriana-para-pets-0-58-x-1-21-x-0-40": {
    "src": "media/og/banheira-vitoriana-para-pets-0-58-x-1-21-x-0-40.jpg",
    "medida": "0,58m x 1,21m x 0,40m",
    "foto_sha1": "ebbc9835b1036ba7498a2e52fc458e14778a3987",
-   "chave": "8ea0a9f328ad5d005e5a5ec8c6d4c2fdc09b9f5c"
+   "chave": "0943d2e613593cd548ccf73f00eb259fa10b810a"
   },
   "banheira-vitoriana": {
    "src": "media/og/banheira-vitoriana.jpg",
    "medida": "0,75 x 1,63 x 0,40",
    "foto_sha1": "a098fa404c025cf1e33bf5d825113589f8195f14",
-   "chave": "1c0bdaced0f00265cf6939d5220e025bacfc88bf"
+   "chave": "620fe174a8760cb0ac5ac49381ba95accc4e84bc"
   },
   "cromoterapia": {
    "src": "media/og/cromoterapia.jpg",
    "medida": null,
    "foto_sha1": "b7494b5d3672612f90ecfcc2789cf34fe9cd1a39",
-   "chave": "fc6c90650908608c94bb292cee141385a05f98ea"
+   "chave": "31b979f5b5f67fb54f22e9b25f2a8ab1899a4682"
   },
   "jato": {
    "src": "media/og/jato.jpg",
    "medida": null,
    "foto_sha1": "d8da45ecfce437a1455353c0db150da23506074c",
-   "chave": "3a2b86fc895af0b34b97402f902892563b172dfd"
+   "chave": "ddc7c561fcd28e14132696af24e6b88cc74a9377"
   },
   "kit-filtragem-completo": {
    "src": "media/og/kit-filtragem-completo.jpg",
    "medida": null,
    "foto_sha1": "394df4ade4ff03eb7b64974e4cb771a88272726a",
-   "chave": "debf0335cababe56062d76fa9179d713f9072543"
+   "chave": "38576516e05afc7a300a7fed750090c3a0d67a2d"
   },
   "ofuro-acqua-vip-completo-com-hidro": {
    "src": "media/og/ofuro-acqua-vip-completo-com-hidro.jpg",
    "medida": "0,80 x 1,00 x 0,76",
    "foto_sha1": "0690b45c02da0074005d613d17aa005fb4fdd185",
-   "chave": "7d7f39fb09c06edf8ef0a181bedd245479fdc1d8"
+   "chave": "8ef2396e5d8a95ea38335808b482d45dbdbe3c79"
   },
   "ofuro-duplo-solene-completo-com-hidro-em-acrilico": {
    "src": "media/og/ofuro-duplo-solene-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,48 x 1,48 x 0,73",
    "foto_sha1": "09ba9a53249d1d544323ba5f739cf4c93902f488",
-   "chave": "6ac574f12b2daec2909d3c8c04e37652b2bf7017"
+   "chave": "677122ba32c46c0f50d7470cfe40cfbdee6a4099"
   },
   "ofuro-duplo-solene-completo-com-hidro": {
    "src": "media/og/ofuro-duplo-solene-completo-com-hidro.jpg",
    "medida": "1,48 x 1,48 x 0,88",
    "foto_sha1": "09ba9a53249d1d544323ba5f739cf4c93902f488",
-   "chave": "8ca191e527b679d40c17f66be138aa6b1a2a34a4"
+   "chave": "c0b593546045a553a6b61f36a17e369d74445859"
   },
   "ofuro-duplo-toquio-com-hidro-em-acrilico": {
    "src": "media/og/ofuro-duplo-toquio-com-hidro-em-acrilico.jpg",
    "medida": "0,84 x 1,44 x 0,71",
    "foto_sha1": "8d50cdc8a2e23106909633579050305bd6c418d3",
-   "chave": "7cb67c0b4af6afff3389f1ad65d006ab3a1b5c40"
+   "chave": "4d0c92a5cf636f8a53f2c048dca31608bed2946e"
   },
   "ofuro-duplo-toquio-com-hidro": {
    "src": "media/og/ofuro-duplo-toquio-com-hidro.jpg",
    "medida": "0,84 x 1,44 x 0,71",
    "foto_sha1": "8d50cdc8a2e23106909633579050305bd6c418d3",
-   "chave": "f4735d348334fefcd3f7097c8cbf399cef6ce66b"
+   "chave": "5e8bec143d503a1111149b4f1cbb6a853861c106"
   },
   "ofuro-duplo-toquio-completo-com-hidro-em-acrilico": {
    "src": "media/og/ofuro-duplo-toquio-completo-com-hidro-em-acrilico.jpg",
    "medida": "0,84 x 1,44 x 0,71",
    "foto_sha1": "fd7961933a11e61ff0443cc112259011e6c88fa8",
-   "chave": "f4e4bac4a03265e4001c78584d04d7ff03bd7a6d"
+   "chave": "b077e781ef22f92f4a879fca90f7c242e6630099"
   },
   "ofuro-duplo-toquio-completo-com-hidro": {
    "src": "media/og/ofuro-duplo-toquio-completo-com-hidro.jpg",
    "medida": "0,84 x 1,44 x 0,71",
    "foto_sha1": "fb2af71ed5f3e3d61326a452e897f540d1d502dc",
-   "chave": "dab78a01430ea60f98d4d957ba8f7a2136b6e4ad"
+   "chave": "ba890f650a734a3c7682ce69a9081eee5b1774cc"
   },
   "ofuro-quadrado-osaka-completo-individual-com-hidro-em-acrilico": {
    "src": "media/og/ofuro-quadrado-osaka-completo-individual-com-hidro-em-acrilico.jpg",
    "medida": "0,99 x 0,99 x 0,64",
    "foto_sha1": "7d29b0e8939bd4cdc084051ea3463c1bcb1fb090",
-   "chave": "2a5de745c4a66e7c2d117dc652ba2504d4d51629"
+   "chave": "4472620eb6415aead4e9335b85d5c906c01a4190"
   },
   "ofuro-quadrado-osaka-completo-individual-com-hidro": {
    "src": "media/og/ofuro-quadrado-osaka-completo-individual-com-hidro.jpg",
    "medida": "0,99 x 0,99 x 0,64",
    "foto_sha1": "7d29b0e8939bd4cdc084051ea3463c1bcb1fb090",
-   "chave": "c3bac0e639b3b0ed3291978e89c5e1af399a9f9b"
+   "chave": "ca8b3b3dfe9d336b57f163c57d73b23961cea4c9"
   },
   "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico": {
    "src": "media/og/ofuro-quadrado-osaka-individual-com-hidro-em-acrilico.jpg",
    "medida": "0,99 x 0,99 x 0,64",
    "foto_sha1": "559ce1cf96dee972032f7094db671d106b45c660",
-   "chave": "aac30b6d872fa1ef116d9cb1b48fc390bbf632f5"
+   "chave": "daa8345ad3fb530f529cd2e3a3f39422fa7430d4"
   },
   "ofuro-quadrado-osaka-individual-com-hidro": {
    "src": "media/og/ofuro-quadrado-osaka-individual-com-hidro.jpg",
    "medida": "0,99 x 0,99 x 0,64",
    "foto_sha1": "559ce1cf96dee972032f7094db671d106b45c660",
-   "chave": "c526e3d4038740258656117b260f145a9fadb205"
+   "chave": "2a2c7c75692d1db40f713cb34421a8acb5d76742"
   },
   "ozonio-para-spa": {
    "src": "media/og/ozonio-para-spa.jpg",
    "medida": null,
    "foto_sha1": "ad988c0ab98c57bca4d834450a0205535a7b0d15",
-   "chave": "92403212298e110573c8542b06a6a7c6d59d4b8e"
+   "chave": "663fa40e372ffa32a9c249751559095585d7bc96"
   },
   "par-de-alcas": {
    "src": "media/og/par-de-alcas.jpg",
    "medida": null,
    "foto_sha1": "3a12cf8eda2823f55d6273d8373ec2a5dda66885",
-   "chave": "fb25e6c5888eb4f4985bfc24ac31d9aad8a9de93"
+   "chave": "256a2936dd8f7e754daa7e18737093f8846fce78"
   },
   "pre-filtro-para-banheira-spa-e-ofuro": {
    "src": "media/og/pre-filtro-para-banheira-spa-e-ofuro.jpg",
    "medida": null,
    "foto_sha1": "12ea988e310a7e75dfdaad414f89dff10e9f82ef",
-   "chave": "e455da0b6af14d5bbaa9b13b6813aed2b2751ad9"
+   "chave": "ae9dceb380fe281ba66093a452831ca5221a24f3"
   },
   "sauna-compacta-bbb": {
    "src": "media/og/sauna-compacta-bbb.jpg",
    "medida": "1,20m x 1,00m x 2,10m",
    "foto_sha1": "89d12470394809c939a85b6bc98afdff9e0cf0cb",
-   "chave": "5fb03d9ea5206f30d674ce8d74456aba27f993c7"
+   "chave": "6b6f527c78c98c37109fd2b17a0d278a15b1ae64"
   },
   "sauna-luxo-bbb": {
    "src": "media/og/sauna-luxo-bbb.jpg",
    "medida": "2,00m x 2,00m x 2,10m",
    "foto_sha1": "7c38531ac026a063c42faeeaaf816bc061f5489c",
-   "chave": "4cec88b1483544ca1f6f69d0463b5f220b564cda"
+   "chave": "29f473740234293999c7fe357b9e2b607c4368c8"
   },
   "sauna-prime-bbb": {
    "src": "media/og/sauna-prime-bbb.jpg",
    "medida": "1,50m x 1,20m x 2,10m",
    "foto_sha1": "1f841913843d7c0fde350a873f1f4ab4d9e7ceec",
-   "chave": "accffe3b55269eaec3aab7952d5060545c9ad499"
+   "chave": "455abf31f17f877fc8e263d4bc0a60dbd78737f8"
   },
   "spa-retangular-acquaview-completa-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-acquaview-completa-com-hidro-em-acrilico.jpg",
    "medida": "1,76 x 2,07 x 0,75",
    "foto_sha1": "4e292501cf0aec2bc12d9398fa39efe4e9672c52",
-   "chave": "2c307428b7aa5fdb75b2e288940c635ee45c5d89"
+   "chave": "2a1d71e6adc17b763ad2b16cec862a27bf3bc9cb"
   },
   "spa-retangular-acquaview-completa-com-hidro-em-gel-coat": {
    "src": "media/og/spa-retangular-acquaview-completa-com-hidro-em-gel-coat.jpg",
    "medida": "1,76 x 2,07 x 0,75",
    "foto_sha1": "4e292501cf0aec2bc12d9398fa39efe4e9672c52",
-   "chave": "60fe677f4f0ad7d4ef462acd015d14a1941e6495"
+   "chave": "5e5862138babb613a6820d161b3005e24dbf0fc6"
   },
   "spa-de-canto-florenca-completo-com-hidro": {
    "src": "media/og/spa-de-canto-florenca-completo-com-hidro.jpg",
    "medida": "2,00 x 2,00 x 0,86",
    "foto_sha1": "8491658b14e6d90095e6e4247f7db33c2390626b",
-   "chave": "5d6e44a3a2028715375cbcd75243a3841ec9dfa2"
+   "chave": "2d06426c705560d73f09b7c813b5eb3365ea96c7"
   },
   "spa-oasis-completo-com-hidro-em-gel-coat-1": {
    "src": "media/og/spa-oasis-completo-com-hidro-em-gel-coat-1.jpg",
    "medida": "2,23 x 2,23 x 1,07",
    "foto_sha1": "656668e0cf22aab5c890dde09c787d9d5596a9c5",
-   "chave": "8f4e1ec61c5e36a295c8d908b0c1c195e2808da4"
+   "chave": "77fbda059c2795967a4f1c727e5d9c823e0956b2"
   },
   "spa-quadrado-atacama-completo-com-hidro": {
    "src": "media/og/spa-quadrado-atacama-completo-com-hidro.jpg",
    "medida": "2,66 x 2,70 x 1,00",
    "foto_sha1": "8bd76f32fc21be175df9f4d0c1722929314efc54",
-   "chave": "97062ce609d8ee86a1771de2c097ac1793376ce7"
+   "chave": "c3bdb3966a2cace664cd410399078f1ff2514f02"
   },
   "spa-quadrado-cancun-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-cancun-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,57 x 1,98 x 0,77",
    "foto_sha1": "e7e603208f4fa4262c9250093de6a911fe9f85f1",
-   "chave": "022c03b8765fd11a6992d44488682b4f90fe6dcd"
+   "chave": "43e303ef8554f54e308a905cbb1325292e9150bc"
   },
   "spa-quadrado-cancun-completo-com-hidro": {
    "src": "media/og/spa-quadrado-cancun-completo-com-hidro.jpg",
    "medida": "1,57 x 1,98 x 0,87",
    "foto_sha1": "e7e603208f4fa4262c9250093de6a911fe9f85f1",
-   "chave": "eac6c84c8c01234b2c8a07edd4cf3cc8432794c3"
+   "chave": "c2ce9c874b8ba939c274df168ae0f69b3d7dfb9d"
   },
   "spa-quadrado-charlote-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-charlote-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,12 x 2,13 x 0,85",
    "foto_sha1": "8a6c9d9ba576100368311c84485b65008ece0773",
-   "chave": "23979e42589fb5e5e5ad95e2303fedc83641a372"
+   "chave": "98297c69aaa0fd2cdbeb98718f06650fefcb3b12"
   },
   "spa-quadrado-chicago-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-chicago-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,02 x 2,02 x 0,83",
    "foto_sha1": "ac80f0c731186703abd4c5fec92f6c44cfdc5989",
-   "chave": "6226251ecad3b74b7b9ac547232dc25de3845f69"
+   "chave": "855c47a5de532a97ad5e3ffe34703a505313aaac"
   },
   "spa-quadrado-copacabana-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-copacabana-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,20 x 2,39 x 0,81",
    "foto_sha1": "d86dc2f9fcc86c1a16174b3e683330bdb1227a94",
-   "chave": "f3bee571c48fb35fa5b31f44a8caf7f188cdc0c2"
+   "chave": "e5b359af92605689788563acc843a07a6c60bb3f"
   },
   "spa-quadrado-copacabana-completo-com-hidro": {
    "src": "media/og/spa-quadrado-copacabana-completo-com-hidro.jpg",
    "medida": "2,20 x 2,39 x 0,81",
    "foto_sha1": "d86dc2f9fcc86c1a16174b3e683330bdb1227a94",
-   "chave": "3b463d519ae132e43bba5d681dc445632362ce00"
+   "chave": "a6200d1a501ba269d6d715c0cf315384db87fc96"
   },
   "spa-quadrado-fenix-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-fenix-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,00 x 2,39 x 0,81",
    "foto_sha1": "9c6cd2871848f88be2e8853f8a6ef4eafbaa383e",
-   "chave": "7ebc10f4ab7490b11800ce0720a126b8d46d6bb5"
+   "chave": "f7b3996e99cb7b16745658ce3afd7280ed32c2dd"
   },
   "spa-quadrado-fenix-completo-com-hidro": {
    "src": "media/og/spa-quadrado-fenix-completo-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "9c6cd2871848f88be2e8853f8a6ef4eafbaa383e",
-   "chave": "edd349e802c0c490ba4e96206263083a0513f03d"
+   "chave": "03373bda3283a8609bb570c359cea74b74e6c6ba"
   },
   "spa-quadrado-itacare-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-itacare-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,00 x 2,00 x 0,84",
    "foto_sha1": "807febf94c88b51445ffa95ca7580a02fd113431",
-   "chave": "01cebfd1ead70f9b39ddbeaddcf348311937b532"
+   "chave": "ad0cc22e8e0898b24c283a3de54255ec554c65c1"
   },
   "spa-quadrado-itacare-completo-com-hidro": {
    "src": "media/og/spa-quadrado-itacare-completo-com-hidro.jpg",
    "medida": "2,00 x 2,00 x 0,84",
    "foto_sha1": "807febf94c88b51445ffa95ca7580a02fd113431",
-   "chave": "f6e025b0ccb62998be846ba32a457bae33ee2953"
+   "chave": "7e28414f87a261d89248a84162629cb43b3a2426"
   },
   "spa-quadrado-napole-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-napole-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,96 x 1,96 x 0,86",
    "foto_sha1": "c00410e93826e2cefe253f2fe5f55646cb73cb8c",
-   "chave": "5ed398f1222dbbd8f4cd26cc66720c8703ab2f31"
+   "chave": "f3043663ca29bdc0699e6f84c74acc9a52d65446"
   },
   "spa-quadrado-napole-completo-com-hidro": {
    "src": "media/og/spa-quadrado-napole-completo-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "c00410e93826e2cefe253f2fe5f55646cb73cb8c",
-   "chave": "89d052ff91277322f219db95b4ffd6cf5c27fb3a"
+   "chave": "c987746a4dc6bbb1d228fda13ff504abd4895b1c"
   },
   "spa-quadrado-perola-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-perola-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,69 x 1,70 x 0,76",
    "foto_sha1": "8826563db41695e184a0315d29268076cb058faf",
-   "chave": "8e7f0d3e72c9eb7700910d19378aac59503a6002"
+   "chave": "030990bb6acd45a5ca7b556e7ec0840ea7928d22"
   },
   "spa-quadrado-perola-completo-com-hidro": {
    "src": "media/og/spa-quadrado-perola-completo-com-hidro.jpg",
    "medida": "1,69 x 1,70 x 0,76",
    "foto_sha1": "8826563db41695e184a0315d29268076cb058faf",
-   "chave": "d1dc883f0eaf129f0d1569570a37e815d4d28185"
+   "chave": "7498ccbb9aa4cdc81a8caaba8482b7a25ef3e3a8"
   },
   "spa-quadrado-san-marino-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-san-marino-com-hidro-em-acrilico.jpg",
    "medida": "2,20 x 2,20 x 0,85",
    "foto_sha1": "06b61db1f3263ca76e91e3a5a3f861a64b3a61eb",
-   "chave": "42e4372556baef47fd91ef872bb3827312bca1db"
+   "chave": "23e8e3507eec8578e2650ebb3d168a213d2e4aa4"
   },
   "spa-quadrado-san-marino-com-hidro": {
    "src": "media/og/spa-quadrado-san-marino-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "06b61db1f3263ca76e91e3a5a3f861a64b3a61eb",
-   "chave": "8cde6bbd56bc5968a6320ef68517fbb6aa8b8cd1"
+   "chave": "ba931db7f17328dd9867b24a69676167a531c9d7"
   },
   "spa-quadrado-san-marino-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-san-marino-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,20x2,20x0,85",
    "foto_sha1": "282f3a0fc6c6c2acc56fd76fdfd7505d102ccf31",
-   "chave": "95f0f2d0f00ece160a0ce9073ad1728f7ef2a3e3"
+   "chave": "2382c416c3b2de02934f890e5d71c0de6135084d"
   },
   "spa-quadrado-san-marino-completo-com-hidro": {
    "src": "media/og/spa-quadrado-san-marino-completo-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "282f3a0fc6c6c2acc56fd76fdfd7505d102ccf31",
-   "chave": "3899f4a4a40e8c8be6ccded0fc36b3460870efc0"
+   "chave": "e007efbb93d1f429531b79d6ba02dd1db56d4729"
   },
   "spa-quadrado-savana-completo-com-hidro": {
    "src": "media/og/spa-quadrado-savana-completo-com-hidro.jpg",
    "medida": "2,30 x 2,30 x 0,95",
    "foto_sha1": "9179a58d6adde3375fe29ac84fc44d4e6eab9999",
-   "chave": "16efcd2c0a2aa17981bf47767da62327719e9d8c"
+   "chave": "215033b14c110a819e6de6dd3919f42b5048c382"
   },
   "spa-quadrado-serena-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-serena-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,84m x 1,50m x 0,82m",
    "foto_sha1": null,
-   "chave": "3bb92ee011730385a626583fabcdb85f4d5d8667"
+   "chave": "114184054ea7605eadd87200181fe5417318a70e"
   },
   "spa-quadrado-vitoria-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-quadrado-vitoria-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,30 X 2,22 X 89",
    "foto_sha1": "e8b62c76f778b5ca444eb96bbb3a683163b1cdae",
-   "chave": "5954600c25c326c6a3b564904455608bc516e334"
+   "chave": "5caabf0c5ae7aaf741ff7911536ccc5920d929ed"
   },
   "spa-quadrado-vitoria-completo-com-hidro": {
    "src": "media/og/spa-quadrado-vitoria-completo-com-hidro.jpg",
    "medida": "2,30 x 2,40 x 90",
    "foto_sha1": "e8b62c76f778b5ca444eb96bbb3a683163b1cdae",
-   "chave": "6d56365f5f33c6d8209ec1532d36db4cdc3578bb"
+   "chave": "f5fe43beeedf928dfe07253b97b987d3ff5fb32d"
   },
   "spa-redondo-california-completo-com-hidro": {
    "src": "media/og/spa-redondo-california-completo-com-hidro.jpg",
    "medida": null,
    "foto_sha1": "6e9705f35b7a8507a4504ff6ef1e9613896b632b",
-   "chave": "1d88d4797486adac3f82626f65dfffc291a57673"
+   "chave": "1615f2e81a8aa90a470f0aac991234d0ee81ffcd"
   },
   "spa-redondo-coliseu-com-hidro": {
    "src": "media/og/spa-redondo-coliseu-com-hidro.jpg",
    "medida": "2,64 x 2,63 x 0,76",
    "foto_sha1": "edbb0e2d887c9e529641b9ec7b8a0810759edfac",
-   "chave": "a46e6f26eef26e411c32b5afeafd8a0ae6b53205"
+   "chave": "2c8f8b2a11c4795a9e1f102946039d838796905b"
   },
   "spa-redondo-coliseu-completo-com-hidro": {
    "src": "media/og/spa-redondo-coliseu-completo-com-hidro.jpg",
    "medida": "2,64 x 2,63 x 0,76",
    "foto_sha1": "c05d6532f87de68745f1bff184cf719ae441ea71",
-   "chave": "62ddd8f542ae3fc0281e2238535ecbdfb43964fd"
+   "chave": "f23337399114755c3f54d015bcecf949c59523b7"
   },
   "spa-redondo-florida-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-redondo-florida-completo-com-hidro-em-acrilico.jpg",
    "medida": "2,30x2,30x0,80",
    "foto_sha1": "66720716659db912bb9ce8f1b15f13cde6c25b4f",
-   "chave": "420d216f9ebb3150876c1795fc000e489cabea7a"
+   "chave": "aa5d43a291f6752d0500f489a1f7ab9d1f4b70a4"
   },
   "spa-redondo-florida-completo-com-hidro": {
    "src": "media/og/spa-redondo-florida-completo-com-hidro.jpg",
    "medida": "2,30 x 2,30 x 0,80",
    "foto_sha1": "66720716659db912bb9ce8f1b15f13cde6c25b4f",
-   "chave": "b1b9dabcbec340c3b3cc5745102b7ae58b7be304"
+   "chave": "2b03490bc04faabf04bed310918ca41079f36aa7"
   },
   "spa-redondo-ipanema-com-hidro-em-acrilico": {
    "src": "media/og/spa-redondo-ipanema-com-hidro-em-acrilico.jpg",
    "medida": "1,81 x 1,83 x 0,69",
    "foto_sha1": "93770498fe06ede4486b9a481f87fca874b6e439",
-   "chave": "6854b277c7aa9794977b491b9ab60e1ba164e6ec"
+   "chave": "edc03cceba9497cf2207dbae0e38a9dc80c55520"
   },
   "spa-redondo-ipanema-com-hidro": {
    "src": "media/og/spa-redondo-ipanema-com-hidro.jpg",
    "medida": "1,81 x 1,83 x 0,69",
    "foto_sha1": "93770498fe06ede4486b9a481f87fca874b6e439",
-   "chave": "f32105a81c9c8e6055190524f797b2a05bc641a2"
+   "chave": "dd01cce6197763c63e4c2d28cfae7e811571c252"
   },
   "spa-redondo-ipanema-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-redondo-ipanema-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,81 x 1,83 x 0,69",
    "foto_sha1": "c4d28d27bfcf3b19b6706fe6e588c1c875d01a65",
-   "chave": "a709539457128e38fe6323e3971ba8f9cd775c98"
+   "chave": "2250d8761363dac3fd13da3b62f62055baad8092"
   },
   "spa-redondo-ipanema-completo-com-hidro": {
    "src": "media/og/spa-redondo-ipanema-completo-com-hidro.jpg",
    "medida": "1,81 x 1,83 x 0,69",
    "foto_sha1": "6f61c8d35307ce88f2c17f88280f6c311403e1e9",
-   "chave": "66dd4b41c23b5e8569e067592a1da6b22d664547"
+   "chave": "fd372811c1f3064923e0be761aa87da17e7b300f"
   },
   "spa-redondo-sensac-o-gold-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-redondo-sensac-o-gold-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,87 x 1,87 x 0,90",
    "foto_sha1": "beb200cfbca4d197b24ce3ad9877208b552e0f7f",
-   "chave": "419d835a41a012f75b387fedba1996d5988285c9"
+   "chave": "ffc7a31efbaf4357cf0f777c83c620288d74e5e6"
   },
   "spa-redondo-sensac-o-gold-completo-com-hidro": {
    "src": "media/og/spa-redondo-sensac-o-gold-completo-com-hidro.jpg",
    "medida": "1,87 x 1,87 x 0,90",
    "foto_sha1": "beb200cfbca4d197b24ce3ad9877208b552e0f7f",
-   "chave": "2d823b9e0911415e635f4fb151e38eaed1f853cb"
+   "chave": "c9cf3ec5652edf8b3967061a9ca6b6f3dd06aa35"
   },
   "spa-redondo-taiti-completo-em-acrilico": {
    "src": "media/og/spa-redondo-taiti-completo-em-acrilico.jpg",
    "medida": "2,27 x 2,27 x 0,82",
    "foto_sha1": "4546ab3ef082878693219ff9637b194fb1ee9882",
-   "chave": "ef16b58fd92f3a454733fba26a68c4b262c02dc3"
+   "chave": "b6bf8027f3b772b446646bbf17b5903ea842681a"
   },
   "spa-redondo-taiti-completo": {
    "src": "media/og/spa-redondo-taiti-completo.jpg",
    "medida": "2,27 x 2,27 x 0,82",
    "foto_sha1": "4546ab3ef082878693219ff9637b194fb1ee9882",
-   "chave": "f969485fa146982dc58e02033cfd1f186c67ae49"
+   "chave": "098cfb95b9108c7c401da87d16681f04551038f5"
   },
   "spa-retangular-florenza-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-florenza-com-hidro-em-acrilico.jpg",
    "medida": "1,39 x 1,79 x 0,64",
    "foto_sha1": "688ea4b2a48ff266b98de7e096ca9dea5a6b5220",
-   "chave": "bf862160504c249581b58c32ed48daf1b347e2d0"
+   "chave": "17dbe20b0557e11503ecbc499490848cb57c29b9"
   },
   "spa-retangular-florenza-com-hidro": {
    "src": "media/og/spa-retangular-florenza-com-hidro.jpg",
    "medida": "1,39 x 1,79 x 0,64",
    "foto_sha1": "688ea4b2a48ff266b98de7e096ca9dea5a6b5220",
-   "chave": "38e77d336e62d5c95db2a150baf9d1b5b7dfb777"
+   "chave": "07f6b2109e429ac8d7a138194319503e7cd8bd2e"
   },
   "spa-retangular-florenza-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-florenza-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,39 x 1,79 x 0,64",
    "foto_sha1": "8361e4a2daadbb9c2d3b44f5108df137c15f24b0",
-   "chave": "f610b5dc75ed7ab72fb80635427d1bf7200505b0"
+   "chave": "082459e3f1ce5c02aee890a588d471468bccd8fa"
   },
   "spa-retangular-florenza-completo-com-hidro": {
    "src": "media/og/spa-retangular-florenza-completo-com-hidro.jpg",
    "medida": "1,39 x 1,79 x 0,64",
    "foto_sha1": "8361e4a2daadbb9c2d3b44f5108df137c15f24b0",
-   "chave": "ce938da649fff12eaad6a23225c94692ee677dd9"
+   "chave": "87af9c36270952f2865eb4af30d8085e2673d658"
   },
   "spa-retangular-imola-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-imola-com-hidro-em-acrilico.jpg",
    "medida": "1,80 x 2,10 x 0,80",
    "foto_sha1": "8ae5b65fcb9c3f2a795fc2030fa48e2f1c7218c4",
-   "chave": "1e3c239098b32c7dc9eabc47c876600d31f672ed"
+   "chave": "29b3604c7dad8e7688cbf49f6913c6a1a97ea9b6"
   },
   "spa-retangular-imola-com-hidro": {
    "src": "media/og/spa-retangular-imola-com-hidro.jpg",
    "medida": "1,80 x 2,10 x 0,80",
    "foto_sha1": "8ae5b65fcb9c3f2a795fc2030fa48e2f1c7218c4",
-   "chave": "5012bba35ebe8a9a2e00764052c1d6f0983f0ba9"
+   "chave": "847b39554191db06d53d94dd11584dbf7bf591a6"
   },
   "spa-retangular-imola-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-imola-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,80 x 2,10 x 0,80",
    "foto_sha1": "cc8795561648f7ea15ca8f3920ff1a64e83bc2f4",
-   "chave": "445c749bab661086311b2a310c9f4bd8912361f1"
+   "chave": "0599b84c5b24f7d47c5b1e52bbcf1c175a3cac5b"
   },
   "spa-retangular-imola-completo-com-hidro": {
    "src": "media/og/spa-retangular-imola-completo-com-hidro.jpg",
    "medida": "1,80 x 2,10 x 0,80",
    "foto_sha1": "cc8795561648f7ea15ca8f3920ff1a64e83bc2f4",
-   "chave": "a2c8b858bab3f0fbe2818e37bdbea87a24b68a7a"
+   "chave": "9bbf3be11e071668769e86562d1cbcfc7f6d5e21"
   },
   "spa-retangular-las-vegas-completo-com-hidro": {
    "src": "media/og/spa-retangular-las-vegas-completo-com-hidro.jpg",
    "medida": "2,20 x 2,89 x 0,87",
    "foto_sha1": "0ff033847d13a4de03c62fa3cd7138b9ebcb54de",
-   "chave": "e20f4517fa6441a3088cd2036292d21fb91a0aa0"
+   "chave": "d101e81901d1c58e100ebe0bfa1c13f100b2da3d"
   },
   "spa-retangular-londres-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-londres-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,50 x 1,65 x 0,92",
    "foto_sha1": "83e37417bf25261efcdc3e692778f35029d42d21",
-   "chave": "f0a354a12ebe555c800444c56adb0d69e3712d74"
+   "chave": "1446636c32dff395735b853daf7ee1f3edf44265"
   },
   "spa-retangular-malbec-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-malbec-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,59 x 1,90 x 0, 84",
    "foto_sha1": "f70c0bd9e3951c5e82c3923217af55b50e80dee9",
-   "chave": "48a75e2b32654b10c0ac884a96aa6dd5a26cdfe8"
+   "chave": "3dda3b6a48cf3558023964a35242a1e5fe2f23e1"
   },
   "spa-retangular-rio-de-janeiro-completo-com-hidro-em-acrilico-1": {
    "src": "media/og/spa-retangular-rio-de-janeiro-completo-com-hidro-em-acrilico-1.jpg",
    "medida": "1,76 x 2,07 x 0,75",
    "foto_sha1": "6c322595a757c57ce1c939231bf0129dfc03ff05",
-   "chave": "964fa98b75bc49d25b2f4c4b70f64487034bdb53"
+   "chave": "77de2a52f45f923214bad5ff4193c4ec6735703b"
   },
   "spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2": {
    "src": "media/og/spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2.jpg",
    "medida": "1,76 x 2,07 x 0,75",
    "foto_sha1": "6c322595a757c57ce1c939231bf0129dfc03ff05",
-   "chave": "46ee420b2195107642559358685833ac2d0ee5b4"
+   "chave": "7a206bcc715deb87f2fedae52575f1a9ee9408f3"
   },
   "spa-retangular-siena-completo-com-hidro-em-acrilico": {
    "src": "media/og/spa-retangular-siena-completo-com-hidro-em-acrilico.jpg",
    "medida": "1,80 x 2,10 x 0,73",
    "foto_sha1": "cfb8c6cecdfe227239aa24010e6e676dce5a54b9",
-   "chave": "4cb807d7740fb993d0f77384e781e38da341b620"
+   "chave": "6c76b698850bd05a8fabbebbd104e2990936607d"
   },
   "spa-santorini-completo-com-hidro-em-acrilico-1": {
    "src": "media/og/spa-santorini-completo-com-hidro-em-acrilico-1.jpg",
    "medida": "2,23 x 2,23 x 1,05",
    "foto_sha1": "5123149fee9883d9ec3057a8d33af846721299d3",
-   "chave": "c2de88f092e4a66d11839c352192a0b9573f4ca7"
+   "chave": "01a7c085bde2855aa63f836122ba8b4c81a4956a"
   },
   "tampa-de-inspecao": {
    "src": "media/og/tampa-de-inspecao.jpg",
    "medida": null,
    "foto_sha1": "ea92806b752596e0d21f921494cc0f10d5e5a880",
-   "chave": "1b9c3d77ec8e372a786c4d5525b9e81f78763671"
+   "chave": "612ff8f7c0ec59e1d13b4dc9956768b3edcaf3be"
   }
  },
  "colecoes": {
   "acessorios.html": {
    "src": "media/og/colecao/acessorios.jpg",
    "foto_de": "kit-filtragem-completo",
-   "chave": "b293c0ac852b2f9c5878d8f21e101980e6d013d4"
+   "chave": "9c3db8f2e7f8cbd48ec9e8f8b1b8a4d064244a56"
   },
   "banheira-spa.html": {
    "src": "media/og/colecao/banheira-spa.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "f99dc22065aefe2451c63d70cf1cbb0417c3fc6f"
+   "chave": "271ba1db28aa2d4c63150dd6e67031bafec3548a"
   },
   "banheiras.html": {
    "src": "media/og/colecao/banheiras.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "bfa11d51e87a4f41f55378df840ab02c4841142a"
+   "chave": "317adc84e3d26b40a13c8a287453367f0a8cf40d"
   },
   "banheiras/banheira-de-canto.html": {
    "src": "media/og/colecao/banheiras--banheira-de-canto.jpg",
    "foto_de": "banheira-de-canto-viena-completa-com-hidro-em-acrilico",
-   "chave": "a63a9641acc2bba4e7b97a7b90290f49fe70d67a"
+   "chave": "26ded962a700569af268d0dff224c36918f5e88c"
   },
   "banheiras/banheira-dupla.html": {
    "src": "media/og/colecao/banheiras--banheira-dupla.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "da1d20a38c05f4ac28b69e33b4fba536f9936edc"
+   "chave": "b728566f121036c8e08734e944a05d414165c265"
   },
   "banheiras/banheira-para-banheiro.html": {
    "src": "media/og/colecao/banheiras--banheira-para-banheiro.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "a59582ced1844ace4439de618e52b103c623f365"
+   "chave": "9a246ea79780d9d1dd91ee1fc2915abe16bc7b7c"
   },
   "banheiras/banheira-quadrada.html": {
    "src": "media/og/colecao/banheiras--banheira-quadrada.jpg",
    "foto_de": "banheira-dupla-suica-completa-com-hidro",
-   "chave": "1190468681a5af1989b7802742ca94b19e125510"
+   "chave": "b07a45232e4c71bef4536125eb502aac796c0b3b"
   },
   "banheiras/banheira-retangular.html": {
    "src": "media/og/colecao/banheiras--banheira-retangular.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "00e9b6d3b0b609deb5a25894e8690219e9ce1f17"
+   "chave": "5fe97a7f479704c1d4edafd6dbc40f31b08de177"
   },
   "banheiras/banheira-simples.html": {
    "src": "media/og/colecao/banheiras--banheira-simples.jpg",
    "foto_de": "banheira-contemporanea-paraty-sem-hidro",
-   "chave": "8d53cfd6a4153f2b99fcabce410c0dd00a8d717b"
+   "chave": "af5741cd9e183e9c77f8ad34ae3fe38fd2b1d9c5"
   },
   "banheiras/banheiras-individuais.html": {
    "src": "media/og/colecao/banheiras--banheiras-individuais.jpg",
    "foto_de": "banheira-retangular-maresias-completa-com-hidro-em-acrilico",
-   "chave": "e7040cd920d74efbc9741eb7a7b17eebdbc9a266"
+   "chave": "485bcf6feb56f49aa820adfbc23942b56d35cfcc"
   },
   "banheiras/banheiras-redondas.html": {
    "src": "media/og/colecao/banheiras--banheiras-redondas.jpg",
    "foto_de": "banheira-redonda-sensuale-completa-com-hidro-em-acrilico",
-   "chave": "010e4e38de9af40ee2c86611f5b3037c836f39a7"
+   "chave": "a0c74d722ae0c60cd033522c527af09e4854b1b3"
   },
   "banheiras/kids.html": {
    "src": "media/og/colecao/banheiras--kids.jpg",
    "foto_de": "banheira-vitoriana-para-criancas-0-58-x-1-21-x-0-40",
-   "chave": "b0de9db2c291e84c46005e7309cca410947b7a24"
+   "chave": "21a5c593c6cb9497dbe6e63f56beb60e1c74aae8"
   },
   "banheiras/pets.html": {
    "src": "media/og/colecao/banheiras--pets.jpg",
    "foto_de": "banheira-vitoriana-para-pets-0-58-x-1-21-x-0-40",
-   "chave": "04c8ec75bda406250ff76e57013748df8039093e"
+   "chave": "29a3b74e862359296b850c3a945c1497b5c72008"
   },
   "banheiras/por-tamanho.html": {
    "src": "media/og/colecao/banheiras--por-tamanho.jpg",
    "foto_de": "banheira-redonda-sensuale-com-abas-completa-com-hidro",
-   "chave": "447fff75cd2567338564ebe53a0ca71557e3d96e"
+   "chave": "e7f8b9701ac0137477afd3bdcb4a473bf8cb7647"
   },
   "banheiras/por-tamanho/banheiras-de-1.html": {
    "src": "media/og/colecao/banheiras--por-tamanho--banheiras-de-1.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "8157e2da252671ea076ba11c68c5aed0520ce28c"
+   "chave": "2bc0ab61adc1cdfaeefdefcd88784225959c649f"
   },
   "banheiras/por-tamanho/de-100-a-140.html": {
    "src": "media/og/colecao/banheiras--por-tamanho--de-100-a-140.jpg",
    "foto_de": "banheira-retangular-maresias-completa-com-hidro-em-acrilico",
-   "chave": "7d0591863e1cb3e4a62e686650cf88f2eb2c58aa"
+   "chave": "cc8fdd2067d4cfc827acebb1d78c4486e79d9156"
   },
   "banheiras/por-tamanho/de-141-a-160.html": {
    "src": "media/og/colecao/banheiras--por-tamanho--de-141-a-160.jpg",
    "foto_de": "banheira-dupla-harmonia-completa-com-hidro-em-acrilico-1",
-   "chave": "6e964512d3e2218d4762ab5b3e938d462359e454"
+   "chave": "dc3e9bc95b2a7160ee5ca45f7093c6cf67ee27f7"
   },
   "banheiras/por-tamanho/de-161-a-180.html": {
    "src": "media/og/colecao/banheiras--por-tamanho--de-161-a-180.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "4a17098aae132f003de147c57109764bca0d77ec"
+   "chave": "c40dc8f5421b16a1dcb7f426343802a963b6c760"
   },
   "banheiras/por-tamanho/de-181-a-200.html": {
    "src": "media/og/colecao/banheiras--por-tamanho--de-181-a-200.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "25985d4d7adb4d78a7ef3da888d6c09d62fb3321"
+   "chave": "2a1472a6e59e397e543974dae3a2e71bd55b890b"
   },
   "catalog/category/view/id/130": {
    "src": "media/og/colecao/catalog--category--view--id--130.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "1fb6664b9bcc9f2126698d349b595e14ba520109"
+   "chave": "11bfec1d5cb040f93dda0524a30a68d1846e966d"
   },
   "catalog/category/view/id/131": {
    "src": "media/og/colecao/catalog--category--view--id--131.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "d3fd0d9fab3a4eae51b7dfc876feb17fd843a621"
+   "chave": "162df168741aa82148dc61419640a30ffad33e55"
   },
   "frete-promocional.html": {
    "src": "media/og/colecao/frete-promocional.jpg",
    "foto_de": "banheira-dupla-harmonia-completa-com-hidro-em-acrilico-1",
-   "chave": "ba767708de12aa8c476b3ce6def92dbe970f831f"
+   "chave": "74021db809825b5d3a9c513f4643cb789afe991f"
   },
   "kids.html": {
    "src": "media/og/colecao/kids.jpg",
    "foto_de": "banheira-vitoriana-para-criancas-0-58-x-1-21-x-0-40",
-   "chave": "b0de9db2c291e84c46005e7309cca410947b7a24"
+   "chave": "21a5c593c6cb9497dbe6e63f56beb60e1c74aae8"
   },
   "lancamentos.html": {
    "src": "media/og/colecao/lancamentos.jpg",
    "foto_de": "spa-quadrado-chicago-completo-com-hidro-em-acrilico",
-   "chave": "b8af8d11f0ca39bd14f9a27b354eaddf9b1e4e19"
+   "chave": "b959af9faba19963d391150dc211b61d71644fdf"
   },
   "ofuro-com-hidro.html": {
    "src": "media/og/colecao/ofuro-com-hidro.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "a02161b1f3b674e7fdd2a7ec40e74afd4f88614f"
+   "chave": "06df75617cbd358eeee25696844bdb6c0f533232"
   },
   "ofuro-de-madeira.html": {
    "src": "media/og/colecao/ofuro-de-madeira.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "c4d94c3ee500caf15cd9ecd78873624b95d2fad5"
+   "chave": "7b4fbcb59baa51ec056dc5801d35be9270ee16e4"
   },
   "ofuro-externo.html": {
    "src": "media/og/colecao/ofuro-externo.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "82bf001c7d9873e66ba2dfff033a487b232ac267"
+   "chave": "03950f4711456db72df6de3a13c70ce05ffe6866"
   },
   "ofuro-externo/ofuro-com-hidro.html": {
    "src": "media/og/colecao/ofuro-externo--ofuro-com-hidro.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "a02161b1f3b674e7fdd2a7ec40e74afd4f88614f"
+   "chave": "06df75617cbd358eeee25696844bdb6c0f533232"
   },
   "ofuro-preco.html": {
    "src": "media/og/colecao/ofuro-preco.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "6688307b73335b7048cbb883ecaff33505d592f0"
+   "chave": "fcc6d01f2940d7a934cef4345dd8cf1abbbf5f00"
   },
   "ofuros.html": {
    "src": "media/og/colecao/ofuros.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "120362353e777dc6bb0e5a8c55b78ace6e6fedd6"
+   "chave": "298c0afb01fe215cb3b101461e80210803db7fe7"
   },
   "ofuros/duplos.html": {
    "src": "media/og/colecao/ofuros--duplos.jpg",
    "foto_de": "ofuro-duplo-solene-completo-com-hidro-em-acrilico",
-   "chave": "62fcdd00984b861ba43bf3b33563d7e74489c8e4"
+   "chave": "a41ea73b244e0d0fbec9c453c50467fd9b95b40d"
   },
   "ofuros/individuais.html": {
    "src": "media/og/colecao/ofuros--individuais.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "759fd3eef4ed7618a04a713f98ba6728c0c4a78e"
+   "chave": "95298844c941e2ff3cc3bb7c7f6cb9676fcbbe09"
   },
   "ofuros/ofuros-por-tamanhos.html": {
    "src": "media/og/colecao/ofuros--ofuros-por-tamanhos.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "4e6018711c6c6220f44e46e29496e5bbbbb5d0b1"
+   "chave": "b424388adf8f657beac18d1e6cc7330e933782ce"
   },
   "ofuros/ofuros-por-tamanhos/de-1-00-a-1-40.html": {
    "src": "media/og/colecao/ofuros--ofuros-por-tamanhos--de-1-00-a-1-40.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "f269365543ca8163ec1b4d2bd3c5e28600e1b866"
+   "chave": "b4b3386c0964869e87f8b5067b1a877003e07c46"
   },
   "ofuros/ofuros-por-tamanhos/de-1-41-a-1-60.html": {
    "src": "media/og/colecao/ofuros--ofuros-por-tamanhos--de-1-41-a-1-60.jpg",
    "foto_de": "ofuro-duplo-toquio-completo-com-hidro-em-acrilico",
-   "chave": "7a62323ed6e03e3b1b6ecf814249b8d96c430001"
+   "chave": "8b862467ff72c9bf7e6be0256626dd2a30009dd8"
   },
   "ofuros/ofuros-por-tamanhos/ofuros-de-1.html": {
    "src": "media/og/colecao/ofuros--ofuros-por-tamanhos--ofuros-de-1.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "dd304ff25168ea6deb032a088873866b677b91d7"
+   "chave": "fad0cd7427ac7a460853448245fd03bfad1510de"
   },
   "ofuros/quadrados.html": {
    "src": "media/og/colecao/ofuros--quadrados.jpg",
    "foto_de": "ofuro-quadrado-osaka-individual-com-hidro-em-acrilico",
-   "chave": "8d07547b43cfc61c1b02584066f8d596d15dcd39"
+   "chave": "3364e61ab31bcbd77aaf9def9183cbb9b31e8085"
   },
   "pets.html": {
    "src": "media/og/colecao/pets.jpg",
    "foto_de": "banheira-vitoriana-para-pets-0-58-x-1-21-x-0-40",
-   "chave": "04c8ec75bda406250ff76e57013748df8039093e"
+   "chave": "29a3b74e862359296b850c3a945c1497b5c72008"
   },
   "preco-de-banheira.html": {
    "src": "media/og/colecao/preco-de-banheira.jpg",
    "foto_de": "banheira-dupla-capri-completa-com-hidro-em-acrilico-1",
-   "chave": "e5b1f2993524ad41bb7875c99a3ba7805d40c0dd"
+   "chave": "271ebdb8511b5cadf60cf1f658bef4af3a919a1e"
   },
   "sauna.html": {
    "src": "media/og/colecao/sauna.jpg",
    "foto_de": "sauna-luxo-bbb",
-   "chave": "6995697258e4d03713c9abb098f64b148573a792"
+   "chave": "062e06f5e403933025984e490e9f411d90918635"
   },
   "sauna/por-tamanho.html": {
    "src": "media/og/colecao/sauna--por-tamanho.jpg",
    "foto_de": "sauna-luxo-bbb",
-   "chave": "0d73d14b58ed38fab670ba26f020b40fdbc5ba9f"
+   "chave": "0bbb6089d9c9f06b3bb2de25e69ccba6625a6b52"
   },
   "sauna/por-tamanho/1-20-x-1m-x-2-10.html": {
    "src": "media/og/colecao/sauna--por-tamanho--1-20-x-1m-x-2-10.jpg",
    "foto_de": "sauna-compacta-bbb",
-   "chave": "0ffcabac6502bd9f67c6230bb82817b6a9f0af25"
+   "chave": "be95cefd73a0a8ce990390b8cc0594a11fd613bc"
   },
   "sauna/por-tamanho/sauna-de-1-50-x-1-20-x-2-10.html": {
    "src": "media/og/colecao/sauna--por-tamanho--sauna-de-1-50-x-1-20-x-2-10.jpg",
    "foto_de": "sauna-prime-bbb",
-   "chave": "3685ca01aed395619f8158219ca1df8d49dfe43f"
+   "chave": "cfe45b752b71b8656fef989e5e9526f8f7d8f92a"
   },
   "sauna/por-tamanho/sauna-de-2-m-x-2-m-x-2-10.html": {
    "src": "media/og/colecao/sauna--por-tamanho--sauna-de-2-m-x-2-m-x-2-10.jpg",
    "foto_de": "sauna-luxo-bbb",
-   "chave": "5cc08bcb07abdbffbdaa38de6692c8bbee449489"
+   "chave": "8ad2ee3d15a1828513c8a23dd648499f21455254"
   },
   "spas.html": {
    "src": "media/og/colecao/spas.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2",
-   "chave": "9c2ba982966626c4e9f9aae2ce19b963b70a2b69"
+   "chave": "a33563def2a5a93b7cb39d3e2b7c1506af14e1a2"
   },
   "spas/3-a-4-lugares.html": {
    "src": "media/og/colecao/spas--3-a-4-lugares.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2",
-   "chave": "98a6cd630e156d00f5c4a4d60e5a411892be8014"
+   "chave": "3907cf1af52d1bb165e8b861091d88efb7aae398"
   },
   "spas/5-a-6-lugares.html": {
    "src": "media/og/colecao/spas--5-a-6-lugares.jpg",
    "foto_de": "spa-santorini-completo-com-hidro-em-acrilico-1",
-   "chave": "abb583ae5bf5b07534d966db122d81afef2361b0"
+   "chave": "af3403167b6aa8b338687d3b39c28245cfaf63b2"
   },
   "spas/6-a-7-lugares.html": {
    "src": "media/og/colecao/spas--6-a-7-lugares.jpg",
    "foto_de": "spa-oasis-completo-com-hidro-em-gel-coat-1",
-   "chave": "efdf568368d7137e4bbe08f2c62c7065c8dcf53e"
+   "chave": "e5d91ccdeef37e77be327a863156a5d6e99ad0d8"
   },
   "spas/7-a-8-lugares.html": {
    "src": "media/og/colecao/spas--7-a-8-lugares.jpg",
    "foto_de": "spa-quadrado-chicago-completo-com-hidro-em-acrilico",
-   "chave": "59f4a28f2f9d736464707a393d457eaccf4c2b64"
+   "chave": "d0d235d14c6b83b6d1be72e46a4353fe43b5314d"
   },
   "spas/de-canto.html": {
    "src": "media/og/colecao/spas--de-canto.jpg",
    "foto_de": "spa-santorini-completo-com-hidro-em-acrilico-1",
-   "chave": "c2af613a40438c912b39a397fdbb63c6f68ba9aa"
+   "chave": "aa5237e3a0f9d793225e7f75020dc3399695adfb"
   },
   "spas/quadrados.html": {
    "src": "media/og/colecao/spas--quadrados.jpg",
    "foto_de": "spa-oasis-completo-com-hidro-em-gel-coat-1",
-   "chave": "d955d75479e6d056c8769a07a7cd8bad308054cd"
+   "chave": "a3934c454798fe3893e8a26f132456f24f81f9b6"
   },
   "spas/redondos.html": {
    "src": "media/og/colecao/spas--redondos.jpg",
    "foto_de": "spa-redondo-taiti-completo-em-acrilico",
-   "chave": "550d85486ce3d61d302381327e85232ea514f71e"
+   "chave": "2ff8b822cc8135131a98610a2e6d9c88c64d86c9"
   },
   "spas/retangulares.html": {
    "src": "media/og/colecao/spas--retangulares.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2",
-   "chave": "05c7de8be27aa36abc2ee6ecd4598e2726d8c839"
+   "chave": "0eb834977de2faa3520273c77c2fa0d89c0eae66"
   },
   "spas/spas-por-tamanhos.html": {
    "src": "media/og/colecao/spas--spas-por-tamanhos.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2",
-   "chave": "6b28d365fcd287f87659aead291b978dad6da7cd"
+   "chave": "133f5a7ba43a20058beba80023e03f4879455da9"
   },
   "spas/spas-por-tamanhos/de-1-50-a-1-60.html": {
    "src": "media/og/colecao/spas--spas-por-tamanhos--de-1-50-a-1-60.jpg",
    "foto_de": "spa-quadrado-cancun-completo-com-hidro-em-acrilico",
-   "chave": "00040536a8f5b19eb6662164f2c307f30719d556"
+   "chave": "44ee1638f5fd4bfa3e4dc91918b8a20df633b142"
   },
   "spas/spas-por-tamanhos/de-161-a-181.html": {
    "src": "media/og/colecao/spas--spas-por-tamanhos--de-161-a-181.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2",
-   "chave": "ef9bceb461112f82647c02af7e4366b21fdfcafb"
+   "chave": "510e7fa8cabcf9f8c3727c8ea574ea5728d40c28"
   },
   "spas/spas-por-tamanhos/de-181-a-200.html": {
    "src": "media/og/colecao/spas--spas-por-tamanhos--de-181-a-200.jpg",
    "foto_de": "spa-quadrado-vitoria-completo-com-hidro-em-acrilico",
-   "chave": "84d5b6669f3404ef690d4b5e7c73d10b0c9f9209"
+   "chave": "f2ad67b79247043da5651da9929e59e231c246d1"
   },
   "spas/spas-por-tamanhos/de-201-a-265.html": {
    "src": "media/og/colecao/spas--spas-por-tamanhos--de-201-a-265.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-acrilico-1",
-   "chave": "6fa182c4570593416907872a07cece7d06ca6d8f"
+   "chave": "e7e8aa25768a3aa8628de548b703b39e7db89224"
   },
   "spas/spas-por-tamanhos/spas-de-1.html": {
    "src": "media/og/colecao/spas--spas-por-tamanhos--spas-de-1.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-gel-coat-2",
-   "chave": "ef1d9d85c4c954705168a45f5e50c94b2ff40a76"
+   "chave": "65b8e6b3ffb04532fbfd91cdbc0f6c5ee3d34c90"
   },
   "spas/spas-por-tamanhos/spas-de-2.html": {
    "src": "media/og/colecao/spas--spas-por-tamanhos--spas-de-2.jpg",
    "foto_de": "spa-retangular-rio-de-janeiro-completo-com-hidro-em-acrilico-1",
-   "chave": "7ca244b543e18f36deb2172054217cd91c5311f9"
+   "chave": "d27d6d7be14ca4b563b9397d18d5488b0542b9ff"
   }
  },
  "padrao": "media/og/padrao.jpg",
  "padrao_info": {
   "src": "media/og/padrao.jpg",
-  "chave": "4545b60e757b0502b56e38f4e9e078435f87ad29"
+  "chave": "3616bf1f172040f5eb3e367bc106f0bb0be7c0d2"
  }
 }
