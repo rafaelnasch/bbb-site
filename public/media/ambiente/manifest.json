@@ -1,0 +1,54 @@
+{
+ "abertura": {
+  "slug": "banheira-acqua-linea-completa-com-hidro",
+  "largura": 2336,
+  "altura": 1744,
+  "fontes": {
+   "image/avif": [
+    [
+     "media/ambiente/abertura-640.avif",
+     640,
+     478
+    ],
+    [
+     "media/ambiente/abertura-960.avif",
+     960,
+     717
+    ],
+    [
+     "media/ambiente/abertura-1280.avif",
+     1280,
+     956
+    ],
+    [
+     "media/ambiente/abertura-1600.avif",
+     1600,
+     1195
+    ]
+   ],
+   "image/webp": [
+    [
+     "media/ambiente/abertura-640.webp",
+     640,
+     478
+    ],
+    [
+     "media/ambiente/abertura-960.webp",
+     960,
+     717
+    ],
+    [
+     "media/ambiente/abertura-1280.webp",
+     1280,
+     956
+    ],
+    [
+     "media/ambiente/abertura-1600.webp",
+     1600,
+     1195
+    ]
+   ]
+  },
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBQCdASoYABIAPu1iq1AppSOisBgIATAdiWcAwCgMdOQQPdgSNGApKTZBRUP/hgAbAAD+l3PiU2lU9+dRmHOMsDkOnsm6kc/XHGftdAwDU7aIWuuhBt6kxxCeQcJRrhuKplIueWx6AbPNTBer6NXJM+FGV+2Mfsu6UcBfHWsOF3gA"
+ }
+}

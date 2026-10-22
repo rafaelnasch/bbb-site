@@ -34,7 +34,7 @@
 .esc__voltar:disabled{display:none}
 /* Foco nunca escondido atrás da barra fixa Voltar/Avançar (WCAG 2.4.11): a rolagem do foco reserva a altura dela. */
 @media (max-width:1023px){html:has(.esc__nav){scroll-padding-bottom:calc(var(--bandeja-h,0px) + 112px)}.esc__form :is(input,button,select,a){scroll-margin-bottom:calc(var(--bandeja-h,0px) + 112px)}}
-.esc__avancar{--b-bg:var(--ink);flex-grow:2!important;flex-wrap:wrap;gap:4px 10px}
+.esc__avancar{--b-bg:var(--brand);flex-grow:2!important;flex-wrap:wrap;gap:4px 10px}
 .esc__n{font-weight:400;opacity:.85}
 
 /* Resultados */

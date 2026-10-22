@@ -14,6 +14,7 @@ import { PORTAS, FOTO_ABERTURA, SALAS, PECAS_POR_SALA, FAQ_HOME, ALTURA_SALAS, A
 import { mapaLojas } from '../build/lib/mapa-lojas.mjs';
 import { alturaReservada } from '../templates/parts/tardio.mjs';
 import { validar } from '../build/validate.mjs';
+import { AMBIENTES } from '../build/lib/ambientes.mjs';
 
 const DIST = join(paths.cache, 'dist-home');
 const ler = (n) => JSON.parse(readFileSync(join(paths.data, n), 'utf8'));
@@ -208,13 +209,13 @@ test('escolhedor rápido: opções de pessoas iguais às do escolher.html e cont
   assert.ok(opcoesPessoas(indice.itens, 'spa', cfg).every((o) => o[0].startsWith('spa')));
 });
 
-test('primeira carga sem recurso de terceiros; LCP não é canvas (água e vapor só nascem no navegador)', () => {
+test('primeira carga sem recurso de terceiros; abertura parada, sem canvas, sem água nem vapor (direção institucional)', () => {
   const carga = h.replace(/<link rel="(?:canonical|manifest)"[^>]*>/g, '').replace(/<a\b[^>]*>/g, '');
   for (const m of carga.matchAll(/<(?:img|script|link|source|video)\b[^>]*\s(?:src|href|srcset|poster)="(https?:[^"]+)"/g)) {
     assert.fail(`recurso externo na carga: ${m[1]}`);
   }
   assert.doesNotMatch(h, /<canvas/);
-  assert.match(h, /class="home-abre__agua" aria-hidden="true" data-agua/);
+  assert.doesNotMatch(h, /data-agua|data-vapor/);
 });
 
 test('orçamento: JS da home <= 25 KB gzip (celular e desktop, sem GSAP), CSS crítico <= 14 KB, HTML válido', async () => {
@@ -224,7 +225,8 @@ test('orçamento: JS da home <= 25 KB gzip (celular e desktop, sem GSAP), CSS cr
   const inline = /<script>([\s\S]*?)<\/script>/.exec(h)[1];
   const total = [nucleo, ...Object.values(mods)].reduce((s, u) => s + gzipSync(arq(u), { level: 9 }).length, 0) + gzipSync(inline).length;
   assert.ok(total <= 25 * 1024, `JS da home ${total} B gzip`);
-  for (const m of ['home', 'agua', 'vapor']) assert.ok(mods[m], `módulo ${m}`);
+  assert.ok(mods.home, 'módulo home');
+  for (const m of ['agua', 'vapor']) assert.ok(!mods[m], `sem o módulo ${m}`);
   const css = /<style>([\s\S]*?)<\/style>/.exec(h)[1];
   assert.ok(Buffer.byteLength(css) <= 14 * 1024, `CSS crítico ${Buffer.byteLength(css)} B`);
   const hv = new HtmlValidate({ extends: ['html-validate:standard', 'html-validate:document'], rules: { 'require-sri': 'off' } });
@@ -238,33 +240,33 @@ test('validador do build sem falhas na saída com a home', async () => {
   assert.deepEqual(erros.filter((e) => e.startsWith('index.html') || !/\.html:/.test(e)), []);
 });
 
-test('LCP: H1 com o subconjunto da Newsreader pré-carregado, que cobre todo o texto do H1; módulos e CSS do site depois da pintura', () => {
-  const cobertos = new Set([...readFileSync(join(paths.src, 'fonts', 'newsreader-titulo.txt'), 'utf8').replace(/\n$/, '')]);
+test('LCP: H1 com o subconjunto da Libre Franklin pré-carregado, que cobre todo o texto do H1; módulos e CSS do site depois da pintura', () => {
+  const cobertos = new Set([...readFileSync(join(paths.src, 'fonts', 'libre-franklin-titulo.txt'), 'utf8').replace(/\n$/, '')]);
   const h1 = texto(/<h1[^>]*>([\s\S]*?)<\/h1>/.exec(h)[1]).trim();
   const faltam = [...new Set([...h1])].filter((c) => !cobertos.has(c));
   assert.deepEqual(faltam, [], 'rode node build/fontes-titulo.mjs depois de mudar o H1');
-  assert.match(h, /<link rel="preload" href="[^"]*newsreader-titulo\.[0-9a-f]{10}\.woff2" as="font" type="font\/woff2" crossorigin fetchpriority="high">/);
-  assert.doesNotMatch(h, /rel="preload" href="[^"]*newsreader-var-latin/, 'na home o preload é só o do H1');
-  assert.match(h, /font-family:"Newsreader Titulo"/);
+  assert.match(h, /<link rel="preload" href="[^"]*libre-franklin-titulo\.[0-9a-f]{10}\.woff2" as="font" type="font\/woff2" crossorigin fetchpriority="high">/);
+  assert.doesNotMatch(h, /rel="preload" href="[^"]*libre-franklin-var-latin/, 'na home o preload é só o do H1');
+  assert.match(h, /font-family:"Libre Franklin Titulo"/);
   // Módulos da página e CSS do site só depois da primeira pintura (core.js), fora do caminho do LCP.
   assert.doesNotMatch(h, /<script type="module" src="[^"]*assets\/js\/(?!nucleo)/, 'só o núcleo no <head>');
   const ass = /<script type="application\/json" id="bbb-assets"([^>]*)>([^<]*)</.exec(h);
   const tardios = /data-tardios="([^"]+)"/.exec(ass[1])?.[1].split(' ') || [];
   assert.deepEqual(tardios.sort(), Object.keys(JSON.parse(ass[2])).sort());
-  for (const m of ['home', 'agua', 'vapor', 'planta']) assert.ok(tardios.includes(m), m);
+  for (const m of ['home', 'planta']) assert.ok(tardios.includes(m), m);
   assert.match(ass[1], /data-css="[^"]*assets\/site\.[0-9a-f]{10}\.css"/);
   assert.doesNotMatch(h, /<link rel="stylesheet" href="[^"]*site\.[0-9a-f]{10}\.css" media="print"/);
   assert.match(h, /<noscript><link rel="stylesheet" href="[^"]*site\.[0-9a-f]{10}\.css"><\/noscript>/, 'sem JS, o CSS vem pelo noscript');
 });
 
-test('abertura: uma foto parada da galeria publicada (com legenda e "Imagem ilustrativa"); portas com contagens reais', () => {
+test('abertura: a peça real num ambiente ilustrativo (foto tratada, com legenda e "Imagem ilustrativa"); portas com contagens reais', () => {
   const ab = /<section class="sala home-abre"[\s\S]*?<\/section>/.exec(h)[0];
   const fig = /<figure class="abre-foto"[\s\S]*?<\/figure>/.exec(ab)?.[0] || '';
   assert.ok(fig, 'foto da abertura presente');
   assert.ok(ab.indexOf('<figure class="abre-foto"') > ab.indexOf('<h1'), 'a foto vem depois do título');
-  assert.match(fig, new RegExp(`media/p/${FOTO_ABERTURA.slug}/${FOTO_ABERTURA.slug}-${FOTO_ABERTURA.n}-`), 'foto da própria galeria publicada');
+  assert.match(fig, /media\/ambiente\/abertura-\d+\.(avif|webp)/, 'foto de ambiente da abertura (build/media-ambiente.mjs)');
   assert.match(fig, /fetchpriority="high"/);
-  const p = produtos.find((x) => x.slug === FOTO_ABERTURA.slug);
+  const p = produtos.find((x) => x.slug === AMBIENTES.abertura.slug);
   assert.match(fig, new RegExp(`href="[^"]*${p.slug}\\.html">${p.nome.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</a>`), 'legenda com o nome literal e o link');
   assert.match(texto(fig), /Imagem ilustrativa/);
   assert.doesNotMatch(h, /data-vitrine|vitrine__video|data-home-filme/, 'sem a vitrine de filmes');
@@ -331,19 +333,18 @@ test('abertura: nenhuma foto atrás do título; portas só em texto (nome e cont
 
 test('abertura: fontes inteiras fora do CSS crítico da home, pedidas com o site.css', () => {
   const inline = /<style>([\s\S]*?)<\/style>/.exec(h)[1];
-  assert.doesNotMatch(inline, /@font-face\{font-family:("?Newsreader"?|"?Jost"?);/);
-  assert.match(inline, /@font-face\{font-family:"?Newsreader Titulo"?;/);
-  assert.match(inline, /Jost Fallback/);
+  assert.doesNotMatch(inline, /@font-face\{font-family:"?Libre Franklin"?;/);
+  assert.match(inline, /@font-face\{font-family:"?Libre Franklin Titulo"?;/);
+  assert.match(inline, /Libre Franklin Fallback/);
   const css = /data-css="([^"]+)"/.exec(h)[1].slice(BASE_PATH.length + 1);
   const site = readFileSync(join(paths.dist, css), 'utf8');
-  assert.match(site, /@font-face\{font-family:"?Newsreader"?;/);
-  assert.match(site, /@font-face\{font-family:"?Jost"?;/);
+  assert.match(site, /@font-face\{font-family:"?Libre Franklin"?;/);
   // Páginas sem fontes depois da pintura (institucionais) continuam com as fontes no CSS crítico; coleção,
   // produto e comparador também pedem as fontes só com o site.css (o LCP é a foto ou o texto da ferramenta).
   const outra = readFileSync(join(paths.dist, 'como-comprar.html'), 'utf8');
-  assert.match(/<style>([\s\S]*?)<\/style>/.exec(outra)[1], /@font-face\{font-family:"?Newsreader"?;/);
+  assert.match(/<style>([\s\S]*?)<\/style>/.exec(outra)[1], /@font-face\{font-family:"?Libre Franklin"?;/);
   const col = readFileSync(join(paths.dist, 'banheiras.html'), 'utf8');
-  assert.doesNotMatch(/<style>([\s\S]*?)<\/style>/.exec(col)[1], /@font-face\{font-family:"?Newsreader"?;/);
+  assert.doesNotMatch(/<style>([\s\S]*?)<\/style>/.exec(col)[1], /@font-face\{font-family:"?Libre Franklin"?;/);
 });
 
 test('lançamentos: texto derivado, sem afirmar a origem das fotos além de "publicadas pela empresa"', () => {

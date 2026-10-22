@@ -1,7 +1,7 @@
 /* Tokens usados só fora da primeira tela (fora do CSS crítico; SPEC 5.2). */
 :root{--ease-io:cubic-bezier(.77,0,.175,1);--ease-sheet:cubic-bezier(.32,.72,0,1);--t-press:160ms;--t-ui:280ms;--t-swap:1000ms;--fs-display:clamp(3rem,1.4rem + 6vw,7.5rem);--sombra-1:0 1px 2px rgb(31 28 25 / .04),0 12px 32px -20px rgb(31 28 25 / .18)}
 /* Sala escura: só a planta técnica, como uma sala de projeto (fora do crítico: fica abaixo da dobra). */
-.sala-escura,.sala--planta{--room:#12171C;--room-2:#1A2026;--porcelain:#EFE9E1;--muted-on-dark:#A9B0B5;--line:#9DB7C9;--glow:#C8B9A3;--focus-on-dark:#9DB7C9;--rule-sala:color-mix(in srgb,#9DB7C9 22%,transparent);--bg:var(--room);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:var(--rule-sala);--focus-ring:var(--focus-on-dark);background:var(--bg);color:var(--fg);color-scheme:dark}
+.sala-escura,.sala--planta{--room:#0B2233;--room-2:#112C42;--porcelain:#F3F6F8;--muted-on-dark:#A9B8C4;--line:#9DB7C9;--glow:#B9C6D2;--focus-on-dark:#9DB7C9;--rule-sala:color-mix(in srgb,#9DB7C9 22%,transparent);--bg:var(--room);--fg:var(--porcelain);--fg-2:var(--muted-on-dark);--rule:var(--rule-sala);--focus-ring:var(--focus-on-dark);background:var(--bg);color:var(--fg);color-scheme:dark}
 /* Componentes do núcleo carregados fora do CSS crítico: gavetas, canais de WhatsApp, rodapé,
    bandeja do comparador, trilha e moldura de foto. */
 
@@ -140,7 +140,7 @@ html{scroll-padding-bottom:calc(var(--doca-h,0px) + var(--bandeja-h,0px) + 16px)
 @media (hover:hover){.rodape__redes a:hover{border-color:var(--fg)}}
 .rodape__cnpj{list-style:none;padding:0;display:grid;gap:2px;overflow-wrap:anywhere}
 .rodape__coleta{color:var(--fg)}
-.rodape__marca{margin-top:clamp(40px,6vw,88px);font-family:var(--f-display);font-weight:300;font-size:clamp(2.5rem,10.4vw,10.5rem);line-height:.95;letter-spacing:-.01em;color:var(--stone);overflow-wrap:anywhere;user-select:none;text-wrap:balance}.rodape__marca::before{content:attr(data-marca)}
+.rodape__marca{margin-top:clamp(40px,6vw,88px);font-family:var(--f-display);font-weight:600;font-size:clamp(2.5rem,10.4vw,10.5rem);line-height:.95;letter-spacing:-.01em;color:var(--stone);overflow-wrap:anywhere;user-select:none;text-wrap:balance}.rodape__marca::before{content:attr(data-marca)}
 
 /* ---------- Hover e modo sem JavaScript do cabeçalho e dos botões (fora do CSS crítico) ---------- */
 @media (hover:hover){
@@ -195,7 +195,7 @@ html[data-lite] *,html[data-lite] *::before,html[data-lite] *::after{scroll-beha
 .fio{height:1px;border:0;background:var(--rule)}
 
 /* Título de exibição (só na página do sistema visual): fora do crítico. */
-.t-display{font-size:var(--fs-display);font-weight:300;line-height:1;letter-spacing:-.01em}
+.t-display{font-size:var(--fs-display);font-weight:600;line-height:1;letter-spacing:-.01em}
 
 /* View Transitions (SPEC 6.1): tempos e curvas. Fora do CSS crítico; sem ele vale o esmaecimento padrão. */
 ::view-transition-group(*){animation-duration:var(--t-in);animation-timing-function:var(--ease-out)}

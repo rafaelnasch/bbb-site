@@ -18,7 +18,7 @@
 .prod-topo__arte{position:absolute;right:-28%;top:calc(var(--cab-h) + 8px);width:min(88%,560px)}
 .prod-eti{flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0}
 /* Celular: a etiqueta em caixa alta pode quebrar em 2 linhas com a fonte de reserva e caber em 1 com a
-   Jost; a altura das 2 linhas fica reservada para a troca de fonte não deslocar a página (CLS). */
+   Libre Franklin; a altura das 2 linhas fica reservada para a troca de fonte não deslocar a página (CLS). */
 @media (max-width:599px){.prod-eti{min-height:37px;align-content:flex-start}}
 .prod-disp{display:inline-flex;align-items:center;gap:8px;font-size:.9375rem}
 .prod{padding-top:8px}
@@ -30,7 +30,7 @@
 .prod__decisao{padding:clamp(20px,2.4vw,32px);border-radius:2px}
 .decisao__in{display:grid;gap:22px}
 .preco{display:flex;flex-wrap:wrap;gap:4px 14px}
-.preco__por{font:300 clamp(2.125rem,1.6rem + 2vw,2.875rem)/1 var(--f-display)}
+.preco__por{font:600 clamp(2.125rem,1.6rem + 2vw,2.875rem)/1 var(--f-display)}
 .seletor__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,168px),1fr));gap:8px}
 .seletor__cartao{display:grid;gap:8px;min-height:72px;padding:12px 14px}
 .versoes__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:8px}
@@ -41,6 +41,6 @@
    perde a inversão da sala escura (o estilo inline do template vale para a sala; aqui prevalece). */
 .prod-topo--planta-folha .prod-topo__arte>*,.prod-topo--filme .prod-topo__arte>*{filter:grayscale(1) invert(1) contrast(.9);mix-blend-mode:multiply}
 .prod-topo--planta .prod-topo__img{filter:none!important;mix-blend-mode:multiply!important}
-.prod-atalho{display:flex;flex-wrap:wrap;align-items:center;gap:2px 20px}.prod-atalho__preco{font:300 1.75rem/1.1 var(--f-display)}
+.prod-atalho{display:flex;flex-wrap:wrap;align-items:center;gap:2px 20px}.prod-atalho__preco{font:600 1.75rem/1.1 var(--f-display)}
 .prod-atalho__wa{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:.9375rem}
 @media (min-width:1024px){.prod-atalho{display:none}}@media (max-width:599px){.moldura--peca .moldura__img{aspect-ratio:4/3!important}}

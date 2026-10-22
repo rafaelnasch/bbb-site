@@ -104,6 +104,8 @@ describe('fotos (SPEC 7.1)', () => {
         const a = idx.get(`${slug}\u0000${f.fonte}`);
         assert.ok(a, `${slug} ${f.fonte}`);
         assert.equal(f.sha1, a.sha1);
+        // Foto tratada (_recon/hf/aprovadas.json): o sha1 continua o da foto publicada; as dimensões são as da versão tratada.
+        if (f.tratada) continue;
         assert.equal(f.largura, a.largura);
         assert.equal(f.altura, a.altura);
       }
@@ -312,8 +314,8 @@ describe('imagens de compartilhamento (SPEC 7.3)', () => {
     }
     // Sem preço: nenhum campo de preço e nenhuma medida com o acréscimo "+ R$" do rótulo.
     // As imagens versionadas registram as fontes com que foram geradas: as antigas (Fraunces e Open Sans) até
-    // o próximo npm run og, depois as atuais do site (Newsreader e Jost).
-    assert.ok([['Fraunces', 'Open Sans'], ['Newsreader', 'Jost']].some((f) => f.join() === og.fontes.join()), og.fontes.join());
+    // o próximo npm run og, depois as atuais do site (Libre Franklin).
+    assert.ok([['Fraunces', 'Open Sans'], ['Newsreader', 'Jost'], ['Libre Franklin']].some((f) => f.join() === og.fontes.join()), og.fontes.join());
     for (const x of [...Object.values(og.produtos), ...Object.values(og.colecoes), og.padrao_info]) {
       assert.match(x.chave, /^[0-9a-f]{40}$/, `sem chave de conteúdo: ${x.src}`);
     }

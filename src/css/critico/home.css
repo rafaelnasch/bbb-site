@@ -1,12 +1,12 @@
 /* CSS crítico da home (SPEC 9.1 e 12): só a abertura. O resto está em paginas/home.css. */
-/* Subconjunto da Newsreader só com os glifos do H1 (build/fontes-titulo.mjs), pré-carregado: o H1 pinta
+/* Subconjunto da Libre Franklin só com os glifos do H1 (build/fontes-titulo.mjs), pré-carregado: o H1 pinta
    com a fonte final logo na primeira pintura e não gera um segundo LCP na troca de fonte. */
-@font-face{font-family:"Newsreader Titulo";src:url("asset:fonts/newsreader-titulo.woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Libre Franklin Titulo";src:url("asset:fonts/libre-franklin-titulo.woff2");font-weight:600;font-display:swap}
 .home-abre{position:relative;isolation:isolate;overflow:clip;display:grid;align-items:end;min-height:calc(100svh - var(--topo-h));padding:calc(var(--cab-h) + 28px) 0 clamp(28px,4vw,56px)}
 .home-abre__agua,.home-abre__vapor{position:absolute;inset:0;z-index:-2}
 .home-abre__agua{background:var(--room)}
 .home-abre__in{display:grid;gap:18px}
-.home-abre__h1{max-width:17ch;font-family:"Newsreader Titulo",var(--f-display);font-size:clamp(2.375rem,1.1rem + 3.2vw,4.25rem);line-height:1.02}
+.home-abre__h1{max-width:17ch;font-family:"Libre Franklin Titulo",var(--f-display);font-size:clamp(2.375rem,1.1rem + 3.2vw,4.25rem);line-height:1.02}
 .home-abre__lead{max-width:52ch;font-size:clamp(1.0625rem,1rem + .45vw,1.3125rem);line-height:1.5}
 .home-abre__rolar{display:inline-flex;align-items:center;min-height:44px;font-size:.9375rem}
 .home-abre__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
@@ -15,14 +15,14 @@
 .porta{display:flex;align-items:baseline}
 .porta+.porta::before{content:"·";padding-inline:14px;color:var(--fg-2)}
 .porta__a{display:inline-flex;align-items:baseline;gap:8px;min-height:44px;padding-block:8px;color:var(--fg);text-decoration:none}
-.porta__nome{font:300 clamp(1.25rem,1rem + .9vw,1.625rem)/1.15 var(--f-display)}
+.porta__nome{font:600 clamp(1.25rem,1rem + .9vw,1.625rem)/1.15 var(--f-display)}
 .porta__n{font-size:.8125rem}
 @media (max-width:599px){.porta+.porta::before{padding-inline:10px}.porta__u{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
 /* Foto da abertura (rodada 3): uma peça de perto, parada. No celular, faixa entre o parágrafo e o botão;
-   no desktop, à direita, sangrando até a borda da janela. Tratamento #pedra só na apresentação. */
+   no desktop, à direita, sangrando até a borda da janela. */
 .abre-foto{display:grid;gap:10px;margin:8px 0 0}
 .abre-foto__mol{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--foto-fundo)}
-.abre-foto__img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%;filter:var(--foto-filtro);transform:scale(1.015)}
+.abre-foto__img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .abre-foto__leg{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:.8125rem;line-height:1.4}
 .abre-foto__a{display:inline-flex;align-items:center;min-height:24px;color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
 @media (max-width:1023px){.home-abre{min-height:0;align-items:start;padding-top:calc(var(--cab-h) + 24px)}}
@@ -34,6 +34,6 @@
   .home-abre__acoes{margin-top:8px}
   .portas{align-self:start;margin-top:22px;max-width:640px}
   .home-abre__in>.abre-foto{grid-column:2;grid-row:1/span 6;align-self:center;margin:0 calc((min(100vw - 2*var(--pad-x),var(--maxw)) - 100vw)/2) 0 0}
-  .abre-foto__mol{aspect-ratio:auto;height:clamp(460px,100svh - var(--cab-h) - var(--topo-h) - 120px,780px)}
+  .abre-foto__mol{aspect-ratio:4/3}
   .abre-foto__leg{padding-right:calc(var(--pad-x) + max(0px,(100vw - 2*var(--pad-x) - var(--maxw))/2))}
 }

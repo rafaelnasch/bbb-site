@@ -1,17 +1,17 @@
-// Subconjunto da Newsreader só para o H1 da home (SPEC 12: LCP mobile <= 2,0 s).
+// Subconjunto da Libre Franklin só para o H1 da home (SPEC 12: LCP mobile <= 2,0 s).
 // Roda só no Mac, depois de um build (lê o H1 de dist/index.html); a saída é versionada.
 //
-// Por quê: o H1 é o elemento do LCP. Com a Newsreader inteira (cerca de 52 KB), o texto pinta com a
+// Por quê: o H1 é o elemento do LCP. Com a Libre Franklin inteira, o texto pinta com a
 // fonte de reserva e pinta de novo quando a fonte chega, e essa segunda pintura vira o LCP. Este
-// arquivo tem só os glifos do H1, no peso 300 (o do H1) e no tamanho óptico 48, com o mesmo desenho da Newsreader do resto do
-// site. Fica com poucos KB e chega junto com a primeira pintura; a troca da Newsreader inteira nos
+// arquivo tem só os glifos do H1, no peso 600 (o do H1), com o mesmo desenho da Libre Franklin do resto do
+// site. Fica com poucos KB e chega junto com a primeira pintura; a troca da Libre Franklin inteira nos
 // outros textos não repinta o H1.
 //
-// Saídas: src/fonts/newsreader-titulo.woff2 e src/fonts/newsreader-titulo.txt (os caracteres cobertos;
+// Saídas: src/fonts/libre-franklin-titulo.woff2 e src/fonts/libre-franklin-titulo.txt (os caracteres cobertos;
 // o teste tests/home.test.mjs confere que o H1 publicado cabe nele). Caractere fora do subconjunto
-// cai na Newsreader inteira, que vem logo atrás na pilha de fontes: nada quebra, só volta a troca.
+// cai na Libre Franklin inteira, que vem logo atrás na pilha de fontes: nada quebra, só volta a troca.
 //
-// Saída estável: só regenera quando os caracteres do H1 mudam (compara com newsreader-titulo.txt; force
+// Saída estável: só regenera quando os caracteres do H1 mudam (compara com libre-franklin-titulo.txt; force
 // com --forcar), com fontTools fixo em FONTTOOLS e data de criação fixa (SOURCE_DATE_EPOCH e
 // --no-recalc-timestamp), para o mesmo H1 dar sempre o mesmo arquivo, byte a byte. Quando regenera,
 // precisa de rede (npm pack) e de fontTools no Python: pip install fonttools==4.60.2 brotli.
@@ -30,12 +30,12 @@ if (!m) throw new Error('fontes-titulo: H1 não encontrado em dist/index.html (r
 const limpar = (t) => t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 const texto = limpar(m[1]);
 const chars = [...new Set([...texto, ' '])].sort().join('');
-const txt = join(paths.src, 'fonts', 'newsreader-titulo.txt');
-const destino = join(paths.src, 'fonts', 'newsreader-titulo.woff2');
+const txt = join(paths.src, 'fonts', 'libre-franklin-titulo.txt');
+const destino = join(paths.src, 'fonts', 'libre-franklin-titulo.woff2');
 let atual = null;
 try { atual = readFileSync(txt, 'utf8').replace(/\n$/, ''); } catch { atual = null; }
 if (atual === chars && existsSync(destino) && !process.argv.includes('--forcar')) {
-  console.log(`newsreader-titulo.woff2: H1 sem caracteres novos, arquivo mantido (${statSync(destino).size} bytes)`);
+  console.log(`libre-franklin-titulo.woff2: H1 sem caracteres novos, arquivo mantido (${statSync(destino).size} bytes)`);
   process.exit(0);
 }
 let ft = '';
@@ -44,13 +44,13 @@ if (ft !== FONTTOOLS) throw new Error(`fontes-titulo: precisa de fontTools ${FON
 const env = { ...process.env, SOURCE_DATE_EPOCH: EPOCA };
 
 const tmp = mkdtempSync(join(tmpdir(), 'bbb-titulo-'));
-execFileSync('npm', ['pack', `@fontsource-variable/newsreader@${VERSAO}`, '--silent'], { cwd: tmp, stdio: 'pipe' });
+execFileSync('npm', ['pack', `@fontsource-variable/libre-franklin@${VERSAO}`, '--silent'], { cwd: tmp, stdio: 'pipe' });
 const tgz = readdirSync(tmp).find((n) => n.endsWith('.tgz'));
 execFileSync('tar', ['-xzf', join(tmp, tgz), '-C', tmp]);
-const origem = join(tmp, 'package', 'files', 'newsreader-latin-opsz-normal.woff2');
-const w300 = join(tmp, 'w300.ttf');
-execFileSync('python3', ['-m', 'fontTools.varLib.instancer', origem, 'opsz=48', 'wght=300', '-o', w300, '--quiet'], { stdio: 'inherit', env });
+const origem = join(tmp, 'package', 'files', 'libre-franklin-latin-wght-normal.woff2');
+const w300 = join(tmp, 'w600.ttf');
+execFileSync('python3', ['-m', 'fontTools.varLib.instancer', origem, 'wght=600', '-o', w300, '--quiet'], { stdio: 'inherit', env });
 execFileSync('python3', ['-m', 'fontTools.subset', w300, `--text=${chars}`, '--flavor=woff2', '--no-recalc-timestamp',
   '--layout-features=kern,liga,calt,ccmp,mark,mkmk', `--output-file=${destino}`], { stdio: 'inherit', env });
 writeFileSync(txt, `${chars}\n`);
-console.log(`newsreader-titulo.woff2: ${statSync(destino).size} bytes, ${chars.length} caracteres de "${texto}"`);
+console.log(`libre-franklin-titulo.woff2: ${statSync(destino).size} bytes, ${chars.length} caracteres de "${texto}"`);

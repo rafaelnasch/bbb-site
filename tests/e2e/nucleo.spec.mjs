@@ -213,11 +213,11 @@ test('CSS do site atrasado 1,5 s não desloca a primeira tela (CLS < 0,05)', asy
   }
 });
 
-test('cabeçalho: areia opaco no topo da peça (tom claro) e sem fresta sob o cabeçalho transparente', async ({ page }) => {
+test('cabeçalho: branco opaco no topo da peça (tom claro) e sem fresta sob o cabeçalho transparente', async ({ page }) => {
   for (const largura of [320, 390, 1440]) {
     await page.setViewportSize({ width: largura, height: 800 });
     await page.goto(`${BASE}/_sistema-peca.html`);
-    expect(await page.locator('.cab').evaluate((e) => getComputedStyle(e).backgroundColor)).toBe('rgb(239, 233, 225)');
+    expect(await page.locator('.cab').evaluate((e) => getComputedStyle(e).backgroundColor)).toBe('rgb(255, 255, 255)');
     await page.goto(PAG());
     const g = await page.evaluate(() => ({
       topo: document.querySelector('.topo').getBoundingClientRect().bottom,

@@ -1,6 +1,6 @@
 // SPEC 7.3: imagens de compartilhamento 1200x630 (JPEG 85) com Playwright sobre um template HTML.
 // Sala escura, moldura com a foto real, nome literal, medida principal (rótulo literal da opção de
-// tamanho, sem o acréscimo de preço), logo oficial clareado. Nunca preço: a imagem fica em cache
+// tamanho, sem o acréscimo de preço), logo oficial azul. Nunca preço: a imagem fica em cache
 // no WhatsApp e o preço muda.
 //  - public/media/og/<slug>.jpg (292 produtos)
 //  - public/media/og/colecao/<path com hífens>.jpg (60 coleções)
@@ -28,8 +28,7 @@ const fotos = JSON.parse(readFileSync(join(paths.public, 'media', 'p', 'manifest
 // Tipografia da SPEC 5.3 embutida no template (data URI), sem depender de fonte instalada no Mac:
 // sem isto o Chromium cai em Georgia e Helvetica.
 const fonte = (arq) => `data:font/woff2;base64,${readFileSync(join(paths.root, 'src', 'fonts', arq)).toString('base64')}`;
-const FONTES_CSS = `@font-face{font-family:"Newsreader";src:url(${fonte('newsreader-var-latin.woff2')}) format("woff2");font-weight:300 500;font-style:normal}
-  @font-face{font-family:"Jost";src:url(${fonte('jost-var-latin.woff2')}) format("woff2");font-weight:300 600;font-style:normal}`;
+const FONTES_CSS = `@font-face{font-family:"Libre Franklin";src:url(${fonte('libre-franklin-var-latin.woff2')}) format("woff2");font-weight:400 700;font-style:normal}`;
 
 // Cache por conteúdo: a chave é o sha1 do HTML completo (texto, foto e fontes em data URI). Se nome,
 // medida, foto ou template mudarem, a chave muda e a imagem é refeita; o manifesto anterior guarda
@@ -43,17 +42,13 @@ for (const x of [...Object.values(anterior.produtos || {}), ...Object.values(ant
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-// Logo oficial clareado (mesma forma, cor porcelana), sem redesenhar.
-async function logoClaro() {
+// Logo oficial no azul da marca, sem redesenhar.
+async function logoAzul() {
+  // Direção institucional (21/10/2026): cartão branco, logo no azul oficial (o arquivo como está).
   const src = join(paths.recon, 'brand', 'logo-bbb-azul-oficial-206x99.png');
-  const { data, info } = await sharp(src).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  for (let i = 0; i < data.length; i += 4) {
-    data[i] = 0xf3;
-    data[i + 1] = 0xf6;
-    data[i + 2] = 0xf8;
-  }
-  const png = await sharp(data, { raw: info }).png().toBuffer();
-  return { uri: `data:image/png;base64,${png.toString('base64')}`, w: info.width, h: info.height };
+  const png = await sharp(src).png().toBuffer();
+  const { width, height } = await sharp(src).metadata();
+  return { uri: `data:image/png;base64,${png.toString('base64')}`, w: width, h: height };
 }
 
 function fotoPrincipal(slug) {
@@ -83,18 +78,17 @@ function pagina({ foto, etiqueta, titulo, linha, logo, vazio }) {
   ${FONTES_CSS}
   *{box-sizing:border-box;margin:0}
   html,body{width:1200px;height:630px;overflow:hidden}
-  body{background:radial-gradient(120% 90% at 70% 40%,#0C2A3D 0%,#071C2B 60%,#04121C 100%);color:#F3F6F8;
-    font-family:"Jost","Helvetica Neue",Helvetica,Arial,sans-serif;display:flex;align-items:center;padding:56px 64px;gap:56px}
-  .moldura{flex:0 0 470px;height:470px;border-radius:14px;padding:22px;background:#F3F6F8;
-    box-shadow:0 0 0 1px rgba(141,187,217,.35),0 40px 90px -20px ${foto ? foto.wall : '#0C2A3D'}cc,0 0 120px -10px rgba(233,184,124,.25)}
-  .moldura .img{width:100%;height:100%;border-radius:4px;background:${foto ? foto.wall : '#0C2A3D'} center/cover no-repeat;${foto ? `background-image:url(${foto.uri})` : ''}}
-  .vazio{width:100%;height:100%;border:1px dashed #8DBBD9;border-radius:4px;display:flex;align-items:center;justify-content:center;
-    text-align:center;padding:40px;font-size:26px;line-height:1.35;color:#4A5862;background:#E9DFD0}
+  body{background:#FFFFFF;color:#16202A;border-bottom:10px solid #044E7C;
+    font-family:"Libre Franklin","Helvetica Neue",Helvetica,Arial,sans-serif;display:flex;align-items:center;padding:56px 64px;gap:56px}
+  .moldura{flex:0 0 500px;height:500px;background:#F1F1F0}
+  .moldura .img{width:100%;height:100%;background:#F1F1F0 center/cover no-repeat;${foto ? `background-image:url(${foto.uri})` : ''}}
+  .vazio{width:100%;height:100%;border:1px dashed #9AA6B1;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:40px;font-size:26px;line-height:1.35;color:#56616C;background:#F3F5F7}
   .texto{flex:1;display:flex;flex-direction:column;gap:22px;min-width:0}
-  .etq{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#8DBBD9}
-  h1{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:300;font-size:${tamTitulo}px;line-height:1.08;letter-spacing:-.01em}
-  .linha{font-size:26px;color:#F3F6F8;font-variant-numeric:tabular-nums;opacity:.92}
-  .traco{width:72px;height:2px;background:#E9B87C}
+  .etq{font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#044E7C}
+  h1{font-family:"Libre Franklin","Helvetica Neue",Arial,sans-serif;font-weight:600;font-size:${tamTitulo}px;line-height:1.08;letter-spacing:-.01em}
+  .linha{font-size:26px;color:#56616C;font-variant-numeric:tabular-nums}
+  .traco{width:72px;height:3px;background:#044E7C}
   .logo{margin-top:18px;align-self:flex-start;width:auto;height:${Math.round(logo.h * 0.62)}px}
   </style></head><body>
   <div class="moldura">${vazio ? `<div class="vazio">${esc(vazio)}</div>` : '<div class="img"></div>'}</div>
@@ -123,7 +117,7 @@ async function abrirNavegador() {
   }
 }
 
-const logo = await logoClaro();
+const logo = await logoAzul();
 const browser = await abrirNavegador();
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 
@@ -134,14 +128,14 @@ async function render(html, arquivo, src) {
   await page.setContent(html, { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
   // Falha se a fonte embutida não carregou (o fallback silencioso foi o defeito anterior).
-  const ok = await page.evaluate(() => document.fonts.check('300 60px Newsreader') && document.fonts.check('400 26px Jost') && [...document.fonts].every((f) => f.status === 'loaded'));
+  const ok = await page.evaluate(() => document.fonts.check('600 60px "Libre Franklin"') && document.fonts.check('400 26px "Libre Franklin"') && [...document.fonts].every((f) => f.status === 'loaded'));
   if (!ok) throw new Error(`og: fontes da SPEC 5.3 não carregaram em ${arquivo}`);
   await page.screenshot({ path: arquivo, type: 'jpeg', quality: 85, clip: { x: 0, y: 0, width: 1200, height: 630 } });
   refeitas++;
   return chave;
 }
 
-const manifest = { gerado_em: new Date().toISOString(), largura: 1200, altura: 630, fontes: ['Newsreader', 'Jost'], produtos: {}, colecoes: {}, padrao: 'media/og/padrao.jpg', padrao_info: null };
+const manifest = { gerado_em: new Date().toISOString(), largura: 1200, altura: 630, fontes: ['Libre Franklin'], produtos: {}, colecoes: {}, padrao: 'media/og/padrao.jpg', padrao_info: null };
 
 const ROTULO_TIPO = { banheira: 'Banheira', spa: 'Spa', ofuro: 'Ofurô', sauna: 'Sauna', acessorio: 'Acessório' };
 let n = 0;

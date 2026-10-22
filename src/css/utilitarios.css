@@ -30,5 +30,5 @@ table{border-collapse:collapse}
    bloco em linha com 44 px de altura. Link curto dentro da frase ("fonte", "página de origem"): a área
    cresce pelo preenchimento, compensado pela margem, sem mexer na linha do texto. */
 .link--alvo{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
-.link--texto{padding:13px 9px;margin:-13px -9px}
+.link--texto{padding:15px 9px;margin:-15px -9px}
 p>.link:only-child{display:inline-flex;align-items:center;min-height:44px}

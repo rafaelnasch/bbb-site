@@ -9,7 +9,11 @@
 //    dominante nas bordas (fotos de Natal); nesses casos `wall` fica null e o template usa --room-2.
 //  - Nome descritivo pelo slug e pela posição na galeria; números do nome original são ignorados.
 //  - Mesma foto (sha1) em vários produtos é codificada uma vez e copiada.
-// Nada é ampliado, recortado ou gerado: só redução e recompressão.
+// Fotos tratadas (Rafael, 21/10/2026): quando _recon/hf/aprovadas.json lista o sha1 de uma foto, a fonte da
+// codificação passa a ser a versão tratada no Higgsfield (_recon/hf/out/<sha1>.png): mesma peça, mesmo ângulo,
+// sem marca d'água e com fundo de estúdio; o produto foi conferido contra o original (jatos, alças, apoios,
+// textos). O sha1 continua sendo o da foto publicada pela empresa, para o vínculo com a galeria não mudar.
+// Fora isso, nada é ampliado, recortado ou gerado: só redução e recompressão.
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -19,6 +23,9 @@ import { paths } from '../site.config.mjs';
 const OUT = join(paths.public, 'media', 'p');
 const CACHE = join(paths.cache, 'fotos');
 const forcar = process.argv.includes('--force');
+const HF_LISTA = join(paths.recon, 'hf', 'aprovadas.json');
+const tratadas = new Set(existsSync(HF_LISTA) ? JSON.parse(readFileSync(HF_LISTA, 'utf8')) : []);
+const fonteDe = (reg) => (tratadas.has(reg.sha1) ? join(paths.recon, 'hf', 'out', `${reg.sha1}.png`) : join(paths.recon, reg.arquivo));
 mkdirSync(OUT, { recursive: true });
 mkdirSync(CACHE, { recursive: true });
 
@@ -75,6 +82,8 @@ async function codificar(reg) {
   // Saída por sha1 no cache; o nome final por slug é copiado depois.
   const dir = join(CACHE, reg.sha1);
   const pronto = join(dir, 'info.json');
+  const tratada = tratadas.has(reg.sha1);
+  const params = tratada ? `${PARAMS}/hf` : PARAMS;
   if (existsSync(pronto) && !forcar) {
     const antigo = JSON.parse(readFileSync(pronto, 'utf8'));
     // Cache anterior a este campo foi gerado com os mesmos parâmetros atuais (sem mudança desde então).
@@ -82,11 +91,11 @@ async function codificar(reg) {
       antigo.params = PARAMS;
       writeFileSync(pronto, JSON.stringify(antigo));
     }
-    if (antigo.params === PARAMS) return antigo;
+    if (antigo.params === params) return antigo;
   }
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
-  const src = join(paths.recon, reg.arquivo);
+  const src = fonteDe(reg);
   const m = await sharp(src).metadata();
   const w0 = m.width;
   const h0 = m.height;
@@ -105,7 +114,8 @@ async function codificar(reg) {
   const bordas = await analisarBordas(src);
   const info = {
     sha1: reg.sha1,
-    params: PARAMS,
+    params,
+    tratada,
     largura: w0,
     altura: h0,
     formato_original: m.format,
@@ -183,6 +193,7 @@ for (const p of produtos) {
       webp,
       jpg: { w: info.jpg.w, h: info.jpg.h, src: rel(nome(info.jpg.w, 'jpg')) },
       lqip: info.lqip,
+      tratada: info.tratada === true,
       cor_bordas: info.cor_bordas,
       fundo_vermelho: info.fundo_vermelho,
       wall: info.fundo_vermelho ? null : info.cor_bordas,

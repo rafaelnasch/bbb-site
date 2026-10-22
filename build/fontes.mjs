@@ -1,9 +1,8 @@
 // Fontes auto-hospedadas (SPEC 5.3). Roda só no Mac, uma vez; a saída (src/fonts/*.woff2) é versionada.
 //
-// - Newsreader variável (tamanho óptico fixo em 48, o de títulos; peso limitado a 300 a 500), subconjunto latino:
-//   títulos. A Cormorant Garamond foi testada e descartada: os acentos (ô, á) saem altos e deslocados em pt-BR.
-// - Jost variável (peso limitado a 300 a 600), subconjunto latino: corpo, interface e números.
-// Direção "spa de hotel, claro" (Rafael, 20/10/2026): serifada fina nos títulos e sem serifa leve no corpo.
+// - Libre Franklin variável (peso limitado a 400 a 700), subconjunto latino: títulos, corpo, interface e números.
+// Direção "institucional" (Rafael, 21/10/2026): uma sem serifa clássica que transmita seriedade e credibilidade.
+// A Newsreader e a Jost (direção "spa de hotel", 20/10) saíram: o Rafael achou o resultado com cara de site feito por IA.
 //
 // Origem: pacotes @fontsource-variable (SIL Open Font License 1.1, cópia em src/fonts/OFL-*.txt).
 // O corte de eixos usa fontTools (python3 -m fontTools.varLib.instancer), já instalado no Mac.
@@ -15,8 +14,7 @@ import { paths } from '../site.config.mjs';
 
 const VERSAO = '5.3.0';
 const FONTES = [
-  { pacote: '@fontsource-variable/newsreader', arquivo: 'newsreader-latin-opsz-normal.woff2', limites: ['opsz=48', 'wght=300:500'], saida: 'newsreader-var-latin.woff2', licenca: 'OFL-newsreader.txt' },
-  { pacote: '@fontsource-variable/jost', arquivo: 'jost-latin-wght-normal.woff2', limites: ['wght=300:600'], saida: 'jost-var-latin.woff2', licenca: 'OFL-jost.txt' },
+  { pacote: '@fontsource-variable/libre-franklin', arquivo: 'libre-franklin-latin-wght-normal.woff2', limites: ['wght=400:700'], saida: 'libre-franklin-var-latin.woff2', licenca: 'OFL-libre-franklin.txt' },
 ];
 
 const tmp = mkdtempSync(join(tmpdir(), 'bbb-fontes-'));

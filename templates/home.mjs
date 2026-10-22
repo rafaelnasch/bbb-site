@@ -10,7 +10,7 @@
 //  6. A fábrica (dia), 7. Prova (dia), 8. Como comprar (dia), 9. Lojas (sala, mapa SVG sem iframe),
 //  10. Perguntas frequentes e Do blog (dia).
 // Todo número e texto da empresa vem de data/ (SPEC 0.1); o que é derivado leva a regra no comentário.
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { html, attrs, raw } from '../build/lib/html.mjs';
 import { url, abs } from '../build/lib/url.mjs';
@@ -105,6 +105,23 @@ export function reclameAqui(ra) {
 // Escolha editorial: produto e posição da foto na galeria publicada; nenhum dado novo.
 export const FOTO_ABERTURA = Object.freeze({ slug: 'banheira-retangular-monte-verde-completa-com-hidro-em-acrilico', n: 2 });
 export const SIZES_ABERTURA = '(min-width:1024px) 46vw, 100vw';
+
+/** Foto de ambiente (build/media-ambiente.mjs) no formato de picture(): a peça real instalada, ambiente ilustrativo. */
+function fotoAmbiente(id) {
+  const p = join(paths.public, 'media', 'ambiente', 'manifest.json');
+  if (!existsSync(p)) return null;
+  const a = JSON.parse(readFileSync(p, 'utf8'))[id];
+  if (!a || !a.fontes['image/webp'].every(([s]) => existsSync(join(paths.public, s)))) return null;
+  const webp = a.fontes['image/webp'];
+  return {
+    slug: a.slug,
+    width: a.largura,
+    height: a.altura,
+    src: url(webp[webp.length - 1][0]),
+    lqip: a.lqip,
+    fontes: Object.entries(a.fontes).map(([type, l]) => ({ type, srcset: l.map(([s, w]) => `${url(s)} ${w}w`).join(', ') })),
+  };
+}
 
 /** Fotos da fábrica (build/media-fabrica.mjs). */
 function fotosFabrica(D) {
@@ -226,8 +243,9 @@ export function paginas(ctx) {
   const local = cidadeDaFabrica(E.endereco_fabrica);
   if (!local) throw new Error('home: cidade da fábrica não encontrada no endereço publicado');
   const indice = indiceCatalogo(D);
-  const temAgua = Boolean(ctx.assets?.modulos?.agua);
-  const temVapor = Boolean(ctx.assets?.modulos?.vapor);
+  // Direção institucional (21/10/2026): abertura parada, fundo branco, sem a água animada nem o vapor.
+  const temAgua = false;
+  const temVapor = false;
   // Duas contagens: modelos com PDF de planta publicado na própria página (plantas_pdf) e, entre eles,
   // os que têm ao menos uma planta com a tabela de cotas lida e conferida contra o tamanho vendido
   // (d_planta[].cotas_validadas). PDF só ligado pelo nome do arquivo não conta como cota conferida.
@@ -246,8 +264,10 @@ export function paginas(ctx) {
 </li>`;
   }).filter(Boolean);
   // Foto da abertura: no celular logo abaixo das portas (botão e portas seguem na primeira tela), no desktop à direita, sangrando até a borda.
-  const pAbre = porSlug.get(FOTO_ABERTURA.slug);
-  const fAbre = pAbre ? fotoProduto(FOTO_ABERTURA.slug, FOTO_ABERTURA.n) : null;
+  // Com a foto de ambiente (build/media-ambiente.mjs), a abertura mostra a peça instalada; sem ela, a foto da galeria.
+  const amb = fotoAmbiente('abertura');
+  const pAbre = porSlug.get(amb?.slug || FOTO_ABERTURA.slug);
+  const fAbre = amb || (pAbre ? fotoProduto(FOTO_ABERTURA.slug, FOTO_ABERTURA.n) : null);
   const fotoAbre = fAbre ? html`<figure class="abre-foto">
     <div class="abre-foto__mol">${picture(fAbre, { sizes: SIZES_ABERTURA, classe: 'abre-foto__img', prioridade: true, alt: '' })}</div>
     <figcaption class="abre-foto__leg"><a class="abre-foto__a" href="${url(`${pAbre.slug}.html`)}">${pAbre.nome}</a><span class="abre-foto__nota">Imagem ilustrativa</span></figcaption>
@@ -260,7 +280,7 @@ export function paginas(ctx) {
     <p class="etiqueta etiqueta--linha" data-intro style="--i:0">Fábrica em ${local.cidade}, ${local.uf}</p>
     <h1 id="home-h1" class="home-abre__h1">Banheiras, spas e ofurôs de hidromassagem, direto da fábrica em ${local.cidade}, ${local.uf}</h1>
     <p class="home-abre__lead" data-intro style="--i:2"><span class="num">${totalPecas}</span> modelos, <span class="num">${comPdf}</span> deles com a planta oficial da fábrica para baixar. Escolha pelo tamanho do seu espaço e feche com um consultor pelo WhatsApp.</p>
-    <p class="home-abre__acoes" data-intro style="--i:3"><a class="btn btn--claro home-abre__cta" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Escolher pelo meu espaço</a><a class="home-abre__rolar" href="#salas">Conhecer as salas${icone('chevron-baixo', { tamanho: 18 })}</a></p>
+    <p class="home-abre__acoes" data-intro style="--i:3"><a class="btn home-abre__cta" href="${url('escolher.html')}">${icone('regua', { tamanho: 20 })}Escolher pelo meu espaço</a><a class="home-abre__rolar" href="#salas">Conhecer as salas${icone('chevron-baixo', { tamanho: 18 })}</a></p>
     <ul class="portas" role="list" aria-label="Coleções">${portas}</ul>
     ${fotoAbre}
   </div>
@@ -521,7 +541,7 @@ export function paginas(ctx) {
       sobre: true,
       classe: 'pg-home',
       critico: ['home'],
-      fontes: ['fonts/newsreader-titulo.woff2'],
+      fontes: ['fonts/libre-franklin-titulo.woff2'],
       modulosTardios: true,
       cssAposPintura: true,
       fontesAposPintura: true,

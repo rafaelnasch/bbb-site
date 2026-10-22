@@ -233,7 +233,7 @@ export function paginas(ctx) {
     const p = join(paths.public, 'media', 'filmes', 'manifest.json');
     try { return existsSync(p) ? D.ler('../public/media/filmes/manifest.json') : null; } catch { return null; }
   })();
-  const temAgua = Boolean(ctx.assets?.modulos?.agua);
+  const temAgua = false; // direção institucional (21/10/2026): topo parado, sem a água animada
   const out = [];
 
   for (const cat of D.categorias) {

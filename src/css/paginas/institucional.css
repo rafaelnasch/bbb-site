@@ -74,7 +74,7 @@
 .inst-nums{display:grid;gap:12px;margin:0}
 .inst-nums dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;border-radius:var(--radius);overflow:hidden;background:var(--rule)}
 .inst-nums dl>div{display:grid;gap:6px;align-content:start;padding:20px 18px;background:var(--bg)}
-.inst-nums dt{font-family:var(--f-display);font-size:clamp(1.75rem,1.3rem + 1.6vw,2.5rem);font-weight:300;line-height:1;letter-spacing:-.02em}
+.inst-nums dt{font-family:var(--f-display);font-size:clamp(1.75rem,1.3rem + 1.6vw,2.5rem);font-weight:600;line-height:1;letter-spacing:-.02em}
 .inst-nums dd{margin:0;font:500 .6875rem/1.35 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
 .inst-nums figcaption{font-size:.8125rem;color:var(--fg-2)}
 
@@ -90,7 +90,7 @@
 .inst-deps{display:grid;gap:16px}
 @media (min-width:768px){.inst-deps{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}}
 .inst-dep{position:relative;display:grid;gap:14px;margin:0;padding:28px 24px 22px;border-radius:var(--radius);background:var(--sand)}
-.inst-dep::before{content:"\201C";position:absolute;top:-6px;left:18px;font:300 4.5rem/1 var(--f-display);color:var(--brand);opacity:.35}
+.inst-dep::before{content:"\201C";position:absolute;top:-6px;left:18px;font:600 4.5rem/1 var(--f-display);color:var(--brand);opacity:.35}
 .inst-dep blockquote{margin:0;font-family:var(--f-display);font-size:1.25rem;line-height:1.45}
 .inst-dep figcaption{font-weight:500;font-size:.9375rem}
 .inst-cartoes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
@@ -103,7 +103,7 @@
 .inst-passos{display:grid;gap:12px;counter-reset:passo}
 @media (min-width:900px){.inst-passos{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}}
 .inst-passos>li{display:grid;gap:12px;align-content:start;padding:26px 22px;border:1px solid var(--rule);border-radius:var(--radius)}
-.inst-passos__n{font-family:var(--f-display);font-size:2.75rem;font-weight:300;line-height:1;color:var(--brand)}
+.inst-passos__n{font-family:var(--f-display);font-size:2.75rem;font-weight:600;line-height:1;color:var(--brand)}
 .inst-passos .btn--whats .ic{color:#fff}
 .inst-pag{display:grid;gap:12px}
 .inst-pag__forma{display:block;font:500 .75rem/1.4 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
@@ -190,14 +190,15 @@
 @media (hover:hover){.lojas-indice a:hover{color:var(--brand)}}
 .lojas{padding:clamp(40px,5vw,88px) 0 clamp(56px,6vw,112px)}
 .lojas>.wrap{display:grid;gap:32px}
-.lojas__grade{display:grid;gap:14px}
+.lojas__grade{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.loja{overflow-wrap:anywhere}
 @media (min-width:700px){.lojas__grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1100px){.lojas__grade{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}}
 .loja{scroll-margin-top:calc(var(--cab-h) + 20px)}
 .loja>article{position:relative;display:grid;gap:12px;align-content:start;height:100%;padding:26px 22px 22px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--bg);overflow:hidden;transition:border-color var(--t-ui),box-shadow var(--t-ui)}
 .loja:target>article{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
-.loja__n{position:absolute;top:10px;right:16px;font-family:var(--f-display);font-size:4rem;font-weight:300;line-height:1;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--fg) 22%,transparent)}
-.loja__cidade{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem);font-weight:300;padding-right:72px}
+.loja__n{position:absolute;top:10px;right:16px;font-family:var(--f-display);font-size:4rem;font-weight:600;line-height:1;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--fg) 22%,transparent)}
+.loja__cidade{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem);font-weight:600;padding-right:72px}
 .loja__nome{font-size:.875rem;color:var(--fg-2)}
 .loja__end,.loja__tel{display:flex;gap:10px;align-items:flex-start;font-style:normal;font-size:.9375rem;line-height:1.5}
 .loja__end .ic,.loja__tel .ic{flex:none;margin-top:3px;color:var(--fg-2)}
@@ -212,7 +213,7 @@
 .cons>.wrap{display:grid;gap:clamp(40px,5vw,72px)}
 .cons__grade{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))}
 .cons__cartao{position:relative;display:grid;gap:6px;align-content:end;min-height:180px;padding:22px;border:1px solid var(--rule);border-radius:var(--radius);color:var(--fg);text-decoration:none;overflow:hidden;transition:border-color var(--t-ui),transform var(--t-ui) var(--ease-out),background-color var(--t-ui)}
-.cons__n{position:absolute;top:12px;right:18px;font-family:var(--f-display);font-size:4.5rem;font-weight:300;line-height:1;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--fg) 24%,transparent)}
+.cons__n{position:absolute;top:12px;right:18px;font-family:var(--f-display);font-size:4.5rem;font-weight:600;line-height:1;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--fg) 24%,transparent)}
 .cons__t{font-weight:500}
 .cons__num{font-family:var(--f-display);font-size:1.5rem;line-height:1.2}
 .cons__ir{display:inline-flex;align-items:center;gap:8px;margin-top:8px;color:var(--whats-btn);font-weight:500;font-size:.9375rem}
@@ -232,7 +233,7 @@
 /* ---------- 404 ---------- */
 .p404__in{position:relative}
 @media (max-width:767px){.p404__num{display:none}}
-.p404__num{position:absolute;right:0;top:-.1em;z-index:-1;font-family:var(--f-display);font-size:clamp(7rem,4rem + 18vw,18rem);font-weight:300;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 30%,transparent);pointer-events:none;user-select:none}
+.p404__num{position:absolute;right:0;top:-.1em;z-index:-1;font-family:var(--f-display);font-size:clamp(7rem,4rem + 18vw,18rem);font-weight:600;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--line) 30%,transparent);pointer-events:none;user-select:none}
 .p404__busca .btn{min-height:52px}
 .p404__lista{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .p404__col{padding-top:clamp(32px,4vw,56px)}

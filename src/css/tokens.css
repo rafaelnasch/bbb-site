@@ -1,33 +1,31 @@
-/* Tokens (SPEC 5.2, revistos em 20/10/2026: direção "spa de hotel, claro"). Fundo areia e pedra, texto em
-   tinta, o azul da marca só como acento. A sala escura (--room, --porcelain, --line) fica para a planta
-   técnica: em .sala comum (base.css) estes mesmos nomes são trocados pelos valores claros. */
+/* Tokens (SPEC 5.2, revistos em 21/10/2026: direção "institucional"). A identidade real da empresa: fundo
+   branco, o azul da marca como cor principal (botões, links, destaques) e texto grafite. A sala escura (--room,
+   --porcelain, --line) fica para a planta técnica, em azul-marinho da marca: em .sala comum (base.css) estes
+   mesmos nomes são trocados pelos valores claros. */
 :root{
-  /* marca real: o azul só como acento (links, foco, detalhes) */
-  --brand:#044E7C; --brand-deep:#03324F;
-  /* preço "de": cinza quente riscado, sem vermelho */
-  --price-old:#655D55; --whats-icon:#51CB5E;
-  /* sala escura da planta técnica */
-  --room:#12171C; --room-2:#1A2026; --blueprint:#161C22; --porcelain:#EFE9E1; --line:#9DB7C9;
-  /* claro: areia (fundo), pedra (superfícies e linhas), tinta (texto) */
-  --day:#EFE9E1; --sand:#E4DDD3; --stone:#D6CCBF; --paper:#F6F2EC; --ink:#1F1C19; --muted:#655D55;
+  /* marca real: o azul é a cor principal (botões, links, destaques) */
+  --brand:#044E7C; --brand-deep:#03324F; --brand-tint:#E8F0F6;
+  /* preço "de": cinza riscado, sem vermelho */
+  --price-old:#56616C; --whats-icon:#51CB5E;
+  /* sala escura da planta técnica: azul-marinho da marca */
+  --room:#0B2233; --room-2:#112C42; --blueprint:#0E273B; --porcelain:#F3F6F8; --line:#9DB7C9;
+  /* claro: branco (fundo), cinza-claro frio (faixas), cinza (linhas), grafite (texto) */
+  --day:#FFFFFF; --sand:#F3F5F7; --stone:#DDE2E7; --paper:#FFFFFF; --ink:#16202A; --muted:#56616C;
   /* texto secundário na sala escura (AA sobre --room e --room-2) */
-  --muted-on-dark:#A9B0B5;
-  /* luz quente (só traços, nunca texto pequeno) */
-  --glow:#C8B9A3;
-  /* fotos da fábrica (fundo verde-água): o fundo vira pedra só na apresentação; o arquivo não muda. O filtro
-     #pedra (templates/layout.mjs) separa por matiz e por luz: o que é azul-esverdeado e escuro vira pedra clara
-     (~#DAD1C4); o que é claro é sempre peça (a louça não fica lilás). A peça perde metade da saturação e ganha
-     um pouco de luz (branco neutro); a máscara é limiarizada depois do desfoque, sem franja verde-água na borda */
-  --foto-filtro:url(#pedra);
-  /* fotos reais (fábrica, lojas, obras): só a saturação baixa, para não brigar com a areia */
-  --foto-real:saturate(.55) sepia(.14) contrast(.94) brightness(1.03); --foto-fundo:#DAD1C4;
-  /* traço de desenho no claro (contornos, régua, mapa, grade): pedra funda, no lugar do azul-claro */
-  --trace:#7A6F63;
+  --muted-on-dark:#A9B8C4;
+  /* traço claro (só traços, nunca texto pequeno) */
+  --glow:#B9C6D2;
+  /* fotos: as dos produtos já vêm tratadas (Higgsfield, fundo de estúdio cinza-claro); nenhum filtro na tela.
+     As fotos reais (fábrica, lojas, obras) não passam por IA (a cena tem de continuar um documento): só a
+     saturação baixa um pouco na tela, para o verde e o vermelho do drone não gritarem; o arquivo não muda. */
+  --foto-filtro:none; --foto-real:saturate(.78) contrast(1.03); --foto-fundo:#E4E4E3;
+  /* traço de desenho no claro (contornos, régua, mapa, grade): azul-acinzentado */
+  --trace:#5E7283;
   /* botão de compra, contraste AA com texto branco (não mudar) */
   --whats-btn:#1E7F3A; --whats-btn-hover:#176A30;
-  --btn-hover:#3A342E;
+  --btn-hover:#03324F;
   --focus:#044E7C; --focus-on-dark:#9DB7C9;
-  /* movimento: calmo e lento */
+  /* movimento: discreto */
   --ease-out:cubic-bezier(.22,1,.36,1);
   --t-out:320ms; --t-in:520ms; --t-reveal:1100ms; --t-stagger:90ms;
   /* espaço e forma: cantos retos (no máximo 2 px), nada de pílula */
@@ -35,18 +33,18 @@
   --pad-x:clamp(16px,3.2vw + 4px,64px);
   --cab-h:64px; --topo-h:44px; --doca-h:0px;
 
-  /* tipografia: Newsreader leve (títulos) e Jost (corpo) */
-  --f-display:"Newsreader","Newsreader Fallback",ui-serif,Georgia,serif;
-  --f-body:"Jost","Jost Fallback",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --fs-h1:clamp(2.375rem,1.3rem + 4vw,4.5rem);
-  --fs-h2:clamp(1.75rem,1.3rem + 2vw,2.75rem);
+  /* tipografia: Libre Franklin em tudo (títulos em 600, corpo em 400) */
+  --f-display:"Libre Franklin","Libre Franklin Fallback",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-body:"Libre Franklin","Libre Franklin Fallback",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --fs-h1:clamp(2.125rem,1.3rem + 3.2vw,3.75rem);
+  --fs-h2:clamp(1.625rem,1.25rem + 1.5vw,2.375rem);
   --fs-h3:clamp(1.1875rem,1.05rem + .6vw,1.5rem);
-  --fs-body:1.0625rem; --fs-small:.9375rem; --fs-label:.75rem; --lh:1.7;
+  --fs-body:1.0625rem; --fs-small:.9375rem; --fs-label:.75rem; --lh:1.6;
 
   /* superfícies semânticas (o tema da seção troca estas) */
   --bg:var(--day); --fg:var(--ink); --fg-2:var(--muted); --rule:var(--stone);
   --rule-sala:color-mix(in srgb,var(--line) 22%,transparent);
   --focus-ring:var(--focus);
-  --sombra-2:0 1px 2px rgb(31 28 25 / .05),0 24px 48px -32px rgb(31 28 25 / .22);
+  --sombra-2:0 1px 2px rgb(22 32 42 / .05),0 24px 48px -32px rgb(22 32 42 / .22);
 }
 @media (max-width:430px){ :root{ --fs-body:1rem; --cab-h:60px; } }

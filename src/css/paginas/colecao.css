@@ -4,7 +4,6 @@
 /* ---------- Topo ---------- */
 .col-topo__fundo{background:linear-gradient(180deg,var(--day),var(--sand))}
 .col-topo::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:var(--stone)}
-.col-topo__fundo--agua::before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 72% 28%,transparent 0 22px,color-mix(in srgb,var(--ink) 4%,transparent) 23px 24px);-webkit-mask:radial-gradient(60% 70% at 72% 28%,#000,transparent 75%);mask:radial-gradient(60% 70% at 72% 28%,#000,transparent 75%);opacity:.8}
 .col-topo__video{opacity:0;transition:opacity 1.2s var(--ease-out)}
 .col-topo__filme.is-tocando .col-topo__video{opacity:1}
 .col-topo__chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -49,7 +48,7 @@
 .col-nota{margin-top:8px;font-size:.8125rem;line-height:1.5;color:var(--fg-2)}
 .col-form__base{position:sticky;bottom:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding:14px 0 calc(6px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--rule)}
 .col-form__base .btn{flex:1 1 140px}
-.col-filtros .btn:not(.btn--fantasma){--b-bg:var(--ink)}
+.col-filtros .btn:not(.btn--fantasma){--b-bg:var(--brand)}
 
 /* ---------- Cartão ---------- */
 .cart__mol{overflow:hidden}

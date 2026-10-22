@@ -63,13 +63,12 @@ test('contraste AA de todos os pares de token usados em texto (SPEC 13.12)', () 
   assert.deepEqual(falhas, []);
 });
 
-test('fontes auto-hospedadas: Newsreader e Jost woff2, só Newsreader com preload', () => {
+test('fonte auto-hospedada: Libre Franklin woff2, com preload', () => {
   const p = paginas['_sistema.html'];
   const preloads = [...p.matchAll(/<link rel="preload" href="([^"]+)" as="font"/g)].map((m) => m[1]);
   assert.equal(preloads.length, 1);
-  assert.match(preloads[0], /newsreader-var-latin\.[0-9a-f]+\.woff2$/);
-  assert.match(p, /jost-var-latin\.[0-9a-f]+\.woff2/);
-  assert.doesNotMatch(p, /opensans|fraunces/i, 'Open Sans e Fraunces saíram do site');
+  assert.match(preloads[0], /libre-franklin-var-latin\.[0-9a-f]+\.woff2$/);
+  assert.doesNotMatch(p, /opensans|fraunces|newsreader|jost-var/i, 'Open Sans, Fraunces, Newsreader e Jost saíram do site');
   for (const m of p.matchAll(/url\("([^"]+\.woff2)"\)/g)) assert.ok(existsSync(join(DIST, m[1].slice(BASE_PATH.length))), m[1]);
 });
 

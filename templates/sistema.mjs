@@ -84,9 +84,9 @@ export function paginas(ctx) {
 
 <section class="dia dia--areia secao" aria-labelledby="sis-tipo">
   <div class="wrap sis-tipos prosa">
-    <p class="etiqueta">Newsreader e Jost, auto-hospedadas</p>
-    <h2 id="sis-tipo">Títulos em Newsreader, corpo em Jost</h2>
-    <p class="t-h3">Subtítulo em Newsreader</p>
+    <p class="etiqueta">Libre Franklin, auto-hospedada</p>
+    <h2 id="sis-tipo">Títulos e corpo em Libre Franklin</h2>
+    <p class="t-h3">Subtítulo em Libre Franklin</p>
     <p>Corpo de 18 px com entrelinha 1,6. Medidas e preços usam algarismos tabulares: <span class="num">0,79 x 1,41 x 0,37</span>.</p>
     <p class="pequeno">Texto pequeno para notas: preços e medidas publicados pela empresa, coletados em ${D.dataColeta}.</p>
     <div class="rolagem" tabindex="0" role="region" aria-label="Tabela de exemplo com rolagem local"><table class="sis-tabela num"><thead><tr><th scope="col">Modelo</th><th scope="col">Tamanho</th><th scope="col">Material</th><th scope="col">Configuração</th><th scope="col">Lugares</th></tr></thead>

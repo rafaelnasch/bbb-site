@@ -155,7 +155,7 @@ export function htmlPonte(p, nomeDestino) {
 <meta name="twitter:description" content="${esc(`Este endereço mudou. O conteúdo está em: ${nomeDestino}.`)}">
 <meta name="twitter:image" content="${esc(abs(ogPadrao()))}">
 <meta http-equiv="refresh" content="${esc(`0;url=${href}`)}">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#071C2B;color:#F3F6F8;font:400 1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:24px}main{max-width:36rem}h1{font:300 1.75rem/1.2 Georgia,serif;margin:0 0 .5em}a{color:#F3F6F8}</style>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#071C2B;color:#F3F6F8;font:400 1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:24px}main{max-width:36rem}h1{font:600 1.75rem/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;margin:0 0 .5em}a{color:#F3F6F8}</style>
 </head>
 <body>
 <main>

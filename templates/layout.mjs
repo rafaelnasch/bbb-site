@@ -64,15 +64,15 @@ function ogPadrao() {
  * @param {string} [p.classe]     classe do <body>
  * @param {Array}  [p.critico]    extras de src/css/critico/ inline nesta página (ex.: ['peca'])
  * @param {string} [p.cssCritico] CSS crítico extra do tipo de página (já minificado)
- * @param {Array}  [p.fontes]     fontes pré-carregadas (chaves de assets.fontes, ex.: 'fonts/newsreader-titulo.woff2');
- *                                padrão: a Newsreader inteira (SPEC 5.3). A home pré-carrega só o subconjunto do H1.
+ * @param {Array}  [p.fontes]     fontes pré-carregadas (chaves de assets.fontes, ex.: 'fonts/libre-franklin-titulo.woff2');
+ *                                padrão: a Libre Franklin inteira (SPEC 5.3). A home pré-carrega só o subconjunto do H1.
  * @param {boolean}[p.modulosTardios] módulos da página só pedidos depois do load (core.js), fora do caminho do LCP
  * @param {boolean}[p.cssAposPintura] o CSS do site só é pedido depois da primeira pintura (core.js); a primeira
  *                                tela tem de estar inteira no CSS crítico. Sem JS, o <noscript> carrega o CSS
  * @param {boolean}[p.cssBloqueante] o site.css entra como folha normal (bloqueia a primeira pintura): páginas de
  *                                leitura (institucionais, 404), cuja primeira tela tem muitos componentes; sem isso
  *                                a chegada tardia do site.css desloca o conteúdo (CLS) e o LCP delas é texto
- * @param {boolean}[p.fontesAposPintura] tira do CSS crítico as @font-face da Newsreader e da Jost (vêm no
+ * @param {boolean}[p.fontesAposPintura] tira do CSS crítico a @font-face da Libre Franklin (vem no
  *                                site.css, pedido depois da primeira pintura): na primeira pintura só a fonte do H1
  *                                é baixada; o resto usa o fallback com métricas ajustadas. Exige cssAposPintura
  * @param {object} [p.rodapeTardio] alturas reservadas {m,t,d} (px, iguais ou menores que as reais) para pular o
@@ -127,7 +127,7 @@ ${(p.preload || []).map((l) => html`<link rel="preload"${attrs({ href: l.href, a
 <style>${raw(critico)}</style>
 ${p.cssAposPintura ? '' : p.cssBloqueante ? html`<link rel="stylesheet" href="${A.cssSite}">` : html`<link rel="stylesheet" href="${A.cssSite}" media="print" data-css-tardio>`}
 <noscript><link rel="stylesheet" href="${A.cssSite}"></noscript>
-<meta name="theme-color" content="#EFE9E1">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="${url('brand/favicon-32.png')}" type="image/png" sizes="32x32">
 <link rel="icon" href="${url('brand/favicon-192.png')}" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="${url('brand/apple-touch-icon.png')}">
@@ -151,7 +151,6 @@ ${jsonld}
 ${p.modulosTardios ? '' : Object.values(mapaModulos).map((src) => html`<script type="module" src="${src}"${attrs({ fetchpriority: p.jsBaixa ? 'low' : null })}></script>`)}
 </head>
 <body${attrs({ class: p.classe || null })}>
-<svg class="filtros" width="0" height="0" aria-hidden="true" focusable="false"><filter id="pedra" color-interpolation-filters="sRGB" x="0" y="0" width="1" height="1"><feColorMatrix in="SourceGraphic" result="peca" type="matrix" values="0.625 0.368 0.037 0 0.01 0.109 0.879 0.037 0 0.01 0.107 0.359 0.538 0 0.006 0 0 0 1 0"/><feColorMatrix in="SourceGraphic" result="mh" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 -5 -5 0 1.3"/><feColorMatrix in="SourceGraphic" result="ml" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.5 5 .83 0 -5"/><feComposite in="mh" in2="ml" operator="arithmetic" k1="-1" k2="1" k3="1" k4="0"/><feGaussianBlur stdDeviation="0.9"/><feComponentTransfer result="mascara"><feFuncA type="linear" slope="2.5" intercept="-1.5"/></feComponentTransfer><feComposite in="peca" in2="mascara" operator="in" result="recorte"/><feColorMatrix in="SourceGraphic" result="fundo" type="matrix" values="0.027 0.053 0.01 0 0.83 0.033 0.065 0.012 0 .79 0.043 0.086 0.016 0 .73 0 0 0 1 0"/><feComposite in="recorte" in2="fundo" operator="over"/></filter></svg>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 ${barraTopo({ movimento: /<video\b|data-agua|data-vapor/.test(String(p.corpo)) })}
 ${cabecalho({ ativo: p.ativo, sobre: p.sobre })}
